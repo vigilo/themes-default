@@ -17,28 +17,29 @@ setup(name='vigilo-themes-default',
             'pylint',
             'Genshi >= 0.5.1',
 
-#            'PasteScript >= 1.7',
-#            'PasteDeploy',
-#            'Paste',
             'Babel >= 0.9.4',
-#            'vigilo-common',
-#            'vigilo-pubsub',
             ],
         namespace_packages = [
             'vigilo',
             ],
         packages=find_packages('src'),
-        package_data={
-            'vigilo.themes': [
-                '*/templates/*/*',
-                '*/public/*/*/*',
-            ],
-        },
+        include_package_data = True,
+        package_data={'vigilo.themes': [
+            'i18n/*'
+            'templates/*/**.*',
+            'templates/*/**.html',
+            'public/*/css/**.css',
+            'public/*/javascript/**.js',
+            'public/*/images/**.*',
+        ]},
+        exclude_package_data ={'vigilo.themes': [
+        ]},
         message_extractors={'src/vigilo/themes/': [
             ('**/templates/**.mako', 'mako', None),
             ('**/templates/**.html', 'genshi', None),
             ('**/templates/admin/**.html', 'genshi', None),
-            ('**/public/**', 'ignore', None)]},
+            ('**/public/**', 'ignore', None)
+        ]},
         entry_points={
             'console_scripts': [
                 ],
