@@ -1,0 +1,55 @@
+form.niceform {
+    padding-bottom: 30px;
+    margin: 10px auto;
+    position: relative;
+}
+
+form.niceform fieldset {
+    padding: 10px 0;
+}
+
+/* Form header */
+form.niceform legend {
+	background: url('../images/form-header-middle.png') top repeat-x;
+	padding: 4px 8px 12px 8px;
+	font-size: 130%;
+	font-weight: bold;
+	color: white;
+}
+
+/* Form body */
+.formbody {
+    position: relative;
+}
+
+form.niceform label {
+    float: left;
+    clear: right;
+    margin: 5px auto;
+    padding: 5px;
+}
+
+input.text {
+    clear: right;
+    float: right;
+    margin: 5px auto;
+    width: 165px;
+    height: 21px;
+    padding: 5px;
+    border: 0;
+    background: url('../images/inputbg.png') top left no-repeat;
+    color: #fff;
+}
+
+/* Form footer */
+.formfooter {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.formfooter input {
+    margin: 5px;
+    float: left;
+}
+
