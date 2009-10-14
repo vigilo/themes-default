@@ -20,12 +20,12 @@ There is no history.
 		</tr>
 	</thead>
 	<tbody>
-		<py:for each="(time,user,type,value,text,class_tr,class_value) in history">
+		<py:for each="(time,user,type,value,text,class_tr) in history">
 		<tr py:attrs="class_tr">
 			<td>${time}</td>
 			<td>${user}</td>
 			<td>${type}</td>
-			<td py:attrs="class_value">${value}</td>
+			<td>${value}</td>
 			<td>${text}</td>
 		</tr>
 		</py:for>

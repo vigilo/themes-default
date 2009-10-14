@@ -71,6 +71,10 @@ tr.even {
 	background-color: #F0F0F0;
 }
 
+td.OK {
+    background-color: #73DE78;
+}
+
 td.Minor {
 	background-color: #FFFF00;
 }
@@ -81,10 +85,6 @@ td.Major {
 
 td.Critical {
 	background-color: #FF0000;
-}
-
-td.Cleared {
-	background-color: #73DE78;
 }
 
 td.MinorAck {
@@ -100,7 +100,7 @@ td.CriticalAck {
 	background-color: #FC9090;
 }
 
-td.ClearedAck {
+td.OKAck {
 	background-color: #A9EBAC;
 }
 
@@ -162,3 +162,8 @@ clear:both;
 	color: white
 }
 
+#HistoryDialog_initial_state,
+#HistoryDialog_current_state,
+#HistoryDialog_peak_state {
+    font-weight: bold;
+}

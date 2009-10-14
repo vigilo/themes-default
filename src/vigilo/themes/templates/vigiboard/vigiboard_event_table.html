@@ -22,7 +22,7 @@
 				La somme est calculée de sorte que le bandeau de changement de pages
 				est aligné sur le reste du tableau (les alertes).
 			-->
-    		<td colspan="${8+len(events[1][6])}" style="color: white;background-color: #4682b4" >${l_('Showing rows %(id_first_row)d to %(id_last_row)d of %(total_rows)d') % rows_info} <br />
+    		<td colspan="${8 + len(events[1][6])}" style="color: white;background-color: #4682b4" >${l_('Showing rows %(id_first_row)d to %(id_last_row)d of %(total_rows)d') % rows_info} <br />
 				Pages <py:for each="p in pages">
 				<a py:if="p != page" href="${tg.url('/%d' % p)}" py:content="p" />
 				<span py:if="p == page" py:replace="p" />
@@ -53,7 +53,7 @@
 			    <span style="font-weight: bold;">${event.get_date('timestamp_active')}</span>
 			    <br />[${event.get_since_date('timestamp_active')}]
 			 </td>
-			<td py:attrs="class_td_date" style="text-align:center">${event.occurrences}</td>
+			<td py:attrs="class_td_date" style="text-align:center">${event.occurrence}</td>
 			<td>${event.cause.hostname}</td>
 			<td>${event.cause.servicename}</td>
 			<td>${event.cause.message}</td>
@@ -70,8 +70,8 @@
 		</tr>
 
     		<py:if test="hist_error == True">
-			<tr><td colspan="10+len(plugin)">
-				${history_table(history[event.idcause],hist_error)}	
+			<tr><td colspan="${10 + len(plugin)}">
+				${history_table(history[event.idcause], hist_error)}	
 			</td></tr>
 		    </py:if>
 		</py:for>
@@ -93,6 +93,7 @@ ${tmpl_context.historydialog}
 		$.getJSON("${tg.url('/history_dialog')}",{idaggregate:idd},function(json){
 			$('#HistoryDialog_initial_state').html(json.initial_state);
 			$('#HistoryDialog_current_state').html(json.current_state);
+			$('#HistoryDialog_peak_state').html(json.peak_state);
 			$('#HistoryDialog_detailed_event').attr('href', '${tg.url('/event/')}' + json.idaggregate);
 			$('#HistoryDialog_detailed_host').attr('href', '${tg.url('/host_service/')}' + json.host + "/" + json.service);
 			<py:for each="edname, edit in tg.config['vigiboard_links.eventdetails'].iteritems()">
@@ -146,6 +147,7 @@ ${tmpl_context.historydialog}
 <div style="display:none" id="HistoryDialog">
 Initial State: <span id="HistoryDialog_initial_state" /><br />
 Current State: <span id="HistoryDialog_current_state" /><br />
+Peak State: <span id="HistoryDialog_peak_state" /><br />
 <ul>
 	<li><a id="HistoryDialog_detailed_event" href="#">Detailed history for this event</a></li>
 	<li><a id="HistoryDialog_detailed_host" href="#">Detailed history for this host/service</a></li>
