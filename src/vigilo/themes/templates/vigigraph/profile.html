@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:py="http://genshi.edgewall.org/"
+    xmlns:xi="http://www.w3.org/2001/XInclude">
+
+<xi:include href="master.html" />
+
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type" py:replace="''"/>
+<title>Profile</title>
+</head>
+
+<body>
+<div id="profileform">
+<form action="${tg.url('/profile/update')}" method="post" class="niceform" style="width: 350px">
+    <fieldset>
+        <legend>Change password</legend>
+
+        <div class="formbody">
+            <label for="old_password">Old password:</label>
+            <input type="password" id="old_password" name="old_password" class="text" />
+
+            <label for="new_password">New password:</label>
+            <input type="password" id="new_password" name="new_password" class="text" />
+
+            <label for="new_password2">Confirm new password:</label>
+            <input type="password" id="new_password2" name="new_password2" class="text" />
+        </div>
+
+        <div class="formfooter">
+            <input type="submit" value="${l_('Apply')}" />
+        </div>
+    </fieldset>
+</form>
+</div>
+</body>
+</html>
