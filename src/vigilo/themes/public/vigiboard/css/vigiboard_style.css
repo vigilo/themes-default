@@ -75,32 +75,24 @@ td.OK {
     background-color: #73DE78;
 }
 
-td.Minor {
+td.WARNING {
 	background-color: #FFFF00;
 }
 
-td.Major {
-	background-color: #FF8700;
-}
-
-td.Critical {
+td.CRITICAL {
 	background-color: #FF0000;
 }
 
-td.MinorAck {
+td.WARNING_Ack {
 	background-color: #FCFCA2;
 
 }
 
-td.MajorAck {
-	background-color: #FCCA90;
-}
-
-td.CriticalAck {
+td.CRITICAL_Ack {
 	background-color: #FC9090;
 }
 
-td.OKAck {
+td.OK_Ack {
 	background-color: #A9EBAC;
 }
 

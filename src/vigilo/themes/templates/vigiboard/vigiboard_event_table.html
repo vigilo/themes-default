@@ -17,12 +17,12 @@
 				<img py:if="page == pages[0]" src="${tg.url('/images/fleche_up.png')}" alt="Previous" title="Previous page" />
 			</td>
 			<!--!
-				8 = nombre de champs affichés en permanence.
+				events[0] contient les champs affichés en permanence.
 				events[1][6] contient une liste des en-têtes générés par les plugins.
 				La somme est calculée de sorte que le bandeau de changement de pages
 				est aligné sur le reste du tableau (les alertes).
 			-->
-    		<td colspan="${8 + len(events[1][6])}" style="color: white;background-color: #4682b4" >${l_('Showing rows %(id_first_row)d to %(id_last_row)d of %(total_rows)d') % rows_info} <br />
+    		<td colspan="${len(events[0]) - 1 + len(events[1][6])}" style="color: white;background-color: #4682b4" >${l_('Showing rows %(id_first_row)d to %(id_last_row)d of %(total_rows)d') % rows_info} <br />
 				Pages <py:for each="p in pages">
 				<a py:if="p != page" href="${tg.url('/%d' % p)}" py:content="p" />
 				<span py:if="p == page" py:replace="p" />
@@ -42,7 +42,7 @@
 			<th style="padding:0px;"><input title="Select/Unselect all" id="vigiboard_checkall_checkbox" type="checkbox" onclick="vigiboard_checkall()" /></th>
 		</tr>
 	</thead>
-	
+
 	<tbody>
 		<py:for each="(event,class_tr,class_td_severity,class_td_date,img_fleche,img_statu,plugin) in events[1:]">
 		<tr py:attrs="class_tr">
@@ -53,6 +53,7 @@
 			    <span style="font-weight: bold;">${event.get_date('timestamp_active')}</span>
 			    <br />[${event.get_since_date('timestamp_active')}]
 			 </td>
+			<td py:attrs="class_td_date" style="text-align:center">${event.priority}</td>
 			<td py:attrs="class_td_date" style="text-align:center">${event.occurrence}</td>
 			<td>${event.cause.hostname}</td>
 			<td>${event.cause.servicename}</td>
@@ -70,7 +71,7 @@
 		</tr>
 
     		<py:if test="hist_error == True">
-			<tr><td colspan="${10 + len(plugin)}">
+			<tr><td colspan="${len(events[0]) + 1 + len(plugin)}">
 				${history_table(history[event.idcause], hist_error)}	
 			</td></tr>
 		    </py:if>
