@@ -1,0 +1,21 @@
+<div xmlns:py="http://genshi.edgewall.org/">
+  <body>
+    <p class="status ok">Tous les services sont ${status}</p>
+    <ul class="tags">
+      <li py:for="tag_a in tags">
+        <img src="img/${tag_a[0]}.png" alt="${tag_a[1]}" /> ${tag_a[1]}
+      </li>
+    </ul>
+    <ul class="links">
+      <li py:for="link_a in links">
+        <a href="${link_a[0]}?${link_a[1]}" > ${link_a[2]}</a>
+      </li>
+    </ul>
+    <ul class="maps">
+      <li py:for="map_a in maps">
+        <a href="?map=${map_a[0]}" > ${map_a[1]}</a>
+      </li>
+    </ul>
+    <p>Nom d'equipement&nbsp;: ${host}</p>
+  </body>
+</div>
