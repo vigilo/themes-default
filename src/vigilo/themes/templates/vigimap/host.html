@@ -3,7 +3,7 @@
     <p class="status ok">Tous les services sont ${status}</p>
     <ul class="tags">
       <li py:for="tag_a in result_t">
-        <img src="img/${tag_a.name}.png" alt="${tag_a.value}" /> ${tag_a.value}
+        <img src="img/${tag_a}.png" alt="${l_(result_t[tag_a])}" /> ${result_t[tag_a]}
       </li>
     </ul>
     <ul class="links">
