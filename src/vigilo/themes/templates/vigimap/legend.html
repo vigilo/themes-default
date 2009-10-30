@@ -1,0 +1,31 @@
+<div xmlns:py="http://genshi.edgewall.org/">
+    <h2>Légende</h2>
+    <div id="legend-elements">
+        <h3>Éléments&nbsp;:</h3>
+        <dl>
+           <li py:for="ll_a in result_ll">
+           </li>
+        </dl>
+    </div>
+    <div id="legend-links">
+        <h3>Liaisons&nbsp;:</h3>
+        <dl>
+            <li py:for="ll_a in result_ll">
+              <p py:if="result_ll[ll_a].t_min == 'Inconnu'">
+                <dt style="background-color: #${result_ll[ll_a].f}; border: 1px solid ${result_ll[ll_a].f}"></dt>
+                  <dd>${result_ll[ll_a].t_min}</dd>
+              </p>
+              <p py:if="result_ll[ll_a].t_min != 'Inconnu' and result_ll[ll_a].t_min != '90%'">
+                <dt style="background-color: #${result_ll[ll_a].f}; border: 1px solid ${result_ll[ll_a].f}"></dt>
+                  <dd>${result_ll[ll_a].t_min} &rarr; ${result_ll[ll_a].t_max}</dd>
+              </p>
+              <p py:if="result_ll[ll_a].t_min == '90%'">
+                <dt style="background-color: #${result_ll[ll_a].f}; border: 1px solid ${result_ll[ll_a].f}"></dt>
+                  <dd>&lt; ${result_ll[ll_a].t_min}</dd>
+              </p>
+            </li>
+        </dl>
+    </div>
+</div>
+
+
