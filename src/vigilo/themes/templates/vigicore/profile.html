@@ -14,7 +14,7 @@
 <body>
 <div id="profileform">
 <form action="${tg.url('/profile/update')}" method="post" class="niceform" style="width: 350px">
-    <fieldset>
+    <fieldset py:if="not settings.get('USE_KERBEROS', False)">
         <legend>Change password</legend>
 
         <div class="formbody">
