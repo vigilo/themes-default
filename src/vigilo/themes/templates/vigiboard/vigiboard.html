@@ -78,25 +78,26 @@
 	}		
 	var refresh_timeout;
 	function change_refresh_rate(timeout) {
-		if (timeout != 0) {
+		if ($('#refresh_time').attr("disabled") != false || timeout == 0) {
 			if (refresh_timeout) {
 				clearTimeout(refresh_timeout);
 				refresh_timeout = null;
-				$('#refresh_time').removeAttr('disabled');
-				$('#refresh_button').attr('value','[${l_('Start')}]');
-			} else {
-				refresh_timeout = setTimeout('window.location.reload(true);', timeout);
-				$('#refresh_time').attr("disabled", "disabled");
-				$('#refresh_button').attr('value','[${l_('Stop')}]');
 			}
+			$('#refresh_time').removeAttr('disabled');
+			$('#refresh_button').attr('value', '[${l_('Start')}]');
+		}
+		else {
+    		refresh_timeout = setTimeout('window.location.reload(true);', timeout);
+			$('#refresh_time').attr("disabled", "disabled");
+			$('#refresh_button').attr('value', '[${l_('Stop')}]');
 		}
 	}
 	function change_refresh(timeout) {
-		$.getJSON("${tg.url('/set_refresh')}",{'refresh':timeout},function(json){});
+		$.getJSON("${tg.url('/set_refresh')}", {'refresh': timeout}, function(json){});
 		change_refresh_rate(timeout);
 	}
 	<py:if test="tg.session.get('refresh','0') != '0'">
-	change_refresh_rate(${tg.session.get('refresh',0)});
+	change_refresh_rate(${tg.session.get('refresh', 0)});
 	</py:if>
 </script>
 </body>
