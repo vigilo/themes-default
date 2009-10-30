@@ -1,16 +1,22 @@
 <div xmlns:py="http://genshi.edgewall.org/">
-    <h2>Légende</h2>
+    <h2>${l_("Légende")}</h2>
     <div id="legend-elements">
-        <h3>Éléments&nbsp;:</h3>
+        <h3>${l_("Éléments")}&nbsp;:</h3>
         <dl>
-           <li py:for="ll_a in result_ll">
-           </li>
+            <dt class="unknown"></dt>
+                <dd>${l_("Inconnu")}</dd>
+            <dt class="ok"></dt>
+                <dd>${l_("OK")}</dd>
+            <dt class="warning"></dt>
+                <dd>${l_("Avertissement")}</dd>
+            <dt class="critical"></dt>
+                <dd>${l_("Critique")}</dd>
         </dl>
     </div>
     <div id="legend-links">
-        <h3>Liaisons&nbsp;:</h3>
+        <h3>${l_("Liaisons")}&nbsp;:</h3>
         <dl>
-            <li py:for="ll_a in result_ll">
+            <b py:for="ll_a in result_ll">
               <p py:if="result_ll[ll_a].t_min == 'Inconnu'">
                 <dt style="background-color: #${result_ll[ll_a].f}; border: 1px solid ${result_ll[ll_a].f}"></dt>
                   <dd>${result_ll[ll_a].t_min}</dd>
@@ -23,7 +29,7 @@
                 <dt style="background-color: #${result_ll[ll_a].f}; border: 1px solid ${result_ll[ll_a].f}"></dt>
                   <dd>&lt; ${result_ll[ll_a].t_min}</dd>
               </p>
-            </li>
+            </b>
         </dl>
     </div>
 </div>
