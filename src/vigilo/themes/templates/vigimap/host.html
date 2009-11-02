@@ -1,19 +1,19 @@
 <div xmlns:py="http://genshi.edgewall.org/">
   <body>
-    <p class="status ok">Tous les services sont ${status}</p>
+    <p class="status ${status.lower()}">${message}</p>
     <ul class="tags">
-      <li py:for="tag_a in result_t">
-        <img src="img/${tag_a}.png" alt="${l_(result_t[tag_a])}" /> ${l_(result_t[tag_a])}
+      <li py:for="tag in tags">
+        <img src="img/${tag}.png" alt="${l_(tag)}" /> ${l_(tag)}
       </li>
     </ul>
     <ul class="links">
-      <li py:for="link_a in result_l">
-        <a href="${result_l[link_a]}" > ${link_a} </a>
+      <li py:for="link in links">
+        <a href="${link[1]}" > ${link[0]}</a>
       </li>
     </ul>
     <ul class="maps">
-      <li py:for="map_a in result_m">
-        <a href="?map=${result_m.name}" > ${result_m.title}</a>
+      <li py:for="map in maps">
+        <a href="?map=${map[0]}" > ${map[1]}</a>
       </li>
     </ul>
     <p>Nom d'equipement&nbsp;: ${host}</p>
