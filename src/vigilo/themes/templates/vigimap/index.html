@@ -1,40 +1,53 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
-                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:py="http://genshi.edgewall.org/"
-      xmlns:xi="http://www.w3.org/2001/XInclude">
-
-  <xi:include href="master.html" />
-
+      xmlns:xi="http://www.w3.org/2001/XInclude"
+      lang="fr">
 <head>
-  <meta content="text/html; charset=UTF-8" http-equiv="content-type" py:replace="''"/>
-  <title>Welcome to TurboGears 2.0, standing on the 
-  shoulders of giants, since 2007</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style>@import "css/map.css";</style>
+    <!--[if IE]><script type="text/javascript" src="excanvas.js"></script><![endif]-->
+    <script type="text/javascript" src="js/mootools.js"></script>
+    <script type="text/javascript" src="js/mootools-more.js"></script>
+    <script type="text/javascript" src="js/jxlib.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/jxlib/jxtheme.uncompressed.css" />
+    <script type="text/javascript" src="js/map.js"></script>
 </head>
 
 <body>
-    ${sidebar_top()}
-  <div id="getting_started">
-    <h2>Presentation</h2>
-    <p>TurboGears 2 is rapid web application development toolkit designed to make your life easier.</p>
-    <ol id="getting_started_steps">
-      <li class="getting_started">
-        <h3>Code your data model</h3>
-        <p> Design your data model, Create the database, and Add some bootstrap data.</p>
-      </li>
-      <li class="getting_started">
-        <h3>Design your URL architecture</h3>
-        <p> Decide your URLs, Program your controller methods, Design your 
-            templates, and place some static files (CSS and/or JavaScript). </p>
-      </li>
-      <li class="getting_started">
-        <h3>Distribute your app</h3>
-        <p> Test your source, Generate project documents, Build a distribution.</p>
-      </li>
-    </ol>
-  </div>
-  <div class="clearingdiv" />
-  <div class="notice"> Thank you for choosing TurboGears. 
-  </div>
+
+    <div id="header">
+        <h1>VigiMap<span id="maptitle"></span></h1>
+    </div>
+
+    <div id="menu">
+    </div>
+
+    <div id="leftmenu">
+        <h2>Cartes</h2>
+        <ul>
+        </ul>
+    </div>
+
+    <div id="map">
+        <canvas>
+            Your browser does not support the canvas element. Please upgrade.
+        </canvas>
+        <div id="legend">
+        </div>
+    </div>
+
+
+    <!--
+    <div id="details" title="essai">
+        <p>Services&nbsp;:</p>
+        <ul></ul>
+    </div>
+    -->
+
+    <div id="loading">
+        <img alt="loading..." src="img/loading.gif" />
+    </div>
+
 </body>
 </html>

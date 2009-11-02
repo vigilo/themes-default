@@ -1,0 +1,301 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#header {
+    border-bottom: 1px solid black;
+    height: 50px;
+}
+h1 {
+    font-size: 160%;
+    margin: 0.2em 0.2em 0 0.2em;
+    text-align: center;
+    font-family: sans-serif;
+    background: url("../img/vigilo.png") no-repeat left top;
+}
+ul {
+    margin: 0.5em 0 0 2em;
+    list-style-type: disc;
+}
+
+#leftmenu {
+    float: left;
+    width: 200px;
+    height: 100%;
+    margin: 0;
+    border-right: 1px solid black;
+    padding: 10px 0.2em 0px 0.2em;
+}
+
+#leftmenu h2 { margin-left: 0.8em; }
+
+#leftmenu h3 {
+    margin: 0px auto;
+    border: 1px solid #aaa;
+    background-color: #eee;
+    text-align: center;
+    cursor: pointer;
+}
+#leftmenu ul {
+    list-style-type: none;
+    margin-bottom: 0.5em;
+}
+#leftmenu li a {
+    padding-left: 20px;
+    background: url("../img/map.png") no-repeat left center;
+}
+
+#leftmenu .obj {
+    width: 70px;
+    border: 1px solid black;
+}
+
+
+#menu {
+    width: 100%;
+}
+
+#map {
+    margin: 0px;
+    padding: 0px;
+    margin-left: 210px;
+    height: 100%;
+}
+
+#map .obj {
+    position: absolute;
+}
+
+#map .obj div.tags {
+    text-align: left;
+}
+
+#map .obj img.icon {
+    display: block;
+}
+#map .obj div.status img.icon {
+    opacity: 0.8;
+}
+
+#map .obj span {
+    font-size: 80%;
+    font-family: sans-serif;
+    /*background-color: white;*/
+    /*font-weight: bold;
+    opacity: 0.7;*/
+}
+
+.obj {
+    display: block;
+    margin: 5px auto 5px auto;
+    border: 2px solid transparent;
+    text-align: center;
+    /*opacity: 0.5;*/
+}
+.obj.hover {
+    border: 2px solid #ffcc66;
+    color: #ffcc66;
+    cursor: pointer;
+}
+.selected {
+    border: 2px solid blue !important;
+    /*padding: 0px;*/
+}
+
+.obj.obj-1 {
+    background-color: #FF0000;
+}
+.obj.obj-2 {
+    background-color: #00FF00;
+}
+.obj.obj-3 {
+    background-color: #0000FF;
+}
+.obj.obj-4 {
+    background-color: #FFFF00;
+}
+.obj.obj-5 {
+    background-color: #00FFFF;
+}
+.obj.obj-6 {
+    background-color: #FF00FF;
+}
+
+.obj div.tag img {
+    display: block;
+    float: right;
+    padding: 0px 1px;
+    background-color: white;
+}
+
+.link-center {
+    position: absolute;
+    border: 2px solid transparent;
+}
+.link-center.hover {
+    border: 2px solid #ffcc66;
+    cursor: pointer;
+}
+
+.link-usage {
+    position: absolute;
+    border: 1px solid gray;
+    background-color: white;
+    font-size: 80%;
+    padding: 0px 0.2em;
+}
+
+.ui-draggable-dragging {
+    cursor: move !important;
+}
+
+
+.critical {
+    background-color: #FF0000;
+    border: 1px solid #C80000;
+}
+.warning {
+    background-color: #FFFF00;
+    border: 1px solid #C8C800;
+}
+.ok {
+    background-color: #73DE78;
+    border: 1px solid #5DB460;
+}
+.unknown {
+    background-color: #aaaaaa;
+    border: 1px solid black;
+}
+
+
+#details {
+    font-size: 80%;
+}
+#details .jxDialogLabel {
+    font-size: 120%;
+}
+#details .jxDialogContent {
+    padding: 0.5em;
+}
+
+#details p.status {
+    padding: 0.5em 3em;
+    text-align: center;
+    margin: 0.5em 10% 1em 10%;
+}
+
+#details .jxDialogContent ul {
+    margin: 1em 0 1em 2em;
+}
+
+#details ul.tags {
+    list-style-type: none;
+    margin-left: 0.7em;
+}
+#details ul.tags li {
+    height: 18px;
+}
+#details ul.tags li img {
+    vertical-align: middle;
+}
+
+#details ul.maps li a {
+    vertical-align: middle;
+    height: 16px;
+    padding-left: 18px;
+    background: url(../img/submap.png) no-repeat center left;
+}
+
+
+.ui-dialog {
+}
+.ui-dialog-titlebar {
+    font-size: 60%;
+}
+.ui-dialog-content {
+    font-size: 60%;
+}
+/*
+.ui-dialog-title-dialog {
+}
+.ui-dialog-titlebar-close {
+    display: none;
+}
+*/
+
+#loading {
+    display: none;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+
+
+/* Without this the <canvas> element will fill the whole page. See jquery.canvas.js */
+/*
+canvas.cnvsCanvas {
+    left: auto !important;
+    top: auto !important;
+    width: auto !important;
+    height: auto !important;
+}
+*/
+canvas {
+    margin: 0;
+    padding: 0;
+}
+
+
+#legend {
+    border: 1px solid #aaa;
+    background-color: #eee;
+    padding: 0.5em;
+    display: none;
+    position: fixed;
+    bottom: 0.5em;
+    right: 0.5em;
+    width: 10em;
+}
+
+#legend h2 {
+    text-align: center;
+    margin-top: 0em;
+    padding-bottom: 0.2em;
+    margin-bottom: 0.4em;
+    border-bottom: 1px solid #ccc;
+}
+
+#legend-elements, #legend-links {
+    display: inline;
+}
+
+#legend h3 {
+    font-weight: bold;
+    margin-top: 0.5em;
+}
+
+#legend ul {
+    display: inline;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#legend li {
+    display: inline;
+    padding: 0.1em 0.3em;
+    margin-right: 0.3em;
+}
+
+#legend dl {
+}
+#legend dl dt {
+    display: block;
+    float: left;
+    width: 1em;
+    height: 1em;
+    margin-right: 0.5em;
+}
+
