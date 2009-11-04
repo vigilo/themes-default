@@ -70,6 +70,9 @@ ul {
 #map .obj div.tags {
     text-align: left;
 }
+#map .obj div.tags img {
+    margin: 0 1px;
+}
 
 #map .obj img.icon {
     display: block;
@@ -194,7 +197,7 @@ ul {
     margin-left: 0.7em;
 }
 #details ul.tags li {
-    height: 18px;
+    height: 20px;
 }
 #details ul.tags li img {
     vertical-align: middle;
