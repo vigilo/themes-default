@@ -30,7 +30,7 @@ ul {
 
 #leftmenu h2 { margin-left: 0.8em; }
 
-#leftmenu h3 {
+#leftmenu .mapgroup {
     margin: 0px auto;
     border: 1px solid #aaa;
     background-color: #eee;
@@ -41,19 +41,22 @@ ul {
     list-style-type: none;
     margin-bottom: 0.5em;
 }
-#leftmenu li a {
+#leftmenu .map a {
     text-align: center;
     display: block;
     border: 1px solid #375E8A;
     background-color: #4F83BD;
     margin: 2px 0px;
 }
-#leftmenu li a:link,
-#leftmenu li a:visited,
-#leftmenu li a:hover,
-#leftmenu li a:active {
+#leftmenu .map a:link,
+#leftmenu .map a:visited {
     text-decoration: none;
     color: white;
+}
+#leftmenu .map a:hover,
+#leftmenu .map a:active {
+    text-decoration: none;
+    color: #ffcc66;
 }
 
 #leftmenu .obj {
