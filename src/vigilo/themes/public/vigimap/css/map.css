@@ -42,8 +42,18 @@ ul {
     margin-bottom: 0.5em;
 }
 #leftmenu li a {
-    padding-left: 20px;
-    background: url("../img/map.png") no-repeat left center;
+    text-align: center;
+    display: block;
+    border: 1px solid #375E8A;
+    background-color: #4F83BD;
+    margin: 2px 0px;
+}
+#leftmenu li a:link,
+#leftmenu li a:visited,
+#leftmenu li a:hover,
+#leftmenu li a:active {
+    text-decoration: none;
+    color: white;
 }
 
 #leftmenu .obj {
@@ -147,6 +157,7 @@ ul {
     background-color: white;
     font-size: 80%;
     padding: 0px 0.2em;
+    display: none;
 }
 
 .ui-draggable-dragging {
