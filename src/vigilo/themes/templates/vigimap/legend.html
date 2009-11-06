@@ -1,20 +1,20 @@
 <div xmlns:py="http://genshi.edgewall.org/">
-    <h2>${l_("Légende")}</h2>
+    <h2>${l_("Legend")}</h2>
     <div id="legend-elements">
-        <h3>${l_("Éléments")}&nbsp;:</h3>
+        <h3>${l_("Elements")}&nbsp;:</h3>
         <dl>
             <dt class="unknown"></dt>
-                <dd>${l_("Inconnu")}</dd>
+                <dd>${l_("Unknown")}</dd>
             <dt class="ok"></dt>
                 <dd>${l_("OK")}</dd>
             <dt class="warning"></dt>
-                <dd>${l_("Avertissement")}</dd>
+                <dd>${l_("Warning")}</dd>
             <dt class="critical"></dt>
-                <dd>${l_("Critique")}</dd>
+                <dd>${l_("Critical")}</dd>
         </dl>
     </div>
     <div id="legend-links" py:if="has_link">
-        <h3>${l_("Liaisons")}&nbsp;:</h3>
+        <h3>${l_("Links")}&nbsp;:</h3>
         <dl>
             <div py:for="i, link in enumerate(links)" py:strip="True">
                 <div py:choose="" py:strip="True">

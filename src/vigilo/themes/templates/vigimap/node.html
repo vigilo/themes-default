@@ -2,7 +2,7 @@
     <p class="status ${status.lower()}">${message}</p>
     <ul class="tags">
       <li py:for="tag in tags">
-        <img src="img/${tag}.png" alt="${l_(tag)}" /> ${l_(tag)}
+        <img src="images/${tag}.png" alt="${l_(tag)}" /> ${l_(tag)}
       </li>
     </ul>
     <ul class="links">
@@ -12,8 +12,8 @@
     </ul>
     <ul class="maps">
       <li py:for="map in maps">
-        <a href="?map=${map[0]}" > ${map[1]}</a>
+        <a href="maps/map?mapid=${map[0]}" > ${map[1]}</a>
       </li>
     </ul>
-    <p>Nom d'equipement&nbsp;: ${host}</p>
+    <p>${l_("Appliance name: %(host)s") % {'host': host}}</p>
 </div>

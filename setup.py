@@ -10,6 +10,7 @@ setup(name='vigilo-themes-default',
         description='default theme for vigilo applications',
         license='http://www.gnu.org/licenses/gpl-2.0.html',
         long_description='This component provides a default theme for vigilo applications:\n',
+        zip_safe=False,
         install_requires=[
             'setuptools',
             'coverage',
@@ -22,14 +23,21 @@ setup(name='vigilo-themes-default',
         namespace_packages = [
             'vigilo',
             ],
-        packages=find_packages('src'),
+        packages=[
+            'vigilo',
+            'vigilo.themes',
+        ],#find_packages('src'),
         include_package_data = True,
         package_data={'vigilo.themes': [
-            'i18n/*'
+            'i18n/*/LC_MESSAGES/**.*',
             'templates/*/**.*',
             'templates/*/**.html',
+            'templates/*/*/**.html',
             'public/*/css/**.css',
+            'public/*/css/*/**.*',
+            'public/*/css/*/*/**.*',
             'public/*/javascript/**.js',
+            'public/*/javascript/*/**.js',
             'public/*/images/**.*',
         ]},
         exclude_package_data ={'vigilo.themes': [
