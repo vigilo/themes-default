@@ -1,0 +1,35 @@
+#map .serviceelement div.tags {
+    text-align: left;
+}
+#map .serviceelement div.tags img {
+    margin: 0 1px;
+}
+
+#map .serviceelement img.icon {
+    display: block;
+}
+#map .serviceelement div.status img.icon {
+    opacity: 0.8;
+}
+
+#map .serviceelement span {
+    font-size: 80%;
+    font-family: sans-serif;
+    /*background-color: white;*/
+    /*font-weight: bold;
+    opacity: 0.7;*/
+}
+
+#details ul.tags {
+    list-style-type: none;
+    margin-left: 0.7em;
+}
+#details ul.tags li {
+    height: 20px;
+}
+#details ul.tags li img {
+    vertical-align: middle;
+}
+
+
+
