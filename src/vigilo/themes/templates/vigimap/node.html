@@ -1,19 +1,35 @@
 <div xmlns:py="http://genshi.edgewall.org/">
     <p class="status ${status.lower()}">${message}</p>
     <ul class="tags">
-      <li py:for="tag in tags">
-        <img src="images/${tag}.png" alt="${l_(tag)}" /> ${l_(tag)}
-      </li>
+        <li py:for="tag in tags">
+            <img src="images/${tag}.png" alt="${l_(tag)}" /> ${l_(tag)}
+        </li>
     </ul>
     <ul class="links">
-      <li py:for="link in links">
-        <a href="${link[1]}" > ${link[0]}</a>
-      </li>
+        <li py:for="link in links">
+            <a href="${link[1]}" > ${link[0]}</a>    
+        </li>
     </ul>
     <ul class="maps">
-      <li py:for="map in maps">
-        <a href="maps/map?mapid=${map[0]}" > ${map[1]}</a>
-      </li>
+        <li py:for="map in maps">
+            <a href="maps/map?mapid=${map[0]}" > ${map[1]}</a>
+        </li>
     </ul>
-    <p>${l_("Appliance name: %(host)s") % {'host': host}}</p>
+    <py:choose test="">
+        <py:when test="node.has_key('service')">
+            <p>${l_("Service name: %(service)s on %(host)s") % {'service': node['service'], 'host': node['host' ]}}</p>
+        </py:when>
+        <py:otherwise>
+            <p>${l_("Appliance name: %(host)s") % {'host': node['host']}}</p>    
+        </py:otherwise>
+    </py:choose>
+    <!--
+    <py:if test="node.has_key('onlyhost')">
+        <p>${l_("Appliance name: %(host)s") % {'host': node['host']}}</p>  
+    </py:if>
+    <py:if test="node.has_key('service')">
+        <p>${l_("Service name: %(service)s on %(host)s") % {'service': node['service'], 'host': node['host' ]}}</p>  
+    </py:if>
+    -->
 </div>
+<!-- Ceci est un commentaire-->
