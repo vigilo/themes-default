@@ -1,5 +1,5 @@
 <div xmlns:py="http://genshi.edgewall.org/">
-    <p class="status ${status.lower()}">${message}</p>
+    <p class="status status-${status.lower()}">${message}</p>
     <ul class="tags">
         <li py:for="tag in tags">
             <img src="images/${tag}.png" alt="${l_(tag)}" /> ${l_(tag)}
