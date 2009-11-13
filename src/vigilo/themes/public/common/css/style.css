@@ -323,12 +323,3 @@ clear:both;
     text-align: center;
 }
 
-/* Mise en forme de Rum. */
-.leftmenu #rum-content {
-    left: 102.5%;
-}
-
-.leftmenu #rum-sidebar {
-    width: 15%;
-    left: 4.2%;
-}

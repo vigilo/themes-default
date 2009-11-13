@@ -20,7 +20,7 @@ from genshi.input import XML
                 par ordre alphabétique croissant dans l'affichage de Rum. -->
           <py:with vars="res = sorted(resources, cmp=lambda x, y: cmp(app.names_for_resource(x)[1], app.names_for_resource(y)[1]))">
           <li py:for="r in res"
-              py:with="name=generate_label(app.names_for_resource(r)[1]); url=url_for(r, _memory=False)">
+              py:with="name=app.names_for_resource(r)[1]; url=url_for(r, _memory=False)">
               <a href="${url}" class="${request.routes['resource'] is r and 'active' or None}">${name}</a>
           </li>
           </py:with>
