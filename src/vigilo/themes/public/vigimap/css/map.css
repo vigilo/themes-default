@@ -118,19 +118,19 @@ ul {
 }
 
 
-.critical {
+.status-critical {
     background-color: #FF0000;
     border: 1px solid #C80000;
 }
-.warning {
+.status-warning {
     background-color: #FFFF00;
     border: 1px solid #C8C800;
 }
-.ok {
+.status-ok {
     background-color: #73DE78;
     border: 1px solid #5DB460;
 }
-.unknown {
+.status-unknown {
     background-color: #aaaaaa;
     border: 1px solid black;
 }
