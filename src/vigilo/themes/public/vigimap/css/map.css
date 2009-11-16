@@ -239,6 +239,14 @@ canvas {
     margin-right: 0.5em;
 }
 
+
+/*
+.jxChromeDrag {
+    opacity: 1 !important;
+    -ms-filter: none !important;
+}
+*/
+
 /*
 .spinner {
     position: absolute;
