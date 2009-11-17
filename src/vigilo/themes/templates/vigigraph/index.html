@@ -4,41 +4,25 @@
       xmlns:py="http://genshi.edgewall.org/"
       xmlns:xi="http://www.w3.org/2001/XInclude">
 
-  <xi:include href="master.html" />
 
-<head>
-  <meta content="text/html; charset=UTF-8" http-equiv="content-type" py:replace="''"/>
-  <title>Welcome to Vigilo</title>
-</head>
-
-<body>
-    ${sidebar_top()}
-  <div id="getting_started">
-    <h1>Presentation</h1>
-    <p>Vigilo is a software meant to ease large-scale system and network management.</p>
-    <ol id="key_features">
-      <li class="key_feature">
-        <h2>Data collection</h2>
-        <p> @TODO</p>
-      </li>
-
-      <li class="key_feature">
-        <h2>Event correlation</h2>
-        <p> @TODO</p>
-      </li>
-
-      <li class="key_feature">
-        <h2>Accidents visualization</h2>
-        <p> @TODO</p>
-      </li>
-
-      <li class="key_feature">
-        <h2>Report generation</h2>
-        <p> @TODO</p>
-      </li>
-    </ol>
-  </div>
-  <div class="clearingdiv" />
-  <div class="notice">Thank you for choosing Vigilo.</div>
-</body>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Loading VigiGraph...</title>
+    <script type="text/javascript" src="script/vigigraph.js"></script>
+    <!-- <link rel="search" type="application/opensearchdescription+xml" title="Vigigraph search" href="Vigigraph.py/getOpenSearch"/> -->
+    <style type="text/css"><!--@import url(css/style.css); --></style>
+  </head>
+  <body>
+      <div class="header"><style type="text/css"><!--@import url(css/tmpl.default.css); --></style>
+      <table class="header_table">
+          <tr>
+              <td class="logo">
+                  <a href="/">
+                      <img class="logo" src="${tg.url('/images/red15-logo-vigilo.png')}" alt="Vigilo"/>
+                  </a> v2.0
+              </td>
+          </tr>
+      </table>
+      </div>
+  </body>
 </html>
