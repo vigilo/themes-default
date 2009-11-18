@@ -197,6 +197,7 @@ canvas {
     bottom: 0.5em;
     right: 0.5em;
     width: 10em;
+    z-index: 99;
 }
 
 #legend h2 {
