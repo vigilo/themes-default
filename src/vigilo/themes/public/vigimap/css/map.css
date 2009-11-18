@@ -98,6 +98,10 @@ ul {
     /*padding: 0px;*/
 }
 
+.obj img.icon {
+    margin: 0px auto;
+}
+
 
 .link-center {
     position: absolute;
