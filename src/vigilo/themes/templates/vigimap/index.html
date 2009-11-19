@@ -5,13 +5,14 @@
       lang="fr">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>VigiMap</title>
     <!--[if IE]><script type="text/javascript" src="excanvas.js"></script><![endif]-->
     <link rel="stylesheet" type="text/css" href="css/jxlib/jxtheme.uncompressed.css" />
     <style type="text/css">@import "css/map.css";</style>
-    <script type="text/javascript">Jx = { baseURL: 'js'; }</script>
     <script type="text/javascript" src="js/mootools.js"></script>
     <script type="text/javascript" src="js/mootools-more.js"></script>
     <script type="text/javascript" src="js/jxlib.js"></script>
+    <script type="text/javascript">Jx.baseURL = 'js';</script>
     <script type="text/javascript" src="js/map.js"></script>
     <div py:for="widget in widgets" py:strip="True">
         <script type="text/javascript" src="widgets/${widget}/${widget}.js"></script>
