@@ -2,5 +2,5 @@
   <p>${l_("Link between %(from_node)s and %(to_node)s") % {'from_node': from_node, 'to_node': to_node}}</p>
   <p>${l_("Reference service: %(service)s on %(host)s") % {'service': service, 'host': host}}</p>
   <p>${l_("Status: %(status)s") % {'status': status}}</p>
-  <p><img src="${img}" alt="${alt}" /></p>
+  <p py:if="img"><img src="${img}" alt="${alt}" /></p>
 </div>
