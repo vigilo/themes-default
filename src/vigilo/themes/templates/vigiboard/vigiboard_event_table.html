@@ -55,15 +55,15 @@
 			 </td>
 			<td py:attrs="class_td_date" style="text-align:center">${event.priority}</td>
 			<td py:attrs="class_td_date" style="text-align:center">${event.occurrence}</td>
-			<td>${cause.hostname}</td>
-			<td>${cause.servicename}</td>
+			<td>${cause.service.hostname}</td>
+			<td>${cause.service.servicename}</td>
 			<td>${cause.message}</td>
 			<td py:for="plug in plugin" py:attrs="plug[1]">${HTML(plug[0])}</td>
 			<td style="text-align: center"><a py:if="event.trouble_ticket is not None" href="${
 					tg.config['vigiboard_links.tt'] % {
 						'idaggregate': event.idaggregate,
-						'host': cause.hostname,
-						'service': cause.servicename,
+						'host': cause.service.hostname,
+						'service': cause.service.servicename,
 						'tt': event.trouble_ticket }}">[${event.trouble_ticket}]</a></td>
 			<td style="text-align: center"><img py:attrs="img_statu" py:if="img_statu != None" alt="Status" title="Event status"/></td>
 			<td py:attrs="class_td_date" style="padding: 0px;text-align: center"><a class="Edit_EventsLien" href="javascript:vigiboard_edit_eventdialog('${event.idaggregate}')"><img src="${tg.url('/images/icon_page_edit.png')}" alt="Edit" title="Edit this event"/></a></td>
@@ -141,8 +141,6 @@ ${tmpl_context.historydialog}
 	$('#SearchLien').click(function(e){
 	        $('#SearchDialog').dialog('option','position','center');
 	});
-	
-
 </script>
 
 <div style="display:none" id="HistoryDialog">
@@ -206,7 +204,7 @@ function vigiboard_searchdialog() {
                 $('#search_form_service').attr('value','');
                 $('#search_form_output').attr('value','');
                 $('#search_form_trouble_ticket').attr('value', '');
-                $('#SearchDialog').dialog('open');      
+                $('#SearchDialog').dialog('open');
         }
 $('#SearchLien').click(function(e){
                 $('#SearchDialog').dialog('option','position','center');
