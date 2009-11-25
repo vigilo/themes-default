@@ -173,8 +173,8 @@ Peak State: <span id="HistoryDialog_peak_state" /><br />
                         <td style="width:26px;background-color: rgb(70, 130, 180);">
                                 <img src="${tg.url('/images/fleche_up.png')}" alt="Previous" title="Previous page"/>
                         </td>
-                        <td colspan="9" style="width:100%;background-color:#4682B4;color:white;text-align:center">Showing rows 0 to 0 of 0<br />
-                                Page 0
+                        <td colspan="9" style="width:100%;background-color:#4682B4;color:white;text-align:center">
+                            Showing rows 0 to 0 of 0<br />Page 0
                         </td>
                         <td style="width:26px">
                                 <img src="${tg.url('/images/fleche_down.png')}" alt="Next" title="Next page" />
@@ -194,6 +194,8 @@ Peak State: <span id="HistoryDialog_peak_state" /><br />
 <tr><td colspan="9"><br />No event</td></tr>
 </tbody>
 </table>
+<div style="display:none" id="HistoryDialog" />
+<div style="display:none" id="Edit_EventsDialog" />
 ${tmpl_context.searchdialog}
 <div  style="display:none" id="SearchDialog">
         ${tmpl_context.search_form()}
