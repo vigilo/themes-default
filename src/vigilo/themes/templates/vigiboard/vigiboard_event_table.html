@@ -61,7 +61,7 @@
 			<td py:for="plug in plugin" py:attrs="plug[1]">${HTML(plug[0])}</td>
 			<td style="text-align: center"><a py:if="event.trouble_ticket is not None" href="${
 					tg.config['vigiboard_links.tt'] % {
-						'idaggregate': event.idcorrevent,
+						'idcorrevent': event.idcorrevent,
 						'host': cause.service.hostname,
 						'service': cause.service.servicename,
 						'tt': event.trouble_ticket }}">[${event.trouble_ticket}]</a></td>
@@ -91,7 +91,7 @@ ${tmpl_context.historydialog}
 
 <script type="text/javascript">
 	function vigiboard_historydialog(idd) {
-		$.getJSON("${tg.url('/history_dialog')}",{idaggregate:idd},function(json){
+		$.getJSON("${tg.url('/history_dialog')}",{idcorrevent:idd},function(json){
 			$('#HistoryDialog_initial_state').html(json.initial_state);
 			$('#HistoryDialog_current_state').html(json.current_state);
 			$('#HistoryDialog_peak_state').html(json.peak_state);
