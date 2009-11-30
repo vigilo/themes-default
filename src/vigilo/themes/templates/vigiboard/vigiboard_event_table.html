@@ -55,15 +55,15 @@
 			 </td>
 			<td py:attrs="class_td_date" style="text-align:center">${event.priority}</td>
 			<td py:attrs="class_td_date" style="text-align:center">${event.occurrence}</td>
-			<td>${cause.service.hostname}</td>
-			<td>${cause.service.servicename}</td>
+			<td>${cause.supitem.host.name}</td>
+			<td>${cause.supitem.servicename}</td>
 			<td>${cause.message}</td>
 			<td py:for="plug in plugin" py:attrs="plug[1]">${HTML(plug[0])}</td>
 			<td style="text-align: center"><a py:if="event.trouble_ticket is not None" href="${
 					tg.config['vigiboard_links.tt'] % {
 						'idcorrevent': event.idcorrevent,
-						'host': cause.service.hostname,
-						'service': cause.service.servicename,
+						'host': cause.supitem.host.name,
+						'service': cause.supitem.servicename,
 						'tt': event.trouble_ticket }}">[${event.trouble_ticket}]</a></td>
 			<td style="text-align: center"><img py:attrs="img_statu" py:if="img_statu != None" alt="Status" title="Event status"/></td>
 			<td py:attrs="class_td_date" style="padding: 0px;text-align: center"><a class="Edit_EventsLien" href="javascript:vigiboard_edit_eventdialog('${event.idcorrevent}')"><img src="${tg.url('/images/icon_page_edit.png')}" alt="Edit" title="Edit this event"/></a></td>
