@@ -18,10 +18,10 @@ from genshi.input import XML
         <ul id="rum-resource-list">
           <!--! Le block py:with suivant permet d'ordonner les noms des tables
                 par ordre alphabétique croissant dans l'affichage de Rum. -->
-          <py:with vars="res = sorted(resources, cmp=lambda x, y: cmp(app.names_for_resource(x)[1], app.names_for_resource(y)[1]))">
+          <py:with vars="res = sorted(map(lambda x: (app.translator.ugettext(app.names_for_resource(x)[1]), x), resources.keys()), cmp=lambda x, y: cmp(x[0], y[0]))">
           <li py:for="r in res"
-              py:with="name=app.names_for_resource(r)[1]; url=url_for(r, _memory=False)">
-              <a href="${url}" class="${request.routes['resource'] is r and 'active' or None}">${name}</a>
+              py:with="url=url_for(r[1], _memory=False)">
+              <a href="${url}" class="${request.routes['resource'] is r[1] and 'active' or None}">${r[0]}</a>
           </li>
           </py:with>
         </ul>
