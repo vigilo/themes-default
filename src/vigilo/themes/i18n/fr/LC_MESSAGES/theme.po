@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: vigilo-themes-default 0.1\n"
 "Report-Msgid-Bugs-To: contact@projet-vigilo.org\n"
 "POT-Creation-Date: 2009-11-10 09:51+0100\n"
-"PO-Revision-Date: 2009-11-10 09:52+0100\n"
+"PO-Revision-Date: 2009-12-02 12:09+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: fr <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n > 1)\n"
@@ -37,7 +37,6 @@ msgstr ""
 
 #: src/vigilo/themes/templates/common/header.html:6
 #: src/vigilo/themes/templates/vigicore/index.html:11
-#: src/vigilo/themes/templates/vigigraph/index.html:11
 msgid "Welcome to Vigilo"
 msgstr "Bienvenue dans Vigilo"
 
@@ -73,7 +72,6 @@ msgstr ""
 
 #: src/vigilo/themes/templates/vigiboard/index.html:18
 #: src/vigilo/themes/templates/vigicore/index.html:17
-#: src/vigilo/themes/templates/vigigraph/index.html:17
 msgid "Presentation"
 msgstr "Présentation"
 
@@ -116,7 +114,6 @@ msgstr ""
 
 #: src/vigilo/themes/templates/vigiboard/master.html:20
 #: src/vigilo/themes/templates/vigiboard/vigiboard.html:11
-#: src/vigilo/themes/templates/vigicore/sidebars.html:9
 msgid "Vigiboard"
 msgstr "VigiBoard"
 
@@ -262,10 +259,6 @@ msgstr ""
 msgid "Toolbar"
 msgstr ""
 
-#: src/vigilo/themes/templates/vigiboard/vigiboard.html:21
-msgid "v"
-msgstr ""
-
 #: src/vigilo/themes/templates/vigiboard/vigiboard.html:30
 msgid "Filter display"
 msgstr ""
@@ -286,149 +279,106 @@ msgstr "Taille moyenne"
 msgid "Large font size"
 msgstr "Grande taille"
 
-#: src/vigilo/themes/templates/vigiboard/vigiboard.html:45
-msgid "Never"
-msgstr "Jamais"
+#: src/vigilo/themes/templates/vigiboard/vigiboard.html:43
+msgid "Refresh every"
+msgstr ""
 
-#: src/vigilo/themes/templates/vigiboard/vigiboard.html:46
-msgid "30 Secondes"
-msgstr "30 secondes"
-
-#: src/vigilo/themes/templates/vigiboard/vigiboard.html:47
-msgid "1 Minute"
-msgstr "1 minute"
-
-#: src/vigilo/themes/templates/vigiboard/vigiboard.html:48
-msgid "5 Minutes"
-msgstr "5 minutes"
-
-#: src/vigilo/themes/templates/vigiboard/vigiboard.html:49
-msgid "10 Minutes"
-msgstr "10 minutes"
-
-#: src/vigilo/themes/templates/vigiboard/vigiboard.html:51
-#: src/vigilo/themes/templates/vigiboard/vigiboard.html:87
-msgid "Start"
-msgstr "Démarrer"
-
-#: src/vigilo/themes/templates/vigiboard/vigiboard.html:56
+#: src/vigilo/themes/templates/vigiboard/vigiboard.html:57
 msgid "You are in Search mode, click here to return to the initial mode."
 msgstr "Mode recherche, cliquer ici pour quitter ce mode."
 
-#: src/vigilo/themes/templates/vigiboard/vigiboard.html:76
+#: src/vigilo/themes/templates/vigiboard/vigiboard.html:81
 msgid "Unable to save preferences"
 msgstr "Impossible de sauvegarder les préférences"
-
-#: src/vigilo/themes/templates/vigiboard/vigiboard.html:92
-msgid "Stop"
-msgstr "Arrêter"
 
 #: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:12
 msgid "Event table"
 msgstr "Tableau des événements"
 
-#: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:16
 #: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:17
-#: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:176
+#: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:18
 msgid "Previous"
 msgstr "Précédent"
 
-#: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:16
 #: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:17
-#: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:176
+#: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:18
 msgid "Previous page"
 msgstr "Page précédente"
 
-#: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:25
+#: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:28
 #, python-format
 msgid "Showing rows %(id_first_row)d to %(id_last_row)d of %(total_rows)d"
 msgstr "Affichage des lignes %(id_first_row)d à %(id_last_row)d sur %(total_rows)d"
 
-#: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:25
+#: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:29
 msgid "Pages"
 msgstr "Pages"
 
-#: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:32
-#: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:33
-#: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:182
+#: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:38
+#: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:39
 msgid "Next"
 msgstr "Suivant"
 
-#: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:32
-#: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:33
-#: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:182
+#: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:38
+#: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:39
 msgid "Next page"
 msgstr "Page suivante"
 
-#: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:41
-#: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:190
+#: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:48
 msgid "Edit selected"
 msgstr "Éditer"
 
-#: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:41
-#: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:190
+#: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:48
 msgid "Edit all selected events"
 msgstr "Éditer tous les événements sélectionnés"
 
-#: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:42
+#: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:49
 msgid "Select/Unselect all"
 msgstr "Tout sélectionner / désélectionner"
 
-#: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:50
+#: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:57
 msgid "Details"
 msgstr "Détails"
 
-#: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:50
+#: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:57
 msgid "Event details"
 msgstr "Détails de l'événement"
 
-#: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:68
-msgid "Status"
-msgstr "État"
-
-#: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:68
-msgid "Event status"
-msgstr "État de l'événement"
-
-#: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:69
+#: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:78
 msgid "Edit"
 msgstr "Éditer"
 
-#: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:69
+#: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:78
 msgid "Edit this event"
 msgstr "Éditer cet événement"
 
-#: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:148
+#: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:82
+msgid "Status"
+msgstr "État"
+
+#: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:82
+msgid "Event status"
+msgstr "État de l'événement"
+
+#: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:160
 msgid "Initial State:"
 msgstr "État initial"
 
-#: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:149
+#: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:161
 msgid "Current State:"
 msgstr "État courant"
 
-#: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:150
+#: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:162
 msgid "Peak State:"
 msgstr "Pire état"
 
-#: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:153
+#: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:165
 msgid "Detailed history for this event"
 msgstr "Historique détaillée de cet événement"
 
-#: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:154
+#: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:166
 msgid "Detailed history for this host/service"
 msgstr "Historique détaillée de cet hôte / service"
-
-#: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:178
-msgid "Showing rows 0 to 0 of 0"
-msgstr "Affichage des lignes 0 à 0 sur 0"
-
-#: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:178
-msgid "Page 0"
-msgstr ""
-
-#: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:196
-msgid "No event"
-msgstr "Pas d'événement"
 
 #: src/vigilo/themes/templates/vigiboard/vigiboard_history_table.html:8
 msgid "There is no history."
@@ -459,14 +409,14 @@ msgid "Text"
 msgstr "Texte"
 
 #: src/vigilo/themes/templates/vigicore/index.html:18
-#: src/vigilo/themes/templates/vigigraph/index.html:18
 msgid ""
 "Vigilo is a software meant to ease large-scale system and network "
 "management."
-msgstr "Vigilo est un logiciel permettant de simplifier la supervision de réseaux de grande taille"
+msgstr ""
+"Vigilo est un logiciel permettant de simplifier la supervision de réseaux"
+" de grande taille"
 
 #: src/vigilo/themes/templates/vigicore/index.html:21
-#: src/vigilo/themes/templates/vigigraph/index.html:21
 msgid "Data collection"
 msgstr "Données"
 
@@ -474,30 +424,22 @@ msgstr "Données"
 #: src/vigilo/themes/templates/vigicore/index.html:27
 #: src/vigilo/themes/templates/vigicore/index.html:32
 #: src/vigilo/themes/templates/vigicore/index.html:37
-#: src/vigilo/themes/templates/vigigraph/index.html:22
-#: src/vigilo/themes/templates/vigigraph/index.html:27
-#: src/vigilo/themes/templates/vigigraph/index.html:32
-#: src/vigilo/themes/templates/vigigraph/index.html:37
 msgid "@TODO"
 msgstr ""
 
 #: src/vigilo/themes/templates/vigicore/index.html:26
-#: src/vigilo/themes/templates/vigigraph/index.html:26
 msgid "Event correlation"
 msgstr "Corrélation d'événements"
 
 #: src/vigilo/themes/templates/vigicore/index.html:31
-#: src/vigilo/themes/templates/vigigraph/index.html:31
 msgid "Accidents visualization"
 msgstr "Visualisation des alertes"
 
 #: src/vigilo/themes/templates/vigicore/index.html:36
-#: src/vigilo/themes/templates/vigigraph/index.html:36
 msgid "Report generation"
 msgstr "Génération de rapports"
 
 #: src/vigilo/themes/templates/vigicore/index.html:42
-#: src/vigilo/themes/templates/vigigraph/index.html:42
 msgid "Thank you for choosing Vigilo."
 msgstr "Merci d'avoir choisi Vigilo"
 
@@ -508,14 +450,12 @@ msgid "Welcome"
 msgstr "Bienvenue"
 
 #: src/vigilo/themes/templates/vigicore/master.html:26
-#: src/vigilo/themes/templates/vigigraph/master.html:26
 #: src/vigilo/themes/templates/vigimap/master.html:27
 msgid "Admin"
 msgstr "Admin"
 
 #: src/vigilo/themes/templates/vigicore/master.html:27
 #: src/vigilo/themes/templates/vigicore/profile.html:11
-#: src/vigilo/themes/templates/vigigraph/master.html:27
 #: src/vigilo/themes/templates/vigigraph/profile.html:11
 msgid "Profile"
 msgstr "Profil"
@@ -551,6 +491,12 @@ msgid "Vigilo interfaces"
 msgstr "Interfaces de Vigilo"
 
 #: src/vigilo/themes/templates/vigicore/sidebars.html:9
+#, fuzzy
+#| msgid "Vigiboard"
+msgid "VigiBoard"
+msgstr "VigiBoard"
+
+#: src/vigilo/themes/templates/vigicore/sidebars.html:9
 msgid "- See the latest alerts"
 msgstr "- Voir les dernières alertes"
 
@@ -564,514 +510,38 @@ msgstr "Bienvenue"
 
 #: src/vigilo/themes/templates/vigicore/admin/home.html:16
 msgid "Click a table name in the sidebar to view or modify its content."
-msgstr "Cliquer sur le nom d'une table dans la barre latérale pour modifier son contenu"
-
-#: src/vigilo/themes/templates/vigimap/about.html:11
-msgid "Learning TurboGears 2.0: Quick guide to the Quickstart pages."
-msgstr ""
-
-#: src/vigilo/themes/templates/vigimap/about.html:18
-msgid "Architectural basics of a quickstart TG2 site."
-msgstr ""
-
-#: src/vigilo/themes/templates/vigimap/about.html:19
-msgid ""
-"The TG2 quickstart command produces this basic TG site.  Here's how it "
-"works."
-msgstr ""
-
-#: src/vigilo/themes/templates/vigimap/about.html:22
-msgid "Code my data model"
-msgstr ""
-
-#: src/vigilo/themes/templates/vigimap/about.html:23
-msgid ""
-"When you want a model for storing favorite links or wiki content, \n"
-"            the"
-msgstr ""
-
-#: src/vigilo/themes/templates/vigimap/about.html:24
-msgid "/model"
-msgstr ""
-
-#: src/vigilo/themes/templates/vigimap/about.html:24
-msgid "folder in your site is ready to go."
-msgstr ""
-
-#: src/vigilo/themes/templates/vigimap/about.html:25
-msgid ""
-"You can build a dynamic site without any data model at all. There \n"
-"            still be a default data-model template for you if you didn't "
-"enable \n"
-"            authentication and authorization in quickstart. If you "
-"enabled\n"
-"            it, you got auth data-model made for you."
-msgstr ""
-
-#: src/vigilo/themes/templates/vigimap/about.html:31
-msgid "Design my URL structure"
-msgstr ""
-
-#: src/vigilo/themes/templates/vigimap/about.html:32
-msgid "The \""
-msgstr ""
-
-#: src/vigilo/themes/templates/vigimap/about.html:32
-msgid "root.py"
-msgstr ""
-
-#: src/vigilo/themes/templates/vigimap/about.html:32
-msgid "\" file under the"
-msgstr ""
-
-#: src/vigilo/themes/templates/vigimap/about.html:33
-msgid "/controllers"
-msgstr ""
-
-#: src/vigilo/themes/templates/vigimap/about.html:33
-msgid ""
-"folder has your URLs.  When you \n"
-"            called this url ("
-msgstr ""
-
-#: src/vigilo/themes/templates/vigimap/about.html:34
-#: src/vigilo/themes/templates/vigimap/about.html:36
-msgid "about"
-msgstr ""
-
-#: src/vigilo/themes/templates/vigimap/about.html:34
-msgid ""
-"), \n"
-"            the command went through the RootController class to the"
-msgstr ""
-
-#: src/vigilo/themes/templates/vigimap/about.html:36
-msgid "method."
-msgstr ""
-
-#: src/vigilo/themes/templates/vigimap/about.html:37
-msgid ""
-"Those Python methods are responsible to create the dictionary of\n"
-"             variables that will be used in your web views (template)."
-msgstr ""
-
-#: src/vigilo/themes/templates/vigimap/about.html:41
-msgid "Reuse the web page elements"
-msgstr ""
-
-#: src/vigilo/themes/templates/vigimap/about.html:42
-msgid ""
-"A web page viewed by user could be constructed by single or \n"
-"            several reusable templates under"
-msgstr ""
-
-#: src/vigilo/themes/templates/vigimap/about.html:43
-msgid "/templates"
-msgstr ""
-
-#: src/vigilo/themes/templates/vigimap/about.html:43
-msgid ""
-". \n"
-"            Take 'about' page for example, each reusable templates "
-"generating \n"
-"            a part of the page. We'll cover them in the order of where "
-"they are \n"
-"            found, listed near the top of the about.html template"
-msgstr ""
-
-#: src/vigilo/themes/templates/vigimap/about.html:47
-msgid "header.html"
-msgstr ""
-
-#: src/vigilo/themes/templates/vigimap/about.html:47
-msgid ""
-"- The \n"
-"            \"header.html\" template contains the HTML code to display "
-"the \n"
-"            'header': The blue gradient, TG2 logo, and some site text at "
-"the \n"
-"            top of every page it is included on. When the \"about.html\" "
-"template \n"
-"            is called, it includes this \"header.html\" template (and the"
-" others) \n"
-"            with a"
-msgstr ""
-
-#: src/vigilo/themes/templates/vigimap/about.html:52
-msgid "<xi:include />"
-msgstr ""
-
-#: src/vigilo/themes/templates/vigimap/about.html:52
-msgid ""
-"tag, part of \n"
-"            the Genshi templating system. The \"header.html\" template is"
-" not a \n"
-"            completely static HTML -- it also dynamically displays the "
-"current \n"
-"            page name with a Genshi template method called \"replace\" "
-"with the \n"
-"            code:"
-msgstr ""
-
-#: src/vigilo/themes/templates/vigimap/about.html:56
-msgid "<span py:replace=\"page\"/>"
-msgstr ""
-
-#: src/vigilo/themes/templates/vigimap/about.html:56
-msgid ""
-". \n"
-"            It means replace this"
-msgstr ""
-
-#: src/vigilo/themes/templates/vigimap/about.html:57
-msgid "<span />"
-msgstr ""
-
-#: src/vigilo/themes/templates/vigimap/about.html:57
-msgid ""
-"region with the contents found in the variable 'page' that has \n"
-"            been sent in the dictionary to this \"about.html\" template, "
-"and is \n"
-"            available through that namespace for use by this "
-"\"header.html\" \n"
-"            template.  That's how it changes in the header depending on "
-"what \n"
-"            page you are visiting."
-msgstr ""
-
-#: src/vigilo/themes/templates/vigimap/about.html:64
-msgid "sidebars.html"
-msgstr ""
-
-#: src/vigilo/themes/templates/vigimap/about.html:64
-msgid ""
-"- The\n"
-"             sidebars (navigation areas on the right side of the page) "
-"are \n"
-"             generated as two separate"
-msgstr ""
-
-#: src/vigilo/themes/templates/vigimap/about.html:66
-#: src/vigilo/themes/templates/vigimap/about.html:67
-msgid "py:def"
-msgstr ""
-
-#: src/vigilo/themes/templates/vigimap/about.html:66
-msgid ""
-"blocks \n"
-"             in the \"sidebars.html\" template.  The"
-msgstr ""
-
-#: src/vigilo/themes/templates/vigimap/about.html:67
-msgid ""
-"construct is best thought of as a \"macro\" code... a simple way to \n"
-"             separate and reuse common code snippets.  All it takes to "
-"include \n"
-"             these on the \"about.html\" page template is to write"
-msgstr ""
-
-#: src/vigilo/themes/templates/vigimap/about.html:73
-msgid "${sidebar_top()}"
-msgstr ""
-
-#: src/vigilo/themes/templates/vigimap/about.html:75
-msgid "${sidebar_bottom()}"
-msgstr ""
-
-#: src/vigilo/themes/templates/vigimap/about.html:77
-msgid ""
-"in the page where they are wanted.  CSS styling (in \n"
-"        \"/public/css/style.css\") floats them off to the right side.  "
-"You can \n"
-"        remove a sidebar or add more of them, and the CSS will place them"
-" one \n"
-"        atop the other."
-msgstr ""
-
-#: src/vigilo/themes/templates/vigimap/about.html:81
-msgid ""
-"This is, of course, also exactly how the header and footer \n"
-"            templates are also displayed in their proper places, but "
-"we'll \n"
-"            cover that in the \"master.html\" template below."
-msgstr ""
-
-#: src/vigilo/themes/templates/vigimap/about.html:84
-msgid ""
-"Oh, and in sidebar_top we've added a dynamic menu that shows the \n"
-"            link to this page at the top when you're at the \"index\" "
-"page, and \n"
-"            shows a link to the Home (index) page when you're here.  "
-"Study the \n"
-"            \"sidebars.html\" template to see how we used"
 msgstr ""
+"Cliquer sur le nom d'une table dans la barre latérale pour modifier son "
+"contenu"
 
-#: src/vigilo/themes/templates/vigimap/about.html:88
-msgid "py:choose"
-msgstr ""
-
-#: src/vigilo/themes/templates/vigimap/about.html:88
-msgid "for that."
-msgstr ""
-
-#: src/vigilo/themes/templates/vigimap/about.html:89
-msgid "footer.html"
-msgstr ""
-
-#: src/vigilo/themes/templates/vigimap/about.html:89
-msgid ""
-"- The \n"
-"            \"footer.html\" block is simple, but also utilizes a special"
-" \n"
-"            \"replace\" method to set the current YEAR in the footer "
-"copyright \n"
-"            message. The code is:"
-msgstr ""
-
-#: src/vigilo/themes/templates/vigimap/about.html:93
-msgid "<span py:replace=\"now.strftime('%Y')\">"
-msgstr ""
-
-#: src/vigilo/themes/templates/vigimap/about.html:94
-msgid ""
-"and it uses the variable \"now\" that was passed \n"
-"            in with the dictionary of variables.  But because \"now\" is "
-"a \n"
-"            datetime object, we can use the Python"
-msgstr ""
-
-#: src/vigilo/themes/templates/vigimap/about.html:97
-msgid "\"strftime()\""
-msgstr ""
-
-#: src/vigilo/themes/templates/vigimap/about.html:97
-msgid ""
-"method with the \"replace\" \n"
-"            call to say \"Just Display The Year Here\".  Simple, elegant;"
-" we \n"
-"            format the date display in the template (the View in the \n"
-"            Model/View/Controller architecture) rather than formatting it"
-" in \n"
-"            the Controller method and sending it to the template as a "
-"string \n"
-"            variable."
-msgstr ""
-
-#: src/vigilo/themes/templates/vigimap/about.html:103
-msgid "master.html"
-msgstr ""
-
-#: src/vigilo/themes/templates/vigimap/about.html:103
-msgid ""
-"- The \n"
-"            \"master.html\" template is called last, by design.  The "
-"\"master.html\" \n"
-"            template controls the overall design of the page we're "
-"looking at, \n"
-"            calling first the \"header\" py:def macro, then the putting "
-"everything \n"
-"            from this \"about.html\" template into the \"content\" div, "
-"and \n"
-"            then calling the \"footer\" macro at the end.  Thus the "
-"\"master.html\" \n"
-"            template provides the overall architecture for each page in "
-"this \n"
-"            site."
-msgstr ""
-
-#: src/vigilo/themes/templates/vigimap/about.html:111
-msgid ""
-"But why then shouldn't we call it first?  Isn't it the most \n"
-"            important?  Perhaps, but that's precisely why we call it "
-"LAST. \n"
-"            The \"master.html\" template needs to know where to find "
-"everything \n"
-"            else, everything that it will use in py:def macros to build "
-"the\n"
-"             page.  So that means we call the other templates first, and "
-"then \n"
-"             call \"master.html\"."
-msgstr ""
-
-#: src/vigilo/themes/templates/vigimap/about.html:117
-msgid ""
-"There's more to the \"master.html\" template... study it to see how \n"
-"           the <title> tags and static JS and CSS files are brought into"
-" \n"
-"           the page.  Templating with Genshi is a powerful tool and we've"
-" only \n"
-"           scratched the surface.  There are also a few little CSS tricks"
-" \n"
-"           hidden in these pages, like the use of a \"clearingdiv\" to "
-"make \n"
-"           sure that your footer stays below the sidebars and always "
-"looks \n"
-"           right.  That's not TG2 at work, just CSS.  You'll need all "
-"your \n"
-"           skills to build a fine web app, but TG2 will make the hard "
-"parts \n"
-"           easier so that you can concentrate more on good design and "
-"content \n"
-"           rather than struggling with mechanics."
-msgstr ""
-
-#: src/vigilo/themes/templates/vigimap/about.html:129
-msgid "Good luck with TurboGears 2!"
-msgstr ""
-
-#: src/vigilo/themes/templates/vigimap/authentication.html:11
-msgid "Learning TurboGears 2.0: Quick guide to authentication."
-msgstr ""
-
-#: src/vigilo/themes/templates/vigimap/authentication.html:18
-msgid "Authentication & Authorization in a TG2 site."
-msgstr ""
-
-#: src/vigilo/themes/templates/vigimap/authentication.html:19
-msgid ""
-"If you have access to this page, this means you have enabled "
-"authentication and authorization\n"
-"    in the quickstart to create your project."
-msgstr ""
-
-#: src/vigilo/themes/templates/vigimap/authentication.html:21
-msgid ""
-"The paster command will have created a few specific controllers for you. "
-"But before you\n"
-"    go to play with those controllers you'll need to make sure your "
-"application has been\n"
-"    properly bootstapped.\n"
-"    This is dead easy, here is how to do this:"
-msgstr ""
-
-#: src/vigilo/themes/templates/vigimap/authentication.html:28
-msgid "paster setup-app development.ini"
-msgstr ""
-
-#: src/vigilo/themes/templates/vigimap/authentication.html:32
-msgid ""
-"inside your application's folder and you'll get a database setup (using "
-"the preferences you have\n"
-"    set in your development.ini file). This database will also have been "
-"prepopulated with some\n"
-"    default logins/passwords so that you can test the secured controllers"
-" and methods."
-msgstr ""
-
-#: src/vigilo/themes/templates/vigimap/authentication.html:37
-msgid ""
-"To change the comportement of this setup-app command you just need to "
-"edit the"
-msgstr ""
+#: src/vigilo/themes/templates/vigigraph/index.html:10
+msgid "Loading VigiGraph..."
+msgstr "Chargement de VigiGraph..."
 
-#: src/vigilo/themes/templates/vigimap/authentication.html:38
-msgid "websetup.py"
-msgstr ""
-
-#: src/vigilo/themes/templates/vigimap/authentication.html:38
-msgid "file."
-msgstr ""
-
-#: src/vigilo/themes/templates/vigimap/authentication.html:40
-msgid "Now try to visiting the"
-msgstr ""
-
-#: src/vigilo/themes/templates/vigimap/authentication.html:41
-msgid "manage_permission_only"
-msgstr ""
-
-#: src/vigilo/themes/templates/vigimap/authentication.html:41
-msgid "URL. You will be challenged with a login/password form."
-msgstr ""
-
-#: src/vigilo/themes/templates/vigimap/authentication.html:43
-msgid ""
-"Only managers are authorized to visit this method. You will need to log-"
-"in using:"
-msgstr ""
-
-#: src/vigilo/themes/templates/vigimap/authentication.html:46
-msgid "login: manager"
-msgstr ""
-
-#: src/vigilo/themes/templates/vigimap/authentication.html:51
-msgid "password: managepass"
-msgstr ""
-
-#: src/vigilo/themes/templates/vigimap/authentication.html:56
-msgid "Another protected resource is"
-msgstr ""
-
-#: src/vigilo/themes/templates/vigimap/authentication.html:57
-msgid "editor_user_only"
-msgstr ""
-
-#: src/vigilo/themes/templates/vigimap/authentication.html:57
-msgid ""
-". This one is protected by a different set of permissions.\n"
-"    You will need to be"
-msgstr ""
-
-#: src/vigilo/themes/templates/vigimap/authentication.html:58
-msgid "editor"
-msgstr ""
-
-#: src/vigilo/themes/templates/vigimap/authentication.html:58
-msgid "with a password of"
-msgstr ""
-
-#: src/vigilo/themes/templates/vigimap/authentication.html:58
-msgid "editpass"
-msgstr ""
-
-#: src/vigilo/themes/templates/vigimap/authentication.html:58
-msgid "to be able to access it."
-msgstr ""
-
-#: src/vigilo/themes/templates/vigimap/authentication.html:60
-msgid ""
-"The last kind of protected resource in this quickstarted app is a full so"
-" called"
-msgstr ""
-
-#: src/vigilo/themes/templates/vigimap/authentication.html:61
-msgid "secure controller"
-msgstr ""
-
-#: src/vigilo/themes/templates/vigimap/authentication.html:61
-msgid ""
-". This controller is protected globally.\n"
-"    Instead of having a @require decorator on each method, we have set an"
-" allow_only attribute at the class level. All the methods in this "
-"controller will\n"
-"    require the same level of access. You need to be manager to access"
-msgstr ""
+#: src/vigilo/themes/templates/vigigraph/index.html:21
+msgid "Vigilo"
+msgstr "Vigilo"
 
-#: src/vigilo/themes/templates/vigimap/authentication.html:63
-msgid "secc"
-msgstr ""
-
-#: src/vigilo/themes/templates/vigimap/authentication.html:63
-msgid "or"
-msgstr ""
-
-#: src/vigilo/themes/templates/vigimap/authentication.html:63
-msgid "secc/some_where"
-msgstr ""
+#: src/vigilo/themes/templates/vigigraph/index.html:22
+msgid "v2.0"
+msgstr "v2.0"
 
-#: src/vigilo/themes/templates/vigimap/index.html:27
+#: src/vigilo/themes/templates/vigimap/index.html:8
+#: src/vigilo/themes/templates/vigimap/index.html:29
 msgid "VigiMap"
 msgstr "VigiMap"
 
-#: src/vigilo/themes/templates/vigimap/index.html:34
+#: src/vigilo/themes/templates/vigimap/index.html:36
 msgid "Maps"
 msgstr "Cartes"
 
-#: src/vigilo/themes/templates/vigimap/index.html:40
+#: src/vigilo/themes/templates/vigimap/index.html:42
 msgid "Your browser does not support the canvas element. Please upgrade."
-msgstr "Votre navigateur ne gère pas l'élément canvas. Veuillez le mettre à jour, ou en utiliser un autre."
+msgstr ""
+"Votre navigateur ne gère pas l'élément canvas. Veuillez le mettre à jour,"
+" ou en utiliser un autre."
 
-#: src/vigilo/themes/templates/vigimap/index.html:56
+#: src/vigilo/themes/templates/vigimap/index.html:58
 msgid "loading..."
 msgstr "chargement..."
 
@@ -1134,7 +604,11 @@ msgstr "Contact"
 msgid "Now Viewing:"
 msgstr ""
 
-#: src/vigilo/themes/templates/vigimap/node.html:18
+#: src/vigilo/themes/templates/vigimap/node.html:20
+msgid "Service name: %(service)s on %(host)s"
+msgstr "Nom du service : %(service)s sur %(host)s"
+
+#: src/vigilo/themes/templates/vigimap/node.html:23
 #, python-format
 msgid "Appliance name: %(host)s"
 msgstr "Équipement : %(host)s"

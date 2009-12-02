@@ -41,6 +41,7 @@
         </td>
 
         <td style="margin-left: 30px; float: right">
+            Refresh every
             <select id="refresh_time" class="refresh_select" onchange="change_refresh($('#refresh_time').val());">
             <py:with vars="refresh_time = tg.session.get('refresh', 0)">
                 <py:for each="(delay, label) in refresh_times">
@@ -63,7 +64,7 @@
 <div py:if="flash" py:content="XML(flash)" />
 </py:with>
 <div class="main_content">
-    ${event_table(events,page,pages,rows_info,event_edit_status_options,history,hist_error,search)}
+    ${event_table(events,page,nb_pages,rows_info,event_edit_status_options,history,hist_error,search)}
 </div>
 <script type="text/javascript">
     $(document).ready(function (){
