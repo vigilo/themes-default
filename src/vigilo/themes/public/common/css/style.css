@@ -20,68 +20,67 @@ h2 {
 #key_features {
     list-style-type: decimal;
 }
-/* */
 
 /* Misc. styles defined by TurboGears. */
 html {
-	background: #555555 url('../images/pagebg.png') top left repeat-x;
-	text-align: center;
-	margin: 0;
-	padding: 0;
+    background: #555555 url('../images/pagebg.png') top left repeat-x;
+    text-align: center;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-	text-align: left;
-	width: 960px;
-	margin: 0 auto;
-	padding: 0;
-	font-size: 12px;
-	font-family:"Lucida Grande","Lucida Sans Unicode",geneva,verdana,sans-serif;
+    text-align: left;
+    width: 960px;
+    margin: 0 auto;
+    padding: 0;
+    font-size: 12px;
+    font-family:"Lucida Grande","Lucida Sans Unicode",geneva,verdana,sans-serif;
 }
 
 a {
-	color: #286571;
+    color: #286571;
 }
 
 ul#mainmenu {
-	margin: 0;
-	padding: 0 10px;
-	background: url('../images/menubg.png') top left no-repeat;
-	height: 38px;
+    margin: 0;
+    padding: 0 10px;
+    background: url('../images/menubg.png') top left no-repeat;
+    height: 38px;
 }
 
 ul#mainmenu li {
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
-	position: relative;
-	display: inline;
-	float: left;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    display: inline;
+    float: left;
 }
 
 ul#mainmenu li a {
-	color: #fff;
-	float: left;
-	height: 31px;
-	display: block;
-	line-height: 30px;
-	vertical-align: middle;
-	padding: 0 10px;
-	font-size: 12px;
-	text-decoration: none;
-	background: url('../images/menu-item-border.png') left top no-repeat;
+    color: #fff;
+    float: left;
+    height: 31px;
+    display: block;
+    line-height: 30px;
+    vertical-align: middle;
+    padding: 0 10px;
+    font-size: 12px;
+    text-decoration: none;
+    background: url('../images/menu-item-border.png') left top no-repeat;
 }
 
 ul#mainmenu li a:hover, ul#mainmenu li a.active {
-	background: url('../images/menu-item-actibg.png') left top no-repeat;
+    background: url('../images/menu-item-actibg.png') left top no-repeat;
 }
 
 ul#mainmenu li.first a {
-	background: none;
+    background: none;
 }
 
 ul#mainmenu li.first a:hover, ul#mainmenu li.first a.active {
-	background: url('../images/menu-item-actibg-first.png') left top no-repeat;
+    background: url('../images/menu-item-actibg-first.png') left top no-repeat;
 }
 
 ul#mainmenu li.loginlogout
@@ -96,14 +95,14 @@ ul#mainmenu li.loginlogout a:hover
 }
 
 #content {
-	background: #fff url('../images/contentbg.png') left bottom no-repeat;
-	margin : 0 10px 10px 10px;
-	padding: 0 10px;
-	overflow: hidden;
+    background: #fff url('../images/contentbg.png') left bottom no-repeat;
+    margin : 0 10px 10px 10px;
+    padding: 0 10px;
+    overflow: hidden;
 }
 
 #content .currentpage {
-	margin-top: 0;
+    margin-top: 0;
 }
 
 /* Login form*/
@@ -116,7 +115,7 @@ ul#mainmenu li.loginlogout a:hover
 form.loginfields
 {
     text-align: left;
-    width: 270px;
+    width: 370px;
     background: url('../images/loginbg.png') top left no-repeat;
     padding: 0;
     margin: 0 auto;
@@ -136,7 +135,7 @@ form.loginfields h2
 * html form.loginfields h2
 {
     margin-left: 3px;
-    width: 80px;
+    width: 280px;
     text-align: center;
 }
 
@@ -148,7 +147,7 @@ form.loginfields h2 span
     display: block;
     font-size: 100%;
     font-weight: normal;
-    color: #fff;
+    color: #FFF;
     padding: 0 10px;
 }
 
@@ -163,7 +162,7 @@ form.loginfields label
     float: left;
     margin-top: 5px;
     margin-left: 10px;
-    width: 65px;
+    width: 165px;
     line-height: 31px;
     vertical-align: middle;
 }
@@ -177,6 +176,7 @@ form.loginfields input.text
     height: 21px;
     padding: 5px;
     border: 0;
+/*    background-color: #333333;*/
     background: url('../images/inputbg.png') top left no-repeat;
     color: #fff;
 }
@@ -184,12 +184,12 @@ form.loginfields input.text
 form.loginfields input#submit
 {
     background: url('../images/loginbottombg.png') bottom left no-repeat;
-    width: 270px;
+    width: 370px;
     height: 61px;
     border: 0;
     margin-top: 10px;
     color: #fff;
-    padding: 10px 140px 20px 10px;
+    padding: 10px 240px 18px 10px;
 }
 
 * html form.loginfields input#submit
@@ -201,24 +201,24 @@ form.loginfields input#submit
 
 /* Sidebar */
 .sidebar {
-  border: 1px solid #cce;
-  background-color: #eee;
-  margin: 0.5em;
-  margin-left: 1.5em;
-  padding: 1em;
-  float: right;
-  width: 200px;
-  font-size: 88%;
+    border: 1px solid #cce;
+    background-color: #eee;
+    margin: 0.5em;
+    margin-left: 1.5em;
+    padding: 1em;
+    float: right;
+    width: 200px;
+    font-size: 88%;
 }
 
 .sidebar h2 {
-  margin-top: 0;
-  color: black;
+    margin-top: 0;
+    color: black;
 }
 
 .sidebar ul {
-  margin-left: 1.5em;
-  padding-left: 0;
+    margin-left: 1.5em;
+    padding-left: 0;
 }
 
 
@@ -229,74 +229,83 @@ form.loginfields input#submit
 
 /* Other and footer */
 #footer {
-	background: #fff;
-	padding: 10px;
-	color:#888888;
-	font-size:90%;
+    background: #fff;
+    padding: 10px;
+    color:#888888;
+    font-size:90%;
 }
+
 .foottext p {
-	margin: 0; padding: 0;
+    margin: 0; padding: 0;
 }
+
 .code {
-font-family:monospace;
-font-size:127%;
+    font-family:monospace;
+    font-size:127%;
 }
+
 span.code {
-background:#EEEEEE none repeat scroll 0% 0%;
-font-weight:bold;
+    background:#EEEEEE none repeat scroll 0% 0%;
+    font-weight:bold;
 }
+
 #flash, .notice {
-font-size:120%;
-font-weight:bolder;
-margin:0pt auto 0.5em;
-width:680px;
+    font-size:120%;
+    font-weight:bolder;
+    margin:0pt auto 0.5em;
+    width:680px;
 }
+
 #flash div, .notice {
-padding:20px 15px 20px 65px;
+    padding:20px 15px 20px 65px;
 }
+
 #flash .ok {
-background:#d8ecd8 url(../images/ok.png) no-repeat scroll 10px center;
+    background:#d8ecd8 url(../images/ok.png) no-repeat scroll 10px center;
 }
+
 #flash .warning {
-background:#fff483 url(../images/warning.png) no-repeat scroll 10px center;
+    background:#fff483 url(../images/warning.png) no-repeat scroll 10px center;
 }
+
 #flash .error {
-background:#f9c5c1 url(../images/error.png) no-repeat scroll 10px center;
+    background:#f9c5c1 url(../images/error.png) no-repeat scroll 10px center;
 }
+
 #flash .alert,
-#flash .info {
-background:#EEEEFF url(../images/info.png) no-repeat scroll 10px center;
-}
+#flash .info,
 .notice {
-background:#EEEEFF url(../images/info.png) no-repeat scroll 10px center;
+    background:#EEEEFF url(../images/info.png) no-repeat scroll 10px center;
 }
+
 .fielderror {
-color:red;
-font-weight:bold;
+    color:red;
+    font-weight:bold;
 }
+
 div.clearingdiv {
-clear:both;
+    clear:both;
 }
 
 /* Modifications from the default stylesheet provided by TG2. */
 #header {
-	height: 132px;
-	margin: 10px;
-	margin-bottom: 0;
-	background: url('../images/headerbg.png') top left no-repeat;
-	padding-left: 100px;
+    height: 132px;
+    margin: 10px;
+    margin-bottom: 0;
+    background: url('../images/headerbg.png') top left no-repeat;
+    padding-left: 100px;
     text-align: center;
 }
 
 #header h1, .subtitle {
-	padding-top: 20px;
-	color: #fff;
-	font-size: 3em;
+    padding-top: 20px;
+    color: #fff;
+    font-size: 3em;
 }
 
 .subtitle {
-	font-size: 2em;
-	clear: both;
+    font-size: 2em;
+    clear: both;
 }
 
 .key_feature {

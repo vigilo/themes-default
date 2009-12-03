@@ -5,12 +5,12 @@
       xmlns:xi="http://www.w3.org/2001/XInclude"
       py:strip="">
     <xi:include href="header.html" />
-    <xi:include href="sidebars.html" />
     <xi:include href="footer.html" />
 <head py:match="head" py:attrs="select('@*')">
     <meta content="text/html; charset=UTF-8" http-equiv="content-type" py:replace="''"/>
     <title py:replace="''">Your title goes here</title>
     <meta py:replace="select('*')"/>
+    <link rel="stylesheet" type="text/css" media="screen" href="${tg.url('/css/reset.css')}" />
     <link rel="stylesheet" type="text/css" media="screen" href="${tg.url('/css/style.css')}" />
 </head>
 
@@ -19,8 +19,8 @@
   <ul id="mainmenu">
     <li class="first"><a href="${tg.url('/')}" class="${('', 'active')[defined('page') and page==page=='index']}">Vigiboard</a></li>
     <span py:if="tg.auth_stack_enabled" py:strip="True">
-        <li py:if="not request.identity" id="login" class="loginlogout"><a href="${tg.url('/login')}">Login</a></li>
-        <li py:if="request.identity" id="login" class="loginlogout"><a href="${tg.url('/logout_handler')}">Logout</a></li>
+        <li py:if="not request.identity" class="loginlogout"><a href="${tg.url('/login')}">Login</a></li>
+        <li py:if="request.identity" class="loginlogout"><a href="${tg.url('/logout_handler')}">Logout</a></li>
     </span>
   </ul>
   <div id="content">

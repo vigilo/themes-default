@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: vigilo-themes-default 0.1\n"
 "Report-Msgid-Bugs-To: contact@projet-vigilo.org\n"
 "POT-Creation-Date: 2009-11-10 09:51+0100\n"
-"PO-Revision-Date: 2009-12-02 12:09+0100\n"
+"PO-Revision-Date: 2009-12-03 14:20+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: fr <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n > 1)\n"
@@ -22,21 +22,23 @@ msgstr ""
 #: src/vigilo/themes/templates/common/error.html:11
 #, python-format
 msgid "A %(error_code)d Error has Occurred"
-msgstr ""
+msgstr "Une erreur %(error_code)d est survenue"
 
 #: src/vigilo/themes/templates/common/error.html:15
 #, python-format
 msgid "Error %(error_code)d"
-msgstr ""
+msgstr "Erreur %(error_code)d"
 
 #: src/vigilo/themes/templates/common/footer.html:8
 msgid ""
 "Vigilo is an open-source monitoring solution designed for large-scale\n"
 "        system and network management. Copyright © ????-2009"
 msgstr ""
+"Vigilo est une solution open-source de supervision destinée à la gestion\n"
+"       des parcs informatiques de grande taille. Copyright © ????-2009"
 
 #: src/vigilo/themes/templates/common/header.html:6
-#: src/vigilo/themes/templates/vigicore/index.html:11
+#: src/vigilo/themes/templates/vigicore/index.html:12
 msgid "Welcome to Vigilo"
 msgstr "Bienvenue dans Vigilo"
 
@@ -46,13 +48,13 @@ msgstr "La solution de supervision"
 
 #: src/vigilo/themes/templates/common/login.html:11
 msgid "Login Form"
-msgstr "Formulaire de connexion"
+msgstr "Formulaire d'identification"
 
 #: src/vigilo/themes/templates/common/login.html:17
 #: src/vigilo/themes/templates/vigiboard/master.html:22
-#: src/vigilo/themes/templates/vigicore/master.html:24
-#: src/vigilo/themes/templates/vigigraph/master.html:24
-#: src/vigilo/themes/templates/vigimap/master.html:25
+#: src/vigilo/themes/templates/vigicore/master.html:22
+#: src/vigilo/themes/templates/vigigraph/master.html:22
+#: src/vigilo/themes/templates/vigimap/master.html:22
 msgid "Login"
 msgstr "Connexion"
 
@@ -64,204 +66,29 @@ msgstr "Identifiant :"
 msgid "Password:"
 msgstr "Mot de passe :"
 
-#: src/vigilo/themes/templates/vigiboard/index.html:11
-msgid ""
-"Welcome to TurboGears 2.0, standing on the \n"
-"  shoulders of giants, since 2007"
-msgstr ""
-
-#: src/vigilo/themes/templates/vigiboard/index.html:18
-#: src/vigilo/themes/templates/vigicore/index.html:17
-msgid "Presentation"
-msgstr "Présentation"
-
-#: src/vigilo/themes/templates/vigiboard/index.html:19
-msgid ""
-"TurboGears 2 is rapid web application development toolkit designed to "
-"make your life easier."
-msgstr ""
-
-#: src/vigilo/themes/templates/vigiboard/index.html:22
-msgid "Code your data model"
-msgstr ""
-
-#: src/vigilo/themes/templates/vigiboard/index.html:23
-msgid "Design your data model, Create the database, and Add some bootstrap data."
-msgstr ""
-
-#: src/vigilo/themes/templates/vigiboard/index.html:26
-msgid "Design your URL architecture"
-msgstr ""
-
-#: src/vigilo/themes/templates/vigiboard/index.html:27
-msgid ""
-"Decide your URLs, Program your controller methods, Design your \n"
-"            templates, and place some static files (CSS and/or "
-"JavaScript)."
-msgstr ""
-
-#: src/vigilo/themes/templates/vigiboard/index.html:31
-msgid "Distribute your app"
-msgstr ""
-
-#: src/vigilo/themes/templates/vigiboard/index.html:32
-msgid "Test your source, Generate project documents, Build a distribution."
-msgstr ""
-
-#: src/vigilo/themes/templates/vigiboard/index.html:37
-msgid "Thank you for choosing TurboGears."
-msgstr ""
-
 #: src/vigilo/themes/templates/vigiboard/master.html:20
 #: src/vigilo/themes/templates/vigiboard/vigiboard.html:11
 msgid "Vigiboard"
 msgstr "VigiBoard"
 
 #: src/vigilo/themes/templates/vigiboard/master.html:23
-#: src/vigilo/themes/templates/vigicore/master.html:25
-#: src/vigilo/themes/templates/vigigraph/master.html:25
-#: src/vigilo/themes/templates/vigimap/master.html:26
+#: src/vigilo/themes/templates/vigicore/master.html:23
+#: src/vigilo/themes/templates/vigigraph/master.html:23
+#: src/vigilo/themes/templates/vigimap/master.html:23
 msgid "Logout"
 msgstr "Déconnexion"
 
-#: src/vigilo/themes/templates/vigiboard/sidebars.html:7
-#: src/vigilo/themes/templates/vigimap/sidebars.html:7
-msgid "Get Started with TG2"
-msgstr ""
+#: src/vigilo/themes/templates/vigiboard/vigiboard.html:17
+msgid "Toolbar"
+msgstr "Barre d'outils"
 
-#: src/vigilo/themes/templates/vigiboard/sidebars.html:11
-#: src/vigilo/themes/templates/vigimap/sidebars.html:11
-msgid "About this page"
-msgstr ""
-
-#: src/vigilo/themes/templates/vigiboard/sidebars.html:11
-#: src/vigilo/themes/templates/vigimap/sidebars.html:11
-msgid "A quick guide to this TG2 site"
-msgstr ""
-
-#: src/vigilo/themes/templates/vigiboard/sidebars.html:14
 #: src/vigilo/themes/templates/vigiboard/vigiboard.html:27
-#: src/vigilo/themes/templates/vigimap/sidebars.html:14
 msgid "Home"
 msgstr "Accueil"
 
-#: src/vigilo/themes/templates/vigiboard/sidebars.html:14
-#: src/vigilo/themes/templates/vigimap/sidebars.html:14
-msgid "Back to your Quickstart Home page"
-msgstr ""
-
-#: src/vigilo/themes/templates/vigiboard/sidebars.html:16
-#: src/vigilo/themes/templates/vigimap/sidebars.html:16
-msgid "TG2 Documents"
-msgstr ""
-
-#: src/vigilo/themes/templates/vigiboard/sidebars.html:16
-#: src/vigilo/themes/templates/vigimap/sidebars.html:16
-msgid "- Read everything in the Getting Started section"
-msgstr ""
-
-#: src/vigilo/themes/templates/vigiboard/sidebars.html:17
-#: src/vigilo/themes/templates/vigimap/sidebars.html:17
-msgid "TG1 docs"
-msgstr ""
-
-#: src/vigilo/themes/templates/vigiboard/sidebars.html:17
-#: src/vigilo/themes/templates/vigimap/sidebars.html:17
-msgid "(still useful, although a lot has changed for TG2)"
-msgstr ""
-
-#: src/vigilo/themes/templates/vigiboard/sidebars.html:18
-#: src/vigilo/themes/templates/vigimap/sidebars.html:18
-msgid "Join the TG Mail List"
-msgstr ""
-
-#: src/vigilo/themes/templates/vigiboard/sidebars.html:18
-#: src/vigilo/themes/templates/vigimap/sidebars.html:18
-msgid "for general TG use/topics"
-msgstr ""
-
-#: src/vigilo/themes/templates/vigiboard/sidebars.html:25
-#: src/vigilo/themes/templates/vigimap/sidebars.html:25
-msgid "Developing TG2"
-msgstr ""
-
-#: src/vigilo/themes/templates/vigiboard/sidebars.html:27
-#: src/vigilo/themes/templates/vigimap/sidebars.html:27
-msgid "More TG2 Documents"
-msgstr ""
-
-#: src/vigilo/themes/templates/vigiboard/sidebars.html:27
-#: src/vigilo/themes/templates/vigimap/sidebars.html:27
-msgid "in progress"
-msgstr ""
-
-#: src/vigilo/themes/templates/vigiboard/sidebars.html:28
-#: src/vigilo/themes/templates/vigimap/sidebars.html:28
-msgid "TG2 Trac tickets"
-msgstr ""
-
-#: src/vigilo/themes/templates/vigiboard/sidebars.html:28
-#: src/vigilo/themes/templates/vigimap/sidebars.html:28
-msgid "What's happening now in TG2 development"
-msgstr ""
-
-#: src/vigilo/themes/templates/vigiboard/sidebars.html:29
-#: src/vigilo/themes/templates/vigimap/sidebars.html:29
-msgid "TG Dev timeline"
-msgstr ""
-
-#: src/vigilo/themes/templates/vigiboard/sidebars.html:29
-#: src/vigilo/themes/templates/vigimap/sidebars.html:29
-msgid "(recent ticket updates, svn checkins, wiki changes)"
-msgstr ""
-
-#: src/vigilo/themes/templates/vigiboard/sidebars.html:30
-#: src/vigilo/themes/templates/vigimap/sidebars.html:30
-msgid "TG2 SVN repository"
-msgstr ""
-
-#: src/vigilo/themes/templates/vigiboard/sidebars.html:30
-#: src/vigilo/themes/templates/vigimap/sidebars.html:30
-msgid "For checking out a copy"
-msgstr ""
-
-#: src/vigilo/themes/templates/vigiboard/sidebars.html:31
-#: src/vigilo/themes/templates/vigimap/sidebars.html:31
-msgid "Follow these instructions"
-msgstr ""
-
-#: src/vigilo/themes/templates/vigiboard/sidebars.html:31
-#: src/vigilo/themes/templates/vigimap/sidebars.html:31
-msgid "For installing your copy"
-msgstr ""
-
-#: src/vigilo/themes/templates/vigiboard/sidebars.html:32
-#: src/vigilo/themes/templates/vigimap/sidebars.html:32
-msgid "TG2 Trac's svn view"
-msgstr ""
-
-#: src/vigilo/themes/templates/vigiboard/sidebars.html:32
-#: src/vigilo/themes/templates/vigimap/sidebars.html:32
-msgid "In case you need a quick look"
-msgstr ""
-
-#: src/vigilo/themes/templates/vigiboard/sidebars.html:33
-#: src/vigilo/themes/templates/vigimap/sidebars.html:33
-msgid "Join the TG-Trunk Mail List"
-msgstr ""
-
-#: src/vigilo/themes/templates/vigiboard/sidebars.html:33
-#: src/vigilo/themes/templates/vigimap/sidebars.html:33
-msgid "for TG2 discuss/dev"
-msgstr ""
-
-#: src/vigilo/themes/templates/vigiboard/vigiboard.html:17
-msgid "Toolbar"
-msgstr ""
-
 #: src/vigilo/themes/templates/vigiboard/vigiboard.html:30
 msgid "Filter display"
-msgstr ""
+msgstr "Filtrer l'affichage"
 
 #: src/vigilo/themes/templates/vigiboard/vigiboard.html:33
 msgid "Log out"
@@ -281,7 +108,7 @@ msgstr "Grande taille"
 
 #: src/vigilo/themes/templates/vigiboard/vigiboard.html:43
 msgid "Refresh every"
-msgstr ""
+msgstr "Actualiser toutes les"
 
 #: src/vigilo/themes/templates/vigiboard/vigiboard.html:57
 msgid "You are in Search mode, click here to return to the initial mode."
@@ -409,6 +236,10 @@ msgid "Text"
 msgstr "Texte"
 
 #: src/vigilo/themes/templates/vigicore/index.html:18
+msgid "Presentation"
+msgstr "Présentation"
+
+#: src/vigilo/themes/templates/vigicore/index.html:19
 msgid ""
 "Vigilo is a software meant to ease large-scale system and network "
 "management."
@@ -416,45 +247,45 @@ msgstr ""
 "Vigilo est un logiciel permettant de simplifier la supervision de réseaux"
 " de grande taille"
 
-#: src/vigilo/themes/templates/vigicore/index.html:21
+#: src/vigilo/themes/templates/vigicore/index.html:22
 msgid "Data collection"
 msgstr "Données"
 
-#: src/vigilo/themes/templates/vigicore/index.html:22
-#: src/vigilo/themes/templates/vigicore/index.html:27
-#: src/vigilo/themes/templates/vigicore/index.html:32
-#: src/vigilo/themes/templates/vigicore/index.html:37
+#: src/vigilo/themes/templates/vigicore/index.html:23
+#: src/vigilo/themes/templates/vigicore/index.html:28
+#: src/vigilo/themes/templates/vigicore/index.html:33
+#: src/vigilo/themes/templates/vigicore/index.html:38
 msgid "@TODO"
-msgstr ""
+msgstr "@TODO"
 
-#: src/vigilo/themes/templates/vigicore/index.html:26
+#: src/vigilo/themes/templates/vigicore/index.html:27
 msgid "Event correlation"
 msgstr "Corrélation d'événements"
 
-#: src/vigilo/themes/templates/vigicore/index.html:31
+#: src/vigilo/themes/templates/vigicore/index.html:32
 msgid "Accidents visualization"
 msgstr "Visualisation des alertes"
 
-#: src/vigilo/themes/templates/vigicore/index.html:36
+#: src/vigilo/themes/templates/vigicore/index.html:37
 msgid "Report generation"
 msgstr "Génération de rapports"
 
-#: src/vigilo/themes/templates/vigicore/index.html:42
+#: src/vigilo/themes/templates/vigicore/index.html:43
 msgid "Thank you for choosing Vigilo."
 msgstr "Merci d'avoir choisi Vigilo"
 
-#: src/vigilo/themes/templates/vigicore/master.html:22
-#: src/vigilo/themes/templates/vigigraph/master.html:22
+#: src/vigilo/themes/templates/vigicore/master.html:20
+#: src/vigilo/themes/templates/vigigraph/master.html:20
 #: src/vigilo/themes/templates/vigimap/master.html:20
 msgid "Welcome"
 msgstr "Bienvenue"
 
-#: src/vigilo/themes/templates/vigicore/master.html:26
-#: src/vigilo/themes/templates/vigimap/master.html:27
+#: src/vigilo/themes/templates/vigicore/master.html:24
+#: src/vigilo/themes/templates/vigimap/master.html:24
 msgid "Admin"
 msgstr "Admin"
 
-#: src/vigilo/themes/templates/vigicore/master.html:27
+#: src/vigilo/themes/templates/vigicore/master.html:25
 #: src/vigilo/themes/templates/vigicore/profile.html:11
 #: src/vigilo/themes/templates/vigigraph/profile.html:11
 msgid "Profile"
@@ -491,8 +322,6 @@ msgid "Vigilo interfaces"
 msgstr "Interfaces de Vigilo"
 
 #: src/vigilo/themes/templates/vigicore/sidebars.html:9
-#, fuzzy
-#| msgid "Vigiboard"
 msgid "VigiBoard"
 msgstr "VigiBoard"
 
@@ -514,15 +343,15 @@ msgstr ""
 "Cliquer sur le nom d'une table dans la barre latérale pour modifier son "
 "contenu"
 
-#: src/vigilo/themes/templates/vigigraph/index.html:10
+#: src/vigilo/themes/templates/vigigraph/index.html:12
 msgid "Loading VigiGraph..."
 msgstr "Chargement de VigiGraph..."
 
-#: src/vigilo/themes/templates/vigigraph/index.html:21
+#: src/vigilo/themes/templates/vigigraph/index.html:23
 msgid "Vigilo"
 msgstr "Vigilo"
 
-#: src/vigilo/themes/templates/vigigraph/index.html:22
+#: src/vigilo/themes/templates/vigigraph/index.html:24
 msgid "v2.0"
 msgstr "v2.0"
 
@@ -588,23 +417,8 @@ msgstr "Service de référence : %(service)s sur %(host)s"
 msgid "Status: %(status)s"
 msgstr "État : %(status)s"
 
-#: src/vigilo/themes/templates/vigimap/master.html:21
-msgid "About"
-msgstr "À propos"
-
-#: src/vigilo/themes/templates/vigimap/master.html:22
-msgid "Authentication"
-msgstr "Authentification"
-
-#: src/vigilo/themes/templates/vigimap/master.html:23
-msgid "Contact"
-msgstr "Contact"
-
-#: src/vigilo/themes/templates/vigimap/master.html:32
-msgid "Now Viewing:"
-msgstr ""
-
 #: src/vigilo/themes/templates/vigimap/node.html:20
+#, python-format
 msgid "Service name: %(service)s on %(host)s"
 msgstr "Nom du service : %(service)s sur %(host)s"
 
