@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: vigilo-themes-default 0.1\n"
 "Report-Msgid-Bugs-To: contact@projet-vigilo.org\n"
 "POT-Creation-Date: 2009-11-10 09:51+0100\n"
-"PO-Revision-Date: 2009-12-03 14:20+0100\n"
+"PO-Revision-Date: 2009-12-03 14:43+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: fr <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n > 1)\n"
@@ -187,23 +187,27 @@ msgstr "État"
 msgid "Event status"
 msgstr "État de l'événement"
 
-#: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:160
+#: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:98
+msgid "There are no events."
+msgstr "Il n'y a aucun événement."
+
+#: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:163
 msgid "Initial State:"
 msgstr "État initial"
 
-#: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:161
+#: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:164
 msgid "Current State:"
 msgstr "État courant"
 
-#: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:162
+#: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:165
 msgid "Peak State:"
 msgstr "Pire état"
 
-#: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:165
+#: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:168
 msgid "Detailed history for this event"
 msgstr "Historique détaillée de cet événement"
 
-#: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:166
+#: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:169
 msgid "Detailed history for this host/service"
 msgstr "Historique détaillée de cet hôte / service"
 

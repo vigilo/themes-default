@@ -45,8 +45,8 @@
 			<py:for each="(pname,pstyle) in events[0]">
 			<th style="padding: 5px;" py:attrs="pstyle">${HTML(pname)}</th>
 			</py:for>
-			<th style="width:26px;padding: 0px;"><a class="Edit_EventsLien" href="javascript:vigiboard_edit_eventdialog('all')"><img src="${tg.url('/images/icon_page_edit.png')}" alt="Edit selected" title="Edit all selected events"/></a></th>
-			<th style="padding:0px;"><input title="Select/Unselect all" id="vigiboard_checkall_checkbox" type="checkbox" onclick="vigiboard_checkall()" /></th>
+			<th style="width:26px;padding: 0px;"><a class="Edit_EventsLien" id="Edit_All" href="#"><img src="${tg.url('/images/icon_page_edit.png')}" alt="Edit selected" title="Edit all selected events"/></a></th>
+			<th style="padding:0px;"><input title="Select/Unselect all" id="vigiboard_checkall_checkbox" type="checkbox" onclick="vigiboard_checkall();" /></th>
 		</tr>
 	</thead>
 
@@ -54,7 +54,7 @@
 		<py:for each="(event,class_tr,class_td_severity,class_td_date,img_fleche,statu,plugin) in events[1:]">
 		<tr py:attrs="class_tr" py:with="cause=event.cause.first()">
 			<td style="padding: 3px;" py:attrs="class_td_severity">
-			    <a href="javascript:vigiboard_historydialog('${event.idcorrevent}')" class="HistoryLien"><img src="${tg.url(img_fleche['src'])}" style="width:20px" alt="Details" title="Event details" /></a>
+			    <a href="#${event.idcorrevent}" class="Details_Link"><img src="${tg.url(img_fleche['src'])}" style="width:20px" alt="Details" title="Event details" /></a>
 		    </td>
 			<td py:attrs="class_td_date">
 			    <span style="font-weight: bold;">${event.get_date('timestamp_active')}</span>
@@ -75,7 +75,7 @@
 			<py:choose>
                 <py:when test="not (event.status == 'AAClosed' and StateName.value_to_statename(cause.current_state) == u'OK')">
 			    <td style="text-align: center"><img src="${statu['src']}" py:if="statu != None" alt="${statu['label']}" title="${statu['label']}"/></td>
-			    <td py:attrs="class_td_date" style="padding: 0px;text-align: center"><a class="Edit_EventsLien" href="javascript:vigiboard_edit_eventdialog('${event.idcorrevent}')"><img src="${tg.url('/images/icon_page_edit.png')}" alt="Edit" title="Edit this event"/></a></td>
+			    <td py:attrs="class_td_date" style="padding: 0px;text-align: center"><a class="Edit_EventsLien" href="#${event.idcorrevent}"><img src="${tg.url('/images/icon_page_edit.png')}" alt="Edit" title="Edit this event"/></a></td>
 			    <td py:attrs="class_td_date" style="padding:0px;text-align: center"><input type="checkbox" class="Edit_EventsCheckBox" value="${event.idcorrevent}"/></td>
 			    </py:when>
 			    <py:otherwise>
@@ -92,90 +92,133 @@
 		</py:for>
 	
 	</tbody>
-
 </table>
 
-${tmpl_context.edit_eventdialog()}
-${tmpl_context.searchdialog}
-${tmpl_context.historydialog}
+<div py:if="not rows_info['total_rows']">
+There are no events.
+</div>
+
 <py:for each="fct,tpl in plugin_context">
-	${fct()}
-	<xi:include href="vigiboard_plugin/${tpl}.html" /> 
+    <py:if test="callable(fct)">
+    ${fct()}
+    </py:if>
+    <xi:include href="vigiboard_plugin/${tpl}.html" /> 
 </py:for>
 
+<div style="display: none"> 
+    <div id="DetailsDialog">
+        Initial State: <span id="DetailsDialog_initial_state" /><br />
+        Current State: <span id="DetailsDialog_current_state" /><br />
+        Peak State: <span id="DetailsDialog_peak_state" /><br />
+        <ul>
+            <li><a id="DetailsDialog_detailed_event" href="#">Detailed history for this event</a></li>
+            <li><a id="DetailsDialog_detailed_host" href="#">Detailed history for this host/service</a></li>
+            <li py:for="edname, edit in tg.config['vigiboard_links.eventdetails'].iteritems()">
+                <a href="#" id="DetailsDialog_${edname}">${edit[0]}</a>
+            </li>
+        </ul>
+    </div>
+    ${tmpl_context.edit_event_form()}
+</div>
+
 <script type="text/javascript">
-	function vigiboard_historydialog(idd) {
-		$.getJSON("${tg.url('/history_dialog')}",{idcorrevent:idd},function(json){
-			$('#HistoryDialog_initial_state').html(json.initial_state);
-			$('#HistoryDialog_current_state').html(json.current_state);
-			$('#HistoryDialog_peak_state').html(json.peak_state);
-			$('#HistoryDialog_detailed_event').attr('href', '${tg.url('/event/')}' + json.idcorrevent);
-			$('#HistoryDialog_detailed_host').attr('href', '${tg.url('/host_service/')}' + json.host + "/" + json.service);
-			<py:for each="edname, edit in tg.config['vigiboard_links.eventdetails'].iteritems()">
-			$('#HistoryDialog_${edname}').attr('href', json.eventdetails['${edname}']);
-			</py:for>
-			$('#HistoryDialog').dialog('open');
-		})
-	}
+    window.details_dialog = null;
+    window.edit_dialog = null;
+
+    window.addEvent("domready", function () {
+        /// HACK: voir notes sur window.search_dialog dans vigiboard.html.
+        window.details_dialog = new Jx.Dialog({
+            label: "${l_('Event details')}",
+            modal: false,
+            resize: false,
+            move: true,
+            content: 'DetailsDialog',
+            onOpen: window.dlg_open_handler,
+            onClose: window.dlg_close_handler,
+            width: 200,
+            height: 250,
+            closed: true,
+            horizontal: 'right left',
+            vertical: 'top top',
+        });
+        window.details_dialog.toggleCollapse();
+        window.details_dialog.toggleCollapse();
+
+        /// HACK: voir notes sur window.search_dialog dans vigiboard.html.
+        window.edit_dialog = new Jx.Dialog({
+            label: "${l_('Edit event')}",
+            modal: false,
+            resize: false,
+            move: true,
+            content: 'edit_event_form',
+            onOpen: window.dlg_open_handler,
+            onClose: window.dlg_close_handler,
+            width: 400,
+            height: 150,
+            closed: true,
+        });
+        window.edit_dialog.toggleCollapse();
+        window.edit_dialog.toggleCollapse();
+
+        $$('Edit_All').addEvent('click', function () {
+            var idd = '';
+            $$$$('.Edit_EventsCheckBox').each(function (el) {
+                if (el.get('checked'))
+                    idd += el.get('value') + ',';
+            });
+
+            if (idd == '')
+                return alert('${l_("No events have been selected")}');
+
+            vigiboard_edit_eventdialog(idd);
+        }.bind(window.edit_dialog));
+
+        $$$$('.Edit_EventsLien').each(function (el) {
+            if (el.get('id') == 'Edit_All')
+                return;
+
+            el.addEvent('click', function (item) {
+                var idd = item.get('href').substring(1);
+                vigiboard_edit_eventdialog(idd);
+            }.bind(this, el));
+        }.bind(window.edit_dialog));
+
+        $$$$('.Details_Link').each(function (el) {
+            el.addEvent('click', function (item) {
+                var idd = item.get('href').substring(1);
+                var req = new Request.JSON({
+                    link: 'cancel',
+                    url: '${tg.url("/history_dialog")}',
+                    onSuccess: function (details, raw) {
+                        $('DetailsDialog_initial_state').set('text', details.initial_state);
+                        $('DetailsDialog_current_state').set('text', details.current_state);
+                        $('DetailsDialog_peak_state').set('text', details.peak_state);
+                        $('DetailsDialog_detailed_event').set('href', "${tg.url('/event/')}" + details.idcorrevent);
+                        $('DetailsDialog_detailed_host').set('href', "${tg.url('/host_service/')}" + details.host + "/" + details.service);
+                        <py:for each="edname, edit in tg.config['vigiboard_links.eventdetails'].iteritems()">
+                        $('DetailsDialog_${edname}').set('href', details.eventdetails['${edname}']);
+                        </py:for>
+                        window.details_dialog.options.parent = item;
+                        window.details_dialog.open.bind(window.details_dialog)();
+                    }
+                });
+                req.post({'idcorrevent': idd});
+            }.bind(this, el));
+        }.bind(window.details_dialog));
+    }); // Fin domready.
+
 	function vigiboard_edit_eventdialog(idd) {
-		$('#edit_event_form_comment').attr('value','');
-		$('#edit_event_form_trouble_ticket').attr('value','');
-		$('#edit_event_form_tt_create').attr('checked',false);
-		$('#edit_event_form_status').find('option:first').attr('selected', 'selected').parent('select');;
-		if ( idd == 'all' ) {
-			var a = '';
-			$('.Edit_EventsCheckBox').each(function() {
-				if ( $(this).attr('checked'))
-					a += $(this).attr('value') + ',';
-			});
-			idd = a;
-		}
-		$('#edit_event_form_id').attr('value',idd);	
-		$('#Edit_EventsDialog').dialog('open');
+		$('edit_event_form_trouble_ticket').set('text', '');
+		$('edit_event_form_ack').set('selectedindex', 0);
+		$('edit_event_form_id').set('value', idd);
+		window.edit_dialog.open.bind(window.edit_dialog)();
 	}
-	function vigiboard_searchdialog() {
-		$('#search_form_host').attr('value','${search['host']}');
-		$('#search_form_service').attr('value','${search['service']}');
-		$('#search_form_output').attr('value','${search['output']}');
-		$('#search_form_trouble_ticket').attr('value', '${search['tt']}');
-		$('#SearchDialog').dialog('open');	
-	}
+
 	function vigiboard_checkall() {
-		var val = $('#vigiboard_checkall_checkbox').attr('checked');	
-		$('input[type=checkbox]').each(function(){$(this).attr('checked',val);});
+	    var val = $('vigiboard_checkall_checkbox').get('checked');
+	    $$$$('.Edit_EventsCheckBox').each(function (el) { el.set('checked', val); });
 	}
-	$('.HistoryLien').each(function() {
-                $(this).click(function(e){
-                $('#HistoryDialog').dialog('option','position',[e.clientX+10,e.clientY]);
-		})});
-	$('.Edit_EventsLien').each(function() {
-                $(this).click(function(e){
-                $('#Edit_EventsDialog').dialog('option','position',[e.clientX-400-20,e.clientY]);
-		})});
-	$('#SearchLien').click(function(e){
-	        $('#SearchDialog').dialog('option','position','center');
-	});
 </script>
-
-<div style="display:none" id="HistoryDialog">
-Initial State: <span id="HistoryDialog_initial_state" /><br />
-Current State: <span id="HistoryDialog_current_state" /><br />
-Peak State: <span id="HistoryDialog_peak_state" /><br />
-<ul>
-	<li><a id="HistoryDialog_detailed_event" href="#">Detailed history for this event</a></li>
-	<li><a id="HistoryDialog_detailed_host" href="#">Detailed history for this host/service</a></li>
-	<li py:for="edname, edit in tg.config['vigiboard_links.eventdetails'].iteritems()">
-		<a href="#" id="HistoryDialog_${edname}">${edit[0]}</a>
-	</li>
-</ul>
-</div>
-
-<div  style="display:none" id="Edit_EventsDialog">
-	${tmpl_context.edit_event_form()} 
-</div>
-<div  style="display:none" id="SearchDialog">
-	${tmpl_context.search_form()}
-</div>
 
 </py:def>
 

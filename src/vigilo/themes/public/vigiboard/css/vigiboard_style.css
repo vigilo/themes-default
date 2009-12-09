@@ -154,8 +154,8 @@ clear:both;
 	color: white
 }
 
-#HistoryDialog_initial_state,
-#HistoryDialog_current_state,
-#HistoryDialog_peak_state {
+#DetailsDialog_initial_state,
+#DetailsDialog_current_state,
+#DetailsDialog_peak_state {
     font-weight: bold;
 }

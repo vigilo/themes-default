@@ -5,11 +5,28 @@
         xmlns:xi="http://www.w3.org/2001/XInclude">
 
     <xi:include href="vigiboard_event_table.html" />
+<?python from genshi import HTML, XML ?>
 
 <head>
     <meta content="text/html; charset=UTF-8" http-equiv="content-type" py:replace="''"/>
     <title>Vigiboard</title>
     <link rel="stylesheet" type="text/css" href="${tg.url('/css/vigiboard_style.css')}" />
+    <link rel="stylesheet" type="text/css" href="${tg.url('/css/jxlib/jxtheme.uncompressed.css')}" />
+    <link type="text/css" rel="stylesheet" href="${tg.url('/css/Autocompleter/Autocompleter.css')}" />
+
+    <script type="text/javascript" src="${tg.url('/js/mootools.js')}"></script>
+    <script type="text/javascript" src="${tg.url('/js/mootools-more.js')}"></script>
+    <script type="text/javascript" src="${tg.url('/js/jxlib.js')}"></script>
+<!--!    <script type="text/javascript">Jx.baseURL = 'js';</script>-->
+
+    <script type="text/javascript" src="${tg.url('/js/Autocompleter/Autocompleter.js')}"></script>
+    <script type="text/javascript" src="${tg.url('/js/Autocompleter/Autocompleter.Request.js')}"></script>
+    <script type="text/javascript" src="${tg.url('/js/Autocompleter/Observer.js')}"></script>
+    <script type="text/javascript" src="${tg.url('/js/Autocompleter/vigilo.js')}"></script>
+
+    <link type="text/css" rel="alternate stylesheet" href="${tg.url('/css/night.css')}" title="Night" />
+    <link type="text/css" rel="alternate stylesheet" href="${tg.url('/css/blind.css')}" title="Blind" />
+
 </head>
 
 <body style="font-size:${tg.session.get('fontsize',tg.config['vigiboard_font.size'])}">
@@ -42,7 +59,7 @@
 
         <td style="margin-left: 30px; float: right">
             Refresh every
-            <select id="refresh_time" class="refresh_select" onchange="change_refresh($('#refresh_time').val());">
+            <select id="refresh_time" class="refresh_select" onchange="change_refresh($('refresh_time').val());">
             <py:with vars="refresh_time = tg.session.get('refresh', 0)">
                 <py:for each="(delay, label) in refresh_times">
                 <option py:if="refresh_time == delay" value="${delay}" selected="selected">${label}</option>
@@ -63,51 +80,132 @@
 <py:with vars="flash=tg.flash_obj.render('flash', use_js=False)">
 <div py:if="flash" py:content="XML(flash)" />
 </py:with>
+
+<div style="display: none">
+${tmpl_context.search_form()}
+</div>
+
 <div class="main_content">
     ${event_table(events,page,nb_pages,rows_info,event_edit_status_options,history,hist_error,search)}
 </div>
 <script type="text/javascript">
-    $(document).ready(function (){
-        $("#flash").show("slow",function(){
-            setTimeout('$("#flash").hide("slow");',5000);
-        })
-        change_refresh_rate(${tg.session.get('refresh', 0)});
+/*<![CDATA[*/
+    window.search_dialog = null;
+
+    window.dlg_open_handler = function () { this.isOpen = true; }
+    window.dlg_close_handler = function () { this.isOpen = false; }
+
+    window.addEvent('domready', function (){
+        var flash = $('flash');
+        if (flash) {
+            var fx = new Fx.Tween(flash, {'link': 'chain'});
+            fx.fade('in').wait(5000).fade('out');
+        }
+
+        /**
+         * HACK: le closed: True est nécessaire pour éviter que
+         * JxLib affiche le panel lors de la création du dialogue
+         * (affiche des rectangles blancs). Avec cette modification,
+         * le dialogue apparaît replié, mais est considéré comme
+         * déplié par Jx.Dialog. Les toggleCollapse permettent de
+         * marquer le Dialog comme replié dans Jx.Dialog avant de
+         * le déplier pour qu'il soit affiché correctement.
+         */ 
+        window.search_dialog = new Jx.Dialog({
+            id: "SearchDialog",
+            label: "${l_('Search Event')}",
+            modal: false,
+            resize: false,
+            move: true,
+            content: "search_form",
+            onOpen: window.dlg_open_handler,
+            onClose: window.dlg_close_handler,
+            width: 350,
+            height: 200,
+            closed: true,
+        });
+        window.search_dialog.toggleCollapse();
+        window.search_dialog.toggleCollapse();
+
+        new Autocompleter.Request.VigiloJSON(
+            'search_form_host',
+            '${tg.url("/autocomplete_host")}',
+            {
+                // ATTENTION: domObj n'est pas documenté dans l'API.
+                zIndex: window.search_dialog.domObj.getStyle('zIndex').toInt(),
+                minLength: 3,
+                selectMode: 'type-ahead',
+            }
+        );
+
+        new Autocompleter.Request.VigiloJSON(
+            'search_form_service',
+            '${tg.url("/autocomplete_service")}',
+            {
+                // ATTENTION: domObj n'est pas documenté dans l'API.
+                zIndex: window.search_dialog.domObj.getStyle('zIndex').toInt(),
+                minLength: 3,
+                selectMode: 'type-ahead',
+            }
+        );
+
+        change_refresh_rate(${tg.session.get("refresh", 0)});
     });
 
     function change_fontsize(size) {
         document.body.style.fontSize = size;
-        $.getJSON("${tg.url('/set_fontsize')}",{'fontsize':size},function(json){
-            if (json.ret == 'fail')
+        var req = new Request.JSON({
+            link: 'cancel',
+            url: '${tg.url("/set_fontsize")}',
+            onFailure: function () {
                 alert("${l_('Unable to save preferences')}");
-        })
+            }
+        });
+        req.post({fontsize: size});
     }
 
     var refresh_timeout = null;
     function change_refresh_rate(timeout) {
         timeout = parseInt(timeout);
-        if (refresh_timeout) {
-            clearInterval(refresh_timeout);
-            refresh_timeout = null;
-        }
+        if (refresh_timeout)
+            refresh_timeout = $$clear(refresh_timeout);
         if (timeout)
-            refresh_timeout = setInterval('refresh_page();', timeout * 1000);
+            refresh_timeout = refresh_page.periodical(timeout * 1000);
     }
 
     function change_refresh(timeout) {
-        $.getJSON("${tg.url('/set_refresh')}", {'refresh': timeout}, function(json){});
+        var req = new Request.JSON({
+            link: 'cancel',
+            url: '${tg.url("/set_refresh")}',
+            onFailure: function () {
+                alert("${l_('Unable to save preferences')}");
+            }
+        });
+        req.post({'refresh': timeout});
         change_refresh_rate(timeout);
     }
 
     function refresh_page() {
-        dialogs = ['#SearchDialog', '#HistoryDialog', '#Edit_EventsDialog'];
+        var dialogs = ['SearchDialog', 'HistoryDialog', 'Edit_EventsDialog'];
+        var el = null
         for (dialog in dialogs) {
-            if (!$(dialogs[dialog]))
-                continue;
-            if ($(dialogs[dialog]).dialog('isOpen'))
+            el = $(dialogs[dialog]);
+            if (el && el.isOpen)
                 return;
         }
         window.location.reload(true);
     }
+
+    function vigiboard_searchdialog() {
+        $('search_form_host').set('value', "${search['host']}");
+        $('search_form_service').set('value', "${search['service']}");
+        $('search_form_output').set('value', "${search['output']}");
+        $('search_form_trouble_ticket').set('value', "${search['tt']}");
+
+        window.search_dialog.open.bind(window.search_dialog)();
+    }
+
+/*]]>*/
 </script>
 </body>
 </html>
