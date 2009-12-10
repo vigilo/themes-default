@@ -1,20 +1,7 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:py="http://genshi.edgewall.org/"
-      xmlns:xi="http://www.w3.org/2001/XInclude"
-      lang="fr">
-<head>
-    <title>Images</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <script type="text/javascript" src="${tg.url('/js/images.js')}"></script>
-</head>
-
 <div xmlns:py="http://genshi.edgewall.org/">
-    <ul class="images">
+    <ul class="image_widget">
         <li py:for="image in images">
-            <img src="${tg.url('/images/%s/%s' % (folder,image))}" alt="" title="${image}" onclick="set_image('${image}');" />
-            <em>${image}</em>
+            <img src="${tg.url('/images/%s/%s' % (folder,image))}" alt="" title="${image}" onclick="set_image('${image}');" /> ${image}
         </li>
     </ul>
 </div>
-</html>
