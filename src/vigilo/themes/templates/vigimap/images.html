@@ -12,8 +12,8 @@
 <div xmlns:py="http://genshi.edgewall.org/">
     <ul class="images">
         <li py:for="image in images">
-            <img src="${tg.url(images[image].absname)}" alt="" title="${images[image].filename}" onclick="set_image('${images[image].filename}');" />
-            <em>${images[image].filename}</em>
+            <img src="${tg.url('/images/%s/%s' % (folder,image))}" alt="" title="${image}" onclick="set_image('${image}');" />
+            <em>${image}</em>
         </li>
     </ul>
 </div>
