@@ -6,20 +6,25 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>VigiMap</title>
-    <!--[if IE]><script type="text/javascript" src="excanvas.js"></script><![endif]-->
-    <link rel="stylesheet" type="text/css" href="css/jxlib/jxtheme.uncompressed.css" />
-    <style type="text/css">@import "css/map.css";</style>
-    <script type="text/javascript" src="js/mootools.js"></script>
-    <script type="text/javascript" src="js/mootools-more.js"></script>
-    <script type="text/javascript" src="js/drag.move.ghost.js"></script>
-    <script type="text/javascript" src="js/jxlib.js"></script>
+    <!--[if IE]><script type="text/javascript" src="${tg.url('/js/excanvas.js')}"></script><![endif]-->
+    <link rel="stylesheet" type="text/css" href="${tg.url('/css/jxlib/jxtheme.uncompressed.css')}" />
+    <style type="text/css">@import "${tg.url('css/map.css')}";</style>
+    <script type="text/javascript" src="${tg.url('/js/mootools.js')}"></script>
+    <script type="text/javascript" src="${tg.url('/js/mootools-more.js')}"></script>
+    <script type="text/javascript" src="${tg.url('/js/drag.move.ghost.js')}"></script>
+    <script type="text/javascript" src="${tg.url('/js/jxlib.js')}"></script>
     <script type="text/javascript">Jx.baseURL = 'js';</script>
-    <script type="text/javascript" src="js/map.js"></script>
+    <!--!
+        "js/babel.js" doit être chargé avant "i18n",
+        qui doit lui-même être chargé avant "js/map.js".
+    -->
+    <script type="text/javascript" src="${tg.url('/js/babel.js')}"></script>
+    <script type="text/javascript" src="${tg.url('/i18n')}"></script>
+    <script type="text/javascript" src="${tg.url('/js/map.js')}"></script>
     <div py:for="widget in widgets" py:strip="True">
-        <script type="text/javascript" src="widgets/${widget}/${widget}.js"></script>
-        <link rel="stylesheet" type="text/css" href="widgets/${widget}/${widget}.css" />
+        <script type="text/javascript" src="${tg.url('/widgets/${widget}/${widget}.js')}"></script>
+        <link rel="stylesheet" type="text/css" href="${tg.url('/widgets/${widget}/${widget}.css')}" />
     </div>
-    <script type="text/javascript" src="i18n"></script>
 </head>
 
 <body>
