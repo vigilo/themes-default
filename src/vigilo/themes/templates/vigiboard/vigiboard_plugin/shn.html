@@ -2,8 +2,8 @@
       xmlns:xi="http://www.w3.org/2001/XInclude"
       py:strip="">
 
-<script type="text/javascript" src="${tg.url('/javascript/vigiboard_plugin/shn.js')}"></script>
 <script type="text/javascript">
+/*<![CDATA[*/
     window.addEvent('domready', function () {
         window.hls_dialog = new Jx.Dialog({
             id: "hls_dialog",
@@ -16,6 +16,21 @@
             onClose: window.dlg_close_handler,
         });
     });
+
+    function vigiboard_hls_dialog(ref, url, idd) {
+        var req = new Request.JSON({
+            url: '${tg.url("/get_plugin_value")}',
+            onSuccess: function (json, raw) {
+                var code = '';
+                for (var i = 0; i < json.services.length; i++)
+                    code += '<p>' + json.services[i] + '</p>';
+                window.hls_dialog.setContent(code);
+                window.hls_dialog.open.bind(window.hls_dialog)();
+            }
+        });
+        req.post({plugin_name: 'shn', idcorrevent: idd});
+    }
+/*]]>*/
 </script>
 
 </html>
