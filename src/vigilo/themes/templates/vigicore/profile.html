@@ -12,27 +12,23 @@
 </head>
 
 <body>
-<div id="profileform">
-<form action="${tg.url('/profile/update')}" method="post" class="niceform" style="width: 350px">
-    <fieldset py:if="not settings.get('USE_KERBEROS', False)">
-        <legend>Change password</legend>
+<py:if test="not settings.get('USE_KERBEROS', False)">
+<div id="loginform">
+<form action="${tg.url('/profile/update')}" method="post" class="loginfields">
+    <h2><span>Change password</span></h2>
 
-        <div class="formbody">
-            <label for="old_password">Old password:</label>
-            <input type="password" id="old_password" name="old_password" class="text" />
+    <label for="old_password">Old password:</label>
+    <input type="password" id="old_password" name="old_password" class="text"></input><br/>
 
-            <label for="new_password">New password:</label>
-            <input type="password" id="new_password" name="new_password" class="text" />
+    <label for="new_password">New password:</label>
+    <input type="password" id="new_password" name="new_password" class="text"></input><br/>
 
-            <label for="new_password2">Confirm new password:</label>
-            <input type="password" id="new_password2" name="new_password2" class="text" />
-        </div>
+    <label for="new_password2">Confirmation:</label>
+    <input type="password" id="new_password2" name="new_password2" class="text"></input><br/>
 
-        <div class="formfooter">
-            <input type="submit" value="${l_('Apply')}" />
-        </div>
-    </fieldset>
+    <input type="submit" id="submit" value="${l_('Apply')}" />
 </form>
 </div>
+</py:if>
 </body>
 </html>

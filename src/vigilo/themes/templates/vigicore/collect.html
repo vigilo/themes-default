@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:py="http://genshi.edgewall.org/"
+    xmlns:xi="http://www.w3.org/2001/XInclude">
+
+<xi:include href="master.html" />
+
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type" py:replace="''"/>
+<title>Collect</title>
+    <link type="text/css" rel="stylesheet" href="${tg.url('/css/Autocompleter/Autocompleter.css')}" />
+    <script type="text/javascript" src="${tg.url('/js/mootools.js')}"></script>
+    <script type="text/javascript" src="${tg.url('/js/mootools-more.js')}"></script>
+    <script type="text/javascript" src="${tg.url('/js/Autocompleter/Autocompleter.js')}"></script>
+    <script type="text/javascript" src="${tg.url('/js/Autocompleter/Autocompleter.Request.js')}"></script>
+    <script type="text/javascript" src="${tg.url('/js/Autocompleter/Observer.js')}"></script>
+    <script type="text/javascript" src="${tg.url('/js/Autocompleter/vigilo.js')}"></script>
+</head>
+
+<body>
+<div id="loginform">
+<form action="${tg.url('/collect/collect')}" method="post" class="loginfields">
+    <h2><span>Force collect</span></h2>
+
+    <label for="host">Host:</label>
+    <input type="text" id="host" name="host" class="text"></input><br/>
+
+    <label for="service">Service:</label>
+    <input type="text" id="service" name="service" class="text"></input><br/>
+
+    <input type="submit" id="submit" value="${l_('Collect!')}" />
+</form>
+</div>
+
+<script type="text/javascript">
+    window.addEvent('domready', function (){
+        window.host_cmpl = new Autocompleter.Request.VigiloJSON(
+            'host',
+            '${tg.url("/collect/autocomplete_host")}',
+            {
+                minLength: 3,
+                selectMode: 'type-ahead',
+                forceSelect: true,
+                postVar: 'host',
+            }
+        );
+        window.host_cmpl.addEvent('selection', function (el, sel, val, input) {
+            window.service_cmpl.options.postData['host'] = val;
+            $$('service').set('value', '');
+        });
+
+        window.service_cmpl = new Autocompleter.Request.VigiloJSON(
+            'service',
+            '${tg.url("/collect/autocomplete_service")}',
+            {
+                minLength: 3,
+                selectMode: 'type-ahead',
+                forceSelect: true,
+                postData: {},
+                postVar: 'service',
+            }
+        );
+    });
+</script>
+</body>
+</html>
+
