@@ -22,9 +22,18 @@
     <script type="text/javascript" src="${tg.url('/i18n')}"></script>
     <script type="text/javascript" src="${tg.url('/js/map.js')}"></script>
     <div py:for="widget in widgets" py:strip="True">
-        <script type="text/javascript" src="${tg.url('/widgets/${widget}/${widget}.js')}"></script>
-        <link rel="stylesheet" type="text/css" href="${tg.url('/widgets/${widget}/${widget}.css')}" />
+        <script type="text/javascript" src="${tg.url('/widgets/'+widget+'/'+widget+'.js')}"></script>
+        <link rel="stylesheet" type="text/css" href="${tg.url('/widgets/'+widget+'/'+widget+'.css')}" />
     </div>
+    <link rel="stylesheet" type="text/css" href="css/Autocompleter.css" />
+    <script type="text/javascript" src="js/Autocompleter.js"></script>
+    <script type="text/javascript" src="js/Autocompleter.Local.js"></script>
+    <script type="text/javascript" src="js/Autocompleter.Request.js"></script>
+    <script type="text/javascript" src="js/Autocompleter.Request.VigiloJSON.js"></script>
+    <script type="text/javascript" src="js/Observer.js"></script>
+    <script type="text/javascript" src="js/selectmapgroup.js"></script>
+    <script type="text/javascript" src="js/fieldautocomplete.js"></script>
+    <script type="text/javascript" src="js/tg_submit.js"></script>
 </head>
 
 <body>
@@ -47,6 +56,7 @@
         <canvas>
             Your browser does not support the canvas element. Please upgrade.
         </canvas>
+
         <div id="legend">
         </div>
     </div>
