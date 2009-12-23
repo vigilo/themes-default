@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: vigilo-themes-default 0.1\n"
 "Report-Msgid-Bugs-To: contact@projet-vigilo.org\n"
 "POT-Creation-Date: 2009-11-10 09:51+0100\n"
-"PO-Revision-Date: 2009-12-03 14:43+0100\n"
+"PO-Revision-Date: 2009-12-23 15:53+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: fr <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n > 1)\n"
@@ -51,8 +51,9 @@ msgid "Login Form"
 msgstr "Formulaire d'identification"
 
 #: src/vigilo/themes/templates/common/login.html:17
+#: src/vigilo/themes/templates/common/login.html:20
 #: src/vigilo/themes/templates/vigiboard/master.html:22
-#: src/vigilo/themes/templates/vigicore/master.html:22
+#: src/vigilo/themes/templates/vigicore/master.html:21
 #: src/vigilo/themes/templates/vigigraph/master.html:22
 #: src/vigilo/themes/templates/vigimap/master.html:22
 msgid "Login"
@@ -67,54 +68,67 @@ msgid "Password:"
 msgstr "Mot de passe :"
 
 #: src/vigilo/themes/templates/vigiboard/master.html:20
-#: src/vigilo/themes/templates/vigiboard/vigiboard.html:11
+#: src/vigilo/themes/templates/vigiboard/vigiboard.html:12
 msgid "Vigiboard"
 msgstr "VigiBoard"
 
 #: src/vigilo/themes/templates/vigiboard/master.html:23
-#: src/vigilo/themes/templates/vigicore/master.html:23
+#: src/vigilo/themes/templates/vigicore/master.html:22
 #: src/vigilo/themes/templates/vigigraph/master.html:23
 #: src/vigilo/themes/templates/vigimap/master.html:23
 msgid "Logout"
 msgstr "Déconnexion"
 
-#: src/vigilo/themes/templates/vigiboard/vigiboard.html:17
+#: src/vigilo/themes/templates/vigiboard/vigiboard.html:27
+msgid "Night"
+msgstr "Nocturne"
+
+#: src/vigilo/themes/templates/vigiboard/vigiboard.html:28
+msgid "Blind"
+msgstr "Malvoyant"
+
+#: src/vigilo/themes/templates/vigiboard/vigiboard.html:34
 msgid "Toolbar"
 msgstr "Barre d'outils"
 
-#: src/vigilo/themes/templates/vigiboard/vigiboard.html:27
+#: src/vigilo/themes/templates/vigiboard/vigiboard.html:44
 msgid "Home"
 msgstr "Accueil"
 
-#: src/vigilo/themes/templates/vigiboard/vigiboard.html:30
+#: src/vigilo/themes/templates/vigiboard/vigiboard.html:47
 msgid "Filter display"
 msgstr "Filtrer l'affichage"
 
-#: src/vigilo/themes/templates/vigiboard/vigiboard.html:33
+#: src/vigilo/themes/templates/vigiboard/vigiboard.html:50
 msgid "Log out"
 msgstr "Déconnexion"
 
-#: src/vigilo/themes/templates/vigiboard/vigiboard.html:38
+#: src/vigilo/themes/templates/vigiboard/vigiboard.html:55
 msgid "Default font size"
 msgstr "Taille par défaut"
 
-#: src/vigilo/themes/templates/vigiboard/vigiboard.html:39
+#: src/vigilo/themes/templates/vigiboard/vigiboard.html:56
 msgid "Medium font size"
 msgstr "Taille moyenne"
 
-#: src/vigilo/themes/templates/vigiboard/vigiboard.html:40
+#: src/vigilo/themes/templates/vigiboard/vigiboard.html:57
 msgid "Large font size"
 msgstr "Grande taille"
 
-#: src/vigilo/themes/templates/vigiboard/vigiboard.html:43
+#: src/vigilo/themes/templates/vigiboard/vigiboard.html:60
 msgid "Refresh every"
 msgstr "Actualiser toutes les"
 
-#: src/vigilo/themes/templates/vigiboard/vigiboard.html:57
+#: src/vigilo/themes/templates/vigiboard/vigiboard.html:74
 msgid "You are in Search mode, click here to return to the initial mode."
 msgstr "Mode recherche, cliquer ici pour quitter ce mode."
 
-#: src/vigilo/themes/templates/vigiboard/vigiboard.html:81
+#: src/vigilo/themes/templates/vigiboard/vigiboard.html:116
+msgid "Search Event"
+msgstr "Filtrer les événements"
+
+#: src/vigilo/themes/templates/vigiboard/vigiboard.html:161
+#: src/vigilo/themes/templates/vigiboard/vigiboard.html:181
 msgid "Unable to save preferences"
 msgstr "Impossible de sauvegarder les préférences"
 
@@ -168,6 +182,7 @@ msgid "Details"
 msgstr "Détails"
 
 #: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:57
+#: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:131
 msgid "Event details"
 msgstr "Détails de l'événement"
 
@@ -191,25 +206,33 @@ msgstr "État de l'événement"
 msgid "There are no events."
 msgstr "Il n'y a aucun événement."
 
-#: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:163
+#: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:109
 msgid "Initial State:"
 msgstr "État initial"
 
-#: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:164
+#: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:110
 msgid "Current State:"
 msgstr "État courant"
 
-#: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:165
+#: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:111
 msgid "Peak State:"
 msgstr "Pire état"
 
-#: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:168
+#: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:114
 msgid "Detailed history for this event"
 msgstr "Historique détaillée de cet événement"
 
-#: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:169
+#: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:115
 msgid "Detailed history for this host/service"
 msgstr "Historique détaillée de cet hôte / service"
+
+#: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:149
+msgid "Edit event"
+msgstr "Éditer cet événement"
+
+#: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:171
+msgid "No events have been selected"
+msgstr "Aucun événement sélectionné"
 
 #: src/vigilo/themes/templates/vigiboard/vigiboard_history_table.html:8
 msgid "There is no history."
@@ -238,6 +261,35 @@ msgstr "Valeur"
 #: src/vigilo/themes/templates/vigiboard/vigiboard_history_table.html:19
 msgid "Text"
 msgstr "Texte"
+
+#: src/vigilo/themes/templates/vigiboard/vigiboard_plugin/shn.html:10
+msgid "Impacted high-level services"
+msgstr "Services de haut niveau impactés"
+
+#: src/vigilo/themes/templates/vigicore/collect.html:11
+#: src/vigilo/themes/templates/vigicore/master.html:25
+#, fuzzy
+#| msgid "Data collection"
+msgid "Collect"
+msgstr "Données"
+
+#: src/vigilo/themes/templates/vigicore/collect.html:24
+msgid "Force collect"
+msgstr ""
+
+#: src/vigilo/themes/templates/vigicore/collect.html:26
+msgid "Host:"
+msgstr ""
+
+#: src/vigilo/themes/templates/vigicore/collect.html:29
+msgid "Service:"
+msgstr ""
+
+#: src/vigilo/themes/templates/vigicore/collect.html:32
+#, fuzzy
+#| msgid "Data collection"
+msgid "Collect!"
+msgstr "Données"
 
 #: src/vigilo/themes/templates/vigicore/index.html:18
 msgid "Presentation"
@@ -284,12 +336,12 @@ msgstr "Merci d'avoir choisi Vigilo"
 msgid "Welcome"
 msgstr "Bienvenue"
 
-#: src/vigilo/themes/templates/vigicore/master.html:24
+#: src/vigilo/themes/templates/vigicore/master.html:23
 #: src/vigilo/themes/templates/vigimap/master.html:24
 msgid "Admin"
 msgstr "Admin"
 
-#: src/vigilo/themes/templates/vigicore/master.html:25
+#: src/vigilo/themes/templates/vigicore/master.html:24
 #: src/vigilo/themes/templates/vigicore/profile.html:11
 #: src/vigilo/themes/templates/vigigraph/profile.html:11
 msgid "Profile"
@@ -300,22 +352,21 @@ msgstr "Profil"
 msgid "Change password"
 msgstr "Changer le mot de passe"
 
-#: src/vigilo/themes/templates/vigicore/profile.html:21
+#: src/vigilo/themes/templates/vigicore/profile.html:20
 #: src/vigilo/themes/templates/vigigraph/profile.html:21
 msgid "Old password:"
 msgstr "Ancien mot de passe :"
 
-#: src/vigilo/themes/templates/vigicore/profile.html:24
+#: src/vigilo/themes/templates/vigicore/profile.html:23
 #: src/vigilo/themes/templates/vigigraph/profile.html:24
 msgid "New password:"
 msgstr "Nouveau mot de passe :"
 
-#: src/vigilo/themes/templates/vigicore/profile.html:27
-#: src/vigilo/themes/templates/vigigraph/profile.html:27
-msgid "Confirm new password:"
-msgstr "Confirmer le nouveau mot de passe :"
+#: src/vigilo/themes/templates/vigicore/profile.html:26
+msgid "Confirmation:"
+msgstr ""
 
-#: src/vigilo/themes/templates/vigicore/profile.html:32
+#: src/vigilo/themes/templates/vigicore/profile.html:29
 #: src/vigilo/themes/templates/vigigraph/profile.html:32
 msgid "Apply"
 msgstr "Appliquer"
@@ -359,22 +410,27 @@ msgstr "Vigilo"
 msgid "v2.0"
 msgstr "v2.0"
 
+#: src/vigilo/themes/templates/vigigraph/profile.html:27
+msgid "Confirm new password:"
+msgstr "Confirmer le nouveau mot de passe :"
+
 #: src/vigilo/themes/templates/vigimap/index.html:8
-#: src/vigilo/themes/templates/vigimap/index.html:29
+#: src/vigilo/themes/templates/vigimap/index.html:43
+#: src/vigilo/themes/templates/vigimap/widget_form.html:8
 msgid "VigiMap"
 msgstr "VigiMap"
 
-#: src/vigilo/themes/templates/vigimap/index.html:36
+#: src/vigilo/themes/templates/vigimap/index.html:50
 msgid "Maps"
 msgstr "Cartes"
 
-#: src/vigilo/themes/templates/vigimap/index.html:42
+#: src/vigilo/themes/templates/vigimap/index.html:56
 msgid "Your browser does not support the canvas element. Please upgrade."
 msgstr ""
 "Votre navigateur ne gère pas l'élément canvas. Veuillez le mettre à jour,"
 " ou en utiliser un autre."
 
-#: src/vigilo/themes/templates/vigimap/index.html:58
+#: src/vigilo/themes/templates/vigimap/index.html:73
 msgid "loading..."
 msgstr "chargement..."
 
@@ -430,4 +486,9 @@ msgstr "Nom du service : %(service)s sur %(host)s"
 #, python-format
 msgid "Appliance name: %(host)s"
 msgstr "Équipement : %(host)s"
+
+#: src/vigilo/themes/templates/vigimap/widget_form.html:18
+#, fuzzy
+msgid "Welcome to Widget!"
+msgstr "Bienvenue dans Vigilo"
 

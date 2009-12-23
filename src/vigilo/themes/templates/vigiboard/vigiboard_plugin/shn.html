@@ -23,7 +23,7 @@
             onSuccess: function (json, raw) {
                 var code = '';
                 for (var i = 0; i < json.services.length; i++)
-                    code += '<p>' + json.services[i] + '</p>';
+                    code += '<p>' + json.services[i] + '<\/p>';
                 window.hls_dialog.setContent(code);
                 window.hls_dialog.open.bind(window.hls_dialog)();
             }

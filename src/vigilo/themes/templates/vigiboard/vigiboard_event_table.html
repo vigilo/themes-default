@@ -53,7 +53,7 @@
 	<tbody>
 		<py:for each="(event,class_tr,class_td_severity,class_td_date,img_fleche,statu,plugin) in events[1:]">
 		<tr py:attrs="class_tr" py:with="cause=event.cause">
-			<td style="padding: 3px;" py:attrs="class_td_severity">
+			<td style="padding: 3px;">
 			    <a href="#${event.idcorrevent}" class="Details_Link"><img src="${tg.url(img_fleche['src'])}" style="width:20px" alt="Details" title="Event details" /></a>
 		    </td>
 			<td py:attrs="class_td_date">
@@ -135,8 +135,8 @@ There are no events.
             content: 'DetailsDialog',
             onOpen: window.dlg_open_handler,
             onClose: window.dlg_close_handler,
-            width: 200,
-            height: 250,
+            width: 250,
+            height: 220,
             closed: true,
             horizontal: 'right left',
             vertical: 'top top',
