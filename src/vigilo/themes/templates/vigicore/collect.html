@@ -37,7 +37,7 @@
     window.addEvent('domready', function (){
         window.host_cmpl = new Autocompleter.Request.VigiloJSON(
             'host',
-            '${tg.url("/collect/autocomplete_host")}',
+            '${tg.url("/autocomplete/host")}',
             {
                 minLength: 3,
                 selectMode: 'type-ahead',
@@ -52,7 +52,7 @@
 
         window.service_cmpl = new Autocompleter.Request.VigiloJSON(
             'service',
-            '${tg.url("/collect/autocomplete_service")}',
+            '${tg.url("/autocomplete/service")}',
             {
                 minLength: 3,
                 selectMode: 'type-ahead',
