@@ -7,8 +7,8 @@
 <xi:include href="master.html" />
 
 <head>
-<meta content="text/html; charset=UTF-8" http-equiv="content-type" py:replace="''"/>
-<title>Schedule downtime</title>
+	<meta content="text/html; charset=UTF-8" http-equiv="content-type" py:replace="''"/>
+	<title>Schedule downtime</title>
     <link type="text/css" rel="stylesheet" href="${tg.url('/css/Autocompleter/Autocompleter.css')}" />
     <script type="text/javascript" src="${tg.url('/js/mootools.js')}"></script>
     <script type="text/javascript" src="${tg.url('/js/mootools-more.js')}"></script>
@@ -19,20 +19,73 @@
 </head>
 
 <body>
-<div id="loginform">
-<!--<form action="${tg.url('/downtime/schedule_downtime')}" method="post" class="loginfields">-->
-<!--    <h2><span>Schedule downtime</span></h2>-->
+<!--<div id="scheduled_dowtimes">-->
+<!--	<h2><span>Scheduled downtimes</span></h2>-->
+<!--	<table id="scheduled_dowtimes_table" cellpadding="0" cellspacing="1" border="1">-->
+<!--		<thead> -->
+<!--		    <tr> -->
+<!--		        <th>Id</th>-->
+<!--		        <th>Host</th>-->
+<!--		        <th>Service</th>-->
+<!--		        <th>Start</th>-->
+<!--		        <th>End</th>-->
+<!--		        <th>Status</th>-->
+<!--			</tr> -->
+<!--		</thead> -->
+<!--		<tbody>-->
+<!--		    <tr> -->
+<!--		        <th>1</th>-->
+<!--		        <th>Host1</th>-->
+<!--		        <th>Service1</th>-->
+<!--		        <th>2010-12-05 14:00:00</th>-->
+<!--		        <th>2010-12-05 16:00:00</th>-->
+<!--		        <th>Scheduled</th>-->
+<!--			</tr> -->
+<!--		    <tr> -->
+<!--		        <th>2</th>-->
+<!--		        <th>Host2</th>-->
+<!--		        <th>Service2</th>-->
+<!--		        <th>2009-12-30 14:00:00</th>-->
+<!--		        <th>2009-12-30 16:00:00</th>-->
+<!--		        <th>Finished</th>-->
+<!--			</tr> -->
+<!--		</tbody>-->
+<!--	</table>-->
+<!--</div>-->
 
-<!--    <label for="host">Host:</label>-->
-<!--    <input type="text" id="host" name="host" class="text"></input><br/>-->
+<br />
 
-<!--    <label for="service">Service:</label>-->
-<!--    <input type="text" id="service" name="service" class="text"></input><br/>-->
+${table()}
 
-<!--    <input type="submit" id="submit" value="${l_('Schedule!')}" />-->
-<!--</form>-->
-	<h2><span>Schedule downtime</span></h2>
-    <div py:replace="tmpl_context.downtime_form('fr')">Input Form</div>
+<br />
+
+<div id="schedule_dowtime">
+	<form action="${tg.url('/downtime/schedule_downtime')}" method="post" class="loginfields">
+		<h2><span>Schedule downtime</span></h2>
+
+		<label for="host">Host:</label>
+		<input type="text" id="host" name="host" class="text"></input>
+		<br/>
+
+		<label for="service">Service:</label>
+		<input type="text" id="service" name="service" class="text"></input>
+		<br/>
+
+		<div class="calendar_field">
+			<label for="start">Start:</label>
+			${start_calendar()}
+		</div>
+
+		<div class="calendar_field">
+			<label for="end">End:</label>
+			${end_calendar()}
+		</div>
+
+		<label for="comment">Comment:</label>
+		<textarea id="comment" name="comment" value=""></textarea>
+
+		<input type="submit" id="submit" value="${l_('Schedule!')}" />
+	</form>
 </div>
 
 <script type="text/javascript">

@@ -181,6 +181,44 @@ form.loginfields input.text
     color: #fff;
 }
 
+form.loginfields textarea
+{
+    float: left;
+    margin-left: 10px;
+    margin-top: 5px;
+    width: 165px;
+    height: 21px;
+    padding: 5px;
+    border: 0;
+/*    background-color: #333333;*/
+    background: url('../images/inputbg.png') top left no-repeat;
+    color: #fff;
+}
+
+form.loginfields div.calendar_field label
+{
+    width: 100px;
+}
+
+form.loginfields div.calendar_field input.calendardatetimepicker
+{
+    float: right;
+    margin-right: 10px;
+    margin-top: 5px;
+    width: 165px;
+    height: 21px;
+    padding: 5px;
+    border: 0;
+    background: url('../images/inputbg.png') top left no-repeat;
+    color: #fff;
+}
+
+form.loginfields div.calendar_field  input.date_field_button
+{
+    float: left;
+    margin-top: 9px;
+}
+
 form.loginfields input#submit
 {
     background: url('../images/loginbottombg.png') bottom left no-repeat;
@@ -198,6 +236,13 @@ form.loginfields input#submit
     margin-left: -10px;
 }
 
+/* Downtime table */
+form table td, form table th
+{
+/*	cellpadding: 0;*/
+/*	cellspacing: 1;*/
+	border: 1px solid black;
+}
 
 /* Sidebar */
 .sidebar {
