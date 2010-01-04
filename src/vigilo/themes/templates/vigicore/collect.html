@@ -24,10 +24,10 @@
     <h2><span>Force collect</span></h2>
 
     <label for="host">Host:</label>
-    <input type="text" id="host" name="host" class="text"></input><br/>
+    <input type="text" id="host" name="host" class="text" value="${hostname}"></input><br/>
 
     <label for="service">Service:</label>
-    <input type="text" id="service" name="service" class="text"></input><br/>
+    <input type="text" id="service" name="service" class="text" value="${servicename}"></input><br/>
 
     <input type="submit" id="submit" value="${l_('Collect!')}" />
 </form>
@@ -61,6 +61,9 @@
                 postVar: 'service',
             }
         );
+        var val = $$('host').get('value');
+        if (val != '')
+            window.service_cmpl.options.postData['host'] = val;
     });
 </script>
 </body>
