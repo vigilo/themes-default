@@ -78,7 +78,7 @@
 </table>
 
 <py:with vars="flash=tg.flash_obj.render('flash', use_js=False)">
-<div py:if="flash" py:content="XML(flash)" />
+<div py:strip="True" py:if="flash" py:content="XML(flash)" />
 </py:with>
 
 <div style="display: none">
@@ -98,8 +98,7 @@ ${tmpl_context.search_form()}
     window.addEvent('domready', function (){
         var flash = $('flash');
         if (flash) {
-            var fx = new Fx.Tween(flash, {'link': 'chain'});
-            fx.fade('in').wait(5000).fade('out');
+            flash.fade('in').pauseFx(5000).fade('out');
         }
 
         /**
