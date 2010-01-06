@@ -18,106 +18,261 @@
     <script type="text/javascript" src="${tg.url('/js/Autocompleter/vigilo.js')}"></script>
 </head>
 
+<br />
+
 <body>
-<!--<div id="scheduled_dowtimes">-->
-<!--	<h2><span>Scheduled downtimes</span></h2>-->
-<!--	<table id="scheduled_dowtimes_table" cellpadding="0" cellspacing="1" border="1">-->
-<!--		<thead> -->
-<!--		    <tr> -->
-<!--		        <th>Id</th>-->
-<!--		        <th>Host</th>-->
-<!--		        <th>Service</th>-->
-<!--		        <th>Start</th>-->
-<!--		        <th>End</th>-->
-<!--		        <th>Status</th>-->
-<!--			</tr> -->
-<!--		</thead> -->
-<!--		<tbody>-->
-<!--		    <tr> -->
-<!--		        <th>1</th>-->
-<!--		        <th>Host1</th>-->
-<!--		        <th>Service1</th>-->
-<!--		        <th>2010-12-05 14:00:00</th>-->
-<!--		        <th>2010-12-05 16:00:00</th>-->
-<!--		        <th>Scheduled</th>-->
-<!--			</tr> -->
-<!--		    <tr> -->
-<!--		        <th>2</th>-->
-<!--		        <th>Host2</th>-->
-<!--		        <th>Service2</th>-->
-<!--		        <th>2009-12-30 14:00:00</th>-->
-<!--		        <th>2009-12-30 16:00:00</th>-->
-<!--		        <th>Finished</th>-->
-<!--			</tr> -->
-<!--		</tbody>-->
-<!--	</table>-->
-<!--</div>-->
 
-<br />
+	<br />
 
-${table()}
+	<div id="schedule_dowtime">
+		<form action="${tg.url('/downtime/schedule_downtime')}" method="post" class="loginfields">
+			<h2><span>Schedule downtime</span></h2>
 
-<br />
+			<label for="host">Host:</label>
+			<input type="text" id="host" name="host" class="text" value="${hostname}"></input>
+			<br/>
 
-<div id="schedule_dowtime">
-	<form action="${tg.url('/downtime/schedule_downtime')}" method="post" class="loginfields">
-		<h2><span>Schedule downtime</span></h2>
+			<label for="service">Service:</label>
+			<input type="text" id="service" name="service" class="text" value="${servicename}"></input>
+			<br/>
 
-		<label for="host">Host:</label>
-		<input type="text" id="host" name="host" class="text"></input>
-		<br/>
+			<div class="calendar_field">
+				<label for="start">Start:</label>
+				${start_calendar()}
+			</div>
 
-		<label for="service">Service:</label>
-		<input type="text" id="service" name="service" class="text"></input>
-		<br/>
+			<div class="calendar_field">
+				<label for="end">End:</label>
+				${end_calendar()}
+			</div>
 
-		<div class="calendar_field">
-			<label for="start">Start:</label>
-			${start_calendar()}
-		</div>
+			<label for="comment">Comment:</label>
+			<textarea id="comment" name="comment" rows="8">Maintenance.</textarea>
 
-		<div class="calendar_field">
-			<label for="end">End:</label>
-			${end_calendar()}
-		</div>
+			<input type="submit" id="submit" value="${l_('Schedule!')}" />
+		</form>
+	</div>
+	
+	<br />
+	<br />
 
-		<label for="comment">Comment:</label>
-		<textarea id="comment" name="comment" value=""></textarea>
+	<div id="scheduled_downtimes">
+		<h2><span>Scheduled downtimes</span></h2>
+		<table id="scheduled_downtimes_table">
+			<thead> 
+				<tr>
+					<th class="action_col"></th>
+					
+				
+				    <py:choose test="">
+						<py:when test="sort=='hostname' and order=='asc'">
+				    		<th class="asc"><a href="?page=${page}&amp;sort=hostname&amp;order=desc">
+				    			<img src="${tg.url('/images/down.gif')}" alt="down" /> Host
+				    		</a></th>
+					  	</py:when>
+						<py:when test="sort=='hostname' and order=='desc'">
+				    		<th class="desc"><a href="?page=${page}&amp;sort=hostname&amp;order=asc">
+				    			<img src="${tg.url('/images/up.gif')}" alt="up" /> Host
+				    		</a></th>
+					  	</py:when>
+						<py:otherwise>
+				    		<th><a href="?page=${page}&amp;sort=hostname&amp;order=asc">Host</a></th>
+						</py:otherwise>
+					</py:choose>
+					
+					
+				    <py:choose test="">
+						<py:when test="sort=='servicename' and order=='asc'">
+				    		<th><a href="?page=${page}&amp;sort=servicename&amp;order=desc">
+				    			<img src="${tg.url('/images/down.gif')}" alt="down" /> Service
+				    		</a></th>
+					  	</py:when>
+						<py:when test="sort=='servicename' and order=='desc'">
+				    		<th><a href="?page=${page}&amp;sort=servicename&amp;order=asc">
+				    			<img src="${tg.url('/images/up.gif')}" alt="up" /> Service
+				    		</a></th>
+					  	</py:when>
+						<py:otherwise>
+				    		<th><a href="?page=${page}&amp;sort=servicename&amp;order=asc">Service</a></th>
+						</py:otherwise>
+					</py:choose>
+					
+					
+				    <py:choose test="">
+						<py:when test="sort=='entrytime' and order=='asc'">
+				    		<th><a href="?page=${page}&amp;sort=entrytime&amp;order=desc">
+				    			<img src="${tg.url('/images/down.gif')}" alt="down" /> Entry&nbsp;time
+				    		</a></th>
+					  	</py:when>
+						<py:when test="sort=='entrytime' and order=='desc'">
+				    		<th><a href="?page=${page}&amp;sort=entrytime&amp;order=asc">
+				    			<img src="${tg.url('/images/up.gif')}" alt="up" /> Entry&nbsp;time
+				    		</a></th>
+					  	</py:when>
+						<py:otherwise>
+				    		<th><a href="?page=${page}&amp;sort=entrytime&amp;order=asc">Entry&nbsp;time</a></th>
+						</py:otherwise>
+					</py:choose>
+					
+					
+				    <py:choose test="">
+						<py:when test="sort=='author' and order=='asc'">
+				    		<th><a href="?page=${page}&amp;sort=author&amp;order=desc">
+				    			<img src="${tg.url('/images/down.gif')}" alt="down" /> Author
+				    		</a></th>
+					  	</py:when>
+						<py:when test="sort=='author' and order=='desc'">
+				    		<th><a href="?page=${page}&amp;sort=author&amp;order=asc">
+				    			<img src="${tg.url('/images/up.gif')}" alt="up" /> Author
+				    		</a></th>
+					  	</py:when>
+						<py:otherwise>
+				    		<th><a href="?page=${page}&amp;sort=author&amp;order=asc">Author</a></th>
+						</py:otherwise>
+					</py:choose>
+					
+					
+				    <py:choose test="">
+						<py:when test="sort=='comment' and order=='asc'">
+				    		<th><a href="?page=${page}&amp;sort=comment&amp;order=desc">
+				    			<img src="${tg.url('/images/down.gif')}" alt="down" /> Comment
+				    		</a></th>
+					  	</py:when>
+						<py:when test="sort=='comment' and order=='desc'">
+				    		<th><a href="?page=${page}&amp;sort=comment&amp;order=asc">
+				    			<img src="${tg.url('/images/up.gif')}" alt="up" /> Comment
+				    		</a></th>
+					  	</py:when>
+						<py:otherwise>
+				    		<th><a href="?page=${page}&amp;sort=comment&amp;order=asc">Comment</a></th>
+						</py:otherwise>
+					</py:choose>
+					
+					
+				    <py:choose test="">
+						<py:when test="sort=='start' and order=='asc'">
+				    		<th><a href="?page=${page}&amp;sort=start&amp;order=desc">
+				    			<img src="${tg.url('/images/down.gif')}" alt="down" /> Start
+				    		</a></th>
+					  	</py:when>
+						<py:when test="sort=='start' and order=='desc'">
+				    		<th><a href="?page=${page}&amp;sort=start&amp;order=asc">
+				    			<img src="${tg.url('/images/up.gif')}" alt="up" /> Start
+				    		</a></th>
+					  	</py:when>
+						<py:otherwise>
+				    		<th><a href="?page=${page}&amp;sort=start&amp;order=asc">Start</a></th>
+						</py:otherwise>
+					</py:choose>
+					
+					
+				    <py:choose test="">
+						<py:when test="sort=='end' and order=='asc'">
+				    		<th><a href="?page=${page}&amp;sort=end&amp;order=desc">
+				    			<img src="${tg.url('/images/down.gif')}" alt="down" /> End
+				    		</a></th>
+					  	</py:when>
+						<py:when test="sort=='end' and order=='desc'">
+				    		<th><a href="?page=${page}&amp;sort=end&amp;order=asc">
+				    			<img src="${tg.url('/images/up.gif')}" alt="up" /> End
+				    		</a></th>
+					  	</py:when>
+						<py:otherwise>
+				    		<th><a href="?page=${page}&amp;sort=end&amp;order=asc">End</a></th>
+						</py:otherwise>
+					</py:choose>
+					
+					
+				    <py:choose test="">
+						<py:when test="sort=='status' and order=='asc'">
+				    		<th><a href="?page=${page}&amp;sort=status&amp;order=desc">
+				    			<img src="${tg.url('/images/down.gif')}" alt="down" /> Status
+				    		</a></th>
+					  	</py:when>
+						<py:when test="sort=='status' and order=='desc'">
+				    		<th><a href="?page=${page}&amp;sort=status&amp;order=asc">
+				    			<img src="${tg.url('/images/up.gif')}" alt="up" /> Status
+				    		</a></th>
+					  	</py:when>
+						<py:otherwise>
+				    		<th><a href="?page=${page}&amp;sort=status&amp;order=asc">Status</a></th>
+						</py:otherwise>
+					</py:choose>
+				</tr> 
+			</thead> 
+			<tbody>
+				<tr py:for="raw_id, raw in enumerate(downtimes)" class="${raw_id%2 and 'even' or 'odd'}">
+					<td class="action_col">
+						<img src="${tg.url('/images/edit.png')}" alt="edit" />
+						<img src="${tg.url('/images/delete.png')}" alt="delete" />
+					</td>
+					<td>${raw.hostname}</td>
+					<td>${raw.servicename}</td>
+				    <td>${raw.entrytime}</td>
+				    <td>${raw.author}</td>
+				    <py:choose test="">
+						<py:when test="len(raw.comment) > 25">
+							<td>
+								${raw.comment[:25]}<a id="comment_${raw_id}" href="#comment_${raw_id}" title="${raw.comment}">...</a>
+							</td>
+					  	</py:when>
+						<py:otherwise>
+					  		<td>${raw.comment}</td>
+						</py:otherwise>
+					</py:choose>
+				    <td>${raw.start}</td>
+				    <td>${raw.end}</td>
+				    <td>${raw.status}</td>
+				</tr> 
+			</tbody>
+		</table>
+	</div>
 
-		<input type="submit" id="submit" value="${l_('Schedule!')}" />
-	</form>
-</div>
+	<br />
 
-<script type="text/javascript">
-    window.addEvent('domready', function (){
-        window.host_cmpl = new Autocompleter.Request.VigiloJSON(
-            'host',
-            '${tg.url("/autocomplete/host")}',
-            {
-                minLength: 3,
-                selectMode: 'type-ahead',
-                forceSelect: true,
-                postVar: 'host',
-            }
-        );
-        window.host_cmpl.addEvent('selection', function (el, sel, val, input) {
-            window.service_cmpl.options.postData['host'] = val;
-            $$('service').set('value', '');
-        });
+	<p class="pagelist">
+		<a class="prev_page" href="?page=${current_page.previous_page}${url_param}">&nbsp;</a>
+			${current_page.pager(format='~3~', page_param='page', show_if_single_page=True, sort=sort, order=order)}
+		<a class="next_page" href="?page=${current_page.next_page}${url_param}">&nbsp;</a>
+	</p>
+	
+	<br />
+	<br />
 
-        window.service_cmpl = new Autocompleter.Request.VigiloJSON(
-            'service',
-            '${tg.url("/autocomplete/service")}',
-            {
-                minLength: 3,
-                selectMode: 'type-ahead',
-                forceSelect: true,
-                postData: {},
-                postVar: 'service',
-            }
-        );
-    });
-</script>
+	<script type="text/javascript">
+		window.addEvent('domready', function (){
+		    window.host_cmpl = new Autocompleter.Request.VigiloJSON(
+		        'host',
+		        '${tg.url("/autocomplete/host")}',
+		        {
+		            minLength: 3,
+		            selectMode: 'type-ahead',
+		            forceSelect: true,
+		            postVar: 'host',
+		        }
+		    );
+		    window.host_cmpl.addEvent('selection', function (el, sel, val, input) {
+		        window.service_cmpl.options.postData['host'] = val;
+		        $$('service').set('value', '');
+		    });
+
+		    window.service_cmpl = new Autocompleter.Request.VigiloJSON(
+		        'service',
+		        '${tg.url("/autocomplete/service")}',
+		        {
+		            minLength: 3,
+		            selectMode: 'type-ahead',
+		            forceSelect: true,
+		            postData: {},
+		            postVar: 'service',
+		        }
+		    );
+		    var val = $$('host').get('value');
+		    if (val != '')
+		        window.service_cmpl.options.postData['host'] = val;
+		});
+	</script>
+	
 </body>
 </html>
 
