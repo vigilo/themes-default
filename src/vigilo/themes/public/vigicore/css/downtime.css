@@ -1,0 +1,203 @@
+#schedule_dowtime label
+{
+    clear: left;
+    float: left;
+    margin-top: 5px;
+    margin-left: 10px;
+    width: 100px;
+    line-height: 31px;
+    vertical-align: middle;
+}
+
+#schedule_dowtime input.text
+{
+    float: left;
+    margin-top: 5px;
+    margin-left: 0px;
+    width: 165px;
+    height: 21px;
+    padding: 5px;
+    border: 0;
+    background: url('../images/inputbg.png') top left no-repeat;
+    color: #fff;
+}
+
+#schedule_dowtime textarea
+{
+    float: left;
+    margin-top: 5px;
+    width: 180px;
+    height: 162px;
+    padding: 5px 20px 35px 5px;
+    border: 0;
+    background: url('../images/textareabg.png') top left no-repeat;
+    color: #fff;
+}
+
+#schedule_dowtime div.calendar_field label
+{
+    width: 100px;
+}
+
+#schedule_dowtime div.calendar_field input.calendardatetimepicker
+{
+    float: left;
+    margin-right: 10px;
+    margin-top: 5px;
+    width: 165px;
+    height: 21px;
+    padding: 5px;
+    border: 0;
+    background: url('../images/inputbg.png') top left no-repeat;
+    color: #fff;
+}
+
+#schedule_dowtime div.calendar_field input.date_field_button
+{
+    float: left;
+    margin-top: 9px;
+}
+
+#scheduled_downtimes
+{
+    width: 850px;
+    margin: auto;
+}
+
+#scheduled_downtimes h2
+{
+    font-size: 16px;
+    float: left;
+    padding: 0;
+    margin: 0px 5px 2px -1px;
+    background: url('../images/loginheader-left.png') top left no-repeat;
+}
+
+* html #scheduled_downtimes h2
+{
+    margin-left: 3px;
+    width: 280px;
+    text-align: center;
+}
+
+#scheduled_downtimes h2 span
+{
+    background: url('../images/loginheader-right.png') right top no-repeat;
+    height: 30px;
+    line-height: 30px;
+    display: block;
+    font-size: 100%;
+    font-weight: normal;
+    color: #FFF;
+    padding: 0 10px;
+}
+
+*+html #scheduled_downtimes h2 span
+{
+    padding: 0 20px;
+}
+
+#scheduled_downtimes table
+{
+    clear: both;
+    margin: auto;
+    width: 100%;
+    text-align: center;
+/*   border: 1px solid #31808C;*/
+}
+
+#scheduled_downtimes table thead tr
+{
+    background-color: #F0F0F0;
+}
+
+#scheduled_downtimes table thead tr.asc
+{
+    background-color: #F0F0F0;
+}
+
+#scheduled_downtimes table thead tr.desc
+{
+    background-color: #F0F0F0;
+}
+
+#scheduled_downtimes table tr:hover, 
+#scheduled_downtimes table tr.even:hover, 
+#scheduled_downtimes table tr.odd:hover
+{
+    background-color: #F8F1C4;
+}
+
+#scheduled_downtimes table tr.even
+{
+    background-color: #EDF3FE;
+}
+
+#scheduled_downtimes table tr.odd
+{
+    background-color: #FFFFFF;
+}
+
+#scheduled_downtimes table th, table td
+{
+    padding: 2px 10px;
+    width: 80px;
+    text-align: center;
+}
+
+#scheduled_downtimes table th.action_col, table td.action_col
+{
+    width: 80px;
+}
+
+#scheduled_downtimes table th.action_col image, table td.action_col img
+{
+    display: inline;
+}
+
+#scheduled_downtimes table th
+{
+    font-weight:bold;
+}
+
+#scheduled_downtimes table a
+{
+    text-decoration: none;
+}
+
+p.pagelist strong {
+    padding: 5px;
+}
+
+p.pagelist {
+    text-align: center;
+}
+
+a.prev_page {
+    background: url(../images/arrow-left.png) no-repeat;
+    padding: 12px 18px 15px;
+    text-decoration: none;
+}
+
+a.next_page {
+    background: url(../images/arrow-right.png) no-repeat;
+    padding: 12px 18px 15px;
+    margin-left: 4px;
+    text-decoration: none;
+}
+
+#downtime_duration_form {
+    background-color: white;
+}
+
+#downtime_duration_form input[type=button]
+{
+    background: url('../images/loginbottombg.png') bottom left no-repeat;
+    width: 370px;
+    height: 61px;
+    border: 0;
+    margin-top: 10px;
+    color: #fff;
+    padding: 10px 240px 18px 10px;
+}
+
