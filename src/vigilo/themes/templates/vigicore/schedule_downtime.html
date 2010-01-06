@@ -1,7 +1,11 @@
 <html xmlns:py="http://genshi.edgewall.org/"
       xmlns:xi="http://www.w3.org/2001/XInclude"
       py:strip="">
+
 <py:def function="schedule_downtime">
+    <script type="text/javascript" src="${tg.url('/js/jxlib.js')}"></script>
+
+
 	<div id="schedule_downtime">
 		<form action="${tg.url('/downtime/schedule_downtime')}" method="post" class="loginfields">
 			<h2><span>Schedule downtime</span></h2>
@@ -22,6 +26,7 @@
 			<div class="calendar_field">
 				<label for="end">End:</label>
 				${end_calendar()}
+                <input type="button" value="Choose duration" id="duration_trigger" class="date_field_button" />
 			</div>
 
 			<label for="comment">Comment:</label>
@@ -30,5 +35,83 @@
 			<input type="submit" id="submit" value="${l_('Schedule!')}" />
 		</form>
 	</div>
+
+    <div style="display: none">
+        <form id="downtime_duration_form" action="?" method="get" class="loginfields">
+            <label for="duration_days">Days:</label>
+            <input type="text" id="duration_days" class="text" value="" />
+
+            <label for="duration_hours">Hours:</label>
+            <input type="text" id="duration_hours" class="text" value="" />
+
+            <label for="duration_minutes">Minutes:</label>
+            <input type="text" id="duration_minutes" class="text" value="" />
+
+            <label for="duration_seconds">Seconds:</label>
+            <input type="text" id="duration_seconds" class="text" value="" />
+
+            <input type="button" id="duration_submit" value="${l_('OK')}" />
+        </form>
+    </div>
+
+    <script type="text/javascript">
+        // On surcharge la méthode setup du calendrier
+        // pour intercepter les paramètres.
+        var setup = Calendar.setup;
+        Calendar.setup = function (params) {
+            var f = $(params['inputField']);
+            f.store('params', params);
+            setup(params);
+        };
+
+        window.addEvent('domready', function () {
+            var btn = $('duration_trigger');
+            btn.addEvent('click', function () {
+                var d = new Jx.Dialog({
+                    label: '${l_("Select duration")}',
+                    modal: false,
+                    resize: false,
+                    move: true,
+                    content: 'downtime_duration_form',
+                    width: 395,
+                    height: 260,
+                });
+                d.open();
+
+                $('duration_submit').addEvent('click', function () {
+                    var duration = 0;
+                    var fields = new Hash({
+                        day: 86400,
+                        hour: 3600,
+                        minute: 60,
+                        second:  1,
+                    });
+
+                    var params = $('start').retrieve('params');
+                    var dateStr = $('start').get('value');
+                    var cal = new Calendar(0, null, null, null);
+                    cal.setDateFormat(params.ifFormat);
+                    cal.create();
+                    cal.parseDate(dateStr);
+                    var date = cal.date;
+
+                    fields.each(function (value, key) {
+                        var field = $('duration_' + key + 's').get('value').toInt();
+                        if (!isNaN(field))
+                            date.increment(key, field);
+                    });
+
+                    $('end').set('value', date.print(params.ifFormat));
+                    date = null;
+                    cal = null;
+
+                    this.close();
+                }.bind(d));
+
+            }.bind(btn));
+
+            btn = null;
+        });
+    </script>
 </py:def>
 </html>
