@@ -1,0 +1,34 @@
+<html xmlns:py="http://genshi.edgewall.org/"
+      xmlns:xi="http://www.w3.org/2001/XInclude"
+      py:strip="">
+<py:def function="schedule_downtime">
+	<div id="schedule_downtime">
+		<form action="${tg.url('/downtime/schedule_downtime')}" method="post" class="loginfields">
+			<h2><span>Schedule downtime</span></h2>
+
+			<label for="host">Host:</label>
+			<input type="text" id="host" name="host" class="text" value="${hostname}"></input>
+			<br/>
+
+			<label for="service">Service:</label>
+			<input type="text" id="service" name="service" class="text" value="${servicename}"></input>
+			<br/>
+
+			<div class="calendar_field">
+				<label for="start">Start:</label>
+				${start_calendar()}
+			</div>
+
+			<div class="calendar_field">
+				<label for="end">End:</label>
+				${end_calendar()}
+			</div>
+
+			<label for="comment">Comment:</label>
+			<textarea id="comment" name="comment" rows="8">Maintenance.</textarea>
+
+			<input type="submit" id="submit" value="${l_('Schedule!')}" />
+		</form>
+	</div>
+</py:def>
+</html>

@@ -203,7 +203,12 @@ form.loginfields input#submit
 /* Schedule downtime form */
 /* ********************** */
 
-#schedule_dowtime label
+#schedule_downtime
+{
+	margin: 10px 0px ;
+}
+
+#schedule_downtime label
 {
     clear: left;
     float: left;
@@ -214,7 +219,7 @@ form.loginfields input#submit
     vertical-align: middle;
 }
 
-#schedule_dowtime input.text
+#schedule_downtime input.text
 {
     float: left;
     margin-top: 5px;
@@ -227,7 +232,7 @@ form.loginfields input#submit
     color: #fff;
 }
 
-#schedule_dowtime textarea
+#schedule_downtime textarea
 {
     float: left;
     margin-top: 5px;
@@ -239,12 +244,12 @@ form.loginfields input#submit
     color: #fff;
 }
 
-#schedule_dowtime div.calendar_field label
+#schedule_downtime div.calendar_field label
 {
     width: 100px;
 }
 
-#schedule_dowtime div.calendar_field input.calendardatetimepicker
+#schedule_downtime div.calendar_field input.calendardatetimepicker
 {
     float: left;
     margin-right: 10px;
@@ -257,7 +262,7 @@ form.loginfields input#submit
     color: #fff;
 }
 
-#schedule_dowtime div.calendar_field  input.date_field_button
+#schedule_downtime div.calendar_field  input.date_field_button
 {
     float: left;
     margin-top: 9px;
@@ -320,14 +325,19 @@ form.loginfields input#submit
 	background-color: #F0F0F0;
 }
 
-#scheduled_downtimes table thead tr.asc
+#scheduled_downtimes table th
 {
-    background-color: #F0F0F0;
+    font-weight:bold;
 }
 
-#scheduled_downtimes table thead tr.desc
+#scheduled_downtimes table th.asc
 {
-    background-color: #F0F0F0;
+    background-color: #99FF99;
+}
+
+#scheduled_downtimes table th.desc
+{
+    background-color: #FF9900;
 }
 
 #scheduled_downtimes table tr:hover, 
@@ -364,14 +374,6 @@ form.loginfields input#submit
 	display: inline;
 }
 
-#scheduled_downtimes table th
-{
-	/******************************************************************************************************************/
-	/******************************************************************************************************************/
-	/******************************************************************************************************************/
-    font-weight:bold;
-}
-
 #scheduled_downtimes table a
 {
 	text-decoration: none;
@@ -382,6 +384,7 @@ p.pagelist strong {
 }
 
 p.pagelist {
+	margin: 10px 0;
 	text-align: center;
 }
 

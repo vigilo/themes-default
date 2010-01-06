@@ -5,6 +5,7 @@
     xmlns:xi="http://www.w3.org/2001/XInclude">
 
 <xi:include href="master.html" />
+<xi:include href="schedule_downtime.html" />
 
 <head>
 	<meta content="text/html; charset=UTF-8" http-equiv="content-type" py:replace="''"/>
@@ -18,43 +19,9 @@
     <script type="text/javascript" src="${tg.url('/js/Autocompleter/vigilo.js')}"></script>
 </head>
 
-<br />
-
 <body>
 
-	<br />
-
-	<div id="schedule_dowtime">
-		<form action="${tg.url('/downtime/schedule_downtime')}" method="post" class="loginfields">
-			<h2><span>Schedule downtime</span></h2>
-
-			<label for="host">Host:</label>
-			<input type="text" id="host" name="host" class="text" value="${hostname}"></input>
-			<br/>
-
-			<label for="service">Service:</label>
-			<input type="text" id="service" name="service" class="text" value="${servicename}"></input>
-			<br/>
-
-			<div class="calendar_field">
-				<label for="start">Start:</label>
-				${start_calendar()}
-			</div>
-
-			<div class="calendar_field">
-				<label for="end">End:</label>
-				${end_calendar()}
-			</div>
-
-			<label for="comment">Comment:</label>
-			<textarea id="comment" name="comment" rows="8">Maintenance.</textarea>
-
-			<input type="submit" id="submit" value="${l_('Schedule!')}" />
-		</form>
-	</div>
-	
-	<br />
-	<br />
+  	${schedule_downtime()}
 
 	<div id="scheduled_downtimes">
 		<h2><span>Scheduled downtimes</span></h2>
@@ -83,12 +50,12 @@
 					
 				    <py:choose test="">
 						<py:when test="sort=='servicename' and order=='asc'">
-				    		<th><a href="?page=${page}&amp;sort=servicename&amp;order=desc">
+				    		<th class="asc"><a href="?page=${page}&amp;sort=servicename&amp;order=desc">
 				    			<img src="${tg.url('/images/down.gif')}" alt="down" /> Service
 				    		</a></th>
 					  	</py:when>
 						<py:when test="sort=='servicename' and order=='desc'">
-				    		<th><a href="?page=${page}&amp;sort=servicename&amp;order=asc">
+				    		<th class="desc"><a href="?page=${page}&amp;sort=servicename&amp;order=asc">
 				    			<img src="${tg.url('/images/up.gif')}" alt="up" /> Service
 				    		</a></th>
 					  	</py:when>
@@ -100,12 +67,12 @@
 					
 				    <py:choose test="">
 						<py:when test="sort=='entrytime' and order=='asc'">
-				    		<th><a href="?page=${page}&amp;sort=entrytime&amp;order=desc">
+				    		<th class="asc"><a href="?page=${page}&amp;sort=entrytime&amp;order=desc">
 				    			<img src="${tg.url('/images/down.gif')}" alt="down" /> Entry&nbsp;time
 				    		</a></th>
 					  	</py:when>
 						<py:when test="sort=='entrytime' and order=='desc'">
-				    		<th><a href="?page=${page}&amp;sort=entrytime&amp;order=asc">
+				    		<th class="desc"><a href="?page=${page}&amp;sort=entrytime&amp;order=asc">
 				    			<img src="${tg.url('/images/up.gif')}" alt="up" /> Entry&nbsp;time
 				    		</a></th>
 					  	</py:when>
@@ -117,12 +84,12 @@
 					
 				    <py:choose test="">
 						<py:when test="sort=='author' and order=='asc'">
-				    		<th><a href="?page=${page}&amp;sort=author&amp;order=desc">
+				    		<th class="asc"><a href="?page=${page}&amp;sort=author&amp;order=desc">
 				    			<img src="${tg.url('/images/down.gif')}" alt="down" /> Author
 				    		</a></th>
 					  	</py:when>
 						<py:when test="sort=='author' and order=='desc'">
-				    		<th><a href="?page=${page}&amp;sort=author&amp;order=asc">
+				    		<th class="desc"><a href="?page=${page}&amp;sort=author&amp;order=asc">
 				    			<img src="${tg.url('/images/up.gif')}" alt="up" /> Author
 				    		</a></th>
 					  	</py:when>
@@ -134,12 +101,12 @@
 					
 				    <py:choose test="">
 						<py:when test="sort=='comment' and order=='asc'">
-				    		<th><a href="?page=${page}&amp;sort=comment&amp;order=desc">
+				    		<th class="asc"><a href="?page=${page}&amp;sort=comment&amp;order=desc">
 				    			<img src="${tg.url('/images/down.gif')}" alt="down" /> Comment
 				    		</a></th>
 					  	</py:when>
 						<py:when test="sort=='comment' and order=='desc'">
-				    		<th><a href="?page=${page}&amp;sort=comment&amp;order=asc">
+				    		<th class="desc"><a href="?page=${page}&amp;sort=comment&amp;order=asc">
 				    			<img src="${tg.url('/images/up.gif')}" alt="up" /> Comment
 				    		</a></th>
 					  	</py:when>
@@ -151,12 +118,12 @@
 					
 				    <py:choose test="">
 						<py:when test="sort=='start' and order=='asc'">
-				    		<th><a href="?page=${page}&amp;sort=start&amp;order=desc">
+				    		<th class="asc"><a href="?page=${page}&amp;sort=start&amp;order=desc">
 				    			<img src="${tg.url('/images/down.gif')}" alt="down" /> Start
 				    		</a></th>
 					  	</py:when>
 						<py:when test="sort=='start' and order=='desc'">
-				    		<th><a href="?page=${page}&amp;sort=start&amp;order=asc">
+				    		<th class="desc"><a href="?page=${page}&amp;sort=start&amp;order=asc">
 				    			<img src="${tg.url('/images/up.gif')}" alt="up" /> Start
 				    		</a></th>
 					  	</py:when>
@@ -168,12 +135,12 @@
 					
 				    <py:choose test="">
 						<py:when test="sort=='end' and order=='asc'">
-				    		<th><a href="?page=${page}&amp;sort=end&amp;order=desc">
+				    		<th class="asc"><a href="?page=${page}&amp;sort=end&amp;order=desc">
 				    			<img src="${tg.url('/images/down.gif')}" alt="down" /> End
 				    		</a></th>
 					  	</py:when>
 						<py:when test="sort=='end' and order=='desc'">
-				    		<th><a href="?page=${page}&amp;sort=end&amp;order=asc">
+				    		<th class="desc"><a href="?page=${page}&amp;sort=end&amp;order=asc">
 				    			<img src="${tg.url('/images/up.gif')}" alt="up" /> End
 				    		</a></th>
 					  	</py:when>
@@ -185,12 +152,12 @@
 					
 				    <py:choose test="">
 						<py:when test="sort=='status' and order=='asc'">
-				    		<th><a href="?page=${page}&amp;sort=status&amp;order=desc">
+				    		<th class="asc"><a href="?page=${page}&amp;sort=status&amp;order=desc">
 				    			<img src="${tg.url('/images/down.gif')}" alt="down" /> Status
 				    		</a></th>
 					  	</py:when>
 						<py:when test="sort=='status' and order=='desc'">
-				    		<th><a href="?page=${page}&amp;sort=status&amp;order=asc">
+				    		<th class="desc"><a href="?page=${page}&amp;sort=status&amp;order=asc">
 				    			<img src="${tg.url('/images/up.gif')}" alt="up" /> Status
 				    		</a></th>
 					  	</py:when>
@@ -228,16 +195,11 @@
 		</table>
 	</div>
 
-	<br />
-
 	<p class="pagelist">
 		<a class="prev_page" href="?page=${current_page.previous_page}${url_param}">&nbsp;</a>
 			${current_page.pager(format='~3~', page_param='page', show_if_single_page=True, sort=sort, order=order)}
 		<a class="next_page" href="?page=${current_page.next_page}${url_param}">&nbsp;</a>
 	</p>
-	
-	<br />
-	<br />
 
 	<script type="text/javascript">
 		window.addEvent('domready', function (){
