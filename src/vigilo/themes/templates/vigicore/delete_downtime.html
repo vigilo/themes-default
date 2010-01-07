@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:py="http://genshi.edgewall.org/"
+    xmlns:xi="http://www.w3.org/2001/XInclude">
+
+<xi:include href="master.html" />
+<xi:include href="schedule_downtime.html" />
+
+<head>
+	<meta content="text/html; charset=UTF-8" http-equiv="content-type" py:replace="''"/>
+	<title>Schedule downtime</title>
+    <link type="text/css" rel="stylesheet" href="${tg.url('/css/Autocompleter/Autocompleter.css')}" />
+    <link type="text/css" rel="stylesheet" href="${tg.url('/css/downtime.css')}" />
+    <link rel="stylesheet" type="text/css" href="${tg.url('/css/jxlib/jxtheme.uncompressed.css')}" />
+    <script type="text/javascript" src="${tg.url('/js/mootools.js')}"></script>
+    <script type="text/javascript" src="${tg.url('/js/mootools-more.js')}"></script>
+    <script type="text/javascript" src="${tg.url('/js/Autocompleter/Autocompleter.js')}"></script>
+    <script type="text/javascript" src="${tg.url('/js/Autocompleter/Autocompleter.Request.js')}"></script>
+    <script type="text/javascript" src="${tg.url('/js/Autocompleter/Observer.js')}"></script>
+    <script type="text/javascript" src="${tg.url('/js/Autocompleter/vigilo.js')}"></script>
+</head>
+
+<body>
+	<div id="delete_downtime">
+		<form action="${tg.url('/downtime/commit_delete_downtime', {'id': id})}" method="post" class="loginfields">
+			<h2><span>${l_('Delete downtime')}</span></h2>
+			<div class="confirmation_message">
+			    ${l_('Are you sure you want to delete this downtime?')}
+			</div>
+			<div class="confirmation_message">
+                ${l_('This action cannot be undone!')}
+			</div>
+			<div id="buttons">
+			    <input type="submit" id="delete" value="${l_('Delete!')}" />
+			    <a href="${tg.url('/downtime')}">${l_('Cancel')}</a>
+            </div>
+		</form>
+	</div>
+</body>
+
+</html>
+

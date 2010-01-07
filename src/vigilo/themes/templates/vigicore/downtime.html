@@ -26,7 +26,7 @@
   	${schedule_downtime()}
 
 	<div id="scheduled_downtimes">
-		<h2><span>Scheduled downtimes</span></h2>
+		<h2><span>${l_('Scheduled downtimes')}</span></h2>
 		<table id="scheduled_downtimes_table">
 			<thead> 
 				<tr>
@@ -36,16 +36,16 @@
 				    <py:choose test="">
 						<py:when test="sort=='hostname' and order=='asc'">
 				    		<th class="asc"><a href="?page=${page}&amp;sort=hostname&amp;order=desc">
-				    			<img src="${tg.url('/images/down.gif')}" alt="down" /> Host
+				    			<img src="${tg.url('/images/down.gif')}" alt="descending" /> ${l_('Host')}
 				    		</a></th>
 					  	</py:when>
 						<py:when test="sort=='hostname' and order=='desc'">
 				    		<th class="desc"><a href="?page=${page}&amp;sort=hostname&amp;order=asc">
-				    			<img src="${tg.url('/images/up.gif')}" alt="up" /> Host
+				    			<img src="${tg.url('/images/up.gif')}" alt="ascending" /> ${l_('Host')}
 				    		</a></th>
 					  	</py:when>
 						<py:otherwise>
-				    		<th><a href="?page=${page}&amp;sort=hostname&amp;order=asc">Host</a></th>
+				    		<th><a href="?page=${page}&amp;sort=hostname&amp;order=asc">${l_('Host')}</a></th>
 						</py:otherwise>
 					</py:choose>
 					
@@ -53,16 +53,16 @@
 				    <py:choose test="">
 						<py:when test="sort=='servicename' and order=='asc'">
 				    		<th class="asc"><a href="?page=${page}&amp;sort=servicename&amp;order=desc">
-				    			<img src="${tg.url('/images/down.gif')}" alt="down" /> Service
+				    			<img src="${tg.url('/images/down.gif')}" alt="descending" /> ${l_('Service')}
 				    		</a></th>
 					  	</py:when>
 						<py:when test="sort=='servicename' and order=='desc'">
 				    		<th class="desc"><a href="?page=${page}&amp;sort=servicename&amp;order=asc">
-				    			<img src="${tg.url('/images/up.gif')}" alt="up" /> Service
+				    			<img src="${tg.url('/images/up.gif')}" alt="ascending" /> ${l_('Service')}
 				    		</a></th>
 					  	</py:when>
 						<py:otherwise>
-				    		<th><a href="?page=${page}&amp;sort=servicename&amp;order=asc">Service</a></th>
+				    		<th><a href="?page=${page}&amp;sort=servicename&amp;order=asc">${l_('Service')}</a></th>
 						</py:otherwise>
 					</py:choose>
 					
@@ -70,16 +70,16 @@
 				    <py:choose test="">
 						<py:when test="sort=='entrytime' and order=='asc'">
 				    		<th class="asc"><a href="?page=${page}&amp;sort=entrytime&amp;order=desc">
-				    			<img src="${tg.url('/images/down.gif')}" alt="down" /> Entry&nbsp;time
+				    			<img src="${tg.url('/images/down.gif')}" alt="descending" /> ${l_('Entry time')}
 				    		</a></th>
 					  	</py:when>
 						<py:when test="sort=='entrytime' and order=='desc'">
 				    		<th class="desc"><a href="?page=${page}&amp;sort=entrytime&amp;order=asc">
-				    			<img src="${tg.url('/images/up.gif')}" alt="up" /> Entry&nbsp;time
+				    			<img src="${tg.url('/images/up.gif')}" alt="ascending" /> ${l_('Entry time')}
 				    		</a></th>
 					  	</py:when>
 						<py:otherwise>
-				    		<th><a href="?page=${page}&amp;sort=entrytime&amp;order=asc">Entry&nbsp;time</a></th>
+				    		<th><a href="?page=${page}&amp;sort=entrytime&amp;order=asc">${l_('Entry time')}</a></th>
 						</py:otherwise>
 					</py:choose>
 					
@@ -87,16 +87,16 @@
 				    <py:choose test="">
 						<py:when test="sort=='author' and order=='asc'">
 				    		<th class="asc"><a href="?page=${page}&amp;sort=author&amp;order=desc">
-				    			<img src="${tg.url('/images/down.gif')}" alt="down" /> Author
+				    			<img src="${tg.url('/images/down.gif')}" alt="descending" /> ${l_('Author')}
 				    		</a></th>
 					  	</py:when>
 						<py:when test="sort=='author' and order=='desc'">
 				    		<th class="desc"><a href="?page=${page}&amp;sort=author&amp;order=asc">
-				    			<img src="${tg.url('/images/up.gif')}" alt="up" /> Author
+				    			<img src="${tg.url('/images/up.gif')}" alt="ascending" /> ${l_('Author')}
 				    		</a></th>
 					  	</py:when>
 						<py:otherwise>
-				    		<th><a href="?page=${page}&amp;sort=author&amp;order=asc">Author</a></th>
+				    		<th><a href="?page=${page}&amp;sort=author&amp;order=asc">${l_('Author')}</a></th>
 						</py:otherwise>
 					</py:choose>
 					
@@ -104,16 +104,16 @@
 				    <py:choose test="">
 						<py:when test="sort=='comment' and order=='asc'">
 				    		<th class="asc"><a href="?page=${page}&amp;sort=comment&amp;order=desc">
-				    			<img src="${tg.url('/images/down.gif')}" alt="down" /> Comment
+				    			<img src="${tg.url('/images/down.gif')}" alt="descending" /> ${l_('Comment')}
 				    		</a></th>
 					  	</py:when>
 						<py:when test="sort=='comment' and order=='desc'">
 				    		<th class="desc"><a href="?page=${page}&amp;sort=comment&amp;order=asc">
-				    			<img src="${tg.url('/images/up.gif')}" alt="up" /> Comment
+				    			<img src="${tg.url('/images/up.gif')}" alt="ascending" /> ${l_('Comment')}
 				    		</a></th>
 					  	</py:when>
 						<py:otherwise>
-				    		<th><a href="?page=${page}&amp;sort=comment&amp;order=asc">Comment</a></th>
+				    		<th><a href="?page=${page}&amp;sort=comment&amp;order=asc">${l_('Comment')}</a></th>
 						</py:otherwise>
 					</py:choose>
 					
@@ -121,16 +121,16 @@
 				    <py:choose test="">
 						<py:when test="sort=='start' and order=='asc'">
 				    		<th class="asc"><a href="?page=${page}&amp;sort=start&amp;order=desc">
-				    			<img src="${tg.url('/images/down.gif')}" alt="down" /> Start
+				    			<img src="${tg.url('/images/down.gif')}" alt="descending" /> ${l_('Start')}
 				    		</a></th>
 					  	</py:when>
 						<py:when test="sort=='start' and order=='desc'">
 				    		<th class="desc"><a href="?page=${page}&amp;sort=start&amp;order=asc">
-				    			<img src="${tg.url('/images/up.gif')}" alt="up" /> Start
+				    			<img src="${tg.url('/images/up.gif')}" alt="ascending" /> ${l_('Start')}
 				    		</a></th>
 					  	</py:when>
 						<py:otherwise>
-				    		<th><a href="?page=${page}&amp;sort=start&amp;order=asc">Start</a></th>
+				    		<th><a href="?page=${page}&amp;sort=start&amp;order=asc">${l_('Start')}</a></th>
 						</py:otherwise>
 					</py:choose>
 					
@@ -138,16 +138,16 @@
 				    <py:choose test="">
 						<py:when test="sort=='end' and order=='asc'">
 				    		<th class="asc"><a href="?page=${page}&amp;sort=end&amp;order=desc">
-				    			<img src="${tg.url('/images/down.gif')}" alt="down" /> End
+				    			<img src="${tg.url('/images/down.gif')}" alt="descending" /> ${l_('End')}
 				    		</a></th>
 					  	</py:when>
 						<py:when test="sort=='end' and order=='desc'">
 				    		<th class="desc"><a href="?page=${page}&amp;sort=end&amp;order=asc">
-				    			<img src="${tg.url('/images/up.gif')}" alt="up" /> End
+				    			<img src="${tg.url('/images/up.gif')}" alt="ascending" /> ${l_('End')}
 				    		</a></th>
 					  	</py:when>
 						<py:otherwise>
-				    		<th><a href="?page=${page}&amp;sort=end&amp;order=asc">End</a></th>
+				    		<th><a href="?page=${page}&amp;sort=end&amp;order=asc">${l_('End')}</a></th>
 						</py:otherwise>
 					</py:choose>
 					
@@ -155,16 +155,16 @@
 				    <py:choose test="">
 						<py:when test="sort=='status' and order=='asc'">
 				    		<th class="asc"><a href="?page=${page}&amp;sort=status&amp;order=desc">
-				    			<img src="${tg.url('/images/down.gif')}" alt="down" /> Status
+				    			<img src="${tg.url('/images/down.gif')}" alt="descending" /> ${l_('Status')}
 				    		</a></th>
 					  	</py:when>
 						<py:when test="sort=='status' and order=='desc'">
 				    		<th class="desc"><a href="?page=${page}&amp;sort=status&amp;order=asc">
-				    			<img src="${tg.url('/images/up.gif')}" alt="up" /> Status
+				    			<img src="${tg.url('/images/up.gif')}" alt="ascending" /> ${l_('Status')}
 				    		</a></th>
 					  	</py:when>
 						<py:otherwise>
-				    		<th><a href="?page=${page}&amp;sort=status&amp;order=asc">Status</a></th>
+				    		<th><a href="?page=${page}&amp;sort=status&amp;order=asc">${l_('Status')}</a></th>
 						</py:otherwise>
 					</py:choose>
 				</tr> 
@@ -172,17 +172,17 @@
 			<tbody>
 				<tr py:for="raw_id, raw in enumerate(downtimes)" class="${raw_id%2 and 'even' or 'odd'}">
 					<td class="action_col">
-						<img src="${tg.url('/images/edit.png')}" alt="edit" />
-						<img src="${tg.url('/images/delete.png')}" alt="delete" />
+						<a href="${tg.url('/downtime/edit_downtime', {'id': raw.iddowntime})}"><img src="${tg.url('/images/edit.png')}" alt="edit" /></a>
+						<a href="${tg.url('/downtime/delete_downtime', {'id': raw.iddowntime})}"><img src="${tg.url('/images/delete.png')}" alt="delete" /></a>
 					</td>
 					<td>${raw.hostname}</td>
 					<td>${raw.servicename}</td>
 				    <td>${raw.entrytime}</td>
 				    <td>${raw.author}</td>
 				    <py:choose test="">
-						<py:when test="len(raw.comment) > 25">
+						<py:when test="len(raw.comment) > 23">
 							<td>
-								${raw.comment[:25]}<a id="comment_${raw_id}" href="#comment_${raw_id}" title="${raw.comment}">...</a>
+								${raw.comment[:23]}<a id="comment_${raw_id}" href="#comment_${raw_id}" title="${raw.comment}">...</a>
 							</td>
 					  	</py:when>
 						<py:otherwise>
@@ -198,9 +198,9 @@
 	</div>
 
 	<p class="pagelist">
-		<a class="prev_page" href="?page=${current_page.previous_page}${url_param}">&nbsp;</a>
+		<a class="prev_page" href="?page=${current_page.previous_page}${url_param}"><img src="${tg.url('/images/arrow-left.png')}" alt="edit" /></a>
 			${current_page.pager(format='~3~', page_param='page', show_if_single_page=True, sort=sort, order=order)}
-		<a class="next_page" href="?page=${current_page.next_page}${url_param}">&nbsp;</a>
+		<a class="next_page" href="?page=${current_page.next_page}${url_param}"><img src="${tg.url('/images/arrow-right.png')}" alt="edit" /></a>
 	</p>
 
 	<script type="text/javascript">

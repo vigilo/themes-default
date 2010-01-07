@@ -66,7 +66,8 @@
 
 #schedule_downtime input#duration_trigger
 {
-    float: right;
+    clear: both;
+    margin-left: 295px;
 }
 
 #schedule_downtime div.calendar_field  input.date_field_button
@@ -224,5 +225,59 @@ p.pagelist strong {
     color: #fff;
     padding: 10px 240px 18px 10px;
 }
+
+
+/* ******************** */
+/* Delete downtime form */
+/* ******************** */
+
+#delete_downtime form
+{
+    height: 150px;
+}
+
+#delete_downtime .confirmation_message
+{
+    clear: both;
+    padding: 10px;
+}
+
+#delete_downtime #buttons
+{
+    margin-top: 5px;
+    text-align: center;
+}
+
+#delete_downtime #buttons a
+{
+    margin-left: 10px;
+}
+
+/*#delete_downtime input#submit*/
+/*{*/
+/*    background: url('../images/loginbottombg.png') bottom left no-repeat;*/
+/*    width: 370px;*/
+/*    height: 61px;*/
+/*    margin-top: 10px;*/
+/*    color: #fff;*/
+/*    padding: 10px 240px 18px 10px;*/
+/*    clear: right;*/
+/*}*/
+
+/*#delete_downtime a*/
+/*{*/
+/*    background: url('../images/inputbg.png') top left no-repeat;*/
+/*    float: left;*/
+/*    margin-left: 150px;*/
+/*    margin-top: -50px;*/
+/*    padding: 5px;*/
+/*    width: 165px;*/
+/*    height: 21px;*/
+/*    border: 0;*/
+/*    color: #fff;*/
+/*}*/
+
+
+
 
 

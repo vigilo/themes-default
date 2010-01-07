@@ -8,29 +8,29 @@
 
 	<div id="schedule_downtime">
 		<form action="${tg.url('/downtime/schedule_downtime')}" method="post" class="loginfields">
-			<h2><span>Schedule downtime</span></h2>
+			<h2><span>${l_('Schedule downtime')}</span></h2>
 
-			<label for="host">Host:</label>
+			<label for="host">${l_('Host:')}</label>
 			<input type="text" id="host" name="host" class="text" value="${hostname}"></input>
 			<br/>
 
-			<label for="service">Service:</label>
+			<label for="service">${l_('Service:')}</label>
 			<input type="text" id="service" name="service" class="text" value="${servicename}"></input>
 			<br/>
 
 			<div class="calendar_field">
-				<label for="start">Start:</label>
+				<label for="start">${l_('Start:')}</label>
 				${start_calendar()}
 			</div>
 
 			<div class="calendar_field">
-				<label for="end">End:</label>
+				<label for="end">${l_('End:')}</label>
 				${end_calendar()}
-                <input type="button" value="Choose duration" id="duration_trigger" class="date_field_button" />
+				<input type="button" id="duration_trigger" class="date_field_button" value="${l_('Choose a duration')}" /> 
 			</div>
 
-			<label for="comment">Comment:</label>
-			<textarea id="comment" name="comment" rows="8">Maintenance.</textarea>
+			<label for="comment">${l_('Comment:')}</label>
+			<textarea id="comment" name="comment" cols="20" rows="8">${l_('Maintenance.')}</textarea>
 
 			<input type="submit" id="submit" value="${l_('Schedule!')}" />
 		</form>
