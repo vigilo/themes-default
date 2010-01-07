@@ -14,13 +14,7 @@
 
 #schedule_downtime label
 {
-    clear: left;
-    float: left;
-    margin-top: 5px;
-    margin-left: 10px;
     width: 100px;
-    line-height: 31px;
-    vertical-align: middle;
 }
 
 #schedule_downtime input.text
@@ -36,13 +30,17 @@
     color: #fff;
 }
 
+#schedule_downtime input#submit {
+    margin-top: 0;
+}
+
 #schedule_downtime textarea
 {
     float: left;
     margin-top: 5px;
     width: 180px;
     height: 162px;
-    padding: 5px 20px 35px 5px;
+    padding: 5px 20px 5px 5px;
     border: 0;
     background: url('../images/textareabg.png') top left no-repeat;
     color: #fff;
