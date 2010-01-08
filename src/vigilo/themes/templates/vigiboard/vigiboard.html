@@ -120,12 +120,14 @@ ${tmpl_context.search_form()}
             onOpen: window.dlg_open_handler,
             onClose: window.dlg_close_handler,
             width: 400,
-            height: 200,
+            height: 250,
             closed: true,
         });
         window.search_dialog.toggleCollapse();
         window.search_dialog.toggleCollapse();
 
+        $('search_form_hostgroup').set('value', "${search['hostgroup'].encode('backslash')}");
+        $('search_form_servicegroup').set('value', "${search['servicegroup'].encode('backslash')}");
         $('search_form_host').set('value', "${search['host'].encode('backslash')}");
         $('search_form_service').set('value', "${search['service'].encode('backslash')}");
         $('search_form_output').set('value', "${search['output'].encode('backslash')}");
