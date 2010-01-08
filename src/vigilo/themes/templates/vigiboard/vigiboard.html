@@ -43,7 +43,7 @@
             <a href="${tg.url('/')}">
                 <img src="${tg.url('/images/home.png')}" alt="Home" title="Home" />
             </a>
-            <a id="SearchLien" href="javascript:vigiboard_searchdialog()">
+            <a id="SearchLien" href="javascript:window.search_dialog.open.bind(window.search_dialog)();">
                 <img src="${tg.url('/images/search.png')}" alt="Filter display" title="Filter display"/>
             </a>
             <a href="${tg.url('/logout_handler')}">
@@ -112,7 +112,7 @@ ${tmpl_context.search_form()}
          */ 
         window.search_dialog = new Jx.Dialog({
             id: "SearchDialog",
-            label: "${l_('Search Event')}",
+            label: "${l_('Search Event').encode('backslash')}",
             modal: false,
             resize: false,
             move: true,
@@ -125,6 +125,13 @@ ${tmpl_context.search_form()}
         });
         window.search_dialog.toggleCollapse();
         window.search_dialog.toggleCollapse();
+
+        $('search_form_host').set('value', "${search['host'].encode('backslash')}");
+        $('search_form_service').set('value', "${search['service'].encode('backslash')}");
+        $('search_form_output').set('value', "${search['output'].encode('backslash')}");
+        $('search_form_trouble_ticket').set('value', "${search['tt'].encode('backslash')}");
+        $('search_form_from_date').set('value', "${search['from_date'].encode('backslash')}");
+        $('search_form_to_date').set('value', "${search['to_date'].encode('backslash')}");
 
         new Autocompleter.Request.VigiloJSON(
             'search_form_host',
@@ -150,11 +157,11 @@ ${tmpl_context.search_form()}
 
         change_refresh_rate(${tg.session.get("refresh", 0)});
 
-        $('from_date_trigger').addEvent('click', function () {
+        $('search_form_from_date_trigger').addEvent('click', function () {
             $$$$(".calendar").setStyles({"zIndex": window.search_dialog.domObj.getStyle('zIndex').toInt()});
         });
 
-        $('to_date_trigger').addEvent('click', function () {
+        $('search_form_to_date_trigger').addEvent('click', function () {
             $$$$(".calendar").setStyles({"zIndex": window.search_dialog.domObj.getStyle('zIndex').toInt()});
         });
     });
@@ -165,7 +172,7 @@ ${tmpl_context.search_form()}
             link: 'cancel',
             url: '${tg.url("/set_fontsize")}',
             onFailure: function () {
-                alert("${l_('Unable to save preferences')}");
+                alert("${l_('Unable to save preferences').encode('backslash')}");
             }
         });
         req.post({fontsize: size});
@@ -185,7 +192,7 @@ ${tmpl_context.search_form()}
             link: 'cancel',
             url: '${tg.url("/set_refresh")}',
             onFailure: function () {
-                alert("${l_('Unable to save preferences')}");
+                alert("${l_('Unable to save preferences').encode('backslash')}");
             }
         });
         req.post({'refresh': timeout});
@@ -202,16 +209,6 @@ ${tmpl_context.search_form()}
         }
         window.location.reload(true);
     }
-
-    function vigiboard_searchdialog() {
-        $('search_form_host').set('value', "${search['host']}");
-        $('search_form_service').set('value', "${search['service']}");
-        $('search_form_output').set('value', "${search['output']}");
-        $('search_form_trouble_ticket').set('value', "${search['tt']}");
-
-        window.search_dialog.open.bind(window.search_dialog)();
-    }
-
 /*]]>*/
 </script>
 </body>

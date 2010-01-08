@@ -11,7 +11,7 @@
 
 <table class="vigitable" summary="Event table">
 	<thead>
-		<tr >
+		<tr>
 			<td style="width:26px;border-right: solid 1px #4682b4">
 			    <py:choose>
 				<img py:when="page == 1" src="${tg.url('/images/fleche_up.png')}" alt="Previous" title="Previous page" />
@@ -50,8 +50,8 @@
 		</tr>
 	</thead>
 
-	<tbody>
-		<py:for each="(event,class_tr,class_td_severity,class_td_date,img_fleche,statu,plugin) in events[1:]">
+	<tbody py:choose="not rows_info['total_rows']">
+		<py:for py:when="0" each="(event,class_tr,class_td_severity,class_td_date,img_fleche,statu,plugin) in events[1:]">
 		<tr py:attrs="class_tr" py:with="cause=event.cause">
 			<td style="padding: 3px;">
 			    <a href="#${event.idcorrevent}" class="Details_Link"><img src="${tg.url(img_fleche['src'])}" style="width:20px" alt="Details" title="Event details" /></a>
@@ -90,13 +90,11 @@
 			</td></tr>
 		    </py:if>
 		</py:for>
-	
+		<tr py:when="1">
+		    <td colspan="${len(events[0]) + 2}">There are no events.</td>
+		</tr>
 	</tbody>
 </table>
-
-<div py:if="not rows_info['total_rows']">
-There are no events.
-</div>
 
 <py:for each="fct,tpl in plugin_context">
     <py:if test="callable(fct)">
