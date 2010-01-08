@@ -159,3 +159,33 @@ clear:both;
 #DetailsDialog_peak_state {
     font-weight: bold;
 }
+
+
+/* Formulaire de recherche */
+
+form#search_form .labelcol
+{
+    width: 100px;
+}
+
+form#search_form .fieldcol
+{
+    width: 250px;
+}
+
+form#search_form .textfield
+{
+    width: 95%;
+}
+
+form#search_form .calendardatetimepicker
+{
+    width: 60%;
+}
+
+form#search_form .date_field_button
+{
+    width: 34%;
+}
+
+
