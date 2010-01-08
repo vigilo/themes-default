@@ -119,7 +119,7 @@ ${tmpl_context.search_form()}
             content: "search_form",
             onOpen: window.dlg_open_handler,
             onClose: window.dlg_close_handler,
-            width: 350,
+            width: 400,
             height: 200,
             closed: true,
         });
@@ -149,6 +149,14 @@ ${tmpl_context.search_form()}
         );
 
         change_refresh_rate(${tg.session.get("refresh", 0)});
+
+        $('from_date_trigger').addEvent('click', function () {
+            $$$$(".calendar").setStyles({"zIndex": window.search_dialog.domObj.getStyle('zIndex').toInt()});
+        });
+
+        $('to_date_trigger').addEvent('click', function () {
+            $$$$(".calendar").setStyles({"zIndex": window.search_dialog.domObj.getStyle('zIndex').toInt()});
+        });
     });
 
     function change_fontsize(size) {
