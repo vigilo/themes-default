@@ -70,7 +70,7 @@
         </td>
 
         <td style="margin-top: 8px; float: right">
-            <span py:if="search['host'] or search['service'] or search['output'] or search['tt']" style="color: rgb(70, 130, 180)">
+            <span py:if="filter(None, search.values())" style="color: rgb(70, 130, 180)">
                 <a href="${tg.url('/')}" style="color:rgb(70, 130, 180); text-decoration: underline;">${l_('You are in Search mode, click here to return to the initial mode.')}</a>
             </span>
         </td>
@@ -135,27 +135,10 @@ ${tmpl_context.search_form()}
         $('search_form_from_date').set('value', "${search['from_date'].encode('backslash')}");
         $('search_form_to_date').set('value', "${search['to_date'].encode('backslash')}");
 
-        new Autocompleter.Request.VigiloJSON(
-            'search_form_host',
-            '${tg.url("/autocomplete_host")}',
-            {
-                // ATTENTION: domObj n'est pas documenté dans l'API.
-                zIndex: window.search_dialog.domObj.getStyle('zIndex').toInt(),
-                minLength: 3,
-                selectMode: 'type-ahead',
-            }
-        );
-
-        new Autocompleter.Request.VigiloJSON(
-            'search_form_service',
-            '${tg.url("/autocomplete_service")}',
-            {
-                // ATTENTION: domObj n'est pas documenté dans l'API.
-                zIndex: window.search_dialog.domObj.getStyle('zIndex').toInt(),
-                minLength: 3,
-                selectMode: 'type-ahead',
-            }
-        );
+        add_autocompleter('search_form_host', 'host', '${tg.url("/autocomplete/host").encode("backslash")}');
+        add_autocompleter('search_form_service', 'service', '${tg.url("/autocomplete/service").encode("backslash")}');
+        add_autocompleter('search_form_hostgroup', 'hostgroup', '${tg.url("/autocomplete/hostgroup").encode("backslash")}');
+        add_autocompleter('search_form_servicegroup', 'servicegroup', '${tg.url("/autocomplete/servicegroup").encode("backslash")}');
 
         change_refresh_rate(${tg.session.get("refresh", 0)});
 
@@ -210,6 +193,16 @@ ${tmpl_context.search_form()}
                 return;
         }
         window.location.reload(true);
+    }
+
+    function add_autocompleter(elem, varname, url) {
+        new Autocompleter.Request.VigiloJSON(elem, url, {
+            // ATTENTION: domObj n'est pas documenté dans l'API.
+            zIndex: window.search_dialog.domObj.getStyle('zIndex').toInt(),
+            minLength: 3,
+            selectMode: 'type-ahead',
+            postVar: varname,
+        });
     }
 /*]]>*/
 </script>
