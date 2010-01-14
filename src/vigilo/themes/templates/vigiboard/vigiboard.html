@@ -76,7 +76,8 @@
 
         <td style="margin-left: 30px; float: right">
             Theme
-            <select id="theme" class="toolbar_select" onchange="change_theme($('theme').get('value'));">
+            <select id="theme" class="toolbar_select"
+                onchange="change_theme($('theme').get('value'), $('theme').getSelected().get('text'));">
                 <py:for each="(theme_name, theme_id, theme_files) in themes"
                     py:choose="int(theme_id == active_theme)">
                 <option py:when="1" value="${theme_id}" selected="selected">${theme_name}</option>
@@ -211,7 +212,7 @@ ${tmpl_context.search_form()}
         window.location.reload(true);
     }
 
-    function change_theme(title) {
+    function change_theme(theme_id, theme_name) {
         var req = new Request.JSON({
             link: 'cancel',
             url: '${tg.url("/set_theme")}',
@@ -219,15 +220,14 @@ ${tmpl_context.search_form()}
                 alert("${l_('Unable to save preferences').encode('backslash')}");
             }
         });
-        req.post({'theme': title});
-        setActiveStyleSheet(title);
+        req.post({'theme': theme_id});
+        setActiveStyleSheet(theme_name);
     }
 
-    function setActiveStyleSheet(title) {
-        var i, a, main;
+    function setActiveStyleSheet(theme_name) {
         $$$$('link[rel~=stylesheet][title]').each(function (link_obj) {
             link_obj.set('disabled', true);
-            if (link_obj.get('title') == title)
+            if (link_obj.get('title') == theme_name)
                 link_obj.set('disabled', false);
         })
     }
