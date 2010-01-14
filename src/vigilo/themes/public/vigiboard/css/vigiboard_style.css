@@ -158,6 +158,22 @@ clear:both;
 
 /* Formulaire de recherche */
 
+form#search_form
+{
+    width: 100%;
+}
+
+form#search_form table
+{
+    width: 99%;
+    margin: auto;
+}
+
+form#search_form table td
+{
+    padding-bottom: 2px;
+}
+
 form#search_form .labelcol
 {
     width: 100px;
@@ -165,22 +181,73 @@ form#search_form .labelcol
 
 form#search_form .fieldcol
 {
-    width: 250px;
+    width: 300px;
 }
 
 form#search_form .textfield
 {
-    width: 95%;
+    width: 98%;
 }
 
 form#search_form .calendardatetimepicker
 {
-    width: 60%;
+    width: 68%;
 }
 
 form#search_form .date_field_button
 {
-    width: 34%;
+    width: 29%;
 }
+
+form#search_form input
+{
+    font-size: 12px;
+}
+
+
+/* Formulaire d'édition */
+
+form#edit_event_form
+{
+    width: 100%;
+}
+
+form#edit_event_form table
+{
+    width: 99%;
+    margin: auto;
+}
+
+form#edit_event_form table td
+{
+    padding-bottom: 2px;
+}
+
+form#edit_event_form .labelcol
+{
+    width: 100px;
+}
+
+form#edit_event_form .fieldcol
+{
+    width: 300px;
+}
+
+form#edit_event_form .textfield
+{
+    width: 98%;
+}
+
+form#edit_event_form .singleselectfield
+{
+    width: 99%;
+}
+
+form#edit_event_form input
+{
+    font-size: 12px;
+}
+
+
 
 
