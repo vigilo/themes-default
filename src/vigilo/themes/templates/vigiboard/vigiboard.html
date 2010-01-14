@@ -1,8 +1,11 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
                       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--! @TODO Expliquer comment déclarer de nouveaux thèmes/styles. -->
 <html xmlns="http://www.w3.org/1999/xhtml"
-        xmlns:py="http://genshi.edgewall.org/"
-        xmlns:xi="http://www.w3.org/2001/XInclude">
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:py="http://genshi.edgewall.org/"
+    py:with="themes = ((l_('Night'), 'night', ('/css/night.css', )), (l_('Blind'), 'blind', ('/css/blind.css', ))); session_theme = session.get('theme'); active_theme = list(reversed([theme_data[1] for (theme_index, theme_data) in enumerate(themes) if theme_data[1] == session_theme or theme_index == 0]))[0]"
+>
 
     <xi:include href="vigiboard_event_table.html" />
 <?python from genshi import HTML, XML ?>
@@ -24,9 +27,12 @@
     <script type="text/javascript" src="${tg.url('/js/Autocompleter/Observer.js')}"></script>
     <script type="text/javascript" src="${tg.url('/js/Autocompleter/vigilo.js')}"></script>
 
-    <link type="text/css" rel="alternate stylesheet" href="${tg.url('/css/night.css')}" title="Night" />
-    <link type="text/css" rel="alternate stylesheet" href="${tg.url('/css/blind.css')}" title="Blind" />
-
+    <py:for each="(theme_name, theme_id, theme_files) in themes" py:choose="int(theme_id == active_theme)">
+        <link py:when="1" py:for="theme_file in theme_files" type="text/css"
+            rel="stylesheet" href="${tg.url(theme_file)}" title="${theme_name}" />
+        <link py:otherwise="" py:for="theme_file in theme_files" type="text/css"
+            rel="alternate stylesheet" href="${tg.url(theme_file)}" title="${theme_name}" />
+    </py:for>
 </head>
 
 <body style="font-size:${tg.session.get('fontsize',tg.config['vigiboard_font.size'])}">
@@ -59,13 +65,23 @@
 
         <td style="margin-left: 30px; float: right">
             Refresh every
-            <select id="refresh_time" class="refresh_select" onchange="change_refresh($('refresh_time').val());">
-            <py:with vars="refresh_time = tg.session.get('refresh', 0)">
-                <py:for each="(delay, label) in refresh_times">
+            <select id="refresh_time" class="toolbar_select" onchange="change_refresh($('refresh_time').get('value'));">
+                <py:for each="(delay, label) in refresh_times"
+                    py:with="refresh_time = tg.session.get('refresh', 0)">
                 <option py:if="refresh_time == delay" value="${delay}" selected="selected">${label}</option>
                 <option py:if="refresh_time != delay" value="${delay}">${label}</option>
                 </py:for>
-            </py:with>
+            </select>
+        </td>
+
+        <td style="margin-left: 30px; float: right">
+            Theme
+            <select id="theme" class="toolbar_select" onchange="change_theme($('theme').get('value'));">
+                <py:for each="(theme_name, theme_id, theme_files) in themes"
+                    py:choose="int(theme_id == active_theme)">
+                <option py:when="1" value="${theme_id}" selected="selected">${theme_name}</option>
+                <option py:otherwise="" value="${theme_id}">${theme_name}</option>
+                </py:for>
             </select>
         </td>
 
@@ -195,6 +211,27 @@ ${tmpl_context.search_form()}
         window.location.reload(true);
     }
 
+    function change_theme(title) {
+        var req = new Request.JSON({
+            link: 'cancel',
+            url: '${tg.url("/set_theme")}',
+            onFailure: function () {
+                alert("${l_('Unable to save preferences').encode('backslash')}");
+            }
+        });
+        req.post({'theme': title});
+        setActiveStyleSheet(title);
+    }
+
+    function setActiveStyleSheet(title) {
+        var i, a, main;
+        $$$$('link[rel~=stylesheet][title]').each(function (link_obj) {
+            link_obj.set('disabled', true);
+            if (link_obj.get('title') == title)
+                link_obj.set('disabled', false);
+        })
+    }
+
     function add_autocompleter(elem, varname, url) {
         new Autocompleter.Request.VigiloJSON(elem, url, {
             // ATTENTION: domObj n'est pas documenté dans l'API.
@@ -208,3 +245,4 @@ ${tmpl_context.search_form()}
 </script>
 </body>
 </html>
+

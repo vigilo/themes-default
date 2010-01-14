@@ -144,14 +144,9 @@ div.clearingdiv {
 clear:both;
 }
 
-.refresh_select {
+.toolbar_select {
 	background-color: #DBEAF5;
 	border: 1px solid #4682B4;
-}
-
-.refresh_button {
-	background-color: red;
-	color: white
 }
 
 #DetailsDialog_initial_state,
