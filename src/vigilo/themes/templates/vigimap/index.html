@@ -34,8 +34,14 @@
     <script type="text/javascript" src="js/selectmapgroup.js"></script>
     <script type="text/javascript" src="js/fieldautocomplete.js"></script>
     <script type="text/javascript" src="js/tg_submit.js"></script>
+    <!-- Ceci est un commentaire
+    <script type="text/javascript" src="/toscawidgets/resources/tw.dynforms.widgets/static/dynforms.js"></script>
+    <script type="text/javascript" src="/toscawidgets/resources/tw.forms/static/calendar/calendar.js"></script>
+    <script type="text/javascript" src="/toscawidgets/resources/tw.forms/static/calendar/calendar-setup.js"></script>
+    <script type="text/javascript" src="/toscawidgets/resources/tw.forms/static/calendar/lang/calendar-fr.js"></script>
+    -->
+    
 </head>
-
 <body>
 
 
@@ -56,7 +62,12 @@
         <canvas>
             Your browser does not support the canvas element. Please upgrade.
         </canvas>
-
+        <!-- début à retirer
+        <button id="test_fonction">Test function</button>
+        <button id="test_fonction2">Test function2</button>
+        <button id="test_fonction3">Test function3</button>
+        -->
+        <!-- fin a retirer-->
         <div id="legend">
         </div>
     </div>
@@ -72,6 +83,15 @@
     <div id="loading">
         <img alt="loading..." src="images/loading.gif" />
     </div>
+    ${empty_dynform()}
+    ${empty_calendar()}
+    <!--! Ceci est un commentaire
+    <div xmlns:py="http://genshi.edgewall.org/">
+    <h1> !</h1>
+    ${empty_dynform()}
+    </div>
+    -->
+    
 
 </body>
 </html>
