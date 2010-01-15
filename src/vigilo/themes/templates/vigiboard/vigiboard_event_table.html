@@ -12,10 +12,12 @@
 <table class="vigitable" summary="Event table">
 	<thead>
 		<tr>
-			<td style="width:26px;border-right: solid 1px #4682b4">
+			<td id="previous_page">
 			    <py:choose>
-				<img py:when="page == 1" src="${tg.url('/images/fleche_up.png')}" alt="Previous" title="Previous page" />
-				<a py:otherwise="" href="${tg.url('/%d' % (page-1))}"><img src="${tg.url('/images/fleche_up.png')}" alt="Previous" title="Previous page"/></a>
+				    <img py:when="page == 1" src="${tg.url('/images/fleche_up.png')}" alt="Previous" title="Previous page" />
+				    <a py:otherwise="" href="${tg.url('/%d' % (page-1))}">
+				        <img src="${tg.url('/images/fleche_up.png')}" alt="Previous" title="Previous page"/>
+				    </a>
 				</py:choose>
 			</td>
 			<!--!
@@ -25,71 +27,99 @@
 				est aligné sur le reste du tableau (les alertes).
 - 1 + len(events[1][6])
 			-->
-    		<td colspan="${len(events[0])}" style="color: white;background-color: #4682b4" >${l_('Showing rows %(id_first_row)d to %(id_last_row)d of %(total_rows)d') % rows_info} <br />
+    		<td colspan="${len(events[0])}" id="pagination">
+    		    ${l_('Showing rows %(id_first_row)d to %(id_last_row)d of %(total_rows)d') % rows_info} <br />
     		    <py:if test="nb_pages > 1">
-				Pages <py:for each="p in range(1, nb_pages + 1)">
-				<a py:if="p != page" href="${tg.url('/%d' % p)}" py:content="p" />
-				<span py:if="p == page" py:replace="p" />
-				</py:for>
+				    Pages 
+				    <py:for each="p in range(1, nb_pages + 1)">
+				        <a py:if="p != page" href="${tg.url('/%d' % p)}" py:content="p" />
+				        <span py:if="p == page" py:replace="p" />
+				    </py:for>
 				</py:if>
 			</td>
-			<td style="width:26px;border-left: solid 1px #4682b4">
+			<td id="next_page">
 			    <py:choose>
-				<img py:when="page == nb_pages" src="${tg.url('/images/fleche_down.png')}"  alt="Next" title="Next page" />
-				<a py:otherwise="" href="${tg.url('/%d' % (page+1))}"><img src="${tg.url('/images/fleche_down.png')}" alt="Next" title="Next page"/></a>
+				    <img py:when="page == nb_pages" src="${tg.url('/images/fleche_down.png')}"  alt="Next" title="Next page" />
+				    <a py:otherwise="" href="${tg.url('/%d' % (page+1))}">
+				        <img src="${tg.url('/images/fleche_down.png')}" alt="Next" title="Next page"/>
+				    </a>
 				</py:choose>
 			</td>
 		</tr>
 
 		<tr>
 			<py:for each="(pname,pstyle) in events[0]">
-			<th style="padding: 5px;" py:attrs="pstyle">${HTML(pname)}</th>
+			    <th py:attrs="pstyle">${HTML(pname)}</th>
 			</py:for>
-			<th style="width:26px;padding: 0px;"><a class="Edit_EventsLien" id="Edit_All" href="#"><img src="${tg.url('/images/icon_page_edit.png')}" alt="Edit selected" title="Edit all selected events"/></a></th>
-			<th style="padding:0px;"><input title="Select/Unselect all" id="vigiboard_checkall_checkbox" type="checkbox" onclick="vigiboard_checkall();" /></th>
+			<th class="small_col">
+			    <a class="Edit_EventsLien" id="Edit_All" href="#">
+			        <img src="${tg.url('/images/icon_page_edit.png')}" alt="Edit selected" title="Edit all selected events"/>
+			    </a>
+			</th>
+			<th class="small_col">
+			    <input title="Select/Unselect all" id="vigiboard_checkall_checkbox" type="checkbox" onclick="vigiboard_checkall();" />
+            </th>
 		</tr>
 	</thead>
 
 	<tbody py:choose="not rows_info['total_rows']">
 		<py:for py:when="0" each="(event,class_tr,class_td_severity,class_td_date,img_fleche,statu,plugin) in events[1:]">
-		<tr py:attrs="class_tr" py:with="cause=event.cause">
-			<td style="padding: 3px;">
-			    <a href="#${event.idcorrevent}" class="Details_Link"><img src="${tg.url(img_fleche['src'])}" style="width:20px" alt="Details" title="Event details" /></a>
-		    </td>
-			<td py:attrs="class_td_date">
-			    <span style="font-weight: bold;">${event.get_date('timestamp_active')}</span>
-			    <br />[${event.get_since_date('timestamp_active')}]
-			 </td>
-			<td py:attrs="class_td_date" style="text-align:center">${event.priority}</td>
-			<td py:attrs="class_td_date" style="text-align:center">${event.occurrence}</td>
-			<td>${cause.supitem.host.name}</td>
-			<td>${cause.supitem.servicename}</td>
-			<td>${cause.message}</td>
-			<td py:for="plug in plugin" py:attrs="plug[1]">${HTML(plug[0])}</td>
-			<td style="text-align: center"><a py:if="event.trouble_ticket is not None" href="${
-					tg.config['vigiboard_links.tt'] % {
-						'idcorrevent': event.idcorrevent,
-						'host': cause.supitem.host.name,
-						'service': cause.supitem.servicename,
-						'tt': event.trouble_ticket }}">[${event.trouble_ticket}]</a></td>
-			<py:choose>
-                <py:when test="not (event.status == 'AAClosed' and StateName.value_to_statename(cause.current_state) == u'OK')">
-			    <td style="text-align: center"><img src="${statu['src']}" py:if="statu != None" alt="${statu['label']}" title="${statu['label']}"/></td>
-			    <td py:attrs="class_td_date" style="padding: 0px;text-align: center"><a class="Edit_EventsLien" href="#${event.idcorrevent}"><img src="${tg.url('/images/icon_page_edit.png')}" alt="Edit" title="Edit this event"/></a></td>
-			    <td py:attrs="class_td_date" style="padding:0px;text-align: center"><input type="checkbox" class="Edit_EventsCheckBox" value="${event.idcorrevent}"/></td>
-			    </py:when>
-			    <py:otherwise>
-			    <td colspan="3" style="text-align: center"><img py:attrs="statu" py:if="statu != None" alt="Status" title="Event status"/></td>
-			    </py:otherwise>
-            </py:choose>
-		</tr>
+		    <tr py:attrs="class_tr" py:with="cause=event.cause">
+			    <td class="id_col">
+			        <a href="#${event.idcorrevent}" class="Details_Link">
+			            <img src="${tg.url(img_fleche['src'])}" alt="Details" title="Event details" />
+			        </a>
+		        </td>
+			    <td py:attrs="class_td_date">
+			        <span style="font-weight: bold;">${event.get_date('timestamp_active')}</span>
+			        <br />[${event.get_since_date('timestamp_active')}]
+			    </td>
+			    <td py:attrs="class_td_date" style="text-align:center">${event.priority}</td>
+			    <td py:attrs="class_td_date" style="text-align:center">${event.occurrence}</td>
+			    <td>${cause.supitem.host.name}</td>
+			    <td>${cause.supitem.servicename}</td>
+			    <td>${cause.message}</td>
+			    <td py:for="plug in plugin" py:attrs="plug[1]">${HTML(plug[0])}</td>
+			    <td class="ticket_col">
+			        <a py:if="event.trouble_ticket is not None" href="${
+					    tg.config['vigiboard_links.tt'] % {
+						    'idcorrevent': event.idcorrevent,
+						    'host': cause.supitem.host.name,
+						    'service': cause.supitem.servicename,
+						    'tt': event.trouble_ticket }}">[${event.trouble_ticket}]
+				    </a>
+			    </td>
+			    <py:choose>
+                    <py:when test="not (event.status == 'AAClosed' and StateName.value_to_statename(cause.current_state) == u'OK')">
+			            <td class="correvent_acknowledgement">
+			                <img src="${statu['src']}" py:if="statu != None" alt="${statu['label']}" title="${statu['label']}"/>
+			            </td>
+			            <td py:attrs="class_td_date" style="padding: 0px; text-align: center;">
+			                <a class="Edit_EventsLien" href="#${event.idcorrevent}">
+			                    <img src="${tg.url('/images/icon_page_edit.png')}" alt="Edit" title="Edit this event"/>
+			                </a>
+			            </td>
+			            <td py:attrs="class_td_date" style="padding:0px; text-align: center;">
+			                <input type="checkbox" class="Edit_EventsCheckBox" value="${event.idcorrevent}"/>
+			            </td>
+			        </py:when>
+			        <py:otherwise>
+			            <td colspan="3" class="last_cols">
+			                <img py:attrs="statu" py:if="statu != None" alt="Status" title="Event status"/>
+                        </td>
+			        </py:otherwise>
+                </py:choose>
+		    </tr>
 
-    		<py:if test="hist_error == True">
-			<tr><td colspan="${len(events[0]) + 1 + len(plugin)}">
-				${history_table(history[event.idcause], hist_error)}	
-			</td></tr>
-		    </py:if>
+		    <py:if test="hist_error == True">
+		        <tr>
+		            <td colspan="${len(events[0]) + 1 + len(plugin)}">
+			            ${history_table(history[event.idcause], hist_error)}	
+		            </td>
+		        </tr>
+	        </py:if>
 		</py:for>
+		
 		<tr py:when="1">
 		    <td colspan="${len(events[0]) + 2}">There are no events.</td>
 		</tr>
