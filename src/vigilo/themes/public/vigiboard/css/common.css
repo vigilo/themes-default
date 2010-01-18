@@ -1,0 +1,240 @@
+body {
+    text-align: left;
+    width: 100%;
+    font-size: 10px;
+    margin: auto !important;
+    font-family: "Lucida Grande", "Lucida Sans Unicode", geneva, verdana, sans-serif;
+}
+
+.toolbar {
+	background-color: #F0F1F5;
+	margin-bottom: 10px;
+	padding: 4px;
+}
+
+#logo img {
+    width: 58px;
+}
+
+.toolbar_item {
+    margin-left: 30px; 
+    float: right
+}
+
+#search_mode_tip {
+    margin-top: 7px;
+}
+
+#search_mode_tip a {
+    color:rgb(70, 130, 180);
+    text-decoration: underline;
+}
+
+#font_size_selector {
+    margin-top: 5px;
+}
+
+.history_table {
+	width: 100%;
+	margin-bottom: 30px;
+}
+.history_table thead {
+	background-color:#F8F8F8;
+	font-weight:bold;
+}
+
+.vigitable {
+    margin: auto;
+	width: 99%;
+	border-collapse: collapse;
+}
+
+.vigitable thead {
+	text-align: center;
+}
+
+.vigitable thead tr td {
+	padding: 0px;
+}
+
+.vigitable thead tr th {
+	padding: 4px 10px;
+	background-color: #EBECF0;
+	font-weight: bold;
+	border: solid 1px #EBECF0;
+}
+
+#previous_page {
+    width: 26px;
+    border-right: solid 1px #4682b4;
+}
+
+#pagination {
+    color: white;
+    background-color: #4682b4;
+    height: 29px;
+}
+
+#next_page {
+    width: 26px;
+    border-left: solid 1px #4682b4;
+}
+
+#previous_page img,
+#next_page img {
+    height: 32px;
+}
+
+.vigitable th {
+    padding: 5px
+}
+
+.vigitable th.small_col {
+    width: 26px; 
+    padding: 0px;
+}
+
+.vigitable tbody tr {
+	border: solid 1px white;
+    empty-cells: show;
+}
+
+.vigitable tbody tr td {
+	border: solid 1px white;
+    padding: 3px 10px;
+    empty-cells: show;
+}
+
+.vigitable td.id_col {
+    padding: 3px;
+}
+
+.vigitable td.id_col img {
+    width: 20px;
+}
+
+.vigitable td.ticket_col,
+.vigitable td.correvent_acknowledgement,
+.last_cols {
+    text-align: center;
+}
+
+.vigitable .fleche_detail {
+	padding: 3px;
+}
+
+a {
+	text-decoration: none;
+}
+
+img { 
+	border: none;
+	margin: 0px;
+}
+
+#flash {
+	opacity: 0;
+}
+
+#flash, .notice {
+    font-size: 120%;
+    font-weight: bolder;
+    bottom: 0px;
+    right: 0px;
+    width: 100%;
+    position: absolute;
+}
+#flash div, .notice {
+    padding: 8px 7px 6px 44px;
+}
+
+.fielderror {
+    color: red;
+    font-weight: bold;
+}
+
+div.clearingdiv {
+    clear: both;
+}
+
+#DetailsDialog_initial_state,
+#DetailsDialog_current_state,
+#DetailsDialog_peak_state {
+    font-weight: bold;
+}
+
+/* Formulaire de recherche */
+
+#search_form {
+    width: 100%;
+}
+
+#search_form table {
+    width: 99%;
+    margin: auto;
+}
+
+#search_form table td {
+    padding-bottom: 2px;
+}
+
+#search_form .labelcol {
+    width: 100px;
+}
+
+#search_form .fieldcol {
+    width: 300px;
+}
+
+#search_form .textfield {
+    width: 98%;
+}
+
+#search_form .calendardatetimepicker {
+    width: 68%;
+}
+
+#search_form .date_field_button {
+    width: 29%;
+}
+
+#search_form input {
+    font-size: 12px;
+}
+
+
+/* Formulaire d'édition */
+
+#edit_event_form {
+    width: 100%;
+}
+
+#edit_event_form table {
+    width: 99%;
+    margin: auto;
+}
+
+#edit_event_form table td {
+    padding-bottom: 2px;
+}
+
+#edit_event_form .labelcol {
+    width: 100px;
+}
+
+#edit_event_form .fieldcol {
+    width: 300px;
+}
+
+#edit_event_form .textfield {
+    width: 98%;
+}
+
+#edit_event_form .singleselectfield {
+    width: 99%;
+}
+
+#edit_event_form input {
+    font-size: 12px;
+}
+

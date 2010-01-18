@@ -1,44 +1,17 @@
-body {
-    background-color: rgb(156, 102, 31);
-}
-
-.toolbar {
+.boolbar {
 	border: solid 0px black;
-	background-color: #FFBF00;
-}
-
-.history_table thead {
-	background-color:#CC8100;
 }
 
 .vigitable thead tr th {
-	background-color: #CC8133;
-	border: solid 1px #CC8133;
+	border: solid 1px #EBECF0;
 }
 
 .vigitable tbody tr {
-	border: solid 1px black;
+	border: solid 1px white;
 }
 
 .vigitable tbody tr td {
-	border: solid 1px black;
-	color: white;
-}
-
-#previous_page {
-    border-right: solid 1px #FFBF33;
-}
-
-#next_page {
-    border-left: solid 1px #FFBF33;
-}
-
-tr.odd {
-	background-color: #FFBF00;
-}
-
-tr.even {
-	background-color: #FFBF33;
+	border: solid 1px white;
 }
 
 a {
@@ -66,8 +39,7 @@ a {
     color: red;
 }
 
-.toolbar_select {
-	background-color: #FFBF33;
-	border: 1px solid #CC8100;
+.refresh_select {
+	border: 1px solid #4682B4;
 }
 

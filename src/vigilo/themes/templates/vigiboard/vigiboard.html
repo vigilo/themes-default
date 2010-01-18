@@ -27,7 +27,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
     xmlns:xi="http://www.w3.org/2001/XInclude"
     xmlns:py="http://genshi.edgewall.org/"
-    py:with="themes = ((l_('Classical'), 'classical', ('/css/classical.css', )), (l_('Night'), 'night', ('/css/night.css', )), (l_('Blind'), 'blind', ('/css/blind.css', ))); session_theme = session.get('theme'); active_theme = list(reversed([theme_data[1] for (theme_index, theme_data) in enumerate(themes) if theme_data[1] == session_theme or theme_index == 0]))[0]"
+    py:with="themes = ((l_('Classical'), 'classical', ('/css/classical.css', )), (l_('Night'), 'night', ('/css/night.css', )), (l_('Colorblind'), 'colorblind', ('/css/colorblind.css', ))); session_theme = session.get('theme'); active_theme = list(reversed([theme_data[1] for (theme_index, theme_data) in enumerate(themes) if theme_data[1] == session_theme or theme_index == 0]))[0]"
 >
 
     <xi:include href="vigiboard_event_table.html" />
@@ -36,7 +36,7 @@
 <head>
     <meta content="text/html; charset=UTF-8" http-equiv="content-type" py:replace="''"/>
     <title>Vigiboard</title>
-    <link rel="stylesheet" type="text/css" href="${tg.url('/css/vigiboard_style.css')}" />
+    <link rel="stylesheet" type="text/css" href="${tg.url('/css/common.css')}" />
     <link rel="stylesheet" type="text/css" href="${tg.url('/css/jxlib/jxtheme.uncompressed.css')}" />
     <link type="text/css" rel="stylesheet" href="${tg.url('/css/Autocompleter/Autocompleter.css')}" />
 
