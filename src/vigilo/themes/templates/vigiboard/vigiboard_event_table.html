@@ -63,7 +63,7 @@
 	</thead>
 
 	<tbody py:choose="not rows_info['total_rows']">
-		<py:for py:when="0" each="(event,class_tr,class_td_severity,class_td_date,img_fleche,statu,plugin) in events[1:]">
+		<py:for py:when="0" each="(event,hostname,servicename,class_tr,class_td_severity,class_td_date,img_fleche,statu,plugin) in events[1:]">
 		    <tr py:attrs="class_tr" py:with="cause=event.cause">
 			    <td class="id_col">
 			        <a href="#${event.idcorrevent}" class="Details_Link">
@@ -76,16 +76,16 @@
 			    </td>
 			    <td py:attrs="class_td_date" style="text-align:center">${event.priority}</td>
 			    <td py:attrs="class_td_date" style="text-align:center">${event.occurrence}</td>
-			    <td>${cause.supitem.host.name}</td>
-			    <td>${cause.supitem.servicename}</td>
+			    <td>${hostname}</td>
+			    <td>${servicename}</td>
 			    <td>${cause.message}</td>
 			    <td py:for="plug in plugin" py:attrs="plug[1]">${HTML(plug[0])}</td>
 			    <td class="ticket_col">
 			        <a py:if="event.trouble_ticket is not None" href="${
 					    tg.config['vigiboard_links.tt'] % {
 						    'idcorrevent': event.idcorrevent,
-						    'host': cause.supitem.host.name,
-						    'service': cause.supitem.servicename,
+						    'host': hostname,
+						    'service': servicename,
 						    'tt': event.trouble_ticket }}">[${event.trouble_ticket}]
 				    </a>
 			    </td>
