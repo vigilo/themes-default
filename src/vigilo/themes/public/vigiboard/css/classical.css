@@ -1,49 +1,68 @@
-body {
-    background-color: rgb(156, 102, 31);
-}
-
 .toolbar {
 	border: solid 0px black;
-	background-color: #FFBF00;
+	background-color: #F0F1F5;
 }
 
 .history_table thead {
-	background-color:#CC8100;
+	background-color: #F8F8F8;
 }
 
 .vigitable thead tr th {
-	background-color: #CC8133;
-	border: solid 1px #CC8133;
+	background-color: #EBECF0;
+	border: solid 1px #EBECF0;
 }
 
 .vigitable tbody tr {
-	border: solid 1px #CC8133;
+	border: solid 1px white;
 }
 
 .vigitable tbody tr td {
-	border: solid 1px #CC8133;
-	color: white;
+	border: solid 1px white;
 }
 
 #previous_page {
-    border-right: solid 1px #BB9966;
+    border-right: solid 1px #4682B4;
 }
 
 #pagination {
-    color: black;
-    background-color: #BB9966;
+    color: white;
+    background-color: #4682b4;
 }
 
 #next_page {
-    border-left: solid 1px #BB9966;
+    border-left: solid 1px #4682B4;
 }
 
 tr.odd {
-	background-color: #FFBF00;
+	background-color: #F8F8F8;
 }
 
 tr.even {
-	background-color: #FFBF33;
+	background-color: #F0F0F0;
+}
+
+td.OK {
+    background-color: #73DE78;
+}
+
+td.WARNING {
+	background-color: #FFFF00;
+}
+
+td.CRITICAL {
+	background-color: #FF0000;
+}
+
+td.WARNING_Ack {
+	background-color: #FCFCA2;
+}
+
+td.CRITICAL_Ack {
+	background-color: #FC9090;
+}
+
+td.OK_Ack {
+	background-color: #A9EBAC;
 }
 
 a {
@@ -66,13 +85,12 @@ a {
 .notice {
     background: #EEEEFF url(../images/info.png) no-repeat scroll 0px center;
 }
-
 .fielderror {
     color: red;
 }
 
 .toolbar_select {
-	background-color: #FFBF33;
-	border: 1px solid #CC8100;
+	background-color: #DBEAF5;
+	border: 1px solid #4682B4;
 }
 

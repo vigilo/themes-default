@@ -66,23 +66,10 @@ body {
 
 #previous_page {
     width: 26px;
-    border-right: solid 1px #4682b4;
-}
-
-#pagination {
-    color: white;
-    background-color: #4682b4;
-    height: 29px;
 }
 
 #next_page {
     width: 26px;
-    border-left: solid 1px #4682b4;
-}
-
-#previous_page img,
-#next_page img {
-    height: 32px;
 }
 
 .vigitable th {

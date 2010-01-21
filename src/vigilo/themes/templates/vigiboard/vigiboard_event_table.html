@@ -39,7 +39,7 @@
 			</td>
 			<td id="next_page">
 			    <py:choose>
-				    <img py:when="page == nb_pages" src="${tg.url('/images/fleche_down.png')}"  alt="Next" title="Next page" />
+				    <img py:when="page >= nb_pages" src="${tg.url('/images/fleche_down.png')}"  alt="Next" title="Next page" />
 				    <a py:otherwise="" href="${tg.url('/%d' % (page+1))}">
 				        <img src="${tg.url('/images/fleche_down.png')}" alt="Next" title="Next page"/>
 				    </a>
