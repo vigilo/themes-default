@@ -225,3 +225,40 @@ div.clearingdiv {
     font-size: 12px;
 }
 
+/* Dialogue de détails */
+
+#DetailsDialog {
+    padding: 5px;
+}
+
+#DetailsDialog hr {
+    margin: 10px 5px;
+}
+
+#DetailsDialog #state_info {
+    padding-top: 1px;
+    padding-left: 10px;
+}
+
+    #DetailsDialog #state_info div.value{
+        float: right;
+        padding-right: 10px;
+    }
+
+#DetailsDialog #history_links {
+    padding-top: 1px;
+    padding-left: 10px;
+}
+
+#DetailsDialog #external_links {
+    padding-top: 1px;
+    padding-left: 10px;
+}
+
+#DetailsDialog a:hover{
+    text-decoration: underline;
+}
+
+
+
+

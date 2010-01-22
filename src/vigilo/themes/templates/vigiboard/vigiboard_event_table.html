@@ -135,16 +135,40 @@
 
 <div style="display: none"> 
     <div id="DetailsDialog">
-        Initial State: <span id="DetailsDialog_initial_state" /><br />
-        Current State: <span id="DetailsDialog_current_state" /><br />
-        Peak State: <span id="DetailsDialog_peak_state" /><br />
-        <ul>
-            <li><a id="DetailsDialog_detailed_event" href="#">Detailed history for this event</a></li>
-            <li><a id="DetailsDialog_detailed_host" href="#">Detailed history for this host/service</a></li>
-            <li py:for="edname, edit in tg.config['vigiboard_links.eventdetails'].iteritems()">
-                <a href="#" id="DetailsDialog_${edname}">${edit[0]}</a>
-            </li>
-        </ul>
+    
+        <h2>State info</h2>
+        <div id="state_info">
+            <div class="value" id="DetailsDialog_initial_state"></div>
+            <div class="label">Initial State:</div>
+            
+            <div class="value" id="DetailsDialog_current_state"></div>
+            <div class="label">Current State:</div>
+            
+            <div class="value" id="DetailsDialog_peak_state"></div>
+            <div class="label">Peak State:</div>
+        </div>
+        
+        <hr />
+        
+        <h2>Details</h2>
+        <div id="history_links">
+            <ul>
+                <li><a id="DetailsDialog_detailed_event" href="#">Detailed history for this event</a></li>
+                <li><a id="DetailsDialog_detailed_host" href="#">Detailed history for this host/service</a></li>
+            </ul>
+        </div>   
+    
+        <hr />
+        
+        <h2>External links</h2>
+        <div id="external_links">
+            <ul>
+                <li py:for="edname, edit in tg.config['vigiboard_links.eventdetails'].iteritems()">
+                    <a href="#" id="DetailsDialog_${edname}">${edit[0]}</a>
+                </li>
+            </ul>
+        </div>
+        
     </div>
     ${tmpl_context.edit_event_form()}
 </div>
@@ -163,8 +187,8 @@
             content: 'DetailsDialog',
             onOpen: window.dlg_open_handler,
             onClose: window.dlg_close_handler,
-            width: 250,
-            height: 220,
+            width: 275,
+            height: 275,
             closed: true,
             horizontal: 'right left',
             vertical: 'top top',
@@ -222,7 +246,11 @@
                         $$('DetailsDialog_current_state').set('text', details.current_state);
                         $$('DetailsDialog_peak_state').set('text', details.peak_state);
                         $$('DetailsDialog_detailed_event').set('href', "${tg.url('/event/')}" + details.idcorrevent);
-                        $$('DetailsDialog_detailed_host').set('href', "${tg.url('/host_service/')}" + details.host + "/" + details.service);
+                        if(details.service){
+                            $$('DetailsDialog_detailed_host').set('href', "${tg.url('/host_service/')}" + details.host + "/" + details.service);
+                        } else {
+                            $$('DetailsDialog_detailed_host').set('href', "${tg.url('/host_service/')}" + details.host + "/");
+                        }
                         <py:for each="edname, edit in tg.config['vigiboard_links.eventdetails'].iteritems()">
                         $$('DetailsDialog_${edname}').set('href', details.eventdetails['${edname}']);
                         </py:for>

@@ -2,6 +2,12 @@
       xmlns:xi="http://www.w3.org/2001/XInclude"
       py:strip="">
 
+<style>
+    #hls_dialog ul#impacted_hls_list{
+        padding: 10px;
+    }
+</style>
+
 <script type="text/javascript">
 /*<![CDATA[*/
     window.addEvent('domready', function () {
@@ -12,6 +18,8 @@
             resize: false,
             move: true,
             content: '',
+            width: 275,
+            height: 183,
             onOpen: window.dlg_open_handler,
             onClose: window.dlg_close_handler,
         });
@@ -21,9 +29,10 @@
         var req = new Request.JSON({
             url: '${tg.url("/get_plugin_value")}',
             onSuccess: function (json, raw) {
-                var code = '';
+                var code = '<ul id="impacted_hls_list">';
                 for (var i = 0; i < json.services.length; i++)
-                    code += '<p>' + json.services[i] + '<\/p>';
+                    code += '<li>' + json.services[i] + '<\/li>';
+                code += '</ul>';
                 window.hls_dialog.setContent(code);
                 window.hls_dialog.open.bind(window.hls_dialog)();
             }
