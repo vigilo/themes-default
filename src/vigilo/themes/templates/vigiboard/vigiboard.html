@@ -56,6 +56,10 @@
         <link py:otherwise="" py:for="theme_file in theme_files" type="text/css"
             rel="alternate stylesheet" href="${tg.url(theme_file)}" title="${theme_name}" />
     </py:for>
+
+    <py:for each="fct,tpl in plugin_context">
+        <link rel="stylesheet" type="text/css" href="${tg.url('/css/vigiboard_plugin/' + tpl + '.css')}" />
+    </py:for>
 </head>
 
 <body style="font-size:${tg.session.get('fontsize',tg.config['vigiboard_font.size'])}">
