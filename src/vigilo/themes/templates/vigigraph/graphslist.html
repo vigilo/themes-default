@@ -2,6 +2,7 @@
     <ul class="graphslist">
         <li py:for="graph in graphslist">
             <p>${graph['title']}</p>
+            <p>${l_("Période du ")} ${graph['sts']} ${l_("au")} ${graph['ets']}</p>
             <img src="${graph['src']}" border="0" alt=""></img>
         </li>
     </ul>
