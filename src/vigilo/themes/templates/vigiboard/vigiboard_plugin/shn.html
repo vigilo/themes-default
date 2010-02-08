@@ -2,12 +2,6 @@
       xmlns:xi="http://www.w3.org/2001/XInclude"
       py:strip="">
 
-<style>
-    #hls_dialog ul#impacted_hls_list{
-        padding: 10px;
-    }
-</style>
-
 <script type="text/javascript">
 /*<![CDATA[*/
     window.addEvent('domready', function () {
@@ -32,7 +26,7 @@
                 var code = '<ul id="impacted_hls_list">';
                 for (var i = 0; i < json.services.length; i++)
                     code += '<li>' + json.services[i] + '<\/li>';
-                code += '</ul>';
+                code += '<\/ul>';
                 window.hls_dialog.setContent(code);
                 window.hls_dialog.open.bind(window.hls_dialog)();
             }
