@@ -109,7 +109,7 @@ msgstr "Actualiser toutes les"
 
 #: src/vigilo/themes/templates/vigiboard/vigiboard.html:104
 msgid "Theme"
-msgstr ""
+msgstr "Thème"
 
 #: src/vigilo/themes/templates/vigiboard/vigiboard.html:118
 msgid "You are in Search mode, click here to return to the initial mode."
@@ -205,7 +205,7 @@ msgstr "Il n'y a aucun événement."
 
 #: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:139
 msgid "State info"
-msgstr ""
+msgstr "Suivi de l'état"
 
 #: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:142
 msgid "Initial State:"
@@ -221,15 +221,15 @@ msgstr "Pire état"
 
 #: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:156
 msgid "Detailed history for this event"
-msgstr "Historique détaillée de cet événement"
+msgstr "Historique détaillé de cet événement"
 
 #: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:157
 msgid "Detailed history for this host/service"
-msgstr "Historique détaillée de cet hôte / service"
+msgstr "Historique détaillé de cet hôte / service"
 
 #: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:163
 msgid "External links"
-msgstr ""
+msgstr "Liens externes"
 
 #: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:201
 msgid "Edit event"

@@ -1,19 +1,19 @@
-# French translations for vigilo-themes-default.
-# Copyright (C) 2009 ORGANIZATION
+# English (United States) translations for vigilo-themes-default.
+# Copyright (C) 2010 ORGANIZATION
 # This file is distributed under the same license as the
 # vigilo-themes-default
 # project.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2009.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2010.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: vigilo-themes-default 0.1\n"
 "Report-Msgid-Bugs-To: contact@projet-vigilo.org\n"
-"POT-Creation-Date: 2009-11-10 09:51+0100\n"
+"POT-Creation-Date: 2010-02-12 11:58+0100\n"
 "PO-Revision-Date: 2010-02-12 12:20+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: fr <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n > 1)\n"
+"Language-Team: en_US <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -22,33 +22,31 @@ msgstr ""
 #: src/vigilo/themes/templates/common/error.html:11
 #, python-format
 msgid "A %(error_code)d Error has Occurred"
-msgstr "Une erreur %(error_code)d est survenue"
+msgstr ""
 
 #: src/vigilo/themes/templates/common/error.html:15
 #, python-format
 msgid "Error %(error_code)d"
-msgstr "Erreur %(error_code)d"
+msgstr ""
 
 #: src/vigilo/themes/templates/common/footer.html:8
 msgid ""
 "Vigilo is an open-source monitoring solution designed for large-scale\n"
 "        system and network management. Copyright © ????-2009"
 msgstr ""
-"Vigilo est une solution open-source de supervision destinée à la gestion\n"
-"       des parcs informatiques de grande taille. Copyright © ????-2009"
 
 #: src/vigilo/themes/templates/common/header.html:6
 #: src/vigilo/themes/templates/vigicore/index.html:12
 msgid "Welcome to Vigilo"
-msgstr "Bienvenue dans Vigilo"
+msgstr ""
 
 #: src/vigilo/themes/templates/common/header.html:7
 msgid "The network monitoring solution"
-msgstr "La solution de supervision"
+msgstr ""
 
 #: src/vigilo/themes/templates/common/login.html:11
 msgid "Login Form"
-msgstr "Formulaire d'identification"
+msgstr ""
 
 #: src/vigilo/themes/templates/common/login.html:17
 #: src/vigilo/themes/templates/common/login.html:20
@@ -57,55 +55,55 @@ msgstr "Formulaire d'identification"
 #: src/vigilo/themes/templates/vigigraph/master.html:22
 #: src/vigilo/themes/templates/vigimap/master.html:22
 msgid "Login"
-msgstr "Connexion"
+msgstr ""
 
 #: src/vigilo/themes/templates/common/login.html:18
 msgid "Username:"
-msgstr "Identifiant :"
+msgstr ""
 
 #: src/vigilo/themes/templates/common/login.html:19
 msgid "Password:"
-msgstr "Mot de passe :"
+msgstr ""
 
 #: src/vigilo/themes/templates/vigiboard/master.html:20
 #: src/vigilo/themes/templates/vigiboard/vigiboard.html:38
 msgid "Vigiboard"
-msgstr "VigiBoard"
+msgstr ""
 
 #: src/vigilo/themes/templates/vigiboard/master.html:23
 #: src/vigilo/themes/templates/vigicore/master.html:22
 #: src/vigilo/themes/templates/vigigraph/master.html:23
 #: src/vigilo/themes/templates/vigimap/master.html:23
 msgid "Logout"
-msgstr "Déconnexion"
+msgstr ""
 
 #: src/vigilo/themes/templates/vigiboard/vigiboard.html:71
 msgid "Home"
-msgstr "Accueil"
+msgstr ""
 
 #: src/vigilo/themes/templates/vigiboard/vigiboard.html:74
 msgid "Filter display"
-msgstr "Filtrer l'affichage"
+msgstr ""
 
 #: src/vigilo/themes/templates/vigiboard/vigiboard.html:77
 msgid "Log out"
-msgstr "Déconnexion"
+msgstr ""
 
 #: src/vigilo/themes/templates/vigiboard/vigiboard.html:83
 msgid "Default font size"
-msgstr "Taille par défaut"
+msgstr ""
 
 #: src/vigilo/themes/templates/vigiboard/vigiboard.html:86
 msgid "Medium font size"
-msgstr "Taille moyenne"
+msgstr ""
 
 #: src/vigilo/themes/templates/vigiboard/vigiboard.html:89
 msgid "Large font size"
-msgstr "Grande taille"
+msgstr ""
 
 #: src/vigilo/themes/templates/vigiboard/vigiboard.html:93
 msgid "Refresh every"
-msgstr "Actualiser toutes les"
+msgstr ""
 
 #: src/vigilo/themes/templates/vigiboard/vigiboard.html:104
 msgid "Theme"
@@ -113,95 +111,95 @@ msgstr ""
 
 #: src/vigilo/themes/templates/vigiboard/vigiboard.html:118
 msgid "You are in Search mode, click here to return to the initial mode."
-msgstr "Mode recherche, cliquer ici pour quitter ce mode."
+msgstr ""
 
 #: src/vigilo/themes/templates/vigiboard/vigiboard.html:171
 msgid "Search Event"
-msgstr "Filtrer les événements"
+msgstr ""
 
 #: src/vigilo/themes/templates/vigiboard/vigiboard.html:216
 #: src/vigilo/themes/templates/vigiboard/vigiboard.html:236
 #: src/vigilo/themes/templates/vigiboard/vigiboard.html:259
 msgid "Unable to save preferences"
-msgstr "Impossible de sauvegarder les préférences"
+msgstr ""
 
 #: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:12
 msgid "Event table"
-msgstr "Tableau des événements"
+msgstr ""
 
 #: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:17
 #: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:19
 msgid "Previous"
-msgstr "Précédent"
+msgstr ""
 
 #: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:17
 #: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:19
 msgid "Previous page"
-msgstr "Page précédente"
+msgstr ""
 
 #: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:31
 #, python-format
 msgid "Showing rows %(id_first_row)d to %(id_last_row)d of %(total_rows)d"
-msgstr "Affichage des lignes %(id_first_row)d à %(id_last_row)d sur %(total_rows)d"
+msgstr ""
 
 #: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:32
 msgid "Pages"
-msgstr "Pages"
+msgstr ""
 
 #: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:42
 #: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:44
 msgid "Next"
-msgstr "Suivant"
+msgstr ""
 
 #: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:42
 #: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:44
 msgid "Next page"
-msgstr "Page suivante"
+msgstr ""
 
 #: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:56
 msgid "Edit selected"
-msgstr "Éditer"
+msgstr ""
 
 #: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:56
 msgid "Edit all selected events"
-msgstr "Éditer tous les événements sélectionnés"
+msgstr ""
 
 #: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:60
 msgid "Select/Unselect all"
-msgstr "Tout sélectionner / désélectionner"
+msgstr ""
 
 #: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:70
 #: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:153
 msgid "Details"
-msgstr "Détails"
+msgstr ""
 
 #: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:70
 #: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:183
 msgid "Event details"
-msgstr "Détails de l'événement"
+msgstr ""
 
 #: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:99
 msgid "Edit"
-msgstr "Éditer"
+msgstr ""
 
 #: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:99
 msgid "Edit this event"
-msgstr "Éditer cet événement"
+msgstr ""
 
 #: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:108
 #: src/vigilo/themes/templates/vigicore/downtime.html:158
 #: src/vigilo/themes/templates/vigicore/downtime.html:163
 #: src/vigilo/themes/templates/vigicore/downtime.html:167
 msgid "Status"
-msgstr "Statut"
+msgstr ""
 
 #: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:108
 msgid "Event status"
-msgstr "État de l'événement"
+msgstr ""
 
 #: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:124
 msgid "There are no events."
-msgstr "Il n'y a aucun événement."
+msgstr ""
 
 #: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:139
 msgid "State info"
@@ -209,23 +207,23 @@ msgstr ""
 
 #: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:142
 msgid "Initial State:"
-msgstr "État initial"
+msgstr ""
 
 #: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:145
 msgid "Current State:"
-msgstr "État courant"
+msgstr ""
 
 #: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:148
 msgid "Peak State:"
-msgstr "Pire état"
+msgstr ""
 
 #: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:156
 msgid "Detailed history for this event"
-msgstr "Historique détaillée de cet événement"
+msgstr ""
 
 #: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:157
 msgid "Detailed history for this host/service"
-msgstr "Historique détaillée de cet hôte / service"
+msgstr ""
 
 #: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:163
 msgid "External links"
@@ -233,49 +231,48 @@ msgstr ""
 
 #: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:201
 msgid "Edit event"
-msgstr "Éditer cet événement"
+msgstr ""
 
 #: src/vigilo/themes/templates/vigiboard/vigiboard_event_table.html:223
 msgid "No events have been selected"
-msgstr "Aucun événement sélectionné"
+msgstr ""
 
 #: src/vigilo/themes/templates/vigiboard/vigiboard_history_table.html:8
 msgid "There is no history."
-msgstr "Il n'y a pas d'historique"
+msgstr ""
 
 #: src/vigilo/themes/templates/vigiboard/vigiboard_history_table.html:12
 msgid "History"
-msgstr "Historique"
+msgstr ""
 
 #: src/vigilo/themes/templates/vigiboard/vigiboard_history_table.html:15
 msgid "Time"
-msgstr "Date et heure"
+msgstr ""
 
 #: src/vigilo/themes/templates/vigiboard/vigiboard_history_table.html:16
 msgid "User"
-msgstr "Utilisateur"
+msgstr ""
 
 #: src/vigilo/themes/templates/vigiboard/vigiboard_history_table.html:17
 msgid "Type"
-msgstr "Type"
+msgstr ""
 
 #: src/vigilo/themes/templates/vigiboard/vigiboard_history_table.html:18
 msgid "Value"
-msgstr "Valeur"
+msgstr ""
 
 #: src/vigilo/themes/templates/vigiboard/vigiboard_history_table.html:19
 msgid "Text"
-msgstr "Texte"
+msgstr ""
 
 #: src/vigilo/themes/templates/vigiboard/vigiboard_plugin/shn.html:10
 msgid "Impacted high-level services"
-msgstr "Services de haut niveau impactés"
+msgstr ""
 
 #: src/vigilo/themes/templates/vigicore/collect.html:11
 #: src/vigilo/themes/templates/vigicore/master.html:25
-#, fuzzy
 msgid "Collect"
-msgstr "Données"
+msgstr ""
 
 #: src/vigilo/themes/templates/vigicore/collect.html:24
 msgid "Force collect"
@@ -284,47 +281,46 @@ msgstr ""
 #: src/vigilo/themes/templates/vigicore/collect.html:26
 #: src/vigilo/themes/templates/vigicore/schedule_downtime.html:13
 msgid "Host:"
-msgstr "Hôte :"
+msgstr ""
 
 #: src/vigilo/themes/templates/vigicore/collect.html:29
 #: src/vigilo/themes/templates/vigicore/schedule_downtime.html:17
 msgid "Service:"
-msgstr "Service :"
+msgstr ""
 
 #: src/vigilo/themes/templates/vigicore/collect.html:32
-#, fuzzy
 msgid "Collect!"
-msgstr "Données"
+msgstr ""
 
 #: src/vigilo/themes/templates/vigicore/delete_downtime.html:12
 #: src/vigilo/themes/templates/vigicore/downtime.html:12
 #: src/vigilo/themes/templates/vigicore/schedule_downtime.html:11
 msgid "Schedule downtime"
-msgstr "Planifier une mise en silence"
+msgstr ""
 
 #: src/vigilo/themes/templates/vigicore/delete_downtime.html:27
 msgid "Delete downtime"
-msgstr "Supprimer une mise en silence"
+msgstr ""
 
 #: src/vigilo/themes/templates/vigicore/delete_downtime.html:29
 msgid "Are you sure you want to delete this downtime?"
-msgstr "Etes-vous sûr de bien vouloir supprimer cette mise en silence ?"
+msgstr ""
 
 #: src/vigilo/themes/templates/vigicore/delete_downtime.html:32
 msgid "This action cannot be undone!"
-msgstr "Cette action est irréversible !"
+msgstr ""
 
 #: src/vigilo/themes/templates/vigicore/delete_downtime.html:35
 msgid "Delete!"
-msgstr "Supprimer"
+msgstr ""
 
 #: src/vigilo/themes/templates/vigicore/delete_downtime.html:36
 msgid "Cancel"
-msgstr "Annuler"
+msgstr ""
 
 #: src/vigilo/themes/templates/vigicore/downtime.html:29
 msgid "Scheduled downtimes"
-msgstr "Mises en silence planifiées"
+msgstr ""
 
 #: src/vigilo/themes/templates/vigicore/downtime.html:39
 #: src/vigilo/themes/templates/vigicore/downtime.html:56
@@ -341,7 +337,7 @@ msgstr ""
 #: src/vigilo/themes/templates/vigicore/downtime.html:44
 #: src/vigilo/themes/templates/vigicore/downtime.html:48
 msgid "Host"
-msgstr "Hôte"
+msgstr ""
 
 #: src/vigilo/themes/templates/vigicore/downtime.html:44
 #: src/vigilo/themes/templates/vigicore/downtime.html:61
@@ -351,126 +347,123 @@ msgstr "Hôte"
 #: src/vigilo/themes/templates/vigicore/downtime.html:129
 #: src/vigilo/themes/templates/vigicore/downtime.html:146
 #: src/vigilo/themes/templates/vigicore/downtime.html:163
-#, fuzzy
 msgid "ascending"
-msgstr "Avertissement"
+msgstr ""
 
 #: src/vigilo/themes/templates/vigicore/downtime.html:56
 #: src/vigilo/themes/templates/vigicore/downtime.html:61
 #: src/vigilo/themes/templates/vigicore/downtime.html:65
 msgid "Service"
-msgstr "Service"
+msgstr ""
 
 #: src/vigilo/themes/templates/vigicore/downtime.html:73
 #: src/vigilo/themes/templates/vigicore/downtime.html:78
 #: src/vigilo/themes/templates/vigicore/downtime.html:82
 msgid "Entry time"
-msgstr "Date d'ajout"
+msgstr ""
 
 #: src/vigilo/themes/templates/vigicore/downtime.html:90
 #: src/vigilo/themes/templates/vigicore/downtime.html:95
 #: src/vigilo/themes/templates/vigicore/downtime.html:99
 msgid "Author"
-msgstr "Auteur"
+msgstr ""
 
 #: src/vigilo/themes/templates/vigicore/downtime.html:107
 #: src/vigilo/themes/templates/vigicore/downtime.html:112
 #: src/vigilo/themes/templates/vigicore/downtime.html:116
 msgid "Comment"
-msgstr "Commentaire"
+msgstr ""
 
 #: src/vigilo/themes/templates/vigicore/downtime.html:124
 #: src/vigilo/themes/templates/vigicore/downtime.html:129
 #: src/vigilo/themes/templates/vigicore/downtime.html:133
 msgid "Start"
-msgstr "Début"
+msgstr ""
 
 #: src/vigilo/themes/templates/vigicore/downtime.html:141
 #: src/vigilo/themes/templates/vigicore/downtime.html:146
 #: src/vigilo/themes/templates/vigicore/downtime.html:150
 msgid "End"
-msgstr "Fin"
+msgstr ""
 
 #: src/vigilo/themes/templates/vigicore/downtime.html:175
 #: src/vigilo/themes/templates/vigicore/downtime.html:201
 #: src/vigilo/themes/templates/vigicore/downtime.html:203
 msgid "edit"
-msgstr "Éditer"
+msgstr ""
 
 #: src/vigilo/themes/templates/vigicore/downtime.html:176
 msgid "delete"
-msgstr "Supprimer"
+msgstr ""
 
 #: src/vigilo/themes/templates/vigicore/index.html:18
 msgid "Presentation"
-msgstr "Présentation"
+msgstr ""
 
 #: src/vigilo/themes/templates/vigicore/index.html:19
 msgid ""
 "Vigilo is a software meant to ease large-scale system and network "
 "management."
 msgstr ""
-"Vigilo est un logiciel permettant de simplifier la supervision de réseaux"
-" de grande taille"
 
 #: src/vigilo/themes/templates/vigicore/index.html:22
 msgid "Data collection"
-msgstr "Données"
+msgstr ""
 
 #: src/vigilo/themes/templates/vigicore/index.html:23
 #: src/vigilo/themes/templates/vigicore/index.html:28
 #: src/vigilo/themes/templates/vigicore/index.html:33
 #: src/vigilo/themes/templates/vigicore/index.html:38
 msgid "@TODO"
-msgstr "@TODO"
+msgstr ""
 
 #: src/vigilo/themes/templates/vigicore/index.html:27
 msgid "Event correlation"
-msgstr "Corrélation d'événements"
+msgstr ""
 
 #: src/vigilo/themes/templates/vigicore/index.html:32
 msgid "Accidents visualization"
-msgstr "Visualisation des alertes"
+msgstr ""
 
 #: src/vigilo/themes/templates/vigicore/index.html:37
 msgid "Report generation"
-msgstr "Génération de rapports"
+msgstr ""
 
 #: src/vigilo/themes/templates/vigicore/index.html:43
 msgid "Thank you for choosing Vigilo."
-msgstr "Merci d'avoir choisi Vigilo"
+msgstr ""
 
 #: src/vigilo/themes/templates/vigicore/master.html:20
 #: src/vigilo/themes/templates/vigigraph/master.html:20
 #: src/vigilo/themes/templates/vigimap/master.html:20
 msgid "Welcome"
-msgstr "Bienvenue"
+msgstr ""
 
 #: src/vigilo/themes/templates/vigicore/master.html:23
 #: src/vigilo/themes/templates/vigimap/master.html:24
 msgid "Admin"
-msgstr "Admin"
+msgstr ""
 
 #: src/vigilo/themes/templates/vigicore/master.html:24
 #: src/vigilo/themes/templates/vigicore/profile.html:11
 #: src/vigilo/themes/templates/vigigraph/profile.html:11
 msgid "Profile"
-msgstr "Profil"
+msgstr ""
 
 #: src/vigilo/themes/templates/vigicore/profile.html:18
 #: src/vigilo/themes/templates/vigigraph/profile.html:18
 msgid "Change password"
-msgstr "Changer le mot de passe"
+msgstr ""
 
 #: src/vigilo/themes/templates/vigicore/profile.html:20
 #: src/vigilo/themes/templates/vigigraph/profile.html:21
 msgid "Old password:"
-msgstr "Ancien mot de passe :"
+msgstr ""
 
 #: src/vigilo/themes/templates/vigicore/profile.html:23
 #: src/vigilo/themes/templates/vigigraph/profile.html:24
 msgid "New password:"
-msgstr "Nouveau mot de passe :"
+msgstr ""
 
 #: src/vigilo/themes/templates/vigicore/profile.html:26
 msgid "Confirmation:"
@@ -479,31 +472,31 @@ msgstr ""
 #: src/vigilo/themes/templates/vigicore/profile.html:29
 #: src/vigilo/themes/templates/vigigraph/profile.html:32
 msgid "Apply"
-msgstr "Appliquer"
+msgstr ""
 
 #: src/vigilo/themes/templates/vigicore/schedule_downtime.html:22
 msgid "Start:"
-msgstr "Début"
+msgstr ""
 
 #: src/vigilo/themes/templates/vigicore/schedule_downtime.html:27
 msgid "End:"
-msgstr "Fin :"
+msgstr ""
 
 #: src/vigilo/themes/templates/vigicore/schedule_downtime.html:29
 msgid "Choose a duration"
-msgstr "Choisir une durée"
+msgstr ""
 
 #: src/vigilo/themes/templates/vigicore/schedule_downtime.html:32
 msgid "Comment:"
-msgstr "Commentaire :"
+msgstr ""
 
 #: src/vigilo/themes/templates/vigicore/schedule_downtime.html:33
 msgid "Maintenance."
-msgstr "Maintenance."
+msgstr ""
 
 #: src/vigilo/themes/templates/vigicore/schedule_downtime.html:35
 msgid "Schedule!"
-msgstr "Planifier !"
+msgstr ""
 
 #: src/vigilo/themes/templates/vigicore/schedule_downtime.html:41
 msgid "Days:"
@@ -524,39 +517,36 @@ msgstr ""
 #: src/vigilo/themes/templates/vigicore/schedule_downtime.html:53
 #: src/vigilo/themes/templates/vigimap/legend.html:9
 msgid "OK"
-msgstr "OK"
+msgstr ""
 
 #: src/vigilo/themes/templates/vigicore/schedule_downtime.html:71
-#, fuzzy
 msgid "Select duration"
-msgstr "Choisir une durée"
+msgstr ""
 
 #: src/vigilo/themes/templates/vigicore/sidebars.html:7
 #: src/vigilo/themes/templates/vigigraph/sidebars.html:7
 msgid "Vigilo interfaces"
-msgstr "Interfaces de Vigilo"
+msgstr ""
 
 #: src/vigilo/themes/templates/vigicore/sidebars.html:9
 msgid "VigiBoard"
-msgstr "VigiBoard"
+msgstr ""
 
 #: src/vigilo/themes/templates/vigicore/sidebars.html:9
 msgid "- See the latest alerts"
-msgstr "- Voir les dernières alertes"
+msgstr ""
 
 #: src/vigilo/themes/templates/vigicore/admin/home.html:10
 msgid "Administration page"
-msgstr "Page d'administration"
+msgstr ""
 
 #: src/vigilo/themes/templates/vigicore/admin/home.html:14
 msgid "Welcome to the administration page"
-msgstr "Bienvenue"
+msgstr ""
 
 #: src/vigilo/themes/templates/vigicore/admin/home.html:16
 msgid "Click a table name in the sidebar to view or modify its content."
 msgstr ""
-"Cliquer sur le nom d'une table dans la barre latérale pour modifier son "
-"contenu"
 
 #: src/vigilo/themes/templates/vigigraph/fullhostpage.html:3
 #: src/vigilo/themes/templates/vigigraph/fullhostpage.html:22
@@ -574,14 +564,14 @@ msgstr ""
 #: src/vigilo/themes/templates/vigigraph/searchhost.html:16
 #: src/vigilo/themes/templates/vigigraph/singlegraph.html:16
 msgid "Vigilo"
-msgstr "Vigilo"
+msgstr ""
 
 #: src/vigilo/themes/templates/vigigraph/fullhostpage.html:17
 #: src/vigilo/themes/templates/vigigraph/index.html:24
 #: src/vigilo/themes/templates/vigigraph/searchhost.html:17
 #: src/vigilo/themes/templates/vigigraph/singlegraph.html:17
 msgid "v2.0"
-msgstr "v2.0"
+msgstr ""
 
 #: src/vigilo/themes/templates/vigigraph/fullhostpage.html:23
 #: src/vigilo/themes/templates/vigigraph/singlegraph.html:24
@@ -605,10 +595,8 @@ msgid "/resource/qx/icon/Nuvola/16/devices/network-wired.png"
 msgstr ""
 
 #: src/vigilo/themes/templates/vigigraph/graphslist.html:3
-#, fuzzy
-#| msgid "VigiMap"
 msgid "Vigigraph"
-msgstr "VigiMap"
+msgstr ""
 
 #: src/vigilo/themes/templates/vigigraph/graphslist.html:6
 msgid "Période du "
@@ -620,11 +608,11 @@ msgstr ""
 
 #: src/vigilo/themes/templates/vigigraph/index.html:12
 msgid "Loading VigiGraph..."
-msgstr "Chargement de VigiGraph..."
+msgstr ""
 
 #: src/vigilo/themes/templates/vigigraph/profile.html:27
 msgid "Confirm new password:"
-msgstr "Confirmer le nouveau mot de passe :"
+msgstr ""
 
 #: src/vigilo/themes/templates/vigigraph/searchhost.html:3
 #: src/vigilo/themes/templates/vigigraph/searchhost.html:22
@@ -641,16 +629,12 @@ msgid "Sup page"
 msgstr ""
 
 #: src/vigilo/themes/templates/vigigraph/searchhost.html:28
-#, fuzzy
-#| msgid "Next page"
 msgid "Metro page"
-msgstr "Page suivante"
+msgstr ""
 
 #: src/vigilo/themes/templates/vigigraph/searchhostform.html:7
-#, fuzzy
-#| msgid "Service:"
 msgid "Device:"
-msgstr "Service :"
+msgstr ""
 
 #: src/vigilo/themes/templates/vigigraph/singlegraph.html:3
 #: src/vigilo/themes/templates/vigigraph/singlegraph.html:22
@@ -669,60 +653,58 @@ msgstr ""
 #: src/vigilo/themes/templates/vigimap/index.html:49
 #: src/vigilo/themes/templates/vigimap/widget_form.html:8
 msgid "VigiMap"
-msgstr "VigiMap"
+msgstr ""
 
 #: src/vigilo/themes/templates/vigimap/index.html:56
 msgid "Maps"
-msgstr "Cartes"
+msgstr ""
 
 #: src/vigilo/themes/templates/vigimap/index.html:62
 msgid "Your browser does not support the canvas element. Please upgrade."
 msgstr ""
-"Votre navigateur ne gère pas l'élément canvas. Veuillez le mettre à jour,"
-" ou en utiliser un autre."
 
 #: src/vigilo/themes/templates/vigimap/index.html:84
 msgid "loading..."
-msgstr "chargement..."
+msgstr ""
 
 #: src/vigilo/themes/templates/vigimap/legend.html:2
 msgid "Legend"
-msgstr "Légende"
+msgstr ""
 
 #: src/vigilo/themes/templates/vigimap/legend.html:4
 msgid "Elements"
-msgstr "Éléments"
+msgstr ""
 
 #: src/vigilo/themes/templates/vigimap/legend.html:7
 msgid "Unknown"
-msgstr "Inconnu"
+msgstr ""
 
 #: src/vigilo/themes/templates/vigimap/legend.html:11
 msgid "Warning"
-msgstr "Avertissement"
+msgstr ""
 
 #: src/vigilo/themes/templates/vigimap/legend.html:13
 msgid "Critical"
-msgstr "Critique"
+msgstr ""
 
 #: src/vigilo/themes/templates/vigimap/legend.html:17
 msgid "Links"
-msgstr "Liens"
+msgstr ""
 
 #: src/vigilo/themes/templates/vigimap/link.html:2
 #, python-format
 msgid "Link between %(from_node)s and %(to_node)s"
-msgstr "Lien entre %(from_node)s et %(to_node)s"
+msgstr ""
 
 #: src/vigilo/themes/templates/vigimap/link.html:3
 #, python-format
 msgid "Reference service: %(service)s on %(host)s"
-msgstr "Service de référence : %(service)s sur %(host)s"
+msgstr ""
 
 #: src/vigilo/themes/templates/vigimap/link.html:4
 #, python-format
 msgid "Status: %(status)s"
-msgstr "État : %(status)s"
+msgstr ""
 
 #: src/vigilo/themes/templates/vigimap/link_form.html:2
 msgid "Link update!"
@@ -740,24 +722,14 @@ msgstr ""
 #: src/vigilo/themes/templates/vigimap/node.html:20
 #, python-format
 msgid "Service name: %(service)s on %(host)s"
-msgstr "Nom du service : %(service)s sur %(host)s"
+msgstr ""
 
 #: src/vigilo/themes/templates/vigimap/node.html:23
 #, python-format
 msgid "Appliance name: %(host)s"
-msgstr "Équipement : %(host)s"
+msgstr ""
 
 #: src/vigilo/themes/templates/vigimap/widget_form.html:18
-#, fuzzy
 msgid "Welcome to Widget!"
-msgstr "Bienvenue dans Vigilo"
-
-#~ msgid "Night"
-#~ msgstr "Nocturne"
-
-#~ msgid "Blind"
-#~ msgstr "Malvoyant"
-
-#~ msgid "Toolbar"
-#~ msgstr "Barre d'outils"
+msgstr ""
 
