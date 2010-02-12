@@ -25,11 +25,26 @@
     <script type="text/javascript" src="${tg.url('/js/details.js')}"></script>
     <script type="text/javascript" src="${tg.url('/js/map.js')}"></script>
     <script type="text/javascript" src="${tg.url('/js/menu.js')}"></script>
-    <script type="text/javascript" src="${tg.url('/js/MainDisplay.js')}"></script>    
+    <script type="text/javascript" src="${tg.url('/js/MainEdit.js')}"></script>    
         <div py:for="widget in widgets" py:strip="True">
         <script type="text/javascript" src="${tg.url('/widgets/'+widget+'/'+widget+'.js')}"></script>
         <link rel="stylesheet" type="text/css" href="${tg.url('/widgets/'+widget+'/'+widget+'.css')}" />
     </div>
+    <link rel="stylesheet" type="text/css" href="${tg.url('/css/Autocompleter.css')}" />
+    <script type="text/javascript" src="${tg.url('/js/Autocompleter.js')}"></script>
+    <script type="text/javascript" src="${tg.url('/js/Autocompleter.Local.js')}"></script>
+    <script type="text/javascript" src="${tg.url('/js/Autocompleter.Request.js')}"></script>
+    <script type="text/javascript" src="${tg.url('/js/Autocompleter.Request.VigiloJSON.js')}"></script>
+    <script type="text/javascript" src="${tg.url('/js/Observer.js')}"></script>
+    <script type="text/javascript" src="${tg.url('/js/selectmapgroup.js')}"></script>
+    <script type="text/javascript" src="${tg.url('/js/fieldautocomplete.js')}"></script>
+    <script type="text/javascript" src="${tg.url('/js/tg_submit.js')}"></script>
+    <!--! Les lignes suivantes sont générées automatiquement par les fonctions empty-dynform et emptu-calendar
+    <script type="text/javascript" src="/toscawidgets/resources/tw.dynforms.widgets/static/dynforms.js"></script>
+    <script type="text/javascript" src="/toscawidgets/resources/tw.forms/static/calendar/calendar.js"></script>
+    <script type="text/javascript" src="/toscawidgets/resources/tw.forms/static/calendar/calendar-setup.js"></script>
+    <script type="text/javascript" src="/toscawidgets/resources/tw.forms/static/calendar/lang/calendar-fr.js"></script>
+    -->
     
 </head>
 <body>
@@ -52,10 +67,16 @@
         <canvas>
             Your browser does not support the canvas element. Please upgrade.
         </canvas>
+        <!--! début à retirer-->
+        <button id="test_fonction">Test function</button>
+        <button id="test_fonction2">Test function2</button>
+        <button id="test_fonction3">Test function3</button>
         
+        <!--! fin a retirer-->
         <div id="legend">
         </div>
     </div>
+
 
     <!--
     <div id="details" title="essai">
@@ -66,7 +87,14 @@
 
     <div id="loading">
         <img alt="loading..." src="images/loading.gif" />
-    </div>    
+    </div>
+    <!--! L'apppel des deux fonctions suivantes (empty...) provoque l'injection dans la page html,
+            des scripts javascript nécessaires à l'utilisation des toscawidgets dynforms dans une
+            boîte de dialogue, elles n'ont en revanche aucune influence au niveau de
+            l'apparence de la page html-->
+    ${empty_dynform()}
+    ${empty_calendar()}
+    
 
 </body>
 </html>

@@ -21,7 +21,7 @@ ul {
 
 #leftmenu {
     float: left;
-    width: 200px;
+    width: 150px;
     height: 100%;
     margin: 0;
     border-right: 1px solid black;
@@ -64,6 +64,25 @@ ul {
     border: 1px solid black;
 }
 
+#leftmenu .addmap div {
+	margin: 0px auto;
+    border: 1px solid #aaa;
+    background-color: #eee;
+    text-align: center;
+    cursor: pointer;
+}
+
+#leftmenu .addmap div:hover {
+    border: 2px solid #ffcc66;
+    color: #ffcc66;
+    cursor: pointer;
+}
+
+#leftmenu .selected {
+    border: 2px solid blue !important;
+    /*padding: 0px;*/
+}
+
 
 #menu {
     width: 100%;
@@ -72,7 +91,7 @@ ul {
 #map {
     margin: 0px;
     padding: 0px;
-    margin-left: 210px;
+    margin-left: 160px;
     height: 100%;
 }
 
