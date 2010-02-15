@@ -10,8 +10,8 @@ tests_require = [
 
 setup(name='vigilo-themes-default',
     version='0.1',
-    author='Francois POIROTTE',
-    author_email='francois.poirotte@c-s.fr',
+    author='Vigilo Team',
+    author_email='contact@projet-vigilo.org',
     url='http://www.projet-vigilo.org/',
     description='default theme for vigilo applications',
     license='http://www.gnu.org/licenses/gpl-2.0.html',
@@ -32,30 +32,36 @@ setup(name='vigilo-themes-default',
     extras_require={
         'tests': tests_require,
     },
-    package_data={'vigilo.themes': [
-        'i18n/*/LC_MESSAGES/**.*',
-        'templates/*/**.*',
-        'templates/*/**.html',
-        'templates/*/*/**.html',
-        'public/*/css/**.css',
-        'public/*/css/*/**.*',
-        'public/*/css/*/*/**.*',
-        'public/*/javascript/**.js',
-        'public/*/javascript/*/**.js',
-        'public/*/images/**.*',
-    ]},
-    exclude_package_data ={'vigilo.themes': [
-    ]},
-    message_extractors={'src/vigilo/themes/': [
-        ('**/templates/**.mako', 'mako', None),
-        ('**/templates/**.html', 'genshi', None),
-        ('**/templates/admin/**.html', 'genshi', None),
-        ('**/public/**', 'ignore', None)
-    ]},
+    package_data={
+        'vigilo.themes': [
+            'i18n/*/LC_MESSAGES/**.*',
+            'templates/*/**.*',
+            'templates/*/**.html',
+            'templates/*/*/**.html',
+            'public/*/css/**.css',
+            'public/*/css/*/**.*',
+            'public/*/css/*/*/**.*',
+            'public/*/javascript/**.js',
+            'public/*/javascript/*/**.js',
+            'public/*/images/**.*',
+        ],
+    },
+    exclude_package_data ={
+        'vigilo.themes': [
+        ],
+    },
+    message_extractors={
+        'src/vigilo/themes/': [
+            ('**/templates/**.mako', 'mako', None),
+            ('**/templates/**.html', 'genshi', None),
+            ('**/templates/admin/**.html', 'genshi', None),
+            ('**/public/**', 'ignore', None),
+        ],
+    },
     entry_points={
         'console_scripts': [
-            ],
-        },
+        ],
+    },
     package_dir={'': 'src'},
 )
 
