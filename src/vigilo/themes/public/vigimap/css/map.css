@@ -41,28 +41,21 @@ ul {
     list-style-type: none;
     margin-bottom: 0.5em;
 }
-#leftmenu .map a {
-    text-align: center;
-    display: block;
-    border: 1px solid #375E8A;
-    background-color: #4F83BD;
-    margin: 2px 0px;
+
+#leftmenu ul.addmap {
+	margin:0 auto;
+    width: 40%;
 }
-#leftmenu .map a:link,
-#leftmenu .map a:visited {
-    text-decoration: none;
-    color: white;
-}
-#leftmenu .map a:hover,
-#leftmenu .map a:active {
-    text-decoration: none;
-    color: #ffcc66;
+
+#leftmenu li.addmap {
+    margin:20px auto;
 }
 
 #leftmenu .obj {
     width: 70px;
     border: 1px solid black;
 }
+
 
 #leftmenu .addmap div {
 	margin: 0px auto;
