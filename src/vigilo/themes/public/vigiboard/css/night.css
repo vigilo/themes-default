@@ -22,7 +22,6 @@ body {
 
 .vigitable tbody tr td {
 	border: solid 1px #CC8133;
-	color: white;
 }
 
 #previous_page {
@@ -74,5 +73,11 @@ a {
 .toolbar_select {
 	background-color: #FFBF33;
 	border: 1px solid #CC8100;
+}
+
+/* Dialogues */
+
+.jxDialogContent {
+	background-color: #FFBF00;
 }
 

@@ -152,77 +152,101 @@ div.clearingdiv {
 
 /* Formulaire de recherche */
 
+#SearchDialog .jxDialogContentContainer {
+    height: 100%;
+    width: 100%;
+}
+
+#SearchDialog .jxDialogContent {
+    height: 100%;
+    width: 100%;
+}
+
 #search_form {
+    height: 100%;
     width: 100%;
 }
 
 #search_form table {
-    width: 99%;
-    margin: auto;
+    width: 100%;
+    height: 100%;
 }
 
-#search_form table td {
-    padding-bottom: 2px;
+#search_form table tr {
+	height: 3em;
 }
 
 #search_form .labelcol {
-    width: 100px;
+    width: 25%;
+    padding-left: 5px;
 }
 
 #search_form .fieldcol {
-    width: 300px;
+    width: 75%;
+    padding-right: 10px;
 }
 
 #search_form .textfield {
-    width: 98%;
+    width: 99%;
+    height: 1.4em;
+    font-size: 1.2em;
 }
 
 #search_form .calendardatetimepicker {
-    width: 68%;
+    width: 67%;
 }
 
 #search_form .date_field_button {
     width: 29%;
+    height: 1.7em;
+    font-size: 1.2em;
+    float: right;
 }
 
-#search_form input {
-    font-size: 12px;
+#search_form .submitbutton {
+    height: 1.7em;
+    font-size: 1.2em;
+    margin: 0 auto;
 }
 
 
 /* Formulaire d'édition */
 
-#edit_event_form {
-    width: 100%;
-}
-
 #edit_event_form table {
-    width: 99%;
-    margin: auto;
+    width: 100%;
+    height: 115px;
 }
 
-#edit_event_form table td {
-    padding-bottom: 2px;
+#edit_event_form table tr {
+	height: 3em;
 }
 
 #edit_event_form .labelcol {
-    width: 100px;
+    width: 25%;
+    padding-left: 5px;
 }
 
 #edit_event_form .fieldcol {
-    width: 300px;
+    width: 75%;
+    padding-right: 10px;
 }
 
 #edit_event_form .textfield {
-    width: 98%;
+    width: 99%;
+    height: 1.4em;
+    font-size: 1.2em;
 }
 
 #edit_event_form .singleselectfield {
-    width: 99%;
+    width: 100%;
+    height: 1.7em;
+    font-size: 1.2em;
 }
 
-#edit_event_form input {
-    font-size: 12px;
+#edit_event_form .submitbutton {
+    height: 1.7em;
+    font-size: 1.2em;
+    margin: 0 auto;
 }
 
 /* Dialogue de détails */
