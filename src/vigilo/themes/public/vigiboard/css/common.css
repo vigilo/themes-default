@@ -43,13 +43,38 @@ body {
 	font-weight:bold;
 }
 
+/* Table des évènements */
+
+#vigitable_navigation_bar {
+    margin: auto;
+	width: 99%;
+	height: 29px;
+	text-align: center;
+}
+
+#previous_page {
+	float: left;
+    width: 25px;
+}
+
+#next_page {
+	float: right;
+    width: 25px;
+}
+
+#pagination {
+	margin: 0 25px;
+	height: 100%;
+	padding-top:8px;
+}
+
 .vigitable {
     margin: auto;
 	width: 99%;
 	border-collapse: collapse;
 }
 
-.vigitable thead {
+.vigitable thead th {
 	text-align: center;
 }
 
@@ -64,20 +89,12 @@ body {
 	border: solid 1px #EBECF0;
 }
 
-#previous_page {
-    width: 26px;
-}
-
-#next_page {
-    width: 26px;
-}
-
 .vigitable th {
     padding: 5px
 }
 
 .vigitable th.small_col {
-    width: 26px; 
+    width: 25px; 
     padding: 0px;
 }
 

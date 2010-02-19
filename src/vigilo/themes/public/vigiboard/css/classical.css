@@ -20,17 +20,9 @@
 	border: solid 1px white;
 }
 
-#previous_page {
-    border-right: solid 1px #4682B4;
-}
-
 #pagination {
     color: white;
     background-color: #4682b4;
-}
-
-#next_page {
-    border-left: solid 1px #4682B4;
 }
 
 tr.odd {

@@ -24,17 +24,9 @@ body {
 	border: solid 1px #CC8133;
 }
 
-#previous_page {
-    border-right: solid 1px #BB9966;
-}
-
 #pagination {
     color: black;
     background-color: #BB9966;
-}
-
-#next_page {
-    border-left: solid 1px #BB9966;
 }
 
 tr.odd {
