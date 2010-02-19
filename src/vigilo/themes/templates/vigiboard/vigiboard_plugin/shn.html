@@ -7,7 +7,7 @@
     window.addEvent('domready', function () {
         window.hls_dialog = new Jx.Dialog({
             id: "hls_dialog",
-            label: "${l_('Impacted high-level services')}",
+            label: "${l_('Impacted high-level services').encode('backslash')}",
             modal: false,
             resize: false,
             move: true,
@@ -20,6 +20,9 @@
     });
 
     function vigiboard_hls_dialog(ref, url, idd) {
+        window.hls_dialog.setBusy(true);
+        window.hls_dialog.open();
+
         var req = new Request.JSON({
             url: '${tg.url("/get_plugin_value")}',
             onSuccess: function (json, raw) {
@@ -27,9 +30,13 @@
                 for (var i = 0; i < json.services.length; i++)
                     code += '<li>' + json.services[i] + '<\/li>';
                 code += '<\/ul>';
+                window.hls_dialog.setBusy(false);
                 window.hls_dialog.setContent(code);
-                window.hls_dialog.open.bind(window.hls_dialog)();
-            }
+            },
+            onFailure: function (xhr) {
+                window.hls_dialog.setBusy(false);
+                window.hls_dialog.setContent("${l_('Error while retrieving data').encode('backslash')}");
+            },
         });
         req.post({plugin_name: 'shn', idcorrevent: idd});
     }
