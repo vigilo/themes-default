@@ -3,6 +3,6 @@
     <ShortName>Monitor Search</ShortName>
     <Description>Monitoring Navigator search engine</Description>
     <InputEncoding>utf-8</InputEncoding>
-    <Image width="16" height="16" type="image/png">${here}/resource/qx/icon/Nuvola/16/devices/network-wired.png</Image>
-    <Url type="text/html" method="get" template="${dir}/searchHost?query={searchTerms}"> </Url>
+    <Image width="16" height="16" type="image/png">${dir}/resource/qx/icon/Nuvola/16/devices/network-wired.png</Image>
+    <Url type="text/html" method="get" template="${here}/rpc/searchHost?query={searchTerms}"> </Url>
 </OpenSearchDescription>
