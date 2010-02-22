@@ -1,0 +1,15 @@
+<html xmlns:py="http://genshi.edgewall.org/"
+      xmlns:xi="http://www.w3.org/2001/XInclude"
+      py:strip="">
+
+<py:def function="plugin_template(name, instance)">
+</py:def>
+
+<th id="plugin_${name}" py:def="header_template(name, instance)">
+ID
+</th>
+
+<td class="plugin_${name}" py:def="data_template(name, instance, data)">${data[0].idcorrevent}</td>
+
+</html>
+

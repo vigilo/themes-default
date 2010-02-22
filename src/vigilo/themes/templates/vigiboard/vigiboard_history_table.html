@@ -20,13 +20,13 @@ There is no history.
 		</tr>
 	</thead>
 	<tbody>
-		<py:for each="(time,user,type,value,text,class_tr) in history">
-		<tr py:attrs="class_tr">
-			<td>${time}</td>
-			<td>${user}</td>
-			<td>${type}</td>
-			<td>${value}</td>
-			<td>${text}</td>
+		<py:for each="(index, entry) in enumerate(history)">
+		<tr class="${['odd', 'event'][index % 2]}">
+			<td>${entry.timestamp}</td>
+			<td>${entry.username}</td>
+			<td>${entry.type_action}</td>
+			<td>${entry.value}</td>
+			<td>${entry.text}</td>
 		</tr>
 		</py:for>
 	</tbody>

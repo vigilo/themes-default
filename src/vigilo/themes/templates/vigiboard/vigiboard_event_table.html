@@ -3,7 +3,7 @@
       py:strip="">
 
 
-  <xi:include href="vigiboard_history_table.html" />
+<xi:include href="vigiboard_history_table.html" />
 
 <py:def function="event_table(events,page,nb_pages,rows_info,edit_event_status_options,history,hist_error,search)">
 <?python from genshi import HTML ?>
@@ -42,233 +42,33 @@
 <table class="vigitable" summary="Event table">
 	<thead>
 		<tr>
-			<py:for each="(pname,pstyle) in events[0]">
-			    <th py:attrs="pstyle">${HTML(pname)}</th>
-			</py:for>
-			<th class="small_col">
-			    <a class="Edit_EventsLien" id="Edit_All" href="#">
-			        <img src="${tg.url('/images/icon_page_edit.png')}" alt="Edit selected" title="Edit all selected events"/>
-			    </a>
-			</th>
-			<th class="small_col">
-			    <input title="Select/Unselect all" id="vigiboard_checkall_checkbox" type="checkbox" onclick="vigiboard_checkall();" />
-            </th>
+            <py:for each="(plugin_name, plugin_instance) in plugins">
+                <xi:include href="vigiboard_plugin/${plugin_name}.html"/>
+                ${header_template(plugin_name, plugin_instance)}
+            </py:for>
 		</tr>
 	</thead>
 
 	<tbody py:choose="not rows_info['total_rows']">
-		<py:for py:when="0" each="(event,hostname,servicename,class_tr,class_td_severity,class_td_date,img_fleche,statu,plugin) in events[1:]">
-		    <tr py:attrs="class_tr" py:with="cause=event.cause">
-			    <td class="id_col">
-			        <a href="#${event.idcorrevent}" class="Details_Link">
-			            <img src="${tg.url(img_fleche['src'])}" alt="Details" title="Event details" />
-			        </a>
-		        </td>
-			    <td py:attrs="class_td_date">
-			        <span style="font-weight: bold;">${event.get_date('timestamp_active')}</span>
-			        <br />[${event.get_since_date('timestamp_active')}]
-			    </td>
-			    <td py:attrs="class_td_date" style="text-align:center">${event.priority}</td>
-			    <td py:attrs="class_td_date" style="text-align:center">${event.occurrence}</td>
-			    <td>${hostname}</td>
-			    <td>${servicename}</td>
-			    <td>${cause.message}</td>
-			    <td py:for="plug in plugin" py:attrs="plug[1]">${HTML(plug[0])}</td>
-			    <td class="ticket_col">
-			        <a py:if="event.trouble_ticket is not None" href="${
-					    tg.config['vigiboard_links.tt'] % {
-						    'idcorrevent': event.idcorrevent,
-						    'host': hostname,
-						    'service': servicename,
-						    'tt': event.trouble_ticket }}">[${event.trouble_ticket}]
-				    </a>
-			    </td>
-			    <py:choose>
-                    <py:when test="not (event.status == 'AAClosed' and StateName.value_to_statename(cause.current_state) == u'OK')">
-			            <td class="correvent_acknowledgement">
-			                <img src="${statu['src']}" py:if="statu != None" alt="${statu['label']}" title="${statu['label']}"/>
-			            </td>
-			            <td py:attrs="class_td_date" style="padding: 0px; text-align: center;">
-			                <a class="Edit_EventsLien" href="#${event.idcorrevent}">
-			                    <img src="${tg.url('/images/icon_page_edit.png')}" alt="Edit" title="Edit this event"/>
-			                </a>
-			            </td>
-			            <td py:attrs="class_td_date" style="padding:0px; text-align: center;">
-			                <input type="checkbox" class="Edit_EventsCheckBox" value="${event.idcorrevent}"/>
-			            </td>
-			        </py:when>
-			        <py:otherwise>
-			            <td colspan="3" class="last_cols">
-			                <img py:attrs="statu" py:if="statu != None" alt="Status" title="Event status"/>
-                        </td>
-			        </py:otherwise>
-                </py:choose>
-		    </tr>
-
-		    <py:if test="hist_error == True">
-		        <tr>
-		            <td colspan="${len(events[0]) + 1 + len(plugin)}">
-			            ${history_table(history[event.idcause], hist_error)}	
-		            </td>
-		        </tr>
-	        </py:if>
-		</py:for>
-		
 		<tr py:when="1">
-		    <td colspan="${len(events[0]) + 2}">There are no events.</td>
+		    <td colspan="${len(plugins) + 2}">There are no events.</td>
 		</tr>
+
+        <tr py:when="0" py:for="(index, event) in enumerate(events)" class="${['odd', 'even'][index % 2]}">
+            <py:for each="(plugin_name, plugin_instance) in plugins">
+                <xi:include href="vigiboard_plugin/${plugin_name}.html"/>
+                ${data_template(plugin_name, plugin_instance, event)}
+            </py:for>
+        </tr>
 	</tbody>
 </table>
 
-<py:for each="fct,tpl in plugin_context">
-    <py:if test="callable(fct)">
-    ${fct()}
-    </py:if>
-    <xi:include href="vigiboard_plugin/${tpl}.html" /> 
-</py:for>
-
 <div style="display: none"> 
-    <div id="DetailsDialog">
-    
-        <h2>State info</h2>
-        <div id="state_info">
-            <div class="value" id="DetailsDialog_initial_state"></div>
-            <div class="label">Initial State:</div>
-            
-            <div class="value" id="DetailsDialog_current_state"></div>
-            <div class="label">Current State:</div>
-            
-            <div class="value" id="DetailsDialog_peak_state"></div>
-            <div class="label">Peak State:</div>
-        </div>
-        
-        <hr />
-        
-        <h2>Details</h2>
-        <div id="history_links">
-            <ul>
-                <li><a id="DetailsDialog_detailed_event" href="#">Detailed history for this event</a></li>
-                <li><a id="DetailsDialog_detailed_host" href="#">Detailed history for this host/service</a></li>
-            </ul>
-        </div>   
-    
-        <hr />
-        
-        <h2>External links</h2>
-        <div id="external_links">
-            <ul>
-                <li py:for="edname, edit in tg.config['vigiboard_links.eventdetails'].iteritems()">
-                    <a href="#" id="DetailsDialog_${edname}">${edit[0]}</a>
-                </li>
-            </ul>
-        </div>
-        
-    </div>
-    ${tmpl_context.edit_event_form()}
+    <py:for each="(plugin_name, plugin_instance) in plugins">
+        <xi:include href="vigiboard_plugin/${plugin_name}.html" /> 
+        ${plugin_template(plugin_name, plugin_instance)}
+    </py:for>
 </div>
-
-<script type="text/javascript">
-    window.details_dialog = null;
-    window.edit_dialog = null;
-
-    window.addEvent("domready", function () {
-        /// HACK: voir notes sur window.search_dialog dans vigiboard.html.
-        window.details_dialog = new Jx.Dialog({
-            label: "${l_('Event details')}",
-            modal: false,
-            resize: false,
-            move: true,
-            content: 'DetailsDialog',
-            onOpen: window.dlg_open_handler,
-            onClose: window.dlg_close_handler,
-            width: 275,
-            height: 275,
-            closed: true,
-            horizontal: 'right left',
-            vertical: 'top top',
-        });
-        window.details_dialog.toggleCollapse();
-        window.details_dialog.toggleCollapse();
-
-        /// HACK: voir notes sur window.search_dialog dans vigiboard.html.
-        window.edit_dialog = new Jx.Dialog({
-            label: "${l_('Edit event')}",
-            modal: false,
-            resize: false,
-            move: true,
-            content: 'edit_event_form',
-            onOpen: window.dlg_open_handler,
-            onClose: window.dlg_close_handler,
-            width: 400,
-            height: 160,
-            closed: true,
-        });
-        window.edit_dialog.toggleCollapse();
-        window.edit_dialog.toggleCollapse();
-
-        $$('Edit_All').addEvent('click', function () {
-            var idd = '';
-            $$$$('.Edit_EventsCheckBox').each(function (el) {
-                if (el.get('checked'))
-                    idd += el.get('value') + ',';
-            });
-
-            if (idd == '')
-                return alert('${l_("No events have been selected")}');
-
-            vigiboard_edit_eventdialog(idd);
-        }.bind(window.edit_dialog));
-
-        $$$$('.Edit_EventsLien').each(function (el) {
-            if (el.get('id') == 'Edit_All')
-                return;
-
-            el.addEvent('click', function (item) {
-                var idd = item.get('href').substring(1);
-                vigiboard_edit_eventdialog(idd);
-            }.bind(this, el));
-        }.bind(window.edit_dialog));
-
-        $$$$('.Details_Link').each(function (el) {
-            el.addEvent('click', function (item) {
-                var idd = item.get('href').substring(1);
-                var req = new Request.JSON({
-                    link: 'cancel',
-                    url: '${tg.url("/history_dialog")}',
-                    onSuccess: function (details, raw) {
-                        $$('DetailsDialog_initial_state').set('text', details.initial_state);
-                        $$('DetailsDialog_current_state').set('text', details.current_state);
-                        $$('DetailsDialog_peak_state').set('text', details.peak_state);
-                        $$('DetailsDialog_detailed_event').set('href', "${tg.url('/event/')}" + details.idcorrevent);
-                        if(details.service){
-                            $$('DetailsDialog_detailed_host').set('href', "${tg.url('/host_service/')}" + details.host + "/" + details.service);
-                        } else {
-                            $$('DetailsDialog_detailed_host').set('href', "${tg.url('/host_service/')}" + details.host + "/");
-                        }
-                        <py:for each="edname, edit in tg.config['vigiboard_links.eventdetails'].iteritems()">
-                        $$('DetailsDialog_${edname}').set('href', details.eventdetails['${edname}']);
-                        </py:for>
-                        window.details_dialog.options.parent = item;
-                        window.details_dialog.open.bind(window.details_dialog)();
-                    }
-                });
-                req.post({'idcorrevent': idd});
-            }.bind(this, el));
-        }.bind(window.details_dialog));
-    }); // Fin domready.
-
-	function vigiboard_edit_eventdialog(idd) {
-		$$('edit_event_form_trouble_ticket').set('text', '');
-		$$('edit_event_form_ack').set('selectedindex', 0);
-		$$('edit_event_form_id').set('value', idd);
-		window.edit_dialog.open.bind(window.edit_dialog)();
-	}
-
-	function vigiboard_checkall() {
-	    var val = $$('vigiboard_checkall_checkbox').get('checked');
-	    $$$$('.Edit_EventsCheckBox').each(function (el) { el.set('checked', val); });
-	}
-</script>
 
 </py:def>
 

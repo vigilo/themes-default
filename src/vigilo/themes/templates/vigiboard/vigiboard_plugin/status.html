@@ -1,0 +1,126 @@
+<!--!
+    Le plugin "status" affiche une image qui symbolise le statut
+    d'acquittement d'un incident. Il génère également des liens
+    permettant de modifier certaines propriétés liées à un
+    incident comme la référence du ticket d'incident ou encore
+    le statut d'acquittement.
+-->
+<html xmlns:py="http://genshi.edgewall.org/"
+      xmlns:xi="http://www.w3.org/2001/XInclude"
+      py:strip="">
+
+<py:def function="plugin_template(name, instance)">
+<!--! Le formulaire d'édition d'événements, généré par ToscaWidgets. -->
+    ${tmpl_context.edit_event_form()}
+
+<!--! Le code JavaScript qui va permettre de gérer l'édition d'événements. -->
+<script type="text/javascript">
+    window.edit_dialog = null;
+
+    window.addEvent("domready", function () {
+        /// HACK: voir notes sur window.search_dialog dans vigiboard.html.
+        window.edit_dialog = new Jx.Dialog({
+            label: "${l_('Edit event')}",
+            modal: false,
+            resize: false,
+            move: true,
+            content: 'edit_event_form',
+            onOpen: window.dlg_open_handler,
+            onClose: window.dlg_close_handler,
+            width: 400,
+            height: 160,
+            closed: true,
+        });
+        window.edit_dialog.toggleCollapse();
+        window.edit_dialog.toggleCollapse();
+
+        $$('Edit_All').addEvent('click', function () {
+            var idd = '';
+            $$$$('.Edit_EventsCheckBox').each(function (el) {
+                if (el.get('checked'))
+                    idd += el.get('value') + ',';
+            });
+
+            if (idd == '')
+                return alert('${l_("No events have been selected")}');
+
+            vigiboard_edit_eventdialog(idd);
+        }.bind(window.edit_dialog));
+
+        $$$$('.Edit_EventsLien').each(function (el) {
+            if (el.get('id') == 'Edit_All')
+                return;
+
+            el.addEvent('click', function (item) {
+                var idd = item.get('href').substring(1);
+                vigiboard_edit_eventdialog(idd);
+            }.bind(this, el));
+        }.bind(window.edit_dialog));
+    }); // Fin domready.
+
+	function vigiboard_edit_eventdialog(idd) {
+		$$('edit_event_form_trouble_ticket').set('text', '');
+		$$('edit_event_form_ack').set('selectedindex', 0);
+		$$('edit_event_form_id').set('value', idd);
+		window.edit_dialog.open.bind(window.edit_dialog)();
+	}
+
+	function vigiboard_checkall() {
+	    var val = $$('vigiboard_checkall_checkbox').get('checked');
+	    $$$$('.Edit_EventsCheckBox').each(function (el) { el.set('checked', val); });
+	}
+</script>
+</py:def>
+
+<py:def function="header_template(name, instance)">
+<th id="plugin_${name}">Status</th>
+
+<th class="small_col">
+    <a class="Edit_EventsLien" id="Edit_All" href="#">
+        <img src="${tg.url('/images/icon_page_edit.png')}" alt="Edit selected" title="Edit all selected events"/>
+    </a>
+</th>
+
+<th class="small_col">
+    <input title="Select/Unselect all" id="vigiboard_checkall_checkbox" type="checkbox" onclick="vigiboard_checkall();" />
+</th>
+</py:def>
+
+<py:def function="data_template(name, instance, data)">
+    <py:with vars="cause = data[0].cause; ack = [data[0].status, u'None'][data[0].status is None]">
+    <py:with vars="state = StateName.value_to_statename(cause.current_state)">
+    <py:choose test="">
+        <py:when test="ack == 'AAClosed' and state == u'OK'">
+            <td class="plugin_${name}" colspan="3" py:choose="">
+                <img py:when="ack == 'Acknowledged'" src="${tg.url('/images/checked.png')}"
+                    alt="Acknowledged" title="Acknowledged" />
+                <img py:when="ack == 'AAClosed'" src="${tg.url('/images/crossed.png')}"
+                    alt="Acknowledged and Closed" title="Acknowledged and Closed" />
+            </td>
+        </py:when>
+
+        <py:otherwise>
+            <td class="plugin_${name}" py:choose="">
+                <img py:when="ack == 'Acknowledged'" src="${tg.url('/images/checked.png')}"
+                    alt="Acknowledged" title="Acknowledged" />
+                <img py:when="ack == 'AAClosed'" src="${tg.url('/images/crossed.png')}"
+                    alt="Acknowledged and Closed" title="Acknowledged and Closed" />
+            </td>
+
+            <td class="${state}">
+                <a class="Edit_EventsLien" href="#${data[0].idcorrevent}">
+                    <img src="${tg.url('/images/icon_page_edit.png')}" alt="Edit" title="Edit this event"/>
+                </a>
+            </td>
+
+            <td class="${state}">
+                <input type="checkbox" class="Edit_EventsCheckBox" value="${data[0].idcorrevent}"/>
+            </td>
+        </py:otherwise>
+    </py:choose>
+    </py:with>
+    </py:with>
+</py:def>
+
+</html>
+

@@ -1,0 +1,94 @@
+<!--!
+    Ce fichier décrit les différentes macros Genshi appelées lors de
+    l'exécution d'un plugin de VigiBoard.
+-->
+
+<!--!
+    Définition des namespaces utilisés par le plugin.
+    La balise <html> NE FIGURERA PAS dans la sortie (grâce au py:strip="").
+-->
+<html xmlns:py="http://genshi.edgewall.org/"
+      xmlns:xi="http://www.w3.org/2001/XInclude"
+      py:strip="">
+
+<!--!
+    Cette macro est appelée pour générer le contenu non visible du plugin.
+    Généralement, on placera le code JavaScript spécifique au plugin ici,
+    de même que les éventuelles définitions de dialogues JxLib réutilisables
+    (voir le code du plugin HLS pour un exemple d'utilisation de dialogues).
+
+    @param name: Nom du plugin.
+    @type name: C{basestring}
+    @param instance: Instance du plugin.
+    @type instance: L{VigiboardRequestPlugin}
+-->
+<py:def function="plugin_template(name, instance)">
+<!--!
+    Ce plugin de démonstration n'a pas besoin de code JS pour fonctionner
+    et ne génère pas non plus de dialogues.
+-->
+</py:def>
+
+<!--!
+    Cette macro est appelée pour générer l'en-tête ou les en-têtes des colonnes
+    gérées par ce plugin.
+
+    Vous DEVEZ utiliser la balise HTML <th> pour ajouter une nouvelle colonne.
+    Vous NE DEVEZ PAS ajouter de code invalide dans le contexte d'une ligne
+    d'un tableau HTML (balise <tr>).
+    Vous DEVRIEZ donner l'*identifiant* "plugin_${name}" à la colonne qui
+    représente le mieux le contenu affiché par ce plugin. Ceci facilitera
+    les modifications de styles du plugin via CSS. Si plusieurs colonnes
+    doivent avoir des styles, utilisez de préférences des noms comme
+    "plugin_${name}.col1", "plugin_${name}.col2", etc. (ie : séparez le
+    nom de la colonne du préfixe correspondant au plugin par un point).
+
+    @param name: Nom du plugin.
+    @type name: C{basestring}
+    @param instance: Instance du plugin.
+    @type instance: L{VigiboardRequestPlugin}
+-->
+<py:def function="header_template(name, instance)">
+    <!--! Ajout d'une colonne "Example" au résultat. -->
+    <th id="plugin_${name}">Example</th>
+</py:def>
+
+<!--!
+    Cette macro est appelée sur chaque événement du tableau.
+
+    Vous DEVEZ utiliser la balise HTML <td> pour ajouter une case de données.
+    Vous NE DEVEZ PAS ajouter de code invalide dans le contexte d'une ligne
+    d'un tableau HTML (balise <tr>).
+    Vous DEVRIEZ donner la *classe* "plugin_${name}" à la colonne qui
+    représente le mieux le contenu affiché par ce plugin. Ceci facilitera
+    les modifications de styles du plugin via CSS. Si plusieurs colonnes
+    doivent avoir des styles, utilisez de préférences des noms comme
+    "plugin_${name}.col1", "plugin_${name}.col2", etc. (ie : séparez le
+    nom de la colonne du préfixe correspondant au plugin par un point).
+
+    @param name: Nom du plugin.
+    @type name: C{basestring}
+    @param instance: Instance du plugin.
+    @type instance: L{VigiboardRequestPlugin}
+    @param data: Tuple contenant l'événement (C{CorrEvent}) comme 1ère valeur,
+        le nom de l'hôte concerné par l'événement comme 2nde valeur
+        et le nom du service concerné comme 3ème et dernière valeur.
+        Si l'événement concerne directement l'hôte, la dernière
+        valeur vaut C{None}.
+    @type data: C{tuple}
+-->
+<py:def function="data_template(name, instance, data)">
+    <!--!
+        Ce plugin de démonstration renvoie un texte statique.
+        Ce texte aurait pu être saisi directement ici, mais nous avons
+        choisi de le placer dans le code Python afin de montrer comment
+        il est possible d'appeler des méthodes du plugin depuis le
+        template correspondant.
+    -->
+    <td class="plugin_${name}">
+        ${instance.get_value(data[0].idcorrevent)['text']}
+    </td>
+</py:def>
+
+</html>
+

@@ -1,0 +1,17 @@
+<html xmlns:py="http://genshi.edgewall.org/"
+      xmlns:xi="http://www.w3.org/2001/XInclude"
+      py:strip="">
+
+<py:def function="plugin_template(name, instance)">
+</py:def>
+
+<th id="plugin_${name}" py:def="header_template(name, instance)">Priority</th>
+
+<py:def function="data_template(name, instance, data)">
+    <py:with vars="state = StateName.value_to_statename(data[0].cause.current_state)">
+        <td class="plugin_${name} ${state}">${data[0].priority}</td>
+    </py:with>
+</py:def>
+
+</html>
+

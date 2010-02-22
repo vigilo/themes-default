@@ -2,6 +2,7 @@
       xmlns:xi="http://www.w3.org/2001/XInclude"
       py:strip="">
 
+<py:def function="plugin_template(name, instance)">
 <script type="text/javascript">
 /*<![CDATA[*/
     window.addEvent('domready', function () {
@@ -38,9 +39,26 @@
                 window.hls_dialog.setContent("${l_('Error while retrieving data').encode('backslash')}");
             },
         });
-        req.post({plugin_name: 'shn', idcorrevent: idd});
+        req.post({plugin_name: 'hls', idcorrevent: idd});
     }
 /*]]>*/
 </script>
+</py:def>
+
+<th id="plugin_${name}" py:def="header_template(name, instance)">
+Impacted HLS
+</th>
+
+<td class="plugin_${name}" py:def="data_template(name, instance, data)">
+    <py:with vars="hls = instance.get_value(data[0].idcorrevent)['services']">
+    <py:choose test="len(hls)">
+        <py:when test="0"/>
+        <py:when test="1">${hls[0]}</py:when>
+        <py:otherwise>
+        <a href="javascript:vigiboard_hls_dialog(this,'${tg.url('/')}',${data[0].idcorrevent})">${len(hls)}</a>
+        </py:otherwise>
+    </py:choose>
+    </py:with>
+</td>
 
 </html>
