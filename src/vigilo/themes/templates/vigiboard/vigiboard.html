@@ -1,5 +1,3 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
-                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <!--!
     Les "thèmes" fonctionnent ainsi :
     -   une variable "themes" est créé avec py:with au niveau de la balise "html",
@@ -25,15 +23,18 @@
     TODO: Il faudrait pouvoir définir les thèmes ailleurs.
 -->
 <html xmlns="http://www.w3.org/1999/xhtml"
-    xmlns:xi="http://www.w3.org/2001/XInclude"
     xmlns:py="http://genshi.edgewall.org/"
-    py:with="themes = ((l_('Classical'), 'classical', ('/css/classical.css', )), (l_('Night'), 'night', ('/css/night.css', )), (l_('Colorblind'), 'colorblind', ('/css/colorblind.css', ))); session_theme = session.get('theme'); active_theme = list(reversed([theme_data[1] for (theme_index, theme_data) in enumerate(themes) if theme_data[1] == session_theme or theme_index == 0]))[0]"
->
-
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    py:strip=""
+    py:with="themes = (
+        (l_('Classical'), 'classical', ('/css/classical.css', )),
+        (l_('Night'), 'night', ('/css/night.css', )),
+        (l_('Colorblind'), 'colorblind', ('/css/colorblind.css', )),
+    )">
+<py:with vars="session_theme = session.get('theme'); active_theme = list(reversed([theme_data[1] for (theme_index, theme_data) in enumerate(themes) if theme_data[1] == session_theme or theme_index == 0]))[0]">
+<head>
 <xi:include href="toolbar.html" />
 <?python from genshi import HTML, XML ?>
-
-<head>
     <meta content="text/html; charset=UTF-8" http-equiv="content-type" py:replace="''"/>
     <title>Vigiboard</title>
     <link rel="stylesheet" type="text/css" href="${tg.url('/css/jxlib/jxtheme.uncompressed.css')}" />
@@ -60,7 +61,7 @@
 </head>
 
 <body py:match="body" py:with="body_attr = select('@*')"
-    py:attrs="body_attr.update(style='font-size:${tg.session.get('fontsize', tg.config['vigiboard_font.size'])};' + body_attr)">
+    py:attrs="body_attr.update(style='font-size:' + tg.session.get('fontsize', tg.config['vigiboard_font.size']) + ';' + body_attr)">
 
 ${toolbar(themes, refresh_times, search)}
 
@@ -95,5 +96,7 @@ ${toolbar(themes, refresh_times, search)}
 
 <div class="main_content" py:content="select('*|text()')"></div>
 </body>
+
+</py:with>
 </html>
 
