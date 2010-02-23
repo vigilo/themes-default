@@ -30,7 +30,7 @@
     py:with="themes = ((l_('Classical'), 'classical', ('/css/classical.css', )), (l_('Night'), 'night', ('/css/night.css', )), (l_('Colorblind'), 'colorblind', ('/css/colorblind.css', ))); session_theme = session.get('theme'); active_theme = list(reversed([theme_data[1] for (theme_index, theme_data) in enumerate(themes) if theme_data[1] == session_theme or theme_index == 0]))[0]"
 >
 
-<xi:include href="vigiboard_event_table.html" />
+<xi:include href="toolbar.html" />
 <?python from genshi import HTML, XML ?>
 
 <head>
@@ -59,73 +59,10 @@
     </py:for>
 </head>
 
-<body style="font-size:${tg.session.get('fontsize',tg.config['vigiboard_font.size'])}">
+<body py:match="body" py:with="body_attr = select('@*')"
+    py:attrs="body_attr.update(style='font-size:${tg.session.get('fontsize', tg.config['vigiboard_font.size'])};' + body_attr)">
 
-<div class="toolbar">
-
-    <div class="toolbar_item">
-        <a href="${tg.url('/')}">
-            <img src="${tg.url('/images/home.png')}" alt="Home" title="Home" />
-        </a>
-        <a id="SearchLien" href="javascript:window.search_dialog.open.bind(window.search_dialog)();">
-            <img src="${tg.url('/images/search.png')}" alt="Filter display" title="Filter display"/>
-        </a>
-        <a href="${tg.url('/logout_handler')}">
-            <img src="${tg.url('/images/logout.png')}" alt="Log out" title="Log out"/>
-        </a>
-    </div>
-
-    <div class="toolbar_item" id="font_size_selector">
-        <a href="javascript:change_fontsize('5px')">
-            <img alt="Default font size" title="Default font size" src="${tg.url('/images/icn_text_sm.png')}" />
-        </a>
-        <a href="javascript:change_fontsize('10px')">
-            <img alt="Medium font size" title="Medium font size" src="${tg.url('/images/icn_text_md.png')}" />
-        </a>
-        <a href="javascript:change_fontsize('25px')">
-            <img alt="Large font size" title="Large font size" src="${tg.url('/images/icn_text_lg.png')}" />
-        </a>
-    </div>
-
-    <div class="toolbar_item">
-        Refresh every
-        <select id="refresh_time" class="toolbar_select" onchange="change_refresh($('refresh_time').get('value'));">
-            <py:for each="(delay, label) in refresh_times"
-                py:with="refresh_time = tg.session.get('refresh', 0)">
-            <option py:if="refresh_time == delay" value="${delay}" selected="selected">${label}</option>
-            <option py:if="refresh_time != delay" value="${delay}">${label}</option>
-            </py:for>
-        </select>
-    </div>
-
-    <div class="toolbar_item">
-        Theme
-        <select id="theme" class="toolbar_select"
-            onchange="change_theme($('theme').get('value'), $('theme').getSelected().get('text'));">
-            <py:for each="(theme_name, theme_id, theme_files) in themes"
-                py:choose="int(theme_id == active_theme)">
-            <option py:when="1" value="${theme_id}" selected="selected">${theme_name}</option>
-            <option py:otherwise="" value="${theme_id}">${theme_name}</option>
-            </py:for>
-        </select>
-    </div>
-
-    <div class="toolbar_item" id="search_mode_tip">
-        <span py:if="filter(None, search.values())">
-            <a href="${tg.url('/')}">${l_('You are in Search mode, click here to return to the initial mode.')}</a>
-        </span>
-    </div>
-    
-    <div id="logo">
-        <a py:if="tg.config.get('vigiboard_links.logo')" href="${tg.config['vigiboard_links.logo']}">
-            <img alt="" src="${tg.url('/images/vigilo.png')}"/>
-        </a>
-        <a py:if="not tg.config.get('vigiboard_links.logo')" href="${tg.url('/')}">
-            <img alt="" src="${tg.url('/images/vigilo.png')}"/>
-        </a>
-        ${l_('v%(vigilo_version)s' % {'vigilo_version': tg.config['vigilo_version']})}
-    </div>
-</div>
+${toolbar(themes, refresh_times, search)}
 
 <py:with vars="flash=tg.flash_obj.render('flash', use_js=False)">
     <div py:strip="True" py:if="flash" py:content="XML(flash)" />
@@ -135,138 +72,14 @@
     ${tmpl_context.search_form()}
 </div>
 
-<div class="main_content">
-    ${event_table(events,page,nb_pages,rows_info,event_edit_status_options,history,hist_error,search)}
-</div>
-
-
 <script type="text/javascript">
 /*<![CDATA[*/
-    window.search_dialog = null;
-    window.dlg_open_handler = function () { this.isOpen = true; }
-    window.dlg_close_handler = function () { this.isOpen = false; }
-
     window.addEvent('load', function (){
         var flash = $('flash');
         if (flash) {
             flash.fade('in').pauseFx(10000).fade('out');
         }
     });
-
-    window.addEvent('domready', function (){
-        /**
-         * HACK: le closed: True est nécessaire pour éviter que
-         * JxLib affiche le panel lors de la création du dialogue
-         * (affiche des rectangles blancs). Avec cette modification,
-         * le dialogue apparaît replié, mais est considéré comme
-         * déplié par Jx.Dialog. Les toggleCollapse permettent de
-         * marquer le Dialog comme replié dans Jx.Dialog avant de
-         * le déplier pour qu'il soit affiché correctement.
-         */ 
-        window.search_dialog = new Jx.Dialog({
-            id: "SearchDialog",
-            label: "${l_('Search Event').encode('backslash')}",
-            modal: false,
-            resize: false,
-            move: true,
-            content: "search_form",
-            onOpen: window.dlg_open_handler,
-            onClose: window.dlg_close_handler,
-            width: 400,
-            height: 325,
-            closed: true,
-        });
-        window.search_dialog.toggleCollapse();
-        window.search_dialog.toggleCollapse();
-
-        $('search_form_hostgroup').set('value', "${search['hostgroup'].encode('backslash')}");
-        $('search_form_servicegroup').set('value', "${search['servicegroup'].encode('backslash')}");
-        $('search_form_host').set('value', "${search['host'].encode('backslash')}");
-        $('search_form_service').set('value', "${search['service'].encode('backslash')}");
-        $('search_form_output').set('value', "${search['output'].encode('backslash')}");
-        $('search_form_trouble_ticket').set('value', "${search['tt'].encode('backslash')}");
-        $('search_form_from_date').set('value', "${search['from_date'].encode('backslash')}");
-        $('search_form_to_date').set('value', "${search['to_date'].encode('backslash')}");
-
-        add_autocompleter('search_form_host', 'host', '${tg.url("/autocomplete/host").encode("backslash")}');
-        add_autocompleter('search_form_service', 'service', '${tg.url("/autocomplete/service").encode("backslash")}');
-        add_autocompleter('search_form_hostgroup', 'hostgroup', '${tg.url("/autocomplete/hostgroup").encode("backslash")}');
-        add_autocompleter('search_form_servicegroup', 'servicegroup', '${tg.url("/autocomplete/servicegroup").encode("backslash")}');
-
-        change_refresh_rate(${tg.session.get("refresh", 0)});
-
-        $('search_form_from_date_trigger').addEvent('click', function () {
-            $$$$(".calendar").setStyles({"zIndex": window.search_dialog.domObj.getStyle('zIndex').toInt()});
-        });
-
-        $('search_form_to_date_trigger').addEvent('click', function () {
-            $$$$(".calendar").setStyles({"zIndex": window.search_dialog.domObj.getStyle('zIndex').toInt()});
-        });
-    });
-
-    function change_fontsize(size) {
-        document.body.style.fontSize = size;
-        var req = new Request.JSON({
-            link: 'cancel',
-            url: '${tg.url("/set_fontsize")}',
-            onFailure: function () {
-                alert("${l_('Unable to save preferences').encode('backslash')}");
-            }
-        });
-        req.post({fontsize: size});
-    }
-
-    var refresh_timeout = null;
-    function change_refresh_rate(timeout) {
-        timeout = parseInt(timeout);
-        if (refresh_timeout)
-            refresh_timeout = $$clear(refresh_timeout);
-        if (timeout)
-            refresh_timeout = refresh_page.periodical(timeout * 1000);
-    }
-
-    function change_refresh(timeout) {
-        var req = new Request.JSON({
-            link: 'cancel',
-            url: '${tg.url("/set_refresh")}',
-            onFailure: function () {
-                alert("${l_('Unable to save preferences').encode('backslash')}");
-            }
-        });
-        req.post({'refresh': timeout});
-        change_refresh_rate(timeout);
-    }
-
-    function refresh_page() {
-        var dialogs = ['SearchDialog', 'HistoryDialog', 'Edit_EventsDialog'];
-        var el = null
-        for (dialog in dialogs) {
-            el = $(dialogs[dialog]);
-            if (el && el.isOpen)
-                return;
-        }
-        window.location.reload(true);
-    }
-
-    function change_theme(theme_id, theme_name) {
-        var req = new Request.JSON({
-            link: 'cancel',
-            url: '${tg.url("/set_theme")}',
-            onFailure: function () {
-                alert("${l_('Unable to save preferences').encode('backslash')}");
-            }
-        });
-        req.post({'theme': theme_id});
-        setActiveStyleSheet(theme_name);
-    }
-
-    function setActiveStyleSheet(theme_name) {
-        $$$$('link[rel~=stylesheet][title]').each(function (link_obj) {
-            link_obj.set('disabled', true);
-            if (link_obj.get('title') == theme_name)
-                link_obj.set('disabled', false);
-        })
-    }
 
     function add_autocompleter(elem, varname, url) {
         new Autocompleter.Request.VigiloJSON(elem, url, {
@@ -279,6 +92,8 @@
     }
 /*]]>*/
 </script>
+
+<div class="main_content" py:content="select('*|text()')"></div>
 </body>
 </html>
 
