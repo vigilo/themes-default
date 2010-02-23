@@ -5,9 +5,18 @@
 <py:def function="plugin_template(name, instance)">
 </py:def>
 
-<th id="plugin_${name}" class="plugin_${name}" py:def="header_template(name, instance)" title="Trouble Ticket">[TT]</th>
+<th id="plugin_${name}" class="plugin_${name}" py:def="header_template(name, instance)"
+    title="Trouble Ticket">[TT]</th>
 
-<td class="plugin_${name}" py:def="data_template(name, instance, data)">${data[0].trouble_ticket}</td>
+<td class="plugin_${name}" py:def="data_template(name, instance, data)">
+<a py:if="data[0].trouble_ticket" href="${
+    tg.config['vigiboard_links.tt'] % {
+        'idcorrevent': data[0].idcorrevent,
+        'host': data[1],
+        'service': data[2],
+        'tt': data[0].trouble_ticket
+    }}">[${data[0].trouble_ticket}]</a>
+</td>
 
 </html>
 

@@ -144,8 +144,6 @@ div.clearingdiv {
     width: 29%;
     height: 1.7em;
     font-size: 1.2em;
-    float: right;
-    margin-top: -1.7em;
 }
 
 #search_form .submitbutton {
@@ -213,9 +211,9 @@ div.clearingdiv {
     margin: 10px 5px;
 }
 
-#DetailsDialog #state_info div.value{
-    float: right;
-    padding-right: 10px;
+#DetailsDialog #state_info span.value {
+    position: absolute;
+    right: 10px;
 }
 
 #DetailsDialog #history_links,
