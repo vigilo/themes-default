@@ -90,6 +90,8 @@ img {
     right: 0px;
     width: 100%;
     position: absolute;
+    /* Pour les navigateurs un peu plus évolués. */
+    position: fixed;
 }
 #flash div, .notice {
     padding: 8px 7px 6px 44px;

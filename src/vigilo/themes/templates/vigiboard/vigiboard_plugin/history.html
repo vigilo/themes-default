@@ -2,7 +2,8 @@
       xmlns:xi="http://www.w3.org/2001/XInclude"
       py:strip="">
 
-<py:def function="plugin_template(name, instance)">
+<py:def function="plugin_template(name, instance)"
+    py:with="nb_links = len(tg.config['vigiboard_links.eventdetails'])">
 <div id="DetailsDialog">
     <h2>State info</h2>
     <div id="state_info">
@@ -27,21 +28,24 @@
     <h2>Details</h2>
     <div id="history_links">
         <ul>
-            <li><a id="DetailsDialog_detailed_event" href="#">Detailed history for this event</a></li>
-            <li><a id="DetailsDialog_detailed_host" href="#">Detailed history for this host/service</a></li>
+            <li><a id="DetailsDialog_event" href="#">Detailed history for this event</a></li>
+            <li><a id="DetailsDialog_masked" href="#">Masked events for this event</a></li>
+            <li><a id="DetailsDialog_item" href="#">Events history for this supervised item</a></li>
         </ul>
     </div>   
 
-    <hr />
-    
-    <h2>External links</h2>
-    <div id="external_links">
-        <ul>
-            <li py:for="edname, edit in tg.config['vigiboard_links.eventdetails'].iteritems()">
-                <a href="#" id="DetailsDialog_${edname}">${edit[0]}</a>
-            </li>
-        </ul>
-    </div>    
+    <div py:if="nb_links">
+        <hr />
+
+        <h2>External links</h2>
+        <div id="external_links">
+            <ul>
+                <li py:for="edname, edit in tg.config['vigiboard_links.eventdetails'].iteritems()">
+                    <a href="#" id="DetailsDialog_${edname}">${edit[0]}</a>
+                </li>
+            </ul>
+        </div>
+    </div>
 </div>
 
 <script type="text/javascript">
@@ -58,7 +62,9 @@ window.addEvent("domready", function () {
         onOpen: window.dlg_open_handler,
         onClose: window.dlg_close_handler,
         width: 275,
-        height: 275,
+        // On essaye d'obtenir une hauteur correcte pour le dialogue,
+        // en fonction du nombre de liens externes configurés.
+        height: ${[190, 220][nb_links != 0] + nb_links * 14},
         closed: true,
         horizontal: 'right left',
         vertical: 'top top',
@@ -76,11 +82,12 @@ window.addEvent("domready", function () {
                     $$('DetailsDialog_initial_state').set('text', details.initial_state);
                     $$('DetailsDialog_current_state').set('text', details.current_state);
                     $$('DetailsDialog_peak_state').set('text', details.peak_state);
-                    $$('DetailsDialog_detailed_event').set('href', "${tg.url('/event/')}" + details.idcorrevent);
+                    $$('DetailsDialog_event').set('href', "${tg.url('/event/')}" + details.idcorrevent);
+                    $$('DetailsDialog_masked').set('href', "${tg.url('/masked_events/')}" + details.idcorrevent);
                     if (details.service) {
-                        $$('DetailsDialog_detailed_host').set('href', "${tg.url('/host_service/')}" + details.host + "/" + details.service);
+                        $$('DetailsDialog_item').set('href', "${tg.url('/item/')}" + details.host + "/" + details.service);
                     } else {
-                        $$('DetailsDialog_detailed_host').set('href', "${tg.url('/host_service/')}" + details.host + "/");
+                        $$('DetailsDialog_item').set('href', "${tg.url('/item/')}" + details.host + "/");
                     }
                     <py:for each="edname, edit in tg.config['vigiboard_links.eventdetails'].iteritems()">
                     $$('DetailsDialog_${edname}').set('href', details.eventdetails['${edname}']);
