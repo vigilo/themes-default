@@ -1,15 +1,18 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns:py="http://genshi.edgewall.org/"
-      xmlns:xi="http://www.w3.org/2001/XInclude"
-      py:strip="">
+    xmlns:xi="http://www.w3.org/2001/XInclude">
 
-
-<xi:include href="vigiboard_history_table.html" />
-
-<py:def function="event_table(events,page,nb_pages,rows_info,edit_event_status_options,history,hist_error,search)">
+<xi:include href="vigiboard.html" />
 <?python from genshi import HTML ?>
 <?python from vigilo.models import StateName ?>
 <?python from vigiboard.controllers.vigiboard_plugin import VigiboardRequestPlugin ?>
 
+<head>
+    <title>VigiBoard</title>
+</head>
+
+<body>
 <table class="vigitable" summary="Event table" py:with="columns_count = sum([p[1].get_generated_columns_count() for p in plugins])">
 	<thead>
         <tr id="vigitable_navigation_bar">
@@ -75,6 +78,5 @@
     </py:for>
 </div>
 
-</py:def>
-
+</body>
 </html>

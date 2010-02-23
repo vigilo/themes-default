@@ -1,0 +1,37 @@
+<!--!
+    Les "thèmes" fonctionnent ainsi :
+    -   une variable "themes" est créée qui contient la définition des
+        différents thèmes disponibles. Chaque définition contient :
+        *   un libellé, qui sera visible par l'utilisateur (donc traductible)
+        *   un identifiant, utilisé en interne pour sauvegarder le choix de
+            l'utilisateur.
+        *   un tuple contenant les emplacements des différents fichiers CSS qui
+            composent le thème. Inutile d'utiliser tg.url() sur ces emplacements,
+            ceci sera fait automatiquement.
+
+    -   une variable "session_theme" est créée qui contient l'identifiant du thème
+        éventuellement choisi par l'utilisateur (ou None si aucun thème n'a été
+        choisi pour le moment).
+        ATTENTION : bien que ce soit improbable, il se pourrait que l'identifiant
+        indiqué ne soit plus valide (ex : le thème a changé d'identifiant).
+        Ce cas est correctement traité (voir remarque suivante).
+
+    -   le thème réellement utilisé est celui indiqué dans "session_theme" si
+        l'identifiant est valide, sinon il s'agira du premier thème défini dans
+        la variable "themes".
+-->
+<!--!
+    L'utilisation de Python est obligatoire ici pour éviter un bug
+    dans Genshi avec les contextes de py:with et xi:include.
+    Voir également http://genshi.edgewall.org/ticket/179
+-->
+<?python
+themes = (
+    (l_('Classical'), 'classical', ('/css/classical.css', )),
+    (l_('Night'), 'night', ('/css/night.css', )),
+    (l_('Colorblind'), 'colorblind', ('/css/colorblind.css', )),
+)
+session_theme = session.get('theme')
+active_theme = list(reversed([theme_data[1] for (theme_index, theme_data) in enumerate(themes) if theme_data[1] == session_theme or theme_index == 0]))[0]
+?>
+<py:if xmlns:py="http://genshi.edgewall.org/" test="False" />

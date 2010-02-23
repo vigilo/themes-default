@@ -1,46 +1,30 @@
-<!--!
-    Les "thèmes" fonctionnent ainsi :
-    -   une variable "themes" est créé avec py:with au niveau de la balise "html",
-        elle contient la définition des différents thèmes disponibles. Chaque
-        définition contient :
-        *   un libellé, qui sera visible par l'utilisateur (donc traductible)
-        *   un identifiant, utilisé en interne pour sauvegarder le choix de
-            l'utilisateur.
-        *   un tuple contenant les emplacements des différents fichiers CSS qui
-            composent le thème. Inutile d'utiliser tg.url() sur ces emplacements,
-            ceci sera fait automatiquement.
-
-    -   une variable "session_theme" est créé qui contient l'identifiant du thème
-        éventuellement choisi par l'utilisateur (ou None si aucun thème n'a été
-        choisi pour le moment).
-        ATTENTION : bien que ce soit improbable, il se pourrait que l'identifiant
-        indiqué ne soit plus valide (ex : le thème a changé d'identifiant).
-
-    -   le thème réellement utilisé est celui indiqué dans "session_theme" si
-        l'identifiant est valide, sinon il s'agira du premier thème défini dans
-        la variable "themes".
-
-    TODO: Il faudrait pouvoir définir les thèmes ailleurs.
--->
 <html xmlns="http://www.w3.org/1999/xhtml"
     xmlns:py="http://genshi.edgewall.org/"
     xmlns:xi="http://www.w3.org/2001/XInclude"
-    py:strip=""
-    py:with="themes = (
-        (l_('Classical'), 'classical', ('/css/classical.css', )),
-        (l_('Night'), 'night', ('/css/night.css', )),
-        (l_('Colorblind'), 'colorblind', ('/css/colorblind.css', )),
-    )">
-<py:with vars="session_theme = session.get('theme'); active_theme = list(reversed([theme_data[1] for (theme_index, theme_data) in enumerate(themes) if theme_data[1] == session_theme or theme_index == 0]))[0]">
-<head>
-<xi:include href="toolbar.html" />
-<?python from genshi import HTML, XML ?>
+    py:strip="">
+
+<xi:include href="themes.html"/>
+<xi:include href="toolbar.html"/>
+<?python from genshi import XML ?>
+
+<py:match path="head" once="true">
+<head py:attrs="select('@*|py:with')">
     <meta content="text/html; charset=UTF-8" http-equiv="content-type" py:replace="''"/>
-    <title>Vigiboard</title>
+    <title py:replace="''">Your title goes here</title>
+    <meta py:replace="select('*')"/>
     <link rel="stylesheet" type="text/css" href="${tg.url('/css/jxlib/jxtheme.uncompressed.css')}" />
     <link rel="stylesheet" type="text/css" href="${tg.url('/css/Autocompleter/Autocompleter.css')}" />
     <link rel="stylesheet" type="text/css" href="${tg.url('/css/common_events.css')}" />
     <link rel="stylesheet" type="text/css" href="${tg.url('/css/common_history.css')}" />
+
+    <py:for each="(theme_name, theme_id, theme_files) in themes" py:choose="int(theme_id == active_theme)">
+    <link py:when="1" py:for="theme_file in theme_files" type="text/css"
+        rel="stylesheet" href="${tg.url(theme_file)}" title="${theme_name}" />
+    <link py:otherwise="" py:for="theme_file in theme_files" type="text/css"
+        rel="alternate stylesheet" href="${tg.url(theme_file)}" title="${theme_name}" />
+    </py:for>
+
+    <link py:replace="select('link|head/script|style')" />
 
     <script type="text/javascript" src="${tg.url('/js/mootools.js')}"></script>
     <script type="text/javascript" src="${tg.url('/js/mootools-more.js')}"></script>
@@ -51,19 +35,14 @@
     <script type="text/javascript" src="${tg.url('/js/Autocompleter/Autocompleter.Request.js')}"></script>
     <script type="text/javascript" src="${tg.url('/js/Autocompleter/Observer.js')}"></script>
     <script type="text/javascript" src="${tg.url('/js/Autocompleter/vigilo.js')}"></script>
-
-    <py:for each="(theme_name, theme_id, theme_files) in themes" py:choose="int(theme_id == active_theme)">
-        <link py:when="1" py:for="theme_file in theme_files" type="text/css"
-            rel="stylesheet" href="${tg.url(theme_file)}" title="${theme_name}" />
-        <link py:otherwise="" py:for="theme_file in theme_files" type="text/css"
-            rel="alternate stylesheet" href="${tg.url(theme_file)}" title="${theme_name}" />
-    </py:for>
 </head>
+</py:match>
 
-<body py:match="body" py:with="body_attr = select('@*')"
-    py:attrs="body_attr.update(style='font-size:' + tg.session.get('fontsize', tg.config['vigiboard_font.size']) + ';' + body_attr)">
+<py:match path="body" once="true">
+<body py:with="body_attr = dict(select('@*|py:with'))"
+    py:attrs="body_attr.update(style='font-size:' + tg.session.get('fontsize', tg.config['vigiboard_font.size']) + ';' + body_attr.get('style', ''))">
 
-${toolbar(themes, refresh_times, search)}
+${toolbar()}
 
 <py:with vars="flash=tg.flash_obj.render('flash', use_js=False)">
     <div py:strip="True" py:if="flash" py:content="XML(flash)" />
@@ -95,8 +74,8 @@ ${toolbar(themes, refresh_times, search)}
 </script>
 
 <div class="main_content" py:content="select('*|text()')"></div>
+
 </body>
+</py:match>
 
-</py:with>
 </html>
-
