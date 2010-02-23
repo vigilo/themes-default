@@ -73,15 +73,15 @@
 </py:def>
 
 <py:def function="header_template(name, instance)">
-<th id="plugin_${name}">Status</th>
+<th id="plugin_${name}" class="plugin_${name}">Status</th>
 
-<th class="small_col">
+<th class="plugin_${name}">
     <a class="Edit_EventsLien" id="Edit_All" href="#">
         <img src="${tg.url('/images/icon_page_edit.png')}" alt="Edit selected" title="Edit all selected events"/>
     </a>
 </th>
 
-<th class="small_col">
+<th class="plugin_${name}">
     <input title="Select/Unselect all" id="vigiboard_checkall_checkbox" type="checkbox" onclick="vigiboard_checkall();" />
 </th>
 </py:def>
@@ -107,13 +107,13 @@
                     alt="Acknowledged and Closed" title="Acknowledged and Closed" />
             </td>
 
-            <td class="${state}">
+            <td class="plugin_${name} ${state}">
                 <a class="Edit_EventsLien" href="#${data[0].idcorrevent}">
                     <img src="${tg.url('/images/icon_page_edit.png')}" alt="Edit" title="Edit this event"/>
                 </a>
             </td>
 
-            <td class="${state}">
+            <td class="plugin_${name} ${state}">
                 <input type="checkbox" class="Edit_EventsCheckBox" value="${data[0].idcorrevent}"/>
             </td>
         </py:otherwise>

@@ -43,6 +43,10 @@
     "plugin_${name}.col1", "plugin_${name}.col2", etc. (ie : séparez le
     nom de la colonne du préfixe correspondant au plugin par un point).
 
+    Enfin, il est parfois intéressant d'affecter également la classe qui sera
+    appliquée à la colonne sur l'en-tête de celle-ci, afin de faciliter l'ajout
+    de styles en masse.
+
     @param name: Nom du plugin.
     @type name: C{basestring}
     @param instance: Instance du plugin.
@@ -86,7 +90,7 @@
         template correspondant.
     -->
     <td class="plugin_${name}">
-        ${instance.get_value(data[0].idcorrevent)['text']}
+        ${instance.get_value()['text']}
     </td>
 </py:def>
 

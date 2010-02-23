@@ -1,0 +1,11 @@
+/* Styles pour la page des historiques. */
+
+.history_table {
+	width: 100%;
+	margin-bottom: 30px;
+}
+.history_table thead {
+	background-color:#F8F8F8;
+	font-weight:bold;
+}
+

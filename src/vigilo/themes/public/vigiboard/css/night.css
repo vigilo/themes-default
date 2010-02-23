@@ -11,15 +11,12 @@ body {
 	background-color:#CC8100;
 }
 
-.vigitable thead tr th {
+.plugins th {
 	background-color: #CC8133;
 	border: solid 1px #CC8133;
 }
 
-.vigitable tbody tr {
-	border: solid 1px #CC8133;
-}
-
+.vigitable tbody tr,
 .vigitable tbody tr td {
 	border: solid 1px #CC8133;
 }
@@ -51,9 +48,7 @@ a {
     background: #f9c5c1 url(../images/error.png) no-repeat scroll 0px center;
 }
 #flash .alert,
-#flash .info {
-    background: #EEEEFF url(../images/info.png) no-repeat scroll 0px center;
-}
+#flash .info,
 .notice {
     background: #EEEEFF url(../images/info.png) no-repeat scroll 0px center;
 }

@@ -4,7 +4,6 @@
 
 <py:def function="plugin_template(name, instance)">
 <div id="DetailsDialog">
-
     <h2>State info</h2>
     <div id="state_info">
         <div class="value" id="DetailsDialog_initial_state"></div>
@@ -36,8 +35,7 @@
                 <a href="#" id="DetailsDialog_${edname}">${edit[0]}</a>
             </li>
         </ul>
-    </div>
-    
+    </div>    
 </div>
 
 <script type="text/javascript">
@@ -81,23 +79,23 @@ window.addEvent("domready", function () {
                     <py:for each="edname, edit in tg.config['vigiboard_links.eventdetails'].iteritems()">
                     $$('DetailsDialog_${edname}').set('href', details.eventdetails['${edname}']);
                     </py:for>
-                    window.details_dialog.options.parent = item;
                     window.details_dialog.setBusy(false);
                 },
                 onFailure: function (xhr) {
                     window.details_dialog.setBusy(false);
                 },
             });
+            window.details_dialog.options.parent = item;
             window.details_dialog.open.bind(window.details_dialog)();
             window.details_dialog.setBusy(true);
             req.post({plugin_name: '${name}', idcorrevent: idd});
         }.bind(this, el));
-    }.bind(window.details_dialog));
+    }, window.details_dialog);
 });
 </script>
 </py:def>
 
-<th id="plugin_${name}" py:def="header_template(name, instance)"></th>
+<th id="plugin_${name}" class="plugin_${name}" py:def="header_template(name, instance)"></th>
 
 <td class="plugin_${name}" py:def="data_template(name, instance, data)">
 <a href="#${data[0].idcorrevent}" class="Details_Link">

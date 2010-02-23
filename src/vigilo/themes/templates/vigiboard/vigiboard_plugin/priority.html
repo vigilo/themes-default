@@ -5,7 +5,7 @@
 <py:def function="plugin_template(name, instance)">
 </py:def>
 
-<th id="plugin_${name}" py:def="header_template(name, instance)">Priority</th>
+<th id="plugin_${name}" class="plugin_${name}" py:def="header_template(name, instance)" title="ITIL Priority">Priority</th>
 
 <py:def function="data_template(name, instance, data)">
     <py:with vars="state = StateName.value_to_statename(data[0].cause.current_state)">

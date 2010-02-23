@@ -8,40 +8,45 @@
 <py:def function="event_table(events,page,nb_pages,rows_info,edit_event_status_options,history,hist_error,search)">
 <?python from genshi import HTML ?>
 <?python from vigilo.models import StateName ?>
+<?python from vigiboard.controllers.vigiboard_plugin import VigiboardRequestPlugin ?>
 
-
-<div id="vigitable_navigation_bar">
-	<div id="previous_page">
-	    <py:choose>
-		    <img py:when="page == 1" src="${tg.url('/images/fleche_up.png')}" alt="Previous" title="Previous page" />
-		    <a py:otherwise="" href="${tg.url('/%d' % (page-1))}">
-		        <img src="${tg.url('/images/fleche_up.png')}" alt="Previous" title="Previous page"/>
-		    </a>
-		</py:choose>
-	</div>
-	<div id="next_page">
-	    <py:choose>
-		    <img py:when="page >= nb_pages" src="${tg.url('/images/fleche_down.png')}"  alt="Next" title="Next page" />
-		    <a py:otherwise="" href="${tg.url('/%d' % (page+1))}">
-		        <img src="${tg.url('/images/fleche_down.png')}" alt="Next" title="Next page"/>
-		    </a>
-		</py:choose>
-	</div>
-  	<div id="pagination">
-  		${l_('Showing rows %(id_first_row)d to %(id_last_row)d of %(total_rows)d') % rows_info}
-  		<py:if test="nb_pages > 1">
-		    Pages 
-		    <py:for each="p in range(1, nb_pages + 1)">
-		        <a py:if="p != page" href="${tg.url('/%d' % p)}" py:content="p" />
-		        <span py:if="p == page" py:replace="p" />
-		    </py:for>
-		</py:if>
-	</div>
-</div>
-
-<table class="vigitable" summary="Event table">
+<table class="vigitable" summary="Event table" py:with="columns_count = sum([p[1].get_generated_columns_count() for p in plugins])">
 	<thead>
-		<tr>
+        <tr id="vigitable_navigation_bar">
+            <th class="navigation_arrow">
+	        <py:choose><!--!
+		     --><img py:when="page == 1" src="${tg.url('/images/dis_arrow_left.png')}" alt="Previous" title="Previous page" /><!--!
+		     --><a py:otherwise="" href="${tg.url('/%d' % (page-1))}"><!--!
+		         --><img src="${tg.url('/images/arrow_left.png')}" alt="Previous" title="Previous page"/><!--!
+		     --></a>
+		    </py:choose>
+            </th>
+
+            <th colspan="${columns_count - 2}" id="pagination">
+          	    <span>
+          		${l_('Showing rows %(id_first_row)d to %(id_last_row)d of %(total_rows)d') % rows_info}
+          		<py:if test="nb_pages > 1">
+          		    <br/>
+		            Pages 
+		            <py:for each="p in range(1, nb_pages + 1)">
+		                <a py:if="p != page" href="${tg.url('/%d' % p)}" py:content="p" />
+		                <span py:if="p == page" py:replace="p" />
+		            </py:for>
+		        </py:if>
+		        </span>
+            </th>
+
+            <th class="navigation_arrow">
+	        <py:choose><!--!
+		     --><img py:when="page >= nb_pages" src="${tg.url('/images/dis_arrow_right.png')}"  alt="Next" title="Next page" /><!--!
+		     --><a py:otherwise="" href="${tg.url('/%d' % (page+1))}"><!--!
+		         --><img src="${tg.url('/images/arrow_right.png')}" alt="Next" title="Next page"/><!--!
+		     --></a>
+		    </py:choose>
+            </th>
+        </tr>
+
+		<tr class="plugins">
             <py:for each="(plugin_name, plugin_instance) in plugins">
                 <xi:include href="vigiboard_plugin/${plugin_name}.html"/>
                 ${header_template(plugin_name, plugin_instance)}
@@ -51,7 +56,7 @@
 
 	<tbody py:choose="not rows_info['total_rows']">
 		<tr py:when="1">
-		    <td colspan="${len(plugins) + 2}">There are no events.</td>
+		    <td colspan="${columns_count}">There are no events.</td>
 		</tr>
 
         <tr py:when="0" py:for="(index, event) in enumerate(events)" class="${['odd', 'even'][index % 2]}">

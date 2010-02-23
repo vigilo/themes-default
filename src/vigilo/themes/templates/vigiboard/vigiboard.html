@@ -30,15 +30,16 @@
     py:with="themes = ((l_('Classical'), 'classical', ('/css/classical.css', )), (l_('Night'), 'night', ('/css/night.css', )), (l_('Colorblind'), 'colorblind', ('/css/colorblind.css', ))); session_theme = session.get('theme'); active_theme = list(reversed([theme_data[1] for (theme_index, theme_data) in enumerate(themes) if theme_data[1] == session_theme or theme_index == 0]))[0]"
 >
 
-    <xi:include href="vigiboard_event_table.html" />
+<xi:include href="vigiboard_event_table.html" />
 <?python from genshi import HTML, XML ?>
 
 <head>
     <meta content="text/html; charset=UTF-8" http-equiv="content-type" py:replace="''"/>
     <title>Vigiboard</title>
-    <link rel="stylesheet" type="text/css" href="${tg.url('/css/common.css')}" />
     <link rel="stylesheet" type="text/css" href="${tg.url('/css/jxlib/jxtheme.uncompressed.css')}" />
-    <link type="text/css" rel="stylesheet" href="${tg.url('/css/Autocompleter/Autocompleter.css')}" />
+    <link rel="stylesheet" type="text/css" href="${tg.url('/css/Autocompleter/Autocompleter.css')}" />
+    <link rel="stylesheet" type="text/css" href="${tg.url('/css/common_events.css')}" />
+    <link rel="stylesheet" type="text/css" href="${tg.url('/css/common_history.css')}" />
 
     <script type="text/javascript" src="${tg.url('/js/mootools.js')}"></script>
     <script type="text/javascript" src="${tg.url('/js/mootools-more.js')}"></script>
@@ -55,10 +56,6 @@
             rel="stylesheet" href="${tg.url(theme_file)}" title="${theme_name}" />
         <link py:otherwise="" py:for="theme_file in theme_files" type="text/css"
             rel="alternate stylesheet" href="${tg.url(theme_file)}" title="${theme_name}" />
-    </py:for>
-
-    <py:for each="fct,tpl in plugin_context">
-        <link rel="stylesheet" type="text/css" href="${tg.url('/css/vigiboard_plugin/' + tpl + '.css')}" />
     </py:for>
 </head>
 
@@ -146,17 +143,17 @@
 <script type="text/javascript">
 /*<![CDATA[*/
     window.search_dialog = null;
-
     window.dlg_open_handler = function () { this.isOpen = true; }
     window.dlg_close_handler = function () { this.isOpen = false; }
+
     window.addEvent('load', function (){
         var flash = $('flash');
         if (flash) {
             flash.fade('in').pauseFx(10000).fade('out');
         }
     });
-    window.addEvent('domready', function (){
 
+    window.addEvent('domready', function (){
         /**
          * HACK: le closed: True est nécessaire pour éviter que
          * JxLib affiche le panel lors de la création du dialogue

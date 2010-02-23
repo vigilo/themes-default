@@ -27,7 +27,7 @@
         var req = new Request.JSON({
             url: '${tg.url("/get_plugin_value")}',
             onSuccess: function (json, raw) {
-                var code = '<ul id="impacted_hls_list">';
+                var code = '<ul id="plugin_hls_list">';
                 for (var i = 0; i < json.services.length; i++)
                     code += '<li>' + json.services[i] + '<\/li>';
                 code += '<\/ul>';
@@ -45,9 +45,8 @@
 </script>
 </py:def>
 
-<th id="plugin_${name}" py:def="header_template(name, instance)">
-Impacted HLS
-</th>
+<th id="plugin_${name}" class="plugin_${name}" py:def="header_template(name, instance)"
+    title="Impacted High-Level Services">Impacted HLS</th>
 
 <td class="plugin_${name}" py:def="data_template(name, instance, data)">
     <py:with vars="hls = instance.get_value(data[0].idcorrevent)['services']">

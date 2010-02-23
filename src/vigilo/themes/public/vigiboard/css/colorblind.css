@@ -1,15 +1,12 @@
-.boolbar {
+.toolbar {
 	border: solid 0px black;
 }
 
-.vigitable thead tr th {
+.plugins th {
 	border: solid 1px #EBECF0;
 }
 
-.vigitable tbody tr {
-	border: solid 1px white;
-}
-
+.vigitable tbody tr,
 .vigitable tbody tr td {
 	border: solid 1px white;
 }

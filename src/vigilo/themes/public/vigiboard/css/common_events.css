@@ -21,51 +21,18 @@ body {
     float: right
 }
 
-#search_mode_tip {
-    margin-top: 7px;
-}
-
-#search_mode_tip a {
-    color:rgb(70, 130, 180);
-    text-decoration: underline;
+.toolbar_select,
+.toolbar_select options {
+    height: 1.5em;
 }
 
 #font_size_selector {
     margin-top: 5px;
 }
 
-.history_table {
-	width: 100%;
-	margin-bottom: 30px;
-}
-.history_table thead {
-	background-color:#F8F8F8;
-	font-weight:bold;
-}
-
 /* Table des évènements */
 
 #vigitable_navigation_bar {
-    margin: auto;
-	width: 99%;
-	height: 29px;
-	text-align: center;
-}
-
-#previous_page {
-	float: left;
-    width: 25px;
-}
-
-#next_page {
-	float: right;
-    width: 25px;
-}
-
-#pagination {
-	margin: 0 25px;
-	height: 100%;
-	padding-top:8px;
 }
 
 .vigitable {
@@ -74,29 +41,22 @@ body {
 	border-collapse: collapse;
 }
 
-.vigitable thead th {
-	text-align: center;
+.navigation_arrow * {
+    width: 3em;
+    height: 3.5em;
 }
 
-.vigitable thead tr td {
-	padding: 0px;
+.navigation_arrow {
+    background-color: inherit;
+    border: 0;
+    width: 3em;
 }
 
-.vigitable thead tr th {
-	padding: 4px 10px;
-	background-color: #EBECF0;
-	font-weight: bold;
-	border: solid 1px #EBECF0;
+#pagination {
+    text-align: center;
+    border: 0;
 }
 
-.vigitable th {
-    padding: 5px
-}
-
-.vigitable th.small_col {
-    width: 25px; 
-    padding: 0px;
-}
 
 .vigitable tbody tr {
 	border: solid 1px white;
@@ -105,26 +65,7 @@ body {
 
 .vigitable tbody tr td {
 	border: solid 1px white;
-    padding: 3px 10px;
     empty-cells: show;
-}
-
-.vigitable td.id_col {
-    padding: 3px;
-}
-
-.vigitable td.id_col img {
-    width: 20px;
-}
-
-.vigitable td.ticket_col,
-.vigitable td.correvent_acknowledgement,
-.last_cols {
-    text-align: center;
-}
-
-.vigitable .fleche_detail {
-	padding: 3px;
 }
 
 a {
@@ -133,8 +74,10 @@ a {
 
 img { 
 	border: none;
-	margin: 0px;
+	margin: 0;
 }
+
+/* Flash */
 
 #flash {
 	opacity: 0;
@@ -161,32 +104,14 @@ div.clearingdiv {
     clear: both;
 }
 
-#DetailsDialog_initial_state,
-#DetailsDialog_current_state,
-#DetailsDialog_peak_state {
-    font-weight: bold;
-}
-
 /* Formulaire de recherche */
 
-#SearchDialog .jxDialogContentContainer {
-    height: 100%;
-    width: 100%;
-}
-
-#SearchDialog .jxDialogContent {
-    height: 100%;
-    width: 100%;
-}
-
+#SearchDialog .jxDialogContentContainer,
+#SearchDialog .jxDialogContent,
+#search_form table,
 #search_form {
     height: 100%;
     width: 100%;
-}
-
-#search_form table {
-    width: 100%;
-    height: 100%;
 }
 
 #search_form table tr {
@@ -211,6 +136,8 @@ div.clearingdiv {
 
 #search_form .calendardatetimepicker {
     width: 67%;
+    height: 1.4em;
+    font-size: 1.2em;
 }
 
 #search_form .date_field_button {
@@ -218,12 +145,22 @@ div.clearingdiv {
     height: 1.7em;
     font-size: 1.2em;
     float: right;
+    margin-top: -1.7em;
 }
 
 #search_form .submitbutton {
     height: 1.7em;
     font-size: 1.2em;
     margin: 0 auto;
+}
+
+#search_mode_tip {
+    margin-top: 7px;
+}
+
+#search_mode_tip a {
+    color:rgb(70, 130, 180);
+    text-decoration: underline;
 }
 
 
@@ -276,22 +213,14 @@ div.clearingdiv {
     margin: 10px 5px;
 }
 
+#DetailsDialog #state_info div.value{
+    float: right;
+    padding-right: 10px;
+}
+
+#DetailsDialog #history_links,
+#DetailsDialog #external_links,
 #DetailsDialog #state_info {
-    padding-top: 1px;
-    padding-left: 10px;
-}
-
-    #DetailsDialog #state_info div.value{
-        float: right;
-        padding-right: 10px;
-    }
-
-#DetailsDialog #history_links {
-    padding-top: 1px;
-    padding-left: 10px;
-}
-
-#DetailsDialog #external_links {
     padding-top: 1px;
     padding-left: 10px;
 }
@@ -300,6 +229,66 @@ div.clearingdiv {
     text-decoration: underline;
 }
 
+#DetailsDialog_initial_state,
+#DetailsDialog_current_state,
+#DetailsDialog_peak_state {
+    font-weight: bold;
+}
 
 
+/* Plugins */
+
+.plugins th {
+    font-weight: bold;
+}
+
+.plugin_date,
+.plugin_servicename,
+.plugin_hostname,
+.plugin_output,
+.plugin_hls,
+.plugin_tt {
+    padding: 3px 10px;
+}
+
+#plugin_date {
+    text-align: left;
+    font-weight: normal;
+}
+
+.plugin_date:first-line {
+    font-weight: bold;
+}
+
+.plugin_history,
+.plugin_priority,
+.plugin_occurrences,
+.plugin_status,
+.plugin_hls,
+.plugin_tt {
+    text-align: center;
+}
+
+.plugin_priority,
+.plugin_occurrences {
+    width: 4em;
+}
+
+.plugin_hls {
+    width: 8em;
+}
+
+#plugin_hls_list {
+    padding: 10px;
+}
+
+.plugin_history img {
+    width: 2em;
+    height: 2em;
+}
+
+.plugin_status img {
+    width: 1.5em;
+    height: 1.5em;
+}
 
