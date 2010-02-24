@@ -58,12 +58,20 @@ body {
     border: 0;
 }
 
-.left_empty_col {
+.raw_events .left_empty_col {
 	width: 10em;
 }
 
-.right_empty_col {
+.raw_events .right_empty_col {
 	width: 6em;
+}
+
+.event_history .left_empty_col {
+	width: 10em;
+}
+
+.event_history .right_empty_col {
+	width: 40em;
 }
 
 .table_title {
@@ -262,7 +270,11 @@ div.clearingdiv {
 .plugin_hls,
 .plugin_tt,
 .plugin_state,
-.plugin_history {
+.plugin_history,
+.plugin_user,
+.plugin_type,
+.plugin_value,
+.plugin_text {
     padding: 3px 10px;
 }
 
@@ -282,7 +294,8 @@ div.clearingdiv {
 .plugin_hls,
 .plugin_tt,
 .plugin_state,
-.plugin_history {
+.plugin_history,
+.plugin_value {
     text-align: center;
 }
 

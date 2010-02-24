@@ -89,23 +89,20 @@
 <py:def function="data_template(name, instance, data)">
     <py:with vars="cause = data[0].cause; ack = [data[0].status, u'None'][data[0].status is None]">
     <py:with vars="state = StateName.value_to_statename(cause.current_state)">
+    
+    <td class="plugin_${name}" py:choose="">
+        <img py:when="ack == 'Acknowledged'" src="${tg.url('/images/checked.png')}"
+            alt="Acknowledged" title="Acknowledged" />
+        <img py:when="ack == 'AAClosed'" src="${tg.url('/images/crossed.png')}"
+            alt="Acknowledged and Closed" title="Acknowledged and Closed" />
+    </td>
+            
     <py:choose test="">
         <py:when test="ack == 'AAClosed' and state == u'OK'">
-            <td class="plugin_${name}" colspan="3" py:choose="">
-                <img py:when="ack == 'Acknowledged'" src="${tg.url('/images/checked.png')}"
-                    alt="Acknowledged" title="Acknowledged" />
-                <img py:when="ack == 'AAClosed'" src="${tg.url('/images/crossed.png')}"
-                    alt="Acknowledged and Closed" title="Acknowledged and Closed" />
-            </td>
+            <td class="plugin_${name}" colspan="2" py:choose=""></td>
         </py:when>
 
         <py:otherwise>
-            <td class="plugin_${name}" py:choose="">
-                <img py:when="ack == 'Acknowledged'" src="${tg.url('/images/checked.png')}"
-                    alt="Acknowledged" title="Acknowledged" />
-                <img py:when="ack == 'AAClosed'" src="${tg.url('/images/crossed.png')}"
-                    alt="Acknowledged and Closed" title="Acknowledged and Closed" />
-            </td>
 
             <td class="plugin_${name} ${state}">
                 <a class="Edit_EventsLien" href="#${data[0].idcorrevent}">

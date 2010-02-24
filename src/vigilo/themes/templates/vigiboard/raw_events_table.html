@@ -10,11 +10,11 @@
 <?python from vigilo.models import StateName ?>
 
 <head> 
-    <title>Vigiboard - ${l_('Events table')}</title>
+    <title>Vigiboard - Masked events list</title>
 </head>
 
 <body>
-	<table class="vigitable" summary="Event table" py:with="columns_count = sum([p[1].get_generated_columns_count() for p in plugins])">
+	<table class="vigitable raw_events" summary="Masked events list" py:with="columns_count = sum([p[1].get_generated_columns_count() for p in plugins])">
 		<thead>
 	        <tr>
 	            <th class="navigation_arrow">
@@ -106,7 +106,7 @@
    				<td class="plugin_date" colspan="2">
                 	${event[0].get_date('timestamp')}
                 	<br />
-                	${event[0].get_since_date('timestamp')}
+                	[${event[0].get_since_date('timestamp')}]
                 </td>
                 <td class="plugin_hostname">${event.hostname}</td>
                 <td class="plugin_servicename">${event.servicename}</td>
