@@ -13,7 +13,8 @@
 	border: solid 1px white;
 }
 
-#pagination {
+#pagination,
+#table_title {
     color: white;
     background-color: #4682b4;
 }

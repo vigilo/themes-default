@@ -52,11 +52,16 @@ body {
     width: 3em;
 }
 
-#pagination {
+#pagination,
+#table_title {
     text-align: center;
     border: 0;
 }
 
+#table_title {
+	font-weight: bold;
+	font-size: 1.1em;
+}
 
 .vigitable tbody tr {
 	border: solid 1px white;

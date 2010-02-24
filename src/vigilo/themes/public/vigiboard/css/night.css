@@ -21,7 +21,8 @@ body {
 	border: solid 1px #CC8133;
 }
 
-#pagination {
+#pagination,
+#table_title {
     color: black;
     background-color: #BB9966;
 }
