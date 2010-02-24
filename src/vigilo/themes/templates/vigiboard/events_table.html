@@ -8,7 +8,7 @@
 
 <?python from genshi import HTML ?>
 <?python from vigilo.models import StateName ?>
-<?python from vigiboard.controllers.vigiboard_plugin import VigiboardRequestPlugin ?>
+<?python from vigiboard.controllers.plugins import VigiboardRequestPlugin ?>
 
 <head> 
     <title>Vigiboard - ${l_('Event table')}</title>
@@ -19,7 +19,7 @@
 		<thead>
 	        <tr id="vigitable_navigation_bar">
 	            <th class="navigation_arrow">
-					<img src="${tg.url('/images/rounded_left.png')}"/>
+					<img src="${tg.url('/images/rounded_left.png')}" alt=""/>
 	            </th>
 	
 	            <th colspan="${columns_count - 2}" id="table_title">
@@ -29,13 +29,13 @@
 	            </th>
 	
 	            <th class="navigation_arrow">
-					<img src="${tg.url('/images/rounded_right.png')}"/>
+					<img src="${tg.url('/images/rounded_right.png')}" alt=""/>
 	            </th>
 	        </tr>
 	
 			<tr class="plugins">
 	            <py:for each="(plugin_name, plugin_instance) in plugins">
-	                <xi:include href="vigiboard_plugin/${plugin_name}.html"/>
+	                <xi:include href="plugins/${plugin_name}.html"/>
 	                ${header_template(plugin_name, plugin_instance)}
 	            </py:for>
 			</tr>
@@ -83,7 +83,7 @@
 	
 	        <tr py:when="0" py:for="(index, event) in enumerate(events)" class="${['odd', 'even'][index % 2]}">
 	            <py:for each="(plugin_name, plugin_instance) in plugins">
-	                <xi:include href="vigiboard_plugin/${plugin_name}.html"/>
+	                <xi:include href="plugins/${plugin_name}.html"/>
 	                ${data_template(plugin_name, plugin_instance, event)}
 	            </py:for>
 	        </tr>
@@ -93,7 +93,7 @@
 
 <div style="display: none"> 
     <py:for each="(plugin_name, plugin_instance) in plugins">
-        <xi:include href="vigiboard_plugin/${plugin_name}.html" /> 
+        <xi:include href="plugins/${plugin_name}.html" /> 
         ${plugin_template(plugin_name, plugin_instance)}
     </py:for>
 </div>

@@ -265,7 +265,7 @@ div.clearingdiv {
     font-weight: bold;
 }
 
-.plugin_history,
+.plugin_details,
 .plugin_priority,
 .plugin_occurrences,
 .plugin_status,
@@ -287,12 +287,12 @@ div.clearingdiv {
     padding: 10px;
 }
 
-.plugin_history img {
+.plugin_details img {
     width: 2em;
     height: 2em;
 }
 
-.plugin_status img {
+.plugin_details img {
     width: 1.5em;
     height: 1.5em;
 }
