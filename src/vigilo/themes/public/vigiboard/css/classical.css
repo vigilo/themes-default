@@ -13,8 +13,10 @@
 	border: solid 1px white;
 }
 
-#pagination,
-#table_title {
+.pagination,
+.table_title,
+.left_empty_col,
+.right_empty_col {
     color: white;
     background-color: #4682b4;
 }

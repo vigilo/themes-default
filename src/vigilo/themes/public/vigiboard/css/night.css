@@ -21,8 +21,10 @@ body {
 	border: solid 1px #CC8133;
 }
 
-#pagination,
-#table_title {
+.pagination,
+.table_title,
+.left_empty_col,
+.right_empty_col {
     color: black;
     background-color: #BB9966;
 }

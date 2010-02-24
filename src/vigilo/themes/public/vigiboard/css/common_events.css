@@ -52,13 +52,21 @@ body {
     width: 3em;
 }
 
-#pagination,
-#table_title {
+.pagination,
+.table_title {
     text-align: center;
     border: 0;
 }
 
-#table_title {
+.left_empty_col {
+	width: 10em;
+}
+
+.right_empty_col {
+	width: 6em;
+}
+
+.table_title {
 	font-weight: bold;
 	font-size: 1.1em;
 }
@@ -252,7 +260,9 @@ div.clearingdiv {
 .plugin_hostname,
 .plugin_output,
 .plugin_hls,
-.plugin_tt {
+.plugin_tt,
+.plugin_state,
+.plugin_history {
     padding: 3px 10px;
 }
 
@@ -270,7 +280,9 @@ div.clearingdiv {
 .plugin_occurrences,
 .plugin_status,
 .plugin_hls,
-.plugin_tt {
+.plugin_tt,
+.plugin_state,
+.plugin_history {
     text-align: center;
 }
 

@@ -8,7 +8,6 @@
 
 <?python from genshi import HTML ?>
 <?python from vigilo.models import StateName ?>
-<?python from vigiboard.controllers.plugins import VigiboardRequestPlugin ?>
 
 <head> 
     <title>Vigiboard - ${l_('Events table')}</title>
@@ -27,11 +26,15 @@
 			    </py:choose>
 	            </th>
 	
-	            <th colspan="${columns_count - 2}" class="table_title">
-	          	    <span>
-	          			Events table
-			        </span>
+	            <th class="left_empty_col"></th>
+	
+	            <th colspan="6" class="table_title">
+		          	    <span>
+		          			Masked events list
+				        </span>
 	            </th>
+	
+	            <th class="right_empty_col"></th>
 	
 	            <th class="navigation_arrow">
 		        <py:choose><!--!
@@ -44,10 +47,14 @@
 	        </tr>
 	
 			<tr class="plugins">
-	            <py:for each="(plugin_name, plugin_instance) in plugins">
-	                <xi:include href="plugins/${plugin_name}.html"/>
-	                ${header_template(plugin_name, plugin_instance)}
-	            </py:for>
+                <th colspan="2" id="plugin_date" class="plugin_date">Date <br />[Duration]</th>
+                <th id="plugin_hostname" class="plugin_hostname">Host</th>
+                <th id="plugin_servicename" class="plugin_servicename">Service name</th>
+                <th id="plugin_state" class="plugin_state">Initial state</th>
+                <th id="plugin_state" class="plugin_state">Current state</th>
+                <th id="plugin_state" class="plugin_state">Peak state</th>
+                <th id="plugin_output" class="plugin_output">Output</th>
+                <th id="plugin_history" class="plugin_history" colspan="2">History</th>
 			</tr>
 		</thead>
 		<tfoot>
@@ -61,7 +68,9 @@
 			    </py:choose>
 	            </th>
 	
-	            <th colspan="${columns_count - 2}" class="pagination">
+	            <th class="left_empty_col"></th>
+	
+	            <th colspan="6" class="pagination">
 	          	    <span>
 	          		${l_('Showing rows %(id_first_row)d to %(id_last_row)d of %(total_rows)d') % rows_info}
 	          		<py:if test="nb_pages > 1">
@@ -74,6 +83,8 @@
 			        </py:if>
 			        </span>
 	            </th>
+	
+	            <th class="right_empty_col"></th>
 	
 	            <th class="navigation_arrow">
 		        <py:choose><!--!
@@ -88,24 +99,26 @@
 	
 		<tbody py:choose="not rows_info['total_rows']">
 			<tr py:when="1">
-			    <td colspan="${columns_count}">There are no events.</td>
+			    <td colspan="6">There are no events.</td>
 			</tr>
 	
-	        <tr py:when="0" py:for="(index, event) in enumerate(events)" class="${['odd', 'even'][index % 2]}">
-	            <py:for each="(plugin_name, plugin_instance) in plugins">
-	                <xi:include href="plugins/${plugin_name}.html"/>
-	                ${data_template(plugin_name, plugin_instance, event)}
-	            </py:for>
+	        <tr py:when="0" py:for="(index, event) in enumerate(events)" class="${['odd', 'even'][index % 2]}">           
+   				<td class="plugin_date" colspan="2">
+                	${event[0].get_date('timestamp')}
+                	<br />
+                	${event[0].get_since_date('timestamp')}
+                </td>
+                <td class="plugin_hostname">${event.hostname}</td>
+                <td class="plugin_servicename">${event.servicename}</td>
+                <td class="plugin_state">${StateName.value_to_statename(event[0].initial_state)}</td>
+                <td class="plugin_state">${StateName.value_to_statename(event[0].current_state)}</td>
+                <td class="plugin_state">${StateName.value_to_statename(event[0].peak_state)}</td>
+                <td class="plugin_output">${event[0].message}</td>
+	            <td class="plugin_history" colspan="2">
+	            	<a href="${tg.url('/event/' + str(event[0].idevent))}"><img src="${tg.url('/images/history.png')}"/></a></td>
 	        </tr>
 		</tbody>
 	</table>
 </body>
-
-<div style="display: none"> 
-    <py:for each="(plugin_name, plugin_instance) in plugins">
-        <xi:include href="plugins/${plugin_name}.html" /> 
-        ${plugin_template(plugin_name, plugin_instance)}
-    </py:for>
-</div>
 
 </html>
