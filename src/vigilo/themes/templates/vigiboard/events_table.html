@@ -31,20 +31,39 @@
 	            <th colspan="${columns_count}">
 	        
 		            <span class="navigation_arrow left_arrow">
-				        <py:choose><!--!
-					     --><img py:when="page == 1" src="${tg.url('/images/dis_top_left_arrow.png')}" alt="Previous" title="Previous page" /><!--!
-					     --><a py:otherwise="" href="${tg.url('/%d' % (page-1))}"><!--!
-					         --><img src="${tg.url('/images/top_left_arrow.png')}" alt="Previous" title="Previous page"/><!--!
-					     --></a>
+				        <py:choose>
+							<img py:when="page == 1" src="${tg.url('/images/dis_top_left_arrow.png')}" alt="Previous" title="Previous page" />
+							
+							<a py:when="hostname and servicename" href="${tg.url('/item/%(page)d/%(hostname)s/%(servicename)s' % {'page': page-1, 'hostname': hostname, 'servicename': servicename})}">
+							
+								<img src="${tg.url('/images/top_left_arrow.png')}" alt="Previous" title="Previous page"/>
+					     	</a>
+					     	
+							<a py:when="hostname" href="${tg.url('/item/%(page)d/%(hostname)s' % {'page': page-1, 'hostname': hostname})}">
+								<img src="${tg.url('/images/top_left_arrow.png')}" alt="Previous" title="Previous page"/>
+					     	</a>
+					     	
+							<a py:otherwise="" href="${tg.url('/%d' % (page-1))}">
+								<img src="${tg.url('/images/top_left_arrow.png')}" alt="Previous" title="Previous page"/>
+					     	</a>
 					    </py:choose>
 		            </span>
 		
 		            <span class="navigation_arrow right_arrow">
-				        <py:choose><!--!
-					     --><img py:when="page >= nb_pages" src="${tg.url('/images/dis_top_right_arrow.png')}"  alt="Next" title="Next page" /><!--!
-					     --><a py:otherwise="" href="${tg.url('/%d' % (page+1))}"><!--!
-					         --><img src="${tg.url('/images/top_right_arrow.png')}" alt="Next" title="Next page"/><!--!
-					     --></a>
+				        <py:choose>
+				        	<img py:when="page >= nb_pages" src="${tg.url('/images/dis_top_right_arrow.png')}"  alt="Next" title="Next page" />
+				        	
+					     	<a py:when="hostname and servicename" href="${tg.url('/item/%(page)d/%(hostname)s/%(servicename)s' % {'page': page+1, 'hostname': hostname, 'servicename': servicename})}">
+					        	<img src="${tg.url('/images/top_right_arrow.png')}" alt="Next" title="Next page"/>
+					     	</a>
+					     	
+					     	<a py:when="hostname" href="${tg.url('/item/%(page)d/%(hostname)s' % {'page': page+1, 'hostname': hostname})}">
+					        	<img src="${tg.url('/images/top_right_arrow.png')}" alt="Next" title="Next page"/>
+					     	</a>
+					     	
+					     	<a py:otherwise="" href="${tg.url('/%d' % (page+1))}">
+					        	<img src="${tg.url('/images/top_right_arrow.png')}" alt="Next" title="Next page"/>
+					     	</a>
 					    </py:choose>
 		            </span>
 		            
@@ -75,20 +94,38 @@
 	            <th colspan="${columns_count}">
 	            
 		            <span class="navigation_arrow left_arrow">
-				        <py:choose><!--!
-					     --><img py:when="page == 1" src="${tg.url('/images/dis_bottom_left_arrow.png')}" alt="Previous" title="Previous page" /><!--!
-					     --><a py:otherwise="" href="${tg.url('/%d' % (page-1))}"><!--!
-					         --><img src="${tg.url('/images/bottom_left_arrow.png')}" alt="Previous" title="Previous page"/><!--!
-					     --></a>
+				        <py:choose>
+					     <img py:when="page == 1" src="${tg.url('/images/dis_bottom_left_arrow.png')}" alt="Previous" title="Previous page" />
+					     
+					     	<a py:when="hostname and servicename" href="${tg.url('/item/%(page)d/%(hostname)s/%(servicename)s' % {'page': page-1, 'hostname': hostname, 'servicename': servicename})}">
+					        	<img src="${tg.url('/images/bottom_left_arrow.png')}" alt="Next" title="Next page"/>
+					     	</a>
+					     	
+					     	<a py:when="hostname" href="${tg.url('/item/%(page)d/%(hostname)s' % {'page': page-1, 'hostname': hostname})}">
+					        	<img src="${tg.url('/images/bottom_left_arrow.png')}" alt="Next" title="Next page"/>
+					     	</a>
+					     	
+							<a py:otherwise="" href="${tg.url('/%d' % (page-1))}">
+							    <img src="${tg.url('/images/bottom_left_arrow.png')}" alt="Previous" title="Previous page"/>
+							</a>
 					    </py:choose>
 		            </span>
 		
 		            <span class="navigation_arrow right_arrow">
-				        <py:choose><!--!
-					     --><img py:when="page >= nb_pages" src="${tg.url('/images/dis_bottom_right_arrow.png')}"  alt="Next" title="Next page" /><!--!
-					     --><a py:otherwise="" href="${tg.url('/%d' % (page+1))}"><!--!
-					         --><img src="${tg.url('/images/bottom_right_arrow.png')}" alt="Next" title="Next page"/><!--!
-					     --></a>
+				        <py:choose>
+					    	<img py:when="page >= nb_pages" src="${tg.url('/images/dis_bottom_right_arrow.png')}"  alt="Next" title="Next page" />
+				
+					     	<a py:when="hostname and servicename" href="${tg.url('/item/%(page)d/%(hostname)s/%(servicename)s' % {'page': page+1, 'hostname': hostname, 'servicename': servicename})}">
+					        	<img src="${tg.url('/images/bottom_right_arrow.png')}" alt="Next" title="Next page"/>
+					     	</a>
+					     	
+					     	<a py:when="hostname" href="${tg.url('/item/%(page)d/%(hostname)s' % {'page': page+1, 'hostname': hostname})}">
+					        	<img src="${tg.url('/images/bottom_right_arrow.png')}" alt="Next" title="Next page"/>
+					     	</a>
+					     	
+					    	<a py:otherwise="" href="${tg.url('/%d' % (page+1))}">
+					        	<img src="${tg.url('/images/bottom_right_arrow.png')}" alt="Next" title="Next page"/>
+					     	</a>
 					    </py:choose>
 	            	</span>
 
@@ -96,11 +133,22 @@
 		            	<span py:when="nb_pages > 1" class="pagination">
 			          		${l_('Showing rows %(id_first_row)d to %(id_last_row)d of %(total_rows)d') % rows_info}
 		          		    <br/>
-				            Pages 
-				            <py:for each="p in range(1, nb_pages + 1)">
-				                <a py:if="p != page" href="${tg.url('/%d' % p)}" py:content="p" />
-				                <span py:if="p == page" py:replace="p" />
-				            </py:for>
+				            Pages
+
+					            <py:for each="p in range(1, nb_pages + 1)">
+		            				<py:choose>
+								  		<py:when test="p == page">${p}</py:when>
+								  		<py:when test="hostname and servicename">
+								  			<a href="${tg.url('/item/%(page)d/%(hostname)s/%(servicename)s' % {'page': p, 'hostname': hostname, 'servicename': servicename})}">${p}</a>
+								  		</py:when>
+								  		<py:when test="hostname">
+								  			<a href="${tg.url('/item/%(page)d/%(hostname)s' % {'page': p, 'hostname': hostname})}">${p}</a>
+								  		</py:when>
+								  		<py:otherwise>
+								  			<a href="${tg.url('/%d' % p)}">${p}</a>
+										</py:otherwise>
+		            				</py:choose>
+					            </py:for>
 				        </span>
 		            	<span py:otherwise="" class="line_pagination">
 			          		${l_('Showing rows %(id_first_row)d to %(id_last_row)d of %(total_rows)d') % rows_info}
