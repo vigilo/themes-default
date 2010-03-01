@@ -18,6 +18,7 @@
 		<thead>
 	        <tr>
 		    	<th colspan="8">
+		    	
 		            <span class="navigation_arrow left_arrow">
 				        <py:choose><!--!
 						     --><img py:when="page == 1" src="${tg.url('/images/dis_top_left_arrow.png')}" alt="Previous" title="Previous page" /><!--!
@@ -39,6 +40,7 @@
 		            <span class="table_title">
 			          	    Masked events list
 		            </span>
+		            
 		    	</th>
 	        </tr>
 	
@@ -56,6 +58,7 @@
 		<tfoot>
 	        <tr>
 	        	<th colspan="8">
+	        	
 	            	<span class="navigation_arrow left_arrow">
 				        <py:choose><!--!
 						     --><img py:when="page == 1" src="${tg.url('/images/dis_bottom_left_arrow.png')}" alt="Previous" title="Previous page" /><!--!
@@ -74,19 +77,21 @@
 					    </py:choose>
 		            </span>
 		
-		            <span class="pagination">
-		          	    <span>
+		            <py:choose>
+		            	<span py:when="nb_pages > 1" class="pagination">
 			          		${l_('Showing rows %(id_first_row)d to %(id_last_row)d of %(total_rows)d') % rows_info}
-			          		<py:if test="nb_pages > 1">
-			          		    <br/>
-					            Pages 
-					            <py:for each="p in range(1, nb_pages + 1)">
-					                <a py:if="p != page" href="${tg.url('/masked_events/%d/%d' % (idcorrevent, p))}" py:content="p" />
-					                <span py:if="p == page" py:replace="p" />
-					            </py:for>
-					        </py:if>
+		          		    <br/>
+				            Pages 
+				            <py:for each="p in range(1, nb_pages + 1)">
+				                <a py:if="p != page" href="${tg.url('/%d' % p)}" py:content="p" />
+				                <span py:if="p == page" py:replace="p" />
+				            </py:for>
 				        </span>
-		            </span>
+		            	<span py:otherwise="" class="line_pagination">
+			          		${l_('Showing rows %(id_first_row)d to %(id_last_row)d of %(total_rows)d') % rows_info}
+				        </span>
+	            	</py:choose>
+	            	
 	        	</th>
 	        </tr>
 		</tfoot>

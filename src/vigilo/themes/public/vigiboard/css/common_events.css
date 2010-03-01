@@ -60,7 +60,15 @@ body {
 .vigitable .table_title {
 	font-size: 1.1em;
 	font-weight: bold;
-	line-height: 3em;
+	line-height: 3.1em;
+}
+
+.vigitable .line_pagination {
+	line-height: 3.4em;
+}
+
+.vigitable .pagination {
+	line-height: 1.7em;
 }
 
 .vigitable tbody tr {
