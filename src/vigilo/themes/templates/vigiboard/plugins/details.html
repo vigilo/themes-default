@@ -85,9 +85,9 @@ window.addEvent("domready", function () {
                     $$('DetailsDialog_event').set('href', "${tg.url('/event/')}" + details.idcause);
                     $$('DetailsDialog_masked').set('href', "${tg.url('/masked_events/')}" + details.idcorrevent);
                     if (details.service) {
-                        $$('DetailsDialog_item').set('href', "${tg.url('/item/')}" + details.host + "/" + details.service);
+                        $$('DetailsDialog_item').set('href', "${tg.url('/item/1/')}" + details.host + "/" + details.service);
                     } else {
-                        $$('DetailsDialog_item').set('href', "${tg.url('/item/')}" + details.host + "/");
+                        $$('DetailsDialog_item').set('href', "${tg.url('/item/1/')}" + details.host + "/");
                     }
                     <py:for each="edname, edit in tg.config['vigiboard_links.eventdetails'].iteritems()">
                     $$('DetailsDialog_${edname}').set('href', details.eventdetails['${edname}']);
