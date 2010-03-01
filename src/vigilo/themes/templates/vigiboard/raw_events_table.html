@@ -10,11 +10,11 @@
 <?python from vigilo.models import StateName ?>
 
 <head> 
-    <title>Vigiboard - Masked events list</title>
+    <title>Vigiboard - Masked events list for event #${idcorrevent}</title>
 </head>
 
 <body>
-	<table class="vigitable raw_events" summary="Masked events list" py:with="columns_count = sum([p[1].get_generated_columns_count() for p in plugins])">
+	<table class="vigitable" summary="Masked events list" py:with="columns_count = sum([p[1].get_generated_columns_count() for p in plugins])">
 		<thead>
 	        <tr>
 		    	<th colspan="8">
@@ -38,7 +38,7 @@
 		            </span>
 		
 		            <span class="table_title">
-			          	    Masked events list
+			          	    Masked events list for event #${idcorrevent}
 		            </span>
 		            
 		    	</th>

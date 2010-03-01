@@ -11,7 +11,17 @@
 <?python from vigiboard.controllers.plugins import VigiboardRequestPlugin ?>
 
 <head> 
-    <title>Vigiboard - Events table</title>
+	<py:choose>
+		<title py:when="hostname and servicename">
+			Vigiboard - Events table for service "${hostname}" on "${servicename}"
+		</title>
+		<title py:when="hostname">
+			Vigiboard - Events table for host "${hostname}"
+		</title>
+		<title py:otherwise="">
+			Vigiboard - Events table
+		</title>
+	</py:choose>
 </head>
 
 <body>
@@ -38,9 +48,17 @@
 					    </py:choose>
 		            </span>
 		            
-	          	    <span class="table_title">
-	          			Events table
-			        </span>
+					<py:choose>
+		          	    <span py:when="hostname and servicename" class="table_title">
+		          			Events table for service "${servicename}" on "${hostname}"
+				        </span>
+		          	    <span py:when="hostname" class="table_title">
+		          			Events table for host "${hostname}"
+				        </span>
+		          	    <span py:otherwise="" class="table_title">
+		          			Events table
+				        </span>
+					</py:choose>
 			        
 		    	</th>  
 	        </tr>
