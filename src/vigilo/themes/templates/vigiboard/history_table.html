@@ -96,7 +96,7 @@
 	
 		<tbody py:choose="not history">
 			<tr py:when="1">
-			    <td colspan="5">There is no history.</td>
+			    <td colspan="5" class="plugin_error">There is no history.</td>
 			</tr>
 	        
 	        <tr py:when="0" py:for="(index, entry) in enumerate(history)" class="${['odd', 'even'][index % 2]}">

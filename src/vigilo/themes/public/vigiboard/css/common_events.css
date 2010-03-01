@@ -259,6 +259,7 @@ div.clearingdiv {
     font-weight: bold;
 }
 
+.plugin_error,
 .plugin_date,
 .plugin_servicename,
 .plugin_hostname,

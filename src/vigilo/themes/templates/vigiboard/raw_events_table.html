@@ -98,7 +98,7 @@
 	
 		<tbody py:choose="not rows_info['total_rows']">
 			<tr py:when="1">
-			    <td colspan="8">There are no events.</td>
+			    <td colspan="8" class="plugin_error">There are no events.</td>
 			</tr>
 	
 	        <tr py:when="0" py:for="(index, event) in enumerate(events)" class="${['odd', 'even'][index % 2]}">           
