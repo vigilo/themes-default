@@ -18,90 +18,86 @@
 	<table class="vigitable event_history" summary="Event history" >
 		<thead>
 	        <tr>
-	            <th class="navigation_arrow">
-		        <py:choose><!--!
-			     --><img py:when="page == 1" src="${tg.url('/images/dis_top_left_arrow.png')}" alt="Previous" title="Previous page" /><!--!
-			     --><a py:otherwise="" href="${tg.url('/event/%d/%d' % (idevent, page - 1))}"><!--!
-			         --><img src="${tg.url('/images/top_left_arrow.png')}" alt="Previous" title="Previous page"/><!--!
-			     --></a>
-			    </py:choose>
-	            </th>
-	
-	            <th class="left_empty_col"></th>
-	
-	            <th colspan="3" class="table_title">
-		          	    <span>
-		          			Event history
-				        </span>
-	            </th>
-	
-	            <th class="right_empty_col"></th>
-	
-	            <th class="navigation_arrow">
-		        <py:choose><!--!
-			     --><img py:when="page >= nb_pages" src="${tg.url('/images/dis_top_right_arrow.png')}"  alt="Next" title="Next page" /><!--!
-			     --><a py:otherwise="" href="${tg.url('/event/%d/%d' % (idevent, page + 1))}"><!--!
-			         --><img src="${tg.url('/images/top_right_arrow.png')}" alt="Next" title="Next page"/><!--!
-			     --></a>
-			    </py:choose>
+	            <th colspan="5">
+	            
+	            	<span class="navigation_arrow left_arrow">
+				        <py:choose><!--!
+					     --><img py:when="page == 1" src="${tg.url('/images/dis_top_left_arrow.png')}" alt="Previous" title="Previous page" /><!--!
+					     --><a py:otherwise="" href="${tg.url('/event/%d/%d' % (idevent, page - 1))}"><!--!
+					         --><img src="${tg.url('/images/top_left_arrow.png')}" alt="Previous" title="Previous page"/><!--!
+					     --></a>
+					    </py:choose>
+					</span>
+				    
+	            	<span class="navigation_arrow right_arrow">
+				        <py:choose><!--!
+					     --><img py:when="page >= nb_pages" src="${tg.url('/images/dis_top_right_arrow.png')}"  alt="Next" title="Next page" /><!--!
+					     --><a py:otherwise="" href="${tg.url('/event/%d/%d' % (idevent, page + 1))}"><!--!
+					         --><img src="${tg.url('/images/top_right_arrow.png')}" alt="Next" title="Next page"/><!--!
+					     --></a>
+				    	</py:choose>
+					</span>
+				    
+		          	<span class="table_title">
+		          		Event history
+				    </span>
+				    
 	            </th>
 	        </tr>
 	
 			<tr class="plugins">
-                <th colspan="2" id="plugin_date" class="plugin_date">Date<br />[Duration]</th>
+                <th id="plugin_date" class="plugin_date">Date<br />[Duration]</th>
                 <th id="plugin_user" class="plugin_user">User</th>
                 <th id="plugin_type" class="plugin_type">Type</th>
                 <th id="plugin_value" class="plugin_value">Value</th>
-                <th colspan="2" id="plugin_text" class="plugin_text">Text</th>
+                <th id="plugin_text" class="plugin_text">Text</th>
 			</tr>
 		</thead>
 		<tfoot>
 	        <tr>
-	            <th class="navigation_arrow">
-		        <py:choose><!--!
-			     --><img py:when="page == 1" src="${tg.url('/images/dis_bottom_left_arrow.png')}" alt="Previous" title="Previous page" /><!--!
-			     --><a py:otherwise="" href="${tg.url('/event/%d/%d' % (idevent, page - 1))}"><!--!
-			         --><img src="${tg.url('/images/bottom_left_arrow.png')}" alt="Previous" title="Previous page"/><!--!
-			     --></a>
-			    </py:choose>
-	            </th>
+	            <th colspan="5">
+	            
+		            <span class="navigation_arrow left_arrow">
+				        <py:choose><!--!
+					     --><img py:when="page == 1" src="${tg.url('/images/dis_bottom_left_arrow.png')}" alt="Previous" title="Previous page" /><!--!
+					     --><a py:otherwise="" href="${tg.url('/event/%d/%d' % (idevent, page - 1))}"><!--!
+					         --><img src="${tg.url('/images/bottom_left_arrow.png')}" alt="Previous" title="Previous page"/><!--!
+					     --></a>
+					    </py:choose>
+		            </span>
 	
-	            <th class="left_empty_col"></th>
-	
-	            <th colspan="3" class="pagination">
-	          	    <span>
-	          		${l_('Showing rows %(id_first_row)d to %(id_last_row)d of %(total_rows)d') % rows_info}
-	          		<py:if test="nb_pages > 1">
-	          		    <br/>
-			            Pages 
-			            <py:for each="p in range(1, nb_pages + 1)">
-			                <a py:if="p != page" href="${tg.url('/event/%d/%d' % (idevent, p))}" py:content="p" />
-			                <span py:if="p == page" py:replace="p" />
-			            </py:for>
-			        </py:if>
+		            <span class="navigation_arrow right_arrow">
+				        <py:choose><!--!
+					     --><img py:when="page >= nb_pages" src="${tg.url('/images/dis_bottom_right_arrow.png')}"  alt="Next" title="Next page" /><!--!
+					     --><a py:otherwise="" href="${tg.url('/event/%d/%d' % (idevent, page + 1))}"><!--!
+					         --><img src="${tg.url('/images/bottom_right_arrow.png')}" alt="Next" title="Next page"/><!--!
+					     --></a>
+					    </py:choose>
+					</span>
+		            
+	          	    <span class="pagination">
+		          		${l_('Showing rows %(id_first_row)d to %(id_last_row)d of %(total_rows)d') % rows_info}
+		          		<py:if test="nb_pages > 1">
+		          		    <br/>
+				            Pages 
+				            <py:for each="p in range(1, nb_pages + 1)">
+				                <a py:if="p != page" href="${tg.url('/event/%d/%d' % (idevent, p))}" py:content="p" />
+				                <span py:if="p == page" py:replace="p" />
+				            </py:for>
+				        </py:if>
 			        </span>
-	            </th>
-	
-	            <th class="right_empty_col"></th>
-	
-	            <th class="navigation_arrow">
-		        <py:choose><!--!
-			     --><img py:when="page >= nb_pages" src="${tg.url('/images/dis_bottom_right_arrow.png')}"  alt="Next" title="Next page" /><!--!
-			     --><a py:otherwise="" href="${tg.url('/event/%d/%d' % (idevent, page + 1))}"><!--!
-			         --><img src="${tg.url('/images/bottom_right_arrow.png')}" alt="Next" title="Next page"/><!--!
-			     --></a>
-			    </py:choose>
+					
 	            </th>
 	        </tr>
 		</tfoot>
 	
 		<tbody py:choose="not history">
 			<tr py:when="1">
-			    <td colspan="7">There is no history.</td>
+			    <td colspan="5">There is no history.</td>
 			</tr>
 	        
 	        <tr py:when="0" py:for="(index, entry) in enumerate(history)" class="${['odd', 'even'][index % 2]}">
-				<td class="plugin_date" colspan="2">
+				<td class="plugin_date">
                 	${entry.get_date('timestamp')}
                 	<br />
                 	[${entry.get_since_date('timestamp')}]
@@ -109,7 +105,7 @@
 				<td class="plugin_user">${entry.username}</td>
 				<td class="plugin_type">${entry.type_action}</td>
 				<td class="plugin_value">${entry.value}</td>
-				<td class="plugin_text" colspan="2">${entry.text}</td>
+				<td class="plugin_text">${entry.text}</td>
 			</tr>
 		</tbody>
 	</table>

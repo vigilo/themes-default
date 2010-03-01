@@ -32,51 +32,35 @@ body {
 
 /* Table des évènements */
 
-#vigitable_navigation_bar {
-}
-
 .vigitable {
     margin: auto;
 	width: 99%;
 	border-collapse: collapse;
 }
 
-.navigation_arrow * {
-    width: 3em;
-    height: 3.5em;
+.vigitable .navigation_arrow * {
+    width: 2.9em;
+    height: 3.4em;
 }
 
-.navigation_arrow {
-    background-color: inherit;
-    border: 0;
-    width: 3em;
+.vigitable .left_arrow {
+	float: left;
 }
 
-.pagination,
-.table_title {
+.vigitable .right_arrow {
+	float: right;
+}
+
+.vigitable > thead > tr:first-child > th,
+.vigitable > tfoot > tr > th {
     text-align: center;
     border: 0;
 }
 
-.raw_events .left_empty_col {
-	width: 10em;
-}
-
-.raw_events .right_empty_col {
-	width: 6em;
-}
-
-.event_history .left_empty_col {
-	width: 10em;
-}
-
-.event_history .right_empty_col {
-	width: 40em;
-}
-
-.table_title {
-	font-weight: bold;
+.vigitable .table_title {
 	font-size: 1.1em;
+	font-weight: bold;
+	line-height: 3em;
 }
 
 .vigitable tbody tr {
@@ -89,11 +73,11 @@ body {
     empty-cells: show;
 }
 
-a {
+.vigitable a {
 	text-decoration: none;
 }
 
-img { 
+.vigitable img { 
 	border: none;
 	margin: 0;
 }
@@ -244,6 +228,10 @@ div.clearingdiv {
 #DetailsDialog #state_info {
     padding-top: 1px;
     padding-left: 10px;
+}
+
+#DetailsDialog a {
+	text-decoration: none;
 }
 
 #DetailsDialog a:hover{

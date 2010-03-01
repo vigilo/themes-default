@@ -7,6 +7,11 @@
 	border: solid 1px white;
 }
 
+.left_arrow,
+.right_arrow {
+    background-color: #FFFFFF;
+}
+
 a {
 	color: black;
 }

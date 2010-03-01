@@ -21,12 +21,15 @@ body {
 	border: solid 1px #CC8133;
 }
 
-.pagination,
-.table_title,
-.left_empty_col,
-.right_empty_col {
+.vigitable>thead>tr:first-child>th,
+.vigitable>tfoot>tr>th {
     color: black;
     background-color: #BB9966;
+}
+
+.left_arrow,
+.right_arrow {
+    background-color: rgb(156, 102, 31);
 }
 
 tr.odd {
