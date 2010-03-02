@@ -13,15 +13,11 @@
 	border: solid 1px white;
 }
 
-.vigitable>thead>tr:first-child>th,
-.vigitable>tfoot>tr>th {
+.vigitable .table_title,
+.vigitable .line_pagination,
+.vigitable .pagination {
     color: white;
     background-color: #4682b4;
-}
-
-.left_arrow,
-.right_arrow {
-    background-color: #FFFFFF;
 }
 
 .history_table thead,

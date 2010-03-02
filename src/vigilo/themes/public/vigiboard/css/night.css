@@ -21,15 +21,11 @@ body {
 	border: solid 1px #CC8133;
 }
 
-.vigitable>thead>tr:first-child>th,
-.vigitable>tfoot>tr>th {
+.vigitable .table_title,
+.vigitable .line_pagination,
+.vigitable .pagination {
     color: black;
     background-color: #BB9966;
-}
-
-.left_arrow,
-.right_arrow {
-    background-color: rgb(156, 102, 31);
 }
 
 tr.odd {

@@ -57,17 +57,23 @@ body {
     border: 0;
 }
 
-.vigitable .table_title {
+.vigitable .table_title,
+.vigitable .line_pagination,
+.vigitable .pagination {
+    margin: 0 2.9em;
+}
+
+.vigitable .table_title span {
 	font-size: 1.1em;
 	font-weight: bold;
 	line-height: 3.1em;
 }
 
-.vigitable .line_pagination {
+.vigitable .line_pagination span {
 	line-height: 3.4em;
 }
 
-.vigitable .pagination {
+.vigitable .pagination span {
 	line-height: 1.7em;
 }
 
@@ -88,6 +94,7 @@ body {
 .vigitable img { 
 	border: none;
 	margin: 0;
+	vertical-align: middle;
 }
 
 /* Flash */
