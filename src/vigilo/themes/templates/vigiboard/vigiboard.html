@@ -36,6 +36,7 @@
     <script type="text/javascript" src="${tg.url('/js/Autocompleter/vigilo.js')}"></script>
 </head>
 </py:match>
+
 <py:match path="body" once="true">
 <body py:with="body_attr = dict(select('@*|py:with'))"
     py:attrs="body_attr.update(style='font-size:' + tg.session.get('fontsize', tg.config['vigiboard_font.size']) + ';' + body_attr.get('style', ''))">

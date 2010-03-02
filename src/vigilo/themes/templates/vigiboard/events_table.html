@@ -25,6 +25,13 @@
 </head>
 
 <body>
+    <div style="display: none"> 
+        <py:for each="(plugin_name, plugin_instance) in plugins">
+            <xi:include href="plugins/${plugin_name}.html" /> 
+            ${plugin_template(plugin_name, plugin_instance)}
+        </py:for>
+    </div>
+
 	<table class="vigitable" summary="Event table" py:with="columns_count = sum([p[1].get_generated_columns_count() for p in plugins])">
 		<thead>
 	        <tr>
@@ -173,12 +180,5 @@
 		</tbody>
 	</table>
 </body>
-
-<div style="display: none"> 
-    <py:for each="(plugin_name, plugin_instance) in plugins">
-        <xi:include href="plugins/${plugin_name}.html" /> 
-        ${plugin_template(plugin_name, plugin_instance)}
-    </py:for>
-</div>
 
 </html>
