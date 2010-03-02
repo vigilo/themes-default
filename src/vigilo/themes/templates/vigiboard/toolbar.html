@@ -71,6 +71,10 @@
 
 <script type="text/javascript">
 /*<![CDATA[*/
+    var vigiloLog = new Log;
+    // Activation ou désactivation du log en fonction de valeur de la variable debug.
+	vigiloLog.${['disableLog', 'enableLog'][tg.config['debug']]}();
+    
     window.search_dialog = null;
     window.dlg_open_handler = function () { this.isOpen = true; }
     window.dlg_close_handler = function () { this.isOpen = false; }
@@ -136,6 +140,8 @@
             }
         });
         req.post({fontsize: size});
+    	
+        vigiloLog.log("${l_('Font size set to ').encode('backslash')}" + size + ".");
     }
 
     var refresh_timeout = null;
@@ -157,16 +163,22 @@
         });
         req.post({'refresh': timeout});
         change_refresh_rate(timeout);
+    	
+        vigiloLog.log("${l_('Refresh rate set to ').encode('backslash')}" + timeout + "${l_('s.').encode('backslash')}");
     }
 
     function refresh_page() {
-        var dialogs = ['SearchDialog', 'HistoryDialog', 'Edit_EventsDialog'];
-        var el = null
-        for (dialog in dialogs) {
-            el = $(dialogs[dialog]);
-            if (el && el.isOpen)
+    	var myLog = new Log;
+    	myLog.enableLog();	
+        var dialogs = $$$$(".jxDialog");
+        for (var i=0; i<dialogs.length; i++) {
+            if (dialogs[i].getStyle('display') != 'none') {
+            	vigiloLog.log("${l_('A dialog is active on the page (').encode('backslash')}" + dialogs[i].getElement('.jxDialogLabel').get('text') + "${l_('): refresh is not possible.').encode('backslash')}");
                 return;
+            }
         }
+    	
+        vigiloLog.log("${l_('No active dialog on the page: refreshing...').encode('backslash')}");
         window.location.reload(true);
     }
 
@@ -180,6 +192,8 @@
         });
         req.post({'theme': theme_id});
         setActiveStyleSheet(theme_name);
+        
+        vigiloLog.log("${l_('Theme set to ').encode('backslash')}" + theme_name + ".");
     }
 
     function setActiveStyleSheet(theme_name) {
