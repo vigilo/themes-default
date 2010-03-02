@@ -93,6 +93,9 @@ window.addEvent("domready", function () {
                     $$('DetailsDialog_${edname}').set('href', details.eventdetails['${edname}']);
                     </py:for>
                     window.details_dialog.setBusy(false);
+
+                    var details_link = $$$$('a[href="#' + details.idcorrevent + '"].Details_Link')[0];
+                    details_link.parentNode.parentNode.addClass('selectedRow');
                 },
                 onFailure: function (xhr) {
                     window.details_dialog.setBusy(false);
