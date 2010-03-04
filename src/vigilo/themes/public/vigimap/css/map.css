@@ -261,6 +261,11 @@ canvas {
     /*border: 2px dashed gray;*/
 }
 
+.fielderror {
+    display: block;
+    color: red;
+}
+
 /*
 .jxChromeDrag {
     opacity: 1 !important;
