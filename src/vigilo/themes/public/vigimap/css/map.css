@@ -115,11 +115,11 @@ ul {
 }
 
 
-.link-center {
+.link {
     position: absolute;
     border: 2px solid transparent;
 }
-.link-center.hover {
+.link.hover {
     border: 2px solid #ffcc66;
     cursor: pointer;
 }
@@ -148,6 +148,11 @@ ul {
 }
 .status-unknown {
     background-color: #aaaaaa;
+    border: 1px solid #555555;
+}
+
+.status-edit {
+    background-color: #FFFFFF;
     border: 1px solid #555555;
 }
 
@@ -296,3 +301,8 @@ canvas {
 }
 
 */
+
+table tr td {
+	padding-top: 3px;
+    padding-right: 20px;
+}
