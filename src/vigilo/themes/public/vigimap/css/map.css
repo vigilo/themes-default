@@ -302,6 +302,10 @@ canvas {
 
 */
 
+table {
+    margin-top: 20px;	
+}
+
 table tr td {
 	padding-top: 3px;
     padding-right: 20px;
