@@ -26,7 +26,7 @@
         </div>
         <br />
         <div py:for="i in dhgs" py:strip="True">
-            <a href="singleGraph?\host=${dhgs[i][0]};graph=${dhgs[i][1]};start=${start};duration=${duration}">
+            <a href="singleGraph?host=${dhgs[i][0]};graph=${dhgs[i][1]};start=${start};duration=${duration}">
             <img border="0" src="getImage_png?host=${dhgs[i][0]};graph=${dhgs[i][1]};start=${start};duration=${duration};details=1" title='${dhgs[i][0]}'/>
             </a>
         </div>
