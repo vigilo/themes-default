@@ -310,3 +310,19 @@ table tr td {
 	padding-top: 3px;
     padding-right: 20px;
 }
+
+#deleteconfirmtext {
+    margin: 10px 10px	
+}
+
+#deleteconfirmbuttons {
+	margin: 20px 20px
+}
+
+#deleteconfirmbutton1 {
+    margin: 0 10px
+}
+
+#deleteconfirmbutton2 {
+    margin: 0 5px
+}
