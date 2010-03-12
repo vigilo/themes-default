@@ -35,7 +35,7 @@ body {
 .vigitable {
     margin: auto;
 	width: 99%;
-	border-collapse: collapse;
+	border-collapse: separate;
 }
 
 .vigitable .navigation_arrow * {
@@ -291,6 +291,7 @@ div.clearingdiv {
     font-weight: bold;
 }
 
+.plugin_checkbox,
 .plugin_details,
 .plugin_priority,
 .plugin_occurrences,
@@ -324,5 +325,9 @@ div.clearingdiv {
 .plugin_details img {
     width: 1.5em;
     height: 1.5em;
+}
+
+.vigitable tbody tr.selectedRow td {
+    border: 1px dashed #000000;
 }
 
