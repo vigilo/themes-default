@@ -302,8 +302,12 @@ canvas {
 
 */
 
+#map_form > table, #mapnode_form > table, #map_link > table {
+    margin-left: 20px	
+}
+
 table {
-    margin-top: 20px;	
+    margin-top: 20px; 
 }
 
 table tr td {
@@ -325,4 +329,8 @@ table tr td {
 
 #deleteconfirmbutton2 {
     margin: 0 5px
+}
+
+input[type=submit] {
+    margin-top: 15px
 }
