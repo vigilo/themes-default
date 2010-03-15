@@ -72,8 +72,18 @@ window.addEvent("domready", function () {
     window.details_dialog.toggleCollapse();
     window.details_dialog.toggleCollapse();
 
+    function remove_selection() {
+        $$$$('.selectedRow').each(function (sel) {
+            sel.removeClass('selectedRow');
+        });
+    }
+
+    window.details_dialog.addEvent('close', remove_selection);
+
     $$$$('.Details_Link').each(function (el) {
         el.addEvent('click', function (item) {
+            remove_selection();
+
             var idd = item.get('href').substring(1);
             var req = new Request.JSON({
                 link: 'cancel',
@@ -93,15 +103,15 @@ window.addEvent("domready", function () {
                     $$('DetailsDialog_${edname}').set('href', details.eventdetails['${edname}']);
                     </py:for>
                     window.details_dialog.setBusy(false);
-
-                    var details_link = $$$$('a[href="#' + details.idcorrevent + '"].Details_Link')[0];
-                    details_link.parentNode.parentNode.addClass('selectedRow');
                 },
                 onFailure: function (xhr) {
                     window.details_dialog.setBusy(false);
+                    remove_selection();
                 },
             });
             window.details_dialog.options.parent = item;
+            // Permet d'afficher l'événement sélectionné autrement.
+            item.getParent().getParent().addClass('selectedRow');
             window.details_dialog.open.bind(window.details_dialog)();
             window.details_dialog.setBusy(true);
             req.post({plugin_name: '${name}', idcorrevent: idd});
