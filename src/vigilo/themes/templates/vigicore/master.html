@@ -22,7 +22,8 @@
     <li py:if="request.identity" id="loginbtn" class="loginlogout"><a href="${tg.url('/logout_handler')}">Logout</a></li>
     <li py:if="request.identity" id="adminbtn" class="${('', 'active')[defined('page') and page==page=='admin']}"><a href="${tg.url('/admin')}">Admin</a></li>
     <li py:if="request.identity" id="profilebtn" class="${('', 'active')[defined('page') and page==page=='profile']}"><a href="${tg.url('/profile')}">Profile</a></li>
-    <li py:if="request.identity" id="collectbtn" class="${('', 'active')[defined('page') and page==page=='collect']}"><a href="${tg.url('/collect')}">Collect</a></li>
+<!--! La collecte est désactivée. -->
+<!--! <li py:if="request.identity" id="collectbtn" class="${('', 'active')[defined('page') and page==page=='collect']}"><a href="${tg.url('/collect')}">Collect</a></li> -->
 <!--! La maintenance planifiée est désactivée tant que certains problèmes n'auront pas été résolus. -->
 <!--!    <li py:if="request.identity" id="downtimebtn" class="${('', 'active')[defined('page') and page==page=='downtime']}"><a href="${tg.url('/downtime')}">Downtime</a></li>-->
   </ul>
