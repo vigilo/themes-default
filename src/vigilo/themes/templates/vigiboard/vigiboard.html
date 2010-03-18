@@ -48,7 +48,18 @@ ${toolbar()}
 </py:with>
 
 <div style="display: none">
-    ${tmpl_context.search_form()}
+    ${tmpl_context.search_form(
+        child_args=dict(
+            from_date=dict(
+                date_format=tmpl_context.calendar_date_format,
+                calendar_lang=tmpl_context.calendar_lang
+            ),
+            to_date=dict(
+                date_format=tmpl_context.calendar_date_format,
+                calendar_lang=tmpl_context.calendar_lang
+            )
+        )
+    )}
 </div>
 
 <script type="text/javascript">

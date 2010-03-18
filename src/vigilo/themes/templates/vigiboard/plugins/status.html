@@ -11,7 +11,8 @@
 
 <py:def function="plugin_template(name, instance)">
 <!--! Le formulaire d'édition d'événements, généré par ToscaWidgets. -->
-    ${tmpl_context.edit_event_form()}
+    ${tmpl_context.edit_event_form(
+        dict(last_modification=tmpl_context.last_modification))}
 
 <!--! Le code JavaScript qui va permettre de gérer l'édition d'événements. -->
 <script type="text/javascript">
