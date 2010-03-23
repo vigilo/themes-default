@@ -1,5 +1,5 @@
 NAME := themes_default
-all: src/vigilo/themes/i18n/fr/LC_MESSAGES/theme.mo build
+all: build
 install:
 	$(PYTHON) setup.py install --single-version-externally-managed --root=$(DESTDIR) --record=INSTALLED_FILES
 
