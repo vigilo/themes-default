@@ -23,7 +23,7 @@
         <a href="fullHostPage?host=${host};duration=${duration}">Back to ${host} Graph list</a>
         <a href="supPage?host=${host}">${host}'s monitoring page</a>
         <br />
-        <div py:for="h in presels" py:strip="True">
+        <div py:for="h in presets" py:strip="True">
             <a href="singleGraph?host=${host};duration=${h['duration']};graph=${graph}">${h['caption']}</a>
         </div>
         <br />
