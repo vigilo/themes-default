@@ -332,5 +332,12 @@ table tr td {
 }
 
 input[type=submit] {
-    margin-top: 15px
+    margin-top: 15px;
+}
+#link_form input[type=submit] {
+    margin: auto;
+}
+#link_form li {
+    list-style-type : none;
+    margin-left : 40px;
 }
