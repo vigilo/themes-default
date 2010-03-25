@@ -21,7 +21,7 @@
         </div>
         <h2>Graph Page for ${host}</h2>
         <a href="supPage?host=${host}">${host}'s monitoring page</a>
-        <div py:for="h in presels" py:strip="True">
+        <div py:for="h in presets" py:strip="True">
             <a href="fullHostPage?host=${host};duration=${h['duration']}">${h['caption']}</a>
         </div>
         <br />
