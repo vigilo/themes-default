@@ -1,0 +1,148 @@
+/* Menu */
+ul#mainmenu {
+    margin: 0;
+    padding: 0 10px;
+    background-color: #F0F1F5;
+    border-bottom: 1px solid #a4a4a4;
+    width: 100%;
+    height: 30px;
+    vertical-align: middle;
+}
+
+ul#mainmenu li {
+    list-style-type: none;
+    margin: 2px 0;
+    padding: 0;
+    position: relative;
+    display: inline;
+    float: left;
+}
+
+ul#mainmenu li a {
+    color: #314455;
+    float: left;
+    height: 24px;
+    display: block;
+    padding: 4px 10px;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+ul#mainmenu li.first a {
+}
+
+ul#mainmenu li.loginlogout
+{
+    float: right;
+    right: 10px;
+}
+
+ul#mainmenu li.loginlogout.logout a
+{
+    padding-left: 26px;
+    background-image: url("../images/logout.png");
+    background-repeat: no-repeat;
+}
+
+ul#mainmenu #version {
+    font-size: 11px;
+    padding: 4px 0px;
+}
+
+table.header_table {
+    background-color: #F0F1F5;
+    border-collapse:collapse;
+    width: 100%;
+}
+
+table.header_table td, table.header_table th {
+    padding: 2px;
+    font-size: 12px;
+    color: #314455;
+}
+
+table.header_table th {
+    text-align: center;
+    background-color: #F0F1F5;
+}
+
+table.header_table a {
+    color: #a4a4a4;
+    text-decoration: none;
+}
+
+table.header_table a:hover {
+    color: #a4a4a4;
+    text-decoration: underline;
+}
+
+/*Styles logo*/
+table.header_table td.logo {
+
+    padding-left: 10px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+img.logo {
+    margin: 0px;
+    border: 0px;
+}
+
+
+/* Flash */
+
+#flash, .notice {
+    font-size:120%;
+    font-weight:bolder;
+    margin:0pt auto 0.5em;
+    width:680px;
+}
+
+#flash div, .notice {
+    padding:20px 15px 20px 65px;
+}
+
+#flash .ok {
+    background:#d8ecd8 url(../images/ok.png) no-repeat scroll 10px center;
+}
+
+#flash .warning {
+    background:#fff483 url(../images/warning.png) no-repeat scroll 10px center;
+}
+
+#flash .error {
+    background:#f9c5c1 url(../images/error.png) no-repeat scroll 10px center;
+}
+
+#flash .alert,
+#flash .info,
+.notice {
+    background:#EEEEFF url(../images/info.png) no-repeat scroll 10px center;
+}
+
+
+/* Search page */
+body.searchresults h1 {
+    font-size: 130%;
+    font-family: sans-serif;
+    text-align: center;
+    margin-top: 1em;
+    font-weight: bold;
+}
+
+body.searchresults h2 {
+    font-size: 120%;
+    margin: 1em 0 0.5em 1em;
+}
+
+body.searchresults table {
+    margin-left: 1em;
+    border-collapse:collapse;
+}
+body.searchresults table td {
+    padding: 0.2em;
+}
+body.searchresults table td.hostname {
+    padding-right: 1em;
+}
