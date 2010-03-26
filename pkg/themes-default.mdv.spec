@@ -24,6 +24,8 @@ Requires:   python-babel
 
 Requires(pre): rpm-helper
 
+Provides:   vigilo-themes
+
 Buildarch:  noarch
 
 
