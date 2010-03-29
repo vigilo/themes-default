@@ -141,7 +141,7 @@
         });
         req.post({fontsize: size});
     	
-        vigiloLog.log("${l_('Font size set to ').encode('backslash')}" + size + ".");
+        vigiloLog.log("Font size set to " + size + ".");
     }
 
     var refresh_timeout = null;
@@ -164,7 +164,7 @@
         req.post({'refresh': timeout});
         change_refresh_rate(timeout);
     	
-        vigiloLog.log("${l_('Refresh rate set to ').encode('backslash')}" + timeout + "${l_('s.').encode('backslash')}");
+        vigiloLog.log("Refresh rate set to " + timeout + " seconds.");
     }
 
     function refresh_page() {
@@ -173,12 +173,12 @@
         var dialogs = $$$$(".jxDialog");
         for (var i=0; i<dialogs.length; i++) {
             if (dialogs[i].getStyle('display') != 'none') {
-            	vigiloLog.log("${l_('A dialog is active on the page (').encode('backslash')}" + dialogs[i].getElement('.jxDialogLabel').get('text') + "${l_('): refresh is not possible.').encode('backslash')}");
+            	vigiloLog.log("A dialog is active on the page ('" + dialogs[i].getElement('.jxDialogLabel').get('text') + "'): refresh is not possible.");
                 return;
             }
         }
     	
-        vigiloLog.log("${l_('No active dialog on the page: refreshing...').encode('backslash')}");
+        vigiloLog.log("No active dialog on the page: refreshing...");
         window.location.reload(true);
     }
 
@@ -193,7 +193,7 @@
         req.post({'theme': theme_id});
         setActiveStyleSheet(theme_name);
         
-        vigiloLog.log("${l_('Theme set to ').encode('backslash')}" + theme_name + ".");
+        vigiloLog.log("Theme set to '" + theme_name + "'.");
     }
 
     function setActiveStyleSheet(theme_name) {
