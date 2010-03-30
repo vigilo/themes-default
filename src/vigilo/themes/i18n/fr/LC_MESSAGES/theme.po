@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: vigilo-themes-default 0.1\n"
 "Report-Msgid-Bugs-To: contact@projet-vigilo.org\n"
 "POT-Creation-Date: 2009-11-10 09:51+0100\n"
-"PO-Revision-Date: 2010-03-29 19:31+0200\n"
+"PO-Revision-Date: 2010-03-30 17:45+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: fr <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n > 1)\n"
@@ -501,13 +501,12 @@ msgid "[TT]"
 msgstr "[TT]"
 
 #: src/vigilo/themes/templates/vigicore/collect.html:11
-#, fuzzy
 msgid "Collect"
-msgstr "Données"
+msgstr "Collecte"
 
 #: src/vigilo/themes/templates/vigicore/collect.html:24
 msgid "Force collect"
-msgstr ""
+msgstr "Forcer la collecte"
 
 #: src/vigilo/themes/templates/vigicore/collect.html:26
 #: src/vigilo/themes/templates/vigicore/schedule_downtime.html:13
@@ -520,9 +519,8 @@ msgid "Service:"
 msgstr "Service :"
 
 #: src/vigilo/themes/templates/vigicore/collect.html:32
-#, fuzzy
 msgid "Collect!"
-msgstr "Données"
+msgstr "Collecter !"
 
 #: src/vigilo/themes/templates/vigicore/delete_downtime.html:12
 #: src/vigilo/themes/templates/vigicore/downtime.html:12
@@ -563,7 +561,7 @@ msgstr "Mises en silence planifiées"
 #: src/vigilo/themes/templates/vigicore/downtime.html:141
 #: src/vigilo/themes/templates/vigicore/downtime.html:158
 msgid "descending"
-msgstr ""
+msgstr "descendant"
 
 #: src/vigilo/themes/templates/vigicore/downtime.html:44
 #: src/vigilo/themes/templates/vigicore/downtime.html:61
@@ -573,9 +571,8 @@ msgstr ""
 #: src/vigilo/themes/templates/vigicore/downtime.html:129
 #: src/vigilo/themes/templates/vigicore/downtime.html:146
 #: src/vigilo/themes/templates/vigicore/downtime.html:163
-#, fuzzy
 msgid "ascending"
-msgstr "Avertissement"
+msgstr "ascendant"
 
 #: src/vigilo/themes/templates/vigicore/downtime.html:56
 #: src/vigilo/themes/templates/vigicore/downtime.html:61
@@ -637,7 +634,7 @@ msgstr ""
 
 #: src/vigilo/themes/templates/vigicore/index.html:22
 msgid "Data collection"
-msgstr "Données"
+msgstr "Collecte de données"
 
 #: src/vigilo/themes/templates/vigicore/index.html:23
 #: src/vigilo/themes/templates/vigicore/index.html:28
@@ -695,7 +692,7 @@ msgstr "Nouveau mot de passe :"
 
 #: src/vigilo/themes/templates/vigicore/profile.html:26
 msgid "Confirmation:"
-msgstr ""
+msgstr "Confirmation :"
 
 #: src/vigilo/themes/templates/vigicore/profile.html:29
 #: src/vigilo/themes/templates/vigigraph/profile.html:32
@@ -704,7 +701,7 @@ msgstr "Appliquer"
 
 #: src/vigilo/themes/templates/vigicore/schedule_downtime.html:22
 msgid "Start:"
-msgstr "Début"
+msgstr "Début :"
 
 #: src/vigilo/themes/templates/vigicore/schedule_downtime.html:27
 msgid "End:"
@@ -728,19 +725,19 @@ msgstr "Planifier !"
 
 #: src/vigilo/themes/templates/vigicore/schedule_downtime.html:41
 msgid "Days:"
-msgstr ""
+msgstr "Jours :"
 
 #: src/vigilo/themes/templates/vigicore/schedule_downtime.html:44
 msgid "Hours:"
-msgstr ""
+msgstr "Heures :"
 
 #: src/vigilo/themes/templates/vigicore/schedule_downtime.html:47
 msgid "Minutes:"
-msgstr ""
+msgstr "Minutes :"
 
 #: src/vigilo/themes/templates/vigicore/schedule_downtime.html:50
 msgid "Seconds:"
-msgstr ""
+msgstr "Secondes :"
 
 #: src/vigilo/themes/templates/vigicore/schedule_downtime.html:53
 #: src/vigilo/themes/templates/vigimap/legend.html:9
@@ -748,7 +745,6 @@ msgid "OK"
 msgstr "OK"
 
 #: src/vigilo/themes/templates/vigicore/schedule_downtime.html:71
-#, fuzzy
 msgid "Select duration"
 msgstr "Choisir une durée"
 
@@ -771,7 +767,7 @@ msgstr "Page d'administration"
 
 #: src/vigilo/themes/templates/vigicore/admin/home.html:14
 msgid "Welcome to the administration page"
-msgstr "Bienvenue"
+msgstr "Bienvenue sur la page d'administration"
 
 #: src/vigilo/themes/templates/vigicore/admin/home.html:16
 msgid "Click a table name in the sidebar to view or modify its content."
@@ -790,9 +786,8 @@ msgid "'s monitoring page"
 msgstr ""
 
 #: src/vigilo/themes/templates/vigigraph/graphslist.html:3
-#, fuzzy
 msgid "Vigigraph"
-msgstr "VigiMap"
+msgstr "VigiGraph"
 
 #: src/vigilo/themes/templates/vigigraph/graphslist.html:6
 msgid "Période du "
@@ -810,9 +805,8 @@ msgstr "Chargement de VigiGraph..."
 #: src/vigilo/themes/templates/vigigraph/searchhost.html:6
 #: src/vigilo/themes/templates/vigigraph/searchhost.html:9
 #: src/vigilo/themes/templates/vigigraph/searchhostform.html:5
-#, fuzzy
 msgid "Vigigraph search"
-msgstr "VigiMap"
+msgstr "Recherche VigiGraph"
 
 #: src/vigilo/themes/templates/vigigraph/master.html:20
 #: src/vigilo/themes/templates/vigigraph/singlegraph.html:16
@@ -899,6 +893,10 @@ msgstr ""
 msgid "VigiMap"
 msgstr "VigiMap"
 
+#: src/vigilo/themes/templates/vigimap/edition.html:58
+msgid "(edit mode)"
+msgstr ""
+
 #: src/vigilo/themes/templates/vigimap/edition.html:65
 #: src/vigilo/themes/templates/vigimap/index.html:47
 msgid "Maps"
@@ -915,6 +913,11 @@ msgstr ""
 #: src/vigilo/themes/templates/vigimap/index.html:69
 msgid "loading..."
 msgstr "chargement..."
+
+#: src/vigilo/themes/templates/vigimap/index.html:40
+#, fuzzy
+msgid "(mode display)"
+msgstr "Filtrer l'affichage"
 
 #: src/vigilo/themes/templates/vigimap/legend.html:2
 msgid "Legend"

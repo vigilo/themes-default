@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: vigilo-themes-default 0.1\n"
 "Report-Msgid-Bugs-To: contact@projet-vigilo.org\n"
 "POT-Creation-Date: 2010-02-12 11:58+0100\n"
-"PO-Revision-Date: 2010-03-29 19:31+0200\n"
+"PO-Revision-Date: 2010-03-30 17:45+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: en_US <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -882,6 +882,10 @@ msgstr ""
 msgid "VigiMap"
 msgstr ""
 
+#: src/vigilo/themes/templates/vigimap/edition.html:58
+msgid "(edit mode)"
+msgstr ""
+
 #: src/vigilo/themes/templates/vigimap/edition.html:65
 #: src/vigilo/themes/templates/vigimap/index.html:47
 msgid "Maps"
@@ -895,6 +899,10 @@ msgstr ""
 #: src/vigilo/themes/templates/vigimap/edition.html:88
 #: src/vigilo/themes/templates/vigimap/index.html:69
 msgid "loading..."
+msgstr ""
+
+#: src/vigilo/themes/templates/vigimap/index.html:40
+msgid "(mode display)"
 msgstr ""
 
 #: src/vigilo/themes/templates/vigimap/legend.html:2
@@ -953,25 +961,4 @@ msgstr ""
 #: src/vigilo/themes/templates/vigimap/widget_form.html:18
 msgid "Welcome to Widget!"
 msgstr ""
-
-#~ msgid "Font size set to "
-#~ msgstr ""
-
-#~ msgid "Refresh rate set to "
-#~ msgstr ""
-
-#~ msgid "s."
-#~ msgstr ""
-
-#~ msgid "A dialog is active on the page ("
-#~ msgstr ""
-
-#~ msgid "): refresh is not possible."
-#~ msgstr ""
-
-#~ msgid "No active dialog on the page: refreshing..."
-#~ msgstr ""
-
-#~ msgid "Theme set to "
-#~ msgstr ""
 

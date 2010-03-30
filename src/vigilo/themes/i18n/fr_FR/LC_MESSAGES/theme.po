@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: vigilo-themes-default 0.1\n"
 "Report-Msgid-Bugs-To: contact@projet-vigilo.org\n"
 "POT-Creation-Date: 2009-11-10 09:51+0100\n"
-"PO-Revision-Date: 2010-03-29 19:31+0200\n"
+"PO-Revision-Date: 2010-03-30 17:45+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: fr <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n > 1)\n"
@@ -899,6 +899,10 @@ msgstr ""
 msgid "VigiMap"
 msgstr "VigiMap"
 
+#: src/vigilo/themes/templates/vigimap/edition.html:58
+msgid "(edit mode)"
+msgstr ""
+
 #: src/vigilo/themes/templates/vigimap/edition.html:65
 #: src/vigilo/themes/templates/vigimap/index.html:47
 msgid "Maps"
@@ -915,6 +919,11 @@ msgstr ""
 #: src/vigilo/themes/templates/vigimap/index.html:69
 msgid "loading..."
 msgstr "chargement..."
+
+#: src/vigilo/themes/templates/vigimap/index.html:40
+#, fuzzy
+msgid "(mode display)"
+msgstr "Filtrer l'affichage"
 
 #: src/vigilo/themes/templates/vigimap/legend.html:2
 msgid "Legend"
