@@ -842,9 +842,9 @@ msgid "Unable to export for host"
 msgstr ""
 
 #: src/vigilo/themes/templates/vigigraph/rrd_exportCSV_error.html:3
-#, fuzzy
+
 msgid "- graph"
-msgstr "VigiMap"
+msgstr "- graphique"
 
 #: src/vigilo/themes/templates/vigigraph/rrd_exportCSV_error.html:3
 msgid "- indicator"
@@ -895,7 +895,7 @@ msgstr "VigiMap"
 
 #: src/vigilo/themes/templates/vigimap/edition.html:58
 msgid "(edit mode)"
-msgstr ""
+msgstr "(mode édition)"
 
 #: src/vigilo/themes/templates/vigimap/edition.html:65
 #: src/vigilo/themes/templates/vigimap/index.html:47
@@ -915,9 +915,9 @@ msgid "loading..."
 msgstr "chargement..."
 
 #: src/vigilo/themes/templates/vigimap/index.html:40
-#, fuzzy
+
 msgid "(mode display)"
-msgstr "Filtrer l'affichage"
+msgstr "(mode visualisation)"
 
 #: src/vigilo/themes/templates/vigimap/legend.html:2
 msgid "Legend"
@@ -970,10 +970,9 @@ msgstr "Équipement : %(host)s"
 
 #: src/vigilo/themes/templates/vigimap/selectmapgroup.html:3
 msgid "Node update!"
-msgstr ""
+msgstr "Mise à jour d'élément"
 
 #: src/vigilo/themes/templates/vigimap/widget_form.html:18
-#, fuzzy
 msgid "Welcome to Widget!"
-msgstr "Bienvenue dans Vigilo"
+msgstr "Bienvenue dans Widget"
 
