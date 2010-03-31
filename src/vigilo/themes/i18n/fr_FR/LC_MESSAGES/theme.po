@@ -390,7 +390,7 @@ msgstr "Détails"
 
 #: src/vigilo/themes/templates/vigiboard/plugins/details.html:31
 msgid "Detailed history for this event"
-msgstr "Historique détaillée de cet événement"
+msgstr "Historique détaillé de cet événement"
 
 #: src/vigilo/themes/templates/vigiboard/plugins/details.html:32
 msgid "Masked events for this event"
