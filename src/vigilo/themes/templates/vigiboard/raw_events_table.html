@@ -7,7 +7,7 @@
 <xi:include href="vigiboard.html" />
 
 <?python from genshi import HTML ?>
-<?python from vigilo.models import StateName ?>
+<?python from vigilo.models.tables import StateName ?>
 
 <head> 
     <title>${l_('Vigiboard - Masked events list for event #%d') % idcorrevent}</title>
