@@ -65,10 +65,14 @@ ul {
     cursor: pointer;
 }
 
-#leftmenu .addmap div:hover {
+#leftmenu .addmap div.hover {
     border: 2px solid #ffcc66;
     color: #ffcc66;
     cursor: pointer;
+}
+
+#leftmenu .addmap .disabled {
+    opacity: 0.2;
 }
 
 #leftmenu .selected {
