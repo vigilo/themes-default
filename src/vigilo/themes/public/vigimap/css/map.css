@@ -21,11 +21,12 @@ ul {
 
 #leftmenu {
     float: left;
-    width: 150px;
+    width: 160px;
     height: 100%;
     margin: 0;
     border-right: 1px solid black;
     padding: 10px 0.2em 0px 0.2em;
+    overflow: auto;
 }
 
 #leftmenu h2 { margin-left: 0.8em; }
@@ -40,6 +41,7 @@ ul {
 #leftmenu ul {
     list-style-type: none;
     margin-bottom: 0.5em;
+    
 }
 
 #leftmenu ul.addmap {
@@ -65,10 +67,16 @@ ul {
     cursor: pointer;
 }
 
-#leftmenu .addmap div.hover {
+#leftmenu .addmap div:hover {
     border: 2px solid #ffcc66;
     color: #ffcc66;
     cursor: pointer;
+}
+
+#leftmenu .addmap div.disabled:hover {
+    border: 1px solid #aaa;
+    color: inherit;
+    cursor: default;	
 }
 
 #leftmenu .addmap .disabled {
@@ -88,7 +96,7 @@ ul {
 #map {
     margin: 0px;
     padding: 0px;
-    margin-left: 160px;
+    margin-left: 170px;
     height: 100%;
 }
 
@@ -104,7 +112,7 @@ ul {
     text-align: center;
     /*opacity: 0.5;*/
 }
-.obj.hover {
+.obj:hover {
     border: 2px solid #ffcc66;
     color: #ffcc66;
     cursor: pointer;
@@ -123,7 +131,7 @@ ul {
     position: absolute;
     border: 2px solid transparent;
 }
-.link.hover {
+.link:hover {
     border: 2px solid #ffcc66;
     cursor: pointer;
 }

@@ -1,7 +1,8 @@
 <div xmlns:py="http://genshi.edgewall.org/">
     <ul class="image_widget">
         <li py:for="image in images">
-            <img src="${tg.url('/images/%s/%s.png' % (folder,image))}" alt="" title="${image}" onclick="set_image('${image}');" /> ${image}
+            <img src="${tg.url('/images/%s/%s.png' % (folder,image))}" alt="" 
+            title="${image}" onclick="set_image('${image}', '${receptId}');" /> ${image}
         </li>
     </ul>
 </div>
