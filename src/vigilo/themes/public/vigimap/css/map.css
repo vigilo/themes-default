@@ -20,13 +20,14 @@ ul {
 }
 
 #leftmenu {
-    float: left;
-    width: 160px;
-    height: 100%;
+    position: absolute;
+    left: 0;
     margin: 0;
     border-right: 1px solid black;
+    border-bottom: 1px solid black;
     padding: 10px 0.2em 0px 0.2em;
-    overflow: auto;
+    z-index: 1;
+    background-color: #f1f1f1;
 }
 
 #leftmenu h2 { margin-left: 0.8em; }
