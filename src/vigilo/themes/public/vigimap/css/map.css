@@ -316,13 +316,18 @@ canvas {
 
 */
 
-#map_form > table, #mapnode_form > table, #map_link > table {
-    margin-left: 20px	
+#map_form table,
+#mapnode_form table,
+#link_form table,
+#copymap_form table {
+    margin: 1em auto 0 auto;
 }
 
+/*
 table {
     margin-top: 20px; 
 }
+*/
 
 table tr td {
 	padding-top: 3px;
@@ -334,21 +339,23 @@ table tr td {
 }
 
 #deleteconfirmbuttons {
-	margin: 20px 20px
+    width: 50%;
+	margin: 0.5em auto 0 auto;
 }
 
 #deleteconfirmbutton1 {
-    margin: 0 10px
+    float: left;
 }
 
 #deleteconfirmbutton2 {
-    margin: 0 5px
+    float: right;
 }
 
 input[type=submit] {
     margin-top: 15px;
 }
 #link_form input[type=submit] {
+    display: block;
     margin: auto;
 }
 #link_form li {
