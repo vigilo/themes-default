@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: vigilo-themes-default 0.1\n"
 "Report-Msgid-Bugs-To: contact@projet-vigilo.org\n"
 "POT-Creation-Date: 2010-02-12 11:58+0100\n"
-"PO-Revision-Date: 2010-03-30 17:45+0200\n"
+"PO-Revision-Date: 2010-04-08 18:32+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: en_US <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -358,11 +358,6 @@ msgstr ""
 msgid "Unable to save preferences"
 msgstr ""
 
-#: src/vigilo/themes/templates/vigiboard/plugins/checkbox.html:27
-#: src/vigilo/themes/templates/vigiboard/plugins/status.html:86
-msgid "Select/Unselect all"
-msgstr ""
-
 #: src/vigilo/themes/templates/vigiboard/plugins/details.html:8
 msgid "State info"
 msgstr ""
@@ -466,6 +461,10 @@ msgstr ""
 
 #: src/vigilo/themes/templates/vigiboard/plugins/status.html:81
 msgid "Edit all selected events"
+msgstr ""
+
+#: src/vigilo/themes/templates/vigiboard/plugins/status.html:86
+msgid "Select/Unselect all"
 msgstr ""
 
 #: src/vigilo/themes/templates/vigiboard/plugins/status.html:95
@@ -875,29 +874,24 @@ msgid "Graph list"
 msgstr ""
 
 #: src/vigilo/themes/templates/vigimap/edition.html:8
-#: src/vigilo/themes/templates/vigimap/edition.html:58
+#: src/vigilo/themes/templates/vigimap/edition.html:55
 #: src/vigilo/themes/templates/vigimap/index.html:8
 #: src/vigilo/themes/templates/vigimap/index.html:40
 #: src/vigilo/themes/templates/vigimap/widget_form.html:8
 msgid "VigiMap"
 msgstr ""
 
-#: src/vigilo/themes/templates/vigimap/edition.html:58
+#: src/vigilo/themes/templates/vigimap/edition.html:55
 msgid "(edit mode)"
 msgstr ""
 
-#: src/vigilo/themes/templates/vigimap/edition.html:65
-#: src/vigilo/themes/templates/vigimap/index.html:47
-msgid "Maps"
-msgstr ""
-
-#: src/vigilo/themes/templates/vigimap/edition.html:71
-#: src/vigilo/themes/templates/vigimap/index.html:53
+#: src/vigilo/themes/templates/vigimap/edition.html:70
+#: src/vigilo/themes/templates/vigimap/index.html:52
 msgid "Your browser does not support the canvas element. Please upgrade."
 msgstr ""
 
-#: src/vigilo/themes/templates/vigimap/edition.html:88
-#: src/vigilo/themes/templates/vigimap/index.html:69
+#: src/vigilo/themes/templates/vigimap/edition.html:87
+#: src/vigilo/themes/templates/vigimap/index.html:68
 msgid "loading..."
 msgstr ""
 
@@ -936,12 +930,16 @@ msgstr ""
 
 #: src/vigilo/themes/templates/vigimap/link.html:3
 #, python-format
-msgid "Reference service: %(service)s on %(host)s"
+msgid "Status: %(status)s"
 msgstr ""
 
 #: src/vigilo/themes/templates/vigimap/link.html:4
+msgid "Reference service:"
+msgstr ""
+
+#: src/vigilo/themes/templates/vigimap/link.html:5
 #, python-format
-msgid "Status: %(status)s"
+msgid "%(service)s on %(host)s"
 msgstr ""
 
 #: src/vigilo/themes/templates/vigimap/node.html:20
@@ -961,4 +959,10 @@ msgstr ""
 #: src/vigilo/themes/templates/vigimap/widget_form.html:18
 msgid "Welcome to Widget!"
 msgstr ""
+
+#~ msgid "Maps"
+#~ msgstr ""
+
+#~ msgid "Reference service: %(service)s on %(host)s"
+#~ msgstr ""
 

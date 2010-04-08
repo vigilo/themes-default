@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: vigilo-themes-default 0.1\n"
 "Report-Msgid-Bugs-To: contact@projet-vigilo.org\n"
 "POT-Creation-Date: 2009-11-10 09:51+0100\n"
-"PO-Revision-Date: 2010-03-30 17:45+0200\n"
+"PO-Revision-Date: 2010-04-08 18:32+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: fr <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n > 1)\n"
@@ -362,11 +362,6 @@ msgstr "Filtrer les événements"
 msgid "Unable to save preferences"
 msgstr "Impossible de sauvegarder les préférences"
 
-#: src/vigilo/themes/templates/vigiboard/plugins/checkbox.html:27
-#: src/vigilo/themes/templates/vigiboard/plugins/status.html:86
-msgid "Select/Unselect all"
-msgstr "Tout sélectionner / désélectionner"
-
 #: src/vigilo/themes/templates/vigiboard/plugins/details.html:8
 msgid "State info"
 msgstr ""
@@ -472,6 +467,10 @@ msgstr "Éditer"
 msgid "Edit all selected events"
 msgstr "Éditer tous les événements sélectionnés"
 
+#: src/vigilo/themes/templates/vigiboard/plugins/status.html:86
+msgid "Select/Unselect all"
+msgstr "Tout sélectionner / désélectionner"
+
 #: src/vigilo/themes/templates/vigiboard/plugins/status.html:95
 msgid "Acknowledged"
 msgstr "Pris en compte"
@@ -501,9 +500,8 @@ msgid "[TT]"
 msgstr "[TT]"
 
 #: src/vigilo/themes/templates/vigicore/collect.html:11
-#, fuzzy
 msgid "Collect"
-msgstr "Données"
+msgstr "Collecte"
 
 #: src/vigilo/themes/templates/vigicore/collect.html:24
 msgid "Force collect"
@@ -520,9 +518,8 @@ msgid "Service:"
 msgstr "Service :"
 
 #: src/vigilo/themes/templates/vigicore/collect.html:32
-#, fuzzy
 msgid "Collect!"
-msgstr "Données"
+msgstr "Collecter !"
 
 #: src/vigilo/themes/templates/vigicore/delete_downtime.html:12
 #: src/vigilo/themes/templates/vigicore/downtime.html:12
@@ -573,9 +570,8 @@ msgstr ""
 #: src/vigilo/themes/templates/vigicore/downtime.html:129
 #: src/vigilo/themes/templates/vigicore/downtime.html:146
 #: src/vigilo/themes/templates/vigicore/downtime.html:163
-#, fuzzy
 msgid "ascending"
-msgstr "Avertissement"
+msgstr "Ascendant"
 
 #: src/vigilo/themes/templates/vigicore/downtime.html:56
 #: src/vigilo/themes/templates/vigicore/downtime.html:61
@@ -748,7 +744,6 @@ msgid "OK"
 msgstr "OK"
 
 #: src/vigilo/themes/templates/vigicore/schedule_downtime.html:71
-#, fuzzy
 msgid "Select duration"
 msgstr "Choisir une durée"
 
@@ -790,9 +785,8 @@ msgid "'s monitoring page"
 msgstr ""
 
 #: src/vigilo/themes/templates/vigigraph/graphslist.html:3
-#, fuzzy
 msgid "Vigigraph"
-msgstr "VigiMap"
+msgstr "VigiGraph"
 
 #: src/vigilo/themes/templates/vigigraph/graphslist.html:6
 msgid "Période du "
@@ -810,9 +804,8 @@ msgstr "Chargement de VigiGraph..."
 #: src/vigilo/themes/templates/vigigraph/searchhost.html:6
 #: src/vigilo/themes/templates/vigigraph/searchhost.html:9
 #: src/vigilo/themes/templates/vigigraph/searchhostform.html:5
-#, fuzzy
 msgid "Vigigraph search"
-msgstr "VigiMap"
+msgstr "Recherche VigiGraph"
 
 #: src/vigilo/themes/templates/vigigraph/master.html:20
 #: src/vigilo/themes/templates/vigigraph/singlegraph.html:16
@@ -848,9 +841,8 @@ msgid "Unable to export for host"
 msgstr ""
 
 #: src/vigilo/themes/templates/vigigraph/rrd_exportCSV_error.html:3
-#, fuzzy
 msgid "- graph"
-msgstr "VigiMap"
+msgstr "- graphe"
 
 #: src/vigilo/themes/templates/vigigraph/rrd_exportCSV_error.html:3
 msgid "- indicator"
@@ -865,9 +857,8 @@ msgid "Sup page"
 msgstr ""
 
 #: src/vigilo/themes/templates/vigigraph/searchhost.html:16
-#, fuzzy
 msgid "Metro page"
-msgstr "Page suivante"
+msgstr "Page de métrologie"
 
 #: src/vigilo/themes/templates/vigigraph/searchhostform.html:7
 #, fuzzy
@@ -889,34 +880,29 @@ msgstr ""
 
 #: src/vigilo/themes/templates/vigigraph/singlegraph.html:23
 msgid "Graph list"
-msgstr ""
+msgstr "Liste des graphes"
 
 #: src/vigilo/themes/templates/vigimap/edition.html:8
-#: src/vigilo/themes/templates/vigimap/edition.html:58
+#: src/vigilo/themes/templates/vigimap/edition.html:55
 #: src/vigilo/themes/templates/vigimap/index.html:8
 #: src/vigilo/themes/templates/vigimap/index.html:40
 #: src/vigilo/themes/templates/vigimap/widget_form.html:8
 msgid "VigiMap"
 msgstr "VigiMap"
 
-#: src/vigilo/themes/templates/vigimap/edition.html:58
+#: src/vigilo/themes/templates/vigimap/edition.html:55
 msgid "(edit mode)"
-msgstr ""
+msgstr "(mode édition)"
 
-#: src/vigilo/themes/templates/vigimap/edition.html:65
-#: src/vigilo/themes/templates/vigimap/index.html:47
-msgid "Maps"
-msgstr "Cartes"
-
-#: src/vigilo/themes/templates/vigimap/edition.html:71
-#: src/vigilo/themes/templates/vigimap/index.html:53
+#: src/vigilo/themes/templates/vigimap/edition.html:70
+#: src/vigilo/themes/templates/vigimap/index.html:52
 msgid "Your browser does not support the canvas element. Please upgrade."
 msgstr ""
 "Votre navigateur ne gère pas l'élément canvas. Veuillez le mettre à jour,"
 " ou en utiliser un autre."
 
-#: src/vigilo/themes/templates/vigimap/edition.html:88
-#: src/vigilo/themes/templates/vigimap/index.html:69
+#: src/vigilo/themes/templates/vigimap/edition.html:87
+#: src/vigilo/themes/templates/vigimap/index.html:68
 msgid "loading..."
 msgstr "chargement..."
 
@@ -956,13 +942,17 @@ msgstr "Lien entre %(from_node)s et %(to_node)s"
 
 #: src/vigilo/themes/templates/vigimap/link.html:3
 #, python-format
-msgid "Reference service: %(service)s on %(host)s"
-msgstr "Service de référence : %(service)s sur %(host)s"
-
-#: src/vigilo/themes/templates/vigimap/link.html:4
-#, python-format
 msgid "Status: %(status)s"
 msgstr "État : %(status)s"
+
+#: src/vigilo/themes/templates/vigimap/link.html:4
+msgid "Reference service:"
+msgstr "Service de référence :"
+
+#: src/vigilo/themes/templates/vigimap/link.html:5
+#| msgid "Service name: %(service)s on %(host)s"
+msgid "%(service)s on %(host)s"
+msgstr "%(service)s sur %(host)s"
 
 #: src/vigilo/themes/templates/vigimap/node.html:20
 #, python-format
@@ -979,7 +969,12 @@ msgid "Node update!"
 msgstr ""
 
 #: src/vigilo/themes/templates/vigimap/widget_form.html:18
-#, fuzzy
 msgid "Welcome to Widget!"
 msgstr "Bienvenue dans Vigilo"
+
+#~ msgid "Maps"
+#~ msgstr "Cartes"
+
+#~ msgid "Reference service: %(service)s on %(host)s"
+#~ msgstr "Service de référence : %(service)s sur %(host)s"
 
