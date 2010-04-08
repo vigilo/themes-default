@@ -27,7 +27,7 @@ ul {
     margin: 0;
     border-right: 1px solid black;
     border-bottom: 1px solid black;
-    padding: 10px 0.2em 0px 0.2em;
+    padding: 10px 0.4em 0.4em 0.2em;
     z-index: 1;
     background-color: #f1f1f1;
 }
@@ -198,6 +198,13 @@ ul {
     background: url(../images/submap.png) no-repeat center left;
 }
 
+#details h2 {
+    text-align: center;
+}
+
+#details p span.label {
+    font-weight: bold;
+}
 
 #loading {
     display: none;
