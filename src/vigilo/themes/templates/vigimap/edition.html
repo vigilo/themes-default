@@ -10,16 +10,16 @@
     <link rel="stylesheet" type="text/css" href="${tg.url('/css/jxlib/jxtheme.uncompressed.css')}" />
     <style type="text/css">@import "${tg.url('css/map.css')}";</style>
     <style type="text/css">@import "${tg.url('css/images.css')}";</style>
-    <script type="text/javascript" src="${tg.url('/js/mootools.js')}"></script>
-    <script type="text/javascript" src="${tg.url('/js/mootools-more.js')}"></script>
+    <script type="text/javascript" src="${tg.url('/js/lib/mootools.js')}"></script>
+    <script type="text/javascript" src="${tg.url('/js/lib/mootools-more.js')}"></script>
     <script type="text/javascript" src="${tg.url('/js/drag.move.ghost.js')}"></script>
-    <script type="text/javascript" src="${tg.url('/js/jxlib.js')}"></script>
-    <script type="text/javascript">Jx.baseURL = 'js';</script>
+    <script type="text/javascript" src="${tg.url('/js/lib/jxlib.js')}"></script>
+    <script type="text/javascript">Jx.baseURL = 'js/lib';</script>
     <!--!
-        "js/babel.js" doit être chargé avant "i18n",
+        "js/lib/babel.js" doit être chargé avant "i18n",
         qui doit lui-même être chargé avant "js/map.js".
     -->
-    <script type="text/javascript" src="${tg.url('/js/babel.js')}"></script>
+    <script type="text/javascript" src="${tg.url('/js/lib/babel.js')}"></script>
     <script type="text/javascript" src="${tg.url('/i18n')}"></script>
     <script type="text/javascript" src="${tg.url('/js/loader.js')}"></script>
     <script type="text/javascript" src="${tg.url('/js/legend.js')}"></script>
@@ -35,11 +35,11 @@
         <link rel="stylesheet" type="text/css" href="${tg.url('/widgets/'+widget+'/'+widget+'.css')}" />
     </div>
     <link rel="stylesheet" type="text/css" href="${tg.url('/css/Autocompleter.css')}" />
-    <script type="text/javascript" src="${tg.url('/js/Autocompleter.js')}"></script>
-    <script type="text/javascript" src="${tg.url('/js/Autocompleter.Local.js')}"></script>
-    <script type="text/javascript" src="${tg.url('/js/Autocompleter.Request.js')}"></script>
+    <script type="text/javascript" src="${tg.url('/js/lib/Autocompleter.js')}"></script>
+    <script type="text/javascript" src="${tg.url('/js/lib/Autocompleter.Local.js')}"></script>
+    <script type="text/javascript" src="${tg.url('/js/lib/Autocompleter.Request.js')}"></script>
     <script type="text/javascript" src="${tg.url('/js/Autocompleter.Request.VigiloJSON.js')}"></script>
-    <script type="text/javascript" src="${tg.url('/js/Observer.js')}"></script>
+    <script type="text/javascript" src="${tg.url('/js/lib/Observer.js')}"></script>
     <script type="text/javascript" src="${tg.url('/js/selectmapgroup.js')}"></script>
     <script type="text/javascript" src="${tg.url('/js/fieldautocomplete.js')}"></script>
     <script type="text/javascript" src="${tg.url('/js/buttonColor.js')}"></script>
@@ -58,10 +58,12 @@
     <div id="menu">
     </div>
 
-    <div id="leftmenu">
-        <h2>Maps</h2>
+    <div id="maplist">
         <ul>
         </ul>
+    </div>
+
+    <div id="mapitems">
     </div>
 
     <div id="map">

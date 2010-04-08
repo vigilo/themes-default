@@ -19,7 +19,9 @@ ul {
     list-style-type: disc;
 }
 
-#leftmenu {
+#leftmenu, 
+#maplist,
+#mapitems {
     position: absolute;
     left: 0;
     margin: 0;
@@ -30,8 +32,6 @@ ul {
     background-color: #f1f1f1;
 }
 
-#leftmenu h2 { margin-left: 0.8em; }
-
 #leftmenu .mapgroup {
     margin: 0px auto;
     border: 1px solid #aaa;
@@ -39,54 +39,56 @@ ul {
     text-align: center;
     cursor: pointer;
 }
-#leftmenu ul {
+
+#mapitems {
+    width: 100px;
+    left: -110px;
+}
+
+#mapitems ul {
     list-style-type: none;
-    margin-bottom: 0.5em;
-    
-}
-
-#leftmenu ul.addmap {
 	margin:0 auto;
-    width: 40%;
 }
 
-#leftmenu li.addmap {
-    margin:20px auto;
+#mapitems li {
+    margin:0px auto;
 }
 
-#leftmenu .obj {
+#mapitems .obj {
     width: 70px;
     border: 1px solid black;
 }
 
+#mapitems .selected {
+    border: 2px solid blue !important;
+    padding: 0;
+}
 
-#leftmenu .addmap div {
-	margin: 0px auto;
+#mapitems .disabled {
+    opacity: 0.2;
+}
+
+#mapitems div {
+	margin: 15px auto;
+    padding: 1px 0;
     border: 1px solid #aaa;
     background-color: #eee;
     text-align: center;
     cursor: pointer;
+    width: 50px;
 }
 
-#leftmenu .addmap div:hover {
+#mapitems div:hover {
+    padding: 0px 0;
     border: 2px solid #ffcc66;
     color: #ffcc66;
     cursor: pointer;
 }
 
-#leftmenu .addmap div.disabled:hover {
+#mapitems div.disabled:hover {
     border: 1px solid #aaa;
     color: inherit;
     cursor: default;	
-}
-
-#leftmenu .addmap .disabled {
-    opacity: 0.2;
-}
-
-#leftmenu .selected {
-    border: 2px solid blue !important;
-    /*padding: 0px;*/
 }
 
 
@@ -97,7 +99,6 @@ ul {
 #map {
     margin: 0px;
     padding: 0px;
-    margin-left: 170px;
     height: 100%;
 }
 
