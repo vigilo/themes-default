@@ -23,6 +23,7 @@
             <li py:if="not request.identity" id="loginbtn" class="loginlogout login"><a href="${tg.url('/login')}">Login</a></li>
             <li py:if="request.identity" id="loginbtn" class="loginlogout logout"><a href="${tg.url('/logout_handler')}"> Logout</a></li>
             </span>
+            <li class="loginlogout"><a id="print" href="">Print all visible graphs</a></li>
         </ul>
     </div>
     <div id="content">

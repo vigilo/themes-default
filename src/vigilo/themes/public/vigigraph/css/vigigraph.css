@@ -49,6 +49,12 @@ ul#mainmenu #version {
     padding: 4px 0px;
 }
 
+ul#mainmenu #print {
+    padding-left: 26px;
+    background-image: url("../resource/qx/icon/Nuvola/22/actions/document-print.png");
+    background-repeat: no-repeat;
+}
+
 table.header_table {
     background-color: #F0F1F5;
     border-collapse:collapse;
