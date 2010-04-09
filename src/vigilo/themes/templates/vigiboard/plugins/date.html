@@ -13,7 +13,7 @@
 <py:def function="data_template(name, instance, data)">
     <py:with vars="state = StateName.value_to_statename(data[0].cause.current_state)">
         <td class="plugin_${name} ${state}">
-        ${data[0].get_date('timestamp_active')}<br/>
+        ${data[0].cause.get_date('timestamp')}<br/>
         [${data[0].get_since_date('timestamp_active')}]
         </td>
     </py:with>
