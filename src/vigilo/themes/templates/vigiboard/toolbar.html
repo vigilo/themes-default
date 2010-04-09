@@ -105,8 +105,7 @@
         window.search_dialog.toggleCollapse();
         window.search_dialog.toggleCollapse();
 
-        $('search_form_hostgroup').set('value', "${search['hostgroup'].encode('backslash')}");
-        $('search_form_servicegroup').set('value', "${search['servicegroup'].encode('backslash')}");
+        $('search_form_supitemgroup').set('value', "${search['supitemgroup'].encode('backslash')}");
         $('search_form_host').set('value', "${search['host'].encode('backslash')}");
         $('search_form_service').set('value', "${search['service'].encode('backslash')}");
         $('search_form_output').set('value', "${search['output'].encode('backslash')}");
@@ -116,8 +115,7 @@
 
         add_autocompleter('search_form_host', 'host', '${tg.url("/autocomplete/host").encode("backslash")}');
         add_autocompleter('search_form_service', 'service', '${tg.url("/autocomplete/service").encode("backslash")}');
-        add_autocompleter('search_form_hostgroup', 'hostgroup', '${tg.url("/autocomplete/hostgroup").encode("backslash")}');
-        add_autocompleter('search_form_servicegroup', 'servicegroup', '${tg.url("/autocomplete/servicegroup").encode("backslash")}');
+        add_autocompleter('search_form_supitemgroup', 'supitemgroup', '${tg.url("/autocomplete/supitemgroup").encode("backslash")}');
 
         change_refresh_rate(${tg.session.get("refresh", 0)});
 
