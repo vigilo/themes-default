@@ -10,11 +10,30 @@
 <?python from vigilo.models.tables import StateName ?>
 <?python from vigiboard.controllers.plugins import VigiboardRequestPlugin ?>
 
-<head> 
-    <title>${l_('Vigiboard - Event #%d history') % idevent}</title>
+<head>
+    <py:choose>
+        <title py:when="hostname and servicename">
+            ${l_('VigiBoard - History for event #%(idevent)d on host "%(hostname)s" and service "%(servicename)s"') % {
+                'hostname': hostname,
+                'servicename': servicename,
+                'idevent': idevent,
+            }}
+        </title>
+        <title py:when="hostname">
+            ${l_('VigiBoard - History for event #%(idevent)d on host "%(hostname)s"') % {
+                'hostname': hostname,
+                'idevent': idevent,
+            }}
+        </title>
+        <title py:otherwise="">
+            ${l_('VigiBoard - History for event #%(idevent)d') % {
+                'idevent': idevent,
+            }}
+        </title>
+    </py:choose>
 </head>
 
-<body>	
+<body>
 	<table class="vigitable" summary="Event history" >
 		<thead>
 	        <tr>
@@ -39,7 +58,26 @@
 					</div>
 				    
 		          	<div class="table_title">
-		          		 <span>${l_('Event #%d history') % idevent}</span>
+		          	    <py:choose>
+                            <span py:when="hostname and servicename">
+                                ${l_('History for event #%(idevent)d on host "%(hostname)s" and service "%(servicename)s"') % {
+                                    'hostname': hostname,
+                                    'servicename': servicename,
+                                    'idevent': idevent,
+                                }}
+                            </span>
+                            <span py:when="hostname">
+                                ${l_('History for event #%(idevent)d on host "%(hostname)s"') % {
+                                    'hostname': hostname,
+                                    'idevent': idevent,
+                                }}
+                            </span>
+                            <span py:otherwise="">
+                                ${l_('History for event #%(idevent)d') % {
+                                    'idevent': idevent,
+                                }}
+                            </span>
+                        </py:choose>
 				    </div>
 				    
 	            </th>
