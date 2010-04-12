@@ -338,7 +338,9 @@ table {
 
 table tr td {
 	padding-top: 3px;
-    padding-right: 20px;
+}
+table tr td.labelcol {
+    padding-right: 1em;
 }
 
 #deleteconfirmtext {
