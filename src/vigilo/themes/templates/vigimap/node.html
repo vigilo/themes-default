@@ -19,6 +19,9 @@
         <py:when test="node.has_key('service')">
             <p>${l_("Service name: %(service)s on %(host)s") % {'service': node['service'], 'host': node['host' ]}}</p>
         </py:when>
+        <py:when test="node.has_key('hls')">
+            <p>${l_("Service name: %(service)s") % {'service': node['hls']}}</p>
+        </py:when>
         <py:otherwise>
             <p>${l_("Appliance name: %(host)s") % {'host': node['host']}}</p>    
         </py:otherwise>
