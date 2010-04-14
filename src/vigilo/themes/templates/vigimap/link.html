@@ -1,7 +1,17 @@
 <div xmlns:py="http://genshi.edgewall.org/">
   <h2>${l_("Link between %(from_node)s and %(to_node)s") % {'from_node': from_node, 'to_node': to_node}}</h2>
   <p class="status status-${status.lower()}">${l_("Status: %(status)s") % {'status': status}}</p>
-  <p><span class="label">${l_("Reference service:")}</span>
-     ${l_("%(service)s on %(host)s") % {'service': service, 'host': host}}</p>
+  
+  <py:choose test="">
+	  <py:when test="host is None">
+	  <p><span class="label">${l_("Reference service:")}</span>
+	  ${l_("%(service)s") % {'service': service}}</p>  
+	  </py:when>
+	  <py:otherwise>
+	  <p><span class="label">${l_("Reference service:")}</span>
+	  ${l_("%(service)s on %(host)s") % {'service': service, 'host': host}}</p>           
+	  </py:otherwise>
+  </py:choose>
+     
   <p py:if="img"><img src="${img}" alt="${alt}" /></p>
 </div>
