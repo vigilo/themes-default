@@ -223,6 +223,12 @@ div.clearingdiv {
     margin: 0 auto;
 }
 
+#edit_event_form_warning {
+    color: red;
+    font-weight: bold;
+    text-align: center;
+}
+
 /* Dialogue de détails */
 
 #DetailsDialog {

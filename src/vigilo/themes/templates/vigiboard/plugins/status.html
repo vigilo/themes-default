@@ -16,6 +16,7 @@
 
 <!--! Le code JavaScript qui va permettre de gérer l'édition d'événements. -->
 <script type="text/javascript">
+/*<![CDATA[*/
     window.edit_dialog = null;
 
     window.addEvent("domready", function () {
@@ -29,7 +30,7 @@
             onOpen: window.dlg_open_handler,
             onClose: window.dlg_close_handler,
             width: 400,
-            height: 160,
+            height: 180,
             closed: true,
         });
         window.edit_dialog.toggleCollapse();
@@ -45,6 +46,8 @@
             if (idd == '')
                 return alert('${l_("No events have been selected")}');
 
+            // Supprime la virgule finale avant l'appel.
+            idd = idd.substring(0, idd.length - 1);
             vigiboard_edit_eventdialog(idd);
         }.bind(window.edit_dialog));
 
@@ -60,12 +63,10 @@
     }); // Fin domready.
 
 	function vigiboard_edit_eventdialog(idd) {
-	    ids = idd.split(',');
-	    refs = new Hash();
-        for (var i = 0; i != ids.length; i++) {
-            if (ids[i] == '')
-                continue;
-            tt = $('plugin_${name}_tt_'+ids[i]);
+	    var ids = idd.split(',');
+	    var refs = new Hash();
+        for (var i = 0; i < ids.length; i++) {
+            tt = $$('plugin_${name}_tt_'+ids[i]);
             if (tt) {
                 txt = tt.get('text');
                 txt = txt.substring(1, txt.length - 1);
@@ -75,9 +76,16 @@
                 refs.include('', 0);
         }
 
-        ref = '';
+        var ref = '';
         if (refs.getLength() == 1)
     	    ref = refs.getKeys()[0];
+
+        var warning = $$('edit_event_form_warning.container');
+        if (ref == '' && ids.length > 1) {
+            warning.show('block');
+            warning.show('table-row');
+        }
+        else warning.hide();
 
 		$$('edit_event_form_trouble_ticket').set('value', ref);
 		$$('edit_event_form_ack').set('selectedindex', 0);
@@ -89,6 +97,7 @@
 	    var val = $$('vigiboard_checkall_checkbox').get('checked');
 	    $$$$('.Edit_EventsCheckBox').each(function (el) { el.set('checked', val); });
 	}
+/*]]>*/
 </script>
 </py:def>
 
