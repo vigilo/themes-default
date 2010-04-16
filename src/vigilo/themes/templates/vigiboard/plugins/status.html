@@ -60,7 +60,26 @@
     }); // Fin domready.
 
 	function vigiboard_edit_eventdialog(idd) {
-		$$('edit_event_form_trouble_ticket').set('text', '');
+	    ids = idd.split(',');
+	    refs = new Hash();
+        for (var i = 0; i != ids.length; i++) {
+            if (ids[i] == '')
+                continue;
+            tt = $('plugin_${name}_tt_'+ids[i]);
+            if (tt) {
+                txt = tt.get('text');
+                txt = txt.substring(1, txt.length - 1);
+                refs.include(txt, 1);
+            }
+            else
+                refs.include('', 0);
+        }
+
+        ref = '';
+        if (refs.getLength() == 1)
+    	    ref = refs.getKeys()[0];
+
+		$$('edit_event_form_trouble_ticket').set('value', ref);
 		$$('edit_event_form_ack').set('selectedindex', 0);
 		$$('edit_event_form_id').set('value', idd);
 		window.edit_dialog.open.bind(window.edit_dialog)();
@@ -74,7 +93,9 @@
 </py:def>
 
 <py:def function="header_template(name, instance)">
-<th id="plugin_${name}" class="plugin_${name}">Status</th>
+<th class="plugin_${name}" title="Trouble Ticket">[TT]</th>
+
+<th class="plugin_${name}" title="Acknowledgement status">Status</th>
 
 <th class="plugin_${name}">
     <a class="Edit_EventsLien" id="Edit_All" href="#">
@@ -90,7 +111,17 @@
 <py:def function="data_template(name, instance, data)">
     <py:with vars="cause = data[0].cause; ack = [data[0].status, u'None'][data[0].status is None]">
     <py:with vars="state = StateName.value_to_statename(cause.current_state)">
-    
+
+    <td class="plugin_${name}">
+    <a py:if="data[0].trouble_ticket" id="plugin_${name}_tt_${data[0].idcorrevent}" href="${
+        tg.config['vigiboard_links.tt'] % {
+            'idcorrevent': data[0].idcorrevent,
+            'host': data[1],
+            'service': data[2],
+            'tt': data[0].trouble_ticket
+        }}">[${data[0].trouble_ticket}]</a>
+    </td>
+
     <td class="plugin_${name}" py:choose="">
         <img py:when="ack == 'Acknowledged'" src="${tg.url('/images/checked.png')}"
             alt="Acknowledged" title="Acknowledged" />
@@ -104,7 +135,6 @@
         </py:when>
 
         <py:otherwise>
-
             <td class="plugin_${name} ${state}">
                 <a class="Edit_EventsLien" href="#${data[0].idcorrevent}">
                     <img src="${tg.url('/images/icon_page_edit.png')}" alt="Edit" title="Edit this event"/>
