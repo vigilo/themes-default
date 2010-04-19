@@ -11,7 +11,7 @@
         <table>
             <tr py:for="h in hosts">
                 <td class="hostname">&mdash; ${h}</td>
-                <td><a href="supPage?host=${h}">Sup page</a></td>
+                <td><a href="${tg.url('/nagios/%s/cgi-bin/status.cgi?style=detail&amp;supNav=1' % h)}">Sup page</a></td>
                 <td> - </td>
                 <td><a href="metroPage?host=${h}">Metro page</a></td>
             </tr>
