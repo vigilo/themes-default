@@ -3,7 +3,10 @@
         <h1>Vigigraph</h1>
         <li py:for="graph in graphslist">
             <h2>${graph['title']}</h2>
-            <p>${l_("Période du ")} ${graph['sts']} ${l_("au")} ${graph['ets']}</p>
+            <p>${l_("From %(start_date)s to %(end_date)s") % {
+                'start_date': graph['sts'],
+                'end_date': graph['ets'],
+            }}</p>
             <img src="${graph['src']}" border="0" alt=""></img>
         </li>
     </ul>

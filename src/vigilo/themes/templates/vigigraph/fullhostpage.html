@@ -3,22 +3,25 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:py="http://genshi.edgewall.org/"
       xmlns:xi="http://www.w3.org/2001/XInclude">
-
-<xi:include href="main.html" />
-
     <head>
-        <title>Graph Page for ${host}</title>
+        <title>${l_('List of graphs for "%s"') % host}</title>
     </head>
+
     <body class='main'>
-        <h2>Graph Page for ${host}</h2>
-        <a href="supPage?host=${host}">${host}'s monitoring page</a>
+        <h2>${l_('List of graphs for "%s"') % host}</h2>
+        <a href="${tg.url('/nagios/%s' % host)}">${l_('Monitoring page for "%s"') % host}</a>
         <div py:for="h in presets" py:strip="True">
             <a href="fullHostPage?host=${host};duration=${h['duration']}">${h['caption']}</a>
         </div>
         <br />
-        <div py:for="i in dhgs" py:strip="True">
-            <a href="singleGraph?host=${dhgs[i][0]};graph=${dhgs[i][1]};start=${start};duration=${duration}">
-            <img border="0" src="getImage_png?host=${dhgs[i][0]};graph=${dhgs[i][1]};start=${start};duration=${duration};details=1" title='${dhgs[i][0]}'/>
+        <div py:for="graph in graphs" py:strip="True">
+            <a href="singleGraph?host=${host};graph=${graph.name};start=${start};duration=${duration}">
+            <img src="${tg.url('/rrdgraph/%(host)s/rrdgraph.py?graphtemplate=%(graph)s&amp;start=%(start)d&amp;duration=%(duration)d&amp;direct=1&amp;details=0' % {
+                'host': host,
+                'graph': graph.name,
+                'start': start,
+                'duration': duration,
+            })}"/>
             </a>
         </div>
     </body>

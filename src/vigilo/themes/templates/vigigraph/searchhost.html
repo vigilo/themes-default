@@ -5,6 +5,7 @@
     <head>
         <title>Vigigraph search</title>
     </head>
+
     <body class="searchresults">
         <h1>Vigigraph search</h1>
         <h2>Results:</h2>
@@ -13,7 +14,7 @@
                 <td class="hostname">&mdash; ${h}</td>
                 <td><a href="${tg.url('/nagios/%s/cgi-bin/status.cgi?style=detail&amp;supNav=1' % h)}">Sup page</a></td>
                 <td> - </td>
-                <td><a href="metroPage?host=${h}">Metro page</a></td>
+                <td><a href="${tg.url('/rrdgraph/%s/rrdgraph.py' % h)}">Metro page</a></td>
             </tr>
         </table>
     </body>

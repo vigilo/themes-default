@@ -1,32 +1,35 @@
-<div xmlns:py="http://genshi.edgewall.org/">
+<html xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:py="http://genshi.edgewall.org/"
+        xmlns:xi="http://www.w3.org/2001/XInclude">
     <head>
-        <title>${graph} Graph for ${host}</title>
+        <title>${l_('Graph "%(graph)s" for host "%(host)s"') % {
+            'graph': graph,
+            'host': host,
+        }}</title>
         <meta http-equiv="Refresh" content="300"></meta>
         <meta http-equiv="Pragma" content="no-cache"></meta>
         <meta http-equiv="Cache-Control" content="no-cache"></meta>
         <link rel="search" type="application/opensearchdescription+xml" title="Supervision search" href="getOpenSearch"></link>
         <style type="text/css"><!--@import url(css/vigigraph.css); --></style>
     </head>
+
     <body class='main'>
-        <div class="header">
-            <table class="header_table">
-                <tr>
-                    <td class="logo">
-                        <a href="/proto4">
-                            <img class="logo" src="../styles/red15-logo-vigilo.png" alt="Vigilo"/>
-                        </a> v2.0
-                    </td>
-                </tr>
-            </table>
-        </div>
-        <h2>${graph} Graph for ${host}</h2>
-        <a href="fullHostPage?host=${host};duration=${duration}">Back to ${host} Graph list</a>
-        <a href="supPage?host=${host}">${host}'s monitoring page</a>
+        <h2>${l_('Graph "%(graph)s" for host "%(host)s"') % {
+            'graph': graph,
+            'host': host,
+        }}</h2>
+        <a href="fullHostPage?host=${host};duration=${duration}">${l_('Back to graph list for "%s"') % host}</a>
+        <a href="${tg.url('/nagios/%s/cgi-bin/status.cgi?style=detail&amp;supNav=1' % host)}">${l_('Monitoring page for "%s"') % host}</a>
         <br />
         <div py:for="h in presets" py:strip="True">
             <a href="singleGraph?host=${host};duration=${h['duration']};graph=${graph}">${h['caption']}</a>
         </div>
         <br />
-        <img src="getImage_png?host=${host};graph=${graph};start=${start};duration=${duration}"/>
+        <img src="${tg.url('/rrdgraph/%(host)s/rrdgraph.py?graphtemplate=%(graph)s&amp;start=%(start)d&amp;duration=%(duration)d&amp;direct=1' % {
+            'host': host,
+            'graph': graph,
+            'start': start,
+            'duration': duration,
+        })}"/>
     </body>
-</div>
+</html>

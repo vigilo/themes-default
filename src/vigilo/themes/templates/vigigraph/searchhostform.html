@@ -1,12 +1,18 @@
-<div xmlns:py="http://genshi.edgewall.org/">
-    <head>
-    </head>
-    <body>
-        <h1>Vigigraph search</h1>
-        <form method="get" action="searchHost">
-        <p>Device: <input type="text" name="query" />
-        <input type="submit" value="Search" />
-        </p>
-        </form>
-    </body>
-</div>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:py="http://genshi.edgewall.org/"
+      xmlns:xi="http://www.w3.org/2001/XInclude">
+<xi:include href="master.html" />
+<head>
+    <title>Vigigraph search</title>
+</head>
+<body>
+    <div xmlns:py="http://genshi.edgewall.org/">
+            <h1>Vigigraph search</h1>
+            <form method="get" action="searchHost">
+            <p>Device: <input type="text" name="query" />
+            <input type="submit" value="Search" />
+            </p>
+            </form>
+    </div>
+</body>
+</html>
