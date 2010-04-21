@@ -9,8 +9,25 @@
 <?python from genshi import HTML ?>
 <?python from vigilo.models.tables import StateName ?>
 
-<head> 
-    <title>${l_('Vigiboard - Masked events list for event #%d') % idcorrevent}</title>
+<head>
+    <py:choose>
+        <title py:when="hostname and servicename">
+            ${l_('VigiBoard - Masked events for event #%(idcorrevent)d on host "%(hostname)s" and  service "%(servicename)s"') % {
+                'hostname': hostname,
+                'servicename': servicename,
+                'idcorrevent': idcorrevent,
+            }}
+        </title>
+        <title py:when="hostname">
+            ${l_('VigiBoard - Masked events for event #%(idcorrevent)d on host "%s"') % {
+                'hostname': hostname,
+                'idcorrevent': idcorrevent,
+            }}
+        </title>
+        <title py:otherwise="">
+            ${l_('VigiBoard - Masked events for event #%d') % idcorrevent}
+        </title>
+    </py:choose>
 </head>
 
 <body>
@@ -38,7 +55,24 @@
 		            </div>
 		
 		            <div class="table_title">
-			        	<span>${l_('Masked events list for event #%d') % idcorrevent}</span>
+		          	    <py:choose>
+                            <span py:when="hostname and servicename">
+                                ${l_('Masked events for event #%(idcorrevent)d on host "%(hostname)s" and  service "%(servicename)s"') % {
+                                    'hostname': hostname,
+                                    'servicename': servicename,
+                                    'idcorrevent': idcorrevent,
+                                }}
+                            </span>
+                            <span py:when="hostname">
+                                ${l_('Masked events for event #%(idcorrevent)d on host "%s"') % {
+                                    'hostname': hostname,
+                                    'idcorrevent': idcorrevent,
+                                }}
+                            </span>
+                            <span py:otherwise="">
+                                ${l_('Masked events for event #%d') % idcorrevent}
+                            </span>
+                        </py:choose>
 		            </div>
 		            
 		    	</th>
