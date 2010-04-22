@@ -19,6 +19,29 @@ ul {
     list-style-type: disc;
 }
 
+
+/* Affichage general */
+
+#menu {
+    width: 100%;
+}
+
+#map {
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+}
+
+#loading {
+    display: none;
+    position: absolute;
+    top: 1px;
+    right: 5px;
+}
+
+
+/* Menu de gauche */
+
 #leftmenu, 
 #maplist,
 #mapitems {
@@ -92,16 +115,7 @@ ul {
 }
 
 
-#menu {
-    width: 100%;
-}
-
-#map {
-    margin: 0px;
-    padding: 0px;
-    height: 100%;
-}
-
+/* Elements de carte */
 
 #map .obj {
     position: absolute;
@@ -126,8 +140,17 @@ ul {
 
 .obj img.icon {
     margin: 0px auto;
+    display: block;
 }
 
+.obj span {
+    font-size: 80%;
+    font-family: sans-serif;
+    /*background-color: white;*/
+    /*font-weight: bold;*/
+}
+
+/* Liens */
 
 .link {
     position: absolute;
@@ -147,6 +170,8 @@ ul {
     display: none;
 }
 
+
+/* Etats */
 
 .status-critical {
     background-color: #FF0000;
@@ -170,6 +195,8 @@ ul {
     border: 1px solid #555555;
 }
 
+
+/* Panneau de details */
 
 #details {
     font-size: 80%;
@@ -204,13 +231,6 @@ ul {
 
 #details p span.label {
     font-weight: bold;
-}
-
-#loading {
-    display: none;
-    position: absolute;
-    top: 10px;
-    right: 10px;
 }
 
 
