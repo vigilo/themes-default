@@ -1,14 +1,34 @@
-<div xmlns:py="http://genshi.edgewall.org/">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:py="http://genshi.edgewall.org/"
+      xmlns:xi="http://www.w3.org/2001/XInclude">
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+    <title>VigiGraph</title>
+    <link rel="search" type="application/opensearchdescription+xml"
+        title="VigiGraph search" href="${tg.url('/rpc/getOpenSearch')}"/>
+</head>
+
+<body>
+<div>
     <ul class="graphslist">
-        <h1>Vigigraph</h1>
+        <h1>VigiGraph</h1>
         <li py:for="graph in graphslist">
-            <h2>${graph['title']}</h2>
+            <div py:strip="" py:choose="graph['graph'] is None">
+                <h2 py:when="True">Unknown</h2>
+                <h2 py:when="False">${l_('Graph "%(graph)s" for host "%(host)s"') % {
+                    'graph': graph['graph'],
+                    'host': graph['host'],
+                }}</h2>
+            </div>
             <p>${l_("From %(start_date)s to %(end_date)s") % {
-                'start_date': graph['sts'],
-                'end_date': graph['ets'],
+                'start_date': graph['start_date'],
+                'end_date': graph['end_date'],
             }}</p>
-            <img src="${graph['src']}" border="0" alt=""></img>
+            <img src="${graph['img_src']}" border="0" alt=""></img>
         </li>
     </ul>
 </div>
-<!-- Ceci est un commentaire-->
+</body>
+</html>
