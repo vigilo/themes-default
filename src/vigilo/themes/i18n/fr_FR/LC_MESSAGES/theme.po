@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: vigilo-themes-default 0.1\n"
 "Report-Msgid-Bugs-To: contact@projet-vigilo.org\n"
 "POT-Creation-Date: 2009-11-10 09:51+0100\n"
-"PO-Revision-Date: 2010-04-08 18:32+0200\n"
+"PO-Revision-Date: 2010-04-23 13:40+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: fr <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n > 1)\n"
@@ -21,13 +21,13 @@ msgstr ""
 
 #: src/vigilo/themes/templates/common/error.html:11
 #, python-format
-msgid "A %(error_code)d Error has Occurred"
-msgstr "Une erreur %(error_code)d est survenue"
+msgid "A %(error_code)s Error has Occurred"
+msgstr "Une erreur %(error_code)s est survenue"
 
 #: src/vigilo/themes/templates/common/error.html:15
 #, python-format
-msgid "Error %(error_code)d"
-msgstr "Erreur %(error_code)d"
+msgid "Error %(error_code)s"
+msgstr "Erreur %(error_code)s"
 
 #: src/vigilo/themes/templates/common/footer.html:8
 msgid ""
@@ -54,6 +54,7 @@ msgstr "Formulaire d'identification"
 #: src/vigilo/themes/templates/common/login.html:20
 #: src/vigilo/themes/templates/vigiboard/master.html:22
 #: src/vigilo/themes/templates/vigicore/master.html:21
+#: src/vigilo/themes/templates/vigigraph/main.html:23
 #: src/vigilo/themes/templates/vigigraph/master.html:23
 #: src/vigilo/themes/templates/vigimap/master.html:22
 msgid "Login"
@@ -67,240 +68,267 @@ msgstr "Identifiant :"
 msgid "Password:"
 msgstr "Mot de passe :"
 
+#: src/vigilo/themes/templates/vigiboard/events_table.html:15
+#: src/vigilo/themes/templates/vigiboard/events_table.html:21
+#: src/vigilo/themes/templates/vigiboard/events_table.html:25
+#: src/vigilo/themes/templates/vigiboard/history_table.html:15
+#: src/vigilo/themes/templates/vigiboard/history_table.html:22
+#: src/vigilo/themes/templates/vigiboard/history_table.html:28
+#: src/vigilo/themes/templates/vigiboard/raw_events_table.html:14
+#: src/vigilo/themes/templates/vigiboard/raw_events_table.html:21
+#: src/vigilo/themes/templates/vigiboard/raw_events_table.html:27
+msgid "VigiBoard -"
+msgstr "VigiBoard -"
+
 #: src/vigilo/themes/templates/vigiboard/events_table.html:16
-#, python-format
-msgid ""
-"Vigiboard - Events table for service \"%(hostname)s\" on "
-"\"%(servicename)s\""
-msgstr ""
-
-#: src/vigilo/themes/templates/vigiboard/events_table.html:22
-#, python-format
-msgid "Vigiboard - Events table for host \"%s\""
-msgstr ""
-
-#: src/vigilo/themes/templates/vigiboard/events_table.html:24
-msgid "Vigiboard - Events table"
-msgstr ""
-
-#: src/vigilo/themes/templates/vigiboard/events_table.html:38
-msgid "Event table"
-msgstr "Tableau des événements"
-
-#: src/vigilo/themes/templates/vigiboard/events_table.html:45
-#: src/vigilo/themes/templates/vigiboard/events_table.html:49
-#: src/vigilo/themes/templates/vigiboard/events_table.html:53
-#: src/vigilo/themes/templates/vigiboard/events_table.html:57
-#: src/vigilo/themes/templates/vigiboard/events_table.html:111
-#: src/vigilo/themes/templates/vigiboard/events_table.html:122
-#: src/vigilo/themes/templates/vigiboard/history_table.html:25
-#: src/vigilo/themes/templates/vigiboard/history_table.html:27
-#: src/vigilo/themes/templates/vigiboard/history_table.html:62
-#: src/vigilo/themes/templates/vigiboard/history_table.html:64
-#: src/vigilo/themes/templates/vigiboard/raw_events_table.html:24
-#: src/vigilo/themes/templates/vigiboard/raw_events_table.html:26
-#: src/vigilo/themes/templates/vigiboard/raw_events_table.html:64
-#: src/vigilo/themes/templates/vigiboard/raw_events_table.html:66
-msgid "Previous"
-msgstr "Précédent"
-
-#: src/vigilo/themes/templates/vigiboard/events_table.html:45
-#: src/vigilo/themes/templates/vigiboard/events_table.html:49
-#: src/vigilo/themes/templates/vigiboard/events_table.html:53
-#: src/vigilo/themes/templates/vigiboard/events_table.html:57
-#: src/vigilo/themes/templates/vigiboard/events_table.html:111
-#: src/vigilo/themes/templates/vigiboard/events_table.html:122
-#: src/vigilo/themes/templates/vigiboard/history_table.html:25
-#: src/vigilo/themes/templates/vigiboard/history_table.html:27
-#: src/vigilo/themes/templates/vigiboard/history_table.html:62
-#: src/vigilo/themes/templates/vigiboard/history_table.html:64
-#: src/vigilo/themes/templates/vigiboard/raw_events_table.html:24
-#: src/vigilo/themes/templates/vigiboard/raw_events_table.html:26
-#: src/vigilo/themes/templates/vigiboard/raw_events_table.html:64
-#: src/vigilo/themes/templates/vigiboard/raw_events_table.html:66
-msgid "Previous page"
-msgstr "Page précédente"
-
-#: src/vigilo/themes/templates/vigiboard/events_table.html:64
-#: src/vigilo/themes/templates/vigiboard/events_table.html:67
-#: src/vigilo/themes/templates/vigiboard/events_table.html:71
-#: src/vigilo/themes/templates/vigiboard/events_table.html:75
-#: src/vigilo/themes/templates/vigiboard/events_table.html:114
-#: src/vigilo/themes/templates/vigiboard/events_table.html:118
-#: src/vigilo/themes/templates/vigiboard/events_table.html:129
-#: src/vigilo/themes/templates/vigiboard/events_table.html:132
-#: src/vigilo/themes/templates/vigiboard/events_table.html:136
-#: src/vigilo/themes/templates/vigiboard/events_table.html:140
-#: src/vigilo/themes/templates/vigiboard/history_table.html:34
-#: src/vigilo/themes/templates/vigiboard/history_table.html:36
-#: src/vigilo/themes/templates/vigiboard/history_table.html:71
-#: src/vigilo/themes/templates/vigiboard/history_table.html:73
-#: src/vigilo/themes/templates/vigiboard/raw_events_table.html:33
-#: src/vigilo/themes/templates/vigiboard/raw_events_table.html:35
-#: src/vigilo/themes/templates/vigiboard/raw_events_table.html:73
-#: src/vigilo/themes/templates/vigiboard/raw_events_table.html:75
-msgid "Next"
-msgstr "Suivant"
-
-#: src/vigilo/themes/templates/vigiboard/events_table.html:64
-#: src/vigilo/themes/templates/vigiboard/events_table.html:67
-#: src/vigilo/themes/templates/vigiboard/events_table.html:71
-#: src/vigilo/themes/templates/vigiboard/events_table.html:75
-#: src/vigilo/themes/templates/vigiboard/events_table.html:114
-#: src/vigilo/themes/templates/vigiboard/events_table.html:118
-#: src/vigilo/themes/templates/vigiboard/events_table.html:129
-#: src/vigilo/themes/templates/vigiboard/events_table.html:132
-#: src/vigilo/themes/templates/vigiboard/events_table.html:136
-#: src/vigilo/themes/templates/vigiboard/events_table.html:140
-#: src/vigilo/themes/templates/vigiboard/history_table.html:34
-#: src/vigilo/themes/templates/vigiboard/history_table.html:36
-#: src/vigilo/themes/templates/vigiboard/history_table.html:71
-#: src/vigilo/themes/templates/vigiboard/history_table.html:73
-#: src/vigilo/themes/templates/vigiboard/raw_events_table.html:33
-#: src/vigilo/themes/templates/vigiboard/raw_events_table.html:35
-#: src/vigilo/themes/templates/vigiboard/raw_events_table.html:73
-#: src/vigilo/themes/templates/vigiboard/raw_events_table.html:75
-msgid "Next page"
-msgstr "Page suivante"
-
-#: src/vigilo/themes/templates/vigiboard/events_table.html:82
+#: src/vigilo/themes/templates/vigiboard/events_table.html:83
 #, python-format
 msgid "Events table for service \"%(servicename)s\" on \"%(hostname)s\""
 msgstr ""
 "Tableau des événements pour le service \"%(servicename)s\" sur "
 "\"%(hostname)s\""
 
-#: src/vigilo/themes/templates/vigiboard/events_table.html:88
+#: src/vigilo/themes/templates/vigiboard/events_table.html:22
+#: src/vigilo/themes/templates/vigiboard/events_table.html:89
 #, python-format
 msgid "Events table for host \"%s\""
 msgstr "Tableau des événements pour l'hôte \"%s\""
 
-#: src/vigilo/themes/templates/vigiboard/events_table.html:91
+#: src/vigilo/themes/templates/vigiboard/events_table.html:26
+#: src/vigilo/themes/templates/vigiboard/events_table.html:92
 msgid "Events table"
 msgstr "Tableau des événements"
 
-#: src/vigilo/themes/templates/vigiboard/events_table.html:148
-#: src/vigilo/themes/templates/vigiboard/events_table.html:170
-#: src/vigilo/themes/templates/vigiboard/history_table.html:81
-#: src/vigilo/themes/templates/vigiboard/history_table.html:92
-#: src/vigilo/themes/templates/vigiboard/raw_events_table.html:83
-#: src/vigilo/themes/templates/vigiboard/raw_events_table.html:94
+#: src/vigilo/themes/templates/vigiboard/events_table.html:39
+msgid "Event table"
+msgstr "Tableau des événements"
+
+#: src/vigilo/themes/templates/vigiboard/events_table.html:46
+#: src/vigilo/themes/templates/vigiboard/events_table.html:50
+#: src/vigilo/themes/templates/vigiboard/events_table.html:54
+#: src/vigilo/themes/templates/vigiboard/events_table.html:58
+#: src/vigilo/themes/templates/vigiboard/events_table.html:112
+#: src/vigilo/themes/templates/vigiboard/events_table.html:123
+#: src/vigilo/themes/templates/vigiboard/history_table.html:44
+#: src/vigilo/themes/templates/vigiboard/history_table.html:46
+#: src/vigilo/themes/templates/vigiboard/history_table.html:100
+#: src/vigilo/themes/templates/vigiboard/history_table.html:102
+#: src/vigilo/themes/templates/vigiboard/raw_events_table.html:41
+#: src/vigilo/themes/templates/vigiboard/raw_events_table.html:43
+#: src/vigilo/themes/templates/vigiboard/raw_events_table.html:98
+#: src/vigilo/themes/templates/vigiboard/raw_events_table.html:100
+msgid "Previous"
+msgstr "Précédent"
+
+#: src/vigilo/themes/templates/vigiboard/events_table.html:46
+#: src/vigilo/themes/templates/vigiboard/events_table.html:50
+#: src/vigilo/themes/templates/vigiboard/events_table.html:54
+#: src/vigilo/themes/templates/vigiboard/events_table.html:58
+#: src/vigilo/themes/templates/vigiboard/events_table.html:112
+#: src/vigilo/themes/templates/vigiboard/events_table.html:123
+#: src/vigilo/themes/templates/vigiboard/history_table.html:44
+#: src/vigilo/themes/templates/vigiboard/history_table.html:46
+#: src/vigilo/themes/templates/vigiboard/history_table.html:100
+#: src/vigilo/themes/templates/vigiboard/history_table.html:102
+#: src/vigilo/themes/templates/vigiboard/raw_events_table.html:41
+#: src/vigilo/themes/templates/vigiboard/raw_events_table.html:43
+#: src/vigilo/themes/templates/vigiboard/raw_events_table.html:98
+#: src/vigilo/themes/templates/vigiboard/raw_events_table.html:100
+msgid "Previous page"
+msgstr "Page précédente"
+
+#: src/vigilo/themes/templates/vigiboard/events_table.html:65
+#: src/vigilo/themes/templates/vigiboard/events_table.html:68
+#: src/vigilo/themes/templates/vigiboard/events_table.html:72
+#: src/vigilo/themes/templates/vigiboard/events_table.html:76
+#: src/vigilo/themes/templates/vigiboard/events_table.html:115
+#: src/vigilo/themes/templates/vigiboard/events_table.html:119
+#: src/vigilo/themes/templates/vigiboard/events_table.html:130
+#: src/vigilo/themes/templates/vigiboard/events_table.html:133
+#: src/vigilo/themes/templates/vigiboard/events_table.html:137
+#: src/vigilo/themes/templates/vigiboard/events_table.html:141
+#: src/vigilo/themes/templates/vigiboard/history_table.html:53
+#: src/vigilo/themes/templates/vigiboard/history_table.html:55
+#: src/vigilo/themes/templates/vigiboard/history_table.html:109
+#: src/vigilo/themes/templates/vigiboard/history_table.html:111
+#: src/vigilo/themes/templates/vigiboard/raw_events_table.html:50
+#: src/vigilo/themes/templates/vigiboard/raw_events_table.html:52
+#: src/vigilo/themes/templates/vigiboard/raw_events_table.html:107
+#: src/vigilo/themes/templates/vigiboard/raw_events_table.html:109
+msgid "Next"
+msgstr "Suivant"
+
+#: src/vigilo/themes/templates/vigiboard/events_table.html:65
+#: src/vigilo/themes/templates/vigiboard/events_table.html:68
+#: src/vigilo/themes/templates/vigiboard/events_table.html:72
+#: src/vigilo/themes/templates/vigiboard/events_table.html:76
+#: src/vigilo/themes/templates/vigiboard/events_table.html:115
+#: src/vigilo/themes/templates/vigiboard/events_table.html:119
+#: src/vigilo/themes/templates/vigiboard/events_table.html:130
+#: src/vigilo/themes/templates/vigiboard/events_table.html:133
+#: src/vigilo/themes/templates/vigiboard/events_table.html:137
+#: src/vigilo/themes/templates/vigiboard/events_table.html:141
+#: src/vigilo/themes/templates/vigiboard/history_table.html:53
+#: src/vigilo/themes/templates/vigiboard/history_table.html:55
+#: src/vigilo/themes/templates/vigiboard/history_table.html:109
+#: src/vigilo/themes/templates/vigiboard/history_table.html:111
+#: src/vigilo/themes/templates/vigiboard/raw_events_table.html:50
+#: src/vigilo/themes/templates/vigiboard/raw_events_table.html:52
+#: src/vigilo/themes/templates/vigiboard/raw_events_table.html:107
+#: src/vigilo/themes/templates/vigiboard/raw_events_table.html:109
+msgid "Next page"
+msgstr "Page suivante"
+
+#: src/vigilo/themes/templates/vigiboard/events_table.html:149
+#: src/vigilo/themes/templates/vigiboard/events_table.html:171
+#: src/vigilo/themes/templates/vigiboard/history_table.html:119
+#: src/vigilo/themes/templates/vigiboard/history_table.html:130
+#: src/vigilo/themes/templates/vigiboard/raw_events_table.html:117
+#: src/vigilo/themes/templates/vigiboard/raw_events_table.html:128
 #, python-format
 msgid "Showing rows %(id_first_row)d to %(id_last_row)d of %(total_rows)d"
 msgstr "Affichage des lignes %(id_first_row)d à %(id_last_row)d sur %(total_rows)d"
 
-#: src/vigilo/themes/templates/vigiboard/events_table.html:149
-#: src/vigilo/themes/templates/vigiboard/history_table.html:82
-#: src/vigilo/themes/templates/vigiboard/raw_events_table.html:84
+#: src/vigilo/themes/templates/vigiboard/events_table.html:150
+#: src/vigilo/themes/templates/vigiboard/history_table.html:120
+#: src/vigilo/themes/templates/vigiboard/raw_events_table.html:118
 msgid "Pages"
 msgstr "Pages"
 
-#: src/vigilo/themes/templates/vigiboard/events_table.html:181
-#: src/vigilo/themes/templates/vigiboard/raw_events_table.html:105
+#: src/vigilo/themes/templates/vigiboard/events_table.html:182
+#: src/vigilo/themes/templates/vigiboard/raw_events_table.html:139
 msgid "There are no events."
 msgstr "Il n'y a aucun événement."
 
-#: src/vigilo/themes/templates/vigiboard/history_table.html:14
+#: src/vigilo/themes/templates/vigiboard/history_table.html:16
+#: src/vigilo/themes/templates/vigiboard/history_table.html:63
 #, python-format
-msgid "Vigiboard - Event #%d history"
-msgstr "Vigiboard - Historique de l'événement #%d"
+msgid ""
+"History for event #%(idevent)d on host \"%(hostname)s\" and service "
+"\"%(servicename)s\""
+msgstr ""
+"Historique de l'événement #%(idevent)d sur l'hôte \"%(hostname)s\" et le "
+"service \"%(servicename)s\""
 
-#: src/vigilo/themes/templates/vigiboard/history_table.html:18
+#: src/vigilo/themes/templates/vigiboard/history_table.html:23
+#: src/vigilo/themes/templates/vigiboard/history_table.html:70
+#, python-format
+msgid "History for event #%(idevent)d on host \"%(hostname)s\""
+msgstr "Historique de l'événement #%(idevent)d sur l'hôte \"%(hostname)s\""
+
+#: src/vigilo/themes/templates/vigiboard/history_table.html:29
+#: src/vigilo/themes/templates/vigiboard/history_table.html:76
+#, python-format
+msgid "History for event #%(idevent)d"
+msgstr "Historique de l'événement #%(idevent)d"
+
+#: src/vigilo/themes/templates/vigiboard/history_table.html:37
 msgid "Event history"
 msgstr "Historique de l'événement"
 
-#: src/vigilo/themes/templates/vigiboard/history_table.html:42
-#, python-format
-msgid "Event #%d history"
-msgstr "Historique de l'événement #%d"
-
-#: src/vigilo/themes/templates/vigiboard/history_table.html:49
-#: src/vigilo/themes/templates/vigiboard/raw_events_table.html:48
+#: src/vigilo/themes/templates/vigiboard/history_table.html:87
+#: src/vigilo/themes/templates/vigiboard/raw_events_table.html:82
 #: src/vigilo/themes/templates/vigiboard/plugins/date.html:8
 msgid "Date"
 msgstr "Date"
 
-#: src/vigilo/themes/templates/vigiboard/history_table.html:49
-#: src/vigilo/themes/templates/vigiboard/raw_events_table.html:48
+#: src/vigilo/themes/templates/vigiboard/history_table.html:87
+#: src/vigilo/themes/templates/vigiboard/raw_events_table.html:82
 #: src/vigilo/themes/templates/vigiboard/plugins/date.html:10
 msgid "[Duration]"
 msgstr "[Durée]"
 
-#: src/vigilo/themes/templates/vigiboard/history_table.html:50
+#: src/vigilo/themes/templates/vigiboard/history_table.html:88
 msgid "User"
 msgstr "Utilisateur"
 
-#: src/vigilo/themes/templates/vigiboard/history_table.html:51
+#: src/vigilo/themes/templates/vigiboard/history_table.html:89
 msgid "Type"
 msgstr "Type"
 
-#: src/vigilo/themes/templates/vigiboard/history_table.html:52
+#: src/vigilo/themes/templates/vigiboard/history_table.html:90
 msgid "Value"
 msgstr "Valeur"
 
-#: src/vigilo/themes/templates/vigiboard/history_table.html:53
+#: src/vigilo/themes/templates/vigiboard/history_table.html:91
 msgid "Text"
 msgstr "Texte"
 
-#: src/vigilo/themes/templates/vigiboard/history_table.html:103
+#: src/vigilo/themes/templates/vigiboard/history_table.html:141
 msgid "There is no history."
 msgstr "Il n'y a pas d'historique"
 
 #: src/vigilo/themes/templates/vigiboard/master.html:20
-msgid "Vigiboard"
+#: src/vigilo/themes/templates/vigicore/sidebars.html:9
+msgid "VigiBoard"
 msgstr "VigiBoard"
 
 #: src/vigilo/themes/templates/vigiboard/master.html:23
 #: src/vigilo/themes/templates/vigicore/master.html:22
+#: src/vigilo/themes/templates/vigigraph/main.html:24
 #: src/vigilo/themes/templates/vigigraph/master.html:24
 #: src/vigilo/themes/templates/vigimap/master.html:23
 msgid "Logout"
 msgstr "Déconnexion"
 
-#: src/vigilo/themes/templates/vigiboard/raw_events_table.html:13
+#: src/vigilo/themes/templates/vigiboard/raw_events_table.html:15
+#: src/vigilo/themes/templates/vigiboard/raw_events_table.html:60
 #, python-format
-msgid "Vigiboard - Masked events list for event #%d"
-msgstr "Vigiboard - Liste des événements masqués pour l'événement #%d"
+msgid ""
+"Masked events for event #%(idcorrevent)d on host \"%(hostname)s\" and  "
+"service \"%(servicename)s\""
+msgstr ""
+"Événements masqués de l'événement #%(idcorrevent)d sur l'hôte "
+"\"%(hostname)s\" et le service \"%(servicename)s\""
 
-#: src/vigilo/themes/templates/vigiboard/raw_events_table.html:17
+#: src/vigilo/themes/templates/vigiboard/raw_events_table.html:22
+#: src/vigilo/themes/templates/vigiboard/raw_events_table.html:67
+#, python-format
+msgid "Masked events for event #%(idcorrevent)d on host \"%(hostname)s\""
+msgstr ""
+"Événements masqués pour l'événement #%(idcorrevent)d sur l'hôte "
+"\"%(hostname)s\""
+
+#: src/vigilo/themes/templates/vigiboard/raw_events_table.html:28
+#: src/vigilo/themes/templates/vigiboard/raw_events_table.html:73
+#, python-format
+msgid "Masked events for event #%d"
+msgstr "Liste des événements masqués pour l'événement #%d"
+
+#: src/vigilo/themes/templates/vigiboard/raw_events_table.html:34
 msgid "Masked events list"
 msgstr "Liste des événements masqués"
 
-#: src/vigilo/themes/templates/vigiboard/raw_events_table.html:41
-#, python-format
-msgid "Masked events list for event #%d"
-msgstr "Liste des événements masqués pour l'événement #%d"
-
-#: src/vigilo/themes/templates/vigiboard/raw_events_table.html:49
+#: src/vigilo/themes/templates/vigiboard/raw_events_table.html:83
 #: src/vigilo/themes/templates/vigicore/downtime.html:39
 #: src/vigilo/themes/templates/vigicore/downtime.html:44
 #: src/vigilo/themes/templates/vigicore/downtime.html:48
 msgid "Host"
 msgstr "Hôte"
 
-#: src/vigilo/themes/templates/vigiboard/raw_events_table.html:50
+#: src/vigilo/themes/templates/vigiboard/raw_events_table.html:84
 msgid "Service name"
 msgstr "Nom de service"
 
-#: src/vigilo/themes/templates/vigiboard/raw_events_table.html:51
+#: src/vigilo/themes/templates/vigiboard/raw_events_table.html:85
 msgid "Initial state"
 msgstr "État initial"
 
-#: src/vigilo/themes/templates/vigiboard/raw_events_table.html:52
+#: src/vigilo/themes/templates/vigiboard/raw_events_table.html:86
 msgid "Current state"
 msgstr "État courant"
 
-#: src/vigilo/themes/templates/vigiboard/raw_events_table.html:53
+#: src/vigilo/themes/templates/vigiboard/raw_events_table.html:87
 msgid "Peak state"
 msgstr "Pire état"
 
-#: src/vigilo/themes/templates/vigiboard/raw_events_table.html:54
+#: src/vigilo/themes/templates/vigiboard/raw_events_table.html:88
 #: src/vigilo/themes/templates/vigiboard/plugins/output.html:8
 msgid "Output"
 msgstr "Sortie"
 
-#: src/vigilo/themes/templates/vigiboard/raw_events_table.html:55
-#: src/vigilo/themes/templates/vigiboard/raw_events_table.html:121
+#: src/vigilo/themes/templates/vigiboard/raw_events_table.html:89
+#: src/vigilo/themes/templates/vigiboard/raw_events_table.html:155
 msgid "History"
 msgstr "Historique"
 
@@ -356,15 +384,20 @@ msgstr "Mode recherche, cliquer ici pour quitter ce mode."
 msgid "Search Event"
 msgstr "Filtrer les événements"
 
-#: src/vigilo/themes/templates/vigiboard/toolbar.html:139
-#: src/vigilo/themes/templates/vigiboard/toolbar.html:161
-#: src/vigilo/themes/templates/vigiboard/toolbar.html:190
+#: src/vigilo/themes/templates/vigiboard/toolbar.html:137
+#: src/vigilo/themes/templates/vigiboard/toolbar.html:159
+#: src/vigilo/themes/templates/vigiboard/toolbar.html:188
 msgid "Unable to save preferences"
 msgstr "Impossible de sauvegarder les préférences"
 
+#: src/vigilo/themes/templates/vigiboard/plugins/checkbox.html:27
+#: src/vigilo/themes/templates/vigiboard/plugins/status.html:116
+msgid "Select/Unselect all"
+msgstr "Tout sélectionner / désélectionner"
+
 #: src/vigilo/themes/templates/vigiboard/plugins/details.html:8
 msgid "State info"
-msgstr ""
+msgstr "Informations d'état"
 
 #: src/vigilo/themes/templates/vigiboard/plugins/details.html:10
 msgid "Initial State:"
@@ -379,13 +412,13 @@ msgid "Peak State:"
 msgstr "Pire état"
 
 #: src/vigilo/themes/templates/vigiboard/plugins/details.html:28
-#: src/vigilo/themes/templates/vigiboard/plugins/details.html:128
+#: src/vigilo/themes/templates/vigiboard/plugins/details.html:134
 msgid "Details"
 msgstr "Détails"
 
 #: src/vigilo/themes/templates/vigiboard/plugins/details.html:31
 msgid "Detailed history for this event"
-msgstr "Historique détaillé de cet événement"
+msgstr "Historique détaillée de cet événement"
 
 #: src/vigilo/themes/templates/vigiboard/plugins/details.html:32
 msgid "Masked events for this event"
@@ -400,7 +433,7 @@ msgid "External links"
 msgstr "Liens externes"
 
 #: src/vigilo/themes/templates/vigiboard/plugins/details.html:57
-#: src/vigilo/themes/templates/vigiboard/plugins/details.html:128
+#: src/vigilo/themes/templates/vigiboard/plugins/details.html:134
 msgid "Event details"
 msgstr "Détails de l'événement"
 
@@ -445,45 +478,53 @@ msgid "Servicename"
 msgstr "Nom de service"
 
 #: src/vigilo/themes/templates/vigiboard/plugins/status.html:25
-msgid "Edit event"
-msgstr "Éditer cet événement"
+msgid "Editing"
+msgstr "Édition"
 
 #: src/vigilo/themes/templates/vigiboard/plugins/status.html:47
 msgid "No events have been selected"
 msgstr "Aucun événement sélectionné"
 
-#: src/vigilo/themes/templates/vigiboard/plugins/status.html:77
+#: src/vigilo/themes/templates/vigiboard/plugins/status.html:105
+msgid "Trouble Ticket"
+msgstr "Ticket d'incident"
+
+#: src/vigilo/themes/templates/vigiboard/plugins/status.html:105
+msgid "[TT]"
+msgstr "[TT]"
+
+#: src/vigilo/themes/templates/vigiboard/plugins/status.html:107
+msgid "Acknowledgement status"
+msgstr "État d'acquittement"
+
+#: src/vigilo/themes/templates/vigiboard/plugins/status.html:107
 #: src/vigilo/themes/templates/vigicore/downtime.html:158
 #: src/vigilo/themes/templates/vigicore/downtime.html:163
 #: src/vigilo/themes/templates/vigicore/downtime.html:167
 msgid "Status"
 msgstr "Statut"
 
-#: src/vigilo/themes/templates/vigiboard/plugins/status.html:81
+#: src/vigilo/themes/templates/vigiboard/plugins/status.html:111
 msgid "Edit selected"
 msgstr "Éditer"
 
-#: src/vigilo/themes/templates/vigiboard/plugins/status.html:81
+#: src/vigilo/themes/templates/vigiboard/plugins/status.html:111
 msgid "Edit all selected events"
 msgstr "Éditer tous les événements sélectionnés"
 
-#: src/vigilo/themes/templates/vigiboard/plugins/status.html:86
-msgid "Select/Unselect all"
-msgstr "Tout sélectionner / désélectionner"
-
-#: src/vigilo/themes/templates/vigiboard/plugins/status.html:95
+#: src/vigilo/themes/templates/vigiboard/plugins/status.html:135
 msgid "Acknowledged"
 msgstr "Pris en compte"
 
-#: src/vigilo/themes/templates/vigiboard/plugins/status.html:97
+#: src/vigilo/themes/templates/vigiboard/plugins/status.html:137
 msgid "Acknowledged and Closed"
 msgstr "Pris en compte et fermé"
 
-#: src/vigilo/themes/templates/vigiboard/plugins/status.html:110
+#: src/vigilo/themes/templates/vigiboard/plugins/status.html:149
 msgid "Edit"
 msgstr "Éditer"
 
-#: src/vigilo/themes/templates/vigiboard/plugins/status.html:110
+#: src/vigilo/themes/templates/vigiboard/plugins/status.html:149
 msgid "Edit this event"
 msgstr "Éditer cet événement"
 
@@ -491,21 +532,13 @@ msgstr "Éditer cet événement"
 msgid "Example"
 msgstr "Exemple"
 
-#: src/vigilo/themes/templates/vigiboard/plugins/tt.html:8
-msgid "Trouble Ticket"
-msgstr "Ticket d'incident"
-
-#: src/vigilo/themes/templates/vigiboard/plugins/tt.html:9
-msgid "[TT]"
-msgstr "[TT]"
-
 #: src/vigilo/themes/templates/vigicore/collect.html:11
 msgid "Collect"
 msgstr "Collecte"
 
 #: src/vigilo/themes/templates/vigicore/collect.html:24
 msgid "Force collect"
-msgstr ""
+msgstr "Forcer la collecte"
 
 #: src/vigilo/themes/templates/vigicore/collect.html:26
 #: src/vigilo/themes/templates/vigicore/schedule_downtime.html:13
@@ -560,7 +593,7 @@ msgstr "Mises en silence planifiées"
 #: src/vigilo/themes/templates/vigicore/downtime.html:141
 #: src/vigilo/themes/templates/vigicore/downtime.html:158
 msgid "descending"
-msgstr ""
+msgstr "descendant"
 
 #: src/vigilo/themes/templates/vigicore/downtime.html:44
 #: src/vigilo/themes/templates/vigicore/downtime.html:61
@@ -571,7 +604,7 @@ msgstr ""
 #: src/vigilo/themes/templates/vigicore/downtime.html:146
 #: src/vigilo/themes/templates/vigicore/downtime.html:163
 msgid "ascending"
-msgstr "Ascendant"
+msgstr "ascendant"
 
 #: src/vigilo/themes/templates/vigicore/downtime.html:56
 #: src/vigilo/themes/templates/vigicore/downtime.html:61
@@ -633,7 +666,7 @@ msgstr ""
 
 #: src/vigilo/themes/templates/vigicore/index.html:22
 msgid "Data collection"
-msgstr "Données"
+msgstr "Collecte de données"
 
 #: src/vigilo/themes/templates/vigicore/index.html:23
 #: src/vigilo/themes/templates/vigicore/index.html:28
@@ -659,6 +692,7 @@ msgid "Thank you for choosing Vigilo."
 msgstr "Merci d'avoir choisi Vigilo"
 
 #: src/vigilo/themes/templates/vigicore/master.html:20
+#: src/vigilo/themes/templates/vigigraph/master.html:22
 #: src/vigilo/themes/templates/vigimap/master.html:20
 msgid "Welcome"
 msgstr "Bienvenue"
@@ -670,37 +704,32 @@ msgstr "Admin"
 
 #: src/vigilo/themes/templates/vigicore/master.html:24
 #: src/vigilo/themes/templates/vigicore/profile.html:11
-#: src/vigilo/themes/templates/vigigraph/profile.html:11
 msgid "Profile"
 msgstr "Profil"
 
 #: src/vigilo/themes/templates/vigicore/profile.html:18
-#: src/vigilo/themes/templates/vigigraph/profile.html:18
 msgid "Change password"
 msgstr "Changer le mot de passe"
 
 #: src/vigilo/themes/templates/vigicore/profile.html:20
-#: src/vigilo/themes/templates/vigigraph/profile.html:21
 msgid "Old password:"
 msgstr "Ancien mot de passe :"
 
 #: src/vigilo/themes/templates/vigicore/profile.html:23
-#: src/vigilo/themes/templates/vigigraph/profile.html:24
 msgid "New password:"
 msgstr "Nouveau mot de passe :"
 
 #: src/vigilo/themes/templates/vigicore/profile.html:26
 msgid "Confirmation:"
-msgstr ""
+msgstr "Confirmation :"
 
 #: src/vigilo/themes/templates/vigicore/profile.html:29
-#: src/vigilo/themes/templates/vigigraph/profile.html:32
 msgid "Apply"
 msgstr "Appliquer"
 
 #: src/vigilo/themes/templates/vigicore/schedule_downtime.html:22
 msgid "Start:"
-msgstr "Début"
+msgstr "Début :"
 
 #: src/vigilo/themes/templates/vigicore/schedule_downtime.html:27
 msgid "End:"
@@ -724,19 +753,19 @@ msgstr "Planifier !"
 
 #: src/vigilo/themes/templates/vigicore/schedule_downtime.html:41
 msgid "Days:"
-msgstr ""
+msgstr "Jours :"
 
 #: src/vigilo/themes/templates/vigicore/schedule_downtime.html:44
 msgid "Hours:"
-msgstr ""
+msgstr "Heures :"
 
 #: src/vigilo/themes/templates/vigicore/schedule_downtime.html:47
 msgid "Minutes:"
-msgstr ""
+msgstr "Minutes :"
 
 #: src/vigilo/themes/templates/vigicore/schedule_downtime.html:50
 msgid "Seconds:"
-msgstr ""
+msgstr "Secondes :"
 
 #: src/vigilo/themes/templates/vigicore/schedule_downtime.html:53
 #: src/vigilo/themes/templates/vigimap/legend.html:9
@@ -753,10 +782,6 @@ msgid "Vigilo interfaces"
 msgstr "Interfaces de Vigilo"
 
 #: src/vigilo/themes/templates/vigicore/sidebars.html:9
-msgid "VigiBoard"
-msgstr "VigiBoard"
-
-#: src/vigilo/themes/templates/vigicore/sidebars.html:9
 msgid "- See the latest alerts"
 msgstr "- Voir les dernières alertes"
 
@@ -766,7 +791,7 @@ msgstr "Page d'administration"
 
 #: src/vigilo/themes/templates/vigicore/admin/home.html:14
 msgid "Welcome to the administration page"
-msgstr "Bienvenue"
+msgstr "Bienvenue sur la page d'administration"
 
 #: src/vigilo/themes/templates/vigicore/admin/home.html:16
 msgid "Click a table name in the sidebar to view or modify its content."
@@ -774,142 +799,117 @@ msgstr ""
 "Cliquer sur le nom d'une table dans la barre latérale pour modifier son "
 "contenu"
 
-#: src/vigilo/themes/templates/vigigraph/fullhostpage.html:10
-#: src/vigilo/themes/templates/vigigraph/fullhostpage.html:13
-msgid "Graph Page for"
-msgstr ""
+#: src/vigilo/themes/templates/vigigraph/fullhostpage.html:7
+#: src/vigilo/themes/templates/vigigraph/fullhostpage.html:11
+#, python-format
+msgid "List of graphs for \"%s\""
+msgstr "Liste des graphes pour \"%s\""
 
-#: src/vigilo/themes/templates/vigigraph/fullhostpage.html:14
-#: src/vigilo/themes/templates/vigigraph/singlegraph.html:24
-msgid "'s monitoring page"
-msgstr ""
+#: src/vigilo/themes/templates/vigigraph/fullhostpage.html:12
+#: src/vigilo/themes/templates/vigigraph/singlegraph.html:23
+#, python-format
+msgid "Monitoring page for \"%s\""
+msgstr "Page de supervision pour \"%s\""
 
-#: src/vigilo/themes/templates/vigigraph/graphslist.html:3
-msgid "Vigigraph"
+#: src/vigilo/themes/templates/vigigraph/graphslist.html:8
+#: src/vigilo/themes/templates/vigigraph/graphslist.html:16
+msgid "VigiGraph"
 msgstr "VigiGraph"
 
-#: src/vigilo/themes/templates/vigigraph/graphslist.html:6
-msgid "Période du "
-msgstr ""
+#: src/vigilo/themes/templates/vigigraph/graphslist.html:9
+#: src/vigilo/themes/templates/vigigraph/searchhost.html:6
+#: src/vigilo/themes/templates/vigigraph/searchhost.html:10
+msgid "VigiGraph search"
+msgstr "Recherche VigiGraph"
 
-#: src/vigilo/themes/templates/vigigraph/graphslist.html:6
-msgid "au"
-msgstr ""
+#: src/vigilo/themes/templates/vigigraph/graphslist.html:19
+#: src/vigilo/themes/templates/vigimap/legend.html:7
+msgid "Unknown"
+msgstr "Inconnu"
+
+#: src/vigilo/themes/templates/vigigraph/graphslist.html:20
+#: src/vigilo/themes/templates/vigigraph/singlegraph.html:6
+#: src/vigilo/themes/templates/vigigraph/singlegraph.html:18
+#, python-format
+msgid "Graph \"%(graph)s\" for host \"%(host)s\""
+msgstr "Graphe \"%(graph)s\" de l'hôte \"%(host)s\""
+
+#: src/vigilo/themes/templates/vigigraph/graphslist.html:25
+#, python-format
+msgid "From %(start_date)s to %(end_date)s"
+msgstr "Du %(start_date)s au %(end_date)s"
 
 #: src/vigilo/themes/templates/vigigraph/index.html:10
 msgid "Loading VigiGraph..."
 msgstr "Chargement de VigiGraph..."
 
-#: src/vigilo/themes/templates/vigigraph/master.html:11
-#: src/vigilo/themes/templates/vigigraph/searchhost.html:6
-#: src/vigilo/themes/templates/vigigraph/searchhost.html:9
-#: src/vigilo/themes/templates/vigigraph/searchhostform.html:5
+#: src/vigilo/themes/templates/vigigraph/main.html:11
+#: src/vigilo/themes/templates/vigigraph/master.html:15
+#: src/vigilo/themes/templates/vigigraph/searchhostform.html:6
+#: src/vigilo/themes/templates/vigigraph/searchhostform.html:10
 msgid "Vigigraph search"
 msgstr "Recherche VigiGraph"
 
-#: src/vigilo/themes/templates/vigigraph/master.html:20
-#: src/vigilo/themes/templates/vigigraph/singlegraph.html:16
+#: src/vigilo/themes/templates/vigigraph/main.html:20
 msgid "Vigilo"
 msgstr "Vigilo"
 
-#: src/vigilo/themes/templates/vigigraph/master.html:21
-#: src/vigilo/themes/templates/vigigraph/singlegraph.html:17
+#: src/vigilo/themes/templates/vigigraph/main.html:21
 msgid "v2.0"
 msgstr "v2.0"
 
-#: src/vigilo/themes/templates/vigigraph/nagios_host_error.html:3
-#: src/vigilo/themes/templates/vigigraph/nagios_host_service_error.html:3
-msgid "Unable to find supervision page for"
-msgstr ""
+#: src/vigilo/themes/templates/vigigraph/main.html:26
+msgid "Print all visible graphs"
+msgstr "Imprimer tous les graphes affichés"
 
-#: src/vigilo/themes/templates/vigigraph/nagios_host_error.html:3
-#: src/vigilo/themes/templates/vigigraph/nagios_host_service_error.html:3
-#: src/vigilo/themes/templates/vigigraph/rrd_error.html:3
-msgid "Are You sure it has been inserted into the supervision configuration ?"
-msgstr ""
-
-#: src/vigilo/themes/templates/vigigraph/profile.html:27
-msgid "Confirm new password:"
-msgstr "Confirmer le nouveau mot de passe :"
-
-#: src/vigilo/themes/templates/vigigraph/rrd_error.html:3
-msgid "Unable to find metrology page for"
-msgstr ""
-
-#: src/vigilo/themes/templates/vigigraph/rrd_exportCSV_error.html:3
-msgid "Unable to export for host"
-msgstr ""
-
-#: src/vigilo/themes/templates/vigigraph/rrd_exportCSV_error.html:3
-msgid "- graph"
-msgstr "- graphe"
-
-#: src/vigilo/themes/templates/vigigraph/rrd_exportCSV_error.html:3
-msgid "- indicator"
-msgstr ""
-
-#: src/vigilo/themes/templates/vigigraph/searchhost.html:10
+#: src/vigilo/themes/templates/vigigraph/searchhost.html:11
 msgid "Results:"
-msgstr ""
+msgstr "Résultats :"
 
-#: src/vigilo/themes/templates/vigigraph/searchhost.html:14
+#: src/vigilo/themes/templates/vigigraph/searchhost.html:15
 msgid "Sup page"
-msgstr ""
+msgstr "Page de supervision"
 
-#: src/vigilo/themes/templates/vigigraph/searchhost.html:16
+#: src/vigilo/themes/templates/vigigraph/searchhost.html:17
 msgid "Metro page"
 msgstr "Page de métrologie"
 
-#: src/vigilo/themes/templates/vigigraph/searchhostform.html:7
-#, fuzzy
+#: src/vigilo/themes/templates/vigigraph/searchhostform.html:12
 msgid "Device:"
-msgstr "Service :"
+msgstr "Hôte :"
 
-#: src/vigilo/themes/templates/vigigraph/singlegraph.html:3
-#: src/vigilo/themes/templates/vigigraph/singlegraph.html:22
-msgid "Graph for"
-msgstr ""
-
-#: src/vigilo/themes/templates/vigigraph/singlegraph.html:7
+#: src/vigilo/themes/templates/vigigraph/singlegraph.html:13
 msgid "Supervision search"
-msgstr ""
+msgstr "Recherche de supervision"
 
-#: src/vigilo/themes/templates/vigigraph/singlegraph.html:23
-msgid "Back to"
-msgstr ""
-
-#: src/vigilo/themes/templates/vigigraph/singlegraph.html:23
-msgid "Graph list"
-msgstr "Liste des graphes"
+#: src/vigilo/themes/templates/vigigraph/singlegraph.html:22
+#, python-format
+msgid "Back to graph list for \"%s\""
+msgstr "Revenir à la liste des graphes de \"%s\""
 
 #: src/vigilo/themes/templates/vigimap/edition.html:8
-#: src/vigilo/themes/templates/vigimap/edition.html:55
+#: src/vigilo/themes/templates/vigimap/edition.html:61
 #: src/vigilo/themes/templates/vigimap/index.html:8
-#: src/vigilo/themes/templates/vigimap/index.html:40
+#: src/vigilo/themes/templates/vigimap/index.html:44
 #: src/vigilo/themes/templates/vigimap/widget_form.html:8
 msgid "VigiMap"
 msgstr "VigiMap"
 
-#: src/vigilo/themes/templates/vigimap/edition.html:55
+#: src/vigilo/themes/templates/vigimap/edition.html:61
 msgid "(edit mode)"
 msgstr "(mode édition)"
 
-#: src/vigilo/themes/templates/vigimap/edition.html:70
-#: src/vigilo/themes/templates/vigimap/index.html:52
+#: src/vigilo/themes/templates/vigimap/edition.html:76
+#: src/vigilo/themes/templates/vigimap/index.html:56
 msgid "Your browser does not support the canvas element. Please upgrade."
 msgstr ""
 "Votre navigateur ne gère pas l'élément canvas. Veuillez le mettre à jour,"
 " ou en utiliser un autre."
 
-#: src/vigilo/themes/templates/vigimap/edition.html:87
-#: src/vigilo/themes/templates/vigimap/index.html:68
+#: src/vigilo/themes/templates/vigimap/edition.html:93
+#: src/vigilo/themes/templates/vigimap/index.html:72
 msgid "loading..."
 msgstr "chargement..."
-
-#: src/vigilo/themes/templates/vigimap/index.html:40
-#, fuzzy
-msgid "(mode display)"
-msgstr "Filtrer l'affichage"
 
 #: src/vigilo/themes/templates/vigimap/legend.html:2
 msgid "Legend"
@@ -918,10 +918,6 @@ msgstr "Légende"
 #: src/vigilo/themes/templates/vigimap/legend.html:4
 msgid "Elements"
 msgstr "Éléments"
-
-#: src/vigilo/themes/templates/vigimap/legend.html:7
-msgid "Unknown"
-msgstr "Inconnu"
 
 #: src/vigilo/themes/templates/vigimap/legend.html:11
 msgid "Warning"
@@ -945,12 +941,18 @@ msgstr "Lien entre %(from_node)s et %(to_node)s"
 msgid "Status: %(status)s"
 msgstr "État : %(status)s"
 
-#: src/vigilo/themes/templates/vigimap/link.html:4
+#: src/vigilo/themes/templates/vigimap/link.html:7
+#: src/vigilo/themes/templates/vigimap/link.html:11
 msgid "Reference service:"
 msgstr "Service de référence :"
 
-#: src/vigilo/themes/templates/vigimap/link.html:5
-#| msgid "Service name: %(service)s on %(host)s"
+#: src/vigilo/themes/templates/vigimap/link.html:8
+#, python-format
+msgid "%(service)s"
+msgstr "%(service)s"
+
+#: src/vigilo/themes/templates/vigimap/link.html:12
+#, python-format
 msgid "%(service)s on %(host)s"
 msgstr "%(service)s sur %(host)s"
 
@@ -961,20 +963,19 @@ msgstr "Nom du service : %(service)s sur %(host)s"
 
 #: src/vigilo/themes/templates/vigimap/node.html:23
 #, python-format
+msgid "Service name: %(service)s"
+msgstr "Nom du service : %(service)s"
+
+#: src/vigilo/themes/templates/vigimap/node.html:26
+#, python-format
 msgid "Appliance name: %(host)s"
 msgstr "Équipement : %(host)s"
 
 #: src/vigilo/themes/templates/vigimap/selectmapgroup.html:3
 msgid "Node update!"
-msgstr ""
+msgstr "Mise à jour d'élément"
 
 #: src/vigilo/themes/templates/vigimap/widget_form.html:18
 msgid "Welcome to Widget!"
-msgstr "Bienvenue dans Vigilo"
-
-#~ msgid "Maps"
-#~ msgstr "Cartes"
-
-#~ msgid "Reference service: %(service)s on %(host)s"
-#~ msgstr "Service de référence : %(service)s sur %(host)s"
+msgstr "Bienvenue dans Widget"
 
