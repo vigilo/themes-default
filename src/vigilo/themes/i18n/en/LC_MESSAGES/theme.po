@@ -7,10 +7,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: vigilo-themes-default 0.1\n"
+"Project-Id-Version: vigilo-themes-default 2.0.0\n"
 "Report-Msgid-Bugs-To: contact@projet-vigilo.org\n"
-"POT-Creation-Date: 2010-02-12 11:58+0100\n"
-"PO-Revision-Date: 2010-04-23 13:40+0200\n"
+"POT-Creation-Date: 2010-04-23 13:40+0200\n"
+"PO-Revision-Date: 2010-04-23 15:30+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: en <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"

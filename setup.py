@@ -21,6 +21,11 @@ setup(name='vigilo-themes-default',
         'setuptools',
         'Genshi >= 0.5.1',
         'Babel >= 0.9.4',
+
+        # Pas requis à proprement parlé,
+        # mais permet d'utiliser la commande "identity_catalog".
+        # La dépendance est déjà tirée via "vigilo-models".
+        'vigilo-common',
     ],
     namespace_packages = [
         'vigilo',
