@@ -107,6 +107,12 @@ window.addEvent("domready", function () {
                 onFailure: function (xhr) {
                     window.details_dialog.setBusy(false);
                     remove_selection();
+                    if (!xhr.responseText)
+                        return;
+                    var res = JSON.decode(xhr.responseText, true);
+                    if (res == null || !res.errors)
+                        return;
+                    alert(res.errors.join('\n'));
                 },
             });
             window.details_dialog.options.parent = item;

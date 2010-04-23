@@ -13,20 +13,20 @@
 <head>
     <py:choose>
         <title py:when="hostname and servicename">
-            ${l_('VigiBoard - History for event #%(idevent)d on host "%(hostname)s" and service "%(servicename)s"') % {
+            VigiBoard - ${l_('History for event #%(idevent)d on host "%(hostname)s" and service "%(servicename)s"') % {
                 'hostname': hostname,
                 'servicename': servicename,
                 'idevent': idevent,
             }}
         </title>
         <title py:when="hostname">
-            ${l_('VigiBoard - History for event #%(idevent)d on host "%(hostname)s"') % {
+            VigiBoard - ${l_('History for event #%(idevent)d on host "%(hostname)s"') % {
                 'hostname': hostname,
                 'idevent': idevent,
             }}
         </title>
         <title py:otherwise="">
-            ${l_('VigiBoard - History for event #%(idevent)d') % {
+            VigiBoard - ${l_('History for event #%(idevent)d') % {
                 'idevent': idevent,
             }}
         </title>

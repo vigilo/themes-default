@@ -13,16 +13,17 @@
 <head> 
     <py:choose>
         <title py:when="hostname and servicename">
-            ${l_('VigiBoard - Events table for service "%(servicename)s" on "%(hostname)s"') % {
+            VigiBoard - ${l_('Events table for service "%(servicename)s" on "%(hostname)s"') % {
                 'hostname': hostname,
                 'servicename': servicename,
             }}
         </title>
         <title py:when="hostname">
-            ${l_('VigiBoard - Events table for host "%s"') % hostname}
+            VigiBoard - ${l_('Events table for host "%s"') % hostname}
         </title>
         <title py:otherwise="">
-            VigiBoard - Events table
+            <!--! Le l_ permet ici de réutiliser les traductions. -->
+            VigiBoard - ${l_('Events table')}
         </title>
     </py:choose>
 </head>
