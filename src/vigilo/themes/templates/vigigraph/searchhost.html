@@ -3,19 +3,20 @@
       xmlns:xi="http://www.w3.org/2001/XInclude">
     <xi:include href="master.html" />
     <head>
-        <title>Vigigraph search</title>
+        <title>VigiGraph search</title>
     </head>
 
     <body class="searchresults">
-        <h1>Vigigraph search</h1>
+        <h1>VigiGraph search</h1>
         <h2>Results:</h2>
         <table>
-            <tr py:for="h in hosts">
+            <tr py:for="host in hosts" py:with="h = host.name">
                 <td class="hostname">&mdash; ${h}</td>
-                <td><a href="${tg.url('/nagios/%s/cgi-bin/status.cgi?style=detail&amp;supNav=1' % h)}">Sup page</a></td>
+                <td><a href="${tg.url('/nagios/%s/cgi-bin/status.cgi?host=%s&amp;style=detail&amp;supNav=1' % (h, h))}">Sup page</a></td>
                 <td> - </td>
-                <td><a href="${tg.url('/rrdgraph/%s/rrdgraph.py' % h)}">Metro page</a></td>
+                <td><a href="${tg.url('/rrdgraph/%s/rrdgraph.py?host=%s' % (h, h))}">Metro page</a></td>
             </tr>
         </table>
+        ${tmpl_context.paginators.hosts.pager()}
     </body>
 </html>

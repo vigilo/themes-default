@@ -3,6 +3,10 @@
     <ShortName>Monitor Search</ShortName>
     <Description>Monitoring Navigator search engine</Description>
     <InputEncoding>utf-8</InputEncoding>
-    <Image width="16" height="16" type="image/png">${dir}/resource/qx/icon/Nuvola/16/devices/network-wired.png</Image>
-    <Url type="text/html" method="get" template="${here}/rpc/searchHost?query={searchTerms}"> </Url>
+    <!--!
+        L'attribute request.host_url permet d'obtenir une URL absolue,
+        en conformité avec les recommandations du standard OpenSearch.
+    -->
+    <Image width="16" height="16" type="image/x-icon">${request.host_url}${tg.url('/favicon.ico')}</Image>
+    <Url type="text/html" method="get" template="${request.host_url}${tg.url('/rpc/searchHost')}?query={searchTerms}"> </Url>
 </OpenSearchDescription>
