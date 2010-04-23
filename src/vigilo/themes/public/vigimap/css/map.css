@@ -13,6 +13,7 @@ h1 {
     text-align: center;
     font-family: sans-serif;
     background: url("../images/vigilo.png") no-repeat left top;
+    text-shadow: 0.1em 0.1em 0.2em #ccc;
 }
 ul {
     margin: 0.5em 0 0 2em;
@@ -64,8 +65,8 @@ ul {
 }
 
 #mapitems {
-    width: 100px;
-    left: -120px;
+    width: 70px;
+    left: -100px;
 }
 
 #mapitems ul {
@@ -73,46 +74,52 @@ ul {
 	margin:0 auto;
 }
 
-#mapitems li {
-    margin:0px auto;
+#mapitems .mapitem {
+	margin: 15px auto;
+    padding: 2px 0; /* Doit être 1 de plus que :hover pour que le changement de taille de la bordure ne décale pas tout */
+    border: 1px solid #aaa;
+    background-color: #eee;
+    text-align: center;
+    cursor: pointer;
+    width: 40px;
 }
-
-#mapitems .obj {
-    width: 70px;
-    border: 1px solid black;
+#mapitems .mapitem:hover {
+    padding: 1px 0; /* Permet de passer la bordure à 2px sans tout décaler */
+    border: 2px solid #ffcc66;
+    color: #ffcc66;
+    cursor: pointer;
 }
 
 #mapitems .selected {
+    padding: 1px 0; /* Permet de passer la bordure à 2px sans tout décaler */
     border: 2px solid blue !important;
-    padding: 0;
+}
+#mapitems .mapitem.selected:hover {
+    color: auto;
+    cursor: default;
 }
 
 #mapitems .disabled {
     opacity: 0.2;
 }
 
-#mapitems div {
-	margin: 15px auto;
-    padding: 1px 0;
-    border: 1px solid #aaa;
-    background-color: #eee;
-    text-align: center;
-    cursor: pointer;
-    width: 50px;
-}
-
-#mapitems div:hover {
-    padding: 0px 0;
-    border: 2px solid #ffcc66;
-    color: #ffcc66;
-    cursor: pointer;
-}
-
-#mapitems div.disabled:hover {
+#mapitems .disabled:hover {
     border: 1px solid #aaa;
     color: inherit;
     cursor: default;	
 }
+
+#mapitems .mapitem img {
+    margin: 0 auto;
+    display: block;
+}
+
+/*
+#mapitems .obj {
+    width: 70px;
+    border: 1px solid black;
+}
+*/
 
 
 /* Elements de carte */
