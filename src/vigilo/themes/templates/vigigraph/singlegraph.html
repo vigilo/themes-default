@@ -1,3 +1,5 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
         xmlns:py="http://genshi.edgewall.org/"
         xmlns:xi="http://www.w3.org/2001/XInclude">
@@ -20,13 +22,13 @@
             'host': host,
         }}</h2>
         <a href="fullHostPage?host=${host};duration=${duration}">${l_('Back to graph list for "%s"') % host}</a>
-        <a href="${tg.url('/nagios/%s/cgi-bin/status.cgi?style=detail&amp;supNav=1' % host)}">${l_('Monitoring page for "%s"') % host}</a>
+        <a href="${tg.url('/nagios/%s/cgi-bin/status.cgi?style=detail&amp;supNav=1&amp;host=%s' % (host, host))}">${l_('Monitoring page for "%s"') % host}</a>
         <br />
         <div py:for="h in presets" py:strip="True">
             <a href="singleGraph?host=${host};duration=${h['duration']};graph=${graph}">${h['caption']}</a>
         </div>
         <br />
-        <img src="${tg.url('/rrdgraph/%(host)s/rrdgraph.py?graphtemplate=%(graph)s&amp;start=%(start)d&amp;duration=%(duration)d&amp;direct=1' % {
+        <img src="${tg.url('/rrdgraph/%(host)s/rrdgraph.py?graphtemplate=%(graph)s&amp;start=%(start)d&amp;duration=%(duration)d&amp;direct=1&amp;host=%(host)s' % {
             'host': host,
             'graph': graph,
             'start': start,

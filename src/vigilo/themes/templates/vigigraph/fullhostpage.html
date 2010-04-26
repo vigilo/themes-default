@@ -9,14 +9,14 @@
 
     <body class='main'>
         <h2>${l_('List of graphs for "%s"') % host}</h2>
-        <a href="${tg.url('/nagios/%s' % host)}">${l_('Monitoring page for "%s"') % host}</a>
+        <a href="${tg.url('/nagios/%s/cgi-bin/status.cgi?host=%s' % (host, host))}">${l_('Monitoring page for "%s"') % host}</a>
         <div py:for="h in presets" py:strip="True">
             <a href="fullHostPage?host=${host};duration=${h['duration']}">${h['caption']}</a>
         </div>
         <br />
         <div py:for="graph in graphs" py:strip="True">
             <a href="singleGraph?host=${host};graph=${graph.name};start=${start};duration=${duration}">
-            <img src="${tg.url('/rrdgraph/%(host)s/rrdgraph.py?graphtemplate=%(graph)s&amp;start=%(start)d&amp;duration=%(duration)d&amp;direct=1&amp;details=0' % {
+            <img src="${tg.url('/rrdgraph/%(host)s/rrdgraph.py?graphtemplate=%(graph)s&amp;start=%(start)d&amp;duration=%(duration)d&amp;direct=1&amp;details=0&amp;host=%(host)s' % {
                 'host': host,
                 'graph': graph.name,
                 'start': start,
