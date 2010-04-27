@@ -1,0 +1,26 @@
+.image_widget ul {
+	list-style-type: none;
+    margin: 10px;
+    padding: 0;
+}
+
+.image_widget li {
+    display: block;
+    float: left;
+    text-align: center;
+    margin: 5px;
+    padding: 5px;
+    border: 1px solid black;
+}
+
+.image_widget li:hover {
+    background-color: #bbb;
+    cursor: pointer;
+}
+
+.image_widget img {
+    vertical-align: middle;
+    display: block;
+    margin: 0px auto;
+}
+
