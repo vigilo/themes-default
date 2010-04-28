@@ -23,6 +23,18 @@ ul {
 
 /* Affichage general */
 
+h1 a,
+h1 a:visited,
+h1 a:hover,
+h1 a:active
+{
+    text-decoration: none;
+    color: black;
+}
+h1 a:hover {
+    text-shadow: 0.1em 0.1em 0.2em #aaa;
+}
+
 #menu {
     width: 100%;
 }
