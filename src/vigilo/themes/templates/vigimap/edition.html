@@ -57,7 +57,15 @@
 
 
     <div id="header">
-        <h1><a href="${tg.url('/edit')}">VigiMap ${l_("(edit mode)")}<span id="maptitle"></span></a></h1>
+        <div class="header_item">
+            <a href="${tg.url('/logout_handler')}">
+                <img src="${tg.url('/images/logout.png')}" alt="Log out" title="Log out"/>
+            </a>
+        </div>
+        <h1>
+            <a href="${tg.url('/edit')}">VigiMap ${l_("(edit mode)")}<span id="maptitle"></span></a>
+        </h1>
+                    
     </div>
 
     <div id="menu">
