@@ -57,10 +57,8 @@
 
 
     <div id="header">
-        <div class="header_item">
-            <a href="${tg.url('/logout_handler')}">
-                <img src="${tg.url('/images/logout.png')}" alt="Log out" title="Log out"/>
-            </a>
+        <div id="loginbtn" class="logout">
+            <a href="${tg.url('/logout_handler')}">Logout</a>
         </div>
         <h1>
             <a href="${tg.url('/edit')}">VigiMap ${l_("(edit mode)")}<span id="maptitle"></span></a>

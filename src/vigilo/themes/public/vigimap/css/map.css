@@ -4,20 +4,39 @@ body {
 }
 
 #header {
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid #a4a4a4;
     height: 24px;
+    background-color: #f1f1f1;
+    margin: 0;
+    padding: 0.1em 0;
 }
 h1 {
     font-size: 110%;
-    margin: 0.1em 0.2em 0 0.2em;
+    margin: 0 0.2em 0 0.2em;
     text-align: center;
     font-family: sans-serif;
     background: url("../images/vigilo.png") no-repeat left top;
     text-shadow: 0.1em 0.1em 0.2em #ccc;
 }
-.header_item {
-        float: right;	
+#loginbtn.logout {
+    float: right;
+    margin-right: 5px;
 }
+#loginbtn.logout a {
+    padding: 2px 0 2px 26px;
+    background-image: url("../images/logout.png");
+    background-repeat: no-repeat;
+    color: #314455;
+    height: 24px;
+    display: block;
+    font-size: 11px;
+    text-decoration: none;
+    vertical-align: middle;
+}
+#loginbtn.logout a:hover {
+    text-decoration: underline;
+}
+
 
 ul {
     margin: 0.5em 0 0 2em;
@@ -41,6 +60,7 @@ h1 a:hover {
 
 #menu {
     width: 100%;
+    display: block;
 }
 
 #map {
@@ -54,6 +74,11 @@ h1 a:hover {
     position: absolute;
     top: 1px;
     right: 5px;
+    background-color: white;
+    /*border: 1px solid gray;*/
+}
+#loading img {
+    display: block;
 }
 
 
