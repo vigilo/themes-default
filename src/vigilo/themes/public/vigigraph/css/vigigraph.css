@@ -1,58 +1,40 @@
 /* Menu */
-ul#mainmenu {
-    margin: 0;
-    padding: 0 10px;
-    background-color: #F0F1F5;
+h1 {
+    font-size: 110%;
+    margin: 0 0.2em 0 -58px;
+    text-align: center;
+    font-family: sans-serif;
+    text-shadow: 0.1em 0.1em 0.2em #ccc;
+}
+
+h1 a,
+h1 a:visited,
+h1 a:hover,
+h1 a:active
+{
+    text-decoration: none;
+    color: black;
+}
+h1 a:hover {
+    text-shadow: 0.1em 0.1em 0.2em #aaa;
+}
+
+#logo {
+    margin: 0.2em;
+    float: left;
+}
+
+#header {
     border-bottom: 1px solid #a4a4a4;
-    width: 100%;
     height: 30px;
+    background-color: #f1f1f1;
+    margin: 0;
+    padding: 0.1em 0;
     vertical-align: middle;
 }
 
-ul#mainmenu li {
-    list-style-type: none;
-    margin: 2px 0;
-    padding: 0;
-    position: relative;
-    display: inline;
-    float: left;
-}
-
-ul#mainmenu li a {
-    color: #314455;
-    float: left;
-    height: 24px;
-    display: block;
-    padding: 4px 10px;
-    font-size: 12px;
-    text-decoration: none;
-}
-
-ul#mainmenu li.first a {
-}
-
-ul#mainmenu li.loginlogout
-{
+.header_item {
     float: right;
-    right: 10px;
-}
-
-ul#mainmenu li.loginlogout.logout a
-{
-    padding-left: 26px;
-    background-image: url("../images/logout.png");
-    background-repeat: no-repeat;
-}
-
-ul#mainmenu #version {
-    font-size: 11px;
-    padding: 4px 0px;
-}
-
-ul#mainmenu #print {
-    padding-left: 26px;
-    background-image: url("../resource/qx/icon/Nuvola/22/actions/document-print.png");
-    background-repeat: no-repeat;
 }
 
 table.header_table {

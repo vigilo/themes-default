@@ -6,6 +6,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>VigiMap</title>
+    <style type="text/css">@import "${tg.url('css/reset.css')}";</style>
     <!--[if IE]><script type="text/javascript" src="${tg.url('/js/excanvas.js')}"></script><![endif]-->
     <link rel="stylesheet" type="text/css" href="${tg.url('/css/jxlib/jxtheme.uncompressed.css')}" />
     <style type="text/css">@import "${tg.url('css/map.css')}";</style>
@@ -41,9 +42,21 @@
 
 
     <div id="header">
-        <div id="loginbtn" class="logout">
-            <a href="${tg.url('/logout_handler')}">Logout</a>
+        <span id="logo">
+            <a href="${tg.url(tg.config.get('logo_link', '/'))}">
+                <img alt="" src="${tg.url('/images/vigilo.png')}"/>
+            </a>
+        </span>
+
+        <div class="header_item">
+            <a href="${tg.config['help_link']}">
+                <img src="${tg.url('/images/help.png')}" alt="Help" title="Help"/>
+            </a>
+            <a href="${tg.url('/logout_handler')}">
+                <img src="${tg.url('/images/logout.png')}" alt="Log out" title="Log out"/>
+            </a>
         </div>
+
         <h1><a href="${tg.url('/')}">VigiMap<span id="maptitle"></span></a></h1>
     </div>
 

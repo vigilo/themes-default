@@ -1,6 +1,11 @@
-.toolbar {
-	border: solid 0px black;
-	background-color: #F0F1F5;
+#header {
+    border: solid 0px black;
+    background-color: #F0F1F5;
+}
+
+.header_select {
+    background-color: #DBEAF5;
+    border: 1px solid #4682B4;
 }
 
 .plugins th {
@@ -74,10 +79,5 @@ a {
 
 .fielderror {
     color: red;
-}
-
-.toolbar_select {
-	background-color: #DBEAF5;
-	border: 1px solid #4682B4;
 }
 

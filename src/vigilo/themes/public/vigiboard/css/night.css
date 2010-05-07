@@ -2,9 +2,14 @@ body {
     background-color: rgb(156, 102, 31);
 }
 
-.toolbar {
-	border: solid 0px black;
-	background-color: #FFBF00;
+#header {
+    border: solid 0px black;
+    background-color: #FFBF00;
+}
+
+.header_select {
+    background-color: #FFBF33;
+    border: 1px solid #CC8100;
 }
 
 .history_table thead {
@@ -57,11 +62,6 @@ a {
 
 .fielderror {
     color: red;
-}
-
-.toolbar_select {
-	background-color: #FFBF33;
-	border: 1px solid #CC8100;
 }
 
 /* Dialogues */

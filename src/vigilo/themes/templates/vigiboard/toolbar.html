@@ -4,20 +4,29 @@
     py:strip="">
 
 <py:def function="toolbar">
-<div class="toolbar">
-    <div class="toolbar_item">
+<div id="header">
+    <span id="logo">
+        <a href="${tg.url(tg.config.get('logo_link', '/'))}">
+            <img alt="" src="${tg.url('/images/vigilo.png')}"/>
+        </a>
+    </span>
+
+    <div class="header_item">
         <a href="${tg.url('/')}">
             <img src="${tg.url('/images/home.png')}" alt="Home" title="Home" />
         </a>
         <a id="SearchLien" href="javascript:window.search_dialog.open.bind(window.search_dialog)();">
             <img src="${tg.url('/images/search.png')}" alt="Filter display" title="Filter display"/>
         </a>
+        <a href="${tg.config['help_link']}">
+            <img src="${tg.url('/images/help.png')}" alt="Help" title="Help"/>
+        </a>
         <a href="${tg.url('/logout_handler')}">
             <img src="${tg.url('/images/logout.png')}" alt="Log out" title="Log out"/>
         </a>
     </div>
 
-    <div class="toolbar_item" id="font_size_selector">
+    <div class="header_item" id="font_size_selector">
         <a href="javascript:change_fontsize('5px')">
             <img alt="Default font size" title="Default font size" src="${tg.url('/images/icn_text_sm.png')}" />
         </a>
@@ -29,9 +38,9 @@
         </a>
     </div>
 
-    <div class="toolbar_item">
+    <div class="header_item">
         Refresh every
-        <select id="refresh_time" class="toolbar_select" onchange="change_refresh($('refresh_time').get('value'));">
+        <select id="refresh_time" class="header_select" onchange="change_refresh($('refresh_time').get('value'));">
             <py:for each="(delay, label) in refresh_times"
                 py:with="refresh_time = tg.session.get('refresh', 0)">
             <option py:if="refresh_time == delay" value="${delay}" selected="selected">${label}</option>
@@ -40,9 +49,9 @@
         </select>
     </div>
 
-    <div class="toolbar_item">
+    <div class="header_item">
         Theme
-        <select id="theme" class="toolbar_select"
+        <select id="theme" class="header_select"
             onchange="change_theme($('theme').get('value'), $('theme').getSelected().get('text'));">
             <py:for each="(theme_name, theme_id, theme_files) in themes"
                 py:choose="int(theme_id == active_theme)">
@@ -52,21 +61,13 @@
         </select>
     </div>
 
-    <div class="toolbar_item" id="search_mode_tip">
+    <div class="header_item" id="search_mode_tip">
         <span py:if="filter(None, search.values())">
             <a href="${tg.url('/')}">${l_('You are in Search mode, click here to return to the initial mode.')}</a>
         </span>
     </div>
-    
-    <div id="logo">
-        <a py:if="tg.config.get('vigiboard_links.logo')" href="${tg.config['vigiboard_links.logo']}">
-            <img alt="" src="${tg.url('/images/vigilo.png')}"/>
-        </a>
-        <a py:if="not tg.config.get('vigiboard_links.logo')" href="${tg.url('/')}">
-            <img alt="" src="${tg.url('/images/vigilo.png')}"/>
-        </a>
-        ${l_('v%(vigilo_version)s' % {'vigilo_version': tg.config['vigilo_version']})}
-    </div>
+
+    <h1><a href="${tg.url('/')}">VigiBoard</a></h1>
 </div>
 
 <script type="text/javascript">

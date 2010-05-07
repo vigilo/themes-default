@@ -1,14 +1,14 @@
-.toolbar {
-	border: solid 0px black;
+#header {
+    border: solid 0px black;
 }
 
 .vigitable tbody tr,
 .vigitable tbody tr td {
-	border: solid 1px white;
+    border: solid 1px white;
 }
 
 a {
-	color: black;
+    color: black;
 }
 
 #flash .ok {
@@ -33,6 +33,6 @@ a {
 }
 
 .refresh_select {
-	border: 1px solid #4682B4;
+    border: 1px solid #4682B4;
 }
 

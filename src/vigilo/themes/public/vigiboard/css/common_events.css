@@ -1,41 +1,63 @@
-body {
-    text-align: left;
-    width: 100%;
-    font-size: 10px;
-    margin: auto !important;
-    font-family: "Lucida Grande", "Lucida Sans Unicode", geneva, verdana, sans-serif;
+#header {
+    border-bottom: 1px solid #a4a4a4;
+    background-color: #F0F1F5;
+    margin-bottom: 10px;
+    padding: 0.1em 0;
+    height: 24px;
 }
 
-.toolbar {
-	background-color: #F0F1F5;
-	margin-bottom: 10px;
-	padding: 4px;
+#logo {
+    margin: 0 0.2em;
+    float: left;
 }
 
-#logo img {
-    width: 58px;
+h1 {
+    font-size: 110%;
+    margin: 0 0.2em 0 -58px;
+    font-family: sans-serif;
+    text-shadow: 0.1em 0.1em 0.2em #ccc;
 }
 
-.toolbar_item {
+h1 a,
+h1 a:visited,
+h1 a:hover,
+h1 a:active
+{
+    text-decoration: none;
+    color: black;
+}
+h1 a:hover {
+    text-shadow: 0.1em 0.1em 0.2em #aaa;
+}
+
+.header_item {
     margin-left: 30px; 
-    float: right
+    float: right;
 }
 
-.toolbar_select,
-.toolbar_select options {
+.header_select,
+.header_select options {
     height: 1.5em;
 }
 
+.header_select {
+    margin-top: 0.2em;
+}
+
+.header_item img {
+    margin: 0 0.1em;
+}
+
 #font_size_selector {
-    margin-top: 5px;
+    margin-top: 0.6em;
 }
 
 /* Table des évènements */
 
 .vigitable {
     margin: auto;
-	width: 99%;
-	border-collapse: separate;
+    width: 99%;
+    border-collapse: separate;
 }
 
 .vigitable .navigation_arrow * {
@@ -44,11 +66,11 @@ body {
 }
 
 .vigitable .left_arrow {
-	float: left;
+    float: left;
 }
 
 .vigitable .right_arrow {
-	float: right;
+    float: right;
 }
 
 .vigitable > thead > tr:first-child > th,
@@ -95,6 +117,10 @@ body {
 	border: none;
 	margin: 0;
 	vertical-align: middle;
+}
+
+.vigitable tbody tr.selectedRow td {
+    border: 1px dashed #000000;
 }
 
 /* Flash */
@@ -331,9 +357,5 @@ div.clearingdiv {
 .plugin_details img {
     width: 1.5em;
     height: 1.5em;
-}
-
-.vigitable tbody tr.selectedRow td {
-    border: 1px dashed #000000;
 }
 
