@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:py="http://genshi.edgewall.org/"
+      xmlns:xi="http://www.w3.org/2001/XInclude"
+      py:strip="">
+<head py:match="head" py:attrs="select('@*')">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <style type="text/css">@import "${tg.url('css/reset.css')}";</style>
+    <!--[if IE]><script type="text/javascript" src="${tg.url('/js/excanvas.js')}"></script><![endif]-->
+    <link rel="stylesheet" type="text/css" href="${tg.url('/css/jxlib/jxtheme.uncompressed.css')}" />
+    <style type="text/css">@import "${tg.url('css/map.css')}";</style>
+    <style type="text/css">@import "${tg.url('css/ServiceElement.css')}";</style>
+
+    <script type="text/javascript" src="${tg.url('/js/lib/mootools.js')}"></script>
+    <script type="text/javascript" src="${tg.url('/js/lib/mootools-more.js')}"></script>
+    <script type="text/javascript" src="${tg.url('/js/lib/jxlib.js')}"></script>
+    <script type="text/javascript">Jx.baseURL = '${tg.url("/js/lib")}';</script>
+    <!--!
+        "js/babel.js" doit être chargé avant "i18n",
+        qui doit lui-même être chargé avant "js/map.js".
+    -->
+    <script type="text/javascript" src="${tg.url('/js/lib/babel.js')}"></script>
+    <script type="text/javascript" src="${tg.url('/i18n')}"></script>
+
+    <script type="text/javascript" src="${tg.url('/js/main.js')}"></script>
+    <script type="text/javascript" src="${tg.url('/js/loader.js')}"></script>
+    <script type="text/javascript" src="${tg.url('/js/menu.js')}"></script>
+    <script type="text/javascript" src="${tg.url('/js/details.js')}"></script>
+    <script type="text/javascript" src="${tg.url('/js/map.js')}"></script>
+    <script type="text/javascript" src="${tg.url('/js/legend.js')}"></script>
+    <script type="text/javascript" src="${tg.url('/js/mapElement.js')}"></script>
+    <script type="text/javascript" src="${tg.url('/js/ServiceElement.js')}"></script>
+
+    <div py:for="widget in widgets" py:strip="True">
+        <script type="text/javascript" src="${tg.url(widget+'.js')}"></script>
+        <link rel="stylesheet" type="text/css" href="${tg.url(widget+'.css')}" />
+    </div>
+
+    <meta py:replace="select('*')"/>
+</head>
+
+<body py:match="body" py:attrs="select('@*')">
+
+    <div id="header">
+        <span id="logo">
+            <a href="${tg.url(tg.config.get('logo_link', '/'))}">
+                <img alt="" src="${tg.url('/images/vigilo.png')}"/>
+            </a>
+        </span>
+
+        <div class="header_item">
+            <a href="${tg.config['help_link']}">
+                <img src="${tg.url('/images/help.png')}" alt="Help" title="Help"/>
+            </a>
+            <a href="${tg.url('/logout_handler')}">
+                <img src="${tg.url('/images/logout.png')}" alt="Log out" title="Log out"/>
+            </a>
+        </div>
+
+        <h1><a href="${tg.url('/')}">VigiMap<span id="maptitle"></span></a></h1>
+    </div>
+
+    <div id="menu">
+    </div>
+
+    <div id="content">
+        <div py:replace="select('*|text()')"/>
+    </div>
+
+</body>
+
+<py:def function="map">
+    <py:with vars="flash=tg.flash_obj.render('flash', use_js=False)">
+        <div py:if="flash" py:content="XML(flash)" />
+    </py:with>
+
+    <div id="map">
+        <canvas>
+            Your browser does not support the canvas element. Please upgrade.
+        </canvas>
+        
+        <div id="legend">
+        </div>
+    </div>
+
+    <div id="loading">
+        <img alt="loading..." src="${tg.url('images/loading.gif')}" />
+    </div>    
+</py:def>
+
+</html>

@@ -57,10 +57,11 @@ h1 a:hover {
 #loading {
     display: none;
     position: absolute;
-    top: 1px;
+    top: 60px;
     right: 5px;
     background-color: white;
-    /*border: 1px solid gray;*/
+    padding: 2px;
+    border: 1px solid gray;
 }
 #loading img {
     display: block;

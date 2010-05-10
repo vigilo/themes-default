@@ -3,90 +3,19 @@
       xmlns:py="http://genshi.edgewall.org/"
       xmlns:xi="http://www.w3.org/2001/XInclude"
       lang="fr">
+    <xi:include href="main.html" />
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>VigiMap</title>
-    <style type="text/css">@import "${tg.url('css/reset.css')}";</style>
-    <!--[if IE]><script type="text/javascript" src="${tg.url('/js/excanvas.js')}"></script><![endif]-->
-    <link rel="stylesheet" type="text/css" href="${tg.url('/css/jxlib/jxtheme.uncompressed.css')}" />
-    <style type="text/css">@import "${tg.url('css/map.css')}";</style>
-    <style type="text/css">@import "${tg.url('css/ServiceElement.css')}";</style>
-
-    <script type="text/javascript" src="${tg.url('/js/lib/mootools.js')}"></script>
-    <script type="text/javascript" src="${tg.url('/js/lib/mootools-more.js')}"></script>
-    <script type="text/javascript" src="${tg.url('/js/drag.move.ghost.js')}"></script>
-    <script type="text/javascript" src="${tg.url('/js/lib/jxlib.js')}"></script>
-    <script type="text/javascript">Jx.baseURL = 'js';</script>
-    <!--!
-        "js/babel.js" doit être chargé avant "i18n",
-        qui doit lui-même être chargé avant "js/map.js".
-    -->
-    <script type="text/javascript" src="${tg.url('/js/lib/babel.js')}"></script>
-    <script type="text/javascript" src="${tg.url('/i18n')}"></script>
-    <script type="text/javascript" src="${tg.url('/js/MainDisplay.js')}"></script>    
-    <script type="text/javascript" src="${tg.url('/js/loader.js')}"></script>
-    <script type="text/javascript" src="${tg.url('/js/menu.js')}"></script>
-    <script type="text/javascript" src="${tg.url('/js/details.js')}"></script>
-    <script type="text/javascript" src="${tg.url('/js/map.js')}"></script>
-    <script type="text/javascript" src="${tg.url('/js/legend.js')}"></script>
-    <script type="text/javascript" src="${tg.url('/js/mapElement.js')}"></script>
-    <script type="text/javascript" src="${tg.url('/js/ServiceElement.js')}"></script>
-
-    <div py:for="widget in widgets" py:strip="True">
-        <script type="text/javascript" src="${tg.url(widget+'.js')}"></script>
-        <link rel="stylesheet" type="text/css" href="${tg.url(widget+'.css')}" />
-    </div>
-    
+    <!--<script type="text/javascript" src="${tg.url('/js/MainDisplay.js')}"></script>-->
 </head>
 <body>
-
-
-    <div id="header">
-        <span id="logo">
-            <a href="${tg.url(tg.config.get('logo_link', '/'))}">
-                <img alt="" src="${tg.url('/images/vigilo.png')}"/>
-            </a>
-        </span>
-
-        <div class="header_item">
-            <a href="${tg.config['help_link']}">
-                <img src="${tg.url('/images/help.png')}" alt="Help" title="Help"/>
-            </a>
-            <a href="${tg.url('/logout_handler')}">
-                <img src="${tg.url('/images/logout.png')}" alt="Log out" title="Log out"/>
-            </a>
-        </div>
-
-        <h1><a href="${tg.url('/')}">VigiMap<span id="maptitle"></span></a></h1>
-    </div>
-
-    <div id="menu">
-    </div>
 
     <div id="leftmenu">
         <ul>
         </ul>
     </div>
 
-    <div id="map">
-        <canvas>
-            Your browser does not support the canvas element. Please upgrade.
-        </canvas>
-        
-        <div id="legend">
-        </div>
-    </div>
-
-    <!--
-    <div id="details" title="essai">
-        <p>Services&nbsp;:</p>
-        <ul></ul>
-    </div>
-    -->
-
-    <div id="loading">
-        <img alt="loading..." src="${tg.url('images/loading.gif')}" />
-    </div>    
+    ${map()}
 
 </body>
 </html>
