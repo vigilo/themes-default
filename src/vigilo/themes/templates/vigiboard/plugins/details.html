@@ -73,9 +73,7 @@ window.addEvent("domready", function () {
     window.details_dialog.toggleCollapse();
 
     function remove_selection() {
-        $$$$('.selectedRow').each(function (sel) {
-            sel.removeClass('selectedRow');
-        });
+        $$$$('.selectedRow').removeClass('selectedRow');
     }
 
     window.details_dialog.addEvent('close', remove_selection);
@@ -117,7 +115,7 @@ window.addEvent("domready", function () {
             });
             window.details_dialog.options.parent = item;
             // Permet d'afficher l'événement sélectionné autrement.
-            item.getParent().getParent().addClass('selectedRow');
+            item.getParent('tr').addClass('selectedRow');
             window.details_dialog.open.bind(window.details_dialog)();
             window.details_dialog.setBusy(true);
             req.post({plugin_name: '${name}', idcorrevent: idd});

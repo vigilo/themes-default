@@ -19,6 +19,18 @@
 /*<![CDATA[*/
     window.edit_dialog = null;
 
+    // Supprime le style de sélection de la ligne.
+    function remove_selection() {
+        $$$$('.selectedRow').removeClass('selectedRow');
+    }
+
+    function update_edit_dialog() {
+        if (window.edit_dialog.isOpen) {
+            remove_selection();
+            $$('Edit_All').fireEvent('click');
+        }
+    }
+
     window.addEvent("domready", function () {
         /// HACK: voir notes sur window.search_dialog dans vigiboard.html.
         window.edit_dialog = new Jx.Dialog({
@@ -36,35 +48,59 @@
         window.edit_dialog.toggleCollapse();
         window.edit_dialog.toggleCollapse();
 
+        window.edit_dialog.addEvent('close', remove_selection);
+
+        // Ajoute événement pour sélection multiple.
         $$('Edit_All').addEvent('click', function () {
-            var idd = '';
-            $$$$('.Edit_EventsCheckBox').each(function (el) {
-                if (el.get('checked'))
-                    idd += el.get('value') + ',';
-            });
-
-            if (idd == '')
+            var nb_events = $$$$('.Edit_EventsCheckBox').filter(
+                function (e) { return e.get('checked'); }
+            ).length;
+            if (!nb_events) {
+                window.edit_dialog.close();
                 return alert('${l_("No events have been selected")}');
-
-            // Supprime la virgule finale avant l'appel.
-            idd = idd.substring(0, idd.length - 1);
-            vigiboard_edit_eventdialog(idd);
+            }
+            vigiboard_edit_eventdialog(1, null);
         }.bind(window.edit_dialog));
 
+        // Ajoute les événements pour la sélection simple.
         $$$$('.Edit_EventsLien').each(function (el) {
             if (el.get('id') == 'Edit_All')
                 return;
 
             el.addEvent('click', function (item) {
+                $$$$('.Edit_EventsCheckBox').set('checked', false);
                 var idd = item.get('href').substring(1);
-                vigiboard_edit_eventdialog(idd);
+                remove_selection();
+                item.getParent('tr').addClass('selectedRow');
+                vigiboard_edit_eventdialog(0, idd);
             }.bind(this, el));
         }.bind(window.edit_dialog));
+
+        // Met à jour le dialogue d'édition lors de clics
+        // sur les checkboxes.
+        $$$$('.Edit_EventsCheckBox').addEvent('click', function () {
+            update_edit_dialog();
+        });
     }); // Fin domready.
 
-	function vigiboard_edit_eventdialog(idd) {
-	    var ids = idd.split(',');
-	    var refs = new Hash();
+    /* mode: 1 si multi-sélection, 0 sinon
+     * idd: ID sélection si mono-sélection, ignoré sinon.
+     */
+    function vigiboard_edit_eventdialog(mode, idd) {
+        var ids = [];
+        if (!mode) ids[0] = idd;
+        else {
+            // Multi-sélection : on récupère tous les IDs.
+            $$$$('.Edit_EventsCheckBox').filter(
+                function (el) { return el.get('checked'); }
+            ).each(function (el) {
+                ids.push(el.get('value'));
+            });
+        }
+
+        // Génère la liste de toutes les références
+        // à des TT dans la sélection.
+        var refs = new Hash();
         for (var i = 0; i < ids.length; i++) {
             tt = $$('plugin_${name}_tt_'+ids[i]);
             if (tt) {
@@ -76,10 +112,13 @@
                 refs.include('', 0);
         }
 
+        // Si 1 seul TT référencé, on utilise la réf.
         var ref = '';
         if (refs.getLength() == 1)
-    	    ref = refs.getKeys()[0];
+            ref = refs.getKeys()[0];
 
+        // S'il y a plus de 2 réfs de TT,
+        // affichage d'un avertissement.
         var warning = $$('edit_event_form_warning.container');
         if (ref == '' && ids.length > 1) {
             warning.show('block');
@@ -87,16 +126,17 @@
         }
         else warning.hide();
 
-		$$('edit_event_form_trouble_ticket').set('value', ref);
-		$$('edit_event_form_ack').set('selectedindex', 0);
-		$$('edit_event_form_id').set('value', idd);
-		window.edit_dialog.open.bind(window.edit_dialog)();
-	}
+        $$('edit_event_form_trouble_ticket').set('value', ref);
+        $$('edit_event_form_ack').set('selectedindex', 0);
+        $$('edit_event_form_id').set('value', ids.join(','));
+        window.edit_dialog.open.bind(window.edit_dialog)();
+    }
 
-	function vigiboard_checkall() {
-	    var val = $$('vigiboard_checkall_checkbox').get('checked');
-	    $$$$('.Edit_EventsCheckBox').each(function (el) { el.set('checked', val); });
-	}
+    function vigiboard_checkall() {
+        var val = $$('vigiboard_checkall_checkbox').get('checked');
+        $$$$('.Edit_EventsCheckBox').set('checked', val);
+        update_edit_dialog();
+    }
 /*]]>*/
 </script>
 </py:def>
