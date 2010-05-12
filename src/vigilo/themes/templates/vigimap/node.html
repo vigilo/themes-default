@@ -12,7 +12,8 @@
     </ul>
     <ul class="maps">
         <li py:for="map in maps">
-            <a href="index?mapid=${map[0]}" > ${map[1]}</a>
+            <a href="" onclick="map.load(${map[0]}); return false;" > ${map[1]}</a>
+            <!-- <a href="javascript:map.load(${map[0]}); return false;" > ${map[1]}</a> --> <!-- lequel est le plus standard ? -->
         </li>
     </ul>
     <py:choose test="">
