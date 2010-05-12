@@ -1,5 +1,6 @@
 <div xmlns:py="http://genshi.edgewall.org/">
     <ul class="image_widget">
+        <li><a href="" onclick="set_image(null, '${receptId}'); return false;" class="noimage">no image</a></li>
         <li py:for="image in images">
             <img src="${tg.url('/images/%s/%s.png' % (folder,image))}"
                  alt="${image}" title="${image}"

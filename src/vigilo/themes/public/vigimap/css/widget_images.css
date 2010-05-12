@@ -13,6 +13,20 @@
     border: 1px solid black;
 }
 
+.image_widget li a.noimage {
+    display: block;
+    font-size: 80%;
+    padding-top: 3px;
+    width: 48px;
+    padding-top: 5px;
+    height: 43px; /* 48 - 5 (padding) */
+    text-decoration: none;
+    color: black;
+}
+.image_widget li a.noimage:hover {
+    text-decoration: none;
+}
+
 .image_widget li:hover {
     background-color: #bbb;
     cursor: pointer;
@@ -22,5 +36,7 @@
     vertical-align: middle;
     display: block;
     margin: 0px auto;
+    width: 48px;
+    height: 48px;
 }
 
