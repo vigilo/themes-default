@@ -252,19 +252,32 @@ h1 a:hover {
     margin: 1em 0 1em 2em;
 }
 
-#details ul.maps li a {
-    vertical-align: middle;
-    height: 16px;
-    padding-left: 18px;
-    background: url(../images/submap.png) no-repeat center left;
-}
-
 #details h2 {
     text-align: center;
 }
 
 #details p span.label {
     font-weight: bold;
+}
+
+#details ul.maps {
+    list-style-type: none;
+}
+#details ul.maps li a {
+    vertical-align: middle;
+    height: 16px;
+    padding-left: 18px;
+    background: url(../images/map.png) no-repeat center left;
+}
+
+#details ul.links {
+    list-style-type: none;
+}
+#details ul.links li a {
+    vertical-align: middle;
+    height: 16px;
+    padding-left: 18px;
+    background: url(../images/external-link.png) no-repeat center left;
 }
 
 

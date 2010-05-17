@@ -1,19 +1,18 @@
 <div xmlns:py="http://genshi.edgewall.org/">
     <p class="status status-${status.lower()}">${message}</p>
-    <ul class="tags">
+    <ul class="tags" py:if="tags">
         <li py:for="tag in tags">
             <img src="images/tags/${tag}.png" alt="${l_(tag)}" /> ${l_(tag)}
         </li>
     </ul>
-    <ul class="links">
+    <ul class="links" py:if="links">
         <li py:for="link in links">
             <a href="${link[1]}" > ${link[0]}</a>    
         </li>
     </ul>
-    <ul class="maps">
+    <ul class="maps" py:if="maps">
         <li py:for="map in maps">
-            <a href="" onclick="map.load(${map[0]}); return false;" > ${map[1]}</a>
-            <!-- <a href="javascript:map.load(${map[0]}); return false;" > ${map[1]}</a> --> <!-- lequel est le plus standard ? -->
+            <a href="index#mapid=${map[0]}" onclick="map.load(${map[0]}); return false;" > ${map[1]}</a>
         </li>
     </ul>
     <py:choose test="">
