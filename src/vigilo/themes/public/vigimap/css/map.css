@@ -249,34 +249,38 @@ h1 a:hover {
 }
 
 #details .jxDialogContent ul {
-    margin: 1em 0 1em 2em;
+    padding: 1em 2em;
+    margin: 0;
+}
+#details .jxDialogContent ul li {
+    padding: 0.3em 0;
 }
 
 #details h2 {
     text-align: center;
+    border-top: 1px solid black;
+    margin-top: 0.5em;
+    padding-top: 0.2em;
 }
 
 #details p span.label {
     font-weight: bold;
 }
 
-#details ul.maps {
+#details ul.section {
     list-style-type: none;
+    padding-top: 0.3em;
 }
-#details ul.maps li a {
-    vertical-align: middle;
+#details ul.section li a {
     height: 16px;
-    padding-left: 18px;
+    padding-left: 20px;
+}
+
+#details ul.maps li a {
     background: url(../images/map.png) no-repeat center left;
 }
 
-#details ul.links {
-    list-style-type: none;
-}
 #details ul.links li a {
-    vertical-align: middle;
-    height: 16px;
-    padding-left: 18px;
     background: url(../images/external-link.png) no-repeat center left;
 }
 

@@ -5,12 +5,14 @@
             <img src="images/tags/${tag}.png" alt="${l_(tag)}" /> ${l_(tag)}
         </li>
     </ul>
-    <ul class="links" py:if="links">
+    <h2 py:if="links">Links</h2>
+    <ul class="section links" py:if="links">
         <li py:for="link in links">
             <a href="${link[1]}" > ${link[0]}</a>    
         </li>
     </ul>
-    <ul class="maps" py:if="maps">
+    <h2 py:if="maps">Submaps</h2>
+    <ul class="section maps" py:if="maps">
         <li py:for="map in maps">
             <a href="index#mapid=${map[0]}" onclick="map.load(${map[0]}); return false;" > ${map[1]}</a>
         </li>
@@ -35,4 +37,3 @@
     </py:if>
     -->
 </div>
-<!-- Ceci est un commentaire-->
