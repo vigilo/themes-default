@@ -34,7 +34,8 @@ tr.even {
 	background-color: #F0F0F0;
 }
 
-td.OK {
+td.OK,
+td.UP {
     background-color: #73DE78;
 }
 
@@ -42,7 +43,8 @@ td.WARNING {
 	background-color: #FFFF00;
 }
 
-td.CRITICAL {
+td.CRITICAL,
+td.DOWN {
 	background-color: #FF0000;
 }
 
@@ -50,11 +52,13 @@ td.WARNING_Ack {
 	background-color: #FCFCA2;
 }
 
-td.CRITICAL_Ack {
+td.CRITICAL_Ack,
+td.DOWN_Ack {
 	background-color: #FC9090;
 }
 
-td.OK_Ack {
+td.OK_Ack,
+td.UP_Ack {
 	background-color: #A9EBAC;
 }
 
