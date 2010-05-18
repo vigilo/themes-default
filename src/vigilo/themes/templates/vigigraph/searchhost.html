@@ -16,7 +16,7 @@
                 <td class="hostname">&mdash; ${h}</td>
                 <td><a href="${tg.url('/nagios/%s/cgi-bin/status.cgi?host=%s&amp;style=detail&amp;supNav=1' % (h, h))}">Sup page</a></td>
                 <td> - </td>
-                <td><a href="${tg.url('/rrdgraph/%s/rrdgraph.py?host=%s' % (h, h))}">Metro page</a></td>
+                <td><a href="${tg.url('/rrdgraph/%s/index?host=%s' % (h, h))}">Metro page</a></td>
             </tr>
         </table>
         ${tmpl_context.paginators.hosts.pager()}

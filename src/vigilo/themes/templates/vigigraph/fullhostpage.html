@@ -16,7 +16,7 @@
         <br />
         <div py:for="graph in graphs" py:strip="True">
             <a href="singleGraph?host=${host};graph=${graph.name};start=${start};duration=${duration}">
-            <img src="${tg.url('/rrdgraph/%(host)s/rrdgraph.py?graphtemplate=%(graph)s&amp;start=%(start)d&amp;duration=%(duration)d&amp;direct=1&amp;details=0&amp;host=%(host)s' % {
+            <img src="${tg.url('/rrdgraph/%(host)s/index?graphtemplate=%(graph)s&amp;start=%(start)d&amp;duration=%(duration)d&amp;direct=1&amp;details=0&amp;host=%(host)s' % {
                 'host': host,
                 'graph': graph.name,
                 'start': start,

@@ -28,7 +28,7 @@
             <a href="singleGraph?host=${host};duration=${h['duration']};graph=${graph}">${h['caption']}</a>
         </div>
         <br />
-        <img src="${tg.url('/rrdgraph/%(host)s/rrdgraph.py?graphtemplate=%(graph)s&amp;start=%(start)d&amp;duration=%(duration)d&amp;direct=1&amp;host=%(host)s' % {
+        <img src="${tg.url('/rrdgraph/%(host)s/index?graphtemplate=%(graph)s&amp;start=%(start)d&amp;duration=%(duration)d&amp;direct=1&amp;host=%(host)s' % {
             'host': host,
             'graph': graph,
             'start': start,
