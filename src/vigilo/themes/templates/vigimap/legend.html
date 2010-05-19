@@ -5,7 +5,7 @@
             Le span sera complété avec le nombre total
             d'éléments (entre parenthèses).
         -->
-        <h3>${l_("Elements")} <span></span>:</h3>
+        <h3>${l_("Elements")} <span></span></h3>
         <dl>
             <dt class="status-unknown"></dt>
                 <dd>${l_("Unknown")}</dd>
@@ -18,7 +18,11 @@
         </dl>
     </div>
     <div id="legend-links" py:if="has_link">
-        <h3>${l_("Links")}&nbsp;:</h3>
+        <!--!
+            Le span sera complété avec le nombre total
+            d'éléments (entre parenthèses).
+        -->
+        <h3>${l_("Links")} <span></span></h3>
         <dl>
             <div py:for="i, link in enumerate(links)" py:strip="True">
                 <div py:choose="" py:strip="True">
