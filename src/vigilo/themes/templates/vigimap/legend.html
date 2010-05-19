@@ -1,7 +1,11 @@
 <div xmlns:py="http://genshi.edgewall.org/">
     <h2>${l_("Legend")}</h2>
     <div id="legend-elements">
-        <h3>${l_("Elements")}&nbsp;:</h3>
+        <!--!
+            Le span sera complété avec le nombre total
+            d'éléments (entre parenthèses).
+        -->
+        <h3>${l_("Elements")} <span></span>:</h3>
         <dl>
             <dt class="status-unknown"></dt>
                 <dd>${l_("Unknown")}</dd>

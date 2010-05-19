@@ -353,9 +353,10 @@ canvas {
 #legend dl dt {
     display: block;
     float: left;
-    width: 1em;
+    width: 2em;
     height: 1em;
     margin-right: 0.5em;
+    text-align: center;
 }
 
 .saving {
