@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<!--  !Inject main CSS widget -->
+<?python
+widgets['rum_css'].inject()
+widgets['rum_print_css'].inject()
+from genshi.input import XML
+?>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:py="http://genshi.edgewall.org/"
+      xmlns:xi="http://www.w3.org/2001/XInclude"
+      py:strip="True">
+  <py:match path="div[@id='rum-sidebar']" once="true">
+    <div py:attrs="select('@*')">
+        <?python from rum.util import generate_label ?>
+        <ul id="rum-resource-list">
+          <!--! Le block py:with suivant permet d'ordonner les noms des tables
+                par ordre alphabétique croissant dans l'affichage de Rum. -->
+          <py:with vars="res = sorted(map(lambda x: (app.translator.ugettext(app.names_for_resource(x)[1]), x), resources.keys()), cmp=lambda x, y: cmp(x[0], y[0]))">
+          <li py:for="r in res"
+              py:with="url=url_for(r[1], _memory=False)">
+              <a href="${url}" class="${request.routes['resource'] is r[1] and 'active' or None}">${r[0]}</a>
+          </li>
+          </py:with>
+        </ul>
+        <div py:replace="select('*|text()')"/>
+    </div>
+  </py:match>
+
+  <py:match path="body" once="true">
+      <body class="rum" py:attrs="select('@*')">
+        <!-- !Override header.html in your template search path to change it -->
+        <xi:include href="header.html" />
+        <py:if test="config.get('render_flash', True)">
+            ${XML(flash.render('rum-flash'))}
+        </py:if>
+        <div id="rum-page" class="leftmenu">
+          <!-- !Body content of template that xincludes us will go inside
+               rum-wrap
+          -->
+          <div id="rum-wrap" py:content="select('*|text()')" />
+        </div>
+        <!-- !Override footer.html in your template search path to change it -->
+        <xi:include href="footer.html" />
+      </body>
+  </py:match>
+  <xi:include href="${master_template}"><xi:fallback /></xi:include>
+</html>
