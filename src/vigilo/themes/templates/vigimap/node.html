@@ -8,7 +8,7 @@
     <h2 py:if="links">Links</h2>
     <ul class="section links" py:if="links">
         <li py:for="link in links">
-            <a href="${link[1]}" > ${link[0]}</a>    
+            <a href="${tg.url(link[1])}" > ${link[0]}</a>    
         </li>
     </ul>
     <h2 py:if="maps">Submaps</h2>
