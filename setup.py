@@ -29,6 +29,7 @@ setup(name='vigilo-themes-default',
     ],
     namespace_packages = [
         'vigilo',
+        'vigilo.themes',
     ],
     packages=find_packages('src', exclude=['ez_setup']),
     include_package_data = True,
