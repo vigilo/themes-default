@@ -334,6 +334,7 @@ canvas {
 #legend h3 {
     font-weight: bold;
     margin-top: 0.5em;
+    font-size: 95%;
 }
 
 #legend ul {
@@ -350,14 +351,19 @@ canvas {
 }
 
 #legend dl {
+    font-size: 90%;
+    padding: 0.2em 0;
 }
 #legend dl dt {
     display: block;
     float: left;
     width: 2em;
-    height: 1em;
     margin-right: 0.5em;
     text-align: center;
+    clear: left;
+}
+#legend dl dd {
+    border: 1px solid transparent;
 }
 
 
