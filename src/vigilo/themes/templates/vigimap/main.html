@@ -6,6 +6,7 @@
       py:strip="">
 <head py:match="head" py:attrs="select('@*')">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="version" content="${tg.config.get('version')}" />
 
     <style type="text/css">@import "${tg.url('css/reset.css')}";</style>
     <!--[if IE]><script type="text/javascript" src="${tg.url('/js/excanvas.js')}"></script><![endif]-->

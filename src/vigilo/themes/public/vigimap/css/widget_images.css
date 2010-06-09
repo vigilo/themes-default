@@ -48,7 +48,6 @@
 }
 .imagepicker img:hover {
     border: 1px solid #ffcc66;
-    cursor: pointer;
 }
 .imagepicker a {
     color: black;

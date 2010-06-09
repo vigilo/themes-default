@@ -10,6 +10,8 @@
 <py:match path="head" once="true">
 <head py:attrs="select('@*|py:with')">
     <meta content="text/html; charset=UTF-8" http-equiv="content-type" py:replace="''"/>
+    <meta name="version" content="${tg.config.get('version')}" />
+
     <title py:replace="''">Your title goes here</title>
     <meta py:replace="select('*')"/>
     <style type="text/css">@import "${tg.url('css/reset.css')}";</style>

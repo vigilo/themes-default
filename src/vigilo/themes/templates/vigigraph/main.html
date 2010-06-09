@@ -6,6 +6,8 @@
       py:strip="">
 <head py:match="head" py:attrs="select('@*')">
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+    <meta name="version" content="${tg.config.get('version')}" />
+
     <title py:replace="''">Your title goes here</title>
     <meta py:replace="select('*')"/>
     <link rel="search" type="application/opensearchdescription+xml"
