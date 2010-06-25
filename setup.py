@@ -38,20 +38,6 @@ setup(name='vigilo-themes-default',
     extras_require={
         'tests': tests_require,
     },
-    package_data={
-        'vigilo.themes': [
-            'i18n/*/LC_MESSAGES/**.*',
-            'templates/*/**.*',
-            'templates/*/**.html',
-            'templates/*/*/**.html',
-            'public/*/css/**.css',
-            'public/*/css/*/**.*',
-            'public/*/css/*/*/**.*',
-            'public/*/javascript/**.js',
-            'public/*/javascript/*/**.js',
-            'public/*/images/**.*',
-        ],
-    },
     exclude_package_data ={
         'vigilo.themes': [
         ],
