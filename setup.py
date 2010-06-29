@@ -32,6 +32,7 @@ setup(name='vigilo-themes-default',
         'vigilo.themes',
     ],
     packages=find_packages('src', exclude=['ez_setup']),
+    include_package_data = True,
     test_suite='nose.collector',
     tests_require=tests_require,
     extras_require={
