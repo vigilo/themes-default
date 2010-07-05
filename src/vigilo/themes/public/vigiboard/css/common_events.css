@@ -196,6 +196,10 @@ div.clearingdiv {
     margin: 0 auto;
 }
 
+#search_form #search_form_supitemgroup\2E ui {
+    width: 59%;
+}
+
 #search_mode_tip {
     margin-top: 7px;
 }
