@@ -106,17 +106,23 @@
         window.search_dialog.toggleCollapse();
         window.search_dialog.toggleCollapse();
 
-        $('search_form_supitemgroup').set('value', "${search['supitemgroup'].encode('backslash')}");
-        $('search_form_host').set('value', "${search['host'].encode('backslash')}");
-        $('search_form_service').set('value', "${search['service'].encode('backslash')}");
-        $('search_form_output').set('value', "${search['output'].encode('backslash')}");
-        $('search_form_trouble_ticket').set('value', "${search['tt'].encode('backslash')}");
-        $('search_form_from_date').set('value', "${search['from_date'].encode('backslash')}");
-        $('search_form_to_date').set('value', "${search['to_date'].encode('backslash')}");
+        var selector = new TreeGroup({
+            url: '${tg.url("/get_groups")}',
+            app_path: '${tg.url("/")}',
+            title: '${l_("Select a group").encode("backslash")}',
+        });
+        $('search_form_supitemgroup').addEvent('click', selector.selectGroup.bind(selector));
+        selector.addEvent('select', function (item) {
+            $('search_form_supitemgroup.ui').set('value', item.options.label);
+            $('search_form_supitemgroup.value').set('value', item.options.data);
+        });
+        $('search_form_supitemgroup.clear').addEvent('click', function () {
+            $('search_form_supitemgroup.ui').set('value', '');
+            $('search_form_supitemgroup.value').set('value', '');
+        });
 
         add_autocompleter('search_form_host', 'host', '${tg.url("/autocomplete/host").encode("backslash")}');
         add_autocompleter('search_form_service', 'service', '${tg.url("/autocomplete/service").encode("backslash")}');
-        add_autocompleter('search_form_supitemgroup', 'supitemgroup', '${tg.url("/autocomplete/supitemgroup").encode("backslash")}');
 
         change_refresh_rate(${tg.session.get("refresh", 0)});
 

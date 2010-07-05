@@ -50,7 +50,7 @@
 
         window.edit_dialog.addEvent('close', remove_selection);
 
-        // Ajoute événement pour sélection multiple.
+        // Ajoute les événements pour la sélection multiple.
         $$('Edit_All').addEvent('click', function () {
             var nb_events = $$$$('.Edit_EventsCheckBox').filter(
                 function (e) { return e.get('checked'); }
