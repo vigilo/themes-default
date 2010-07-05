@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vigilo-themes-default 2.0.0\n"
 "Report-Msgid-Bugs-To: contact@projet-vigilo.org\n"
-"POT-Creation-Date: 2010-04-23 13:40+0200\n"
-"PO-Revision-Date: 2010-06-25 18:11+0200\n"
+"POT-Creation-Date: 2010-07-05 19:26+0200\n"
+"PO-Revision-Date: 2010-07-05 19:26+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: en <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -351,7 +351,7 @@ msgstr "Filter display"
 #: src/vigilo/themes/templates/vigigraph/main.html:33
 #: src/vigilo/themes/templates/vigimap/main.html:56
 msgid "Help"
-msgstr ""
+msgstr "Help"
 
 #: src/vigilo/themes/templates/vigiboard/toolbar.html:25
 #: src/vigilo/themes/templates/vigigraph/main.html:36
@@ -387,11 +387,20 @@ msgstr "You are in Search mode, click here to return to the initial mode."
 msgid "Search Event"
 msgstr "Search Event"
 
-#: src/vigilo/themes/templates/vigiboard/toolbar.html:147
-#: src/vigilo/themes/templates/vigiboard/toolbar.html:169
-#: src/vigilo/themes/templates/vigiboard/toolbar.html:198
+#: src/vigilo/themes/templates/vigiboard/toolbar.html:112
+msgid "Select a group"
+msgstr "Select a group"
+
+#: src/vigilo/themes/templates/vigiboard/toolbar.html:144
+#: src/vigilo/themes/templates/vigiboard/toolbar.html:166
+#: src/vigilo/themes/templates/vigiboard/toolbar.html:195
 msgid "Unable to save preferences"
 msgstr "Unable to save preferences"
+
+#: src/vigilo/themes/templates/vigiboard/vigiboard.html:58
+#, python-format
+msgid "%Y-%m-%d %I:%M:%S %p"
+msgstr "%Y-%m-%d %I:%M:%S %p"
 
 #: src/vigilo/themes/templates/vigiboard/plugins/checkbox.html:27
 #: src/vigilo/themes/templates/vigiboard/plugins/status.html:156
@@ -810,11 +819,16 @@ msgstr "Click a table name in the sidebar to view or modify its content."
 msgid "List of graphs for \"%s\""
 msgstr "List of graphs for \"%s\""
 
-#: src/vigilo/themes/templates/vigigraph/fullhostpage.html:12
+#: src/vigilo/themes/templates/vigigraph/fullhostpage.html:14
 #: src/vigilo/themes/templates/vigigraph/singlegraph.html:25
 #, python-format
 msgid "Monitoring page for \"%s\""
 msgstr "Monitoring page for \"%s\""
+
+#: src/vigilo/themes/templates/vigigraph/fullhostpage.html:29
+#, python-format
+msgid "Graph '%(graph)s' on '%(host)s'"
+msgstr "Graph '%(graph)s' on '%(host)s'"
 
 #: src/vigilo/themes/templates/vigigraph/graphslist.html:8
 #: src/vigilo/themes/templates/vigigraph/graphslist.html:16
@@ -858,7 +872,7 @@ msgstr "Vigigraph search"
 
 #: src/vigilo/themes/templates/vigigraph/main.html:29
 msgid "Print all"
-msgstr ""
+msgstr "Print all"
 
 #: src/vigilo/themes/templates/vigigraph/main.html:29
 msgid "Print all visible graphs"
@@ -888,7 +902,7 @@ msgstr "Back to graph list for \"%s\""
 
 #: src/vigilo/themes/templates/vigigraph/test.html:8
 msgid "Test"
-msgstr ""
+msgstr "Test"
 
 #: src/vigilo/themes/templates/vigimap/edition.html:8
 #: src/vigilo/themes/templates/vigimap/index.html:8
@@ -952,7 +966,7 @@ msgstr "loading..."
 
 #: src/vigilo/themes/templates/vigimap/node.html:14
 msgid "Submaps"
-msgstr ""
+msgstr "Submaps"
 
 #: src/vigilo/themes/templates/vigimap/node.html:22
 #, python-format
@@ -975,20 +989,5 @@ msgstr "Node update!"
 
 #: src/vigilo/themes/templates/vigimap/widget_images.html:3
 msgid "no image"
-msgstr ""
-
-#~ msgid "Vigilo"
-#~ msgstr "Vigilo"
-
-#~ msgid "v2.0"
-#~ msgstr "v2.0"
-
-#~ msgid "Device:"
-#~ msgstr "Device:"
-
-#~ msgid "(edit mode)"
-#~ msgstr "(edit mode)"
-
-#~ msgid "Welcome to Widget!"
-#~ msgstr "Welcome to Widget!"
+msgstr "no image"
 

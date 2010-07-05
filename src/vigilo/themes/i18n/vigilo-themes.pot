@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vigilo-themes-default 2.0.0\n"
 "Report-Msgid-Bugs-To: contact@projet-vigilo.org\n"
-"POT-Creation-Date: 2010-06-25 18:11+0200\n"
+"POT-Creation-Date: 2010-07-05 19:26+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -380,10 +380,19 @@ msgstr ""
 msgid "Search Event"
 msgstr ""
 
-#: src/vigilo/themes/templates/vigiboard/toolbar.html:147
-#: src/vigilo/themes/templates/vigiboard/toolbar.html:169
-#: src/vigilo/themes/templates/vigiboard/toolbar.html:198
+#: src/vigilo/themes/templates/vigiboard/toolbar.html:112
+msgid "Select a group"
+msgstr ""
+
+#: src/vigilo/themes/templates/vigiboard/toolbar.html:144
+#: src/vigilo/themes/templates/vigiboard/toolbar.html:166
+#: src/vigilo/themes/templates/vigiboard/toolbar.html:195
 msgid "Unable to save preferences"
+msgstr ""
+
+#: src/vigilo/themes/templates/vigiboard/vigiboard.html:58
+#, python-format
+msgid "%Y-%m-%d %I:%M:%S %p"
 msgstr ""
 
 #: src/vigilo/themes/templates/vigiboard/plugins/checkbox.html:27
@@ -799,10 +808,15 @@ msgstr ""
 msgid "List of graphs for \"%s\""
 msgstr ""
 
-#: src/vigilo/themes/templates/vigigraph/fullhostpage.html:12
+#: src/vigilo/themes/templates/vigigraph/fullhostpage.html:14
 #: src/vigilo/themes/templates/vigigraph/singlegraph.html:25
 #, python-format
 msgid "Monitoring page for \"%s\""
+msgstr ""
+
+#: src/vigilo/themes/templates/vigigraph/fullhostpage.html:29
+#, python-format
+msgid "Graph '%(graph)s' on '%(host)s'"
 msgstr ""
 
 #: src/vigilo/themes/templates/vigigraph/graphslist.html:8
