@@ -196,6 +196,8 @@ div.clearingdiv {
     margin: 0 auto;
 }
 
+/* "\2E " permet d'échapper le point.
+ * La séquence devrait être reconnue par tous les navigateurs. */
 #search_form #search_form_supitemgroup\2E ui {
     width: 59%;
 }
