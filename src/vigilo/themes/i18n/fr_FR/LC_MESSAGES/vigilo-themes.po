@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: vigilo-themes-default 0.1\n"
 "Report-Msgid-Bugs-To: contact@projet-vigilo.org\n"
 "POT-Creation-Date: 2009-11-10 09:51+0100\n"
-"PO-Revision-Date: 2010-07-05 19:26+0200\n"
+"PO-Revision-Date: 2010-07-06 10:54+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: fr <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n > 1)\n"
@@ -832,8 +832,7 @@ msgid "Monitoring page for \"%s\""
 msgstr "Page de supervision pour \"%s\""
 
 #: src/vigilo/themes/templates/vigigraph/fullhostpage.html:29
-#, fuzzy, python-format
-#| msgid "Graph \"%(graph)s\" for host \"%(host)s\""
+#, python-format
 msgid "Graph '%(graph)s' on '%(host)s'"
 msgstr "Graphe \"%(graph)s\" de l'hôte \"%(host)s\""
 
