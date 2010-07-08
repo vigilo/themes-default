@@ -21,6 +21,12 @@ Requires:   python-setuptools
 Requires:   vigilo-common
 Requires:   python-genshi
 Requires:   python-babel
+######### Dependance from python dependance tree ########
+Requires:   vigilo-themes-default
+Requires:   vigilo-common
+Requires:   python-babel
+Requires:   python-genshi
+Requires:   python-configobj
 
 Requires(pre): rpm-helper
 
