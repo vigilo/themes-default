@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<map xmlns="http://projet-vigilo.org/ns/api"
+     xmlns:atom="http://www.w3.org/2005/Atom"
+     xmlns:py="http://genshi.edgewall.org/"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     id="${map.id}">
+    <title>${map.title}</title>
+    <mtime>${map.mtime}</mtime>
+    <background>
+        <color>${map.background.color}</color>
+        <image>${map.background.image}</image>
+        <position>${map.background.position}</position>
+        <repeat>${map.background.repeat}</repeat>
+    </background>
+    <generated py:if="map.generated" />
+    <atom:link rel="mapgroups" href="${map.groups_href}" />
+    <atom:link rel="nodes" href="${map.nodes_href}" />
+    <atom:link rel="links" href="${map.links_href}" />
+    <mapnodes>
+        <mapnode py:for="node in map.nodes" id="${node.id}" href="${node.href}" />
+    </mapnodes>
+    <maplinks>
+        <maplink py:for="link in map.links" id="${link.id}" href="${link.href}" />
+    </maplinks>
+</map>

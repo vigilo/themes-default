@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<maps xmlns="http://projet-vigilo.org/ns/api"
+      xmlns:py="http://genshi.edgewall.org/"
+      xmlns:xi="http://www.w3.org/2001/XInclude">
+
+    <py:for each="map in maps">
+        <map id="${map.id}" href="${map.href}" title="${map.title}" />
+    </py:for>
+
+</maps>

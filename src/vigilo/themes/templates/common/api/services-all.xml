@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<services xmlns="http://projet-vigilo.org/ns/api"
+          xmlns:py="http://genshi.edgewall.org/"
+          xmlns:xi="http://www.w3.org/2001/XInclude">
+
+    <py:for each="service in services">
+        <service id="${service.id}" type="${service.type}" href="${service.href}" name="${service.name}" />
+    </py:for>
+
+</services>

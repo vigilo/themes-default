@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<service xmlns="http://projet-vigilo.org/ns/api"
+         xmlns:py="http://genshi.edgewall.org/"
+         xmlns:xi="http://www.w3.org/2001/XInclude"
+         id="${service.id}"
+         href="${service.href}"
+         type="${service.type}">
+    <name>${service.name}</name>
+    <status>
+        <name>${service.status.name}</name>
+        <message>${service.status.message}</message>
+        <timestamp>${service.status.datetime}</timestamp>
+        <order>${service.status.order}</order>
+    </status>
+    <tags>
+        <tag py:for="tag in service.tags">${tag}</tag>
+    </tags>
+    <groups>
+        <group py:for="group in service.groups"
+               id="${group.id}" name="${group.name}" />
+    </groups>
+    <host py:if="service.host"
+          id="${service.host.id}" name="${service.host.name}" href="${service.host.href}" />
+</service>

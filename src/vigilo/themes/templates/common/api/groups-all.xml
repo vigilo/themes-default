@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<groups xmlns="http://projet-vigilo.org/ns/api"
+        xmlns:py="http://genshi.edgewall.org/"
+        xmlns:xi="http://www.w3.org/2001/XInclude"
+        type="${type}group">
+
+    <py:for each="group in groups">
+        <group type="${type}group" id="${group.id}"
+               href="${group.href}" name="${group.name}" />
+    </py:for>
+
+</groups>

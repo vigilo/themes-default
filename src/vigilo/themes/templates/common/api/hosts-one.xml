@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<host xmlns="http://projet-vigilo.org/ns/api"
+      xmlns:atom="http://www.w3.org/2005/Atom"
+      xmlns:py="http://genshi.edgewall.org/"
+      xmlns:xi="http://www.w3.org/2001/XInclude"
+      id="${host.id}"
+      href="${host.href}">
+    <name>${host.name}</name>
+    <status>
+        <name>${host.status.name}</name>
+        <message>${host.status.message}</message>
+        <timestamp>${host.status.datetime}</timestamp>
+        <order>${host.status.order}</order>
+    </status>
+    <description>${host.description}</description>
+    <address>${host.address}</address>
+    <tags>
+        <tag py:for="tag in host.tags">${tag}</tag>
+    </tags>
+    <groups>
+        <group py:for="group in host.groups"
+               id="${group.id}" name="${group.name}" href="${group.href}" />
+    </groups>
+    <atom:link rel="alternate" href="${tg.url('/api/hosts')}/${host.name}" />
+    <atom:link rel="lls" href="${host.lls}" />
+    <atom:link rel="perfdatasources" href="${host.perfdatasources}" />
+    <atom:link rel="graphs" href="${host.graphs}" />
+</host>

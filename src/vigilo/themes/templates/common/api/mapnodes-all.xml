@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<mapnodes xmlns="http://projet-vigilo.org/ns/api"
+          xmlns:py="http://genshi.edgewall.org/"
+          xmlns:xi="http://www.w3.org/2001/XInclude">
+
+    <py:for each="node in mapnodes">
+        <mapnode id="${node.id}" href="${node.href}" />
+    </py:for>
+
+</mapnodes>

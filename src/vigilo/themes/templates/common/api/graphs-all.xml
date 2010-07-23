@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<graphs xmlns="http://projet-vigilo.org/ns/api"
+        xmlns:py="http://genshi.edgewall.org/"
+        xmlns:xi="http://www.w3.org/2001/XInclude">
+
+    <py:for each="graph in graphs">
+        <graph id="${graph.id}" href="${graph.href}" name="${graph.name}" />
+    </py:for>
+
+</graphs>

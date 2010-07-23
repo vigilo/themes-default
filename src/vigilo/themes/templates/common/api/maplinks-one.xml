@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<maplink xmlns="http://projet-vigilo.org/ns/api"
+         xmlns:py="http://genshi.edgewall.org/"
+         xmlns:xi="http://www.w3.org/2001/XInclude"
+         id="${link.id}">
+    <mapnode rel="from" id="${link['from'].id}" href="${link['from'].href}" />
+    <mapnode rel="to" id="${link.to.id}" href="${link.to.href}" />
+    <graph py:if="'graph' in link" id="${link.graph.id}" href="${link.graph.href}" />
+    <perfdatasources py:if="'perfdatasources' in link">
+        <perfdatasource rel="out" id="${link.perfdatasources.out.id}"
+                                  href="${link.perfdatasources.out.href}"/>
+        <perfdatasource rel="in" id="${link.perfdatasources['in'].id}"
+                                 href="${link.perfdatasources['in'].href}"/>
+    </perfdatasources>
+    <reference py:if="'reference' in link" id="${link.reference.id}" href="${link.reference.href}" />
+    <color py:if="'color' in link">${link.color}</color>
+    <thickness py:if="'thickness' in link">${link.thickness}</thickness>
+</maplink>

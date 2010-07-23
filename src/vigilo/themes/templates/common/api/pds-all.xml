@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<perfdatasources xmlns="http://projet-vigilo.org/ns/api"
+                 xmlns:py="http://genshi.edgewall.org/"
+                 xmlns:xi="http://www.w3.org/2001/XInclude">
+
+    <py:for each="pds in perfdatasources">
+        <perfdatasource id="${pds.id}" href="${pds.href}" name="${pds.name}" />
+    </py:for>
+
+</perfdatasources>

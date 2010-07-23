@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<group xmlns="http://projet-vigilo.org/ns/api"
+          xmlns:py="http://genshi.edgewall.org/"
+          xmlns:xi="http://www.w3.org/2001/XInclude"
+          id="${group.id}"
+          href="${group.href}"
+          type="${type}"
+          >
+    <name>${group.name}</name>
+    <children>
+        <group py:for="group in group.children"
+               id="${group.id}" href="${group.href}" name="${group.name}" />
+    </children>
+    <maps py:if="'maps' in group">
+        <map py:for="map in group.maps"
+             id="${map.id}" href="${map.href}" title="${map.title}" />
+    </maps>
+    <graphs py:if="'graphs' in group">
+        <graph py:for="graph in group.graphs"
+               id="${graph.id}" href="${graph.href}" name="${graph.name}" />
+    </graphs>
+    <hosts py:if="'hosts' in group">
+        <host py:for="host in group.hosts"
+               id="${host.id}" href="${host.href}" name="${host.name}" />
+    </hosts>
+    <lls py:if="'lls' in group">
+        <lls py:for="lls in group.lls"
+             id="${lls.id}" href="${lls.href}" name="${lls.name}" />
+    </lls>
+    <hls py:if="'hls' in group">
+        <hls py:for="hls in group.hls"
+             id="${hls.id}" href="${hls.href}" name="${hls.name}" />
+    </hls>
+</group>

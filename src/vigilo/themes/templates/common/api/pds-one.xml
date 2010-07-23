@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<perfdatasource xmlns="http://projet-vigilo.org/ns/api"
+                xmlns:py="http://genshi.edgewall.org/"
+                xmlns:xi="http://www.w3.org/2001/XInclude"
+                id="${pds.id}"
+                href="${pds.href}">
+    <name>${pds.name}</name>
+    <type>${pds.type}</type>
+    <label>${pds.label}</label>
+    <factor>${pds.factor}</factor>
+    <max>${pds.max}</max>
+    <host id="${pds.host.id}" href="${pds.host.href}" name="${pds.host.name}" />
+    <graphs>
+        <graph py:for="graph in pds.graphs"
+               id="${graph.id}" href="${graph.href}" name="${graph.name}" />
+    </graphs>
+</perfdatasource>
