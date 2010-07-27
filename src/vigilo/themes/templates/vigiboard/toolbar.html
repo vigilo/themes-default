@@ -42,7 +42,7 @@
         Refresh every
         <select id="refresh_time" class="header_select" onchange="change_refresh($('refresh_time').get('value'));">
             <py:for each="(delay, label) in refresh_times"
-                py:with="refresh_time = tg.session.get('refresh', 0)">
+                py:with="refresh_time = tg.session.get('refresh', int(tg.config.get('default_refresh', 0)))">
             <option py:if="refresh_time == delay" value="${delay}" selected="selected">${label}</option>
             <option py:if="refresh_time != delay" value="${delay}">${label}</option>
             </py:for>
