@@ -38,16 +38,13 @@
         </a>
     </div>
 
-    <div class="header_item">
-        Refresh every
-        <select id="refresh_time" class="header_select" onchange="change_refresh($('refresh_time').get('value'));">
-            <py:for each="(delay, label) in refresh_times"
-                py:with="refresh_time = tg.session.get('refresh', int(tg.config.get('default_refresh', 0)))">
-            <option py:if="refresh_time == delay" value="${delay}" selected="selected">${label}</option>
-            <option py:if="refresh_time != delay" value="${delay}">${label}</option>
-            </py:for>
-        </select>
+    <py:with vars="refresh_delay = float(tg.config.get('refresh_delay', 0)); refresh_enabled = int(tg.session.get('refresh', asbool(tg.config.get('refresh_enabled', False))))">
+    <div class="header_item" py:if="refresh_delay">
+        <input type="checkbox" id="refresh" onchange="set_refresh();" checked="checked" py:if="refresh_enabled" />
+        <input type="checkbox" id="refresh" onchange="set_refresh();" py:if="not refresh_enabled" />
+        <label for="refresh">${l_('Refresh every %d seconds') % refresh_delay}</label>
     </div>
+    </py:with>
 
     <div class="header_item">
         Theme
@@ -124,7 +121,7 @@
         add_autocompleter('search_form_host', 'host', '${tg.url("/autocomplete/host").encode("backslash")}');
         add_autocompleter('search_form_service', 'service', '${tg.url("/autocomplete/service").encode("backslash")}');
 
-        change_refresh_rate(${tg.session.get("refresh", 0)});
+        change_refresh_rate(${int(tg.session.get('refresh', asbool(tg.config.get('refresh_enabled', False))))});
 
         $('search_form_from_date_trigger').addEvent('click', function () {
             $$$$(".calendar").setStyles({"zIndex": window.search_dialog.domObj.getStyle('zIndex').toInt()});
@@ -150,15 +147,16 @@
     }
 
     var refresh_timeout = null;
-    function change_refresh_rate(timeout) {
-        timeout = parseInt(timeout);
+    function change_refresh_rate(enabled) {
+        var delay = ${float(tg.config.get('refresh_delay', 0))};
         if (refresh_timeout)
             refresh_timeout = $$clear(refresh_timeout);
-        if (timeout)
-            refresh_timeout = refresh_page.periodical(timeout * 1000);
+        if (parseInt(enabled) && delay)
+            refresh_timeout = refresh_page.periodical(delay * 1000);
     }
 
-    function change_refresh(timeout) {
+    function set_refresh() {
+        var enabled = $$('refresh').get('checked') ? 1 : 0;
         var req = new Request.JSON({
             link: 'cancel',
             url: '${tg.url("/set_refresh")}',
@@ -166,15 +164,11 @@
                 alert("${l_('Unable to save preferences').encode('backslash')}");
             }
         });
-        req.post({'refresh': timeout});
-        change_refresh_rate(timeout);
-    	
-        vigiloLog.log("Refresh rate set to " + timeout + " seconds.");
+        req.post({'refresh': enabled});
+        change_refresh_rate(enabled);
     }
 
     function refresh_page() {
-    	var myLog = new Log;
-    	myLog.enableLog();	
         var dialogs = $$$$(".jxDialog");
         for (var i=0; i<dialogs.length; i++) {
             if (dialogs[i].getStyle('display') != 'none') {
@@ -182,7 +176,7 @@
                 return;
             }
         }
-    	
+
         vigiloLog.log("No active dialog on the page: refreshing...");
         window.location.reload(true);
     }
