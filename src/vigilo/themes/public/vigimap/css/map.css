@@ -315,7 +315,7 @@ canvas {
     position: fixed;
     bottom: 0.5em;
     right: 0.5em;
-    width: 10em;
+    width: 11em;
     z-index: 99;
 }
 
@@ -366,6 +366,10 @@ canvas {
     border: 1px solid transparent;
 }
 
+#legend dl > dd > span {
+    float: right;
+    font-weight: bold;
+}
 
 /*
  * Mode édition

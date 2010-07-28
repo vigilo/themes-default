@@ -7,14 +7,17 @@
         -->
         <h3>${l_("Elements")} <span></span></h3>
         <dl>
-            <dt class="status-unknown">?</dt>
-                <dd>${l_("Unknown")}</dd>
-            <dt class="status-ok">?</dt>
-                <dd>${l_("OK")}</dd>
-            <dt class="status-warning">?</dt>
-                <dd>${l_("Warning")}</dd>
-            <dt class="status-critical">?</dt>
-                <dd>${l_("Critical")}</dd>
+            <dt class="status-unknown">&#160;</dt>
+            <dd>${l_("Unknown")}<span class="legend-unknown"></span></dd>
+
+            <dt class="status-ok">&#160;</dt>
+            <dd>${l_("OK")}<span class="legend-ok"></span></dd>
+
+            <dt class="status-warning">&#160;</dt>
+            <dd>${l_("Warning")}<span class="legend-warning"></span></dd>
+
+            <dt class="status-critical">&#160;</dt>
+            <dd>${l_("Critical")}<span class="legend-critical"></span></dd>
         </dl>
     </div>
     <div id="legend-links" py:if="has_link">
@@ -27,16 +30,16 @@
             <div py:for="i, link in enumerate(links)" py:strip="True">
                 <div py:choose="" py:strip="True">
                     <p py:when="i == 0" py:strip="True">
-                      <dt style="background-color: ${link.f}; border: 1px solid ${link.s}">?</dt>
-                        <dd>${link.t_min}</dd>
+                        <dt style="background-color: ${link.f}; border: 1px solid ${link.s}">&#160;</dt>
+                        <dd>${link.t_min}<span class="legend-count"></span></dd>
                     </p>
                     <p py:when="i == len(links) - 1" py:strip="True">
-                      <dt style="background-color: ${link.f}; border: 1px solid ${link.s}">?</dt>
-                        <dd>&#8805; ${link.t_min}</dd>
+                        <dt style="background-color: ${link.f}; border: 1px solid ${link.s}">&#160;</dt>
+                        <dd>&#8805; ${link.t_min}<span class="legend-count"></span></dd>
                     </p>
                     <p py:otherwise="" py:strip="True">
-                      <dt style="background-color: ${link.f}; border: 1px solid ${link.s}">?</dt>
-                        <dd>${link.t_min} &#8594; ${link.t_max}</dd>
+                        <dt style="background-color: ${link.f}; border: 1px solid ${link.s}">&#160;</dt>
+                        <dd>${link.t_min} &#8594; ${link.t_max}<span class="legend-count"></span></dd>
                     </p>
                 </div>
             </div>
