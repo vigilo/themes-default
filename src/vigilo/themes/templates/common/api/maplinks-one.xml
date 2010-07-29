@@ -2,6 +2,7 @@
 <maplink xmlns="http://projet-vigilo.org/ns/api"
          xmlns:py="http://genshi.edgewall.org/"
          xmlns:xi="http://www.w3.org/2001/XInclude"
+         xmlns:atom="http://www.w3.org/2005/Atom"
          id="${link.id}">
     <mapnode rel="from" id="${link['from'].id}" href="${link['from'].href}" />
     <mapnode rel="to" id="${link.to.id}" href="${link.to.href}" />
@@ -12,7 +13,8 @@
         <perfdatasource rel="in" id="${link.perfdatasources['in'].id}"
                                  href="${link.perfdatasources['in'].href}"/>
     </perfdatasources>
-    <reference py:if="'reference' in link" id="${link.reference.id}" href="${link.reference.href}" />
+    <supitem py:if="'supitem' in link" id="${link.supitem.id}" href="${link.supitem.href}" />
     <color py:if="'color' in link">${link.color}</color>
     <thickness py:if="'thickness' in link">${link.thickness}</thickness>
+    <atom:link rel="self" href="${link.href}" />
 </maplink>

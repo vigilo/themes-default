@@ -1,11 +1,10 @@
 <?xml version="1.0"?>
 <group xmlns="http://projet-vigilo.org/ns/api"
-          xmlns:py="http://genshi.edgewall.org/"
-          xmlns:xi="http://www.w3.org/2001/XInclude"
-          id="${group.id}"
-          href="${group.href}"
-          type="${type}"
-          >
+       xmlns:py="http://genshi.edgewall.org/"
+       xmlns:xi="http://www.w3.org/2001/XInclude"
+       xmlns:atom="http://www.w3.org/2005/Atom"
+       id="${group.id}"
+       type="${type}">
     <name>${group.name}</name>
     <children>
         <group py:for="group in group.children"
@@ -31,4 +30,5 @@
         <hls py:for="hls in group.hls"
              id="${hls.id}" href="${hls.href}" name="${hls.name}" />
     </hls>
+    <atom:link rel="self" href="${group.href}" />
 </group>

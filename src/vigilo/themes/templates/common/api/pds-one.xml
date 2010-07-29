@@ -2,8 +2,8 @@
 <perfdatasource xmlns="http://projet-vigilo.org/ns/api"
                 xmlns:py="http://genshi.edgewall.org/"
                 xmlns:xi="http://www.w3.org/2001/XInclude"
-                id="${pds.id}"
-                href="${pds.href}">
+                xmlns:atom="http://www.w3.org/2005/Atom"
+                id="${pds.id}">
     <name>${pds.name}</name>
     <type>${pds.type}</type>
     <label>${pds.label}</label>
@@ -14,4 +14,5 @@
         <graph py:for="graph in pds.graphs"
                id="${graph.id}" href="${graph.href}" name="${graph.name}" />
     </graphs>
+    <atom:link rel="self" href="${pds.href}" />
 </perfdatasource>

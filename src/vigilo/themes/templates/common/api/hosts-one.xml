@@ -21,8 +21,9 @@
         <group py:for="group in host.groups"
                id="${group.id}" name="${group.name}" href="${group.href}" />
     </groups>
-    <atom:link rel="alternate" href="${tg.url('/api/hosts')}/${host.name}" />
-    <atom:link rel="lls" href="${host.lls}" />
-    <atom:link rel="perfdatasources" href="${host.perfdatasources}" />
-    <atom:link rel="graphs" href="${host.graphs}" />
+    <atom:link rel="self" href="${host.href}" />
+    <atom:link rel="alternate" href="${tg.url('/api/v1/hosts')}/${host.name}" />
+    <atom:link rel="vigilo:lls" href="${host.lls}" />
+    <atom:link rel="vigilo:perfdatasources" href="${host.perfdatasources}" />
+    <atom:link rel="vigilo:graphs" href="${host.graphs}" />
 </host>

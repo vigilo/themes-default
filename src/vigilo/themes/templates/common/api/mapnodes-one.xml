@@ -2,6 +2,7 @@
 <mapnode xmlns="http://projet-vigilo.org/ns/api"
          xmlns:py="http://genshi.edgewall.org/"
          xmlns:xi="http://www.w3.org/2001/XInclude"
+         xmlns:atom="http://www.w3.org/2005/Atom"
          id="${mapnode.id}">
     <label>${mapnode.label}</label>
     <x>${mapnode.x}</x>
@@ -13,7 +14,7 @@
         <map py:for="map in mapnode.submaps"
              id="${map.id}" href="${map.href}" title="${map.title}" />
     </submaps>
-    <host py:if="'host' in mapnode" id="${mapnode.host.id}" href="${mapnode.host.href}" />
-    <lls py:if="'lls' in mapnode" id="${mapnode.lls.id}" href="${mapnode.lls.href}" />
-    <hls py:if="'hls' in mapnode" id="${mapnode.hls.id}" href="${mapnode.hls.href}" />
+    <supitem py:if="'supitem' in mapnode" type="${mapnode.type}"
+             id="${mapnode.supitem.id}" href="${mapnode.supitem.href}" />
+    <atom:link rel="self" href="${mapnode.href}" />
 </mapnode>

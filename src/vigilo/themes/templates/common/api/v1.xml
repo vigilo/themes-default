@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<api xmlns="http://projet-vigilo.org/ns/api"
+     xmlns:atom="http://www.w3.org/2005/Atom"
+     xmlns:py="http://genshi.edgewall.org/"
+     xmlns:xi="http://www.w3.org/2001/XInclude">
+
+     <py:for each="resource in api">
+         <atom:link rel="vigilo:${resource}" href="${api[resource]}/" />
+     </py:for>
+
+</api>

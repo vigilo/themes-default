@@ -2,8 +2,8 @@
 <service xmlns="http://projet-vigilo.org/ns/api"
          xmlns:py="http://genshi.edgewall.org/"
          xmlns:xi="http://www.w3.org/2001/XInclude"
+         xmlns:atom="http://www.w3.org/2005/Atom"
          id="${service.id}"
-         href="${service.href}"
          type="${service.type}">
     <name>${service.name}</name>
     <status>
@@ -19,6 +19,17 @@
         <group py:for="group in service.groups"
                id="${group.id}" name="${group.name}" />
     </groups>
-    <host py:if="service.host"
-          id="${service.host.id}" name="${service.host.name}" href="${service.host.href}" />
+    <py:choose>
+        <py:when test="service.host">
+            <host py:if="service.host" id="${service.host.id}"
+                  name="${service.host.name}" href="${service.host.href}" />
+            <atom:link rel="alternate"
+                       href="${service.host.href}/${service.type}/${service.name}" />
+        </py:when>
+        <py:otherwise>
+            <atom:link rel="alternate"
+                       href="${tg.url('/api/v1')}/${service.type}/${service.name}" />
+        </py:otherwise>
+    </py:choose>
+    <atom:link rel="self" href="${service.href}" />
 </service>
