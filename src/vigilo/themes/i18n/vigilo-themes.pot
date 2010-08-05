@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vigilo-themes-default 2.0.0\n"
 "Report-Msgid-Bugs-To: contact@projet-vigilo.org\n"
-"POT-Creation-Date: 2010-07-06 10:54+0200\n"
+"POT-Creation-Date: 2010-08-05 14:03+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -251,7 +251,7 @@ msgid "There is no history."
 msgstr ""
 
 #: src/vigilo/themes/templates/vigiboard/master.html:20
-#: src/vigilo/themes/templates/vigiboard/toolbar.html:70
+#: src/vigilo/themes/templates/vigiboard/toolbar.html:67
 #: src/vigilo/themes/templates/vigicore/sidebars.html:9
 msgid "VigiBoard"
 msgstr ""
@@ -342,13 +342,13 @@ msgstr ""
 
 #: src/vigilo/themes/templates/vigiboard/toolbar.html:22
 #: src/vigilo/themes/templates/vigigraph/main.html:33
-#: src/vigilo/themes/templates/vigimap/main.html:56
+#: src/vigilo/themes/templates/vigimap/main.html:58
 msgid "Help"
 msgstr ""
 
 #: src/vigilo/themes/templates/vigiboard/toolbar.html:25
 #: src/vigilo/themes/templates/vigigraph/main.html:36
-#: src/vigilo/themes/templates/vigimap/main.html:59
+#: src/vigilo/themes/templates/vigimap/main.html:61
 msgid "Log out"
 msgstr ""
 
@@ -364,29 +364,30 @@ msgstr ""
 msgid "Large font size"
 msgstr ""
 
-#: src/vigilo/themes/templates/vigiboard/toolbar.html:41
-msgid "Refresh every"
+#: src/vigilo/themes/templates/vigiboard/toolbar.html:45
+#, python-format
+msgid "Refresh every %d seconds"
 msgstr ""
 
-#: src/vigilo/themes/templates/vigiboard/toolbar.html:52
+#: src/vigilo/themes/templates/vigiboard/toolbar.html:49
 msgid "Theme"
 msgstr ""
 
-#: src/vigilo/themes/templates/vigiboard/toolbar.html:66
+#: src/vigilo/themes/templates/vigiboard/toolbar.html:63
 msgid "You are in Search mode, click here to return to the initial mode."
 msgstr ""
 
-#: src/vigilo/themes/templates/vigiboard/toolbar.html:95
+#: src/vigilo/themes/templates/vigiboard/toolbar.html:92
 msgid "Search Event"
 msgstr ""
 
-#: src/vigilo/themes/templates/vigiboard/toolbar.html:112
+#: src/vigilo/themes/templates/vigiboard/toolbar.html:109
 msgid "Select a group"
 msgstr ""
 
-#: src/vigilo/themes/templates/vigiboard/toolbar.html:144
-#: src/vigilo/themes/templates/vigiboard/toolbar.html:166
-#: src/vigilo/themes/templates/vigiboard/toolbar.html:195
+#: src/vigilo/themes/templates/vigiboard/toolbar.html:141
+#: src/vigilo/themes/templates/vigiboard/toolbar.html:164
+#: src/vigilo/themes/templates/vigiboard/toolbar.html:189
 msgid "Unable to save preferences"
 msgstr ""
 
@@ -770,7 +771,7 @@ msgid "Seconds:"
 msgstr ""
 
 #: src/vigilo/themes/templates/vigicore/schedule_downtime.html:53
-#: src/vigilo/themes/templates/vigimap/legend.html:13
+#: src/vigilo/themes/templates/vigimap/legend.html:14
 msgid "OK"
 msgstr ""
 
@@ -880,7 +881,6 @@ msgid "Metro page"
 msgstr ""
 
 #: src/vigilo/themes/templates/vigigraph/singlegraph.html:15
-#: src/vigilo/themes/templates/vigigraph/test.html:12
 msgid "Supervision search"
 msgstr ""
 
@@ -889,13 +889,9 @@ msgstr ""
 msgid "Back to graph list for \"%s\""
 msgstr ""
 
-#: src/vigilo/themes/templates/vigigraph/test.html:8
-msgid "Test"
-msgstr ""
-
 #: src/vigilo/themes/templates/vigimap/edition.html:8
 #: src/vigilo/themes/templates/vigimap/index.html:8
-#: src/vigilo/themes/templates/vigimap/main.html:63
+#: src/vigilo/themes/templates/vigimap/main.html:65
 msgid "VigiMap"
 msgstr ""
 
@@ -907,49 +903,44 @@ msgstr ""
 msgid "Elements"
 msgstr ""
 
-#: src/vigilo/themes/templates/vigimap/legend.html:15
+#: src/vigilo/themes/templates/vigimap/legend.html:17
 msgid "Warning"
 msgstr ""
 
-#: src/vigilo/themes/templates/vigimap/legend.html:17
+#: src/vigilo/themes/templates/vigimap/legend.html:20
 msgid "Critical"
 msgstr ""
 
-#: src/vigilo/themes/templates/vigimap/legend.html:25
+#: src/vigilo/themes/templates/vigimap/legend.html:28
 #: src/vigilo/themes/templates/vigimap/node.html:8
 msgid "Links"
 msgstr ""
 
 #: src/vigilo/themes/templates/vigimap/link.html:2
 #, python-format
-msgid "Link between %(from_node)s and %(to_node)s"
-msgstr ""
-
-#: src/vigilo/themes/templates/vigimap/link.html:3
-#, python-format
 msgid "Status: %(status)s"
 msgstr ""
 
-#: src/vigilo/themes/templates/vigimap/link.html:7
-#: src/vigilo/themes/templates/vigimap/link.html:11
+#: src/vigilo/themes/templates/vigimap/link.html:6
+#: src/vigilo/themes/templates/vigimap/link.html:10
 msgid "Reference service:"
 msgstr ""
 
-#: src/vigilo/themes/templates/vigimap/link.html:8
+#: src/vigilo/themes/templates/vigimap/link.html:7
 #, python-format
 msgid "%(service)s"
 msgstr ""
 
-#: src/vigilo/themes/templates/vigimap/link.html:12
+#: src/vigilo/themes/templates/vigimap/link.html:11
 #, python-format
 msgid "%(service)s on %(host)s"
 msgstr ""
 
-#: src/vigilo/themes/templates/vigimap/main.html:81
+#: src/vigilo/themes/templates/vigimap/main.html:83
 msgid "Your browser does not support the canvas element. Please upgrade."
 msgstr ""
 
-#: src/vigilo/themes/templates/vigimap/main.html:90
+#: src/vigilo/themes/templates/vigimap/main.html:92
 msgid "loading..."
 msgstr ""
 
