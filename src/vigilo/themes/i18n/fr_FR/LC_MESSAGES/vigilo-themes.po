@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: vigilo-themes-default 0.1\n"
 "Report-Msgid-Bugs-To: contact@projet-vigilo.org\n"
 "POT-Creation-Date: 2009-11-10 09:51+0100\n"
-"PO-Revision-Date: 2010-08-05 14:03+0200\n"
+"PO-Revision-Date: 2010-08-24 11:26+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: fr <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n > 1)\n"
@@ -32,10 +32,10 @@ msgstr "Erreur %(error_code)s"
 #: src/vigilo/themes/templates/common/footer.html:8
 msgid ""
 "Vigilo is an open-source monitoring solution designed for large-scale\n"
-"        system and network management. Copyright © ????-2009"
+"        system and network management. Copyright © ????-2010"
 msgstr ""
 "Vigilo est une solution open-source de supervision destinée à la gestion\n"
-"       des parcs informatiques de grande taille. Copyright © ????-2009"
+"       des parcs informatiques de grande taille. Copyright © ????-2010"
 
 #: src/vigilo/themes/templates/common/header.html:6
 #: src/vigilo/themes/templates/vigicore/index.html:12
@@ -989,10 +989,3 @@ msgstr "Mise à jour d'élément"
 #: src/vigilo/themes/templates/vigimap/widget_images.html:3
 msgid "no image"
 msgstr "aucune image"
-
-#~ msgid "Test"
-#~ msgstr "Test"
-
-#~ msgid "Link between %(from_node)s and %(to_node)s"
-#~ msgstr "Lien entre %(from_node)s et %(to_node)s"
-

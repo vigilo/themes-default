@@ -7,10 +7,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: vigilo-themes-default 0.1\n"
+"Project-Id-Version: vigilo-themes-default 2.0.0\n"
 "Report-Msgid-Bugs-To: contact@projet-vigilo.org\n"
-"POT-Creation-Date: 2010-02-12 11:58+0100\n"
-"PO-Revision-Date: 2010-08-05 14:03+0200\n"
+"POT-Creation-Date: 2010-08-05 14:03+0200\n"
+"PO-Revision-Date: 2010-08-24 11:26+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: en <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -32,10 +32,10 @@ msgstr "Error %(error_code)s"
 #: src/vigilo/themes/templates/common/footer.html:8
 msgid ""
 "Vigilo is an open-source monitoring solution designed for large-scale\n"
-"        system and network management. Copyright © ????-2009"
+"        system and network management. Copyright © ????-2010"
 msgstr ""
 "Vigilo is an open-source monitoring solution designed for large-scale\n"
-"        system and network management. Copyright © ????-2009"
+"        system and network management. Copyright © ????-2010"
 
 #: src/vigilo/themes/templates/common/header.html:6
 #: src/vigilo/themes/templates/vigicore/index.html:12
@@ -351,7 +351,7 @@ msgstr "Filter display"
 #: src/vigilo/themes/templates/vigigraph/main.html:33
 #: src/vigilo/themes/templates/vigimap/main.html:58
 msgid "Help"
-msgstr ""
+msgstr "Help"
 
 #: src/vigilo/themes/templates/vigiboard/toolbar.html:25
 #: src/vigilo/themes/templates/vigigraph/main.html:36
@@ -390,7 +390,7 @@ msgstr "Search Event"
 
 #: src/vigilo/themes/templates/vigiboard/toolbar.html:109
 msgid "Select a group"
-msgstr ""
+msgstr "Select a group"
 
 #: src/vigilo/themes/templates/vigiboard/toolbar.html:141
 #: src/vigilo/themes/templates/vigiboard/toolbar.html:164
@@ -401,7 +401,7 @@ msgstr "Unable to save preferences"
 #: src/vigilo/themes/templates/vigiboard/vigiboard.html:58
 #, python-format
 msgid "%Y-%m-%d %I:%M:%S %p"
-msgstr ""
+msgstr "%Y-%m-%d %I:%M:%S %p"
 
 #: src/vigilo/themes/templates/vigiboard/plugins/checkbox.html:27
 #: src/vigilo/themes/templates/vigiboard/plugins/status.html:156
@@ -829,7 +829,7 @@ msgstr "Monitoring page for \"%s\""
 #: src/vigilo/themes/templates/vigigraph/fullhostpage.html:29
 #, python-format
 msgid "Graph '%(graph)s' on '%(host)s'"
-msgstr "Graph \"%(graph)s\" for host \"%(host)s\""
+msgstr "Graph '%(graph)s' on '%(host)s'"
 
 #: src/vigilo/themes/templates/vigigraph/graphslist.html:8
 #: src/vigilo/themes/templates/vigigraph/graphslist.html:16
@@ -873,7 +873,7 @@ msgstr "Vigigraph search"
 
 #: src/vigilo/themes/templates/vigigraph/main.html:29
 msgid "Print all"
-msgstr ""
+msgstr "Print all"
 
 #: src/vigilo/themes/templates/vigigraph/main.html:29
 msgid "Print all visible graphs"
@@ -957,7 +957,7 @@ msgstr "loading..."
 
 #: src/vigilo/themes/templates/vigimap/node.html:14
 msgid "Submaps"
-msgstr ""
+msgstr "Submaps"
 
 #: src/vigilo/themes/templates/vigimap/node.html:22
 #, python-format
@@ -980,11 +980,4 @@ msgstr "Node update!"
 
 #: src/vigilo/themes/templates/vigimap/widget_images.html:3
 msgid "no image"
-msgstr ""
-
-#~ msgid "Test"
-#~ msgstr ""
-
-#~ msgid "Link between %(from_node)s and %(to_node)s"
-#~ msgstr "Link between %(from_node)s and %(to_node)s"
-
+msgstr "no image"
