@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
                     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
     xmlns:py="http://genshi.edgewall.org/"
@@ -12,20 +12,18 @@
 <head>
     <py:choose>
         <title py:when="hostname and servicename">
-            VigiBoard - ${l_('Masked events for event #%(idcorrevent)d on host "%(hostname)s" and  service "%(servicename)s"') % {
+            VigiBoard - ${l_('Masked events for a correlated event on host "%(hostname)s" and  service "%(servicename)s"') % {
                 'hostname': hostname,
                 'servicename': servicename,
-                'idcorrevent': idcorrevent,
             }}
         </title>
         <title py:when="hostname">
-            VigiBoard - ${l_('Masked events for event #%(idcorrevent)d on host "%(hostname)s"') % {
+            VigiBoard - ${l_('Masked events for a correlated event on host "%(hostname)s"') % {
                 'hostname': hostname,
-                'idcorrevent': idcorrevent,
             }}
         </title>
         <title py:otherwise="">
-            VigiBoard - ${l_('Masked events for event #%d') % idcorrevent}
+            VigiBoard - ${l_('Masked events for a correlated event')}
         </title>
     </py:choose>
 </head>
@@ -35,7 +33,7 @@
 		<thead>
 	        <tr>
 		    	<th colspan="8">
-		    	
+
 		            <div class="navigation_arrow left_arrow">
 				        <py:choose><!--!
 						     --><img py:when="page == 1" src="${tg.url('/images/dis_top_left_arrow.png')}" alt="Previous" title="Previous page" /><!--!
@@ -44,7 +42,7 @@
 						     --></a>
 					    </py:choose>
 		            </div>
-		
+
 		            <div class="navigation_arrow right_arrow">
 				        <py:choose><!--!
 						     --><img py:when="page >= nb_pages" src="${tg.url('/images/dis_top_right_arrow.png')}"  alt="Next" title="Next page" /><!--!
@@ -53,31 +51,29 @@
 						     --></a>
 					    </py:choose>
 		            </div>
-		
+
 		            <div class="table_title">
 		          	    <py:choose>
                             <span py:when="hostname and servicename">
-                                ${l_('Masked events for event #%(idcorrevent)d on host "%(hostname)s" and  service "%(servicename)s"') % {
+                                ${l_('Masked events for a correlated event on host "%(hostname)s" and  service "%(servicename)s"') % {
                                     'hostname': hostname,
                                     'servicename': servicename,
-                                    'idcorrevent': idcorrevent,
                                 }}
                             </span>
                             <span py:when="hostname">
-                                ${l_('Masked events for event #%(idcorrevent)d on host "%(hostname)s"') % {
+                                ${l_('Masked events for a correlated event on host "%(hostname)s"') % {
                                     'hostname': hostname,
-                                    'idcorrevent': idcorrevent,
                                 }}
                             </span>
                             <span py:otherwise="">
-                                ${l_('Masked events for event #%d') % idcorrevent}
+                                ${l_('Masked events for a correlated event')}
                             </span>
                         </py:choose>
 		            </div>
-		            
+
 		    	</th>
 	        </tr>
-	
+
 			<tr class="plugins">
                 <th id="plugin_date" class="plugin_date">Date <br />[Duration]</th>
                 <th id="plugin_hostname" class="plugin_hostname">Host</th>
@@ -92,7 +88,7 @@
 		<tfoot>
 	        <tr>
 	        	<th colspan="8">
-	        	
+
 	            	<div class="navigation_arrow left_arrow">
 				        <py:choose><!--!
 						     --><img py:when="page == 1" src="${tg.url('/images/dis_bottom_left_arrow.png')}" alt="Previous" title="Previous page" /><!--!
@@ -101,7 +97,7 @@
 						     --></a>
 					    </py:choose>
 		            </div>
-		
+
 		            <div class="navigation_arrow right_arrow">
 				        <py:choose><!--!
 						     --><img py:when="page >= nb_pages" src="${tg.url('/images/dis_bottom_right_arrow.png')}"  alt="Next" title="Next page" /><!--!
@@ -110,13 +106,13 @@
 						     --></a>
 					    </py:choose>
 		            </div>
-		
+
 		            <py:choose>
 		            	<div py:when="nb_pages > 1" class="pagination">
 		            		<span>
 				          		${l_('Showing rows %(id_first_row)d to %(id_last_row)d of %(total_rows)d') % rows_info}
 			          		    <br/>
-					            Pages 
+					            Pages
 					            <py:for each="p in range(1, nb_pages + 1)">
 					                <a py:if="p != page" href="${tg.url('/masked_events/%d/%d' % (idcorrevent, p))}" py:content="p" />
 					                <span py:if="p == page" py:replace="p" />
@@ -129,17 +125,17 @@
 			          		</span>
 				        </div>
 	            	</py:choose>
-	            	
+
 	        	</th>
 	        </tr>
 		</tfoot>
-	
+
 		<tbody py:choose="not rows_info['total_rows']">
 			<tr py:when="1">
 			    <td colspan="8" class="plugin_error">There are no events.</td>
 			</tr>
-	
-	        <tr py:when="0" py:for="(index, entry) in enumerate(events)" class="${['odd', 'even'][index % 2]}">           
+
+	        <tr py:when="0" py:for="(index, entry) in enumerate(events)" class="${['odd', 'even'][index % 2]}">
    				<td class="plugin_date">
                 	${entry[0].get_date('timestamp')}
                 	<br />
