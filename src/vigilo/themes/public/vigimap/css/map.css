@@ -70,7 +70,7 @@ h1 a:hover {
 
 /* Menu de gauche */
 
-#leftmenu, 
+#leftmenu,
 #maplist,
 #mapitems {
     position: absolute;
@@ -133,7 +133,7 @@ h1 a:hover {
 #mapitems .disabled:hover {
     border: 1px solid #aaa;
     color: inherit;
-    cursor: default;	
+    cursor: default;
 }
 
 #mapitems .mapitem img {
@@ -229,6 +229,27 @@ h1 a:hover {
     border: 1px solid #555555;
 }
 
+.status-icon-critical,
+.status-icon-warning,
+.status-icon-ok,
+.status-icon-unknown {
+    background-position: left center;
+    background-repeat: no-repeat;
+    padding: 4px 0 4px 24px;
+}
+
+.status-icon-critical {
+    background-image: url(../images/CRITICAL2.png);
+}
+.status-icon-warning {
+    background-image: url(../images/WARNING2.png);
+}
+.status-icon-ok {
+    background-image: url(../images/OK2.png);
+}
+.status-icon-unknown {
+    background-image: url(../images/UNKNOWN2.png);
+}
 
 /* Panneau de details */
 
@@ -431,7 +452,7 @@ canvas {
 
 /*
 table {
-    margin-top: 20px; 
+    margin-top: 20px;
 }
 */
 
@@ -443,7 +464,7 @@ table tr td.labelcol {
 }
 
 #deleteconfirmtext {
-    margin: 10px 10px	
+    margin: 10px 10px
 }
 
 #deleteconfirmbuttons {
