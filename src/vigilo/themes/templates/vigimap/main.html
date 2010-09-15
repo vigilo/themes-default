@@ -9,7 +9,7 @@
     <meta name="version" content="${tg.config.get('version')}" />
 
     <style type="text/css">@import "${tg.url('css/reset.css')}";</style>
-    <!--[if IE]><script type="text/javascript" src="${tg.url('/js/excanvas.js')}"></script><![endif]-->
+    <script type="text/javascript" src="${tg.url('/js/libs/excanvas.js')}"></script>
     <link rel="stylesheet" type="text/css" href="${tg.url('/css/jxlib/jxtheme.uncompressed.css')}" />
     <style type="text/css">@import "${tg.url('css/map.css')}";</style>
     <style type="text/css">@import "${tg.url('css/ServiceElement.css')}";</style>
@@ -85,14 +85,14 @@
         <canvas>
             Your browser does not support the canvas element. Please upgrade.
         </canvas>
-        
+
         <div id="legend">
         </div>
     </div>
 
     <div id="loading">
         <img alt="loading..." src="${tg.url('images/loading.gif')}" />
-    </div>    
+    </div>
 </py:def>
 
 </html>
