@@ -31,7 +31,7 @@ h1 a:hover {
 }
 
 .header_item {
-    margin-left: 30px; 
+    margin-left: 30px;
     float: right;
 }
 
@@ -109,7 +109,7 @@ h1 a:hover {
 	text-decoration: none;
 }
 
-.vigitable img { 
+.vigitable img {
 	border: none;
 	margin: 0;
 	vertical-align: middle;
@@ -199,7 +199,13 @@ div.clearingdiv {
 /* "\2E " permet d'échapper le point.
  * La séquence devrait être reconnue par tous les navigateurs. */
 #search_form #search_form_supitemgroup\2E ui {
-    width: 59%;
+    width: 42%;
+}
+#search_form_supitemgroup,
+#search_form_supitemgroup\2E clear {
+    width: 27%;
+    height: 1.7em;
+    font-size: 1.2em;
 }
 
 #search_mode_tip {
@@ -360,4 +366,3 @@ div.clearingdiv {
     width: 1.5em;
     height: 1.5em;
 }
-
