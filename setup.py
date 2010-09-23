@@ -46,6 +46,7 @@ setup(name='vigilo-themes-default',
         'src/vigilo/themes/': [
             ('**/templates/**.mako', 'mako', None),
             ('**/templates/**.html', 'genshi', None),
+            ('**/templates/**.xml', 'genshi', None),
             ('**/templates/admin/**.html', 'genshi', None),
             ('**/public/**', 'ignore', None),
         ],
@@ -56,4 +57,3 @@ setup(name='vigilo-themes-default',
     },
     package_dir={'': 'src'},
 )
-
