@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
                       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
         xmlns:py="http://genshi.edgewall.org/"
@@ -28,7 +28,7 @@
             <a href="singleGraph?host=${host};duration=${h['duration']};graph=${graph}">${h['caption']}</a>
         </div>
         <br />
-        <img src="${tg.url('/rrdgraph/%(host)s/index?graphtemplate=%(graph)s&amp;start=%(start)d&amp;duration=%(duration)d&amp;direct=1&amp;host=%(host)s' % {
+        <img src="${tg.url('/vigirrd/%(host)s/index?graphtemplate=%(graph)s&amp;start=%(start)d&amp;duration=%(duration)d&amp;direct=1&amp;host=%(host)s' % {
             'host': host,
             'graph': graph,
             'start': start,
