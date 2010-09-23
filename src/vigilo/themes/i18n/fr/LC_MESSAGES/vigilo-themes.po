@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: vigilo-themes-default 0.1\n"
 "Report-Msgid-Bugs-To: contact@projet-vigilo.org\n"
 "POT-Creation-Date: 2009-11-10 09:51+0100\n"
-"PO-Revision-Date: 2010-09-02 19:03+0200\n"
+"PO-Revision-Date: 2010-09-20 10:11+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: fr <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n > 1)\n"
@@ -206,8 +206,8 @@ msgid ""
 "History for a raw event on host \"%(hostname)s\" and service "
 "\"%(servicename)s\""
 msgstr ""
-"Historique de l'événement brut sur l'hôte \"%(hostname)s\" et le "
-"service \"%(servicename)s\""
+"Historique de l'événement brut sur l'hôte \"%(hostname)s\" et le service "
+"\"%(servicename)s\""
 
 #: src/vigilo/themes/templates/vigiboard/history_table.html:22
 #: src/vigilo/themes/templates/vigiboard/history_table.html:65
@@ -276,16 +276,14 @@ msgid ""
 "Masked events for a correlated event on host \"%(hostname)s\" and  "
 "service \"%(servicename)s\""
 msgstr ""
-"Événements masqués de l'événement corrélé sur l'hôte "
-"\"%(hostname)s\" et le service \"%(servicename)s\""
+"Événements masqués de l'événement corrélé sur l'hôte \"%(hostname)s\" et "
+"le service \"%(servicename)s\""
 
 #: src/vigilo/themes/templates/vigiboard/raw_events_table.html:21
 #: src/vigilo/themes/templates/vigiboard/raw_events_table.html:64
 #, python-format
 msgid "Masked events for a correlated event on host \"%(hostname)s\""
-msgstr ""
-"Événements masqués de l'événement corrélé sur l'hôte "
-"\"%(hostname)s\""
+msgstr "Événements masqués de l'événement corrélé sur l'hôte \"%(hostname)s\""
 
 #: src/vigilo/themes/templates/vigiboard/raw_events_table.html:26
 #: src/vigilo/themes/templates/vigiboard/raw_events_table.html:69
@@ -305,7 +303,7 @@ msgstr "Hôte"
 
 #: src/vigilo/themes/templates/vigiboard/raw_events_table.html:80
 msgid "Service name"
-msgstr "Nom de service"
+msgstr "Nom du service"
 
 #: src/vigilo/themes/templates/vigiboard/raw_events_table.html:81
 msgid "Initial state"
@@ -951,13 +949,13 @@ msgstr "%(service)s"
 msgid "%(service)s on %(host)s"
 msgstr "%(service)s sur %(host)s"
 
-#: src/vigilo/themes/templates/vigimap/main.html:83
+#: src/vigilo/themes/templates/vigimap/main.html:85
 msgid "Your browser does not support the canvas element. Please upgrade."
 msgstr ""
 "Votre navigateur ne gère pas l'élément canvas. Veuillez le mettre à jour,"
 " ou en utiliser un autre."
 
-#: src/vigilo/themes/templates/vigimap/main.html:92
+#: src/vigilo/themes/templates/vigimap/main.html:94
 msgid "loading..."
 msgstr "chargement..."
 

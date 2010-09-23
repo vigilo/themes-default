@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vigilo-themes-default 2.0.0\n"
 "Report-Msgid-Bugs-To: contact@projet-vigilo.org\n"
-"POT-Creation-Date: 2010-09-02 19:03+0200\n"
+"POT-Creation-Date: 2010-09-20 10:11+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -934,11 +934,11 @@ msgstr ""
 msgid "%(service)s on %(host)s"
 msgstr ""
 
-#: src/vigilo/themes/templates/vigimap/main.html:83
+#: src/vigilo/themes/templates/vigimap/main.html:85
 msgid "Your browser does not support the canvas element. Please upgrade."
 msgstr ""
 
-#: src/vigilo/themes/templates/vigimap/main.html:92
+#: src/vigilo/themes/templates/vigimap/main.html:94
 msgid "loading..."
 msgstr ""
 

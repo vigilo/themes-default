@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: vigilo-themes-default 2.0.0\n"
 "Report-Msgid-Bugs-To: contact@projet-vigilo.org\n"
 "POT-Creation-Date: 2010-08-24 11:26+0200\n"
-"PO-Revision-Date: 2010-09-02 19:03+0200\n"
+"PO-Revision-Date: 2010-09-20 10:11+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: en <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -945,11 +945,11 @@ msgstr "%(service)s"
 msgid "%(service)s on %(host)s"
 msgstr "%(service)s on %(host)s"
 
-#: src/vigilo/themes/templates/vigimap/main.html:83
+#: src/vigilo/themes/templates/vigimap/main.html:85
 msgid "Your browser does not support the canvas element. Please upgrade."
 msgstr "Your browser does not support the canvas element. Please upgrade."
 
-#: src/vigilo/themes/templates/vigimap/main.html:92
+#: src/vigilo/themes/templates/vigimap/main.html:94
 msgid "loading..."
 msgstr "loading..."
 
@@ -980,15 +980,3 @@ msgstr "Node update!"
 msgid "no image"
 msgstr "no image"
 
-#~ msgid ""
-#~ "History for raw event on host "
-#~ "\"%(hostname)s\" and service \"%(servicename)s\""
-#~ msgstr ""
-#~ "History for raw event on host "
-#~ "\"%(hostname)s\" and service \"%(servicename)s\""
-
-#~ msgid "History for raw event on host \"%(hostname)s\""
-#~ msgstr "History for event #%(idevent)d on host \"%(hostname)s\""
-
-#~ msgid "History for raw event"
-#~ msgstr "Detailed history for this event"
