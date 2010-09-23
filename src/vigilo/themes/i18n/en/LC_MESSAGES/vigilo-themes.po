@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: vigilo-themes-default 2.0.0\n"
 "Report-Msgid-Bugs-To: contact@projet-vigilo.org\n"
 "POT-Creation-Date: 2010-09-23 13:37+0200\n"
-"PO-Revision-Date: 2010-09-23 13:38+0200\n"
+"PO-Revision-Date: 2010-09-23 14:35+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: en <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -32,10 +32,10 @@ msgstr "Error %(error_code)s"
 #: src/vigilo/themes/templates/common/footer.html:8
 msgid ""
 "Vigilo is an open-source monitoring solution designed for large-scale\n"
-"        system and network management. Copyright © ????-2010"
+"        system and network management."
 msgstr ""
 "Vigilo is an open-source monitoring solution designed for large-scale\n"
-"        system and network management. Copyright © ????-2010"
+"        system and network management."
 
 #: src/vigilo/themes/templates/common/header.html:6
 #: src/vigilo/themes/templates/vigicore/index.html:12
@@ -987,4 +987,3 @@ msgstr "Node update!"
 #: src/vigilo/themes/templates/vigimap/widget_images.html:3
 msgid "no image"
 msgstr "no image"
-
