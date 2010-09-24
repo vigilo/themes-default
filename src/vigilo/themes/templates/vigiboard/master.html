@@ -18,7 +18,8 @@
   ${header()}
   <ul id="mainmenu">
     <li class="first"><a href="${tg.url('/')}" class="${('', 'active')[defined('page') and page==page=='index']}">VigiBoard</a></li>
-    <span py:if="tg.auth_stack_enabled" py:strip="True">
+    <!--! On masque le bouton de login/logout si une authentification externe est utilisée. -->
+    <span py:if="tg.auth_stack_enabled and not asbool(tg.config.get('external_auth'))" py:strip="True">
         <li py:if="not request.identity" class="loginlogout"><a href="${tg.url('/login')}">Login</a></li>
         <li py:if="request.identity" class="loginlogout"><a href="${tg.url('/logout_handler')}">Logout</a></li>
     </span>
