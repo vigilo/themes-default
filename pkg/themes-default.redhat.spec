@@ -26,12 +26,6 @@ Requires:   python26-distribute
 Requires:   vigilo-common
 Requires:   python26-genshi
 Requires:   python26-babel
-######### Dependance from python dependance tree ########
-Requires:   vigilo-themes-default
-Requires:   vigilo-common
-Requires:   python26-babel
-Requires:   python26-genshi
-Requires:   python26-configobj
 
 Provides:   vigilo-themes
 
