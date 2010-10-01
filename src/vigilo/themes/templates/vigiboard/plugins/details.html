@@ -11,20 +11,20 @@
             Initial State:
             <span class="value" id="DetailsDialog_initial_state"></span>
         </div>
-        
+
         <div class="label">
             Current State:
             <span class="value" id="DetailsDialog_current_state"></span>
         </div>
-        
+
         <div class="label">
             Peak State:
             <span class="value" id="DetailsDialog_peak_state"></span>
         </div>
     </div>
-    
+
     <hr />
-    
+
     <h2>Details</h2>
     <div id="history_links">
         <ul>
@@ -32,15 +32,15 @@
             <li><a id="DetailsDialog_masked" href="#">Masked events for this event</a></li>
             <li><a id="DetailsDialog_item" href="#">Events history for this supervised item</a></li>
         </ul>
-    </div>   
+    </div>
 
     <div py:if="nb_links">
         <hr />
-        
+
         <h2>External links</h2>
         <div id="external_links">
             <ul>
-                <li py:for="edname, edit in tg.config['vigiboard_links.eventdetails'].iteritems()">
+                <li py:for="edname, edit in enumerate(tg.config['vigiboard_links.eventdetails'])">
                     <a target="_blank" href="#" id="DetailsDialog_${edname}">${edit[0]}</a>
                 </li>
             </ul>
@@ -97,7 +97,7 @@ window.addEvent("domready", function () {
                     } else {
                         $$('DetailsDialog_item').set('href', "${tg.url('/item/1/')}" + details.host + "/");
                     }
-                    <py:for each="edname, edit in tg.config['vigiboard_links.eventdetails'].iteritems()">
+                    <py:for each="edname, edit in enumerate(tg.config['vigiboard_links.eventdetails'])">
                     $$('DetailsDialog_${edname}').set('href', details.eventdetails['${edname}']);
                     </py:for>
                     window.details_dialog.setBusy(false);
@@ -135,4 +135,3 @@ window.addEvent("domready", function () {
 </td>
 
 </html>
-
