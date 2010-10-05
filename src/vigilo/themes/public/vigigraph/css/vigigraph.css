@@ -145,6 +145,7 @@ body.fullhostpage #content {
 }
 body.fullhostpage #content h2 {
     font-size: 130%;
+    margin-top: 0.5em;
 }
 body.fullhostpage #content p.menu {
     margin: 0.8em 0;
