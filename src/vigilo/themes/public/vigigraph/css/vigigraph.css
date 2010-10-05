@@ -134,3 +134,25 @@ body.searchresults table td {
 body.searchresults table td.hostname {
     padding-right: 1em;
 }
+
+
+/* FullHostPage */
+body.fullhostpage #content {
+    margin: 0;
+    padding: 0 1em;
+    font-size: 11pt;
+    color: black;
+}
+body.fullhostpage #content h2 {
+    font-size: 130%;
+}
+body.fullhostpage #content p.menu {
+    margin: 0.8em 0;
+}
+body.fullhostpage #content p.menu a {
+    white-space: nowrap;
+}
+body.fullhostpage img {
+    border: 0
+}
+

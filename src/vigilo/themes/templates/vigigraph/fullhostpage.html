@@ -3,23 +3,28 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:py="http://genshi.edgewall.org/"
       xmlns:xi="http://www.w3.org/2001/XInclude">
+
+<xi:include href="main.html" />
+
     <head>
         <title>${l_('List of graphs for "%s"') % host}</title>
     </head>
 
     <body class='main'>
         <h2>${l_('List of graphs for "%s"') % host}</h2>
-        <a href="${tg.url('/nagios/%s/cgi-bin/status.cgi' % host, {
+        <p class="menu">
+        [<a href="${tg.url('/nagios/%s/cgi-bin/status.cgi' % host, {
             'host_': host,
-        })}">${l_('Monitoring page for "%s"') % host}</a>
-        <div py:for="h in presets" py:strip="True">
-            <a href="${tg.url('/rpc/fullHostPage', {
+        })}">${l_('Monitoring page for "%s"') % host}</a>]
+        <py:for each="h in presets">
+            [<a href="${tg.url('/rpc/fullHostPage', {
                 'host_': host,
                 'duration': h['duration'],
-            })}">${h['caption']}</a>
-        </div>
-        <br />
-        <div py:for="graph in graphs" py:strip="True">
+            })}">${h['caption']}</a>]
+        </py:for>
+        </p>
+        <div class="graphs">
+            <py:for each="graph in graphs">
             <a href="${tg.url('/rpc/singleGraph', {
                 'host_': host,
                 'graph': graph.name,
@@ -38,6 +43,7 @@
                 'details': 0,
             })}"/>
             </a>
+            </py:for>
         </div>
     </body>
 </html>
