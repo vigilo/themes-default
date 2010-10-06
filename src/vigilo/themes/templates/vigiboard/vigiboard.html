@@ -86,7 +86,7 @@ ${toolbar()}
         new Autocompleter.Request.VigiloJSON(elem, url, {
             // ATTENTION: domObj n'est pas documenté dans l'API.
             zIndex: window.search_dialog.domObj.getStyle('zIndex').toInt(),
-            minLength: 3,
+            minLength: 1,
             selectMode: 'type-ahead',
             postVar: varname,
         });
