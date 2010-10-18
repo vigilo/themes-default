@@ -7,10 +7,7 @@
     <!--!
         L'attribute request.host_url permet d'obtenir une URL absolue,
         en conformité avec les recommandations du standard OpenSearch.
-        On n'utilise pas tg.url pour le favicon.ico, pour être cohérent
-        avec les navigateurs qui le chargent systématiquement à partir
-        de la racine du serveur web.
     -->
-    <Image width="16" height="16" type="image/x-icon">${request.host_url}${'/favicon.ico'}</Image>
+    <Image width="16" height="16" type="image/x-icon">${request.host_url}${tg.url('/favicon.ico')}</Image>
     <Url type="text/html" method="get" template="${request.host_url}${tg.url('/rpc/searchHost')}?query={searchTerms}"> </Url>
 </OpenSearchDescription>
