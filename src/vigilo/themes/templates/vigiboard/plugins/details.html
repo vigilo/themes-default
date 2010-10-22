@@ -67,7 +67,7 @@ window.addEvent("domready", function () {
         height: ${[190, 220][nb_links != 0] + nb_links * 14},
         closed: true,
         horizontal: 'right left',
-        vertical: 'top top',
+        vertical: 'top top'
     });
     window.details_dialog.toggleCollapse();
     window.details_dialog.toggleCollapse();
@@ -111,7 +111,7 @@ window.addEvent("domready", function () {
                     if (res == null || !res.errors)
                         return;
                     alert(res.errors.join('\n'));
-                },
+                }
             });
             window.details_dialog.options.parent = item;
             // Permet d'afficher l'événement sélectionné autrement.

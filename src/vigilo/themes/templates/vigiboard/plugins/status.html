@@ -43,7 +43,7 @@
             onClose: window.dlg_close_handler,
             width: 400,
             height: 180,
-            closed: true,
+            closed: true
         });
         window.edit_dialog.toggleCollapse();
         window.edit_dialog.toggleCollapse();
@@ -177,7 +177,7 @@
         <img py:when="ack == 'AAClosed'" src="${tg.url('/images/crossed.png')}"
             alt="Acknowledged and Closed" title="Acknowledged and Closed" />
     </td>
-            
+
     <py:choose test="">
         <py:when test="ack == 'AAClosed' and state == u'OK'">
             <td class="plugin_${name}" colspan="2" py:choose=""></td>
@@ -200,4 +200,3 @@
 </py:def>
 
 </html>
-

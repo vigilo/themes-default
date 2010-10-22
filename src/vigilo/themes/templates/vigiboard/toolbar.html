@@ -103,7 +103,7 @@
             onClose: window.dlg_close_handler,
             width: 400,
             height: 325,
-            closed: true,
+            closed: true
         });
         window.search_dialog.toggleCollapse();
         window.search_dialog.toggleCollapse();
@@ -111,7 +111,7 @@
         var selector = new TreeGroup({
             url: '${tg.url("/get_groups")}',
             app_path: '${tg.url("/")}',
-            title: '${l_("Select a group").encode("backslash")}',
+            title: '${l_("Select a group").encode("backslash")}'
         });
         $('search_form_supitemgroup').addEvent('click', selector.selectGroup.bind(selector));
         selector.addEvent('select', function (item) {
@@ -214,7 +214,7 @@
             zIndex: window.search_dialog.domObj.getStyle('zIndex').toInt(),
             minLength: 3,
             selectMode: 'type-ahead',
-            postVar: varname,
+            postVar: varname
         });
     }
 /*]]>*/

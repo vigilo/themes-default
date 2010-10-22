@@ -16,7 +16,7 @@
             width: 275,
             height: 183,
             onOpen: window.dlg_open_handler,
-            onClose: window.dlg_close_handler,
+            onClose: window.dlg_close_handler
         });
     });
 
@@ -37,7 +37,7 @@
             onFailure: function (xhr) {
                 window.hls_dialog.setBusy(false);
                 window.hls_dialog.setContent("${l_('Error while retrieving data').encode('backslash')}");
-            },
+            }
         });
         req.post({plugin_name: 'hls', idcorrevent: idd});
     }
