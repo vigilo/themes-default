@@ -8,7 +8,7 @@
     <h2 py:if="links">Links</h2>
     <ul class="section links" py:if="links">
         <li py:for="link in links">
-            <a href="${tg.url(link[1])}" > ${link[0]}</a>    
+            <a target="_blank" href="${tg.url(link[1])}" > ${link[0]}</a>
         </li>
     </ul>
     <h2 py:if="maps">Submaps</h2>
@@ -25,15 +25,15 @@
             <p>${l_("Service name: %(service)s") % {'service': node['hls']}}</p>
         </py:when>
         <py:otherwise>
-            <p>${l_("Appliance name: %(host)s") % {'host': node['host']}}</p>    
+            <p>${l_("Appliance name: %(host)s") % {'host': node['host']}}</p>
         </py:otherwise>
     </py:choose>
     <!--
     <py:if test="node.has_key('onlyhost')">
-        <p>${l_("Appliance name: %(host)s") % {'host': node['host']}}</p>  
+        <p>${l_("Appliance name: %(host)s") % {'host': node['host']}}</p>
     </py:if>
     <py:if test="node.has_key('service')">
-        <p>${l_("Service name: %(service)s on %(host)s") % {'service': node['service'], 'host': node['host' ]}}</p>  
+        <p>${l_("Service name: %(service)s on %(host)s") % {'service': node['service'], 'host': node['host' ]}}</p>
     </py:if>
     -->
 </div>
