@@ -176,9 +176,9 @@ form.loginfields input.text
     height: 21px;
     padding: 5px;
     border: 0;
-/*    background-color: #333333;*/
     background: url('../images/inputbg.png') top left no-repeat;
     color: #fff;
+    clear: left;
 }
 
 form.loginfields input#submit
@@ -330,4 +330,3 @@ div.clearingdiv {
 #profileform {
     text-align: center;
 }
-
