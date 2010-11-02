@@ -6,7 +6,7 @@
 }
 
 #map .serviceelement img.icon {
-    display: block;
+    display: inline;
 }
 #map .serviceelement div.status img.icon {
     opacity: 0.8;
@@ -30,6 +30,3 @@
 #details ul.tags li img {
     vertical-align: middle;
 }
-
-
-

@@ -174,14 +174,12 @@ h1 a:hover {
 
 .obj img.icon {
     margin: 0px auto;
-    display: block;
+    display: inline;
 }
 
 .obj span {
     font-size: 80%;
     font-family: sans-serif;
-    /*background-color: white;*/
-    /*font-weight: bold;*/
 }
 
 /* Liens */
