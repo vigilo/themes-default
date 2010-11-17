@@ -1,0 +1,27 @@
+#search_form {
+    padding: 8px;
+}
+
+#search_form label,
+#search_form input {
+    float: left;
+    width: 93px;
+    margin: 8px;
+}
+
+#search_form #search_form_search {
+    float: right;
+}
+
+#search_form > div {
+    margin: 0 10px;
+    clear: both;
+}
+
+#search_results {
+    border: 1px solid #CCCCCC;
+    display: block;
+    height: 275px;
+    position: relative;
+    width: 540px;
+}

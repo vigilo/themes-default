@@ -12,8 +12,33 @@
     <meta py:replace="select('*')"/>
     <link rel="search" type="application/opensearchdescription+xml"
         title="Vigigraph search" href="${tg.url('/rpc/getOpenSearch')}"/>
+    <link rel="stylesheet" type="text/css" href="${tg.url('/css/jxlib/jxtheme.uncompressed.css')}" />
+    <link rel="stylesheet" type="text/css" href="${tg.url('/css/Autocompleter/Autocompleter.css')}" />
     <link rel="stylesheet" type="text/css" media="screen" href="${tg.url('/css/reset.css')}" />
     <link rel="stylesheet" type="text/css" media="screen" href="${tg.url('/css/vigigraph.css')}" />
+
+    <link py:replace="select('link|head/script|style')" />
+
+    <script type="text/javascript">var app_path = "${tg.url('/').encode('backslash')}";</script>
+    <script type="text/javascript" src="${tg.url('/js/libs/mootools.js')}"></script>
+    <script type="text/javascript" src="${tg.url('/js/libs/mootools-more.js')}"></script>
+    <script type="text/javascript" src="${tg.url('/js/libs/jxlib.js')}"></script>
+
+    <!--!
+        "js/babel.js" doit être chargé avant "i18n",
+        qui doit être chargé avant nos scripts.
+    -->
+    <script type="text/javascript" src="${tg.url('/js/libs/babel.js')}"></script>
+    <script type="text/javascript" src="${tg.url('/i18n')}"></script>
+
+    <script type="text/javascript" src="${tg.url('/js/libs/Autocompleter/Autocompleter.js')}"></script>
+    <script type="text/javascript" src="${tg.url('/js/libs/Autocompleter/Autocompleter.Request.js')}"></script>
+    <script type="text/javascript" src="${tg.url('/js/libs/Autocompleter/Observer.js')}"></script>
+    <script type="text/javascript" src="${tg.url('/js/libs/Autocompleter/vigilo.js')}"></script>
+
+    <script type="text/javascript" src="${tg.url('/js/tree.js')}"></script>
+
+    <script type="text/javascript" src="${tg.url('/js/search.js')}"></script>
 </head>
 
 <body py:match="body" py:attrs="select('@*')">
@@ -25,15 +50,22 @@
         </span>
 
         <div class="header_item">
+            <a id="search" href="?">
+                <img src="${tg.url('/images/search.png')}"
+                    alt="Search" title="Search for a specific host/graph" />
+            </a>
+
             <a id="print" href="?">
-                <img src="${tg.url('/resource/qx/icon/Nuvola/22/actions/document-print.png')}"
+                <img src="${tg.url('/images/document-print.png')}"
                     alt="Print all" title="Print all visible graphs" />
             </a>
+
             <py:if test="tg.config.get('help_link')">
             <a href="${tg.config['help_link']}">
                 <img src="${tg.url('/images/help.png')}" alt="Help" title="Help"/>
             </a>
             </py:if>
+
             <!--! On masque le bouton de login/logout si une authentification externe est utilisée. -->
             <span py:if="tg.auth_stack_enabled and not asbool(tg.config.get('external_auth'))" py:strip="True">
             <a href="${tg.url('/logout_handler')}">
@@ -46,10 +78,40 @@
     </div>
 
     <div id="content">
-        <py:with vars="flash=tg.flash_obj.render('flash', use_js=False)">
-            <div py:if="flash" py:content="XML(flash)" />
-        </py:with>
         <div py:replace="select('*|text()')"/>
     </div>
+
+    <!--! Container utilisé par le formulaire de recherche. -->
+    <div style="display: none">
+        <div id="search_container">
+            <form id="search_form" action="" method="post">
+                <label for="search_form_host">Host:</label>
+                <input type="text" id="search_form_host" name="search_form_host"
+                    title="Search for a host (&quot;*&quot; for all, 100 max)" />
+                <label for="search_form_graph">Graph:</label>
+                <input type="text" id="search_form_graph" name="search_form_graph"
+                    title="Search for a graph (&quot;*&quot; for all, 100 max)" />
+                <input type="submit" id="search_form_search" value="Search" />
+                <div>Results:</div>
+                <div id="search_results"></div>
+            </form>
+        </div>
+    </div>
+
+    <py:with vars="flash=tg.flash_obj.render('flash', use_js=False)">
+        <div py:strip="True" py:if="flash" py:content="XML(flash)" />
+    </py:with>
+
+<script type="text/javascript">
+/*<![CDATA[*/
+    window.addEvent('load', function (){
+        var flash = $('flash');
+        if (flash) {
+            flash.fade('in').pauseFx(10000).fade('out');
+        }
+    });
+/*]]>*/
+</script>
+
 </body>
 </html>

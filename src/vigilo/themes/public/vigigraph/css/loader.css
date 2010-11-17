@@ -1,0 +1,13 @@
+#loading {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 5px;
+    background-color: white;
+    padding: 2px;
+    border: 1px solid gray;
+}
+
+#loading img {
+    display: block;
+}

@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
                       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:py="http://genshi.edgewall.org/"
@@ -6,10 +6,25 @@
 
 <xi:include href="main.html" />
 
-  <head>
-    <title>Loading VigiGraph...</title>
-    <script type="text/javascript" src="${tg.url('js/vigigraph.js')}"></script>
-  </head>
-  <body>
-  </body>
+<head>
+    <link rel="stylesheet" type="text/css" href="${tg.url('/css/loader.css')}"/>
+    <link rel="stylesheet" type="text/css" href="${tg.url('/css/search.css')}"/>
+    <title>VigiGraph</title>
+</head>
+
+<body>
+    <script type="text/javascript" src="${tg.url('/js/loader.js')}"></script>
+    <script type="text/javascript" src="${tg.url('/js/graph.js')}"></script>
+    <script type="text/javascript" src="${tg.url('/js/toolbar.js')}"></script>
+
+    <div style="float: left" id="toolbar"></div>
+
+    <div id="graph_window" style="display: none">
+        <div id="graph_window_content"></div>
+    </div>
+
+    <div id="loading">
+        <img alt="loading..." src="${tg.url('images/loading.gif')}" />
+    </div>
+</body>
 </html>
