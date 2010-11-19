@@ -21,15 +21,60 @@ var SearchResultsModel = new Class({
     }
 });
 
-window.addEvent('load', function () {
-    function update_search_results(data) {
+var Search = new Class({
+    initialize: function () {
+        this.search_results = new Jx.Grid({
+            parent: 'search_results',
+            alternateRowColors: true,
+            columnHeaders: true,
+            rowPrelight: true,
+            cellSelection: true
+        });
+
+        this.search_dialog = new Jx.Dialog({
+            label: _('Search for an host/graph'),
+            modal: false,
+            width: 600,
+            height: 400,
+            content: 'search_container'
+        });
+
+        this.search_request = new Request.JSON({
+            url: app_path + 'rpc/searchHostAndGraph',
+            method: 'post',
+            onSuccess: this.updateResults.bind(this)
+        });
+
+        $('search').addEvent('click', function (e) {
+            e.preventDefault();
+            this.search_dialog.open();
+        }.bind(this));
+
+        this.search_dialog.addEvent('open', function () {
+            // On doit afficher une grille vide la première fois,
+            // afin de donner les bonnes dimensions à la grille.
+            if (this.search_results.model)
+                return;
+            this.search_results.setModel(new Jx.Grid.Model([], {
+                colWidth: 255,
+                columnHeaders: [_('Host'), _('Graph')]
+            }));
+        }.bind(this));
+
+        $('search_form_search').addEvent('click', function (e) {
+            e.preventDefault();
+            this.search_request.send($('search_form').toQueryString());
+        }.bind(this));
+    },
+
+    updateResults: function (data) {
         // On met à jour le contenu de la grille
         // avec les résultats de la recherche.
         var model = new SearchResultsModel(data, {
             colWidth: 255,
             columnHeaders: [_('Host'), _('Graph')]
         });
-
+    
         function selectCell(row, col) {
             var host = this.getValueAt(row, 0);
             var graph = this.getValueAt(row, 1);
@@ -57,48 +102,10 @@ window.addEvent('load', function () {
         }
 
         model.addEvent('select-cell', selectCell.bind(model));
-        search_results.setModel(model);
+        this.search_results.setModel(model);
     }
+});
 
-    search_results = new Jx.Grid({
-        alternateRowColors: true,
-        columnHeaders: true,
-        rowPrelight: true,
-        cellSelection: true
-    }).addTo('search_results');
-
-    search_dialog = new Jx.Dialog({
-        label: _('Search for an host/graph'),
-        modal: false,
-        width: 600,
-        height: 400,
-        content: 'search_container'
-    });
-
-    search_request = new Request.JSON({
-        url: app_path + 'rpc/searchHostAndGraph',
-        method: 'post',
-        onSuccess: update_search_results
-    });
-
-    $('search').addEvent('click', function (e) {
-        e.preventDefault();
-        search_dialog.open();
-    });
-
-    search_dialog.addEvent('open', function () {
-        // On doit afficher une grille vide la première fois,
-        // afin de donner les bonnes dimensions à la grille.
-        if (search_results.model)
-            return;
-        search_results.setModel(new Jx.Grid.Model([], {
-            colWidth: 255,
-            columnHeaders: [_('Host'), _('Graph')]
-        }));
-    });
-
-    $('search_form_search').addEvent('click', function (e) {
-        e.preventDefault();
-        search_request.send($('search_form').toQueryString());
-    });
+window.addEvent('load', function () {
+    new Search();
 });
