@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vigilo-themes-default 2.0.0\n"
 "Report-Msgid-Bugs-To: contact@projet-vigilo.org\n"
-"POT-Creation-Date: 2010-11-17 13:52+0100\n"
+"POT-Creation-Date: 2010-11-19 12:37+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -64,9 +64,9 @@ msgstr ""
 msgid "Password:"
 msgstr ""
 
-#: src/vigilo/themes/templates/vigiboard/events_table.html:15
-#: src/vigilo/themes/templates/vigiboard/events_table.html:21
-#: src/vigilo/themes/templates/vigiboard/events_table.html:25
+#: src/vigilo/themes/templates/vigiboard/events_table.html:16
+#: src/vigilo/themes/templates/vigiboard/events_table.html:22
+#: src/vigilo/themes/templates/vigiboard/events_table.html:26
 #: src/vigilo/themes/templates/vigiboard/history_table.html:15
 #: src/vigilo/themes/templates/vigiboard/history_table.html:21
 #: src/vigilo/themes/templates/vigiboard/history_table.html:26
@@ -76,33 +76,33 @@ msgstr ""
 msgid "VigiBoard -"
 msgstr ""
 
-#: src/vigilo/themes/templates/vigiboard/events_table.html:16
-#: src/vigilo/themes/templates/vigiboard/events_table.html:83
+#: src/vigilo/themes/templates/vigiboard/events_table.html:17
+#: src/vigilo/themes/templates/vigiboard/events_table.html:84
 #, python-format
 msgid "Events table for service \"%(servicename)s\" on \"%(hostname)s\""
 msgstr ""
 
-#: src/vigilo/themes/templates/vigiboard/events_table.html:22
-#: src/vigilo/themes/templates/vigiboard/events_table.html:89
+#: src/vigilo/themes/templates/vigiboard/events_table.html:23
+#: src/vigilo/themes/templates/vigiboard/events_table.html:90
 #, python-format
 msgid "Events table for host \"%s\""
 msgstr ""
 
-#: src/vigilo/themes/templates/vigiboard/events_table.html:26
-#: src/vigilo/themes/templates/vigiboard/events_table.html:92
+#: src/vigilo/themes/templates/vigiboard/events_table.html:27
+#: src/vigilo/themes/templates/vigiboard/events_table.html:93
 msgid "Events table"
 msgstr ""
 
-#: src/vigilo/themes/templates/vigiboard/events_table.html:39
+#: src/vigilo/themes/templates/vigiboard/events_table.html:40
 msgid "Event table"
 msgstr ""
 
-#: src/vigilo/themes/templates/vigiboard/events_table.html:46
-#: src/vigilo/themes/templates/vigiboard/events_table.html:50
-#: src/vigilo/themes/templates/vigiboard/events_table.html:54
-#: src/vigilo/themes/templates/vigiboard/events_table.html:58
-#: src/vigilo/themes/templates/vigiboard/events_table.html:112
-#: src/vigilo/themes/templates/vigiboard/events_table.html:123
+#: src/vigilo/themes/templates/vigiboard/events_table.html:47
+#: src/vigilo/themes/templates/vigiboard/events_table.html:51
+#: src/vigilo/themes/templates/vigiboard/events_table.html:55
+#: src/vigilo/themes/templates/vigiboard/events_table.html:59
+#: src/vigilo/themes/templates/vigiboard/events_table.html:113
+#: src/vigilo/themes/templates/vigiboard/events_table.html:124
 #: src/vigilo/themes/templates/vigiboard/history_table.html:40
 #: src/vigilo/themes/templates/vigiboard/history_table.html:42
 #: src/vigilo/themes/templates/vigiboard/history_table.html:92
@@ -114,12 +114,12 @@ msgstr ""
 msgid "Previous"
 msgstr ""
 
-#: src/vigilo/themes/templates/vigiboard/events_table.html:46
-#: src/vigilo/themes/templates/vigiboard/events_table.html:50
-#: src/vigilo/themes/templates/vigiboard/events_table.html:54
-#: src/vigilo/themes/templates/vigiboard/events_table.html:58
-#: src/vigilo/themes/templates/vigiboard/events_table.html:112
-#: src/vigilo/themes/templates/vigiboard/events_table.html:123
+#: src/vigilo/themes/templates/vigiboard/events_table.html:47
+#: src/vigilo/themes/templates/vigiboard/events_table.html:51
+#: src/vigilo/themes/templates/vigiboard/events_table.html:55
+#: src/vigilo/themes/templates/vigiboard/events_table.html:59
+#: src/vigilo/themes/templates/vigiboard/events_table.html:113
+#: src/vigilo/themes/templates/vigiboard/events_table.html:124
 #: src/vigilo/themes/templates/vigiboard/history_table.html:40
 #: src/vigilo/themes/templates/vigiboard/history_table.html:42
 #: src/vigilo/themes/templates/vigiboard/history_table.html:92
@@ -131,16 +131,16 @@ msgstr ""
 msgid "Previous page"
 msgstr ""
 
-#: src/vigilo/themes/templates/vigiboard/events_table.html:65
-#: src/vigilo/themes/templates/vigiboard/events_table.html:68
-#: src/vigilo/themes/templates/vigiboard/events_table.html:72
-#: src/vigilo/themes/templates/vigiboard/events_table.html:76
-#: src/vigilo/themes/templates/vigiboard/events_table.html:115
-#: src/vigilo/themes/templates/vigiboard/events_table.html:119
-#: src/vigilo/themes/templates/vigiboard/events_table.html:130
-#: src/vigilo/themes/templates/vigiboard/events_table.html:133
-#: src/vigilo/themes/templates/vigiboard/events_table.html:137
-#: src/vigilo/themes/templates/vigiboard/events_table.html:141
+#: src/vigilo/themes/templates/vigiboard/events_table.html:66
+#: src/vigilo/themes/templates/vigiboard/events_table.html:69
+#: src/vigilo/themes/templates/vigiboard/events_table.html:73
+#: src/vigilo/themes/templates/vigiboard/events_table.html:77
+#: src/vigilo/themes/templates/vigiboard/events_table.html:116
+#: src/vigilo/themes/templates/vigiboard/events_table.html:120
+#: src/vigilo/themes/templates/vigiboard/events_table.html:131
+#: src/vigilo/themes/templates/vigiboard/events_table.html:134
+#: src/vigilo/themes/templates/vigiboard/events_table.html:138
+#: src/vigilo/themes/templates/vigiboard/events_table.html:142
 #: src/vigilo/themes/templates/vigiboard/history_table.html:49
 #: src/vigilo/themes/templates/vigiboard/history_table.html:51
 #: src/vigilo/themes/templates/vigiboard/history_table.html:101
@@ -152,16 +152,16 @@ msgstr ""
 msgid "Next"
 msgstr ""
 
-#: src/vigilo/themes/templates/vigiboard/events_table.html:65
-#: src/vigilo/themes/templates/vigiboard/events_table.html:68
-#: src/vigilo/themes/templates/vigiboard/events_table.html:72
-#: src/vigilo/themes/templates/vigiboard/events_table.html:76
-#: src/vigilo/themes/templates/vigiboard/events_table.html:115
-#: src/vigilo/themes/templates/vigiboard/events_table.html:119
-#: src/vigilo/themes/templates/vigiboard/events_table.html:130
-#: src/vigilo/themes/templates/vigiboard/events_table.html:133
-#: src/vigilo/themes/templates/vigiboard/events_table.html:137
-#: src/vigilo/themes/templates/vigiboard/events_table.html:141
+#: src/vigilo/themes/templates/vigiboard/events_table.html:66
+#: src/vigilo/themes/templates/vigiboard/events_table.html:69
+#: src/vigilo/themes/templates/vigiboard/events_table.html:73
+#: src/vigilo/themes/templates/vigiboard/events_table.html:77
+#: src/vigilo/themes/templates/vigiboard/events_table.html:116
+#: src/vigilo/themes/templates/vigiboard/events_table.html:120
+#: src/vigilo/themes/templates/vigiboard/events_table.html:131
+#: src/vigilo/themes/templates/vigiboard/events_table.html:134
+#: src/vigilo/themes/templates/vigiboard/events_table.html:138
+#: src/vigilo/themes/templates/vigiboard/events_table.html:142
 #: src/vigilo/themes/templates/vigiboard/history_table.html:49
 #: src/vigilo/themes/templates/vigiboard/history_table.html:51
 #: src/vigilo/themes/templates/vigiboard/history_table.html:101
@@ -173,8 +173,8 @@ msgstr ""
 msgid "Next page"
 msgstr ""
 
-#: src/vigilo/themes/templates/vigiboard/events_table.html:149
-#: src/vigilo/themes/templates/vigiboard/events_table.html:171
+#: src/vigilo/themes/templates/vigiboard/events_table.html:150
+#: src/vigilo/themes/templates/vigiboard/events_table.html:172
 #: src/vigilo/themes/templates/vigiboard/history_table.html:111
 #: src/vigilo/themes/templates/vigiboard/history_table.html:122
 #: src/vigilo/themes/templates/vigiboard/raw_events_table.html:113
@@ -183,13 +183,13 @@ msgstr ""
 msgid "Showing rows %(id_first_row)d to %(id_last_row)d of %(total_rows)d"
 msgstr ""
 
-#: src/vigilo/themes/templates/vigiboard/events_table.html:150
+#: src/vigilo/themes/templates/vigiboard/events_table.html:151
 #: src/vigilo/themes/templates/vigiboard/history_table.html:112
 #: src/vigilo/themes/templates/vigiboard/raw_events_table.html:114
 msgid "Pages"
 msgstr ""
 
-#: src/vigilo/themes/templates/vigiboard/events_table.html:182
+#: src/vigilo/themes/templates/vigiboard/events_table.html:183
 #: src/vigilo/themes/templates/vigiboard/raw_events_table.html:135
 msgid "There are no events."
 msgstr ""
@@ -389,14 +389,9 @@ msgstr ""
 msgid "Unable to save preferences"
 msgstr ""
 
-#: src/vigilo/themes/templates/vigiboard/vigiboard.html:62
+#: src/vigilo/themes/templates/vigiboard/vigiboard.html:63
 #, python-format
 msgid "%Y-%m-%d %I:%M:%S %p"
-msgstr ""
-
-#: src/vigilo/themes/templates/vigiboard/plugins/checkbox.html:27
-#: src/vigilo/themes/templates/vigiboard/plugins/status.html:156
-msgid "Select/Unselect all"
 msgstr ""
 
 #: src/vigilo/themes/templates/vigiboard/plugins/details.html:8
@@ -514,6 +509,10 @@ msgstr ""
 
 #: src/vigilo/themes/templates/vigiboard/plugins/status.html:151
 msgid "Edit all selected events"
+msgstr ""
+
+#: src/vigilo/themes/templates/vigiboard/plugins/status.html:156
+msgid "Select/Unselect all"
 msgstr ""
 
 #: src/vigilo/themes/templates/vigiboard/plugins/status.html:175
