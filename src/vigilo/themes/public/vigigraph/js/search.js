@@ -96,8 +96,11 @@ var Search = new Class({
                 // On restaure le sélecteur de graphe dans son état initial,
                 // où il affiche un message "Sélectionnez un graphe".
                 window.toolbar.graph_picker.setItem(null,
-                    window.toolbar.graph_picker.options.label);
-                window.toolbar.show_nagios.clicked(null);
+                window.toolbar.graph_picker.options.label);
+                window.toolbar.show_graph.setEnabled(0);
+                /// @TODO: à décommenter si on veut ouvrir automatiquement
+                /// la page Nagios de l'hôte.
+//                window.toolbar.show_nagios.clicked(null);
             }
         }
 
