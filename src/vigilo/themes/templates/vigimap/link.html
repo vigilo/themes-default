@@ -1,16 +1,23 @@
 <div xmlns:py="http://genshi.edgewall.org/">
-  <p class="status status-${status.lower()}">${l_("Status: %(status)s") % {'status': status}}</p>
-  
-  <py:choose test="">
-	  <py:when test="host is None">
-	  <p><span class="label">${l_("Reference service:")}</span>
-	  ${l_("%(service)s") % {'service': service}}</p>  
-	  </py:when>
-	  <py:otherwise>
-	  <p><span class="label">${l_("Reference service:")}</span>
-	  ${l_("%(service)s on %(host)s") % {'service': service, 'host': host}}</p>           
-	  </py:otherwise>
-  </py:choose>
-     
-  <p py:if="img"><img src="${img}" alt="${alt}" /></p>
+    <p class="status status-${status.lower()}">${l_("Status: %(status)s") % {'status': status}}</p>
+
+    <py:choose test="">
+        <py:when test="host is None">
+        <p><span class="label">${l_("Reference service:")}</span>
+        ${l_("%(service)s") % {'service': service}}</p>  
+        </py:when>
+        <py:otherwise>
+        <p><span class="label">${l_("Reference service:")}</span>
+        ${l_("%(service)s on %(host)s") % {'service': service, 'host': host}}</p>           
+        </py:otherwise>
+    </py:choose>
+
+    <?python import time ?>
+    <p py:if="graph"><img src="${tg.url('/vigirrd/%s/graph.png' % host,
+        host_=host,
+        graphtemplate=graph,
+        start=int(time.time() - duration),
+        duration=duration,
+        details=0,
+    )}" alt="${_('Graph for %(graph)s on %(host)s')}" /></p>
 </div>
