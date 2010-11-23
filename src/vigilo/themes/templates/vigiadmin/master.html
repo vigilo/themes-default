@@ -25,7 +25,7 @@
     <li py:if="not request.identity" id="loginbtn" class="loginlogout ${('', 'active')[defined('page') and page==page=='login']}"><a href="${tg.url('/login')}">Login</a></li>
     <li py:if="request.identity" id="loginbtn" class="loginlogout"><a href="${tg.url('/logout_handler')}">Logout</a></li>
     </span>
-    <li py:if="request.identity" id="adminbtn" class="${('', 'active')[defined('page') and page==page=='admin']}"><a href="${tg.url('/admin')}">Admin</a></li>
+    <li py:if="request.identity" id="adminbtn" class="${('', 'active')[defined('page') and page==page=='admin']}"><a href="${tg.url('/perms')}">Permissions</a></li>
     <li py:if="request.identity" id="profilebtn" class="${('', 'active')[defined('page') and page==page=='profile']}"><a href="${tg.url('/profile')}">Profile</a></li>
 <!--! La collecte est désactivée. -->
 <!--! <li py:if="request.identity" id="collectbtn" class="${('', 'active')[defined('page') and page==page=='collect']}"><a href="${tg.url('/collect')}">Collect</a></li> -->
