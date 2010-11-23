@@ -41,12 +41,11 @@ var Search = new Class({
 
         this.search_request = new Request.JSON({
             url: app_path + 'rpc/searchHostAndGraph',
-            method: 'post',
             onSuccess: this.updateResults.bind(this)
         });
 
         $('search').addEvent('click', function (e) {
-            e.preventDefault();
+            e.stop();
             this.search_dialog.open();
         }.bind(this));
 
@@ -62,8 +61,11 @@ var Search = new Class({
         }.bind(this));
 
         $('search_form_search').addEvent('click', function (e) {
-            e.preventDefault();
-            this.search_request.send($('search_form').toQueryString());
+            e.stop();
+            if ($('search_form_host').get('value') == '' &&
+                $('search_form_graph').get('value') == '')
+                $('search_form_graph').set('value', '*');
+            this.search_request.post($('search_form'));
         }.bind(this));
     },
 
