@@ -6,7 +6,11 @@
     <xi:include href="main.html" />
 <head>
     <title>VigiMap</title>
-    <!--<script type="text/javascript" src="${tg.url('/js/MainDisplay.js')}"></script>-->
+    <script type="text/javascript">
+    window.addEvent('load', function () {
+        menu.refresh_button.setActive(${int(asbool(tg.config.get('refresh_enabled', False)))});
+    });
+    </script>
 </head>
 <body>
 
