@@ -30,3 +30,10 @@
 #details ul.tags li img {
     vertical-align: middle;
 }
+
+#mapnode_form_label,
+#mapnode_form_host_word,
+#mapnode_form_service_word,
+#mapnode_form_graph_word {
+    width: 230px;
+}
