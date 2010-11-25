@@ -8,6 +8,8 @@ window.addEvent('domready', function () {
         }, graphs);
         uri.setData({'graphs': graphs});
         var win = window.open(uri.toString());
-        win.print();
+        win.onload = function () {
+            this.print();
+        }.bind(win);
     });
 });
