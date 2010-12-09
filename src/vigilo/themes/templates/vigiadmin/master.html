@@ -14,6 +14,7 @@
     <meta py:replace="select('*')"/>
     <link rel="stylesheet" type="text/css" media="screen" href="${tg.url('/css/reset.css')}" />
     <link rel="stylesheet" type="text/css" media="screen" href="${tg.url('/css/style.css')}" />
+    <link rel="stylesheet" type="text/css" media="screen" href="${tg.url('/css/master.css')}" />
 </head>
 
 <body py:match="body" py:attrs="select('@*')">
@@ -26,11 +27,15 @@
     <li py:if="request.identity" id="loginbtn" class="loginlogout"><a href="${tg.url('/logout_handler')}">Logout</a></li>
     </span>
     <li py:if="request.identity" id="adminbtn" class="${('', 'active')[defined('page') and page==page=='admin']}"><a href="${tg.url('/perms')}">Permissions</a></li>
-    <li py:if="request.identity" id="profilebtn" class="${('', 'active')[defined('page') and page==page=='profile']}"><a href="${tg.url('/profile')}">Profile</a></li>
+    <span py:if="request.identity['user'].user_name == 'manager' or not asbool(tg.config.get('external_auth'))" py:strip="True">
+    <li id="profilebtn" class="${('', 'active')[defined('page') and page==page=='profile']}"><a href="${tg.url('/profile')}">Profile</a></li>
+    </span>
 <!--! La collecte est désactivée. -->
 <!--! <li py:if="request.identity" id="collectbtn" class="${('', 'active')[defined('page') and page==page=='collect']}"><a href="${tg.url('/collect')}">Collect</a></li> -->
 <!--! La maintenance planifiée est désactivée tant que certains problèmes n'auront pas été résolus. -->
 <!--!    <li py:if="request.identity" id="downtimebtn" class="${('', 'active')[defined('page') and page==page=='downtime']}"><a href="${tg.url('/downtime')}">Downtime</a></li>-->
+
+    <li id="userinfo">Logged in as: ${request.identity['user'].user_name}</li>
   </ul>
   <div id="content">
     <py:with vars="flash=tg.flash_obj.render('flash', use_js=False)">

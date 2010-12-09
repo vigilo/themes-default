@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
                       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:py="http://genshi.edgewall.org/"
@@ -8,38 +8,36 @@
 <xi:include href="sidebars.html" />
 
 <head>
-  <meta content="text/html; charset=UTF-8" http-equiv="content-type" py:replace="''"/>
-  <title>Welcome to Vigilo</title>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type" py:replace="''"/>
+    <link rel="stylesheet" type="text/css" media="screen" href="${tg.url('/css/index.css')}" />
+    <title>Welcome to Vigilo</title>
 </head>
 
 <body>
-    ${sidebar_top()}
+<!--!    ${sidebar_top()}-->
   <div id="getting_started">
-    <h1>Presentation</h1>
-    <p>Vigilo is a software meant to ease large-scale system and network management.</p>
-    <ol id="key_features">
-      <li class="key_feature">
-        <h2>Data collection</h2>
-        <p> @TODO</p>
+    <h1>Interfaces</h1>
+    <ol id="interfaces">
+      <li class="interface">
+        <h2><a href="${tg.url(tg.config['interfaces.vigiboard'])}">VigiBoard</a></h2>
+        <p>See the latest events impacting the network.</p>
       </li>
 
-      <li class="key_feature">
-        <h2>Event correlation</h2>
-        <p> @TODO</p>
+      <li class="interface">
+        <h2><a href="${tg.url(tg.config['interfaces.vigimap'])}">VigiMap</a></h2>
+        <p>Watch over the state of your equipments from a map-oriented perspective.</p>
       </li>
 
-      <li class="key_feature">
-        <h2>Accidents visualization</h2>
-        <p> @TODO</p>
+      <li class="interface">
+        <h2><a href="${tg.url(tg.config['interfaces.vigigraph'])}">VigiGraph</a></h2>
+        <p>Monitor network performance.</p>
       </li>
 
-      <li class="key_feature">
-        <h2>Report generation</h2>
-        <p> @TODO</p>
+      <li class="interface">
+        <h2><a href="${tg.url(tg.config['interfaces.vigireport'])}">VigiReport</a></h2>
+        <p>See long-term reports on the network, using different sets of metrics.</p>
       </li>
     </ol>
   </div>
-  <div class="clearingdiv" />
-  <div class="notice">Thank you for choosing Vigilo.</div>
 </body>
 </html>

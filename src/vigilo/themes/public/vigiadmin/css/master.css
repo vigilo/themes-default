@@ -1,0 +1,11 @@
+ul#mainmenu #userinfo {
+    color: #fff;
+    float: right;
+    height: 31px;
+    display: block;
+    line-height: 30px;
+    vertical-align: middle;
+    padding: 0 10px;
+    font-size: 12px;
+    margin: 0 8px;
+}

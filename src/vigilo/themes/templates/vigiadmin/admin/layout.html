@@ -6,6 +6,7 @@
 widgets['rum_css'].inject()
 widgets['rum_print_css'].inject()
 from genshi.input import XML
+from vigilo.models import tables
 ?>
 
 <html xmlns="http://www.w3.org/1999/xhtml"
@@ -16,14 +17,9 @@ from genshi.input import XML
     <div py:attrs="select('@*')">
         <?python from rum.util import generate_label ?>
         <ul id="rum-resource-list">
-          <!--! Le block py:with suivant permet d'ordonner les noms des tables
-                par ordre alphabétique croissant dans l'affichage de Rum. -->
-          <py:with vars="res = sorted(map(lambda x: (app.translator.ugettext(app.names_for_resource(x)[1]), x), resources.keys()), cmp=lambda x, y: cmp(x[0], y[0]))">
-          <li py:for="r in res"
-              py:with="url=url_for(r[1], _memory=False)">
-              <a href="${url}" class="${request.routes['resource'] is r[1] and 'active' or None}">${r[0]}</a>
+          <li py:with="url=url_for(tables.UserGroup, _memory=False)">
+              <a href="${url}" class="${request.routes['resource'] is tables.UserGroup and 'active' or None}">Usergroups</a>
           </li>
-          </py:with>
         </ul>
         <div py:replace="select('*|text()')"/>
     </div>

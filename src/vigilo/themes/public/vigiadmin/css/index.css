@@ -1,0 +1,24 @@
+#interfaces {
+    list-style-type: none;
+}
+
+#interfaces a {
+  text-decoration: none;
+}
+
+#interfaces a:hover {
+  text-decoration: underline;
+}
+
+#interfaces li {
+  margin-bottom: 0.5em;
+}
+
+
+.interface {
+    margin-left: 3em;
+}
+
+.interface p {
+    margin: 1.2em 0;
+}
