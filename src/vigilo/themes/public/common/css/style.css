@@ -17,10 +17,6 @@ h2 {
     font-weight: bold;
 }
 
-#key_features {
-    list-style-type: decimal;
-}
-
 /* Misc. styles defined by TurboGears. */
 html {
     background: #555555 url('../images/pagebg.png') top left repeat-x;
@@ -305,28 +301,4 @@ div.clearingdiv {
 .subtitle {
     font-size: 2em;
     clear: both;
-}
-
-.key_feature {
-    margin-left: 3em;
-}
-
-.key_feature p {
-    margin: 1.2em 0;
-}
-
-#key_features a {
-  text-decoration: none;
-}
-
-#key_features a:hover {
-  text-decoration: underline;
-}
-
-#key_features li {
-  margin-bottom: 0.5em;
-}
-
-#profileform {
-    text-align: center;
 }
