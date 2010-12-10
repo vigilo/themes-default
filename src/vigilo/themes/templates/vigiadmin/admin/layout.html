@@ -20,6 +20,9 @@ from vigilo.models import tables
           <li py:with="url=url_for(tables.UserGroup, _memory=False)">
               <a href="${url}" class="${request.routes['resource'] is tables.UserGroup and 'active' or None}">Usergroups</a>
           </li>
+          <li py:with="url=url_for(tables.DataPermission, _memory=False)">
+              <a href="${url}" class="${request.routes['resource'] is tables.DataPermission and 'active' or None}">Permissions on data</a>
+          </li>
         </ul>
         <div py:replace="select('*|text()')"/>
     </div>
