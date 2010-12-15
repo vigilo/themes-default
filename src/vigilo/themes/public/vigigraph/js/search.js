@@ -11,8 +11,12 @@ var SearchResultsModel = new Class({
     },
 
     getValueAt: function (row, col) {
-        return (this.data && this.data.labels && $chk(this.data.labels[row])) ?
+        var content = (this.data && this.data.labels && $chk(this.data.labels[row])) ?
             this.data.labels[row][col] : '';
+        var value = Element('div', {'text': content, 'title': content});
+        var container = Element('div');
+        value.inject(container)
+        return container.get('html');
     },
 
     getIDAt: function (row, col) {
@@ -76,7 +80,7 @@ var Search = new Class({
             colWidth: 255,
             columnHeaders: [_('Host'), _('Graph')]
         });
-    
+
         function selectCell(row, col) {
             var host = this.getValueAt(row, 0);
             var graph = this.getValueAt(row, 1);
