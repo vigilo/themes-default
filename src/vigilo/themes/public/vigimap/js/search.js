@@ -17,11 +17,10 @@ var SearchResultsModel = new Class({
     getValueAt: function (row, col) {
         var content = (this.data && this.data.labels && $chk(this.data.labels[row])) ?
             this.data.labels[row][col] : '';
-        //var value = Element('div', {'text': content, 'title': content});
-        //var container = Element('div');
-        //value.inject(container)
-        //return container.get('html')
-        return content;
+        var value = Element('div', {'text': content, 'title': content});
+        var container = Element('div');
+        value.inject(container);
+        return container.get('html');
     },
 
     getIDAt: function (row, col) {
@@ -30,9 +29,24 @@ var SearchResultsModel = new Class({
     }
 });
 
+var VigiloGrid = new Class({
+    Extends: Jx.Grid,
+
+    getRowColumnFromEvent: function (e) {
+        var target;
+        for (target = e.target;
+            target.tagName != 'TD' &&
+            target.tagName != 'TH' &&
+            target.get('class') != 'jxGridContainer';
+            target = target.getParent())
+            ; // On remonte dans la hiérarchie.
+        return this.parent({'target': target});
+    }
+});
+
 var Search = new Class({
     initialize: function () {
-        this.search_results = new Jx.Grid({
+        this.search_results = new VigiloGrid({
             parent: 'search_results',
             alternateRowColors: true,
             columnHeaders: true,

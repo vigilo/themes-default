@@ -15,7 +15,7 @@ var SearchResultsModel = new Class({
             this.data.labels[row][col] : '';
         var value = Element('div', {'text': content, 'title': content});
         var container = Element('div');
-        value.inject(container)
+        value.inject(container);
         return container.get('html');
     },
 
@@ -25,9 +25,24 @@ var SearchResultsModel = new Class({
     }
 });
 
+var VigiloGrid = new Class({
+    Extends: Jx.Grid,
+
+    getRowColumnFromEvent: function (e) {
+        var target;
+        for (target = e.target;
+            target.tagName != 'TD' &&
+            target.tagName != 'TH' &&
+            target.get('class') != 'jxGridContainer';
+            target = target.getParent())
+            ; // On remonte dans la hiérarchie.
+        return this.parent({'target': target});
+    }
+});
+
 var Search = new Class({
     initialize: function () {
-        this.search_results = new Jx.Grid({
+        this.search_results = new VigiloGrid({
             parent: 'search_results',
             alternateRowColors: true,
             columnHeaders: true,
