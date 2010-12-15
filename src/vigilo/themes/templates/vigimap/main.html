@@ -13,6 +13,7 @@
     <link rel="stylesheet" type="text/css" href="${tg.url('/css/jxlib/jxtheme.uncompressed.css')}" />
     <style type="text/css">@import "${tg.url('css/map.css')}";</style>
     <style type="text/css">@import "${tg.url('css/ServiceElement.css')}";</style>
+    <style type="text/css">@import "${tg.url('css/search.css')}";</style>
 
     <script type="text/javascript" src="${tg.url('/js/lib/mootools.js')}"></script>
     <script type="text/javascript" src="${tg.url('/js/lib/mootools-more.js')}"></script>
@@ -36,6 +37,8 @@
     <script type="text/javascript" src="${tg.url('/js/mapElement.js')}"></script>
     <script type="text/javascript" src="${tg.url('/js/ServiceElement.js')}"></script>
 
+    <script type="text/javascript" src="${tg.url('/js/search.js')}"></script>
+
     <div py:for="widget in widgets" py:strip="True">
         <script type="text/javascript" src="${tg.url(widget+'.js')}"></script>
         <link rel="stylesheet" type="text/css" href="${tg.url(widget+'.css')}" />
@@ -54,11 +57,17 @@
         </span>
 
         <div class="header_item">
+            <a id="search" href="?">
+                <img src="${tg.url('/images/search.png')}"
+                    alt="Search" title="Search for a specific host/graph" />
+            </a>
+
             <py:if test="tg.config.get('help_link')">
             <a href="${tg.config['help_link']}">
                 <img src="${tg.url('/images/help.png')}" alt="Help" title="Help"/>
             </a>
             </py:if>
+
             <!--! On masque le bouton de login/logout si une authentification externe est utilisée. -->
             <span py:if="tg.auth_stack_enabled and not asbool(tg.config.get('external_auth'))" py:strip="True">
             <a href="${tg.url('/logout_handler')}">
@@ -75,6 +84,20 @@
 
     <div id="content">
         <div py:replace="select('*|text()')"/>
+    </div>
+
+    <!--! Container utilisé par le formulaire de recherche. -->
+    <div style="display: none">
+        <div id="search_container">
+            <form id="search_form" action="" method="post">
+                <label for="search_form_map">Map:</label>
+                <input type="text" id="search_form_map" name="search_form_map"
+                    title="Search for a map (&quot;*&quot; for all, 100 max)" />
+                <input type="submit" id="search_form_search" value="Search" />
+            </form>
+            <div><p>Results:</p></div>
+            <div id="search_results"></div>
+        </div>
     </div>
 
 </body>
