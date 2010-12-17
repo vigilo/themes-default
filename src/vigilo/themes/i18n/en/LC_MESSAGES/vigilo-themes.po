@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vigilo-themes-default 2.0.0\n"
 "Report-Msgid-Bugs-To: contact@projet-vigilo.org\n"
-"POT-Creation-Date: 2010-12-09 11:24+0100\n"
-"PO-Revision-Date: 2010-12-09 11:24+0100\n"
+"POT-Creation-Date: 2010-12-17 16:14+0100\n"
+"PO-Revision-Date: 2010-12-17 16:21+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: en <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -43,8 +43,8 @@ msgid "Welcome to Vigilo"
 msgstr "Welcome to Vigilo"
 
 #: src/vigilo/themes/templates/common/header.html:7
-msgid "The network monitoring solution"
-msgstr "The network monitoring solution"
+msgid "Monitor freely"
+msgstr "Monitor freely"
 
 #: src/vigilo/themes/templates/common/login.html:11
 msgid "Login Form"
@@ -207,29 +207,29 @@ msgstr "delete"
 msgid "Interfaces"
 msgstr "Interfaces"
 
-#: src/vigilo/themes/templates/vigiadmin/index.html:22
+#: src/vigilo/themes/templates/vigiadmin/index.html:23
 #: src/vigilo/themes/templates/vigiadmin/sidebars.html:9
 #: src/vigilo/themes/templates/vigiboard/master.html:20
 #: src/vigilo/themes/templates/vigiboard/toolbar.html:72
 msgid "VigiBoard"
 msgstr "VigiBoard"
 
-#: src/vigilo/themes/templates/vigiadmin/index.html:23
+#: src/vigilo/themes/templates/vigiadmin/index.html:24
 msgid "See the latest events impacting the network."
 msgstr "See the latest events impacting the network."
 
-#: src/vigilo/themes/templates/vigiadmin/index.html:27
+#: src/vigilo/themes/templates/vigiadmin/index.html:29
 #: src/vigilo/themes/templates/vigimap/edition.html:8
 #: src/vigilo/themes/templates/vigimap/index.html:8
-#: src/vigilo/themes/templates/vigimap/main.html:70
+#: src/vigilo/themes/templates/vigimap/main.html:79
 msgid "VigiMap"
 msgstr "VigiMap"
 
-#: src/vigilo/themes/templates/vigiadmin/index.html:28
+#: src/vigilo/themes/templates/vigiadmin/index.html:30
 msgid "Watch over the state of your equipments from a map-oriented perspective."
 msgstr "Watch over the state of your equipments from a map-oriented perspective."
 
-#: src/vigilo/themes/templates/vigiadmin/index.html:32
+#: src/vigilo/themes/templates/vigiadmin/index.html:35
 #: src/vigilo/themes/templates/vigigraph/graphslist.html:8
 #: src/vigilo/themes/templates/vigigraph/graphslist.html:16
 #: src/vigilo/themes/templates/vigigraph/index.html:12
@@ -237,15 +237,15 @@ msgstr "Watch over the state of your equipments from a map-oriented perspective.
 msgid "VigiGraph"
 msgstr "VigiGraph"
 
-#: src/vigilo/themes/templates/vigiadmin/index.html:33
+#: src/vigilo/themes/templates/vigiadmin/index.html:36
 msgid "Monitor network performance."
 msgstr "Monitor network performance."
 
-#: src/vigilo/themes/templates/vigiadmin/index.html:37
+#: src/vigilo/themes/templates/vigiadmin/index.html:41
 msgid "VigiReport"
 msgstr "VigiReport"
 
-#: src/vigilo/themes/templates/vigiadmin/index.html:38
+#: src/vigilo/themes/templates/vigiadmin/index.html:42
 msgid "See long-term reports on the network, using different sets of metrics."
 msgstr "See long-term reports on the network, using different sets of metrics."
 
@@ -369,8 +369,16 @@ msgid "Click a table name in the sidebar to view or modify its content."
 msgstr "Click a table name in the sidebar to view or modify its content."
 
 #: src/vigilo/themes/templates/vigiadmin/admin/layout.html:21
+msgid "Users"
+msgstr "Users"
+
+#: src/vigilo/themes/templates/vigiadmin/admin/layout.html:24
 msgid "Usergroups"
 msgstr "Usergroups"
+
+#: src/vigilo/themes/templates/vigiadmin/admin/layout.html:27
+msgid "Permissions on data"
+msgstr "Permissions on data"
 
 #: src/vigilo/themes/templates/vigiboard/events_table.html:15
 #: src/vigilo/themes/templates/vigiboard/events_table.html:21
@@ -632,13 +640,13 @@ msgstr "Filter display"
 
 #: src/vigilo/themes/templates/vigiboard/toolbar.html:23
 #: src/vigilo/themes/templates/vigigraph/main.html:66
-#: src/vigilo/themes/templates/vigimap/main.html:59
+#: src/vigilo/themes/templates/vigimap/main.html:67
 msgid "Help"
 msgstr "Help"
 
 #: src/vigilo/themes/templates/vigiboard/toolbar.html:29
 #: src/vigilo/themes/templates/vigigraph/main.html:73
-#: src/vigilo/themes/templates/vigimap/main.html:65
+#: src/vigilo/themes/templates/vigimap/main.html:74
 msgid "Log out"
 msgstr "Log out"
 
@@ -867,7 +875,7 @@ msgid "From %(start_date)s to %(end_date)s"
 msgstr "From %(start_date)s to %(end_date)s"
 
 #: src/vigilo/themes/templates/vigigraph/index.html:27
-#: src/vigilo/themes/templates/vigimap/main.html:99
+#: src/vigilo/themes/templates/vigimap/main.html:122
 msgid "loading..."
 msgstr "loading..."
 
@@ -876,10 +884,12 @@ msgid "Vigigraph search"
 msgstr "Vigigraph search"
 
 #: src/vigilo/themes/templates/vigigraph/main.html:55
+#: src/vigilo/themes/templates/vigimap/main.html:61
 msgid "Search"
 msgstr "Search"
 
 #: src/vigilo/themes/templates/vigigraph/main.html:55
+#: src/vigilo/themes/templates/vigimap/main.html:61
 msgid "Search for a specific host/graph"
 msgstr "Search for a specific host/graph"
 
@@ -905,6 +915,7 @@ msgstr "Search for a graph (\"*\" for all, 100 max)"
 
 #: src/vigilo/themes/templates/vigigraph/main.html:96
 #: src/vigilo/themes/templates/vigigraph/searchhost.html:13
+#: src/vigilo/themes/templates/vigimap/main.html:98
 msgid "Results:"
 msgstr "Results:"
 
@@ -975,7 +986,15 @@ msgstr "%(service)s on %(host)s"
 msgid "Graph for %(graph)s on %(host)s"
 msgstr "Graph for %(graph)s on %(host)s"
 
-#: src/vigilo/themes/templates/vigimap/main.html:90
+#: src/vigilo/themes/templates/vigimap/main.html:93
+msgid "Map:"
+msgstr "Map:"
+
+#: src/vigilo/themes/templates/vigimap/main.html:94
+msgid "Search for a map (\"*\" for all, 100 max)"
+msgstr "Search for a map (\"*\" for all, 100 max)"
+
+#: src/vigilo/themes/templates/vigimap/main.html:113
 msgid "Your browser does not support the canvas element. Please upgrade."
 msgstr "Your browser does not support the canvas element. Please upgrade."
 

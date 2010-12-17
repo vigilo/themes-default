@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: vigilo-themes-default 2.0.0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2010-11-19 12:43+0100\n"
-"PO-Revision-Date: 2010-12-09 11:24+0100\n"
+"PO-Revision-Date: 2010-12-17 16:14+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: de_DE <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -44,8 +44,8 @@ msgid "Welcome to Vigilo"
 msgstr "Wilkommen bei Vigilo"
 
 #: src/vigilo/themes/templates/common/header.html:7
-msgid "The network monitoring solution"
-msgstr "Die Netzwerk-Überwachungslösung"
+msgid "Monitor freely"
+msgstr ""
 
 #: src/vigilo/themes/templates/common/login.html:11
 msgid "Login Form"
@@ -206,33 +206,32 @@ msgstr "löschen"
 
 #: src/vigilo/themes/templates/vigiadmin/index.html:19
 #, fuzzy
-#| msgid "Vigilo interfaces"
 msgid "Interfaces"
 msgstr "Vigilo Schnittstellen"
 
-#: src/vigilo/themes/templates/vigiadmin/index.html:22
+#: src/vigilo/themes/templates/vigiadmin/index.html:23
 #: src/vigilo/themes/templates/vigiadmin/sidebars.html:9
 #: src/vigilo/themes/templates/vigiboard/master.html:20
 #: src/vigilo/themes/templates/vigiboard/toolbar.html:72
 msgid "VigiBoard"
 msgstr "VigiBoard"
 
-#: src/vigilo/themes/templates/vigiadmin/index.html:23
+#: src/vigilo/themes/templates/vigiadmin/index.html:24
 msgid "See the latest events impacting the network."
 msgstr ""
 
-#: src/vigilo/themes/templates/vigiadmin/index.html:27
+#: src/vigilo/themes/templates/vigiadmin/index.html:29
 #: src/vigilo/themes/templates/vigimap/edition.html:8
 #: src/vigilo/themes/templates/vigimap/index.html:8
-#: src/vigilo/themes/templates/vigimap/main.html:70
+#: src/vigilo/themes/templates/vigimap/main.html:79
 msgid "VigiMap"
 msgstr "VigiMap"
 
-#: src/vigilo/themes/templates/vigiadmin/index.html:28
+#: src/vigilo/themes/templates/vigiadmin/index.html:30
 msgid "Watch over the state of your equipments from a map-oriented perspective."
 msgstr ""
 
-#: src/vigilo/themes/templates/vigiadmin/index.html:32
+#: src/vigilo/themes/templates/vigiadmin/index.html:35
 #: src/vigilo/themes/templates/vigigraph/graphslist.html:8
 #: src/vigilo/themes/templates/vigigraph/graphslist.html:16
 #: src/vigilo/themes/templates/vigigraph/index.html:12
@@ -240,15 +239,15 @@ msgstr ""
 msgid "VigiGraph"
 msgstr "VigiGraph"
 
-#: src/vigilo/themes/templates/vigiadmin/index.html:33
+#: src/vigilo/themes/templates/vigiadmin/index.html:36
 msgid "Monitor network performance."
 msgstr ""
 
-#: src/vigilo/themes/templates/vigiadmin/index.html:37
+#: src/vigilo/themes/templates/vigiadmin/index.html:41
 msgid "VigiReport"
 msgstr ""
 
-#: src/vigilo/themes/templates/vigiadmin/index.html:38
+#: src/vigilo/themes/templates/vigiadmin/index.html:42
 msgid "See long-term reports on the network, using different sets of metrics."
 msgstr ""
 
@@ -267,7 +266,6 @@ msgstr "Abmeldung"
 
 #: src/vigilo/themes/templates/vigiadmin/master.html:29
 #, fuzzy
-#| msgid "Supervision search"
 msgid "Permissions"
 msgstr "Beaufsichtigungs-Suchfunktion"
 
@@ -376,8 +374,20 @@ msgstr ""
 "anzuzeigen oder zu ändern."
 
 #: src/vigilo/themes/templates/vigiadmin/admin/layout.html:21
+#, fuzzy
+#| msgid "User"
+msgid "Users"
+msgstr "Benutzer"
+
+#: src/vigilo/themes/templates/vigiadmin/admin/layout.html:24
 msgid "Usergroups"
 msgstr ""
+
+#: src/vigilo/themes/templates/vigiadmin/admin/layout.html:27
+#, fuzzy
+#| msgid "Permissions"
+msgid "Permissions on data"
+msgstr "Beaufsichtigungs-Suchfunktion"
 
 #: src/vigilo/themes/templates/vigiboard/events_table.html:15
 #: src/vigilo/themes/templates/vigiboard/events_table.html:21
@@ -643,13 +653,13 @@ msgstr "Filteranzeige"
 
 #: src/vigilo/themes/templates/vigiboard/toolbar.html:23
 #: src/vigilo/themes/templates/vigigraph/main.html:66
-#: src/vigilo/themes/templates/vigimap/main.html:59
+#: src/vigilo/themes/templates/vigimap/main.html:67
 msgid "Help"
 msgstr "Hilfe"
 
 #: src/vigilo/themes/templates/vigiboard/toolbar.html:29
 #: src/vigilo/themes/templates/vigigraph/main.html:73
-#: src/vigilo/themes/templates/vigimap/main.html:65
+#: src/vigilo/themes/templates/vigimap/main.html:74
 msgid "Log out"
 msgstr "Abmelden"
 
@@ -880,7 +890,7 @@ msgid "From %(start_date)s to %(end_date)s"
 msgstr "Von %(start_date)s bis %(end_date)s"
 
 #: src/vigilo/themes/templates/vigigraph/index.html:27
-#: src/vigilo/themes/templates/vigimap/main.html:99
+#: src/vigilo/themes/templates/vigimap/main.html:122
 msgid "loading..."
 msgstr "wird geladen..."
 
@@ -889,11 +899,13 @@ msgid "Vigigraph search"
 msgstr "Vigigraph Suchfunktion"
 
 #: src/vigilo/themes/templates/vigigraph/main.html:55
+#: src/vigilo/themes/templates/vigimap/main.html:61
 #, fuzzy
 msgid "Search"
 msgstr "Vigilo Suchfunktion"
 
 #: src/vigilo/themes/templates/vigigraph/main.html:55
+#: src/vigilo/themes/templates/vigimap/main.html:61
 msgid "Search for a specific host/graph"
 msgstr ""
 
@@ -920,6 +932,7 @@ msgstr ""
 
 #: src/vigilo/themes/templates/vigigraph/main.html:96
 #: src/vigilo/themes/templates/vigigraph/searchhost.html:13
+#: src/vigilo/themes/templates/vigimap/main.html:98
 msgid "Results:"
 msgstr "Ergebnisse:"
 
@@ -987,11 +1000,20 @@ msgstr "%(service)s auf %(host)s"
 
 #: src/vigilo/themes/templates/vigimap/link.html:16
 #, fuzzy, python-format
-#| msgid "Graph '%(graph)s' on '%(host)s'"
 msgid "Graph for %(graph)s on %(host)s"
 msgstr "Grafik '%(graph)s' auf '%(host)s'"
 
-#: src/vigilo/themes/templates/vigimap/main.html:90
+#: src/vigilo/themes/templates/vigimap/main.html:93
+#, fuzzy
+#| msgid "Graph:"
+msgid "Map:"
+msgstr "VigiGraph"
+
+#: src/vigilo/themes/templates/vigimap/main.html:94
+msgid "Search for a map (\"*\" for all, 100 max)"
+msgstr ""
+
+#: src/vigilo/themes/templates/vigimap/main.html:113
 msgid "Your browser does not support the canvas element. Please upgrade."
 msgstr "Ihr Browser unterstützt das Canvas-Element nicht. Bitte Upgrade ausführen."
 
@@ -1026,126 +1048,6 @@ msgstr "Knoten-Update!"
 msgid "no image"
 msgstr "kein Bild"
 
-#~ msgid "Presentation"
-#~ msgstr "Darstellung"
-
-#~ msgid ""
-#~ "Vigilo is a software meant to ease"
-#~ " large-scale system and network "
-#~ "management."
-#~ msgstr ""
-#~ "Vigilo ist eine Software, die die "
-#~ "Verwaltung von Großsystemen- und Netzwerken"
-#~ " erleichtert."
-
-#~ msgid "Data collection"
-#~ msgstr "Datensammlung"
-
-#~ msgid "@TODO"
-#~ msgstr "@TODO"
-
-#~ msgid "Event correlation"
-#~ msgstr "Ereigniskorrelation"
-
-#~ msgid "Accidents visualization"
-#~ msgstr "Vorfallmanagement"
-
-#~ msgid "Report generation"
-#~ msgstr "Berichterstellung"
-
-#~ msgid "Thank you for choosing Vigilo."
-#~ msgstr "Vielen Dank, dass Sie sich für Vigilo entschieden haben."
-
-#~ msgid "Host Picker"
-#~ msgstr "Hostauswahl"
-
-#~ msgid "Main Group"
-#~ msgstr "Hauptgruppe"
-
-#~ msgid "Host Group"
-#~ msgstr "Hostgruppe"
-
-#~ msgid "Host Name"
-#~ msgstr "Hostname"
-
-#~ msgid "Graph Group"
-#~ msgstr "Grafikgruppe"
-
-#~ msgid "Graph Name"
-#~ msgstr "Grafikname"
-
-#~ msgid "Refresh"
-#~ msgstr "Aktualisieren"
-
-#~ msgid "Show Nagios page"
-#~ msgstr "Nagios-Seite anzeigen"
-
-#~ msgid "Show graph"
-#~ msgstr "Grafik anzeigen"
-
-#~ msgid "Graph"
-#~ msgstr "Grafik"
-
-#~ msgid "Graph for \"%1\" on \"%2\""
-#~ msgstr "Grafik für \"%1\" auf \"%2\""
-
-#~ msgid "Reload graph"
-#~ msgstr "Grafik erneut laden"
-
-#~ msgid "Last 12 hours"
-#~ msgstr "Letzte 12 Stunden"
-
-#~ msgid "Last 24 hours"
-#~ msgstr "Letzte 24 Stunden"
-
-#~ msgid "Last 48 hours"
-#~ msgstr "Letzte 48 Stunden"
-
-#~ msgid "Last 7 days"
-#~ msgstr "Letzte 7 Tage"
-
-#~ msgid "Last 14 days"
-#~ msgstr "Letzte 14 Tage"
-
-#~ msgid "Last 3 months"
-#~ msgstr "Letzte 3 Monate"
-
-#~ msgid "Last 6 months"
-#~ msgstr "Letzte 6 Monate"
-
-#~ msgid "Last year"
-#~ msgstr "Letztes Jahr"
-
-#~ msgid "Timeframe"
-#~ msgstr "Zeitrahmen"
-
-#~ msgid "Timeframe menu"
-#~ msgstr "Zeitrahmen-Menü"
-
-#~ msgid "Graph start"
-#~ msgstr "Grafik starten"
-
-#~ msgid "Previous section"
-#~ msgstr "Vorheriger Abschnitt"
-
-#~ msgid "Next section"
-#~ msgstr "Nächster Abschnitt"
-
-#~ msgid "Graph end"
-#~ msgstr "Grafik beenden"
-
-#~ msgid "Zoom in"
-#~ msgstr "Vergrößern"
-
-#~ msgid "Zoom out"
-#~ msgstr "Verkleinern"
-
-#~ msgid "Print Graph"
-#~ msgstr "Grafik drucken"
-
-#~ msgid "Export CSV"
-#~ msgstr "CSV exportieren"
-
-#~ msgid "All"
-#~ msgstr "Alle"
+#~ msgid "The network monitoring solution"
+#~ msgstr "Die Netzwerk-Überwachungslösung"
 
