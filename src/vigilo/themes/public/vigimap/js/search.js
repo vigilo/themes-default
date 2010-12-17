@@ -102,7 +102,6 @@ var Search = new Class({
         });
 
         function selectCell(row, col) {
-            var mapname = this.getValueAt(row, 1);
             var mapid = this.getIDAt(row, 0);
             // Sélection d'une map
             map.load(mapid);

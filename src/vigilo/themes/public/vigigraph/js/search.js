@@ -10,6 +10,11 @@ var SearchResultsModel = new Class({
         return (this.data && this.data.labels) ? this.data.labels.length : 0;
     },
 
+    getRawValueAt: function (row, col) {
+        return content = (this.data && this.data.labels && $chk(this.data.labels[row])) ?
+            this.data.labels[row][col] : '';
+    },
+
     getValueAt: function (row, col) {
         var content = (this.data && this.data.labels && $chk(this.data.labels[row])) ?
             this.data.labels[row][col] : '';
@@ -97,8 +102,8 @@ var Search = new Class({
         });
 
         function selectCell(row, col) {
-            var host = this.getValueAt(row, 0);
-            var graph = this.getValueAt(row, 1);
+            var host = this.getRawValueAt(row, 0);
+            var graph = this.getRawValueAt(row, 1);
             var idhost = this.getIDAt(row, 0);
             var idgraph = this.getIDAt(row, 1);
 
