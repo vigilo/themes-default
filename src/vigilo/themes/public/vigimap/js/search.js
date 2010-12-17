@@ -97,7 +97,7 @@ var Search = new Class({
         // On met à jour le contenu de la grille
         // avec les résultats de la recherche.
         var model = new SearchResultsModel(data, {
-            colWidth: [337, 200],
+            colWidth: [323, 200],
             columnHeaders: [_('Group'), _('Map')]
         });
 
