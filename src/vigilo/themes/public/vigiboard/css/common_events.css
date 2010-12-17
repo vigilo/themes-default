@@ -53,6 +53,14 @@ h1 a:hover {
     margin: 0 0.1em;
 }
 
+.header_item input {
+    margin-top: 0.4em;
+}
+
+.header_item#font_size_selector {
+    margin-top: 0.4em;
+}
+
 /* Table des évènements */
 
 .vigitable {
