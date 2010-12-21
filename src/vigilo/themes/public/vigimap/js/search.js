@@ -63,7 +63,7 @@ var Search = new Class({
         });
 
         this.search_request = new Request.JSON({
-            url: '/maps/search',
+            url: backend.search,
             onSuccess: this.updateResults.bind(this)
         });
 
@@ -97,7 +97,7 @@ var Search = new Class({
         // On met à jour le contenu de la grille
         // avec les résultats de la recherche.
         var model = new SearchResultsModel(data, {
-            colWidth: [322, 200],
+            colWidth: [320, 200],
             columnHeaders: [_('Group'), _('Map')]
         });
 
