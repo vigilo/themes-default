@@ -17,6 +17,9 @@ from vigilo.models import tables
     <div py:attrs="select('@*')">
         <?python from rum.util import generate_label ?>
         <ul id="rum-resource-list">
+          <li py:with="url=url_for(tables.User, _memory=False)">
+              <a href="${url}" class="${request.routes['resource'] is tables.User and 'active' or None}">Users</a>
+          </li>
           <li py:with="url=url_for(tables.UserGroup, _memory=False)">
               <a href="${url}" class="${request.routes['resource'] is tables.UserGroup and 'active' or None}">Usergroups</a>
           </li>
