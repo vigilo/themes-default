@@ -210,6 +210,9 @@ h1 a:hover {
 
 /* Etats */
 
+.status {
+    margin: 0 auto;
+}
 .status-critical {
     background-color: #FF0000;
     border: 1px solid #C80000;
@@ -238,7 +241,7 @@ h1 a:hover {
 .status-icon-unknown {
     background-position: left center;
     background-repeat: no-repeat;
-    padding: 4px 0 4px 24px;
+    padding: 4px 0 4px 22px;
 }
 
 .status-icon-critical {
