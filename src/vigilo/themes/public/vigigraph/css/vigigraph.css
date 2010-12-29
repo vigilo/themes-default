@@ -116,3 +116,6 @@ img.logo {
 .notice {
     background: #EEEEFF url(../images/info.png) no-repeat scroll 0px center;
 }
+
+.jxTree a, .jxTreeRoot a { overflow: visible; }
+

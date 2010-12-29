@@ -1,16 +1,25 @@
 #search_form {
     padding: 8px;
+    font-size: 12px;
 }
 
 #search_form label,
 #search_form input {
     float: left;
-    width: 93px;
     margin: 8px;
+    font-size: 12px;
+    padding: 2px;
+}
+
+#search_form #search_form_host,
+#search_form #search_form_graph {
+    width: 130px;
 }
 
 #search_form #search_form_search {
+    width: 93px;
     float: right;
+    padding: 0;
 }
 
 #search_form > div {
