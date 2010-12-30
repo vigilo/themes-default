@@ -85,7 +85,7 @@ img.logo {
 /* Flash */
 
 #flash {
-	opacity: 0;
+    opacity: 0;
 }
 
 #flash, .notice {
@@ -118,4 +118,5 @@ img.logo {
 }
 
 .jxTree a, .jxTreeRoot a { overflow: visible; }
+.jxFlyout { z-index: 1001; } /* au-dessus des jx.Dialog */
 
