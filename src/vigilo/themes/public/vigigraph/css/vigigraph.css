@@ -118,5 +118,5 @@ img.logo {
 }
 
 .jxTree a, .jxTreeRoot a { overflow: visible; }
-.jxFlyout { z-index: 1001; } /* au-dessus des jx.Dialog */
+.jxFlyout { z-index: 1010; } /* au-dessus des jx.Dialog */
 
