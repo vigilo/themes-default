@@ -122,7 +122,12 @@
         var warning = $$('edit_event_form_warning.container');
         if (ref == '' && ids.length > 1) {
             warning.show('block');
-            warning.show('table-row');
+            try {
+                // IE 7 ne reconnait pas "table-row"
+                // et lève une exception.
+                warning.show('table-row');
+            }
+            catch (e) {}
         }
         else warning.hide();
 
