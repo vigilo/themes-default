@@ -26,6 +26,9 @@ from vigilo.models import tables
           <li py:with="url=url_for(tables.DataPermission, _memory=False)">
               <a href="${url}" class="${request.routes['resource'] is tables.DataPermission and 'active' or None}">Permissions on data</a>
           </li>
+          <li py:with="url=url_for(tables.Permission, _memory=False)">
+              <a href="${url}" class="${request.routes['resource'] is tables.Permission and 'active' or None}">Permissions on applications</a>
+          </li>
         </ul>
         <div py:replace="select('*|text()')"/>
     </div>
