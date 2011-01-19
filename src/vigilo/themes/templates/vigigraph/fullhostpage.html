@@ -24,13 +24,31 @@
         </py:for>
         </p>
         <div class="graphs">
-            <py:for each="graph in graphs">
-            <a href="${tg.url('/rpc/singleGraph', {
-                'host_': host,
-                'graph': graph.name,
-                'start': start,
-                'duration': duration,
-            })}">
+            <!--!
+                On construit un lien qui va permettre de charger
+                automatiquement ce graphe dans VigiGraph.
+                Pour cela, on crée d'abord l'URL normale avec tg.url(),
+                puis on supprime le chemin d'accès jusqu'à la page.
+                Ensuite, on fait de nouveau appel à tg.url() pour encoder
+                correctement l'URL de nouveau (on ne peut pas utiliser
+                urllib ici) et on supprime de nouveau le préfixe,
+                en tenant compte du paramètre "g" ajouté pour les besoins
+                de tg.url().
+                Enfin, on injecte l'URL sans modification dans le code
+                du lien HTML qu'on veut afficher.
+            -->
+            <py:for each="graph in graphs"
+                py:with="prefix = len(tg.url('/'))+1; graph_url = tg.url('/', {
+                    'g': tg.url('/', {
+                        'host_': host,
+                        'graph': graph.name,
+                        'start': start,
+                        'duration': duration,
+                        'top': 0,
+                        'left': 0,
+                    })[prefix:]
+                })[prefix+2:]">
+            <a href="${tg.url('/#graphs[0]=%s&amp;safety=1' % graph_url)}">
             <img alt="${l_('Graph \'%(graph)s\' on \'%(host)s\'') % {
                     'host': host,
                     'graph': graph.name,
