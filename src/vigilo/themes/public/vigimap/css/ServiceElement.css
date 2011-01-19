@@ -34,6 +34,13 @@
 #mapnode_form_label,
 #mapnode_form_host_word,
 #mapnode_form_service_word,
-#mapnode_form_graph_word {
+#mapnode_form_graph_word,
+#link_form_fieldsetllslink_host_word,
+#link_form_fieldsetllslink_service_word,
+#link_form_fieldsetllslink_graph_word,
+#link_form_fieldsetllslink_out_name,
+#link_form_fieldsetllslink_ds_out,
+#link_form_fieldsetllslink_in_name,
+#link_form_fieldsetllslink_ds_in {
     width: 230px;
 }
