@@ -219,7 +219,8 @@ h1 a:hover {
 .status {
     margin: 0 auto;
 }
-.status-critical {
+.status-critical,
+.status-down {
     background-color: #FF0000;
     border: 1px solid #C80000;
 }
@@ -227,11 +228,13 @@ h1 a:hover {
     background-color: #FFFF00;
     border: 1px solid #C8C800;
 }
-.status-ok {
+.status-ok,
+.status-up {
     background-color: #73DE78;
     border: 1px solid #5DB460;
 }
-.status-unknown {
+.status-unknown,
+.status-unreachable {
     background-color: #aaaaaa;
     border: 1px solid #555555;
 }
@@ -241,25 +244,25 @@ h1 a:hover {
     border: 1px solid #555555;
 }
 
-.status-icon-critical,
-.status-icon-warning,
-.status-icon-ok,
-.status-icon-unknown {
+.status-icon {
     background-position: left center;
     background-repeat: no-repeat;
     padding: 4px 0 4px 22px;
 }
 
-.status-icon-critical {
+.status-icon-critical,
+.status-icon-down {
     background-image: url(../images/CRITICAL2.png);
 }
 .status-icon-warning {
     background-image: url(../images/WARNING2.png);
 }
-.status-icon-ok {
+.status-icon-ok,
+.status-icon-up {
     background-image: url(../images/OK2.png);
 }
-.status-icon-unknown {
+.status-icon-unknown,
+.status-icon-unreachable {
     background-image: url(../images/UNKNOWN2.png);
 }
 
