@@ -44,7 +44,7 @@
         <link rel="stylesheet" type="text/css" href="${tg.url(widget+'.css')}" />
     </div>
 
-    <meta py:replace="select('*')"/>
+    <meta py:replace="select('*|comment()')"/>
 </head>
 
 <body py:match="body" py:attrs="select('@*')">
