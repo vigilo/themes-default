@@ -54,7 +54,10 @@
                                 <img src="${tg.url('/images/top_left_arrow.png')}" alt="Previous" title="Previous page"/>
                              </a>
 
-                            <a py:otherwise="" href="${tg.url('/%d' % (page-1))}">
+                            <!--! "dummy" est nécessaire pour que Genshi mette à jour le dictionnaire. -->
+                            <a py:otherwise=""
+                                py:with="copy = search.copy(); dummy = copy.update(page=page-1)"
+                                href="${tg.url('/', copy)}">
                                 <img src="${tg.url('/images/top_left_arrow.png')}" alt="Previous" title="Previous page"/>
                              </a>
                         </py:choose>
@@ -72,7 +75,9 @@
                                 <img src="${tg.url('/images/top_right_arrow.png')}" alt="Next" title="Next page"/>
                              </a>
 
-                             <a py:otherwise="" href="${tg.url('/%d' % (page+1))}">
+                             <a py:otherwise=""
+                                py:with="copy = search.copy(); dummy = copy.update(page=page+1)"
+                                href="${tg.url('/', copy)}">
                                 <img src="${tg.url('/images/top_right_arrow.png')}" alt="Next" title="Next page"/>
                              </a>
                         </py:choose>
@@ -119,7 +124,9 @@
                                 <img src="${tg.url('/images/bottom_left_arrow.png')}" alt="Next" title="Next page"/>
                              </a>
 
-                            <a py:otherwise="" href="${tg.url('/%d' % (page-1))}">
+                            <a py:otherwise=""
+                                py:with="copy = search.copy(); dummy = copy.update(page=page-1)"
+                                href="${tg.url('/', copy)}">
                                 <img src="${tg.url('/images/bottom_left_arrow.png')}" alt="Previous" title="Previous page"/>
                             </a>
                         </py:choose>
@@ -137,7 +144,9 @@
                                 <img src="${tg.url('/images/bottom_right_arrow.png')}" alt="Next" title="Next page"/>
                              </a>
 
-                            <a py:otherwise="" href="${tg.url('/%d' % (page+1))}">
+                            <a py:otherwise=""
+                                py:with="copy = search.copy(); dummy = copy.update(page=page+1)"
+                                href="${tg.url('/', copy)}">
                                 <img src="${tg.url('/images/bottom_right_arrow.png')}" alt="Next" title="Next page"/>
                              </a>
                         </py:choose>
@@ -159,8 +168,8 @@
                                               <py:when test="hostname">
                                                   <a href="${tg.url('/item/%(page)d/%(hostname)s' % {'page': p, 'hostname': hostname})}">${p}</a>
                                               </py:when>
-                                              <py:otherwise>
-                                                  <a href="${tg.url('/%d' % p)}">${p}</a>
+                                              <py:otherwise py:with="copy = search.copy(); dummy = copy.update(page=p)">
+                                                  <a href="${tg.url('/', copy)}">${p}</a>
                                             </py:otherwise>
                                         </py:choose>
                                     </py:for>
