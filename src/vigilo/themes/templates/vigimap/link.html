@@ -4,11 +4,11 @@
     <py:choose test="">
         <py:when test="host is None">
         <p><span class="label">${l_("Reference service:")}</span>
-        ${l_("%(service)s") % {'service': service}}</p>  
+        ${l_("%(service)s") % {'service': service}}</p>
         </py:when>
         <py:otherwise>
         <p><span class="label">${l_("Reference service:")}</span>
-        ${l_("%(service)s on %(host)s") % {'service': service, 'host': host}}</p>           
+        ${l_("%(service)s on %(host)s") % {'service': service, 'host': host}}</p>
         </py:otherwise>
     </py:choose>
 
@@ -19,5 +19,5 @@
         start=int(time.time() - duration),
         duration=duration,
         details=0,
-    )}" alt="${_('Graph for %(graph)s on %(host)s')}" /></p>
+    )}" alt="${_('Graph for %(graph)s on %(host)s') % {'graph': graph, 'host': host}}" /></p>
 </div>
