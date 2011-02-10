@@ -9,3 +9,7 @@ ul#mainmenu #userinfo {
     font-size: 12px;
     margin: 0 8px;
 }
+
+ul#mainmenu #userinfo span {
+    color: #ccc;
+}

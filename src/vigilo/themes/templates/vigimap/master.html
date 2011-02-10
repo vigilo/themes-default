@@ -12,6 +12,7 @@
     <meta py:replace="select('*')"/>
     <link rel="stylesheet" type="text/css" media="screen" href="${tg.url('/css/reset.css')}" />
     <link rel="stylesheet" type="text/css" media="screen" href="${tg.url('/css/style.css')}" />
+    <link rel="stylesheet" type="text/css" media="screen" href="${tg.url('/css/master.css')}" />
 </head>
 
 <body py:match="body" py:attrs="select('@*')">
@@ -24,13 +25,9 @@
         <li py:if="request.identity" class="loginlogout"><a href="${tg.url('/logout_handler')}">Logout</a></li>
         <li py:if="request.identity" id="admin" class="loginlogout"><a href="${tg.url('/admin/mapgroups')}">Administration</a></li>
     </span>
+    <li id="userinfo" py:if="request.identity">Logged in as: <span>${request.identity['repoze.who.userid']}</span></li>
   </ul>
   <div id="content">
-    <!--
-    <py:with vars="flash=tg.flash_obj.render('flash', use_js=False)">
-        <div py:if="flash" py:content="XML(flash)" />
-    </py:with>
-    -->
     <div py:replace="select('*|text()')"/>
     <!-- End of content -->
     ${footer()}

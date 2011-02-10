@@ -12,6 +12,7 @@
     <meta py:replace="select('*')"/>
     <link rel="stylesheet" type="text/css" media="screen" href="${tg.url('/css/reset.css')}" />
     <link rel="stylesheet" type="text/css" media="screen" href="${tg.url('/css/style.css')}" />
+    <link rel="stylesheet" type="text/css" media="screen" href="${tg.url('/css/master.css')}" />
     <link rel="search" type="application/opensearchdescription+xml"
         title="Vigilo search" href="${tg.url('/rpc/getOpenSearch')}"/>
 </head>
@@ -25,6 +26,7 @@
     <li py:if="not request.identity" id="loginbtn" class="loginlogout ${('', 'active')[defined('page') and page==page=='login']}"><a href="${tg.url('/login')}">Login</a></li>
     <li py:if="request.identity" id="loginbtn" class="loginlogout"><a href="${tg.url('/logout_handler')}">Logout</a></li>
     </span>
+    <li id="userinfo" py:if="request.identity">Logged in as: <span>${request.identity['repoze.who.userid']}</span></li>
   </ul>
   <div id="content">
     <py:with vars="flash=tg.flash_obj.render('flash', use_js=False)">
