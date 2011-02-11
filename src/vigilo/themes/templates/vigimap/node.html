@@ -28,12 +28,4 @@
             <p>${l_("Appliance name: %(host)s") % {'host': node['host']}}</p>
         </py:otherwise>
     </py:choose>
-    <!--
-    <py:if test="node.has_key('onlyhost')">
-        <p>${l_("Appliance name: %(host)s") % {'host': node['host']}}</p>
-    </py:if>
-    <py:if test="node.has_key('service')">
-        <p>${l_("Service name: %(service)s on %(host)s") % {'service': node['service'], 'host': node['host' ]}}</p>
-    </py:if>
-    -->
 </div>
