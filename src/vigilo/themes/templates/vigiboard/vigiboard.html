@@ -81,17 +81,6 @@ ${toolbar()}
             flash.fade('in').pauseFx(10000).fade('out');
         }
     });
-
-    function add_autocompleter(elem, varname, url) {
-        new Autocompleter.Request.VigiloJSON(elem, url, {
-            // ATTENTION: domObj n'est pas documenté dans l'API.
-            zIndex: window.search_dialog.domObj.getStyle('zIndex').toInt(),
-            minLength: 1,
-            selectMode: 'type-ahead',
-            postVar: varname,
-            overflow: true
-        });
-    }
 /*]]>*/
 </script>
 
