@@ -20,11 +20,14 @@
     <script type="text/javascript" src="${tg.url('/js/lib/jxlib.js')}"></script>
     <script type="text/javascript">Jx.baseURL = '${tg.url("/js/lib")}';</script>
     <!--!
-        "js/babel.js" doit être chargé avant "i18n",
-        qui doit lui-même être chargé avant "js/map.js".
+        "js/libs/babel.js" et "js/babelThemes.js" doivent être chargés
+        avant "i18n", qui doit être chargé avant nos scripts.
     -->
     <script type="text/javascript" src="${tg.url('/js/lib/babel.js')}"></script>
+    <script type="text/javascript" src="${tg.url('/js/babelThemes.js')}"></script>
     <script type="text/javascript" src="${tg.url('/i18n')}"></script>
+
+    <script type="text/javascript">var can_edit = ${defined('can_edit') and can_edit or 0};</script>
 
     <script type="text/javascript" src="${tg.url('/js/main.js')}"></script>
     <script type="text/javascript" src="${tg.url('/js/loader.js')}"></script>
@@ -93,7 +96,7 @@
                 <label for="search_form_map">Map:</label>
                 <input type="text" id="search_form_map" name="search_form_map"
                     title="Search for a map (&quot;*&quot; for all, 100 max)" />
-                <input type="submit" id="search_form_search" value="Search" />
+                <input type="submit" id="search_form_search" value="${l_('Search')}" />
             </form>
             <div><p>Results:</p></div>
             <div id="search_results"></div>

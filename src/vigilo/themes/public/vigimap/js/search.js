@@ -55,7 +55,7 @@ var Search = new Class({
         });
 
         this.search_dialog = new Jx.Dialog({
-            label: _('Search for a map'),
+            label: l_('Search for a map'),
             modal: false,
             width: 600,
             height: 400,
@@ -79,7 +79,7 @@ var Search = new Class({
                 return;
             this.search_results.setModel(new Jx.Grid.Model([], {
                 colWidth: [255, 255],
-                columnHeaders: [_('Group'), _('Map')]
+                columnHeaders: [l_('Group'), l_('Map')]
             }));
             var search_content = $$('#search_results > div > div.jxGridContainer:last-child')[0];
             search_content.setStyles({'overflow': 'auto'});
@@ -98,7 +98,7 @@ var Search = new Class({
         // avec les résultats de la recherche.
         var model = new SearchResultsModel(data, {
             colWidth: [320, 200],
-            columnHeaders: [_('Group'), _('Map')]
+            columnHeaders: [l_('Group'), l_('Map')]
         });
 
         function selectCell(row, col) {

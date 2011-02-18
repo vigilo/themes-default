@@ -52,16 +52,5 @@
         <div py:strip="True" py:if="flash" py:content="XML(flash)" />
     </py:with>
 
-<script type="text/javascript">
-/*<![CDATA[*/
-    window.addEvent('load', function (){
-        var flash = $('flash');
-        if (flash) {
-            flash.fade('in').pauseFx(10000).fade('out');
-        }
-    });
-/*]]>*/
-</script>
-
 </body>
 </html>

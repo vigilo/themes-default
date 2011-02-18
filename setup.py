@@ -1,6 +1,20 @@
-#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 # vim: set fileencoding=utf-8 sw=4 ts=4 et :
-from setuptools import setup, find_packages
+
+try:
+    from setuptools import setup, find_packages
+except ImportError:
+    from ez_setup import use_setuptools
+    use_setuptools()
+    from setuptools import setup, find_packages
+
+cmdclass = {}
+try:
+    from babeljs import compile_catalog_plusjs
+except ImportError:
+    pass
+else:
+    cmdclass['compile_catalog'] = compile_catalog_plusjs
 
 tests_require = [
     'coverage',
@@ -26,6 +40,7 @@ setup(name='vigilo-themes-default',
         # mais permet d'utiliser la commande "identity_catalog".
         # La dépendance est déjà tirée via "vigilo-models".
         'vigilo-common',
+        'tg.devtools',
     ],
     namespace_packages = [
         'vigilo',
@@ -48,7 +63,7 @@ setup(name='vigilo-themes-default',
             ('**/templates/**.html', 'genshi', None),
             ('**/templates/**.xml', 'genshi', None),
             ('**/templates/admin/**.html', 'genshi', None),
-            ('**/public/**', 'ignore', None),
+            ('**/public/**.js', 'javascript', None),
         ],
     },
     entry_points={
@@ -56,4 +71,5 @@ setup(name='vigilo-themes-default',
         ],
     },
     package_dir={'': 'src'},
+    cmdclass=cmdclass,
 )

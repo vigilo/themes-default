@@ -56,7 +56,7 @@ var Search = new Class({
         });
 
         this.search_dialog = new Jx.Dialog({
-            label: _('Search for an host/graph'),
+            label: l_('Search for an host/graph'),
             modal: false,
             width: 600,
             height: 400,
@@ -80,7 +80,7 @@ var Search = new Class({
                 return;
             this.search_results.setModel(new Jx.Grid.Model([], {
                 colWidth: 255,
-                columnHeaders: [_('Host'), _('Graph')]
+                columnHeaders: [l_('Host'), l_('Graph')]
             }));
         }.bind(this));
 
@@ -98,7 +98,7 @@ var Search = new Class({
         // avec les résultats de la recherche.
         var model = new SearchResultsModel(data, {
             colWidth: 255,
-            columnHeaders: [_('Host'), _('Graph')]
+            columnHeaders: [l_('Host'), l_('Graph')]
         });
 
         function selectCell(row, col) {

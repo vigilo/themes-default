@@ -27,7 +27,7 @@
     <li py:if="request.identity" id="loginbtn" class="loginlogout"><a href="${tg.url('/logout_handler')}">Logout</a></li>
     </span>
     <li py:if="request.identity" id="adminbtn" class="${('', 'active')[defined('page') and page==page=='admin']}"><a href="${tg.url('/perms')}">Permissions</a></li>
-    <span py:if="request.identity['repoze.who.userid'] == 'manager' or not asbool(tg.config.get('external_auth'))" py:strip="True">
+    <span py:if="request.identity and request.identity.get('repoze.who.userid') == 'manager' or not asbool(tg.config.get('external_auth'))" py:strip="True">
     <li id="profilebtn" class="${('', 'active')[defined('page') and page==page=='profile']}"><a href="${tg.url('/profile')}">Profile</a></li>
     </span>
 <!--! La collecte est désactivée. -->

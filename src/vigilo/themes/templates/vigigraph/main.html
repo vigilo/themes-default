@@ -23,10 +23,11 @@
     <script type="text/javascript" src="${tg.url('/js/libs/jxlib.js')}"></script>
 
     <!--!
-        "js/babel.js" doit être chargé avant "i18n",
-        qui doit être chargé avant nos scripts.
+        "js/libs/babel.js" et "js/babelThemes.js" doivent être chargés
+        avant "i18n", qui doit être chargé avant nos scripts.
     -->
     <script type="text/javascript" src="${tg.url('/js/libs/babel.js')}"></script>
+    <script type="text/javascript" src="${tg.url('/js/babelThemes.js')}"></script>
     <script type="text/javascript" src="${tg.url('/i18n')}"></script>
 
     <script type="text/javascript" src="${tg.url('/js/libs/Autocompleter/Autocompleter.js')}"></script>
@@ -90,7 +91,7 @@
                 <label for="search_form_graph">Graph:</label>
                 <input type="text" id="search_form_graph" name="search_form_graph"
                     title="Search for a graph (&quot;*&quot; for all, 100 max)" />
-                <input type="submit" id="search_form_search" value="Search" />
+                <input type="submit" id="search_form_search" value="${l_('Search')}" />
                 <div>Results:</div>
                 <div id="search_results"></div>
             </form>
