@@ -57,7 +57,7 @@ ${toolbar()}
     On utilise le traducteur de l'application ici plutôt que celui des thèmes
     pour éviter des erreurs d'interprétation du format dans le contrôleur.
 -->
-<div style="display: none">
+<div style="display: none" py:with="copy = search.copy(); dummy = copy.update(host=copy.pop('host_', None))">
     ${search_form(
         search,
         child_args=dict(
