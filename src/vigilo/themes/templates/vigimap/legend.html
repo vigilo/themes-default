@@ -8,16 +8,16 @@
         <h3>${l_("Elements")} <span></span></h3>
         <dl>
             <dt class="status-unknown">&#160;</dt>
-            <dd>${l_("Unknown")}<span class="legend-unknown"></span></dd>
+            <dd><span class="legend-unknown"></span>${l_("Unknown")}</dd>
 
             <dt class="status-ok">&#160;</dt>
-            <dd>${l_("OK")}<span class="legend-ok"></span></dd>
+            <dd><span class="legend-ok"></span>${l_("OK")}</dd>
 
             <dt class="status-warning">&#160;</dt>
-            <dd>${l_("Warning")}<span class="legend-warning"></span></dd>
+            <dd><span class="legend-warning">${l_("Warning")}</span></dd>
 
             <dt class="status-critical">&#160;</dt>
-            <dd>${l_("Critical")}<span class="legend-critical"></span></dd>
+            <dd><span class="legend-critical">${l_("Critical")}</span></dd>
         </dl>
     </div>
     <div id="legend-links" py:if="has_link">
@@ -31,20 +31,18 @@
                 <div py:choose="" py:strip="True">
                     <p py:when="i == 0" py:strip="True">
                         <dt style="background-color: ${link.f}; border: 1px solid ${link.s}">&#160;</dt>
-                        <dd>${link.t_min}<span class="legend-count"></span></dd>
+                        <dd><span class="legend-count"></span>${link.t_min}</dd>
                     </p>
                     <p py:when="i == len(links) - 1" py:strip="True">
                         <dt style="background-color: ${link.f}; border: 1px solid ${link.s}">&#160;</dt>
-                        <dd>&#8805; ${link.t_min}<span class="legend-count"></span></dd>
+                        <dd><span class="legend-count"></span>&#8805; ${link.t_min}</dd>
                     </p>
                     <p py:otherwise="" py:strip="True">
                         <dt style="background-color: ${link.f}; border: 1px solid ${link.s}">&#160;</dt>
-                        <dd>${link.t_min} &#8594; ${link.t_max}<span class="legend-count"></span></dd>
+                        <dd><span class="legend-count"></span>${link.t_min} &#8594; ${link.t_max}</dd>
                     </p>
                 </div>
             </div>
         </dl>
     </div>
 </div>
-
-
