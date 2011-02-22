@@ -159,7 +159,7 @@ h1 a:hover {
     /*  Nécessaire pour IE 7. La feuille "non-ie7.css"
         remplace cette valeur pour les autres navigateurs,
         y compris pour IE 8 qui ne présente plus le bug. */
-    margin: 0;
+    margin: 1px;
 }
 
 #map .obj {
