@@ -12,24 +12,11 @@
     opacity: 0.8;
 }
 
-#map .serviceelement span {
-    font-size: 80%;
-    font-family: sans-serif;
-    background-color: white;
-    /*font-weight: bold;
-    opacity: 0.7;*/
-}
-
-#map .serviceelement span.no-icon,
-.obj span.no-icon {
-    border: 1px solid black;
-    padding: 4px;
-}
-
-#map .serviceelement span.no-icon-display {
+.display .obj.serviceelement span {
     padding-left: 26px;
     background-position: 4px;
 }
+
 
 #details ul.tags {
     list-style-type: none;

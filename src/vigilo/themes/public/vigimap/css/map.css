@@ -146,41 +146,31 @@ h1 a:hover {
     display: block;
 }
 
-/*
-#mapitems .obj {
-    width: 70px;
-    border: 1px solid black;
-}
-*/
-
 
 /* Elements de carte */
-#map div.serviceelement .status {
+.obj .status {
     /*  Nécessaire pour IE 7. La feuille "non-ie7.css"
         remplace cette valeur pour les autres navigateurs,
         y compris pour IE 8 qui ne présente plus le bug. */
-    margin: 1px;
-}
-
-#map .obj {
-    position: absolute;
+    margin: 0;
 }
 
 .obj {
+    position: absolute;
     display: block;
-    margin: 5px auto 5px auto;
+    margin: auto;
     border: 2px solid transparent;
     text-align: center;
-    /*opacity: 0.5;*/
+    padding: 3px 0;
 }
 .obj:hover {
     border: 2px solid #ffcc66;
     color: #ffcc66;
     cursor: pointer;
 }
+
 .selected {
     border: 2px solid blue !important;
-    /*padding: 0px;*/
 }
 
 .obj img.icon {
@@ -191,10 +181,13 @@ h1 a:hover {
 .obj span {
     font-size: 80%;
     font-family: sans-serif;
+    padding: 2px;
+    border: 1px solid black;
+    background-color: white;
+    margin: 2px auto;
 }
 
 /* Liens */
-
 .link {
     position: absolute;
     border: 2px solid transparent;
