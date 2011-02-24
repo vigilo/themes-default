@@ -11,7 +11,7 @@ var SearchResultsModel = new Class({
     },
 
     getRawValueAt: function (row, col) {
-        return content = (this.data && this.data.labels && $chk(this.data.labels[row])) ?
+        return (this.data && this.data.labels && $chk(this.data.labels[row])) ?
             this.data.labels[row][col] : '';
     },
 
@@ -35,7 +35,7 @@ var VigiloGrid = new Class({
 
     getRowColumnFromEvent: function (e) {
         var target;
-        for (target = e.target;
+        for (target = $(e.target);
             target.tagName != 'TD' &&
             target.tagName != 'TH' &&
             target.get('class') != 'jxGridContainer';
@@ -58,8 +58,8 @@ var Search = new Class({
         this.search_dialog = new Jx.Dialog({
             label: l_('Search for an host/graph'),
             modal: false,
-            width: 600,
-            height: 400,
+            width: 605,
+            height: 405,
             content: 'search_container'
         });
 
@@ -74,6 +74,7 @@ var Search = new Class({
         }.bind(this));
 
         this.search_dialog.addEvent('open', function () {
+            $('search_form_host').focus();
             // On doit afficher une grille vide la première fois,
             // afin de donner les bonnes dimensions à la grille.
             if (this.search_results.model)

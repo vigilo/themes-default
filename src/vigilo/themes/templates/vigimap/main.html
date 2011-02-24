@@ -96,10 +96,17 @@
                 <label for="search_form_map">Map:</label>
                 <input type="text" id="search_form_map" name="search_form_map"
                     title="Search for a map (&quot;*&quot; for all, 100 max)" />
+                <!--!
+                    Internet Explorer (7 et peut-être d'autres) ne transmet
+                    pas les formulaires ne contenant qu'un seul champ éditable
+                    lorsqu'on appuie sur Entrée. On ajoute un second champ
+                    pour contourner le problème.
+                -->
+                <input type="text" name="dummy" style="display: none"/>
                 <input type="submit" id="search_form_search" value="${l_('Search')}" />
+                <div><p>Results:</p></div>
+                <div id="search_results"></div>
             </form>
-            <div><p>Results:</p></div>
-            <div id="search_results"></div>
         </div>
     </div>
 

@@ -34,7 +34,7 @@ var VigiloGrid = new Class({
 
     getRowColumnFromEvent: function (e) {
         var target;
-        for (target = e.target;
+        for (target = $(e.target);
             target.tagName != 'TD' &&
             target.tagName != 'TH' &&
             target.get('class') != 'jxGridContainer';
@@ -73,6 +73,7 @@ var Search = new Class({
         }.bind(this));
 
         this.search_dialog.addEvent('open', function () {
+            $('search_form_map').focus();
             // On doit afficher une grille vide la première fois,
             // afin de donner les bonnes dimensions à la grille.
             if (this.search_results.model)
