@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vigilo-themes-default 2.0.0\n"
 "Report-Msgid-Bugs-To: contact@projet-vigilo.org\n"
-"POT-Creation-Date: 2011-02-15 13:08+0100\n"
+"POT-Creation-Date: 2011-03-01 16:32+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,8 +22,8 @@ msgstr ""
 msgid "Search for an host/graph"
 msgstr ""
 
-#: src/vigilo/themes/public/vigigraph/js/search.js:83
-#: src/vigilo/themes/public/vigigraph/js/search.js:101
+#: src/vigilo/themes/public/vigigraph/js/search.js:84
+#: src/vigilo/themes/public/vigigraph/js/search.js:102
 #: src/vigilo/themes/templates/vigiadmin/downtime.html:39
 #: src/vigilo/themes/templates/vigiadmin/downtime.html:44
 #: src/vigilo/themes/templates/vigiadmin/downtime.html:48
@@ -31,8 +31,8 @@ msgstr ""
 msgid "Host"
 msgstr ""
 
-#: src/vigilo/themes/public/vigigraph/js/search.js:83
-#: src/vigilo/themes/public/vigigraph/js/search.js:101
+#: src/vigilo/themes/public/vigigraph/js/search.js:84
+#: src/vigilo/themes/public/vigigraph/js/search.js:102
 msgid "Graph"
 msgstr ""
 
@@ -40,13 +40,13 @@ msgstr ""
 msgid "Search for a map"
 msgstr ""
 
-#: src/vigilo/themes/public/vigimap/js/search.js:82
-#: src/vigilo/themes/public/vigimap/js/search.js:101
+#: src/vigilo/themes/public/vigimap/js/search.js:83
+#: src/vigilo/themes/public/vigimap/js/search.js:102
 msgid "Group"
 msgstr ""
 
-#: src/vigilo/themes/public/vigimap/js/search.js:82
-#: src/vigilo/themes/public/vigimap/js/search.js:101
+#: src/vigilo/themes/public/vigimap/js/search.js:83
+#: src/vigilo/themes/public/vigimap/js/search.js:102
 msgid "Map"
 msgstr ""
 
@@ -106,7 +106,7 @@ msgstr ""
 
 #: src/vigilo/themes/templates/vigiadmin/collect.html:26
 #: src/vigilo/themes/templates/vigiadmin/schedule_downtime.html:13
-#: src/vigilo/themes/templates/vigigraph/main.html:89
+#: src/vigilo/themes/templates/vigigraph/main.html:88
 #: src/vigilo/themes/templates/vigigraph/searchhostform.html:14
 msgid "Host:"
 msgstr ""
@@ -243,7 +243,7 @@ msgstr ""
 #: src/vigilo/themes/templates/vigiadmin/index.html:29
 #: src/vigilo/themes/templates/vigimap/edition.html:8
 #: src/vigilo/themes/templates/vigimap/index.html:8
-#: src/vigilo/themes/templates/vigimap/main.html:80
+#: src/vigilo/themes/templates/vigimap/main.html:82
 msgid "VigiMap"
 msgstr ""
 
@@ -255,8 +255,8 @@ msgstr ""
 #: src/vigilo/themes/templates/vigigraph/graphslist.html:8
 #: src/vigilo/themes/templates/vigigraph/graphslist.html:16
 #: src/vigilo/themes/templates/vigigraph/index.html:12
-#: src/vigilo/themes/templates/vigigraph/main.html:78
-#: src/vigilo/themes/templates/vigigraph/main_simplified.html:45
+#: src/vigilo/themes/templates/vigigraph/main.html:77
+#: src/vigilo/themes/templates/vigigraph/main_simplified.html:44
 msgid "VigiGraph"
 msgstr ""
 
@@ -296,10 +296,7 @@ msgstr ""
 
 #: src/vigilo/themes/templates/vigiadmin/master.html:38
 #: src/vigilo/themes/templates/vigiboard/master.html:27
-#: src/vigilo/themes/templates/vigigraph/main.html:50
-#: src/vigilo/themes/templates/vigigraph/main_simplified.html:27
 #: src/vigilo/themes/templates/vigigraph/master.html:29
-#: src/vigilo/themes/templates/vigimap/main.html:57
 #: src/vigilo/themes/templates/vigimap/master.html:28
 msgid "Logged in as:"
 msgstr ""
@@ -668,16 +665,16 @@ msgid "Filter display"
 msgstr ""
 
 #: src/vigilo/themes/templates/vigiboard/toolbar.html:23
-#: src/vigilo/themes/templates/vigigraph/main.html:66
-#: src/vigilo/themes/templates/vigigraph/main_simplified.html:33
-#: src/vigilo/themes/templates/vigimap/main.html:68
+#: src/vigilo/themes/templates/vigigraph/main.html:65
+#: src/vigilo/themes/templates/vigigraph/main_simplified.html:32
+#: src/vigilo/themes/templates/vigimap/main.html:70
 msgid "Help"
 msgstr ""
 
 #: src/vigilo/themes/templates/vigiboard/toolbar.html:29
-#: src/vigilo/themes/templates/vigigraph/main.html:73
-#: src/vigilo/themes/templates/vigigraph/main_simplified.html:40
-#: src/vigilo/themes/templates/vigimap/main.html:75
+#: src/vigilo/themes/templates/vigigraph/main.html:72
+#: src/vigilo/themes/templates/vigigraph/main_simplified.html:39
+#: src/vigilo/themes/templates/vigimap/main.html:77
 msgid "Log out"
 msgstr ""
 
@@ -903,7 +900,7 @@ msgid "From %(start_date)s to %(end_date)s"
 msgstr ""
 
 #: src/vigilo/themes/templates/vigigraph/index.html:27
-#: src/vigilo/themes/templates/vigimap/main.html:123
+#: src/vigilo/themes/templates/vigimap/main.html:132
 msgid "loading..."
 msgstr ""
 
@@ -912,40 +909,41 @@ msgstr ""
 msgid "Vigigraph search"
 msgstr ""
 
-#: src/vigilo/themes/templates/vigigraph/main.html:55
-#: src/vigilo/themes/templates/vigigraph/main.html:95
-#: src/vigilo/themes/templates/vigimap/main.html:62
+#: src/vigilo/themes/templates/vigigraph/main.html:54
+#: src/vigilo/themes/templates/vigigraph/main.html:94
+#: src/vigilo/themes/templates/vigimap/main.html:64
+#: src/vigilo/themes/templates/vigimap/main.html:106
 msgid "Search"
 msgstr ""
 
-#: src/vigilo/themes/templates/vigigraph/main.html:55
-#: src/vigilo/themes/templates/vigimap/main.html:62
+#: src/vigilo/themes/templates/vigigraph/main.html:54
+#: src/vigilo/themes/templates/vigimap/main.html:64
 msgid "Search for a specific host/graph"
 msgstr ""
 
-#: src/vigilo/themes/templates/vigigraph/main.html:60
+#: src/vigilo/themes/templates/vigigraph/main.html:59
 msgid "Print all"
 msgstr ""
 
-#: src/vigilo/themes/templates/vigigraph/main.html:60
+#: src/vigilo/themes/templates/vigigraph/main.html:59
 msgid "Print all visible graphs"
 msgstr ""
 
-#: src/vigilo/themes/templates/vigigraph/main.html:90
+#: src/vigilo/themes/templates/vigigraph/main.html:89
 msgid "Search for a host (\"*\" for all, 100 max)"
 msgstr ""
 
-#: src/vigilo/themes/templates/vigigraph/main.html:92
+#: src/vigilo/themes/templates/vigigraph/main.html:91
 msgid "Graph:"
 msgstr ""
 
-#: src/vigilo/themes/templates/vigigraph/main.html:93
+#: src/vigilo/themes/templates/vigigraph/main.html:92
 msgid "Search for a graph (\"*\" for all, 100 max)"
 msgstr ""
 
-#: src/vigilo/themes/templates/vigigraph/main.html:96
+#: src/vigilo/themes/templates/vigigraph/main.html:95
 #: src/vigilo/themes/templates/vigigraph/searchhost.html:13
-#: src/vigilo/themes/templates/vigimap/main.html:99
+#: src/vigilo/themes/templates/vigimap/main.html:107
 msgid "Results:"
 msgstr ""
 
@@ -1008,15 +1006,15 @@ msgstr ""
 msgid "Graph for %(graph)s on %(host)s"
 msgstr ""
 
-#: src/vigilo/themes/templates/vigimap/main.html:94
+#: src/vigilo/themes/templates/vigimap/main.html:96
 msgid "Map:"
 msgstr ""
 
-#: src/vigilo/themes/templates/vigimap/main.html:95
+#: src/vigilo/themes/templates/vigimap/main.html:97
 msgid "Search for a map (\"*\" for all, 100 max)"
 msgstr ""
 
-#: src/vigilo/themes/templates/vigimap/main.html:114
+#: src/vigilo/themes/templates/vigimap/main.html:123
 msgid "Your browser does not support the canvas element. Please upgrade."
 msgstr ""
 
@@ -1040,15 +1038,11 @@ msgstr ""
 
 #: src/vigilo/themes/templates/vigimap/node.html:28
 #, python-format
-msgid "Appliance name: %(host)s"
+msgid "Appliance name: %(host)s (%(address)s)"
 msgstr ""
 
 #: src/vigilo/themes/templates/vigimap/selectmapgroup.html:3
 msgid "Node update!"
-msgstr ""
-
-#: src/vigilo/themes/templates/vigimap/test.html:21
-msgid "foo"
 msgstr ""
 
 #: src/vigilo/themes/templates/vigimap/widget_images.html:3

@@ -25,7 +25,7 @@
             <p>${l_("Service name: %(service)s") % {'service': node['hls']}}</p>
         </py:when>
         <py:otherwise>
-            <p>${l_("Appliance name: %(host)s") % {'host': node['host']}}</p>
+            <p>${l_("Appliance name: %(host)s (%(address)s)") % {'host': node['host'], 'address': node['address']}}</p>
         </py:otherwise>
     </py:choose>
 </div>

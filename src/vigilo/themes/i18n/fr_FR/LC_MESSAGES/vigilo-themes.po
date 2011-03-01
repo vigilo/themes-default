@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: vigilo-themes-default 0.1\n"
 "Report-Msgid-Bugs-To: contact@projet-vigilo.org\n"
 "POT-Creation-Date: 2009-11-10 09:51+0100\n"
-"PO-Revision-Date: 2011-02-15 13:08+0100\n"
+"PO-Revision-Date: 2011-03-01 16:32+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: fr <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n > 1)\n"
@@ -23,8 +23,8 @@ msgstr ""
 msgid "Search for an host/graph"
 msgstr "Rechercher un hôte/graphe"
 
-#: src/vigilo/themes/public/vigigraph/js/search.js:83
-#: src/vigilo/themes/public/vigigraph/js/search.js:101
+#: src/vigilo/themes/public/vigigraph/js/search.js:84
+#: src/vigilo/themes/public/vigigraph/js/search.js:102
 #: src/vigilo/themes/templates/vigiadmin/downtime.html:39
 #: src/vigilo/themes/templates/vigiadmin/downtime.html:44
 #: src/vigilo/themes/templates/vigiadmin/downtime.html:48
@@ -32,8 +32,8 @@ msgstr "Rechercher un hôte/graphe"
 msgid "Host"
 msgstr "Hôte"
 
-#: src/vigilo/themes/public/vigigraph/js/search.js:83
-#: src/vigilo/themes/public/vigigraph/js/search.js:101
+#: src/vigilo/themes/public/vigigraph/js/search.js:84
+#: src/vigilo/themes/public/vigigraph/js/search.js:102
 msgid "Graph"
 msgstr "Graphe"
 
@@ -41,13 +41,13 @@ msgstr "Graphe"
 msgid "Search for a map"
 msgstr "Rechercher une carte"
 
-#: src/vigilo/themes/public/vigimap/js/search.js:82
-#: src/vigilo/themes/public/vigimap/js/search.js:101
+#: src/vigilo/themes/public/vigimap/js/search.js:83
+#: src/vigilo/themes/public/vigimap/js/search.js:102
 msgid "Group"
 msgstr "Groupe"
 
-#: src/vigilo/themes/public/vigimap/js/search.js:82
-#: src/vigilo/themes/public/vigimap/js/search.js:101
+#: src/vigilo/themes/public/vigimap/js/search.js:83
+#: src/vigilo/themes/public/vigimap/js/search.js:102
 msgid "Map"
 msgstr "Carte"
 
@@ -109,7 +109,7 @@ msgstr "Forcer la collecte"
 
 #: src/vigilo/themes/templates/vigiadmin/collect.html:26
 #: src/vigilo/themes/templates/vigiadmin/schedule_downtime.html:13
-#: src/vigilo/themes/templates/vigigraph/main.html:89
+#: src/vigilo/themes/templates/vigigraph/main.html:88
 #: src/vigilo/themes/templates/vigigraph/searchhostform.html:14
 msgid "Host:"
 msgstr "Hôte :"
@@ -246,7 +246,7 @@ msgstr "Voir les derniers événements impactant le réseau."
 #: src/vigilo/themes/templates/vigiadmin/index.html:29
 #: src/vigilo/themes/templates/vigimap/edition.html:8
 #: src/vigilo/themes/templates/vigimap/index.html:8
-#: src/vigilo/themes/templates/vigimap/main.html:80
+#: src/vigilo/themes/templates/vigimap/main.html:82
 msgid "VigiMap"
 msgstr "VigiMap"
 
@@ -258,8 +258,8 @@ msgstr "Suivre l'état des équipements à l'aide de vues orientées cartographi
 #: src/vigilo/themes/templates/vigigraph/graphslist.html:8
 #: src/vigilo/themes/templates/vigigraph/graphslist.html:16
 #: src/vigilo/themes/templates/vigigraph/index.html:12
-#: src/vigilo/themes/templates/vigigraph/main.html:78
-#: src/vigilo/themes/templates/vigigraph/main_simplified.html:45
+#: src/vigilo/themes/templates/vigigraph/main.html:77
+#: src/vigilo/themes/templates/vigigraph/main_simplified.html:44
 msgid "VigiGraph"
 msgstr "VigiGraph"
 
@@ -301,10 +301,7 @@ msgstr "Profil"
 
 #: src/vigilo/themes/templates/vigiadmin/master.html:38
 #: src/vigilo/themes/templates/vigiboard/master.html:27
-#: src/vigilo/themes/templates/vigigraph/main.html:50
-#: src/vigilo/themes/templates/vigigraph/main_simplified.html:27
 #: src/vigilo/themes/templates/vigigraph/master.html:29
-#: src/vigilo/themes/templates/vigimap/main.html:57
 #: src/vigilo/themes/templates/vigimap/master.html:28
 msgid "Logged in as:"
 msgstr "Connecté en tant que :"
@@ -681,16 +678,16 @@ msgid "Filter display"
 msgstr "Filtrer l'affichage"
 
 #: src/vigilo/themes/templates/vigiboard/toolbar.html:23
-#: src/vigilo/themes/templates/vigigraph/main.html:66
-#: src/vigilo/themes/templates/vigigraph/main_simplified.html:33
-#: src/vigilo/themes/templates/vigimap/main.html:68
+#: src/vigilo/themes/templates/vigigraph/main.html:65
+#: src/vigilo/themes/templates/vigigraph/main_simplified.html:32
+#: src/vigilo/themes/templates/vigimap/main.html:70
 msgid "Help"
 msgstr "Aide"
 
 #: src/vigilo/themes/templates/vigiboard/toolbar.html:29
-#: src/vigilo/themes/templates/vigigraph/main.html:73
-#: src/vigilo/themes/templates/vigigraph/main_simplified.html:40
-#: src/vigilo/themes/templates/vigimap/main.html:75
+#: src/vigilo/themes/templates/vigigraph/main.html:72
+#: src/vigilo/themes/templates/vigigraph/main_simplified.html:39
+#: src/vigilo/themes/templates/vigimap/main.html:77
 msgid "Log out"
 msgstr "Déconnexion"
 
@@ -916,7 +913,7 @@ msgid "From %(start_date)s to %(end_date)s"
 msgstr "Du %(start_date)s au %(end_date)s"
 
 #: src/vigilo/themes/templates/vigigraph/index.html:27
-#: src/vigilo/themes/templates/vigimap/main.html:123
+#: src/vigilo/themes/templates/vigimap/main.html:132
 msgid "loading..."
 msgstr "chargement..."
 
@@ -925,40 +922,41 @@ msgstr "chargement..."
 msgid "Vigigraph search"
 msgstr "Recherche VigiGraph"
 
-#: src/vigilo/themes/templates/vigigraph/main.html:55
-#: src/vigilo/themes/templates/vigigraph/main.html:95
-#: src/vigilo/themes/templates/vigimap/main.html:62
+#: src/vigilo/themes/templates/vigigraph/main.html:54
+#: src/vigilo/themes/templates/vigigraph/main.html:94
+#: src/vigilo/themes/templates/vigimap/main.html:64
+#: src/vigilo/themes/templates/vigimap/main.html:106
 msgid "Search"
 msgstr "Recherche"
 
-#: src/vigilo/themes/templates/vigigraph/main.html:55
-#: src/vigilo/themes/templates/vigimap/main.html:62
+#: src/vigilo/themes/templates/vigigraph/main.html:54
+#: src/vigilo/themes/templates/vigimap/main.html:64
 msgid "Search for a specific host/graph"
 msgstr "Rechercher un hôte/graphe particulier"
 
-#: src/vigilo/themes/templates/vigigraph/main.html:60
+#: src/vigilo/themes/templates/vigigraph/main.html:59
 msgid "Print all"
 msgstr "Tout imprimer"
 
-#: src/vigilo/themes/templates/vigigraph/main.html:60
+#: src/vigilo/themes/templates/vigigraph/main.html:59
 msgid "Print all visible graphs"
 msgstr "Imprimer tous les graphes affichés"
 
-#: src/vigilo/themes/templates/vigigraph/main.html:90
+#: src/vigilo/themes/templates/vigigraph/main.html:89
 msgid "Search for a host (\"*\" for all, 100 max)"
 msgstr "Recherche parmi les hôtes (\"*\" pour tous, 100 maximum)"
 
-#: src/vigilo/themes/templates/vigigraph/main.html:92
+#: src/vigilo/themes/templates/vigigraph/main.html:91
 msgid "Graph:"
 msgstr "Graphe :"
 
-#: src/vigilo/themes/templates/vigigraph/main.html:93
+#: src/vigilo/themes/templates/vigigraph/main.html:92
 msgid "Search for a graph (\"*\" for all, 100 max)"
 msgstr "Recherche parmi les graphes (\"*\" pour tous, 100 maximum)"
 
-#: src/vigilo/themes/templates/vigigraph/main.html:96
+#: src/vigilo/themes/templates/vigigraph/main.html:95
 #: src/vigilo/themes/templates/vigigraph/searchhost.html:13
-#: src/vigilo/themes/templates/vigimap/main.html:99
+#: src/vigilo/themes/templates/vigimap/main.html:107
 msgid "Results:"
 msgstr "Résultats :"
 
@@ -1021,15 +1019,15 @@ msgstr "%(service)s sur %(host)s"
 msgid "Graph for %(graph)s on %(host)s"
 msgstr "Graphe \"%(graph)s\" sur l'hôte \"%(host)s\""
 
-#: src/vigilo/themes/templates/vigimap/main.html:94
+#: src/vigilo/themes/templates/vigimap/main.html:96
 msgid "Map:"
 msgstr "Carte :"
 
-#: src/vigilo/themes/templates/vigimap/main.html:95
+#: src/vigilo/themes/templates/vigimap/main.html:97
 msgid "Search for a map (\"*\" for all, 100 max)"
 msgstr "Recherche parmi les cartes (\"*\" pour tous, 100 maximum)"
 
-#: src/vigilo/themes/templates/vigimap/main.html:114
+#: src/vigilo/themes/templates/vigimap/main.html:123
 msgid "Your browser does not support the canvas element. Please upgrade."
 msgstr ""
 "Votre navigateur ne gère pas l'élément canvas. Veuillez le mettre à jour,"
@@ -1055,8 +1053,8 @@ msgstr "Nom du service : %(service)s"
 
 #: src/vigilo/themes/templates/vigimap/node.html:28
 #, python-format
-msgid "Appliance name: %(host)s"
-msgstr "Équipement : %(host)s"
+msgid "Appliance name: %(host)s (%(address)s)"
+msgstr "Équipement : %(host)s (%(address)s)"
 
 #: src/vigilo/themes/templates/vigimap/selectmapgroup.html:3
 msgid "Node update!"
