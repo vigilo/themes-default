@@ -19,7 +19,7 @@
     </ul>
     <py:choose test="">
         <py:when test="node.has_key('service')">
-            <p>${l_("Service name: %(service)s on %(host)s") % {'service': node['service'], 'host': node['host' ]}}</p>
+            <p>${l_("Service name: %(service)s on %(host)s (%(address)s)") % {'service': node['service'], 'host': node['host' ], 'address': node['address']}}</p>
         </py:when>
         <py:when test="node.has_key('hls')">
             <p>${l_("Service name: %(service)s") % {'service': node['hls']}}</p>
