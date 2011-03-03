@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: vigilo-themes-default 2.0.0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2010-11-19 12:43+0100\n"
-"PO-Revision-Date: 2011-03-01 16:32+0100\n"
+"PO-Revision-Date: 2011-03-03 18:15+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: de <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -34,9 +34,8 @@ msgstr "Host"
 
 #: src/vigilo/themes/public/vigigraph/js/search.js:84
 #: src/vigilo/themes/public/vigigraph/js/search.js:102
-#, fuzzy
 msgid "Graph"
-msgstr "VigiGraph"
+msgstr ""
 
 #: src/vigilo/themes/public/vigimap/js/search.js:58
 msgid "Search for a map"
@@ -49,9 +48,8 @@ msgstr ""
 
 #: src/vigilo/themes/public/vigimap/js/search.js:83
 #: src/vigilo/themes/public/vigimap/js/search.js:102
-#, fuzzy
 msgid "Map"
-msgstr "Unterkarten"
+msgstr "Karte"
 
 #: src/vigilo/themes/templates/common/error.html:11
 #, python-format
@@ -232,9 +230,8 @@ msgid "delete"
 msgstr "löschen"
 
 #: src/vigilo/themes/templates/vigiadmin/index.html:19
-#, fuzzy
 msgid "Interfaces"
-msgstr "Vigilo Schnittstellen"
+msgstr "Schnittstellen"
 
 #: src/vigilo/themes/templates/vigiadmin/index.html:23
 #: src/vigilo/themes/templates/vigiadmin/sidebars.html:9
@@ -1001,7 +998,7 @@ msgid "Critical"
 msgstr "Kritisch"
 
 #: src/vigilo/themes/templates/vigimap/legend.html:28
-#: src/vigilo/themes/templates/vigimap/node.html:8
+#: src/vigilo/themes/templates/vigimap/node.html:9
 msgid "Links"
 msgstr "Links"
 
@@ -1049,28 +1046,33 @@ msgstr "Ihr Browser unterstützt das Canvas-Element nicht. Bitte Upgrade ausfüh
 msgid "Administration"
 msgstr "Verwaltungsseite"
 
-#: src/vigilo/themes/templates/vigimap/node.html:14
+#: src/vigilo/themes/templates/vigimap/node.html:15
+#: src/vigilo/themes/templates/vigimap/simpleelement.html:3
 msgid "Submaps"
 msgstr "Unterkarten"
 
-#: src/vigilo/themes/templates/vigimap/node.html:22
+#: src/vigilo/themes/templates/vigimap/node.html:23
 #, python-format
-msgid "Service name: %(service)s on %(host)s"
-msgstr "Servicename: %(service)s auf %(host)s"
+msgid "Service name: %(service)s on %(host)s (%(address)s)"
+msgstr "Servicename: %(service)s auf %(host)s (%(address)s)"
 
-#: src/vigilo/themes/templates/vigimap/node.html:25
+#: src/vigilo/themes/templates/vigimap/node.html:26
 #, python-format
 msgid "Service name: %(service)s"
 msgstr "Servicename: %(service)s"
 
-#: src/vigilo/themes/templates/vigimap/node.html:28
-#, fuzzy, python-format
+#: src/vigilo/themes/templates/vigimap/node.html:29
+#, python-format
 msgid "Appliance name: %(host)s (%(address)s)"
-msgstr "Appliance-Name: %(host)s"
+msgstr "Appliance-Name: %(host)s (%(address)s)"
 
 #: src/vigilo/themes/templates/vigimap/selectmapgroup.html:3
 msgid "Node update!"
 msgstr "Knoten-Update!"
+
+#: src/vigilo/themes/templates/vigimap/simpleelement.html:10
+msgid "No submaps"
+msgstr ""
 
 #: src/vigilo/themes/templates/vigimap/widget_images.html:3
 msgid "no image"
@@ -1084,7 +1086,3 @@ msgstr ""
 #, python-format
 msgid "Related to %(parent_obj)s"
 msgstr ""
-
-#~ msgid "foo"
-#~ msgstr ""
-

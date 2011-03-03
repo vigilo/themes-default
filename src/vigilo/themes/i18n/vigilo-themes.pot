@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vigilo-themes-default 2.0.0\n"
 "Report-Msgid-Bugs-To: contact@projet-vigilo.org\n"
-"POT-Creation-Date: 2011-03-01 16:32+0100\n"
+"POT-Creation-Date: 2011-03-03 18:15+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -976,7 +976,7 @@ msgid "Critical"
 msgstr ""
 
 #: src/vigilo/themes/templates/vigimap/legend.html:28
-#: src/vigilo/themes/templates/vigimap/node.html:8
+#: src/vigilo/themes/templates/vigimap/node.html:9
 msgid "Links"
 msgstr ""
 
@@ -1022,27 +1022,32 @@ msgstr ""
 msgid "Administration"
 msgstr ""
 
-#: src/vigilo/themes/templates/vigimap/node.html:14
+#: src/vigilo/themes/templates/vigimap/node.html:15
+#: src/vigilo/themes/templates/vigimap/simpleelement.html:3
 msgid "Submaps"
 msgstr ""
 
-#: src/vigilo/themes/templates/vigimap/node.html:22
+#: src/vigilo/themes/templates/vigimap/node.html:23
 #, python-format
-msgid "Service name: %(service)s on %(host)s"
+msgid "Service name: %(service)s on %(host)s (%(address)s)"
 msgstr ""
 
-#: src/vigilo/themes/templates/vigimap/node.html:25
+#: src/vigilo/themes/templates/vigimap/node.html:26
 #, python-format
 msgid "Service name: %(service)s"
 msgstr ""
 
-#: src/vigilo/themes/templates/vigimap/node.html:28
+#: src/vigilo/themes/templates/vigimap/node.html:29
 #, python-format
 msgid "Appliance name: %(host)s (%(address)s)"
 msgstr ""
 
 #: src/vigilo/themes/templates/vigimap/selectmapgroup.html:3
 msgid "Node update!"
+msgstr ""
+
+#: src/vigilo/themes/templates/vigimap/simpleelement.html:10
+msgid "No submaps"
 msgstr ""
 
 #: src/vigilo/themes/templates/vigimap/widget_images.html:3

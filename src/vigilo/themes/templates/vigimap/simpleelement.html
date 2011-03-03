@@ -1,0 +1,11 @@
+<div xmlns:py="http://genshi.edgewall.org/">
+    <div py:strip="" py:if="maps">
+        <p>Submaps</p>
+        <ul class="section maps">
+            <li py:for="map in maps">
+                <a href="index#mapid=${map[0]}" onclick="map.load(${map[0]}); return false;" > ${map[1]}</a>
+            </li>
+        </ul>
+    </div>
+    <p py:if="not maps">No submaps</p>
+</div>

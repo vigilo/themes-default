@@ -1,4 +1,5 @@
-<div xmlns:py="http://genshi.edgewall.org/">
+<div xmlns:py="http://genshi.edgewall.org/"
+    xmlns:xi="http://www.w3.org/2001/XInclude">
     <p class="status status-${status.lower()}">${message}</p>
     <ul class="tags" py:if="tags">
         <li py:for="tag in tags">
@@ -12,11 +13,11 @@
         </li>
     </ul>
     <h2 py:if="maps">Submaps</h2>
-    <ul class="section maps" py:if="maps">
-        <li py:for="map in maps">
-            <a href="index#mapid=${map[0]}" onclick="map.load(${map[0]}); return false;" > ${map[1]}</a>
-        </li>
-    </ul>
+    <!--!
+        On intègre le contenu générique (liste des sous-cartes)
+        en supprimant le "div" qui englobe cette liste.
+    -->
+    <xi:include href="submaps.html"/>
     <py:choose test="">
         <py:when test="node.has_key('service')">
             <p>${l_("Service name: %(service)s on %(host)s (%(address)s)") % {'service': node['service'], 'host': node['host' ], 'address': node['address']}}</p>
