@@ -81,16 +81,16 @@
         valeur vaut C{None}.
     @type data: C{tuple}
 -->
-<py:def function="data_template(name, instance, data)">
+<py:def function="data_template(name, instance, data, plugin_data)">
     <!--!
         Ce plugin de démonstration renvoie un texte statique.
         Ce texte aurait pu être saisi directement ici, mais nous avons
         choisi de le placer dans le code Python afin de montrer comment
-        il est possible d'appeler des méthodes du plugin depuis le
-        template correspondant.
+        il est possible de transmettre des données depuis le contrôleur
+        python vers le template correspondant.
     -->
     <td class="plugin_${name}">
-        ${instance.get_value()['text']}
+        ${plugin_data}
     </td>
 </py:def>
 

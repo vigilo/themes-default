@@ -194,7 +194,14 @@
             <tr py:when="0" py:for="(index, event) in enumerate(events)" class="${['odd', 'even'][index % 2]}">
                 <py:for each="(plugin_name, plugin_instance) in config['columns_plugins']">
                     <xi:include href="plugins/${plugin_name}.html"/>
-                    ${data_template(plugin_name, plugin_instance, event)}
+                    <py:choose test="plugins_data.has_key(plugin_name)">
+                        <py:when test="True">
+                            ${data_template(plugin_name, plugin_instance, event, plugins_data[plugin_name][event[0].idcorrevent])}
+                        </py:when>
+                        <py:otherwise>
+                            ${data_template(plugin_name, plugin_instance, event, None)}
+                        </py:otherwise>
+                    </py:choose>
                 </py:for>
             </tr>
         </tbody>

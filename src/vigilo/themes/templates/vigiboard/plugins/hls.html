@@ -20,26 +20,13 @@
         });
     });
 
-    function vigiboard_hls_dialog(ref, url, idd) {
-        window.hls_dialog.setBusy(true);
+    function vigiboard_hls_dialog(ref, services) {
         window.hls_dialog.open();
-
-        var req = new Request.JSON({
-            url: '${tg.url("/get_plugin_value")}',
-            onSuccess: function (json, raw) {
-                var code = '<ul id="plugin_hls_list">';
-                for (var i = 0; i < json.services.length; i++)
-                    code += '<li>' + json.services[i] + '<\/li>';
-                code += '<\/ul>';
-                window.hls_dialog.setBusy(false);
-                window.hls_dialog.setContent(code);
-            },
-            onFailure: function (xhr) {
-                window.hls_dialog.setBusy(false);
-                window.hls_dialog.setContent("${l_('Error while retrieving data').encode('backslash')}");
-            }
-        });
-        req.post({plugin_name: 'hls', idcorrevent: idd});
+        var code = '<ul id="plugin_hls_list">';
+        for (var i = 0; i < services.length; i++)
+            code += '<li>' + services[i] + '<\/li>';
+        code += '<\/ul>';
+        window.hls_dialog.setContent(code);
     }
 /*]]>*/
 </script>
@@ -48,16 +35,18 @@
 <th id="plugin_${name}" class="plugin_${name}" py:def="header_template(name, instance)"
     title="Impacted High-Level Services">Impacted HLS</th>
 
-<td class="plugin_${name}" py:def="data_template(name, instance, data)">
-    <py:with vars="hls = instance.get_value(data[0].idcorrevent)['services']">
-    <py:choose test="len(hls)">
-        <py:when test="0"/>
-        <py:when test="1">${hls[0]}</py:when>
-        <py:otherwise>
-        <a href="javascript:vigiboard_hls_dialog(this,'${tg.url('/')}',${data[0].idcorrevent})">${len(hls)}</a>
-        </py:otherwise>
-    </py:choose>
-    </py:with>
+<td class="plugin_${name}" py:def="data_template(name, instance, data, plugin_data)">
+    <py:if test="plugin_data">
+        <py:choose test="len(plugin_data)">
+            <py:when test="0"/>
+            <py:when test="1">${plugin_data[0]}</py:when>
+            <py:otherwise>
+                <a href="javascript:vigiboard_hls_dialog(this, new Array('${plugin_data[0]}' ${[', \'%s\'' % service for service in plugin_data[1:]]}))">
+                    ${len(plugin_data)}
+                </a>
+            </py:otherwise>
+        </py:choose>
+    </py:if>
 </td>
 
 </html>

@@ -7,7 +7,7 @@
 
 <th id="plugin_${name}" class="plugin_${name}" py:def="header_template(name, instance)">Output</th>
 
-<td class="plugin_${name}" py:def="data_template(name, instance, data)">${data[0].cause.message}</td>
+<td class="plugin_${name}" py:def="data_template(name, instance, data, plugin_data)">${data[0].cause.message}</td>
 
 </html>
 

@@ -10,7 +10,7 @@
     [Duration]
 </th>
 
-<py:def function="data_template(name, instance, data)">
+<py:def function="data_template(name, instance, data, plugin_data)">
     <py:with vars="state = StateName.value_to_statename(data[0].cause.current_state)">
         <td class="plugin_${name} ${state}">
         ${data[0].cause.get_date('timestamp')}<br/>
