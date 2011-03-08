@@ -27,7 +27,10 @@
     <script type="text/javascript" src="${tg.url('/js/babelThemes.js')}"></script>
     <script type="text/javascript" src="${tg.url('/i18n')}"></script>
 
-    <script type="text/javascript">var can_edit = ${defined('can_edit') and can_edit or 0};</script>
+    <script type="text/javascript">
+        var can_edit = ${defined('can_edit') and can_edit or 0};
+        var show_maptree = ${int(asbool(tg.config.get('show_maptree', True)))};
+    </script>
 
     <script type="text/javascript" src="${tg.url('/js/main.js')}"></script>
     <script type="text/javascript" src="${tg.url('/js/loader.js')}"></script>
