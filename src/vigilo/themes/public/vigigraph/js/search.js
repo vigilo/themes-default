@@ -40,7 +40,7 @@ var VigiloGrid = new Class({
             target.tagName != 'TH' &&
             target.get('class') != 'jxGridContainer';
             target = target.getParent())
-            ; // On remonte dans la hiérarchie.
+            continue; // On remonte dans la hiérarchie.
         return this.parent({'target': target});
     }
 });
