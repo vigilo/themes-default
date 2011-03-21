@@ -37,8 +37,8 @@
 
 	            	<div class="navigation_arrow left_arrow">
 				        <py:choose><!--!
-					     --><img py:when="page == 1" src="${tg.url('/images/dis_top_left_arrow.png')}" alt="Previous" title="Previous page" /><!--!
-					     --><a py:otherwise="" href="${tg.url('/event/%d/%d' % (idevent, page - 1))}"><!--!
+					     --><img py:when="not page.previous_page" src="${tg.url('/images/dis_top_left_arrow.png')}" alt="Previous" title="Previous page" /><!--!
+					     --><a py:otherwise="" href="${tg.url('/event/%d/%d' % (idevent, page.previous_page))}"><!--!
 					         --><img src="${tg.url('/images/top_left_arrow.png')}" alt="Previous" title="Previous page"/><!--!
 					     --></a>
 					    </py:choose>
@@ -46,8 +46,8 @@
 
 	            	<div class="navigation_arrow right_arrow">
 				        <py:choose><!--!
-					     --><img py:when="page >= nb_pages" src="${tg.url('/images/dis_top_right_arrow.png')}"  alt="Next" title="Next page" /><!--!
-					     --><a py:otherwise="" href="${tg.url('/event/%d/%d' % (idevent, page + 1))}"><!--!
+					     --><img py:when="not page.next_page" src="${tg.url('/images/dis_top_right_arrow.png')}"  alt="Next" title="Next page" /><!--!
+					     --><a py:otherwise="" href="${tg.url('/event/%d/%d' % (idevent, page.next_page))}"><!--!
 					         --><img src="${tg.url('/images/top_right_arrow.png')}" alt="Next" title="Next page"/><!--!
 					     --></a>
 				    	</py:choose>
@@ -89,8 +89,8 @@
 
 		            <div class="navigation_arrow left_arrow">
 				        <py:choose><!--!
-					     --><img py:when="page == 1" src="${tg.url('/images/dis_bottom_left_arrow.png')}" alt="Previous" title="Previous page" /><!--!
-					     --><a py:otherwise="" href="${tg.url('/event/%d/%d' % (idevent, page - 1))}"><!--!
+					     --><img py:when="not page.previous_page" src="${tg.url('/images/dis_bottom_left_arrow.png')}" alt="Previous" title="Previous page" /><!--!
+					     --><a py:otherwise="" href="${tg.url('/event/%d/%d' % (idevent, page.previous_page))}"><!--!
 					         --><img src="${tg.url('/images/bottom_left_arrow.png')}" alt="Previous" title="Previous page"/><!--!
 					     --></a>
 					    </py:choose>
@@ -98,42 +98,37 @@
 
 		            <div class="navigation_arrow right_arrow">
 				        <py:choose><!--!
-					     --><img py:when="page >= nb_pages" src="${tg.url('/images/dis_bottom_right_arrow.png')}"  alt="Next" title="Next page" /><!--!
-					     --><a py:otherwise="" href="${tg.url('/event/%d/%d' % (idevent, page + 1))}"><!--!
+					     --><img py:when="not page.next_page" src="${tg.url('/images/dis_bottom_right_arrow.png')}"  alt="Next" title="Next page" /><!--!
+					     --><a py:otherwise="" href="${tg.url('/event/%d/%d' % (idevent, page.next_page))}"><!--!
 					         --><img src="${tg.url('/images/bottom_right_arrow.png')}" alt="Next" title="Next page"/><!--!
 					     --></a>
 					    </py:choose>
 					</div>
 
-	          	    <py:choose>
-		            	<div py:when="nb_pages > 1" class="pagination">
-		            		<span>
-				          		${l_('Showing rows %(id_first_row)d to %(id_last_row)d of %(total_rows)d') % rows_info}
-			          		    <br/>
-					            Pages
-					            <py:for each="p in range(1, nb_pages + 1)">
-					                <a py:if="p != page" href="${tg.url('/event/%d/%d' % (idevent, p))}" py:content="p" />
-					                <span py:if="p == page" py:replace="p" />
-					            </py:for>
-					    	</span>
-				        </div>
-		            	<div py:otherwise="" class="line_pagination">
-		            		<span>
-			          			${l_('Showing rows %(id_first_row)d to %(id_last_row)d of %(total_rows)d') % rows_info}
-		          			</span>
-				        </div>
-	            	</py:choose>
-
+                    <div class="${page.item_count and 'pagination' or 'line_pagination'}">
+                        <span>
+                            ${l_('Showing rows %(id_first_row)d to %(id_last_row)d of %(total_rows)d') % {
+                                'id_first_row': page.first_item or 0,
+                                'id_last_row': page.last_item or 0,
+                                'total_rows': page.item_count,
+                            }}
+                            <br/>
+                            ${page.pager(
+                                format='$link_first $link_previous ~3~ $link_next $link_last',
+                                page_param='page', show_if_single_page=True, idevent=idevent
+                            )}
+                        </span>
+                    </div>
 	            </th>
 	        </tr>
 		</tfoot>
 
-		<tbody py:choose="not history">
+		<tbody py:choose="not page.item_count">
 			<tr py:when="1">
 			    <td colspan="5" class="plugin_error">There is no history.</td>
 			</tr>
 
-	        <tr py:when="0" py:for="(index, entry) in enumerate(history)" class="${['odd', 'even'][index % 2]}">
+	        <tr py:when="0" py:for="(index, entry) in enumerate(page.items)" class="${['odd', 'even'][index % 2]}">
 				<td class="plugin_date">
                 	${entry.get_date('timestamp')}
                 	<br />
