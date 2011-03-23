@@ -312,6 +312,29 @@ div.clearingdiv {
     font-weight: bold;
 }
 
+#DetailsDialog .loading,
+#DetailsDialog .loading-error {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    z-index: 100;
+}
+
+#DetailsDialog .loading img,
+#DetailsDialog .loading-error p {
+    display: block;
+    float: right;
+    margin-top: 6px;
+    margin-right: 5px;
+}
+
+#DetailsDialog .loading-error p {
+    font-weight: bold;
+    color: red;
+}
 
 /* Plugins */
 
