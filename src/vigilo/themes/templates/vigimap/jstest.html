@@ -1,0 +1,41 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+  "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <title>Javascript Test Runner</title>
+
+  <!-- Jasmine -->
+  <link rel="stylesheet" type="text/css" href="${tg.url('/css/jasmine/jasmine.css')}" />
+  <script type="text/javascript" src="${tg.url('/js/lib/jasmine.js')}"></script>
+  <script type="text/javascript" src="${tg.url('/js/lib/jasmine-html.js')}"></script>
+
+  <!-- Libraries -->
+  <script type="text/javascript" src="${tg.url('/js/lib/mootools.js')}"></script>
+  <script type="text/javascript" src="${tg.url('/js/lib/mootools-more.js')}"></script>
+  <script type="text/javascript" src="${tg.url('/js/lib/jxlib.js')}"></script>
+
+  <!-- Necessary global variables -->
+  <script type="text/javascript">
+    var backend = {"maps": "${tg.url('/js/test/data/empty.json')}"};
+    var imgpath = "images";
+    var _ = function(text) { return text; };
+    var log = function(text) {};
+  </script>
+
+  <!-- Source files to test -->
+  <script type="text/javascript" src="${tg.url('/js/treemap.js')}"></script>
+
+  <!-- Specs/Tests -->
+  <script type="text/javascript" src="${tg.url('/js/test/grouptree.js')}"></script>
+
+</head>
+<body>
+
+<script type="text/javascript">
+  jasmine.getEnv().addReporter(new jasmine.TrivialReporter());
+  jasmine.getEnv().execute();
+</script>
+
+</body>
+</html>
+
