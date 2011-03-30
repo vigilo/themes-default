@@ -1,0 +1,25 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:py="http://genshi.edgewall.org/"
+      xmlns:xi="http://www.w3.org/2001/XInclude"
+      py:with="page_title = _('Confirm deletion of %(item)s') % {'item':item}"
+      >
+  <xi:include href="../layout.html" />
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type"
+          py:replace="''"/>
+    <title py:content="page_title" />
+  </head>
+  <body>
+    <div id="rum-content" py:with="form = get_view()">
+      <h1>
+        ${_('Are you sure you want to delete %(path)s?') % dict(path=item.path)}
+      </h1>
+      <a href="${url_for(obj=parent_obj, _memory=False)}" py:if="parent_obj" class="rum-related-title"
+              py:content="_('Related to %(parent_obj)s') % {'parent_obj':parent_obj}" />
+      <strong class="warning">${_('This action cannot be undone!')}</strong>
+      ${form(item, method='delete', action=url_for(action='delete', obj=item))}
+      <a href="${url_for(request.referer)}">${_('Cancel')}</a>
+    </div>
+    <div id="rum-sidebar" />
+  </body>
+</html>
