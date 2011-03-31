@@ -219,7 +219,7 @@ var GroupTree = new Class({
             // Remplacement du lien par un indicateur de chargement
             var link = subitem.domObj.getElement("a");
             var link_img = link.getElement("img").clone();
-            link.set("text", _("Loading..."));
+            link.set("text", l_("Loading..."));
             link.grab(link_img);
             return false;
         }.bind(this));
