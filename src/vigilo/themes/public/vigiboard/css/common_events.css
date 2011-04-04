@@ -221,6 +221,10 @@ div.clearingdiv {
     font-size: 1.2em;
 }
 
+#search_form_priority_value {
+    width: 82.5% !important;
+}
+
 #search_mode_tip {
     margin-top: 7px;
 }

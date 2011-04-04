@@ -128,11 +128,7 @@
 
         change_refresh_rate(${int(tg.session.get('refresh', asbool(tg.config.get('refresh_enabled', False))))});
 
-        $('search_form_from_date_trigger').addEvent('click', function () {
-            $$$$(".calendar").setStyles({"zIndex": window.search_dialog.domObj.getStyle('zIndex').toInt()});
-        });
-
-        $('search_form_to_date_trigger').addEvent('click', function () {
+        $$$$('.date_field_button').addEvent('click', function () {
             $$$$(".calendar").setStyles({"zIndex": window.search_dialog.domObj.getStyle('zIndex').toInt()});
         });
     });
