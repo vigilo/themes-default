@@ -19,14 +19,19 @@
     var backend = {"maps": "${tg.url('/js/test/data/empty.json')}"};
     var imgpath = "images";
     var _ = function(text) { return text; };
+    var l_ = function(text) { return text; };
     var log = function(text) {};
+    var getComponent = function(class_name) {return function(){}; };
   </script>
 
   <!-- Source files to test -->
-  <script type="text/javascript" src="${tg.url('/js/treemap.js')}"></script>
+  <script type="text/javascript" src="${tg.url('/js/grouptree.js')}"></script>
+  <script type="text/javascript" src="${tg.url('/js/canvas.js')}"></script>
+  <script type="text/javascript" src="${tg.url('/js/map.js')}"></script>
 
   <!-- Specs/Tests -->
   <script type="text/javascript" src="${tg.url('/js/test/grouptree.js')}"></script>
+  <script type="text/javascript" src="${tg.url('/js/test/map.js')}"></script>
 
 </head>
 <body>

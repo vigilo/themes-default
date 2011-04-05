@@ -79,21 +79,20 @@ var GroupTree = new Class({
 
         var types = [this.options.groupName, this.options.itemName];
         for (var i=0, type ; type = types[i] ; i++) {
-            var after_index = null;
+            var offset = null;
             if (data.continued_type == type) {
                 // c'est une continuation, il faut placer les éléments au bon
                 // endroit (et pas à la fin)
-                continued = this.getContinued(data.continued_from,
-                                              subfolder, type);
-                after_index = continued["index"] - 1;
+                continued = this.getContinued(subfolder, type);
+                offset = continued["index"] - 1;
             }
             if (typeof data[type+"s"] != "undefined") {
                 $each(data[type+"s"], function(child) {
                     // L'option subfolder est ajoutée par le "addItem".
                     // Pas de risque d'écrasement car "link" vaut "cancel".
-                    this.addNode(child, subfolder, after_index);
-                    if (after_index !== null) {
-                        after_index = after_index + 1;
+                    this.addNode(child, subfolder, offset);
+                    if (offset !== null) {
+                        offset = offset + 1;
                     }
                 }, this);
             }
@@ -112,7 +111,7 @@ var GroupTree = new Class({
     },
 
     /* Ajout d'un element à l'arbre */
-    addNode: function(item, parent_tree, after_index) {
+    addNode: function(item, parent_tree, offset) {
         if (!$defined(parent_tree)) {
             parent_tree = this.tree;
         }
@@ -129,8 +128,8 @@ var GroupTree = new Class({
         }
 
         // Insertion
-        if (after_index) {
-            parent_tree.insert(subitem, parent_tree.nodes[after_index]);
+        if (offset) {
+            parent_tree.insert(subitem, parent_tree.nodes[offset]);
         } else {
             parent_tree.append(subitem);
         }
@@ -139,7 +138,8 @@ var GroupTree = new Class({
     _addGroup: function(item, parent_tree) {
         var options = {
             label: item.name,
-            image: imgpath + "/tree.png"
+            image: imgpath + "/tree.png",
+            data: {type: item.type}
         };
         if (item.type == this.options.groupingItemName) {
             options.image = this.options.groupingItemImage;
@@ -182,7 +182,8 @@ var GroupTree = new Class({
     _addItem: function(item, parent_tree) {
         var subitem = new Jx.TreeItem({
             label: item.name,
-            image: this.options.itemImage
+            image: this.options.itemImage,
+            data: {type: item.type}
         });
         subitem.addEvent("click", function() {
             this.fireEvent("itemClick", item);
@@ -193,7 +194,6 @@ var GroupTree = new Class({
     _addContinued: function(item, parent_tree) {
         var item_data = {
                 "type": "continued",
-                "id": item.start_id,
                 "for_type": item.for_type
         };
         var subitem = new Jx.TreeItem({
@@ -201,13 +201,18 @@ var GroupTree = new Class({
             image: imgpath + "/continued.png",
             data: item_data
         });
+        var offset = 0;
+        for (var i=0, node ; node = parent_tree.nodes[i] ; i++) {
+            if (node.options.data.type == item.for_type) {
+                offset = offset + 1;
+            }
+        }
         subitem.addEvent("click", function() {
             var data = {
                 parent_id: item.parent_id,
-                start: item.start_id,
+                offset: offset,
                 onlytype: item.for_type
             };
-
             // Envoi de la requête qui va permettre
             // d'obtenir les autres éléments.
             // L'ajout de l'option "subfolder" est un hack
@@ -226,7 +231,7 @@ var GroupTree = new Class({
         return subitem;
     },
 
-    getContinued: function(start_id, parent_tree, type) {
+    getContinued: function(parent_tree, type) {
         if (!$defined(parent_tree)) {
             parent_tree = this.tree;
         }
@@ -234,10 +239,7 @@ var GroupTree = new Class({
         for (var i=0, node ; node = parent_tree.nodes[i] ; i++) {
             if (node.options.data
                     && node.options.data.type == "continued"
-                    && node.options.data.id == start_id) {
-                if (type && node.options.data.for_type != type) {
-                    continue;
-                }
+                    && node.options.data.for_type == type) {
                 return {"index": i, "node": node};
             }
         }
