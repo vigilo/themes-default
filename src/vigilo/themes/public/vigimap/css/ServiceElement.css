@@ -17,6 +17,9 @@
     background-position: 4px;
 }
 
+.edit .obj.serviceelement span {
+    padding: 2px 14px;
+}
 
 #details ul.tags {
     list-style-type: none;
