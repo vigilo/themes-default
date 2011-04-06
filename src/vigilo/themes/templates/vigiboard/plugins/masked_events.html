@@ -5,10 +5,13 @@
 <py:def function="plugin_template(name, instance)">
 </py:def>
 
-<py:def function="header_template(name, instance)">
-</py:def>
+<th id="plugin_${name}" class="plugin_${name}"
+    py:def="header_template(name, instance)"
+    title="Number of masked events">Masked</th>
 
-<py:def function="data_template(name, instance, data, plugin_data)">
-</py:def>
+<td class="plugin_${name}" py:def="data_template(name, instance, data, plugin_data)">
+    <!--! plugin_data contient le nombre d'événements masqués. -->
+    <a py:strip="not plugin_data" href="/masked_events/${data[0].idcorrevent}">${plugin_data}</a>
+</td>
 
 </html>
