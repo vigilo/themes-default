@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns:py="http://genshi.edgewall.org/"
+      xmlns:xi="http://www.w3.org/2001/XInclude"
+      xmlns="http://www.w3.org/2005/Atom">
+    <title>${feed['title']}</title>
+    <author><name>Vigilo</name></author>
+    <link rel="self" type="application/atom+xml" href="${tg.url('/feeds/atom')}"/>
+    <link rel="alternate" type="text/html" href="${tg.url('/')}"/>
+    <updated>${feed['mtime'].isoformat()}</updated>
+    <id></id>
+
+    <entry py:for="entry in entries">
+        <title>${entry['title']}</title>
+        <link href="${tg.url('/')}"/>
+        <id>${tg.url('/')}</id>
+        <updated>${entry['mtime'].isoformat()}</updated>
+        <summary>${entry['summary']}</summary>
+    </entry>
+</feed>
