@@ -1,7 +1,4 @@
-%define module  themes-default
-%define name    vigilo-%{module}
-%define version 2.0.0
-%define release 1%{?svn}%{?dist}
+%define module  @SHORT_NAME@
 
 %define pyver 26
 %define pybasever 2.6
@@ -9,15 +6,16 @@
 %define __os_install_post %{__python26_os_install_post}
 %{!?python26_sitelib: %define python26_sitelib %(python26 -c "from distutils.sysconfig import get_python_lib; print get_python_lib()")}
 
-Name:       %{name}
-Summary:    Vigilo default theme
-Version:    %{version}
-Release:    %{release}
+Name:       vigilo-%{module}
+Summary:    @SUMMARY@
+Version:    @VERSION@
+Release:    1%{?svn}%{?dist}
 Source0:    %{name}-%{version}.tar.gz
-URL:        http://www.projet-vigilo.org
+URL:        @URL@
 Group:      System/Servers
 BuildRoot:  %{_tmppath}/%{name}-%{version}-%{release}-build
 License:    GPLv2
+Buildarch:  noarch
 
 BuildRequires:   python26-distribute
 BuildRequires:   python26-babel
@@ -30,12 +28,10 @@ Requires:   python26-babel
 
 Provides:   vigilo-themes
 
-Buildarch:  noarch
-
 
 %description
-This library gives an API to XMPP publication and subscription.
-This library is part of the Vigilo Project <http://vigilo-project.org>
+@DESCRIPTION@
+This module is part of the Vigilo Project <http://vigilo-project.org>
 
 %prep
 %setup -q
