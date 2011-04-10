@@ -87,8 +87,8 @@ var Search = new Class({
 
         $('search_form_search').addEvent('click', function (e) {
             e.stop();
-            if ($('search_form_host').get('value') == '' &&
-                $('search_form_graph').get('value') == '')
+            if ($('search_form_host').get('value') === '' &&
+                $('search_form_graph').get('value') === '')
                 $('search_form_graph').set('value', '*');
             this.search_request.post($('search_form'));
         }.bind(this));
@@ -111,7 +111,7 @@ var Search = new Class({
             // Sélection d'un graphe.
             if (col == 1) {
                 // La recherche ne concernait que l'hôte.
-                if (graph == '')
+                if (graph === '')
                     return;
                 window.toolbar.host_picker.setItem(idhost, host);
                 window.toolbar.graph_picker.setItem(idgraph, graph);

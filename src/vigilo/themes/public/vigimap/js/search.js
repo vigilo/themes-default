@@ -88,7 +88,7 @@ var Search = new Class({
 
         $('search_form_search').addEvent('click', function (e) {
             e.stop();
-            if ($('search_form_map').get('value') == '')
+            if ($('search_form_map').get('value') === '')
                 $('search_form_map').set('value', '*');
             this.search_request.post($('search_form'));
         }.bind(this));
