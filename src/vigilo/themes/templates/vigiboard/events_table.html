@@ -28,6 +28,11 @@
     </py:choose>
 </head>
 
+<?python
+    plugin_header_functions = {}
+    plugin_data_functions = {}
+?>
+
 <body>
     <div style="display: none">
         <py:for each="(plugin_name, plugin_instance) in config['columns_plugins']">
@@ -56,7 +61,8 @@
 
                             <!--! "dummy" est nécessaire pour que Genshi mette à jour le dictionnaire. -->
                             <a py:otherwise=""
-                                href="${tg.url('/', params=fixed_search, page=page.previous_page)}">
+                                py:with="copy = search.copy(); dummy = copy.update(page=page.previous_page)"
+                                href="${tg.url('/', copy)}">
                                 <img src="${tg.url('/images/top_left_arrow.png')}" alt="Previous" title="Previous page"/>
                              </a>
                         </py:choose>
@@ -75,7 +81,8 @@
                              </a>
 
                              <a py:otherwise=""
-                                href="${tg.url('/', params=fixed_search, page=page.next_page)}">
+                                py:with="copy = search.copy(); dummy = copy.update(page=page.next_page)"
+                                href="${tg.url('/', copy)}">
                                 <img src="${tg.url('/images/top_right_arrow.png')}" alt="Next" title="Next page"/>
                              </a>
                         </py:choose>
@@ -101,8 +108,7 @@
 
             <tr class="plugins">
                 <py:for each="(plugin_name, plugin_instance) in config['columns_plugins']">
-                    <xi:include href="plugins/${plugin_name}.html"/>
-                    ${header_template(plugin_name, plugin_instance)}
+                    ${plugin_header_functions[plugin_name](plugin_name, plugin_instance)}
                 </py:for>
             </tr>
         </thead>
@@ -123,7 +129,8 @@
                              </a>
 
                             <a py:otherwise=""
-                                href="${tg.url('/', params=fixed_search, page=page.previous_page)}">
+                                py:with="copy = search.copy(); dummy = copy.update(page=page.previous_page)"
+                                href="${tg.url('/', copy)}">
                                 <img src="${tg.url('/images/bottom_left_arrow.png')}" alt="Previous" title="Previous page"/>
                             </a>
                         </py:choose>
@@ -142,7 +149,8 @@
                              </a>
 
                             <a py:otherwise=""
-                                href="${tg.url('/', params=fixed_search, page=page.next_page)}">
+                                py:with="copy = search.copy(); dummy = copy.update(page=page.next_page)"
+                                href="${tg.url('/', copy)}">
                                 <img src="${tg.url('/images/bottom_right_arrow.png')}" alt="Next" title="Next page"/>
                              </a>
                         </py:choose>
@@ -158,7 +166,7 @@
                             <br/>
                             ${page.pager(
                                 format='$link_first $link_previous ~3~ $link_next $link_last',
-                                page_param='page', show_if_single_page=True, **fixed_search
+                                page_param='page', show_if_single_page=True, **search
                             )}
                         </span>
                     </div>
@@ -173,13 +181,12 @@
 
             <tr py:when="0" py:for="(index, event) in enumerate(page.items)" class="${['odd', 'even'][index % 2]}">
                 <py:for each="(plugin_name, plugin_instance) in config['columns_plugins']">
-                    <xi:include href="plugins/${plugin_name}.html"/>
                     <py:choose test="plugins_data.has_key(plugin_name)">
                         <py:when test="True">
-                            ${data_template(plugin_name, plugin_instance, event, plugins_data[plugin_name][event[0].idcorrevent])}
+                            ${plugin_data_functions[plugin_name](plugin_name, plugin_instance, event, plugins_data[plugin_name][event[0].idcorrevent])}
                         </py:when>
                         <py:otherwise>
-                            ${data_template(plugin_name, plugin_instance, event, None)}
+                            ${plugin_data_functions[plugin_name](plugin_name, plugin_instance, event, None)}
                         </py:otherwise>
                     </py:choose>
                 </py:for>

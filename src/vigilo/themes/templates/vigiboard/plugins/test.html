@@ -12,24 +12,6 @@
       py:strip="">
 
 <!--!
-    Cette macro est appelée pour générer le contenu non visible du plugin.
-    Généralement, on placera le code JavaScript spécifique au plugin ici,
-    de même que les éventuelles définitions de dialogues JxLib réutilisables
-    (voir le code du plugin HLS pour un exemple d'utilisation de dialogues).
-
-    @param name: Nom du plugin.
-    @type name: C{basestring}
-    @param instance: Instance du plugin.
-    @type instance: L{VigiboardRequestPlugin}
--->
-<py:def function="plugin_template(name, instance)">
-<!--!
-    Ce plugin de démonstration n'a pas besoin de code JS pour fonctionner
-    et ne génère pas non plus de dialogues.
--->
-</py:def>
-
-<!--!
     Cette macro est appelée pour générer l'en-tête ou les en-têtes des colonnes
     gérées par ce plugin.
 
@@ -52,7 +34,7 @@
     @param instance: Instance du plugin.
     @type instance: L{VigiboardRequestPlugin}
 -->
-<py:def function="header_template(name, instance)">
+<py:def function="test_header(name, instance)">
     <!--! Ajout d'une colonne "Example" au résultat. -->
     <th id="plugin_${name}">Example</th>
 </py:def>
@@ -81,7 +63,7 @@
         valeur vaut C{None}.
     @type data: C{tuple}
 -->
-<py:def function="data_template(name, instance, data, plugin_data)">
+<py:def function="test_data(name, instance, data, plugin_data)">
     <!--!
         Ce plugin de démonstration renvoie un texte statique.
         Ce texte aurait pu être saisi directement ici, mais nous avons
@@ -92,6 +74,33 @@
     <td class="plugin_${name}">
         ${plugin_data}
     </td>
+</py:def>
+
+<!--!
+    Cette macro est appelée pour générer le contenu non visible du plugin.
+    Généralement, on placera le code JavaScript spécifique au plugin ici,
+    de même que les éventuelles définitions de dialogues JxLib réutilisables
+    (voir le code du plugin HLS pour un exemple d'utilisation de dialogues).
+    Elle enregistre également les deux macros précédentes dans un
+    dictionnaire utilisé par le template principal.
+
+    @param name: Nom du plugin.
+    @type name: C{basestring}
+    @param instance: Instance du plugin.
+    @type instance: L{VigiboardRequestPlugin}
+-->
+<py:def function="plugin_template(name, instance)">
+<!--!
+    Ce plugin de démonstration n'a pas besoin de code JS pour fonctionner
+    et ne génère pas non plus de dialogues.
+    On se contente donc d'enregistrer la macro test_header dans le dictionnaire
+    des fonctions générant les en-têtes des colonnes, et la macro test_data
+    dans le dictionnaire des fonctions générant les données des évènements.
+-->
+    <?python
+        plugin_header_functions[name] = test_header
+        plugin_data_functions[name] = test_data
+    ?>
 </py:def>
 
 </html>

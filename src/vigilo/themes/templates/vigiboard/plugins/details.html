@@ -2,8 +2,21 @@
       xmlns:xi="http://www.w3.org/2001/XInclude"
       py:strip="">
 
+<th id="plugin_${name}" class="plugin_${name}" py:def="details_header(name, instance)"></th>
+
+<td class="plugin_${name}" py:def="details_data(name, instance, data, plugin_data)">
+<a href="#${data[0].idcorrevent}" class="Details_Link">
+    <img alt="Details" title="Event details"
+        src="${tg.url('/images/%s2.png' % StateName.value_to_statename(data[0].cause.current_state))}" />
+</a>
+</td>
+
 <py:def function="plugin_template(name, instance)"
     py:with="nb_links = len(tg.config['vigiboard_links.eventdetails'])">
+    <?python
+        plugin_header_functions[name] = details_header
+        plugin_data_functions[name] = details_data
+    ?>
 <div id="DetailsDialog">
     <div class="loading">
         <img alt="loading..." src="${tg.url('images/loading.gif')}" />
@@ -159,14 +172,5 @@ window.addEvent("domready", function () {
 });
 /*]]>*/</script>
 </py:def>
-
-<th id="plugin_${name}" class="plugin_${name}" py:def="header_template(name, instance)"></th>
-
-<td class="plugin_${name}" py:def="data_template(name, instance, data, plugin_data)">
-<a href="#${data[0].idcorrevent}" class="Details_Link">
-    <img alt="Details" title="Event details"
-        src="${tg.url('/images/%s2.png' % StateName.value_to_statename(data[0].cause.current_state))}" />
-</a>
-</td>
 
 </html>

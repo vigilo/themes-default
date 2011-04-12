@@ -2,12 +2,16 @@
       xmlns:xi="http://www.w3.org/2001/XInclude"
       py:strip="">
 
+<th id="plugin_${name}" class="plugin_${name}" py:def="hostname_header(name, instance)">Hostname</th>
+
+<td class="plugin_${name}" py:def="hostname_data(name, instance, data, plugin_data)">${data.hostname}</td>
+
 <py:def function="plugin_template(name, instance)">
+    <?python
+        plugin_header_functions[name] = hostname_header
+        plugin_data_functions[name] = hostname_data
+    ?>
 </py:def>
-
-<th id="plugin_${name}" class="plugin_${name}" py:def="header_template(name, instance)">Hostname</th>
-
-<td class="plugin_${name}" py:def="data_template(name, instance, data, plugin_data)">${data.hostname}</td>
 
 </html>
 

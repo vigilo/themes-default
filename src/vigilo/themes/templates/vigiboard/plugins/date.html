@@ -2,21 +2,25 @@
       xmlns:xi="http://www.w3.org/2001/XInclude"
       py:strip="">
 
-<py:def function="plugin_template(name, instance)">
-</py:def>
-
-<th id="plugin_${name}" class="plugin_${name}" py:def="header_template(name, instance)">
+<th id="plugin_${name}" class="plugin_${name}" py:def="date_header(name, instance)">
     Date<br />
     [Duration]
 </th>
 
-<py:def function="data_template(name, instance, data, plugin_data)">
+<py:def function="date_data(name, instance, data, plugin_data)">
     <py:with vars="state = StateName.value_to_statename(data[0].cause.current_state)">
         <td class="plugin_${name} ${state}">
         ${data[0].cause.get_date('timestamp')}<br/>
         [${data[0].get_since_date('timestamp_active')}]
         </td>
     </py:with>
+</py:def>
+
+<py:def function="plugin_template(name, instance)">
+    <?python
+        plugin_header_functions[name] = date_header
+        plugin_data_functions[name] = date_data
+    ?>
 </py:def>
 
 </html>

@@ -2,16 +2,20 @@
       xmlns:xi="http://www.w3.org/2001/XInclude"
       py:strip="">
 
-<py:def function="plugin_template(name, instance)">
-</py:def>
-
 <th id="plugin_${name}" class="plugin_${name}"
-    py:def="header_template(name, instance)"
+    py:def="masked_events_header(name, instance)"
     title="Number of masked events">Masked</th>
 
-<td class="plugin_${name}" py:def="data_template(name, instance, data, plugin_data)">
+<td class="plugin_${name}" py:def="masked_events_data(name, instance, data, plugin_data)">
     <!--! plugin_data contient le nombre d'événements masqués. -->
     <a py:strip="not plugin_data" href="/masked_events/${data[0].idcorrevent}">${plugin_data}</a>
 </td>
+
+<py:def function="plugin_template(name, instance)">
+    <?python
+        plugin_header_functions[name] = masked_events_header
+        plugin_data_functions[name] = masked_events_data
+    ?>
+</py:def>
 
 </html>

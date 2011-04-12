@@ -2,13 +2,17 @@
       xmlns:xi="http://www.w3.org/2001/XInclude"
       py:strip="">
 
+<py:def function="groups_header(name, instance)">
+</py:def>
+
+<py:def function="groups_data(name, instance, data, plugin_data)">
+</py:def>
+
 <py:def function="plugin_template(name, instance)">
-</py:def>
-
-<py:def function="header_template(name, instance)">
-</py:def>
-
-<py:def function="data_template(name, instance, data, plugin_data)">
+    <?python
+        plugin_header_functions[name] = groups_header
+        plugin_data_functions[name] = groups_data
+    ?>
 </py:def>
 
 </html>

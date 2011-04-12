@@ -2,14 +2,18 @@
       xmlns:xi="http://www.w3.org/2001/XInclude"
       py:strip="">
 
-<py:def function="plugin_template(name, instance)">
-</py:def>
-
-<th id="plugin_${name}" py:def="header_template(name, instance)">
+<th id="plugin_${name}" py:def="id_header(name, instance)">
 ID
 </th>
 
-<td class="plugin_${name}" py:def="data_template(name, instance, data, plugin_data)">${data[0].idcorrevent}</td>
+<td class="plugin_${name}" py:def="id_data(name, instance, data, plugin_data)">${data[0].idcorrevent}</td>
+
+<py:def function="plugin_template(name, instance)">
+    <?python
+        plugin_header_functions[name] = id_header
+        plugin_data_functions[name] = id_data
+    ?>
+</py:def>
 
 </html>
 

@@ -2,7 +2,28 @@
       xmlns:xi="http://www.w3.org/2001/XInclude"
       py:strip="">
 
+<th id="plugin_${name}" class="plugin_${name}" py:def="hls_header(name, instance)"
+    title="Impacted High-Level Services">Impacted HLS</th>
+
+<td class="plugin_${name}" py:def="hls_data(name, instance, data, plugin_data)">
+    <py:if test="plugin_data">
+        <py:choose test="len(plugin_data)">
+            <py:when test="0"/>
+            <py:when test="1">${plugin_data[0]}</py:when>
+            <py:otherwise>
+                <a href="javascript:vigiboard_hls_dialog(this, new Array('${plugin_data[0]}' ${[', \'%s\'' % service for service in plugin_data[1:]]}))">
+                    ${len(plugin_data)}
+                </a>
+            </py:otherwise>
+        </py:choose>
+    </py:if>
+</td>
+
 <py:def function="plugin_template(name, instance)">
+    <?python
+        plugin_header_functions[name] = hls_header
+        plugin_data_functions[name] = hls_data
+    ?>
 <script type="text/javascript">
 /*<![CDATA[*/
     window.addEvent('domready', function () {
@@ -31,22 +52,5 @@
 /*]]>*/
 </script>
 </py:def>
-
-<th id="plugin_${name}" class="plugin_${name}" py:def="header_template(name, instance)"
-    title="Impacted High-Level Services">Impacted HLS</th>
-
-<td class="plugin_${name}" py:def="data_template(name, instance, data, plugin_data)">
-    <py:if test="plugin_data">
-        <py:choose test="len(plugin_data)">
-            <py:when test="0"/>
-            <py:when test="1">${plugin_data[0]}</py:when>
-            <py:otherwise>
-                <a href="javascript:vigiboard_hls_dialog(this, new Array('${plugin_data[0]}' ${[', \'%s\'' % service for service in plugin_data[1:]]}))">
-                    ${len(plugin_data)}
-                </a>
-            </py:otherwise>
-        </py:choose>
-    </py:if>
-</td>
 
 </html>

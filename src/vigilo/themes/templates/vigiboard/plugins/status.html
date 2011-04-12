@@ -9,7 +9,69 @@
       xmlns:xi="http://www.w3.org/2001/XInclude"
       py:strip="">
 
+<py:def function="status_header(name, instance)">
+<th class="plugin_${name}" title="Trouble Ticket">[TT]</th>
+
+<th class="plugin_${name}" title="Acknowledgement status">Status</th>
+
+<th class="plugin_${name}">
+    <a class="Edit_EventsLien" id="Edit_All" href="#">
+        <img src="${tg.url('/images/icon_page_edit.png')}" alt="Edit selected" title="Edit all selected events"/>
+    </a>
+</th>
+
+<th class="plugin_${name}">
+    <input title="Select/Unselect all" id="vigiboard_checkall_checkbox" type="checkbox" onclick="vigiboard_checkall();" />
+</th>
+</py:def>
+
+<py:def function="status_data(name, instance, data, plugin_data)">
+    <py:with vars="cause = data[0].cause; ack = [data[0].status, u'None'][data[0].status is None]">
+    <py:with vars="state = StateName.value_to_statename(cause.current_state)">
+
+    <td class="plugin_${name}">
+    <a py:if="data[0].trouble_ticket" id="plugin_${name}_tt_${data[0].idcorrevent}" href="${
+        tg.config['vigiboard_links.tt'] % {
+            'idcorrevent': data[0].idcorrevent,
+            'host': data[1],
+            'service': data[2],
+            'tt': data[0].trouble_ticket
+        }}">[${data[0].trouble_ticket}]</a>
+    </td>
+
+    <td class="plugin_${name}" py:choose="">
+        <img py:when="ack == 'Acknowledged'" src="${tg.url('/images/checked.png')}"
+            alt="Acknowledged" title="Acknowledged" />
+        <img py:when="ack == 'AAClosed'" src="${tg.url('/images/crossed.png')}"
+            alt="Acknowledged and Closed" title="Acknowledged and Closed" />
+    </td>
+
+    <py:choose test="">
+        <py:when test="ack == 'AAClosed' and state == u'OK'">
+            <td class="plugin_${name}" colspan="2" py:choose=""></td>
+        </py:when>
+
+        <py:otherwise>
+            <td class="plugin_${name} ${state}">
+                <a class="Edit_EventsLien" href="#${data[0].idcorrevent}">
+                    <img src="${tg.url('/images/icon_page_edit.png')}" alt="Edit" title="Edit this event"/>
+                </a>
+            </td>
+
+            <td class="plugin_${name} ${state}">
+                <input type="checkbox" class="Edit_EventsCheckBox" value="${data[0].idcorrevent}"/>
+            </td>
+        </py:otherwise>
+    </py:choose>
+    </py:with>
+    </py:with>
+</py:def>
+
 <py:def function="plugin_template(name, instance)">
+    <?python
+        plugin_header_functions[name] = status_header
+        plugin_data_functions[name] = status_data
+    ?>
 <!--! Le formulaire d'édition d'événements, généré par ToscaWidgets. -->
     ${tmpl_context.edit_event_form(
         dict(last_modification=tmpl_context.last_modification))}
@@ -144,64 +206,6 @@
     }
 /*]]>*/
 </script>
-</py:def>
-
-<py:def function="header_template(name, instance)">
-<th class="plugin_${name}" title="Trouble Ticket">[TT]</th>
-
-<th class="plugin_${name}" title="Acknowledgement status">Status</th>
-
-<th class="plugin_${name}">
-    <a class="Edit_EventsLien" id="Edit_All" href="#">
-        <img src="${tg.url('/images/icon_page_edit.png')}" alt="Edit selected" title="Edit all selected events"/>
-    </a>
-</th>
-
-<th class="plugin_${name}">
-    <input title="Select/Unselect all" id="vigiboard_checkall_checkbox" type="checkbox" onclick="vigiboard_checkall();" />
-</th>
-</py:def>
-
-<py:def function="data_template(name, instance, data, plugin_data)">
-    <py:with vars="cause = data[0].cause; ack = [data[0].status, u'None'][data[0].status is None]">
-    <py:with vars="state = StateName.value_to_statename(cause.current_state)">
-
-    <td class="plugin_${name}">
-    <a py:if="data[0].trouble_ticket" id="plugin_${name}_tt_${data[0].idcorrevent}" href="${
-        tg.config['vigiboard_links.tt'] % {
-            'idcorrevent': data[0].idcorrevent,
-            'host': data[1],
-            'service': data[2],
-            'tt': data[0].trouble_ticket
-        }}">[${data[0].trouble_ticket}]</a>
-    </td>
-
-    <td class="plugin_${name}" py:choose="">
-        <img py:when="ack == 'Acknowledged'" src="${tg.url('/images/checked.png')}"
-            alt="Acknowledged" title="Acknowledged" />
-        <img py:when="ack == 'AAClosed'" src="${tg.url('/images/crossed.png')}"
-            alt="Acknowledged and Closed" title="Acknowledged and Closed" />
-    </td>
-
-    <py:choose test="">
-        <py:when test="ack == 'AAClosed' and state == u'OK'">
-            <td class="plugin_${name}" colspan="2" py:choose=""></td>
-        </py:when>
-
-        <py:otherwise>
-            <td class="plugin_${name} ${state}">
-                <a class="Edit_EventsLien" href="#${data[0].idcorrevent}">
-                    <img src="${tg.url('/images/icon_page_edit.png')}" alt="Edit" title="Edit this event"/>
-                </a>
-            </td>
-
-            <td class="plugin_${name} ${state}">
-                <input type="checkbox" class="Edit_EventsCheckBox" value="${data[0].idcorrevent}"/>
-            </td>
-        </py:otherwise>
-    </py:choose>
-    </py:with>
-    </py:with>
 </py:def>
 
 </html>
