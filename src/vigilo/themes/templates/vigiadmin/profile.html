@@ -13,9 +13,9 @@
 </head>
 
 <body>
-<py:if test="not use_kerberos">
+<py:if test="not external_auth">
 <div id="loginform">
-<form action="${tg.url('/profile/update')}" method="post" class="loginfields">
+<form action="${tg.url('/profile/change_pwd')}" method="post" class="loginfields">
     <h2><span>Change password</span></h2>
 
     <label for="old_password">Old password:</label>
