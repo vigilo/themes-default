@@ -1,4 +1,5 @@
 recursive-include src/vigilo/themes/i18n *
 recursive-include src/vigilo/themes/public *
 recursive-include src/vigilo/themes/templates *
-recursive-include buildenv Makefile.common buildout.*.cfg
+include buildenv/Makefile.common
+include buildenv/buildout.*.cfg
