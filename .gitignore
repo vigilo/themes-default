@@ -1,0 +1,3 @@
+src/vigilo/themes/i18n/*.pot
+src/vigilo/themes/i18n/*/LC_MESSAGES/*.mo
+src/vigilo/themes/i18n/*/LC_MESSAGES/*.js
