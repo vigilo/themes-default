@@ -3,3 +3,13 @@ recursive-include src/vigilo/themes/public *
 recursive-include src/vigilo/themes/templates *
 include buildenv/Makefile.common
 include buildenv/buildout.*.cfg
+include buildout.cfg
+include Makefile
+include COPYING.txt
+
+graft doc
+graft pkg
+recursive-include i18n *.pot *.po
+
+include jsl.cfg
+include babeljs.py
