@@ -26,6 +26,8 @@ var GroupTree = new Class({
         groupingItemName: "submaps",
         itemImage: null,
         groupingItemImage: null,
+        imgpath: "images",
+        requestOptions: {},
         onItemClick: null,
         onGroupClick: null
     },
@@ -58,19 +60,24 @@ var GroupTree = new Class({
                     var types = [this.options.groupName,
                                  this.options.itemName];
                     for (var i=0, type ; type = types[i] ; i++) {
-                        $each(data[type+"s"], function(node) {
+                        var nodes = data[type + "s"];
+                        if (typeof nodes === "undefined") {
+                            continue;
+                        }
+                        for (var j=0, node ; node = nodes[j] ; j++) {
                             this.addNode(node);
-                        }, this);
+                        }
                     }
                     this.isLoaded = true;
                     this.fireEvent("load", this);
                 }).bind(this)
             });
+        var requestOptions = {}
         if (this.options.groupsonly) {
-            firstGroupRequest.send({data: {onlytype: "group"}});
-        } else {
-            firstGroupRequest.send();
+            requestOptions.onlytype = "group";
         }
+        $extend(requestOptions, this.options.requestOptions);
+        firstGroupRequest.send({data: requestOptions});
     },
 
     gotData: function(data) {
@@ -138,7 +145,7 @@ var GroupTree = new Class({
     _addGroup: function(item, parent_tree) {
         var options = {
             label: item.name,
-            image: imgpath + "/tree.png",
+            image: this.options.imgpath + "/tree.png",
             data: {type: item.type}
         };
         if (item.type == this.options.groupingItemName) {
@@ -158,6 +165,7 @@ var GroupTree = new Class({
                     data["onlytype"] = this.options.groupingItemName;
                 }
 
+                $extend(data, this.options.requestOptions);
                 // Envoi de la requête qui va permettre
                 // d'obtenir les éléments fils.
                 // L'ajout de l'option "subfolder" est un hack
@@ -198,7 +206,7 @@ var GroupTree = new Class({
         };
         var subitem = new Jx.TreeItem({
             label: item.name,
-            image: imgpath + "/continued.png",
+            image: this.options.imgpath + "/continued.png",
             data: item_data
         });
         var offset = 0;
@@ -213,6 +221,7 @@ var GroupTree = new Class({
                 offset: offset,
                 onlytype: item.for_type
             };
+            $extend(data, this.options.requestOptions);
             // Envoi de la requête qui va permettre
             // d'obtenir les autres éléments.
             // L'ajout de l'option "subfolder" est un hack
