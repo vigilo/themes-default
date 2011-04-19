@@ -29,15 +29,31 @@
 
     <link py:replace="select('link|head/script|style')" />
 
-    <script type="text/javascript">var app_path = "${tg.url('/').encode('backslash')}";</script>
-    <script type="text/javascript" src="${tg.url('/js/mootools.js')}"></script>
-    <script type="text/javascript" src="${tg.url('/js/mootools-more.js')}"></script>
-    <script type="text/javascript" src="${tg.url('/js/jxlib.js')}"></script>
+    <script type="text/javascript">
+    /*<![CDATA[*/
+        var app_path = "${tg.url('/').encode('backslash')}";
+        var debug_mode = ${int(tg.config['debug'])};
+        var refresh_status = ${int(tg.session.get('refresh', asbool(tg.config.get('refresh_enabled', False))))};
+        var refresh_delay = ${float(tg.session.get('refresh_delay', 30))};
+    /*]]>*/
+    </script>
+    <script type="text/javascript" src="${tg.url('/js/lib/mootools.js')}"></script>
+    <script type="text/javascript" src="${tg.url('/js/lib/mootools-more.js')}"></script>
+    <script type="text/javascript" src="${tg.url('/js/lib/jxlib.js')}"></script>
+    <script type="text/javascript">Jx.baseURL = '${tg.url("/js/lib")}';</script>
 
-    <script type="text/javascript" src="${tg.url('/js/Autocompleter/Autocompleter.js')}"></script>
-    <script type="text/javascript" src="${tg.url('/js/Autocompleter/Autocompleter.Request.js')}"></script>
-    <script type="text/javascript" src="${tg.url('/js/Autocompleter/Observer.js')}"></script>
-    <script type="text/javascript" src="${tg.url('/js/Autocompleter/vigilo.js')}"></script>
+    <!--!
+        "js/libs/babel.js" et "js/babelThemes.js" doivent être chargés
+        avant "i18n", qui doit être chargé avant nos scripts.
+    -->
+    <script type="text/javascript" src="${tg.url('/js/lib/babel.js')}"></script>
+    <script type="text/javascript" src="${tg.url('/js/babelThemes.js')}"></script>
+    <script type="text/javascript" src="${tg.url('/i18n')}"></script>
+
+    <script type="text/javascript" src="${tg.url('/js/lib/Autocompleter.js')}"></script>
+    <script type="text/javascript" src="${tg.url('/js/lib/Autocompleter.Request.js')}"></script>
+    <script type="text/javascript" src="${tg.url('/js/lib/Observer.js')}"></script>
+    <script type="text/javascript" src="${tg.url('/js/autocompleter-vigilo.js')}"></script>
 
     <script type="text/javascript" src="${tg.url('/js/tree.js')}"></script>
 </head>
