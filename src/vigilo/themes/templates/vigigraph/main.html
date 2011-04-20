@@ -17,7 +17,10 @@
     <link rel="stylesheet" type="text/css" media="screen" href="${tg.url('/css/reset.css')}" />
     <link rel="stylesheet" type="text/css" media="screen" href="${tg.url('/css/vigigraph.css')}" />
 
-    <script type="text/javascript">var app_path = "${tg.url('/').encode('backslash')}";</script>
+    <script type="text/javascript">
+        var app_path = "${tg.url('/').encode('backslash')}";
+        Jx.baseURL = '${tg.url("/js/lib")}';
+    </script>
     <script type="text/javascript" src="${tg.url('/js/libs/mootools.js')}"></script>
     <script type="text/javascript" src="${tg.url('/js/libs/mootools-more.js')}"></script>
     <script type="text/javascript" src="${tg.url('/js/libs/jxlib.js')}"></script>
@@ -30,12 +33,7 @@
     <script type="text/javascript" src="${tg.url('/js/babelThemes.js')}"></script>
     <script type="text/javascript" src="${tg.url('/i18n')}"></script>
 
-    <script type="text/javascript" src="${tg.url('/js/libs/Autocompleter/Autocompleter.js')}"></script>
-    <script type="text/javascript" src="${tg.url('/js/libs/Autocompleter/Autocompleter.Request.js')}"></script>
-    <script type="text/javascript" src="${tg.url('/js/libs/Autocompleter/Observer.js')}"></script>
-    <script type="text/javascript" src="${tg.url('/js/libs/Autocompleter/vigilo.js')}"></script>
-
-    <script type="text/javascript" src="${tg.url('/js/tree.js')}"></script>
+    <script type="text/javascript" src="${tg.url('/js/grouptree.js')}"></script>
 
     <script type="text/javascript" src="${tg.url('/js/search.js')}"></script>
     <script type="text/javascript" src="${tg.url('/js/print.js')}"></script>
