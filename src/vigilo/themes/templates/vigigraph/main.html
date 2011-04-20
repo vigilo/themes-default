@@ -13,23 +13,23 @@
     <link rel="search" type="application/opensearchdescription+xml"
         title="Vigigraph search" href="${tg.url('/rpc/getOpenSearch')}"/>
     <link rel="stylesheet" type="text/css" href="${tg.url('/css/jxlib/jxtheme.uncompressed.css')}" />
-    <link rel="stylesheet" type="text/css" href="${tg.url('/css/Autocompleter/Autocompleter.css')}" />
     <link rel="stylesheet" type="text/css" media="screen" href="${tg.url('/css/reset.css')}" />
     <link rel="stylesheet" type="text/css" media="screen" href="${tg.url('/css/vigigraph.css')}" />
+
+    <script type="text/javascript" src="${tg.url('/js/lib/mootools.js')}"></script>
+    <script type="text/javascript" src="${tg.url('/js/lib/mootools-more.js')}"></script>
+    <script type="text/javascript" src="${tg.url('/js/lib/jxlib.js')}"></script>
 
     <script type="text/javascript">
         var app_path = "${tg.url('/').encode('backslash')}";
         Jx.baseURL = '${tg.url("/js/lib")}';
     </script>
-    <script type="text/javascript" src="${tg.url('/js/libs/mootools.js')}"></script>
-    <script type="text/javascript" src="${tg.url('/js/libs/mootools-more.js')}"></script>
-    <script type="text/javascript" src="${tg.url('/js/libs/jxlib.js')}"></script>
 
     <!--!
         "js/libs/babel.js" et "js/babelThemes.js" doivent être chargés
         avant "i18n", qui doit être chargé avant nos scripts.
     -->
-    <script type="text/javascript" src="${tg.url('/js/libs/babel.js')}"></script>
+    <script type="text/javascript" src="${tg.url('/js/lib/babel.js')}"></script>
     <script type="text/javascript" src="${tg.url('/js/babelThemes.js')}"></script>
     <script type="text/javascript" src="${tg.url('/i18n')}"></script>
 
