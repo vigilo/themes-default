@@ -21,6 +21,7 @@ La bibliothèque PubSub a besoin des modules Python suivants :
 - Babel
 - genshi
 - vigilo-common
+- turbogears-devtools
 
 
 Installation
