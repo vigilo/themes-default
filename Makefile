@@ -2,7 +2,6 @@ NAME := themes-default
 all: build
 include buildenv/Makefile.common
 MODULE := vigilo.themes
-CODEPATH := src/vigilo/themes
 
 install: $(PYTHON) build
 	$(PYTHON) setup.py install --record=INSTALLED_FILES
