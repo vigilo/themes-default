@@ -201,7 +201,7 @@ h1 a:hover {
     position: absolute;
     border: 1px solid gray;
     background-color: white;
-    font-size: 80%;
+    font-size: 65%;
     padding: 0px 0.2em;
     display: none;
 }
