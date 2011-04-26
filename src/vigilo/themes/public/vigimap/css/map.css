@@ -10,8 +10,16 @@
     text-decoration: none;
 }
 
-.header_item {
+#header a img {
+    display: block;
+}
+
+.header_icons {
     float: right;
+}
+
+.header_icon {
+    float: left;
 }
 
 #logo {
