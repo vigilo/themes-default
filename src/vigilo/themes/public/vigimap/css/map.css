@@ -406,7 +406,6 @@ canvas {
 
 .jxDialogContent label {
     font-family: sans-serif;
-    font-size: 90%;
 }
 
 .saving {
@@ -453,7 +452,6 @@ canvas {
 
 #map_form table,
 #mapnode_form table,
-#link_form table,
 #copymap_form table {
     margin: 1em auto 0 auto;
 }
@@ -490,12 +488,4 @@ table tr td.labelcol {
 
 input[type=submit] {
     margin-top: 15px;
-}
-#link_form input[type=submit] {
-    display: block;
-    margin: auto;
-}
-#link_form li {
-    list-style-type : none;
-    margin-left : 40px;
 }

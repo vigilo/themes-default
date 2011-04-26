@@ -35,13 +35,95 @@
 #mapnode_form_label,
 #mapnode_form_host_word,
 #mapnode_form_service_word,
-#mapnode_form_graph_word,
-#link_form_fieldsetllslink_host_word,
-#link_form_fieldsetllslink_service_word,
-#link_form_fieldsetllslink_graph_word,
-#link_form_fieldsetllslink_out_name,
-#link_form_fieldsetllslink_ds_out,
-#link_form_fieldsetllslink_in_name,
-#link_form_fieldsetllslink_ds_in {
+#mapnode_form_graph_word {
     width: 230px;
 }
+
+
+/*  
+ *  Formulaire d'édition des propriétés des liens
+*/
+
+#link_form fieldset {
+    font-family: sans-serif;
+}
+
+#link_form fieldset {
+    width: 350px;
+    margin-top: 10px;
+    margin-left: 15px;
+    padding: 15px;
+    border: 1px solid grey;
+    -moz-border-radius:8px;
+    -webkit-border-radius:8px;   
+    border-radius:8px;   
+}
+
+/* Corrige un problème de marge sur IE */
+#link_form fieldset#link_form_fieldsetchoice {
+    display: block;
+}
+
+#link_form legend {
+    color: black;
+}
+
+#link_form.hlslinkform fieldset#link_form_fieldsethlslink,
+#link_form fieldset#link_form_fieldsetllslink,
+#link_form.segmentform fieldset#link_form_fieldsetsegment {
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+}
+
+/* Les descriptions sont uniquement affichées lors des créations de lien */
+#link_form.hlslinkform fieldset#link_form_fieldsethlslink div.fielddescription,
+#link_form.llslinkform fieldset#link_form_fieldsetllslink div.fielddescription,
+#link_form.segmentform fieldset#link_form_fieldsetsegment div.fielddescription {
+    display: none;
+}
+
+#link_form fieldset ul {
+    margin-left: 0;
+}
+
+#link_form fieldset li {
+    list-style-type : none;
+    margin-left: 10px;
+}
+
+#link_form fieldset div.fielddescription {
+    color: grey;
+    font-style: italic;
+    font-size: 90%;
+    margin-bottom: 10px;
+}
+
+#link_form fieldset div.form_row{
+    clear: both;
+}
+
+#link_form fieldset div.form_row + div.form_row {
+    margin-top: 2px;
+}
+
+#link_form fieldset div.label,
+#link_form fieldset div.field,
+#link_form fieldset ul.radiobuttonlist {
+    font-size: 90%;
+}
+
+#link_form fieldset div.label {
+    float: left;
+    width: 150px;
+}
+
+#link_form fieldset div.field {
+    margin-left: 160px;
+}
+
+#link_form input#link_form_submit {
+    margin-left: 240px;
+    margin-bottom: 10px;
+}
+
