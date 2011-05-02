@@ -208,8 +208,10 @@ h1 a:hover {
 .link-usage {
     position: absolute;
     border: 1px solid gray;
-    background-color: white;
-    font-size: 65%;
+    /* http://css-tricks.com/ie-background-rgb-bug/ */
+    background: white;
+    background: rgba(255,255,255,0.6);
+    font-size: 70%;
     padding: 0px 0.2em;
     display: none;
 }
