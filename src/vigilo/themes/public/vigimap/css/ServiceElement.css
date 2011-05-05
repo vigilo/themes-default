@@ -44,7 +44,7 @@
  *  Formulaire d'édition des propriétés des liens
 */
 
-#link_form fieldset {
+#link_form {
     font-family: sans-serif;
 }
 
@@ -122,8 +122,17 @@
     margin-left: 160px;
 }
 
+#link_form div.formlegend {
+    margin-left: 20px;
+    margin-top: 10px;
+    color: grey;
+    font-style: italic;
+    font-size: 90%;
+}
+
 #link_form input#link_form_submit {
-    margin-left: 240px;
-    margin-bottom: 10px;
+    float: right;
+    margin: 0px 40px 10px;
+    padding: 2px 5px;
 }
 
