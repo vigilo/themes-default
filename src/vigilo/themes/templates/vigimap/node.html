@@ -1,17 +1,21 @@
 <div xmlns:py="http://genshi.edgewall.org/"
     xmlns:xi="http://www.w3.org/2001/XInclude">
     <p class="status status-${status.lower()}">${message}</p>
+
+    <h2 py:if="tags">Tags</h2>
     <ul class="tags" py:if="tags">
         <li py:for="tag in tags">
-            <img src="images/tags/${tag}.png" alt="${l_(tag)}" /> ${l_(tag)}
+            <img src="images/tags/${tag}.png" alt="${l_(tag)}" /> ${l_(tag)}<py:if test="tags[tag]">: ${tags[tag]}</py:if>
         </li>
     </ul>
+
     <h2 py:if="links">Links</h2>
     <ul class="section links" py:if="links">
         <li py:for="link in links">
             <a target="_blank" href="${tg.url(link[1])}" > ${link[0]}</a>
         </li>
     </ul>
+
     <h2 py:if="maps">Submaps</h2>
     <!--!
         On intègre le contenu générique (liste des sous-cartes)
