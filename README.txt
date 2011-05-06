@@ -21,7 +21,7 @@ Le thème de Vigilo a besoin des modules Python suivants :
 - Babel
 - genshi
 - vigilo-common
-- turbogears-devtools
+- tg.devtools >= 2.0 et < 2.1
 
 
 Installation
