@@ -15,7 +15,7 @@ façon suivante::
 
     make install PYTHON=/usr/bin/python2.6
 
-La bibliothèque PubSub a besoin des modules Python suivants :
+Le thème de Vigilo a besoin des modules Python suivants :
 
 - setuptools (ou distribute)
 - Babel
@@ -32,7 +32,7 @@ L'installation se fait par la commande ``make install`` (à exécuter en
 
 License
 -------
-PubSub est sous licence `GPL v2`_.
+Le thème Vigilo est sous licence `GPL v2`_.
 
 
 .. _documentation officielle: Vigilo_
@@ -40,5 +40,3 @@ PubSub est sous licence `GPL v2`_.
 .. _GPL v2: http://www.gnu.org/licenses/gpl-2.0.html
 
 .. vim: set syntax=rst fileencoding=utf-8 tw=78 :
-
-
