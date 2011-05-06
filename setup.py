@@ -43,7 +43,8 @@ setup(name='vigilo-themes-default',
         # mais permet d'utiliser la commande "identity_catalog".
         # La dépendance est déjà tirée via "vigilo-models".
         'vigilo-common',
-        'tg.devtools',
+        # pour les traductions javascript
+        'simplejson',
     ],
     namespace_packages = [
         'vigilo',
