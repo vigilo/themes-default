@@ -98,6 +98,9 @@ var Search = new Class({
     },
 
     updateResults: function (data) {
+        var warning = $$('#search_form > img')[0];
+        warning.setStyles({'visibility': (data.more ? 'visible' : 'hidden')});
+
         // On met à jour le contenu de la grille
         // avec les résultats de la recherche.
         var model = new SearchResultsModel(data, {

@@ -90,6 +90,10 @@
                 <input type="text" id="search_form_graph" name="search_form_graph"
                     title="Search for a graph (&quot;*&quot; for all, 100 max)" />
                 <input type="submit" id="search_form_search" value="${l_('Search')}" />
+                <img alt="${l_('Warning')}"
+                    src="${tg.url('/images/messagebox_warning.png')}"
+                    title="${l_('Your search returned more than 100 results. '
+                                'Only the first 100 entries are displayed.')}"/>
                 <div>Results:</div>
                 <div id="search_results"></div>
             </form>

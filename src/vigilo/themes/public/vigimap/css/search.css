@@ -34,3 +34,8 @@
     width: 540px;
 }
 
+#search_form > img {
+    visibility: hidden;
+    float: right;
+    margin: 8px;
+}

@@ -6,7 +6,7 @@
 #search_form label,
 #search_form input {
     float: left;
-    margin: 8px;
+    margin: 4px;
     font-size: 12px;
     padding: 2px;
 }
@@ -18,7 +18,6 @@
 
 #search_form #search_form_search {
     width: 93px;
-    float: right;
     padding: 0;
 }
 
@@ -33,4 +32,10 @@
     height: 275px;
     position: relative;
     width: 540px;
+}
+
+#search_form > img {
+    visibility: hidden;
+    float: right;
+    margin: 4px;
 }
