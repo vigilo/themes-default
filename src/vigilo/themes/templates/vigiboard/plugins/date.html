@@ -8,10 +8,14 @@
 </th>
 
 <py:def function="date_data(name, instance, data, plugin_data)">
-    <py:with vars="state = StateName.value_to_statename(data[0].cause.current_state)">
+    <?python from tg.i18n import get_lang ?>
+    <?python from babel import Locale ?>
+    <?python from vigilo.turbogears.helpers import get_locales ?>
+    <py:with vars="state = StateName.value_to_statename(data[0].cause.current_state);
+        locale = Locale.negotiate(get_lang(), get_locales('vigiboard'), sep='-')">
         <td class="plugin_${name} ${state}">
-        ${data[0].cause.get_date('timestamp')}<br/>
-        [${data[0].get_since_date('timestamp_active')}]
+        ${data[0].cause.get_date('timestamp', locale)}<br/>
+        [${data[0].get_since_date('timestamp_active', locale)}]
         </td>
     </py:with>
 </py:def>
@@ -24,4 +28,3 @@
 </py:def>
 
 </html>
-
