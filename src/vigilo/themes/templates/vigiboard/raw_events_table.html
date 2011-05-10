@@ -8,6 +8,9 @@
 
 <?python from genshi import HTML ?>
 <?python from vigilo.models.tables import StateName ?>
+<?python from tg.i18n import get_lang ?>
+<?python from babel import Locale ?>
+<?python from vigilo.turbogears.helpers import get_locales ?>
 
 <head>
     <py:choose>
@@ -131,11 +134,14 @@
 			</tr>
 
 	        <tr py:when="0" py:for="(index, entry) in enumerate(page.items)" class="${['odd', 'even'][index % 2]}">
+                <!--! get_lang() renvoie None durant les tests unitaires. -->
+                <py:with vars="locale = Locale.negotiate(get_lang() or ['en'], get_locales('vigiboard'), sep='-')">
    				<td class="plugin_date">
-                	${entry[0].get_date('timestamp')}
+                	${entry[0].get_date('timestamp', locale)}
                 	<br />
-                	[${entry[0].get_since_date('timestamp')}]
+                	[${entry[0].get_since_date('timestamp', locale)}]
                 </td>
+                </py:with>
                 <td class="plugin_hostname">${entry.hostname}</td>
                 <td class="plugin_servicename">${entry.servicename}</td>
                 <td class="plugin_state">${StateName.value_to_statename(entry[0].initial_state)}</td>
