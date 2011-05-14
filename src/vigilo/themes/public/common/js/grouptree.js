@@ -72,7 +72,7 @@ var GroupTree = new Class({
                     this.fireEvent("load", this);
                 }).bind(this)
             });
-        var requestOptions = {}
+        var requestOptions = {};
         if (this.options.groupsonly) {
             requestOptions.onlytype = "group";
         }
