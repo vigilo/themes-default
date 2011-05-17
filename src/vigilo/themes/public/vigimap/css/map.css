@@ -473,27 +473,10 @@ table {
 */
 
 table tr td {
-	padding-top: 3px;
+    padding-top: 3px;
 }
 table tr td.labelcol {
     padding-right: 1em;
-}
-
-#deleteconfirmtext {
-    margin: 10px 10px
-}
-
-#deleteconfirmbuttons {
-    width: 50%;
-	margin: 0.5em auto 0 auto;
-}
-
-#deleteconfirmbutton1 {
-    float: left;
-}
-
-#deleteconfirmbutton2 {
-    float: right;
 }
 
 input[type=submit] {

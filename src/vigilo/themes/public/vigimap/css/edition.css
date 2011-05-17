@@ -10,3 +10,24 @@ label.required {
     display: none;
 }
 
+#deleteconfirmicon {
+    float: left;
+    margin-right: 16px;
+}
+
+#deleteconfirmtext {
+    margin: 10px 10px
+}
+
+#deleteconfirmbuttons input {
+    margin: 0.5em 20px 0 20px;
+}
+
+#deleteconfirmbutton1 {
+    float: left;
+}
+
+#deleteconfirmbutton2 {
+    float: right;
+}
+
