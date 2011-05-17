@@ -43,7 +43,7 @@
         </a>
     </div>
 
-    <py:with vars="refresh_delay = float(tg.config.get('refresh_delay', 0)); refresh_enabled = int(tg.session.get('refresh', asbool(tg.config.get('refresh_enabled', False))))">
+    <py:with vars="refresh_delay = float(tg.config.get('refresh_delay', 30)); refresh_enabled = bool(tg.session.get('refresh', asbool(tg.config.get('refresh_enabled', False))))">
     <div class="header_item" py:if="refresh_delay">
         <input type="checkbox" id="refresh" onchange="set_refresh();" checked="checked" py:if="refresh_enabled" />
         <input type="checkbox" id="refresh" onchange="set_refresh();" py:if="not refresh_enabled" />

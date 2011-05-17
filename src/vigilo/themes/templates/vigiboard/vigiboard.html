@@ -34,7 +34,7 @@
         var app_path = "${tg.url('/').rstrip('/').encode('backslash')}";
         var debug_mode = ${int(tg.config['debug'])};
         var refresh_status = ${int(tg.session.get('refresh', asbool(tg.config.get('refresh_enabled', False))))};
-        var refresh_delay = ${float(tg.session.get('refresh_delay', 30))};
+        var refresh_delay = ${float(tg.config.get('refresh_delay', 30))};
     /*]]>*/
     </script>
     <script type="text/javascript" src="${tg.url('/js/lib/mootools.js')}"></script>
