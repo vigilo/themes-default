@@ -3,6 +3,7 @@
 # Copyright (C) 2006-2011 CS-SI
 # License: GNU GPL v2 <http://www.gnu.org/licenses/gpl-2.0.html>
 
+from platform import python_version_tuple
 try:
     from setuptools import setup, find_packages
 except ImportError:
@@ -17,6 +18,22 @@ except ImportError:
     pass
 else:
     cmdclass['compile_catalog'] = compile_catalog_plusjs
+
+install_requires=[
+    'setuptools',
+    'Genshi >= 0.5.1',
+    'Genshi < 0.6',
+    'Babel >= 0.9.4',
+
+    # Pas requis à proprement parlé,
+    # mais permet d'utiliser la commande "identity_catalog".
+    # La dépendance est déjà tirée via "vigilo-models".
+    'vigilo-common',
+]
+
+if tuple(python_version_tuple()) < ('2', '6'):
+    # pour les traductions javascript
+    install_requires.append("simplejson")
 
 tests_require = [
     'coverage',
@@ -33,19 +50,7 @@ setup(name='vigilo-themes-default',
     description="Vigilo default theme",
     long_description="This component provides a default theme for Vigilo",
     zip_safe=False,
-    install_requires=[
-        'setuptools',
-        'Genshi >= 0.5.1',
-        'Genshi < 0.6',
-        'Babel >= 0.9.4',
-
-        # Pas requis à proprement parlé,
-        # mais permet d'utiliser la commande "identity_catalog".
-        # La dépendance est déjà tirée via "vigilo-models".
-        'vigilo-common',
-        # pour les traductions javascript
-        'simplejson',
-    ],
+    install_requires=install_requires,
     namespace_packages = [
         'vigilo',
         'vigilo.themes',

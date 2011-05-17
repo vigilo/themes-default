@@ -14,6 +14,7 @@ Buildarch:  noarch
 BuildRequires:   python-setuptools
 BuildRequires:   python-babel
 BuildRequires:   python-genshi
+BuildRequires:   python-simplejson
 
 Requires:   python >= 2.5
 Requires:   python-setuptools
