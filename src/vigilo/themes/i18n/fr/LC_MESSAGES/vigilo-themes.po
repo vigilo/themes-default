@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: vigilo-themes-default 0.1\n"
 "Report-Msgid-Bugs-To: contact@projet-vigilo.org\n"
 "POT-Creation-Date: 2009-11-10 09:51+0100\n"
-"PO-Revision-Date: 2011-05-14 13:58+0200\n"
+"PO-Revision-Date: 2011-05-14 17:36+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: fr <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n > 1)\n"
@@ -1061,31 +1061,4 @@ msgstr "Etes-vous sûr de vouloir supprimer %(path)s ?"
 #, python-format
 msgid "Related to %(parent_obj)s"
 msgstr "Lié à %(parent_obj)s"
-
-#~ msgid "Search for an host/graph"
-#~ msgstr "Rechercher un hôte/graphe"
-
-#~ msgid "Graph"
-#~ msgstr "Graphe"
-
-#~ msgid "Search Event"
-#~ msgstr "Filtrer les événements"
-
-#~ msgid "Select a group"
-#~ msgstr "Sélection d'un groupe"
-
-#~ msgid "Unable to save preferences"
-#~ msgstr "Impossible de sauvegarder les préférences"
-
-#~ msgid "%Y-%m-%d %I:%M:%S %p"
-#~ msgstr "%Y-%m-%d %H:%M:%S"
-
-#~ msgid "Search for a host (\"*\" for all, 100 max)"
-#~ msgstr "Recherche parmi les hôtes (\"*\" pour tous, 100 maximum)"
-
-#~ msgid "Graph:"
-#~ msgstr "Graphe :"
-
-#~ msgid "Search for a graph (\"*\" for all, 100 max)"
-#~ msgstr "Recherche parmi les graphes (\"*\" pour tous, 100 maximum)"
 
