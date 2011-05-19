@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: vigilo-themes-default 0.1\n"
 "Report-Msgid-Bugs-To: contact@projet-vigilo.org\n"
 "POT-Creation-Date: 2009-11-10 09:51+0100\n"
-"PO-Revision-Date: 2011-05-14 17:36+0200\n"
+"PO-Revision-Date: 2011-05-19 18:30+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: fr <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n > 1)\n"
@@ -413,7 +413,7 @@ msgstr "Permissions sur les applications"
 
 #: src/vigilo/themes/templates/vigiboard/atom.xml:6
 msgid "Vigilo"
-msgstr ""
+msgstr "Vigilo"
 
 #: src/vigilo/themes/templates/vigiboard/events_table.html:15
 #: src/vigilo/themes/templates/vigiboard/events_table.html:21
@@ -779,11 +779,11 @@ msgstr "ID"
 
 #: src/vigilo/themes/templates/vigiboard/plugins/masked_events.html:5
 msgid "Number of masked events"
-msgstr ""
+msgstr "Nombre d'événements masqués"
 
 #: src/vigilo/themes/templates/vigiboard/plugins/masked_events.html:7
 msgid "Masked"
-msgstr ""
+msgstr "Masqués"
 
 #: src/vigilo/themes/templates/vigiboard/plugins/occurrences.html:5
 msgid "Occurrences count"
@@ -924,7 +924,7 @@ msgstr "Page de métrologie"
 
 #: src/vigilo/themes/templates/vigimap/jstest.html:5
 msgid "Javascript Test Runner"
-msgstr ""
+msgstr "Exécuteur de tests JavaScript"
 
 #: src/vigilo/themes/templates/vigimap/legend.html:2
 msgid "Legend"
@@ -1000,6 +1000,8 @@ msgid ""
 "Your search returned more than 100 results. Only the first 100 entries "
 "are displayed."
 msgstr ""
+"Votre recherche a retourné plus de 100 résultats. Seules les 100 premières "
+"entrées sont affichées."
 
 #: src/vigilo/themes/templates/vigimap/main.html:129
 msgid "Your browser does not support the canvas element. Please upgrade."
