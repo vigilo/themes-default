@@ -96,6 +96,23 @@ h1 a:hover {
     background-color: #f1f1f1;
 }
 
+
+/* Ajout Rodrigue NSIANGANI (Vigilo Team)
+ * Date : Vendredi 13 mai 2011
+ * Pour rendre les menus opaques
+ */
+#leftmenu,
+#maplist,
+#mapitems {
+    opacity: 0.92; /* CSS standard : FireFox, Opera, Chrome and Safari */
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=92)"; /* IE 8 */
+    /* -ms-filter: "alpha(opacity=92)"; */
+    filter: alpha(opacity=92); /* IE < 8 */
+    -moz-opacity: 0.92; /* Old versions of mozilla browser */
+    -khtml-opacity: 0.92; /* Safari 1.x */
+}
+
+
 #leftmenu .mapgroup {
     margin: 0px auto;
     border: 1px solid #aaa;
