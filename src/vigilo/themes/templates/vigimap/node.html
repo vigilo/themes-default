@@ -12,7 +12,7 @@
     <h2 py:if="links">Links</h2>
     <ul class="section links" py:if="links">
         <li py:for="link in links">
-            <a target="_blank" href="${tg.url(link[1])}" > ${link[0]}</a>
+            <a target="${link[2]}" href="${tg.url(link[1])}" > ${link[0]}</a>
         </li>
     </ul>
 

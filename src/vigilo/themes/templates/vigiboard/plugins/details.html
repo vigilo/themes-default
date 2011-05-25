@@ -60,7 +60,7 @@
         <div id="external_links">
             <ul>
                 <li py:for="edname, edit in enumerate(tg.config['vigiboard_links.eventdetails'])">
-                    <a target="_blank" href="#" id="DetailsDialog_${edname}">${edit[0]}</a>
+                    <a href="#" id="DetailsDialog_${edname}">${edit[0]}</a>
                 </li>
             </ul>
         </div>
@@ -120,6 +120,7 @@ window.addEvent("domready", function () {
                 url: '${tg.url("/plugin_json")}',
                 onSuccess: function (details, raw) {
                     var i;
+
                     $$('DetailsDialog_initial_state').set('text', details.initial_state);
                     $$('DetailsDialog_current_state').set('text', details.current_state);
                     $$('DetailsDialog_peak_state').set('text', details.peak_state);
@@ -134,7 +135,10 @@ window.addEvent("domready", function () {
                             encodeURIComponent(details.host));
                     }
                     for (i = 0; i < ${len(tg.config['vigiboard_links.eventdetails'])}; i++) {
-                        $$('DetailsDialog_'+i.toString()).set('href', details.eventdetails[i.toString()]);
+                        $$('DetailsDialog_'+i.toString()).set({
+                            'href': details.eventdetails[i.toString()].url,
+                            'target': details.eventdetails[i.toString()].target
+                        });
                     }
                     window.details_dialog.setBusy(false);
 
