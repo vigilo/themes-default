@@ -51,27 +51,33 @@
             </a>
         </span>
 
-        <div class="header_item">
+        <div class="header_icons">
+            
+            <div class="header_icon">
+                ${search_button()}
+            </div>
 
-            ${search_button()}
+            <div class="header_icon">
+                <a id="print" href="?">
+                    <img src="${tg.url('/images/document-print.png')}"
+                        alt="Print all" title="Print all visible graphs" />
+                </a>
+            </div>
 
-            <a id="print" href="?">
-                <img src="${tg.url('/images/document-print.png')}"
-                    alt="Print all" title="Print all visible graphs" />
-            </a>
-
-            <py:if test="tg.config.get('help_link')">
-            <a href="${tg.config['help_link']}">
-                <img src="${tg.url('/images/help.png')}" alt="Help" title="Help"/>
-            </a>
-            </py:if>
+            <div class="header_icon">
+                <py:if test="tg.config.get('help_link')">
+                    <a href="${tg.config['help_link']}">
+                        <img src="${tg.url('/images/help.png')}" alt="Help" title="Help"/>
+                    </a>
+                </py:if>
+            </div>
 
             <!--! On masque le bouton de login/logout si une authentification externe est utilisée. -->
-            <span py:if="tg.auth_stack_enabled and not asbool(tg.config.get('external_auth'))" py:strip="True">
-            <a href="${tg.url('/logout_handler')}">
-                <img src="${tg.url('/images/logout.png')}" alt="Log out" title="Log out"/>
-            </a>
-            </span>
+            <div py:if="tg.auth_stack_enabled and not asbool(tg.config.get('external_auth'))" class="header_icon">
+                <a href="${tg.url('/logout_handler')}">
+                    <img src="${tg.url('/images/logout.png')}" alt="Log out" title="Log out"/>
+                </a>
+            </div>
         </div>
 
         <h1><a href="${tg.url('/')}">VigiGraph</a></h1>

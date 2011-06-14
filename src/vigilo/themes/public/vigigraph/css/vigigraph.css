@@ -37,8 +37,20 @@ h1 a:hover {
     margin-top: 0.1em;
 }
 
-.header_item {
+#header a {
+    text-decoration: none;
+}
+
+#header a img {
+    display: block;
+}
+
+.header_icons {
     float: right;
+}
+
+.header_icon {
+    float: left;
 }
 
 table.header_table {
