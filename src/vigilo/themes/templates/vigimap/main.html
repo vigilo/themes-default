@@ -119,11 +119,9 @@
 </body>
 
 <py:def function="map">
-    <!--
     <py:with vars="flash=tg.flash_obj.render('flash', use_js=False)">
         <div py:if="flash" py:content="XML(flash)" />
     </py:with>
-    -->
 
     <div id="map">
         <canvas>
@@ -137,6 +135,17 @@
     <div id="loading">
         <img alt="loading..." src="${tg.url('images/loading.gif')}" />
     </div>
+
+    <script type="text/javascript">
+    /*<![CDATA[*/
+        window.addEvent('load', function (){
+            var flash = $('flash');
+            if (flash) {
+                flash.fade('in').pauseFx(10000).fade('out');
+            }
+        });
+    /*]]>*/
+    </script>
 </py:def>
 
 </html>

@@ -499,3 +499,24 @@ table tr td.labelcol {
 input[type=submit] {
     margin-top: 15px;
 }
+
+/* Flash */
+
+#flash {
+	opacity: 0;
+}
+
+#flash, .notice {
+    font-size: 120%;
+    font-weight: bolder;
+    bottom: 0px;
+    right: 0px;
+    width: 100%;
+    position: absolute;
+    /* Pour les navigateurs un peu plus évolués. */
+    position: fixed;
+}
+#flash div, .notice {
+    padding: 8px 7px 6px 44px;
+}
+

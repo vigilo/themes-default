@@ -28,6 +28,10 @@
     <li id="userinfo" py:if="request.identity">Logged in as: <span>${request.identity['repoze.who.userid']}</span></li>
   </ul>
   <div id="content">
+    <py:with vars="flash=tg.flash_obj.render('flash', use_js=False)">
+        <div py:strip="True" py:if="flash" py:content="XML(flash)" />
+    </py:with>
+
     <div py:replace="select('*|text()')"/>
     <!-- End of content -->
     ${footer()}
