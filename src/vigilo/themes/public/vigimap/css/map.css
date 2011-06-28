@@ -84,8 +84,7 @@ h1 a:hover {
 /* Menu de gauche */
 
 #leftmenu,
-#maplist,
-#mapitems {
+#maplist {
     position: absolute;
     left: 0;
     margin: 0;
@@ -102,8 +101,7 @@ h1 a:hover {
  * Pour rendre les menus opaques
  */
 #leftmenu,
-#maplist,
-#mapitems {
+#maplist {
     opacity: 0.92; /* CSS standard : FireFox, Opera, Chrome and Safari */
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=92)"; /* IE 8 */
     /* -ms-filter: "alpha(opacity=92)"; */
