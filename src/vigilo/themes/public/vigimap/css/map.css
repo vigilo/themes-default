@@ -520,3 +520,18 @@ input[type=submit] {
     padding: 8px 7px 6px 44px;
 }
 
+#flash .ok {
+    background: #d8ecd8 url(../images/ok.png) no-repeat scroll 0px center;
+}
+#flash .warning {
+    background: #fff483 url(../images/warning.png) no-repeat scroll 0px center;
+}
+#flash .error {
+    background: #f9c5c1 url(../images/error.png) no-repeat scroll 0px center;
+}
+#flash .alert,
+#flash .info,
+.notice {
+    background: #EEEEFF url(../images/info.png) no-repeat scroll 0px center;
+}
+
