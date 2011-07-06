@@ -1,6 +1,6 @@
 <div xmlns:py="http://genshi.edgewall.org/" py:strip="">
-    <ul class="section maps" py:if="maps">
-        <li py:for="map in maps">
+    <ul class="section maps" py:if="node['maps']">
+        <li py:for="map in node['maps']">
             <a href="index#mapid=${map[0]}" onclick="map.load(${map[0]}); return false;" > ${map[1]}</a>
         </li>
     </ul>

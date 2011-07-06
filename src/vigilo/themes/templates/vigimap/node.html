@@ -1,11 +1,11 @@
 <div xmlns:py="http://genshi.edgewall.org/"
     xmlns:xi="http://www.w3.org/2001/XInclude">
-    <p class="status status-${status.lower()}">${message}</p>
+    <p class="status status-${node['status'].lower()}">${node['message']}</p>
 
-    <h2 py:if="tags">Tags</h2>
-    <ul class="tags" py:if="tags">
-        <li py:for="tag in tags">
-            <img src="images/tags/${tag}.png" alt="${l_(tag)}" /> ${l_(tag)}<py:if test="tags[tag]">: ${tags[tag]}</py:if>
+    <h2 py:if="node['tags']">Tags</h2>
+    <ul class="tags" py:if="node['tags']">
+        <li py:for="tag in node['tags']">
+            <img src="images/tags/${tag}.png" alt="${l_(tag)}" /> ${l_(tag)}<py:if test="node['tags'][tag]">: ${node['tags'][tag]}</py:if>
         </li>
     </ul>
 
@@ -16,19 +16,22 @@
         </li>
     </ul>
 
-    <h2 py:if="maps">Submaps</h2>
+    <h2 py:if="node['maps']">Submaps</h2>
     <!--!
         On intègre le contenu générique (liste des sous-cartes)
         en supprimant le "div" qui englobe cette liste.
     -->
     <xi:include href="submaps.html"/>
     <py:choose test="">
-        <py:when test="node.has_key('service')">
+        <!--! Service de bas niveau. -->
+        <py:when test="node['service'] and node['host']">
             <p>${l_("Service name: %(service)s on %(host)s (%(address)s)") % {'service': node['service'], 'host': node['host' ], 'address': node['address']}}</p>
         </py:when>
-        <py:when test="node.has_key('hls')">
-            <p>${l_("Service name: %(service)s") % {'service': node['hls']}}</p>
+        <!--! Service de haut niveau. -->
+        <py:when test="node['service']">
+            <p>${l_("Service name: %(service)s") % {'service': node['service']}}</p>
         </py:when>
+        <!--! Hôte -->
         <py:otherwise>
             <p>${l_("Appliance name: %(host)s (%(address)s)") % {'host': node['host'], 'address': node['address']}}</p>
         </py:otherwise>
