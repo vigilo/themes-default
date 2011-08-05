@@ -44,10 +44,9 @@
     <script type="text/javascript" src="${tg.url('/js/ServiceElement.js')}"></script>
     <script type="text/javascript" src="${tg.url('/js/search.js')}"></script>
 
-    <div py:for="widget in widgets" py:strip="True">
-        <script type="text/javascript" src="${tg.url(widget+'.js')}"></script>
-        <link rel="stylesheet" type="text/css" href="${tg.url(widget+'.css')}" />
-    </div>
+    <!--! Fichiers statiques des extensions. -->
+    <script py:for="widget in widgets['js']" type="text/javascript" src="${tg.url(widget+'.js')}"></script>
+    <link py:for="widget in widgets['css']" rel="stylesheet" type="text/css" href="${tg.url(widget+'.css')}" />
 
     <meta py:replace="select('*|comment()')"/>
 </head>
