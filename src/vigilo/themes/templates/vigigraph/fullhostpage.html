@@ -37,7 +37,7 @@
                 Enfin, on injecte l'URL sans modification dans le code
                 du lien HTML qu'on veut afficher.
             -->
-            <py:for each="graph in graphs"
+            <py:for each="graph in sorted(graphs, key=lambda x: x.name.lower())"
                 py:with="prefix = len(tg.url('/'))+1; graph_url = tg.url('/', {
                     'g': tg.url('/', {
                         'host_': host,
