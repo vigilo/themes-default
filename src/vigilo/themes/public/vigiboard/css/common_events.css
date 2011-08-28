@@ -172,7 +172,7 @@ div.clearingdiv {
 }
 
 #search_form table tr {
-	height: 3em;
+    height: 3em;
 }
 
 #search_form .labelcol {
@@ -216,13 +216,13 @@ div.clearingdiv {
 }
 #search_form_supitemgroup,
 #search_form_supitemgroup\2E clear {
-    width: 27%;
+    width: 26%;
     height: 1.7em;
     font-size: 1.2em;
 }
 
 #search_form_priority_value {
-    width: 82.5% !important;
+    width: 80.5% !important;
 }
 
 #search_mode_tip {
@@ -243,7 +243,7 @@ div.clearingdiv {
 }
 
 #edit_event_form table tr {
-	height: 3em;
+    height: 3em;
 }
 
 #edit_event_form .labelcol {
