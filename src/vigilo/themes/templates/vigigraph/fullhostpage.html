@@ -4,6 +4,7 @@
       xmlns:py="http://genshi.edgewall.org/"
       xmlns:xi="http://www.w3.org/2001/XInclude">
 
+<?python import urllib2 ?>
 <xi:include href="main_simplified.html" />
 
     <head>
@@ -13,7 +14,8 @@
     <body class='main'>
         <h2>${l_('List of graphs for "%s"') % host}</h2>
         <p class="menu">
-        [<a href="${tg.url('/nagios/%s/cgi-bin/status.cgi' % host, {
+        [<a href="${tg.url('/nagios/%s/cgi-bin/status.cgi' %
+                urllib2.quote(host.encode('utf-8'), ''), {
             'host_': host,
         })}">${l_('Monitoring page for "%s"') % host}</a>]
         <py:for each="h in presets">
@@ -52,7 +54,8 @@
             <img alt="${l_('Graph \'%(graph)s\' on \'%(host)s\'') % {
                     'host': host,
                     'graph': graph.name,
-                }}" src="${tg.url('/vigirrd/%s/index' % host, {
+                }}" src="${tg.url('/vigirrd/%s/index' %
+                    urllib2.quote(host.encode('utf-8'), ''), {
                 'host_': host,
                 'graphtemplate': graph.name,
                 'start': start,

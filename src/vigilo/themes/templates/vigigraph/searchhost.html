@@ -1,5 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
                       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<?python import urllib2 ?>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:py="http://genshi.edgewall.org/"
       xmlns:xi="http://www.w3.org/2001/XInclude">
@@ -12,11 +13,16 @@
         <h1>VigiGraph search</h1>
         <h2>Results:</h2>
         <table>
-            <tr py:for="host in hosts" py:with="h = host.name">
-                <td class="hostname">&mdash; ${h}</td>
-                <td><a href="${tg.url('/nagios/%s/cgi-bin/status.cgi?host=%s&amp;style=detail&amp;supNav=1' % (h, h))}">Sup page</a></td>
+            <tr py:for="host in hosts">
+                <td class="hostname">&#x2014; ${host}</td>
+                <td><a href="${tg.url('/nagios/%s/cgi-bin/status.cgi' %
+                                urllib2.quote(host.encode('utf-8'), ''), {
+                        'host_': host,
+                        'style': 'detail',
+                        'supNav': 1,
+                    })}">Sup page</a></td>
                 <td> - </td>
-                <td><a href="${tg.url('/rpc/fullHostPage?host=%s' % h)}">Metro page</a></td>
+                <td><a href="${tg.url('/rpc/fullHostPage', { 'host_': host })}">Metro page</a></td>
             </tr>
         </table>
         ${tmpl_context.paginators.hosts.pager()}
