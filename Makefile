@@ -9,5 +9,6 @@ install_pkg: $(PYTHON) build
 	$(PYTHON) setup.py install --single-version-externally-managed --root=$(DESTDIR)
 
 #tests: tests_nose
+doc: apidoc
 
 .PHONY: install_pkg
