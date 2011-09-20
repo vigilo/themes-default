@@ -42,7 +42,7 @@ tests_require = [
 ]
 
 setup(name='vigilo-themes-default',
-    version='2.0.5',
+    version='2.0.6',
     author='Vigilo Team',
     author_email='contact@projet-vigilo.org',
     url='http://www.projet-vigilo.org/',
