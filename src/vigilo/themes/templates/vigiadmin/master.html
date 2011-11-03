@@ -22,14 +22,12 @@
   <ul id="mainmenu">
     <li class="first"><a href="${tg.url('/')}" class="${('', 'active')[defined('page') and page==page=='index']}">Welcome</a></li>
     <!--! On masque le bouton de login/logout si une authentification externe est utilisée. -->
-    <span py:if="tg.auth_stack_enabled and not asbool(tg.config.get('external_auth'))" py:strip="True">
+    <span py:if="tg.auth_stack_enabled and not tg.request.environ['vigilo.external_auth']" py:strip="True">
     <li py:if="not request.identity" id="loginbtn" class="loginlogout ${('', 'active')[defined('page') and page==page=='login']}"><a href="${tg.url('/login')}">Login</a></li>
     <li py:if="request.identity" id="loginbtn" class="loginlogout"><a href="${tg.url('/logout_handler')}">Logout</a></li>
     </span>
     <li py:if="request.identity" id="adminbtn" class="${('', 'active')[defined('page') and page==page=='admin']}"><a href="${tg.url('/perms')}">Permissions</a></li>
-    <span py:if="request.identity and request.identity.get('repoze.who.userid') == 'manager' or not asbool(tg.config.get('external_auth'))" py:strip="True">
     <li id="profilebtn" class="${('', 'active')[defined('page') and page==page=='profile']}"><a href="${tg.url('/profile')}">Profile</a></li>
-    </span>
 <!--! La collecte est désactivée. -->
 <!--! <li py:if="request.identity" id="collectbtn" class="${('', 'active')[defined('page') and page==page=='collect']}"><a href="${tg.url('/collect')}">Collect</a></li> -->
 <!--! La maintenance planifiée est désactivée tant que certains problèmes n'auront pas été résolus. -->

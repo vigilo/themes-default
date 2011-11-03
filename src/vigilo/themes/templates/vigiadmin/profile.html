@@ -13,7 +13,6 @@
 </head>
 
 <body>
-<py:if test="not external_auth">
 <div id="loginform">
 <form action="${tg.url('/profile/change_pwd')}" method="post" class="loginfields">
     <h2><span>Change password</span></h2>
@@ -30,6 +29,5 @@
     <input type="submit" id="submit" value="${l_('Apply')}" />
 </form>
 </div>
-</py:if>
 </body>
 </html>
