@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
                     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
     xmlns:py="http://genshi.edgewall.org/"
@@ -7,8 +7,11 @@
 <xi:include href="master.html" />
 
 <head>
-<meta content="text/html; charset=UTF-8" http-equiv="content-type" py:replace="''"/>
-<title>Login Form</title>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type" py:replace="''"/>
+    <title>Login Form</title>
+    <script type="text/javascript" src="${tg.url('/js/lib/mootools.js')}"></script>
+    <script type="text/javascript" src="${tg.url('/js/lib/mootools-more.js')}"></script>
+    <script type="text/javascript" src="${tg.url('/js/login.js')}"></script>
 </head>
 
 <body>
@@ -21,13 +24,5 @@
 </form>
 </div>
 
-<script type="text/javascript">
-window.onload = function () {
-    if (document.getElementById) {
-        var o = document.getElementById('login');
-        o.focus();
-    }
-}
-</script>
 </body>
 </html>
