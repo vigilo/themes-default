@@ -144,9 +144,13 @@
                 </py:with>
                 <td class="plugin_hostname">${entry.hostname}</td>
                 <td class="plugin_servicename">${entry.servicename}</td>
-                <td class="plugin_state">${StateName.value_to_statename(entry[0].initial_state)}</td>
-                <td class="plugin_state">${StateName.value_to_statename(entry[0].current_state)}</td>
-                <td class="plugin_state">${StateName.value_to_statename(entry[0].peak_state)}</td>
+                <td py:with="initial_state = StateName.value_to_statename(entry[0].initial_state)"
+                    class="plugin_state ${initial_state}">${initial_state}</td>
+                <td py:with="current_state = StateName.value_to_statename(entry[0].current_state)"
+                    class="plugin_state ${current_state}">${current_state}</td>
+                <td py:with="peak_state = StateName.value_to_statename(entry[0].peak_state)"
+                    class="plugin_state ${peak_state}">${peak_state}</td>
+                <td class="plugin_output">${entry[0].message}</td>
                 <td class="plugin_output">${entry[0].message}</td>
 	            <td class="plugin_history">
 	            	<a href="${tg.url('/event/%d' % entry[0].idevent)}"><img src="${tg.url('/images/history.png')}" title="History" alt="History"/></a></td>
