@@ -67,6 +67,17 @@ h1 a:hover {
     height: 100%;
 }
 
+/* Placement automatique. */
+#automap {
+    position: absolute;
+    left: 0px;
+}
+
+#automap .obj {
+    float: left;
+    margin: 1em;
+}
+
 #loading {
     display: none;
     position: absolute;
@@ -176,6 +187,7 @@ h1 a:hover {
         remplace cette valeur pour les autres navigateurs,
         y compris pour IE 8 qui ne présente plus le bug. */
     margin: 0;
+    padding: 0px 1em;
 }
 
 .obj {
@@ -209,6 +221,8 @@ h1 a:hover {
     background-color: white;
     margin: 2px auto;
 }
+
+
 
 /* Liens */
 .link {
@@ -532,4 +546,3 @@ input[type=submit] {
 .notice {
     background: #EEEEFF url(../images/info.png) no-repeat scroll 0px center;
 }
-
