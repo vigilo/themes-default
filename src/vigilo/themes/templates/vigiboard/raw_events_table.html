@@ -151,7 +151,6 @@
                 <td py:with="peak_state = StateName.value_to_statename(entry[0].peak_state)"
                     class="plugin_state ${peak_state}">${peak_state}</td>
                 <td class="plugin_output">${entry[0].message}</td>
-                <td class="plugin_output">${entry[0].message}</td>
 	            <td class="plugin_history">
 	            	<a href="${tg.url('/event/%d' % entry[0].idevent)}"><img src="${tg.url('/images/history.png')}" title="History" alt="History"/></a></td>
 	        </tr>
