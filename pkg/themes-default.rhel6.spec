@@ -20,7 +20,7 @@ Requires:   vigilo-common
 Requires:   python-genshi
 Requires:   python-babel
 
-Provides:   vigilo-themes
+Provides:   vigilo-themes = %{version}-%{release}
 
 
 %description

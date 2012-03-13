@@ -26,7 +26,7 @@ Requires:   vigilo-common
 Requires:   python26-genshi
 Requires:   python26-babel
 
-Provides:   vigilo-themes
+Provides:   vigilo-themes = %{version}-%{release}
 
 
 %description

@@ -28,7 +28,7 @@ Requires:   python-babel
 Requires:   python-genshi
 Requires:   python-configobj
 
-Provides:   vigilo-themes
+Provides:   vigilo-themes = %{version}-%{release}
 
 
 %description
