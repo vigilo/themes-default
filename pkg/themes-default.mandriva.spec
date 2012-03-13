@@ -43,10 +43,10 @@ This module is part of the Vigilo Project <http://vigilo-project.org>
 %install
 rm -rf $RPM_BUILD_ROOT
 make install_pkg \
-	DESTDIR=$RPM_BUILD_ROOT \
-	PREFIX=%{_prefix} \
-	SYSCONFDIR=%{_sysconfdir} \
-	PYTHON=%{__python}
+    DESTDIR=$RPM_BUILD_ROOT \
+    PREFIX=%{_prefix} \
+    SYSCONFDIR=%{_sysconfdir} \
+    PYTHON=%{__python}
 
 
 %clean
