@@ -18,7 +18,8 @@ var hash_change_detector = function() {
         action = new URI(login_form.get('action'));
         // Si le fragment dans l'URL a changé,
         // on met à jour la cible du formulaire.
-        if (action.toString() != url.toString()) {
+        // On ne fait ça que si on a effectivement un nouveau fragment.
+        if (action.toString() != url.toString() && url.get('fragment') !== '') {
             action.set('fragment', url.get('fragment'));
             login_form.set('action', action.toString());
         }
