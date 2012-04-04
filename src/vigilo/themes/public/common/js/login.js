@@ -1,3 +1,6 @@
+// Copyright (C) 2011-2012 CS-SI
+// License: GNU GPL v2 <http://www.gnu.org/licenses/gpl-2.0.html>
+
 // Permet de propager le fragment de l'URL courante
 // dans le formulaire d'authentification, afin de
 // revenir réellement vers l'URL d'origine.
