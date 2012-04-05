@@ -1,6 +1,6 @@
 NAME := themes-default
 all: build
-include buildenv/Makefile.common
+include buildenv/Makefile.common.python
 MODULE := vigilo.themes
 
 install: $(PYTHON) build
@@ -10,5 +10,6 @@ install_pkg: $(PYTHON) build
 
 #tests: tests_nose
 doc: apidoc
+clean: clean_python
 
-.PHONY: install_pkg
+.PHONY: install install_pkg doc
