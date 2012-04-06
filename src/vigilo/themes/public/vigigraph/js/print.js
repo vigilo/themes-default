@@ -1,3 +1,6 @@
+// Copyright (C) 2011-2012 CS-SI
+// License: GNU GPL v2 <http://www.gnu.org/licenses/gpl-2.0.html>
+
 window.addEvent('domready', function () {
     $('print').addEvent('click', function (e) {
         e.preventDefault();
