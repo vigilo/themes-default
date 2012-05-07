@@ -94,14 +94,14 @@ var GroupTree = new Class({
                 offset = continued["index"] - 1;
             }
             if (typeof data[type+"s"] != "undefined") {
-                $each(data[type+"s"], function(child) {
+                for (var j=0, child ; child = data[type+"s"][j] ; j++) {
                     // L'option subfolder est ajoutée par le "addItem".
                     // Pas de risque d'écrasement car "link" vaut "cancel".
                     this.addNode(child, subfolder, offset);
                     if (offset !== null) {
                         offset = offset + 1;
                     }
-                }, this);
+                }
             }
             if (data.continued_type == type) {
                 // on a cliqué sur un lien de continuation, il faut le
@@ -246,9 +246,9 @@ var GroupTree = new Class({
         }
         // http://userjs.org/help/tutorials/efficient-code
         for (var i=0, node ; node = parent_tree.nodes[i] ; i++) {
-            if (node.options.data
-                    && node.options.data.type == "continued"
-                    && node.options.data.for_type == type) {
+            if (node.options.data &&
+                    node.options.data.type == "continued" &&
+                    node.options.data.for_type == type) {
                 return {"index": i, "node": node};
             }
         }

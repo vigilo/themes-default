@@ -2,6 +2,9 @@ NAME := themes-default
 all: build
 include buildenv/Makefile.common.python
 MODULE := vigilo.themes
+JSFILES = src/vigilo/themes/public/common/js/*.js \
+		  src/vigilo/themes/public/vigigraph/js/*.js \
+		  src/vigilo/themes/public/vigimap/js/*.js
 
 install: $(PYTHON) build
 	$(PYTHON) setup.py install --record=INSTALLED_FILES
