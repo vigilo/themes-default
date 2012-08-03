@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: vigilo-themes-default 2.0.1\n"
 "Report-Msgid-Bugs-To: contact@projet-vigilo.org\n"
 "POT-Creation-Date: 2011-05-19 18:29+0200\n"
-"PO-Revision-Date: 2011-05-19 18:30+0200\n"
+"PO-Revision-Date: 2012-04-27 10:58+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: en <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -68,8 +68,8 @@ msgstr "Monitor freely"
 msgid "Login Form"
 msgstr "Login Form"
 
-#: src/vigilo/themes/templates/common/login.html:17
 #: src/vigilo/themes/templates/common/login.html:20
+#: src/vigilo/themes/templates/common/login.html:23
 #: src/vigilo/themes/templates/vigiadmin/master.html:26
 #: src/vigilo/themes/templates/vigiboard/master.html:23
 #: src/vigilo/themes/templates/vigigraph/master.html:26
@@ -77,11 +77,11 @@ msgstr "Login Form"
 msgid "Login"
 msgstr "Login"
 
-#: src/vigilo/themes/templates/common/login.html:18
+#: src/vigilo/themes/templates/common/login.html:21
 msgid "Username:"
 msgstr "Username:"
 
-#: src/vigilo/themes/templates/common/login.html:19
+#: src/vigilo/themes/templates/common/login.html:22
 msgid "Password:"
 msgstr "Password:"
 
@@ -240,7 +240,7 @@ msgstr "See the latest events impacting the network."
 #: src/vigilo/themes/templates/vigiadmin/index.html:29
 #: src/vigilo/themes/templates/vigimap/edition.html:8
 #: src/vigilo/themes/templates/vigimap/index.html:8
-#: src/vigilo/themes/templates/vigimap/main.html:84
+#: src/vigilo/themes/templates/vigimap/main.html:83
 msgid "VigiMap"
 msgstr "VigiMap"
 
@@ -252,8 +252,8 @@ msgstr "Watch over the state of your equipments from a map-oriented perspective.
 #: src/vigilo/themes/templates/vigigraph/graphslist.html:8
 #: src/vigilo/themes/templates/vigigraph/graphslist.html:16
 #: src/vigilo/themes/templates/vigigraph/index.html:11
-#: src/vigilo/themes/templates/vigigraph/main.html:77
-#: src/vigilo/themes/templates/vigigraph/main_simplified.html:44
+#: src/vigilo/themes/templates/vigigraph/main.html:87
+#: src/vigilo/themes/templates/vigigraph/main_simplified.html:51
 msgid "VigiGraph"
 msgstr "VigiGraph"
 
@@ -286,35 +286,35 @@ msgstr "Logout"
 msgid "Permissions"
 msgstr "Permissions"
 
-#: src/vigilo/themes/templates/vigiadmin/master.html:31
+#: src/vigilo/themes/templates/vigiadmin/master.html:30
 #: src/vigilo/themes/templates/vigiadmin/profile.html:12
 msgid "Profile"
 msgstr "Profile"
 
-#: src/vigilo/themes/templates/vigiadmin/master.html:38
+#: src/vigilo/themes/templates/vigiadmin/master.html:36
 #: src/vigilo/themes/templates/vigiboard/master.html:26
 #: src/vigilo/themes/templates/vigigraph/master.html:29
 #: src/vigilo/themes/templates/vigimap/master.html:28
 msgid "Logged in as:"
 msgstr "Logged in as:"
 
-#: src/vigilo/themes/templates/vigiadmin/profile.html:19
+#: src/vigilo/themes/templates/vigiadmin/profile.html:18
 msgid "Change password"
 msgstr "Change password"
 
-#: src/vigilo/themes/templates/vigiadmin/profile.html:21
+#: src/vigilo/themes/templates/vigiadmin/profile.html:20
 msgid "Old password:"
 msgstr "Old password:"
 
-#: src/vigilo/themes/templates/vigiadmin/profile.html:24
+#: src/vigilo/themes/templates/vigiadmin/profile.html:23
 msgid "New password:"
 msgstr "New password:"
 
-#: src/vigilo/themes/templates/vigiadmin/profile.html:27
+#: src/vigilo/themes/templates/vigiadmin/profile.html:26
 msgid "Confirmation:"
 msgstr "Confirmation:"
 
-#: src/vigilo/themes/templates/vigiadmin/profile.html:30
+#: src/vigilo/themes/templates/vigiadmin/profile.html:29
 msgid "Apply"
 msgstr "Apply"
 
@@ -636,7 +636,7 @@ msgid "Output"
 msgstr "Output"
 
 #: src/vigilo/themes/templates/vigiboard/raw_events_table.html:88
-#: src/vigilo/themes/templates/vigiboard/raw_events_table.html:152
+#: src/vigilo/themes/templates/vigiboard/raw_events_table.html:155
 msgid "History"
 msgstr "History"
 
@@ -661,16 +661,16 @@ msgid "Filter display"
 msgstr "Filter display"
 
 #: src/vigilo/themes/templates/vigiboard/toolbar.html:23
-#: src/vigilo/themes/templates/vigigraph/main.html:65
-#: src/vigilo/themes/templates/vigigraph/main_simplified.html:32
-#: src/vigilo/themes/templates/vigimap/main.html:73
+#: src/vigilo/themes/templates/vigigraph/main.html:74
+#: src/vigilo/themes/templates/vigigraph/main_simplified.html:38
+#: src/vigilo/themes/templates/vigimap/main.html:72
 msgid "Help"
 msgstr "Help"
 
 #: src/vigilo/themes/templates/vigiboard/toolbar.html:29
-#: src/vigilo/themes/templates/vigigraph/main.html:72
-#: src/vigilo/themes/templates/vigigraph/main_simplified.html:39
-#: src/vigilo/themes/templates/vigimap/main.html:79
+#: src/vigilo/themes/templates/vigigraph/main.html:82
+#: src/vigilo/themes/templates/vigigraph/main_simplified.html:46
+#: src/vigilo/themes/templates/vigimap/main.html:78
 msgid "Log out"
 msgstr "Log out"
 
@@ -705,13 +705,13 @@ msgid "Details"
 msgstr "Details"
 
 #: src/vigilo/themes/templates/vigiboard/plugins/details.html:9
-#: src/vigilo/themes/templates/vigiboard/plugins/details.html:76
+#: src/vigilo/themes/templates/vigiboard/plugins/details.html:84
 msgid "Event details"
 msgstr "Event details"
 
 #: src/vigilo/themes/templates/vigiboard/plugins/details.html:22
 #: src/vigilo/themes/templates/vigigraph/index.html:26
-#: src/vigilo/themes/templates/vigimap/main.html:138
+#: src/vigilo/themes/templates/vigimap/main.html:137
 msgid "loading..."
 msgstr "loading..."
 
@@ -750,6 +750,16 @@ msgstr "Events history for this supervised item"
 #: src/vigilo/themes/templates/vigiboard/plugins/details.html:59
 msgid "External links"
 msgstr "External links"
+
+#: src/vigilo/themes/templates/vigiboard/plugins/details.html:72
+#, fuzzy
+msgid "Maps"
+msgstr "Submaps"
+
+#: src/vigilo/themes/templates/vigiboard/plugins/details.html:186
+#, python-format
+msgid "More than %d map(s) found..."
+msgstr ""
 
 #: src/vigilo/themes/templates/vigiboard/plugins/hls.html:5
 msgid "Impacted High-Level Services"
@@ -819,27 +829,27 @@ msgstr "Edit all selected events"
 msgid "Select/Unselect all"
 msgstr "Select/Unselect all"
 
-#: src/vigilo/themes/templates/vigiboard/plugins/status.html:43
+#: src/vigilo/themes/templates/vigiboard/plugins/status.html:44
 msgid "Acknowledged"
 msgstr "Acknowledged"
 
-#: src/vigilo/themes/templates/vigiboard/plugins/status.html:45
+#: src/vigilo/themes/templates/vigiboard/plugins/status.html:46
 msgid "Acknowledged and Closed"
 msgstr "Acknowledged and Closed"
 
-#: src/vigilo/themes/templates/vigiboard/plugins/status.html:57
+#: src/vigilo/themes/templates/vigiboard/plugins/status.html:58
 msgid "Edit"
 msgstr "Edit"
 
-#: src/vigilo/themes/templates/vigiboard/plugins/status.html:57
+#: src/vigilo/themes/templates/vigiboard/plugins/status.html:58
 msgid "Edit this event"
 msgstr "Edit this event"
 
-#: src/vigilo/themes/templates/vigiboard/plugins/status.html:99
+#: src/vigilo/themes/templates/vigiboard/plugins/status.html:100
 msgid "Editing"
 msgstr "Editing"
 
-#: src/vigilo/themes/templates/vigiboard/plugins/status.html:122
+#: src/vigilo/themes/templates/vigiboard/plugins/status.html:123
 msgid "No events have been selected"
 msgstr "No events have been selected"
 
@@ -847,18 +857,18 @@ msgstr "No events have been selected"
 msgid "Example"
 msgstr "Example"
 
-#: src/vigilo/themes/templates/vigigraph/fullhostpage.html:10
-#: src/vigilo/themes/templates/vigigraph/fullhostpage.html:14
+#: src/vigilo/themes/templates/vigigraph/fullhostpage.html:11
+#: src/vigilo/themes/templates/vigigraph/fullhostpage.html:15
 #, python-format
 msgid "List of graphs for \"%s\""
 msgstr "List of graphs for \"%s\""
 
-#: src/vigilo/themes/templates/vigigraph/fullhostpage.html:18
+#: src/vigilo/themes/templates/vigigraph/fullhostpage.html:20
 #, python-format
 msgid "Monitoring page for \"%s\""
 msgstr "Monitoring page for \"%s\""
 
-#: src/vigilo/themes/templates/vigigraph/fullhostpage.html:52
+#: src/vigilo/themes/templates/vigigraph/fullhostpage.html:54
 #, python-format
 msgid "Graph '%(graph)s' on '%(host)s'"
 msgstr "Graph '%(graph)s' on '%(host)s'"
@@ -873,8 +883,8 @@ msgid "Vigilo search engine"
 msgstr "Vigilo search engine"
 
 #: src/vigilo/themes/templates/vigigraph/graphslist.html:9
-#: src/vigilo/themes/templates/vigigraph/searchhost.html:8
-#: src/vigilo/themes/templates/vigigraph/searchhost.html:12
+#: src/vigilo/themes/templates/vigigraph/searchhost.html:9
+#: src/vigilo/themes/templates/vigigraph/searchhost.html:13
 #: src/vigilo/themes/templates/vigigraph/searchhostform.html:8
 #: src/vigilo/themes/templates/vigigraph/searchhostform.html:12
 msgid "VigiGraph search"
@@ -895,24 +905,24 @@ msgstr "From %(start_date)s to %(end_date)s"
 msgid "Vigigraph search"
 msgstr "Vigigraph search"
 
-#: src/vigilo/themes/templates/vigigraph/main.html:59
+#: src/vigilo/themes/templates/vigigraph/main.html:66
 msgid "Print all"
 msgstr "Print all"
 
-#: src/vigilo/themes/templates/vigigraph/main.html:59
+#: src/vigilo/themes/templates/vigigraph/main.html:66
 msgid "Print all visible graphs"
 msgstr "Print all visible graphs"
 
-#: src/vigilo/themes/templates/vigigraph/searchhost.html:13
-#: src/vigilo/themes/templates/vigimap/main.html:113
+#: src/vigilo/themes/templates/vigigraph/searchhost.html:14
+#: src/vigilo/themes/templates/vigimap/main.html:112
 msgid "Results:"
 msgstr "Results:"
 
-#: src/vigilo/themes/templates/vigigraph/searchhost.html:17
+#: src/vigilo/themes/templates/vigigraph/searchhost.html:23
 msgid "Sup page"
 msgstr "Sup page"
 
-#: src/vigilo/themes/templates/vigigraph/searchhost.html:19
+#: src/vigilo/themes/templates/vigigraph/searchhost.html:25
 msgid "Metro page"
 msgstr "Metro page"
 
@@ -933,7 +943,7 @@ msgid "Unknown"
 msgstr "Unknown"
 
 #: src/vigilo/themes/templates/vigimap/legend.html:17
-#: src/vigilo/themes/templates/vigimap/main.html:109
+#: src/vigilo/themes/templates/vigimap/main.html:108
 msgid "Warning"
 msgstr "Warning"
 
@@ -972,24 +982,24 @@ msgstr "%(service)s on %(host)s"
 msgid "Graph for %(graph)s on %(host)s"
 msgstr "Graph for %(graph)s on %(host)s"
 
-#: src/vigilo/themes/templates/vigimap/main.html:67
-#: src/vigilo/themes/templates/vigimap/main.html:108
+#: src/vigilo/themes/templates/vigimap/main.html:66
+#: src/vigilo/themes/templates/vigimap/main.html:107
 msgid "Search"
 msgstr "Search"
 
-#: src/vigilo/themes/templates/vigimap/main.html:67
+#: src/vigilo/themes/templates/vigimap/main.html:66
 msgid "Search for a specific host/graph"
 msgstr "Search for a specific host/graph"
 
-#: src/vigilo/themes/templates/vigimap/main.html:98
+#: src/vigilo/themes/templates/vigimap/main.html:97
 msgid "Map:"
 msgstr "Map:"
 
-#: src/vigilo/themes/templates/vigimap/main.html:99
+#: src/vigilo/themes/templates/vigimap/main.html:98
 msgid "Search for a map (\"*\" for all, 100 max)"
 msgstr "Search for a map (\"*\" for all, 100 max)"
 
-#: src/vigilo/themes/templates/vigimap/main.html:109
+#: src/vigilo/themes/templates/vigimap/main.html:108
 msgid ""
 "Your search returned more than 100 results. Only the first 100 entries "
 "are displayed."
@@ -997,7 +1007,7 @@ msgstr ""
 "Your search returned more than 100 results. Only the first 100 entries "
 "are displayed."
 
-#: src/vigilo/themes/templates/vigimap/main.html:129
+#: src/vigilo/themes/templates/vigimap/main.html:126
 msgid "Your browser does not support the canvas element. Please upgrade."
 msgstr "Your browser does not support the canvas element. Please upgrade."
 
@@ -1014,17 +1024,17 @@ msgstr "Tags"
 msgid "Submaps"
 msgstr "Submaps"
 
-#: src/vigilo/themes/templates/vigimap/node.html:27
+#: src/vigilo/themes/templates/vigimap/node.html:28
 #, python-format
 msgid "Service name: %(service)s on %(host)s (%(address)s)"
 msgstr "Service name: %(service)s on %(host)s (%(address)s)"
 
-#: src/vigilo/themes/templates/vigimap/node.html:30
+#: src/vigilo/themes/templates/vigimap/node.html:32
 #, python-format
 msgid "Service name: %(service)s"
 msgstr "Service name: %(service)s"
 
-#: src/vigilo/themes/templates/vigimap/node.html:33
+#: src/vigilo/themes/templates/vigimap/node.html:36
 #, python-format
 msgid "Appliance name: %(host)s (%(address)s)"
 msgstr "Appliance name: %(host)s (%(address)s)"

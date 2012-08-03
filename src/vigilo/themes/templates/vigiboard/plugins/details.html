@@ -17,6 +17,15 @@
         plugin_header_functions[name] = details_header
         plugin_data_functions[name] = details_data
     ?>
+<script type="text/javascript">/*<![CDATA[*/
+    var plug_details_base = "${tg.url('/')}";
+    var plug_details_nb_links = ${nb_links};
+    var plug_details_vmap = "${tg.config['interfaces.vigimap'].rstrip('/')}";
+    var plug_details_max_maps = ${tg.config['max_maps']};
+    var plug_details_target = "${tg.config.get('links_target', '_blank')}";
+    var plug_details_name = "${name}";
+/*]]>*/</script>
+<script type="text/javascript" src="${tg.url('/js/plugins/details.js')}"></script>
 <div id="DetailsDialog">
     <div class="loading">
         <img alt="loading..." src="${tg.url('images/loading.gif')}" />
@@ -65,122 +74,14 @@
             </ul>
         </div>
     </div>
+
+    <div id="details_maps_container" style="display: none">
+        <hr />
+
+        <h2>Maps</h2>
+        <ul id="details_maps"></ul>
+    </div>
 </div>
-
-<script type="text/javascript">/*<![CDATA[*/
-window.details_dialog = null;
-
-window.addEvent("domready", function () {
-    /// HACK: voir notes sur window.search_dialog dans vigiboard.html.
-    window.details_dialog = new Jx.Dialog({
-        label: "${l_('Event details')}",
-        modal: false,
-        resize: false,
-        move: true,
-        content: 'DetailsDialog',
-        onOpen: window.dlg_open_handler,
-        onClose: window.dlg_close_handler,
-        width: 275,
-        // On essaye d'obtenir une hauteur correcte pour le dialogue,
-        // en fonction du nombre de liens externes configurés.
-        height: ${[190, 220][nb_links != 0] + nb_links * 14},
-        closed: true,
-        horizontal: 'right left',
-        vertical: 'top top'
-    });
-    window.details_dialog.toggleCollapse();
-    window.details_dialog.toggleCollapse();
-
-    function remove_selection() {
-        $$$$('.selectedRow').removeClass('selectedRow');
-    }
-
-    window.details_dialog.addEvent('close', remove_selection);
-
-    $$$$('.Details_Link').each(function (el) {
-        el.addEvent('click', function (item) {
-            remove_selection();
-
-            // On supprime les anciens états, pour ne pas induire en erreur l'utilisateur
-            // dans le cas où les nouvelles infos prennent un peu de temps à charger.
-            $$('DetailsDialog_initial_state').set('text', '');
-            $$('DetailsDialog_current_state').set('text', '');
-            $$('DetailsDialog_peak_state').set('text', '');
-
-            // On supprime également un éventuel message d'erreur survenu
-            // lors d'un précédent affichage de la boîte de dialogue.
-            $$$$('.loading-error').setStyle('display', 'none');
-
-            // On affiche une animation pendant toute la durée du chargement
-            $$$$('.loading').setStyle('display', 'block');
-
-            var idd = item.get('href').substring(1);
-            var req = new Request.JSON({
-                link: 'cancel',
-                url: '${tg.url("/plugin_json")}',
-                onSuccess: function (details, raw) {
-                    var i;
-
-                    $$('DetailsDialog_initial_state').set('text', details.initial_state);
-                    $$('DetailsDialog_current_state').set('text', details.current_state);
-                    $$('DetailsDialog_peak_state').set('text', details.peak_state);
-                    $$('DetailsDialog_event').set('href', "${tg.url('/event/')}?idevent=" + encodeURIComponent(details.idcause));
-                    $$('DetailsDialog_masked').set('href', "${tg.url('/masked_events/')}?idcorrevent=" + encodeURIComponent(details.idcorrevent));
-                    if (details.service) {
-                        $$('DetailsDialog_item').set('href', "${tg.url('/item/1/')}?host=" +
-                            encodeURIComponent(details.host) + "&service=" +
-                            encodeURIComponent(details.service));
-                    } else {
-                        $$('DetailsDialog_item').set('href', "${tg.url('/item/1/')}?host=" +
-                            encodeURIComponent(details.host));
-                    }
-                    for (i = 0; i < ${len(tg.config['vigiboard_links.eventdetails'])}; i++) {
-                        var index = i.toString();
-                        if (!$$chk(details.eventdetails[index])) {
-                            $$('DetailsDialog_'+index).getParent().hide();
-                            continue;
-                        }
-                        $$('DetailsDialog_'+index).set({
-                            'href': details.eventdetails[index].url,
-                            'target': details.eventdetails[index].target
-                        });
-                        $$('DetailsDialog_'+index).getParent().show();
-                    }
-                    window.details_dialog.setBusy(false);
-
-                    // Arrêt de l'animation de chargement
-                    $$$$('.loading').setStyle('display', 'none');
-
-                },
-                onFailure: function (xhr) {
-                    window.details_dialog.setBusy(false);
-
-                    // Arrêt de l'animation de chargement
-                    $$$$('.loading').setStyle('display', 'none');
-
-                    // On affiche un message indiquant qu'une
-                    // erreur est survenue durant le chargement
-                    $$$$('.loading-error').setStyle('display', 'block');
-
-                    remove_selection();
-                    if (!xhr.responseText)
-                        return;
-                    var res = JSON.decode(xhr.responseText, true);
-                    if (res == null || !res.errors)
-                        return;
-                    alert(res.errors.join('\n'));
-                }
-            });
-            window.details_dialog.options.parent = item;
-            // Permet d'afficher l'événement sélectionné autrement.
-            item.getParent('tr').addClass('selectedRow');
-            window.details_dialog.open.bind(window.details_dialog)();
-            window.details_dialog.setBusy(true);
-            req.post({plugin_name: '${name}', idcorrevent: idd});
-        }.bind(this, el));
-    }, window.details_dialog);
-});
-/*]]>*/</script>
 </py:def>
 
 </html>
