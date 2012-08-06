@@ -29,6 +29,7 @@
 
     <script type="text/javascript">
         var can_edit = ${defined('can_edit') and can_edit or 0};
+        var is_manager = ${defined('is_manager') and is_manager or 0};
         var show_maptree = ${int(asbool(tg.config.get('show_maptree', True)))};
     </script>
 
