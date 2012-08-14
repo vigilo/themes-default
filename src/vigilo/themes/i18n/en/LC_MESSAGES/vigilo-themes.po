@@ -1,16 +1,16 @@
 # English translations for vigilo-themes-default.
-# Copyright (C) 2011 ORGANIZATION
+# Copyright (C) 2012 ORGANIZATION
 # This file is distributed under the same license as the
 # vigilo-themes-default
 # project.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2011.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2012.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: vigilo-themes-default 2.0.1\n"
+"Project-Id-Version: vigilo-themes-default 2.0.17\n"
 "Report-Msgid-Bugs-To: contact@projet-vigilo.org\n"
-"POT-Creation-Date: 2011-05-19 18:29+0200\n"
-"PO-Revision-Date: 2012-04-27 10:58+0200\n"
+"POT-Creation-Date: 2012-08-14 14:48+0200\n"
+"PO-Revision-Date: 2012-08-14 14:48+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: en <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -22,6 +22,15 @@ msgstr ""
 #: src/vigilo/themes/public/common/js/grouptree.js:236
 msgid "Loading..."
 msgstr "Loading..."
+
+#: src/vigilo/themes/public/vigiboard/js/plugins/details.js:9
+#: src/vigilo/themes/templates/vigiboard/plugins/details.html:9
+msgid "Event details"
+msgstr "Event details"
+
+#: src/vigilo/themes/public/vigiboard/js/plugins/details.js:111
+msgid "More than {max} map(s) found..."
+msgstr "More than {max} map(s) found..."
 
 #: src/vigilo/themes/public/vigimap/js/search.js:61
 msgid "Search for a map"
@@ -700,66 +709,55 @@ msgid "You are in Search mode, click here to return to the initial mode."
 msgstr "You are in Search mode, click here to return to the initial mode."
 
 #: src/vigilo/themes/templates/vigiboard/plugins/details.html:9
-#: src/vigilo/themes/templates/vigiboard/plugins/details.html:47
+#: src/vigilo/themes/templates/vigiboard/plugins/details.html:56
 msgid "Details"
 msgstr "Details"
 
-#: src/vigilo/themes/templates/vigiboard/plugins/details.html:9
-#: src/vigilo/themes/templates/vigiboard/plugins/details.html:84
-msgid "Event details"
-msgstr "Event details"
-
-#: src/vigilo/themes/templates/vigiboard/plugins/details.html:22
+#: src/vigilo/themes/templates/vigiboard/plugins/details.html:31
 #: src/vigilo/themes/templates/vigigraph/index.html:26
 #: src/vigilo/themes/templates/vigimap/main.html:137
 msgid "loading..."
 msgstr "loading..."
 
-#: src/vigilo/themes/templates/vigiboard/plugins/details.html:25
+#: src/vigilo/themes/templates/vigiboard/plugins/details.html:34
 msgid "Error while loading data..."
 msgstr "Error while loading data..."
 
-#: src/vigilo/themes/templates/vigiboard/plugins/details.html:27
+#: src/vigilo/themes/templates/vigiboard/plugins/details.html:36
 msgid "State info"
 msgstr "State info"
 
-#: src/vigilo/themes/templates/vigiboard/plugins/details.html:29
+#: src/vigilo/themes/templates/vigiboard/plugins/details.html:38
 msgid "Initial State:"
 msgstr "Initial State:"
 
-#: src/vigilo/themes/templates/vigiboard/plugins/details.html:34
+#: src/vigilo/themes/templates/vigiboard/plugins/details.html:43
 msgid "Current State:"
 msgstr "Current State:"
 
-#: src/vigilo/themes/templates/vigiboard/plugins/details.html:39
+#: src/vigilo/themes/templates/vigiboard/plugins/details.html:48
 msgid "Peak State:"
 msgstr "Peak State:"
 
-#: src/vigilo/themes/templates/vigiboard/plugins/details.html:50
+#: src/vigilo/themes/templates/vigiboard/plugins/details.html:59
 msgid "Detailed history for this event"
 msgstr "Detailed history for this event"
 
-#: src/vigilo/themes/templates/vigiboard/plugins/details.html:51
+#: src/vigilo/themes/templates/vigiboard/plugins/details.html:60
 msgid "Masked events for this event"
 msgstr "Masked events for this event"
 
-#: src/vigilo/themes/templates/vigiboard/plugins/details.html:52
+#: src/vigilo/themes/templates/vigiboard/plugins/details.html:61
 msgid "Events history for this supervised item"
 msgstr "Events history for this supervised item"
 
-#: src/vigilo/themes/templates/vigiboard/plugins/details.html:59
+#: src/vigilo/themes/templates/vigiboard/plugins/details.html:68
 msgid "External links"
 msgstr "External links"
 
-#: src/vigilo/themes/templates/vigiboard/plugins/details.html:72
-#, fuzzy
+#: src/vigilo/themes/templates/vigiboard/plugins/details.html:81
 msgid "Maps"
-msgstr "Submaps"
-
-#: src/vigilo/themes/templates/vigiboard/plugins/details.html:186
-#, python-format
-msgid "More than %d map(s) found..."
-msgstr ""
+msgstr "Maps"
 
 #: src/vigilo/themes/templates/vigiboard/plugins/hls.html:5
 msgid "Impacted High-Level Services"
