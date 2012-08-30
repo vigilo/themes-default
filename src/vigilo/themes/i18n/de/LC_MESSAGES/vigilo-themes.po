@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: vigilo-themes-default 2.0.0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2010-11-19 12:43+0100\n"
-"PO-Revision-Date: 2012-04-27 10:58+0200\n"
+"PO-Revision-Date: 2012-08-14 14:48+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: de_DE <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -23,6 +23,15 @@ msgstr ""
 #, fuzzy
 msgid "Loading..."
 msgstr "wird geladen..."
+
+#: src/vigilo/themes/public/vigiboard/js/plugins/details.js:9
+#: src/vigilo/themes/templates/vigiboard/plugins/details.html:9
+msgid "Event details"
+msgstr "Ereignis-Details"
+
+#: src/vigilo/themes/public/vigiboard/js/plugins/details.js:111
+msgid "More than {max} map(s) found..."
+msgstr ""
 
 #: src/vigilo/themes/public/vigimap/js/search.js:61
 msgid "Search for a map"
@@ -715,66 +724,56 @@ msgstr ""
 " zurückzukehren."
 
 #: src/vigilo/themes/templates/vigiboard/plugins/details.html:9
-#: src/vigilo/themes/templates/vigiboard/plugins/details.html:47
+#: src/vigilo/themes/templates/vigiboard/plugins/details.html:56
 msgid "Details"
 msgstr "Details"
 
-#: src/vigilo/themes/templates/vigiboard/plugins/details.html:9
-#: src/vigilo/themes/templates/vigiboard/plugins/details.html:84
-msgid "Event details"
-msgstr "Ereignis-Details"
-
-#: src/vigilo/themes/templates/vigiboard/plugins/details.html:22
+#: src/vigilo/themes/templates/vigiboard/plugins/details.html:31
 #: src/vigilo/themes/templates/vigigraph/index.html:26
 #: src/vigilo/themes/templates/vigimap/main.html:137
 msgid "loading..."
 msgstr "wird geladen..."
 
-#: src/vigilo/themes/templates/vigiboard/plugins/details.html:25
+#: src/vigilo/themes/templates/vigiboard/plugins/details.html:34
 #, fuzzy
 msgid "Error while loading data..."
 msgstr "Fehler beim Abrufen der Daten"
 
-#: src/vigilo/themes/templates/vigiboard/plugins/details.html:27
+#: src/vigilo/themes/templates/vigiboard/plugins/details.html:36
 msgid "State info"
 msgstr "Status-Info"
 
-#: src/vigilo/themes/templates/vigiboard/plugins/details.html:29
+#: src/vigilo/themes/templates/vigiboard/plugins/details.html:38
 msgid "Initial State:"
 msgstr "Ursprünglicher Status:"
 
-#: src/vigilo/themes/templates/vigiboard/plugins/details.html:34
+#: src/vigilo/themes/templates/vigiboard/plugins/details.html:43
 msgid "Current State:"
 msgstr "Aktueller Status:"
 
-#: src/vigilo/themes/templates/vigiboard/plugins/details.html:39
+#: src/vigilo/themes/templates/vigiboard/plugins/details.html:48
 msgid "Peak State:"
 msgstr "Höchster Status:"
 
-#: src/vigilo/themes/templates/vigiboard/plugins/details.html:50
+#: src/vigilo/themes/templates/vigiboard/plugins/details.html:59
 msgid "Detailed history for this event"
 msgstr "Detaillierter Verlauf dieses Ereignisses"
 
-#: src/vigilo/themes/templates/vigiboard/plugins/details.html:51
+#: src/vigilo/themes/templates/vigiboard/plugins/details.html:60
 msgid "Masked events for this event"
 msgstr "Maskierte Ereignisse dieses Ereignisses"
 
-#: src/vigilo/themes/templates/vigiboard/plugins/details.html:52
+#: src/vigilo/themes/templates/vigiboard/plugins/details.html:61
 msgid "Events history for this supervised item"
 msgstr "Ereignisverlauf dieses überwachten Elements"
 
-#: src/vigilo/themes/templates/vigiboard/plugins/details.html:59
+#: src/vigilo/themes/templates/vigiboard/plugins/details.html:68
 msgid "External links"
 msgstr "Externe Links"
 
-#: src/vigilo/themes/templates/vigiboard/plugins/details.html:72
+#: src/vigilo/themes/templates/vigiboard/plugins/details.html:81
 msgid "Maps"
 msgstr "Karten"
-
-#: src/vigilo/themes/templates/vigiboard/plugins/details.html:186
-#, python-format
-msgid "More than %d map(s) found..."
-msgstr ""
 
 #: src/vigilo/themes/templates/vigiboard/plugins/hls.html:5
 msgid "Impacted High-Level Services"
@@ -1082,3 +1081,4 @@ msgstr "Sind Sie sicher, dass diese Downtime gelöscht werden soll?"
 #, python-format
 msgid "Related to %(parent_obj)s"
 msgstr ""
+
