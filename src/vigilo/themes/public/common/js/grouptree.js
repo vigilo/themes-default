@@ -175,6 +175,7 @@ var GroupTree = new Class({
                     subfolder: subfolder
                 }).options.subfolder = subfolder;
             }
+            this.fireEvent("nodedisclosed", item);
         }.bind(this));
         subfolder.addEvent("click", function() {
             this.fireEvent("groupClick", item);
