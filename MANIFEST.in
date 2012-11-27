@@ -9,6 +9,7 @@ include COPYING.txt
 
 graft doc
 graft pkg
+graft debian
 
 include jsl.cfg
 include babeljs.py
