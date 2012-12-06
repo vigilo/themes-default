@@ -61,7 +61,7 @@
 </py:match>
 
 <py:match path="body" once="true" py:with="body_attr = dict(select('@*'))">
-<?python body_attr.update(dict(style='font-size:' + tg.session.get('fontsize', '10px') + ';' + body_attr.get('style', ''))) ?>
+<?python body_attr.update(dict(style='font-size:' + tg.session.get('fontsize', tg.config.get('fontsize.medium', '10px')) + ';' + body_attr.get('style', ''))) ?>
 <body py:attrs="body_attr">
 
 ${toolbar()}

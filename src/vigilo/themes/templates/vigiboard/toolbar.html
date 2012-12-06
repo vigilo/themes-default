@@ -32,13 +32,13 @@
     </div>
 
     <div class="header_item" id="font_size_selector">
-        <a href="javascript:change_fontsize('5px')">
+        <a href="javascript:change_fontsize('${tg.config.get('fontsize.small', '5px')}')">
             <img alt="Default font size" title="Default font size" src="${tg.url('/images/icn_text_sm.png')}" />
         </a>
-        <a href="javascript:change_fontsize('10px')">
+        <a href="javascript:change_fontsize('${tg.config.get('fontsize.medium', '10px')}')">
             <img alt="Medium font size" title="Medium font size" src="${tg.url('/images/icn_text_md.png')}" />
         </a>
-        <a href="javascript:change_fontsize('25px')">
+        <a href="javascript:change_fontsize('${tg.config.get('fontsize.large', '25px')}')">
             <img alt="Large font size" title="Large font size" src="${tg.url('/images/icn_text_lg.png')}" />
         </a>
     </div>
