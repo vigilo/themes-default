@@ -8,7 +8,7 @@
 
 <td class="plugin_${name}" py:def="masked_events_data(name, instance, data, plugin_data)">
     <!--! plugin_data contient le nombre d'événements masqués. -->
-    <a py:strip="not plugin_data" href="/masked_events/${data[0].idcorrevent}">${plugin_data}</a>
+    <a py:strip="not plugin_data" href="/masked_events/${data['id']}">${plugin_data}</a>
 </td>
 
 <py:def function="plugin_template(name, instance)">

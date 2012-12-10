@@ -5,9 +5,7 @@
 <th id="plugin_${name}" class="plugin_${name}" py:def="occurrences_header(name, instance)" title="Occurrences count">#</th>
 
 <py:def function="occurrences_data(name, instance, data, plugin_data)">
-    <py:with vars="state = StateName.value_to_statename(data[0].cause.current_state)">
-        <td class="plugin_${name} ${state}">${data[0].occurrence}</td>
-    </py:with>
+    <td class="plugin_${name} ${data['state']}">${data['occurrences']}</td>
 </py:def>
 
 <py:def function="plugin_template(name, instance)">
@@ -18,4 +16,3 @@
 </py:def>
 
 </html>
-

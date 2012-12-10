@@ -176,14 +176,9 @@
 
             <tr py:when="0" py:for="(index, event) in enumerate(page.items)" class="${['odd', 'even'][index % 2]}">
                 <py:for each="(plugin_name, plugin_instance) in config['columns_plugins']">
-                    <py:choose test="plugins_data.has_key(plugin_name)">
-                        <py:when test="True">
-                            ${plugin_data_functions[plugin_name](plugin_name, plugin_instance, event, plugins_data[plugin_name][event[0].idcorrevent])}
-                        </py:when>
-                        <py:otherwise>
-                            ${plugin_data_functions[plugin_name](plugin_name, plugin_instance, event, None)}
-                        </py:otherwise>
-                    </py:choose>
+                    ${plugin_data_functions[plugin_name](plugin_name, plugin_instance,
+                                                         plugin_instance.get_data(event),
+                                                         plugins_data[plugin_name].get(event[0].idcorrevent))}
                 </py:for>
             </tr>
         </tbody>

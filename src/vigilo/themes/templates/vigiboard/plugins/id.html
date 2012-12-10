@@ -6,7 +6,7 @@
 ID
 </th>
 
-<td class="plugin_${name}" py:def="id_data(name, instance, data, plugin_data)">${data[0].idcorrevent}</td>
+<td class="plugin_${name}" py:def="id_data(name, instance, data, plugin_data)">${data['id']}</td>
 
 <py:def function="plugin_template(name, instance)">
     <?python
@@ -16,4 +16,3 @@ ID
 </py:def>
 
 </html>
-

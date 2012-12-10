@@ -4,7 +4,7 @@
 
 <th id="plugin_${name}" class="plugin_${name}" py:def="servicename_header(name, instance)">Servicename</th>
 
-<td class="plugin_${name}" py:def="servicename_data(name, instance, data, plugin_data)">${data.servicename}</td>
+<td class="plugin_${name}" py:def="servicename_data(name, instance, data, plugin_data)">${data['servicename']}</td>
 
 <py:def function="plugin_template(name, instance)">
     <?python
@@ -14,4 +14,3 @@
 </py:def>
 
 </html>
-

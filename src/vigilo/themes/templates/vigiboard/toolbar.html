@@ -12,6 +12,9 @@
     </span>
 
     <div class="header_item">
+        <a href="${tg.url('/index.csv?%s') % tg.request.query_string}">
+            <img src="${tg.url('/images/document-export.png')}" alt="Export CSV" title="Export CSV" />
+        </a>
         <a href="${tg.url('/')}">
             <img src="${tg.url('/images/home.png')}" alt="Home" title="Home" />
         </a>

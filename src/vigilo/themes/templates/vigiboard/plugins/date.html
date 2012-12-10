@@ -8,17 +8,16 @@
 </th>
 
 <py:def function="date_data(name, instance, data, plugin_data)">
-    <?python from tg.i18n import get_lang ?>
     <?python from babel import Locale ?>
+    <?python from babel.dates import format_datetime ?>
+    <?python from tg.i18n import get_lang ?>
     <?python from vigilo.turbogears.helpers import get_locales ?>
-    <!--! get_lang() renvoie None durant les tests unitaires. -->
-    <py:with vars="state = StateName.value_to_statename(data[0].cause.current_state);
-        locale = Locale.negotiate(get_lang() or ['en'], get_locales('vigiboard'), sep='-')">
-        <td class="plugin_${name} ${state}">
-        ${data[0].cause.get_date('timestamp', locale)}<br/>
-        [${data[0].get_since_date('timestamp_active', locale)}]
-        </td>
-    </py:with>
+    <!--! Note: get_lang() renvoie None durant les tests unitaires. -->
+    <td class="plugin_${name} ${data['state']}"
+        py:with="locale = Locale.negotiate(get_lang() or ['en'], get_locales('vigiboard'), sep='-'); hours, minutes = divmod(data['duration'].seconds / 60, 60)">
+    ${format_datetime(data['date'], format='medium', locale=locale)}<br/>
+    [${"%dd %dh %d'" % (data['duration'].days , hours , minutes)}]
+    </td>
 </py:def>
 
 <py:def function="plugin_template(name, instance)">

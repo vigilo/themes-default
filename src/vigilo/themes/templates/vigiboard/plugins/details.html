@@ -5,9 +5,8 @@
 <th id="plugin_${name}" class="plugin_${name}" py:def="details_header(name, instance)"></th>
 
 <td class="plugin_${name}" py:def="details_data(name, instance, data, plugin_data)">
-<a href="#${data[0].idcorrevent}" class="Details_Link">
-    <img alt="Details" title="Event details"
-        src="${tg.url('/images/%s2.png' % StateName.value_to_statename(data[0].cause.current_state))}" />
+<a href="#${data['id']}" class="Details_Link">
+    <img alt="Details" title="Event details" src="${tg.url('/images/%s2.png' % data['state'])}" />
 </a>
 </td>
 

@@ -27,45 +27,35 @@
 
 <py:def function="status_data(name, instance, data, plugin_data)">
     <?python from vigilo.models.tables import CorrEvent ?>
-    <py:with vars="cause = data[0].cause; ack = data[0].ack">
-    <py:with vars="state = StateName.value_to_statename(cause.current_state)">
-
     <td class="plugin_${name}">
-    <a py:if="data[0].trouble_ticket" id="plugin_${name}_tt_${data[0].idcorrevent}" href="${
-        tg.config['vigiboard_links.tt'] % {
-            'idcorrevent': data[0].idcorrevent,
-            'host': data[1],
-            'service': data[2],
-            'tt': data[0].trouble_ticket
-        }}">[${data[0].trouble_ticket}]</a>
+    <a py:if="data['trouble_ticket_id']" id="plugin_${name}_tt_${data['id']}"
+        href="${data['trouble_ticket_link']}">[${data['trouble_ticket_id']}]</a>
     </td>
 
     <td class="plugin_${name}" py:choose="">
-        <img py:when="ack == CorrEvent.ACK_KNOWN" src="${tg.url('/images/checked.png')}"
+        <img py:when="data['ack'] == CorrEvent.ACK_KNOWN" src="${tg.url('/images/checked.png')}"
             alt="Acknowledged" title="Acknowledged" />
-        <img py:when="ack == CorrEvent.ACK_CLOSED" src="${tg.url('/images/crossed.png')}"
+        <img py:when="data['ack'] == CorrEvent.ACK_CLOSED" src="${tg.url('/images/crossed.png')}"
             alt="Acknowledged and Closed" title="Acknowledged and Closed" />
     </td>
 
     <py:choose test="">
-        <py:when test="ack == CorrEvent.ACK_CLOSED and state == u'OK'">
+        <py:when test="data['ack'] == CorrEvent.ACK_CLOSED and data['state'] == u'OK'">
             <td class="plugin_${name}" colspan="2" py:choose=""></td>
         </py:when>
 
         <py:otherwise>
-            <td class="plugin_${name} ${state}">
-                <a class="Edit_EventsLien" href="#${data[0].idcorrevent}">
+            <td class="plugin_${name} ${data['state']}">
+                <a class="Edit_EventsLien" href="#${data['id']}">
                     <img src="${tg.url('/images/icon_page_edit.png')}" alt="Edit" title="Edit this event"/>
                 </a>
             </td>
 
-            <td class="plugin_${name} ${state}">
-                <input type="checkbox" class="Edit_EventsCheckBox" value="${data[0].idcorrevent}"/>
+            <td class="plugin_${name} ${data['state']}">
+                <input type="checkbox" class="Edit_EventsCheckBox" value="${data['id']}"/>
             </td>
         </py:otherwise>
     </py:choose>
-    </py:with>
-    </py:with>
 </py:def>
 
 <py:def function="plugin_template(name, instance)">
