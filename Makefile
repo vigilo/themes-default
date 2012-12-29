@@ -11,7 +11,10 @@ install: $(PYTHON) build
 install_pkg: $(PYTHON) build
 	$(PYTHON) setup.py install --single-version-externally-managed --root=$(DESTDIR)
 
-#tests: tests_nose
+# Même si vigilo-themes-default ne contient pas de tests,
+# l'utilisation tests_nose permet de compiler les traductions.
+# (les paquets Debian générés sont incomplets sans ça)
+tests: tests_nose
 doc: apidoc
 clean: clean_python
 
