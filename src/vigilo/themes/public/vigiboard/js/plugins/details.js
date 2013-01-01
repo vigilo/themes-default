@@ -56,10 +56,10 @@ window.addEvent("domready", function () {
                     var i;
                     var newItem;
                     var newLink;
-                    var maps = new Hash(details.maps);
-                    var nbMaps = maps.getLength();
+                    var nbMaps = details.maps.length;
                     var details_maps = $('details_maps');
                     var idMaps;
+                    var map_info;
 
                     if (plug_details_max_maps >= 0 && nbMaps > plug_details_max_map)
                         nbMaps = plug_details_max_maps;
@@ -78,33 +78,39 @@ window.addEvent("domready", function () {
                             encodeURIComponent(details.host));
                     }
                     for (i = 0; i < plug_details_nb_links; i++) {
-                        var index = i.toString();
+                        var index;
+                        var link_obj;
+                        index = i.toString();
+                        link_obj = $('DetailsDialog_' + index);
                         if (!$chk(details.eventdetails[index])) {
-                            $('DetailsDialog_'+index).getParent().hide();
+                            link_obj.getParent().hide();
                             continue;
                         }
-                        $('DetailsDialog_'+index).set({
+                        link_obj.set({
                             'href': details.eventdetails[index].url,
                             'target': details.eventdetails[index].target
                         });
-                        $('DetailsDialog_'+index).getParent().show();
+                        link_obj.getParent().show();
                     }
 
                     details_maps.empty();
-                    idMaps = maps.getKeys();
-                    for (i = 0; i < nbMaps; i++) {
+                    /* details.maps contient un tableau de tableaux,
+                     * de la forme : [[1, "foo"], [2, "bar"]].
+                     * Le 1er élément de chaque sous-tableau correspond
+                     * à l'identifiant de la carte, le 2nd à son libellé. */
+                    details.maps.each(function (map_info) {
                         newItem = new Element('li');
                         newLink = new Element('a', {
-                            href: plug_details_vmap + '/#mapid=' + encodeURIComponent(idMaps[i]),
-                            html: maps.get(idMaps[i]),
+                            href: plug_details_vmap + '/#mapid=' + encodeURIComponent(map_info[0]),
+                            text: map_info[1],
                             target: plug_details_target
                         });
                         newItem.adopt(newLink);
                         details_maps.adopt(newItem);
-                    }
+                    });
                     // Il y avait plus de 10 cartes.
                     // On affiche un message le signalant.
-                    if (maps.getLength() > nbMaps) {
+                    if (details.maps.length > nbMaps) {
                         newItem = new Element('li', {
                             styles: {'font-weight': 'bold'}
                         });
