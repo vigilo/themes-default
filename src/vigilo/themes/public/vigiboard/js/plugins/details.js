@@ -1,3 +1,6 @@
+// Copyright (C) 2009-2013 CS-SI
+// License: GNU GPL v2 <http://www.gnu.org/licenses/gpl-2.0.html>
+
 window.details_dialog = null;
 
 window.addEvent("domready", function () {
