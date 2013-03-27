@@ -17,12 +17,12 @@
                 <td class="hostname">&#x2014; ${host}</td>
                 <td><a href="${tg.url('/nagios/%s/cgi-bin/status.cgi' %
                                 urllib2.quote(host.encode('utf-8'), ''), {
-                        'host_': host,
+                        'host': host,
                         'style': 'detail',
                         'supNav': 1,
                     })}">Sup page</a></td>
                 <td> - </td>
-                <td><a href="${tg.url('/rpc/fullHostPage', { 'host_': host })}">Metro page</a></td>
+                <td><a href="${tg.url('/rpc/fullHostPage', {'host': host})}">Metro page</a></td>
             </tr>
         </table>
         ${tmpl_context.paginators.hosts.pager()}

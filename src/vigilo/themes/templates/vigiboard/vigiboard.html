@@ -70,8 +70,8 @@ ${toolbar()}
     <div py:strip="True" py:if="flash" py:content="XML(flash)" />
 </py:with>
 
-<div style="display: none" py:with="copy = search.copy(); dummy = copy.update(host=copy.pop('host_', None))">
-    ${search_form(copy)}
+<div style="display: none">
+    ${search_form(search)}
 </div>
 
 <script type="text/javascript">

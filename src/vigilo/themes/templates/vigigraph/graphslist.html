@@ -10,6 +10,7 @@
         title="VigiGraph search" href="${tg.url('/rpc/getOpenSearch')}"/>
 </head>
 
+<?python import urllib2 ?>
 <body>
 <div>
     <ul class="graphslist">
@@ -24,13 +25,14 @@
                 'start_date': graph['start_date'],
                 'end_date': graph['end_date'],
             }}</p>
-            <img src="${tg.url('/vigirrd/%s/graph.png' % graph['host'],
-                host_=graph['host'],
+            <img src="${tg.url('/vigirrd/%s/graph.png' %
+                urllib2.quote(graph['host'].encode('utf-8'), ''), {
+                host=graph['host'],
                 graphtemplate=graph['graph'],
                 start=graph['start'],
                 duration=graph['duration'],
                 nocache=graph['nocache'],
-            )}" border="0" alt=""></img>
+            })}" border="0" alt=""></img>
         </li>
     </ul>
 </div>
