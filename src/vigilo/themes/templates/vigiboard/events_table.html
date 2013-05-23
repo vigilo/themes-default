@@ -60,7 +60,7 @@
                              </a>
 
                             <a py:otherwise=""
-                                href="${tg.url('/', {'params': fixed_search, 'page': page.previous_page})}">
+                                href="${tg.url('/', params=fixed_search, page=page.previous_page)}">
                                 <img src="${tg.url('/images/top_left_arrow.png')}" alt="Previous" title="Previous page"/>
                              </a>
                         </py:choose>
@@ -79,7 +79,7 @@
                              </a>
 
                              <a py:otherwise=""
-                                href="${tg.url('/', {'params': fixed_search, 'page': page.next_page})}">
+                                href="${tg.url('/', params=fixed_search, page=page.next_page)}">
                                 <img src="${tg.url('/images/top_right_arrow.png')}" alt="Next" title="Next page"/>
                              </a>
                         </py:choose>
@@ -126,7 +126,7 @@
                              </a>
 
                             <a py:otherwise=""
-                                href="${tg.url('/', {'params': fixed_search, 'page': page.previous_page})}">
+                                href="${tg.url('/', params=fixed_search, page=page.previous_page)}">
                                 <img src="${tg.url('/images/bottom_left_arrow.png')}" alt="Previous" title="Previous page"/>
                             </a>
                         </py:choose>
@@ -145,7 +145,7 @@
                              </a>
 
                             <a py:otherwise=""
-                                href="${tg.url('/', {'params': fixed_search, 'page': page.next_page})}">
+                                href="${tg.url('/', params=fixed_search, page=page.next_page)}">
                                 <img src="${tg.url('/images/bottom_right_arrow.png')}" alt="Next" title="Next page"/>
                              </a>
                         </py:choose>

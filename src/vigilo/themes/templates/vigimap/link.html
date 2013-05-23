@@ -13,7 +13,6 @@
     </py:choose>
 
     <?python import time ?>
-    <?python import urllib2 ?>
     <!--!
         On construit un lien qui va permettre de charger
         automatiquement ce graphe dans VigiGraph.
@@ -29,7 +28,7 @@
     -->
     <p py:if="graph" py:choose="" py:with="prefix = len(tg.url('/'))+1; graph_url = tg.url('/', {
                     'g': tg.url('/', {
-                        'host': host,
+                        'host_': host,
                         'graph': graph,
                         'top': 0,
                         'left': 0,
@@ -38,25 +37,23 @@
         <a py:when="tg.config.get('vigigraph')" target="_blank" href="${tg.url(
             tg.config['vigigraph'].rstrip('/') +
             '/#graphs[0]=%s&amp;safety=1' % graph_url)}">
-            <img src="${tg.url('/vigirrd/%s/graph.png' %
-                urllib2.quote(host.encode('utf-8'), ''), {
-                'host': host,
-                'graphtemplate': graph,
-                'start': int(time.time() - duration),
-                'duration': duration,
-                'details': 0,
-            })}"
+            <img src="${tg.url('/vigirrd/%s/graph.png' % host,
+                host_=host,
+                graphtemplate=graph,
+                start=int(time.time() - duration),
+                duration=duration,
+                details=0,
+            )}"
             alt="${_('Graph for %(graph)s on %(host)s') %
                 {'graph': graph, 'host': host}}" />
         </a>
-        <img py:otherwise="" src="${tg.url('/vigirrd/%s/graph.png' %
-            urllib2.quote(host.encode('utf-8'), ''), {
-            'host': host,
-            'graphtemplate': graph,
-            'start': int(time.time() - duration),
-            'duration': duration,
-            'details': 0,
-        })}"
+        <img py:otherwise="" src="${tg.url('/vigirrd/%s/graph.png' % host,
+            host_=host,
+            graphtemplate=graph,
+            start=int(time.time() - duration),
+            duration=duration,
+            details=0,
+        )}"
         alt="${_('Graph for %(graph)s on %(host)s') %
             {'graph': graph, 'host': host}}" />
     </p>
