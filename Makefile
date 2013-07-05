@@ -9,7 +9,8 @@ JSFILES = src/vigilo/themes/public/common/js/*.js \
 install: $(PYTHON) build
 	$(PYTHON) setup.py install --record=INSTALLED_FILES
 install_pkg: $(PYTHON) build
-	$(PYTHON) setup.py install --single-version-externally-managed --root=$(DESTDIR)
+	$(PYTHON) setup.py install --single-version-externally-managed \
+		$(SETUP_PY_OPTS) --root=$(DESTDIR)
 
 # Même si vigilo-themes-default ne contient pas de tests,
 # l'utilisation tests_nose permet de compiler les traductions.
