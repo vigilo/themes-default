@@ -3,7 +3,7 @@ Source: http://sourceforge.net/projects/vigilo/files/Sources/
 Name: vigilo-themes-default
 
 Files: *
-Copyright: 2006-2012, by CS-SI
+Copyright: 2006-2013, by CS-SI
 License: GPL-2+
 
 Files:
@@ -11,41 +11,41 @@ Files:
  src/vigilo/themes/public/common/js/lib/Autocompleter.Local.js,
  src/vigilo/themes/public/common/js/lib/Autocompleter.Request.js,
  src/vigilo/themes/public/common/js/lib/Observer.js
-Copyright: 2008-2012, by Harald Kirschner <mail@digitarald.de>
+Copyright: 2008-2013, by Harald Kirschner <mail@digitarald.de>
 License: MIT
 
 Files:
  src/vigilo/themes/public/common/js/lib/babel.js,
  src/vigilo/themes/public/common/js/lib/babelThemes.js
-Copyright: 2007-2012, by Edgewall Software
+Copyright: 2007-2013, by Edgewall Software
 License: BSD
 
 Files:
  src/vigilo/themes/public/common/js/lib/jasmine.js,
  src/vigilo/themes/public/common/js/lib/jasmine-html.js
-Copyright: 2008-2012, by Pivotal Labs
+Copyright: 2008-2013, by Pivotal Labs
 License: MIT
 
 Files:
  src/vigilo/themes/public/common/js/lib/jxlib.js,
  src/vigilo/themes/public/common/css/jxlib/*
-Copyright: 2006-2012, by DM Solutions Group Inc.
+Copyright: 2006-2013, by DM Solutions Group Inc.
 License: MIT
 
 Files: src/vigilo/themes/public/common/js/lib/mootools.js
-Copyright: 2006-2012, by Valerio Proietti
+Copyright: 2006-2013, by Valerio Proietti
 License: MIT
 
 Files: src/vigilo/themes/public/common/js/lib/mootools-more.js
-Copyright: 2006-2012, by Aaron Newton, Valerio Proietti & the MooTools team
+Copyright: 2006-2013, by Aaron Newton, Valerio Proietti & the MooTools team
 License: MIT
 
 Files: src/vigilo/themes/public/common/css/reset.css
-Copyright: 2009-2012, by Yahoo! Inc.
+Copyright: 2009-2013, by Yahoo! Inc.
 License: MIT
 
 Files: debian/*
-Copyright: 2012, by CS-SI
+Copyright: 2013, by CS-SI
 License: GPL-2+
 
 License: GPL-2+
