@@ -22,7 +22,6 @@ else:
 install_requires=[
     'setuptools',
     'Genshi >= 0.5.1',
-    'Genshi <= 0.6',
     'Babel >= 0.9.4',
 
     # Pas requis à proprement parlé,
