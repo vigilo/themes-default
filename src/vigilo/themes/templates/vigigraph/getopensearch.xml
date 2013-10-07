@@ -5,9 +5,9 @@
     <!--! On ne veut pas que l'encodage soit "traduit". -->
     <InputEncoding>${'utf-8'}</InputEncoding>
     <!--!
-        L'attribute request.host_url permet d'obtenir une URL absolue,
+        L'attribut qualified=True permet d'obtenir une URL absolue,
         en conformité avec les recommandations du standard OpenSearch.
     -->
-    <Image width="16" height="16" type="image/x-icon">${request.host_url}${tg.url('/favicon.ico')}</Image>
-    <Url type="text/html" method="get" template="${request.host_url}${tg.url('/rpc/searchHost')}?query={searchTerms}"> </Url>
+    <Image width="16" height="16" type="image/x-icon">${tg.url('/favicon.ico', qualified=True)}</Image>
+    <Url type="text/html" method="get" template="${tg.url('/rpc/searchHost', qualified=True)}?query={searchTerms}"> </Url>
 </OpenSearchDescription>
