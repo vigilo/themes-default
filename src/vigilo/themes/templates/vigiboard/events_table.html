@@ -57,10 +57,10 @@
 
                             <a py:when="hostname" href="${tg.url('/item/%(page)d/%(hostname)s' % {'page': page.previous_page, 'hostname': hostname})}">
                                 <img src="${tg.url('/images/top_left_arrow.png')}" alt="Previous" title="Previous page"/>
-                             </a>
+                            </a>
 
                             <a py:otherwise=""
-                                href="${tg.url('/', params=fixed_search, page=page.previous_page)}">
+                                href="${tg.url('/', sort=sort, order=order, params=fixed_search, page=page.previous_page)}">
                                 <img src="${tg.url('/images/top_left_arrow.png')}" alt="Previous" title="Previous page"/>
                              </a>
                         </py:choose>
@@ -79,7 +79,7 @@
                              </a>
 
                              <a py:otherwise=""
-                                href="${tg.url('/', params=fixed_search, page=page.next_page)}">
+                                href="${tg.url('/', sort=sort, order=order, params=fixed_search, page=page.next_page)}">
                                 <img src="${tg.url('/images/top_right_arrow.png')}" alt="Next" title="Next page"/>
                              </a>
                         </py:choose>
@@ -105,7 +105,7 @@
 
             <tr class="plugins">
                 <py:for each="(plugin_name, plugin_instance) in config['columns_plugins']">
-                    ${plugin_header_functions[plugin_name](plugin_name, plugin_instance)}
+                    ${plugin_header_functions[plugin_name](plugin_name, plugin_instance, sort, order)}
                 </py:for>
             </tr>
         </thead>
@@ -126,7 +126,7 @@
                              </a>
 
                             <a py:otherwise=""
-                                href="${tg.url('/', params=fixed_search, page=page.previous_page)}">
+                                href="${tg.url('/', sort=sort, order=order, params=fixed_search, page=page.previous_page)}">
                                 <img src="${tg.url('/images/bottom_left_arrow.png')}" alt="Previous" title="Previous page"/>
                             </a>
                         </py:choose>
@@ -145,7 +145,7 @@
                              </a>
 
                             <a py:otherwise=""
-                                href="${tg.url('/', params=fixed_search, page=page.next_page)}">
+                                href="${tg.url('/', sort=sort, order=order, params=fixed_search, page=page.next_page)}">
                                 <img src="${tg.url('/images/bottom_right_arrow.png')}" alt="Next" title="Next page"/>
                              </a>
                         </py:choose>
@@ -161,7 +161,7 @@
                             <br/>
                             ${page.pager(
                                 format='$link_first $link_previous ~3~ $link_next $link_last',
-                                page_param='page', show_if_single_page=True, **fixed_search
+                                page_param='page', show_if_single_page=True, order=order, sort=sort, **fixed_search
                             )}
                         </span>
                     </div>

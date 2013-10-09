@@ -10,9 +10,31 @@
       py:strip="">
 
 <py:def function="status_header(name, instance)">
-<th class="plugin_${name}" title="Trouble Ticket">[TT]</th>
+<th class="plugin_${name}" title="Trouble Ticket">
+    <py:with vars="next_order=(sort != 'ticket') and 'asc' or {'asc': 'desc', 'desc': 'asc'}[order]">
+        <a id="sortLink" title="${{
+                'asc': l_('Sort by %s in ascending order'),
+                'desc': l_('Sort by %s in descending order'),
+            }[next_order] % l_('Trouble Ticket').lower()}"
+            href="${tg.url('/', params=fixed_search, sort='ticket', order=next_order, page=page.page)}">
+            [TT]
+            <img src="${tg.url('/images/' + order + '.gif')}" py:if="sort == 'ticket'"/>
+        </a>
+    </py:with>
+</th>
 
-<th class="plugin_${name}" title="Acknowledgement status">Status</th>
+<th class="plugin_${name}" title="Acknowledgement status">
+    <py:with vars="next_order=(sort != 'ack') and 'asc' or {'asc': 'desc', 'desc': 'asc'}[order]">
+        <a id="sortLink" title="${{
+                'asc': l_('Sort by %s in ascending order'),
+                'desc': l_('Sort by %s in descending order'),
+            }[next_order] % l_('Acknowledgement status').lower()}"
+            href="${tg.url('/', params=fixed_search, sort='ack', order=next_order, page=page.page)}">
+            Status
+            <img src="${tg.url('/images/' + order + '.gif')}" py:if="sort == 'ack'"/>
+        </a>
+    </py:with>
+</th>
 
 <th class="plugin_${name}">
     <a class="Edit_EventsLien" id="Edit_All" href="#">

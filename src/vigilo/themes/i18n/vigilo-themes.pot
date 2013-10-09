@@ -1,15 +1,15 @@
 # Translations template for vigilo-themes-default.
-# Copyright (C) 2012 ORGANIZATION
+# Copyright (C) 2013 ORGANIZATION
 # This file is distributed under the same license as the vigilo-themes-default
 # project.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2012.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2013.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: vigilo-themes-default 2.0.17\n"
+"Project-Id-Version: vigilo-themes-default 3.3\n"
 "Report-Msgid-Bugs-To: contact@projet-vigilo.org\n"
-"POT-Creation-Date: 2012-08-14 14:48+0200\n"
+"POT-Creation-Date: 2013-10-20 14:55+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,16 +18,16 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 0.9.4\n"
 
-#: src/vigilo/themes/public/common/js/grouptree.js:236
+#: src/vigilo/themes/public/common/js/grouptree.js:237
 msgid "Loading..."
 msgstr ""
 
-#: src/vigilo/themes/public/vigiboard/js/plugins/details.js:9
+#: src/vigilo/themes/public/vigiboard/js/plugins/details.js:12
 #: src/vigilo/themes/templates/vigiboard/plugins/details.html:9
 msgid "Event details"
 msgstr ""
 
-#: src/vigilo/themes/public/vigiboard/js/plugins/details.js:111
+#: src/vigilo/themes/public/vigiboard/js/plugins/details.js:120
 msgid "More than {max} map(s) found..."
 msgstr ""
 
@@ -214,7 +214,7 @@ msgstr ""
 #: src/vigilo/themes/templates/vigiadmin/downtime.html:158
 #: src/vigilo/themes/templates/vigiadmin/downtime.html:163
 #: src/vigilo/themes/templates/vigiadmin/downtime.html:167
-#: src/vigilo/themes/templates/vigiboard/plugins/status.html:15
+#: src/vigilo/themes/templates/vigiboard/plugins/status.html:32
 msgid "Status"
 msgstr ""
 
@@ -235,7 +235,7 @@ msgstr ""
 #: src/vigilo/themes/templates/vigiadmin/index.html:23
 #: src/vigilo/themes/templates/vigiadmin/sidebars.html:9
 #: src/vigilo/themes/templates/vigiboard/master.html:20
-#: src/vigilo/themes/templates/vigiboard/toolbar.html:72
+#: src/vigilo/themes/templates/vigiboard/toolbar.html:75
 msgid "VigiBoard"
 msgstr ""
 
@@ -246,7 +246,7 @@ msgstr ""
 #: src/vigilo/themes/templates/vigiadmin/index.html:29
 #: src/vigilo/themes/templates/vigimap/edition.html:8
 #: src/vigilo/themes/templates/vigimap/index.html:8
-#: src/vigilo/themes/templates/vigimap/main.html:83
+#: src/vigilo/themes/templates/vigimap/main.html:84
 msgid "VigiMap"
 msgstr ""
 
@@ -563,13 +563,11 @@ msgstr ""
 
 #: src/vigilo/themes/templates/vigiboard/history_table.html:79
 #: src/vigilo/themes/templates/vigiboard/raw_events_table.html:81
-#: src/vigilo/themes/templates/vigiboard/plugins/date.html:5
 msgid "Date"
 msgstr ""
 
 #: src/vigilo/themes/templates/vigiboard/history_table.html:79
 #: src/vigilo/themes/templates/vigiboard/raw_events_table.html:81
-#: src/vigilo/themes/templates/vigiboard/plugins/date.html:7
 msgid "[Duration]"
 msgstr ""
 
@@ -633,7 +631,8 @@ msgid "Peak state"
 msgstr ""
 
 #: src/vigilo/themes/templates/vigiboard/raw_events_table.html:87
-#: src/vigilo/themes/templates/vigiboard/plugins/output.html:5
+#: src/vigilo/themes/templates/vigiboard/plugins/output.html:7
+#: src/vigilo/themes/templates/vigiboard/plugins/output.html:11
 msgid "Output"
 msgstr ""
 
@@ -655,100 +654,137 @@ msgid "Colorblind"
 msgstr ""
 
 #: src/vigilo/themes/templates/vigiboard/toolbar.html:16
-msgid "Home"
+msgid "Export CSV"
 msgstr ""
 
 #: src/vigilo/themes/templates/vigiboard/toolbar.html:19
+msgid "Home"
+msgstr ""
+
+#: src/vigilo/themes/templates/vigiboard/toolbar.html:22
 msgid "Filter display"
 msgstr ""
 
-#: src/vigilo/themes/templates/vigiboard/toolbar.html:23
+#: src/vigilo/themes/templates/vigiboard/toolbar.html:26
 #: src/vigilo/themes/templates/vigigraph/main.html:74
 #: src/vigilo/themes/templates/vigigraph/main_simplified.html:38
-#: src/vigilo/themes/templates/vigimap/main.html:72
+#: src/vigilo/themes/templates/vigimap/main.html:73
 msgid "Help"
 msgstr ""
 
-#: src/vigilo/themes/templates/vigiboard/toolbar.html:29
+#: src/vigilo/themes/templates/vigiboard/toolbar.html:32
 #: src/vigilo/themes/templates/vigigraph/main.html:82
 #: src/vigilo/themes/templates/vigigraph/main_simplified.html:46
-#: src/vigilo/themes/templates/vigimap/main.html:78
+#: src/vigilo/themes/templates/vigimap/main.html:79
 msgid "Log out"
 msgstr ""
 
-#: src/vigilo/themes/templates/vigiboard/toolbar.html:36
+#: src/vigilo/themes/templates/vigiboard/toolbar.html:39
 msgid "Default font size"
 msgstr ""
 
-#: src/vigilo/themes/templates/vigiboard/toolbar.html:39
+#: src/vigilo/themes/templates/vigiboard/toolbar.html:42
 msgid "Medium font size"
 msgstr ""
 
-#: src/vigilo/themes/templates/vigiboard/toolbar.html:42
+#: src/vigilo/themes/templates/vigiboard/toolbar.html:45
 msgid "Large font size"
 msgstr ""
 
-#: src/vigilo/themes/templates/vigiboard/toolbar.html:50
+#: src/vigilo/themes/templates/vigiboard/toolbar.html:53
 #, python-format
 msgid "Refresh every %d seconds"
 msgstr ""
 
-#: src/vigilo/themes/templates/vigiboard/toolbar.html:54
+#: src/vigilo/themes/templates/vigiboard/toolbar.html:57
 msgid "Theme"
 msgstr ""
 
-#: src/vigilo/themes/templates/vigiboard/toolbar.html:68
+#: src/vigilo/themes/templates/vigiboard/toolbar.html:71
 msgid "You are in Search mode, click here to return to the initial mode."
 msgstr ""
 
+#: src/vigilo/themes/templates/vigiboard/plugins/date.html:7
+#: src/vigilo/themes/templates/vigiboard/plugins/hostname.html:7
+#: src/vigilo/themes/templates/vigiboard/plugins/occurrences.html:7
+#: src/vigilo/themes/templates/vigiboard/plugins/output.html:7
+#: src/vigilo/themes/templates/vigiboard/plugins/priority.html:7
+#: src/vigilo/themes/templates/vigiboard/plugins/servicename.html:7
+#: src/vigilo/themes/templates/vigiboard/plugins/status.html:15
+#: src/vigilo/themes/templates/vigiboard/plugins/status.html:28
+#, python-format
+msgid "Sort by %s in ascending order"
+msgstr ""
+
+#: src/vigilo/themes/templates/vigiboard/plugins/date.html:7
+#: src/vigilo/themes/templates/vigiboard/plugins/hostname.html:7
+#: src/vigilo/themes/templates/vigiboard/plugins/occurrences.html:7
+#: src/vigilo/themes/templates/vigiboard/plugins/output.html:7
+#: src/vigilo/themes/templates/vigiboard/plugins/priority.html:7
+#: src/vigilo/themes/templates/vigiboard/plugins/servicename.html:7
+#: src/vigilo/themes/templates/vigiboard/plugins/status.html:15
+#: src/vigilo/themes/templates/vigiboard/plugins/status.html:28
+#, python-format
+msgid "Sort by %s in descending order"
+msgstr ""
+
+#: src/vigilo/themes/templates/vigiboard/plugins/date.html:7
+#: src/vigilo/themes/templates/vigiboard/plugins/date.html:11
+msgid "Last occurrence"
+msgstr ""
+
+#: src/vigilo/themes/templates/vigiboard/plugins/date.html:15
+msgid "[Duration since 1st occurrence]"
+msgstr ""
+
 #: src/vigilo/themes/templates/vigiboard/plugins/details.html:9
-#: src/vigilo/themes/templates/vigiboard/plugins/details.html:56
+#: src/vigilo/themes/templates/vigiboard/plugins/details.html:55
 msgid "Details"
 msgstr ""
 
-#: src/vigilo/themes/templates/vigiboard/plugins/details.html:31
+#: src/vigilo/themes/templates/vigiboard/plugins/details.html:30
 #: src/vigilo/themes/templates/vigigraph/index.html:26
-#: src/vigilo/themes/templates/vigimap/main.html:137
+#: src/vigilo/themes/templates/vigimap/main.html:138
 msgid "loading..."
 msgstr ""
 
-#: src/vigilo/themes/templates/vigiboard/plugins/details.html:34
+#: src/vigilo/themes/templates/vigiboard/plugins/details.html:33
 msgid "Error while loading data..."
 msgstr ""
 
-#: src/vigilo/themes/templates/vigiboard/plugins/details.html:36
+#: src/vigilo/themes/templates/vigiboard/plugins/details.html:35
 msgid "State info"
 msgstr ""
 
-#: src/vigilo/themes/templates/vigiboard/plugins/details.html:38
+#: src/vigilo/themes/templates/vigiboard/plugins/details.html:37
 msgid "Initial State:"
 msgstr ""
 
-#: src/vigilo/themes/templates/vigiboard/plugins/details.html:43
+#: src/vigilo/themes/templates/vigiboard/plugins/details.html:42
 msgid "Current State:"
 msgstr ""
 
-#: src/vigilo/themes/templates/vigiboard/plugins/details.html:48
+#: src/vigilo/themes/templates/vigiboard/plugins/details.html:47
 msgid "Peak State:"
 msgstr ""
 
-#: src/vigilo/themes/templates/vigiboard/plugins/details.html:59
+#: src/vigilo/themes/templates/vigiboard/plugins/details.html:58
 msgid "Detailed history for this event"
 msgstr ""
 
-#: src/vigilo/themes/templates/vigiboard/plugins/details.html:60
+#: src/vigilo/themes/templates/vigiboard/plugins/details.html:59
 msgid "Masked events for this event"
 msgstr ""
 
-#: src/vigilo/themes/templates/vigiboard/plugins/details.html:61
+#: src/vigilo/themes/templates/vigiboard/plugins/details.html:60
 msgid "Events history for this supervised item"
 msgstr ""
 
-#: src/vigilo/themes/templates/vigiboard/plugins/details.html:68
+#: src/vigilo/themes/templates/vigiboard/plugins/details.html:67
 msgid "External links"
 msgstr ""
 
-#: src/vigilo/themes/templates/vigiboard/plugins/details.html:81
+#: src/vigilo/themes/templates/vigiboard/plugins/details.html:80
 msgid "Maps"
 msgstr ""
 
@@ -764,7 +800,8 @@ msgstr ""
 msgid "Impacted high-level services"
 msgstr ""
 
-#: src/vigilo/themes/templates/vigiboard/plugins/hostname.html:5
+#: src/vigilo/themes/templates/vigiboard/plugins/hostname.html:7
+#: src/vigilo/themes/templates/vigiboard/plugins/hostname.html:11
 msgid "Hostname"
 msgstr ""
 
@@ -781,6 +818,7 @@ msgid "Masked"
 msgstr ""
 
 #: src/vigilo/themes/templates/vigiboard/plugins/occurrences.html:5
+#: src/vigilo/themes/templates/vigiboard/plugins/occurrences.html:7
 msgid "Occurrences count"
 msgstr ""
 
@@ -788,59 +826,63 @@ msgstr ""
 msgid "ITIL Priority"
 msgstr ""
 
-#: src/vigilo/themes/templates/vigiboard/plugins/priority.html:5
+#: src/vigilo/themes/templates/vigiboard/plugins/priority.html:7
+#: src/vigilo/themes/templates/vigiboard/plugins/priority.html:11
 msgid "Priority"
 msgstr ""
 
-#: src/vigilo/themes/templates/vigiboard/plugins/servicename.html:5
+#: src/vigilo/themes/templates/vigiboard/plugins/servicename.html:7
+#: src/vigilo/themes/templates/vigiboard/plugins/servicename.html:11
 msgid "Servicename"
 msgstr ""
 
 #: src/vigilo/themes/templates/vigiboard/plugins/status.html:13
+#: src/vigilo/themes/templates/vigiboard/plugins/status.html:15
 msgid "Trouble Ticket"
 msgstr ""
 
-#: src/vigilo/themes/templates/vigiboard/plugins/status.html:13
+#: src/vigilo/themes/templates/vigiboard/plugins/status.html:19
 msgid "[TT]"
 msgstr ""
 
-#: src/vigilo/themes/templates/vigiboard/plugins/status.html:15
+#: src/vigilo/themes/templates/vigiboard/plugins/status.html:26
+#: src/vigilo/themes/templates/vigiboard/plugins/status.html:28
 msgid "Acknowledgement status"
 msgstr ""
 
-#: src/vigilo/themes/templates/vigiboard/plugins/status.html:19
+#: src/vigilo/themes/templates/vigiboard/plugins/status.html:41
 msgid "Edit selected"
 msgstr ""
 
-#: src/vigilo/themes/templates/vigiboard/plugins/status.html:19
+#: src/vigilo/themes/templates/vigiboard/plugins/status.html:41
 msgid "Edit all selected events"
 msgstr ""
 
-#: src/vigilo/themes/templates/vigiboard/plugins/status.html:24
+#: src/vigilo/themes/templates/vigiboard/plugins/status.html:46
 msgid "Select/Unselect all"
 msgstr ""
 
-#: src/vigilo/themes/templates/vigiboard/plugins/status.html:44
+#: src/vigilo/themes/templates/vigiboard/plugins/status.html:58
 msgid "Acknowledged"
 msgstr ""
 
-#: src/vigilo/themes/templates/vigiboard/plugins/status.html:46
+#: src/vigilo/themes/templates/vigiboard/plugins/status.html:60
 msgid "Acknowledged and Closed"
 msgstr ""
 
-#: src/vigilo/themes/templates/vigiboard/plugins/status.html:58
+#: src/vigilo/themes/templates/vigiboard/plugins/status.html:72
 msgid "Edit"
 msgstr ""
 
-#: src/vigilo/themes/templates/vigiboard/plugins/status.html:58
+#: src/vigilo/themes/templates/vigiboard/plugins/status.html:72
 msgid "Edit this event"
 msgstr ""
 
-#: src/vigilo/themes/templates/vigiboard/plugins/status.html:100
+#: src/vigilo/themes/templates/vigiboard/plugins/status.html:112
 msgid "Editing"
 msgstr ""
 
-#: src/vigilo/themes/templates/vigiboard/plugins/status.html:123
+#: src/vigilo/themes/templates/vigiboard/plugins/status.html:135
 msgid "No events have been selected"
 msgstr ""
 
@@ -905,7 +947,7 @@ msgid "Print all visible graphs"
 msgstr ""
 
 #: src/vigilo/themes/templates/vigigraph/searchhost.html:14
-#: src/vigilo/themes/templates/vigimap/main.html:112
+#: src/vigilo/themes/templates/vigimap/main.html:113
 msgid "Results:"
 msgstr ""
 
@@ -934,7 +976,7 @@ msgid "Unknown"
 msgstr ""
 
 #: src/vigilo/themes/templates/vigimap/legend.html:17
-#: src/vigilo/themes/templates/vigimap/main.html:108
+#: src/vigilo/themes/templates/vigimap/main.html:109
 msgid "Warning"
 msgstr ""
 
@@ -973,30 +1015,30 @@ msgstr ""
 msgid "Graph for %(graph)s on %(host)s"
 msgstr ""
 
-#: src/vigilo/themes/templates/vigimap/main.html:66
-#: src/vigilo/themes/templates/vigimap/main.html:107
+#: src/vigilo/themes/templates/vigimap/main.html:67
+#: src/vigilo/themes/templates/vigimap/main.html:108
 msgid "Search"
 msgstr ""
 
-#: src/vigilo/themes/templates/vigimap/main.html:66
+#: src/vigilo/themes/templates/vigimap/main.html:67
 msgid "Search for a specific host/graph"
 msgstr ""
 
-#: src/vigilo/themes/templates/vigimap/main.html:97
+#: src/vigilo/themes/templates/vigimap/main.html:98
 msgid "Map:"
 msgstr ""
 
-#: src/vigilo/themes/templates/vigimap/main.html:98
+#: src/vigilo/themes/templates/vigimap/main.html:99
 msgid "Search for a map (\"*\" for all, 100 max)"
 msgstr ""
 
-#: src/vigilo/themes/templates/vigimap/main.html:108
+#: src/vigilo/themes/templates/vigimap/main.html:109
 msgid ""
 "Your search returned more than 100 results. Only the first 100 entries are "
 "displayed."
 msgstr ""
 
-#: src/vigilo/themes/templates/vigimap/main.html:126
+#: src/vigilo/themes/templates/vigimap/main.html:127
 msgid "Your browser does not support the canvas element. Please upgrade."
 msgstr ""
 

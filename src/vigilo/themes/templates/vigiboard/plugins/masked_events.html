@@ -3,7 +3,7 @@
       py:strip="">
 
 <th id="plugin_${name}" class="plugin_${name}"
-    py:def="masked_events_header(name, instance)"
+    py:def="masked_events_header(name, instance, sort, order)"
     title="Number of masked events">Masked</th>
 
 <td class="plugin_${name}" py:def="masked_events_data(name, instance, data, plugin_data)">

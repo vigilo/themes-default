@@ -2,7 +2,18 @@
       xmlns:xi="http://www.w3.org/2001/XInclude"
       py:strip="">
 
-<th id="plugin_${name}" class="plugin_${name}" py:def="hostname_header(name, instance)">Hostname</th>
+<th id="plugin_${name}" class="plugin_${name}" py:def="hostname_header(name, instance, sort, order)">
+    <py:with vars="next_order=(sort != name) and 'asc' or {'asc': 'desc', 'desc': 'asc'}[order]">
+        <a id="sortLink" title="${{
+                'asc': l_('Sort by %s in ascending order'),
+                'desc': l_('Sort by %s in descending order'),
+            }[next_order] % l_('Hostname').lower()}"
+            href="${tg.url('/', params=fixed_search, sort=name, order=next_order, page=page.page)}">
+            Hostname
+            <img src="${tg.url('/images/' + order + '.gif')}" py:if="sort == name"/>
+        </a>
+    </py:with>
+</th>
 
 <td class="plugin_${name}" py:def="hostname_data(name, instance, data, plugin_data)">${data['hostname']}</td>
 
