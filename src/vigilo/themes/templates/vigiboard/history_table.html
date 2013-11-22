@@ -9,6 +9,9 @@
 <?python from genshi import HTML ?>
 <?python from vigilo.models.tables import StateName ?>
 <?python from vigiboard.controllers.plugins import VigiboardRequestPlugin ?>
+<?python from tg.i18n import get_lang ?>
+<?python from babel import Locale ?>
+<?python from vigilo.turbogears.helpers import get_locales ?>
 
 <head>
     <py:choose>
@@ -129,11 +132,14 @@
 			</tr>
 
 	        <tr py:when="0" py:for="(index, entry) in enumerate(page.items)" class="${['odd', 'even'][index % 2]}">
+				<py:with vars="locale = Locale.negotiate(get_lang() or ['en'], g
+et_locales('vigiboard'), sep='-')">
 				<td class="plugin_date ${entry.state is not None and StateName.value_to_statename(entry.state) or ''}">
-                	${entry.get_date('timestamp')}
-                	<br />
-                	[${entry.get_since_date('timestamp')}]
-                </td>
+					${entry.get_date('timestamp', locale)}
+					<br />
+					[${entry.get_since_date('timestamp', locale)}]
+				</td>
+				</py:with>
 				<td class="plugin_user">${entry.username}</td>
 				<td class="plugin_type">${_(entry.type_action)}</td>
 				<td class="plugin_value">${_(entry.value)}</td>
