@@ -132,8 +132,7 @@
 			</tr>
 
 	        <tr py:when="0" py:for="(index, entry) in enumerate(page.items)" class="${['odd', 'even'][index % 2]}">
-				<py:with vars="locale = Locale.negotiate(get_lang() or ['en'], g
-et_locales('vigiboard'), sep='-')">
+				<py:with vars="locale = Locale.negotiate(get_lang() or ['en'], get_locales('vigiboard'), sep='-')">
 				<td class="plugin_date ${entry.state is not None and StateName.value_to_statename(entry.state) or ''}">
 					${entry.get_date('timestamp', locale)}
 					<br />
