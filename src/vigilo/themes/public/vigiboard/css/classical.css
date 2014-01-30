@@ -1,15 +1,3 @@
-body {
-    line-height: 0px;
-}
-
-#DetailsDialog {
-    line-height: 1.2em;
-}
-
-.main_content {
-    line-height: 1.2em;
-}
-
 #header {
     border: solid 0px black;
     background-color: #F0F1F5;
@@ -21,13 +9,13 @@ body {
 }
 
 .plugins th {
-	background-color: #EBECF0;
-	border: solid 1px #EBECF0;
+    background-color: #EBECF0;
+    border: solid 1px #EBECF0;
 }
 
 .vigitable tbody tr,
 .vigitable tbody tr td {
-	border: solid 1px white;
+    border: solid 1px white;
 }
 
 .vigitable .table_title,
@@ -39,11 +27,11 @@ body {
 
 .history_table thead,
 tr.odd {
-	background-color: #F8F8F8;
+    background-color: #F8F8F8;
 }
 
 tr.even {
-	background-color: #F0F0F0;
+    background-color: #F0F0F0;
 }
 
 td.OK,
@@ -52,49 +40,45 @@ td.UP {
 }
 
 td.WARNING {
-	background-color: #FFFF00;
+    background-color: #FFFF00;
 }
 
 td.CRITICAL,
 td.DOWN {
-	background-color: #FF0000;
+    background-color: #FF0000;
 }
 
 td.WARNING_Ack {
-	background-color: #FCFCA2;
+    background-color: #FCFCA2;
 }
 
 td.CRITICAL_Ack,
 td.DOWN_Ack {
-	background-color: #FC9090;
+    background-color: #FC9090;
 }
 
 td.OK_Ack,
 td.UP_Ack {
-	background-color: #A9EBAC;
+    background-color: #A9EBAC;
 }
 
 a {
-	color: black;
+    color: black;
 }
 
 #flash .ok {
     background: #d8ecd8 url(../images/ok.png) no-repeat scroll 0px center;
-    line-height: 1.2em;
 }
 #flash .warning {
     background: #fff483 url(../images/warning.png) no-repeat scroll 0px center;
-    line-height: 1.2em;
 }
 #flash .error {
     background: #f9c5c1 url(../images/error.png) no-repeat scroll 0px center;
-    line-height: 1.2em;
 }
 #flash .alert,
 #flash .info,
 .notice {
     background: #EEEEFF url(../images/info.png) no-repeat scroll 0px center;
-    line-height: 1.2em;
 }
 
 .fielderror {

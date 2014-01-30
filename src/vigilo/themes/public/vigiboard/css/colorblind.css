@@ -1,14 +1,3 @@
-body {
-    line-height: 0px;
-}
-#DetailsDialog {
-    line-height: 1.2em;
-}
-
-.main_content {
-    line-height: 1.2em;
-}
-
 #header {
     border: solid 0px black;
 }
@@ -24,24 +13,19 @@ a {
 
 #flash .ok {
     background: #d8ecd8 url(../images/ok.png) no-repeat scroll 0px center;
-    line-height: 1.2em;
 }
 #flash .warning {
     background: #fff483 url(../images/warning.png) no-repeat scroll 0px center;
-    line-height: 1.2em;
 }
 #flash .error {
     background: #f9c5c1 url(../images/error.png) no-repeat scroll 0px center;
-    line-height: 1.2em;
 }
 #flash .alert,
 #flash .info {
     background: #EEEEFF url(../images/info.png) no-repeat scroll 0px center;
-    line-height: 1.2em;
 }
 .notice {
     background: #EEEEFF url(../images/info.png) no-repeat scroll 0px center;
-    line-height: 1.2em;
 }
 
 .fielderror {
