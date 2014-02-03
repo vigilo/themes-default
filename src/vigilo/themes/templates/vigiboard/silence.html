@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+                   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+   xmlns:py="http://genshi.edgewall.org/"
+   xmlns:xi="http://www.w3.org/2001/XInclude">
+
+<xi:include href="master.html" />
+<xi:include href="silence_pagination.html" />
+
+<head>
+   <meta content="text/html; charset=UTF-8" http-equiv="content-type" py:replace="''"/>
+   <title>Silence rules</title>
+   <link type="text/css" rel="stylesheet" href="${tg.url('/css/silence.css')}" />
+   <link rel="stylesheet" type="text/css" href="${tg.url('/css/jxlib/jxtheme.uncompressed.css')}" />
+    <script type="text/javascript" src="${tg.url('/js/lib/mootools.js')}"></script>
+    <script type="text/javascript" src="${tg.url('/js/lib/mootools-more.js')}"></script>
+    <script type="text/javascript" src="${tg.url('/js/lib/jxlib.js')}"></script>
+    <script type="text/javascript">Jx.baseURL = '${tg.url("/js/lib")}';</script>
+    <!--!
+        "js/lib/babel.js" et "js/lib/babelThemes.js" doivent être chargés
+        avant "i18n", qui doit être chargé avant nos scripts.
+    -->
+    <script type="text/javascript" src="${tg.url('/js/lib/babel.js')}"></script>
+    <script type="text/javascript" src="${tg.url('/js/lib/babelThemes.js')}"></script>
+    <script type="text/javascript" src="${tg.url('/i18n')}"></script>
+    <script type="text/javascript" src="${tg.url('/js/silence.js')}"></script>
+</head>
+
+<body>
+
+    <div id="silence_rules">
+        <h2><span>Active silence rules</span></h2>
+
+        <div class="pre-table">
+            ${silence_pagination()}
+            <div class="button">
+                <a href="${tg.url('/silence/add')}">
+                    <img src="${tg.url('/images/add_rule.png')}" alt="add" />
+                    Add a new rule
+                </a>
+            </div>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th class="actions"></th>
+
+                    <th py:for="k, v in columns"
+                        class="${(sort != k) and k or k + ', ' + order}">
+                        <py:with vars="next_order = (sort != k) and 'asc' or {'asc': 'desc', 'desc': 'asc'}[order]">
+                            <a id="sortLink" title="${{
+                                        'asc': l_('Sort by %s in ascending order'),
+                                        'desc': l_('Sort by %s in descending order'),
+                                    }[next_order] % unicode(v).lower()}"
+                                    href="${tg.url('/silence', sort=k, order=next_order, page=page.page)}">
+                                    ${v}
+                                    <img src="${tg.url('/images/' + order + '.gif')}" py:if="sort == k"/>
+                            </a>
+                        </py:with>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr py:for="id, rule in enumerate(page.items)" class="${id%2 and 'even' or 'odd'}">
+                    <td class="actions">
+                        <a href="${tg.url('/silence/update', {'id': rule[0].idsilence})}" class="update_link">
+                            <img src="${tg.url('/images/edit.png')}" alt="Edit" />
+                        </a>
+                        <a href="${tg.url('/silence/delete', {'id': rule[0].idsilence})}" class="deletion_link">
+                            <img src="${tg.url('/images/delete.png')}" alt="Delete" />
+                        </a>
+                    </td>
+                    <td class="hostname">${rule.hostname}</td>
+                    <td class="servicename">${rule.servicename}</td>
+                    <td class="states">${rule.states}</td>
+                    <td class="lastmodification">${rule[0].lastmodification}</td>
+                    <td class="author">${rule[0].author}</td>
+                    <py:choose>
+                        <py:when test="len(rule[0].comment) > 28">
+                            <td class="comment">
+                                <a id="comment_${id}" href="#comment_${id}" title="${rule[0].comment}">${rule[0].comment[:28]} [...]</a>
+                            </td>
+                        </py:when>
+                        <py:otherwise>
+                            <td class="comment">${rule[0].comment}</td>
+                        </py:otherwise>
+                    </py:choose>
+                    <!--!
+                    <td>${rule.start}</td>
+                    <td>${rule.end}</td>
+                    -->
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="post-table">
+            ${silence_pagination()}
+        </div>
+    </div>
+
+</body>
+</html>
+

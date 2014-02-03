@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+                    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:py="http://genshi.edgewall.org/"
+    xmlns:xi="http://www.w3.org/2001/XInclude">
+<xi:include href="master.html" />
+<head>
+        <meta content="text/html; charset=UTF-8" http-equiv="content-type" py:replace="''"/>
+        <title>Schedule silence</title>
+    <link type="text/css" rel="stylesheet" href="${tg.url('/css/silence.css')}" />
+    <link type="text/css" rel="stylesheet" href="${tg.url('/css/Autocompleter/Autocompleter.css')}" />
+    <script type="text/javascript">
+    /*<![CDATA[*/
+        var app_path = "${tg.url('/').rstrip('/').encode('backslash')}";
+    /*]]>*/
+    </script>
+    <script type="text/javascript" src="${tg.url('/js/lib/mootools.js')}"></script>
+    <script type="text/javascript" src="${tg.url('/js/lib/mootools-more.js')}"></script>
+    <script type="text/javascript" src="${tg.url('/js/lib/Autocompleter.js')}"></script>
+    <script type="text/javascript" src="${tg.url('/js/lib/Autocompleter.Request.js')}"></script>
+    <script type="text/javascript" src="${tg.url('/js/lib/Observer.js')}"></script>
+    <script type="text/javascript" src="${tg.url('/js/Autocompleter.Request.VigiloJSON.js')}"></script>
+    <script type="text/javascript" src="${tg.url('/js/silence_form.js')}"></script>
+</head>
+<body>
+
+    <div id="silence_form">
+            <form action="${tg.url('/silence/create_or_modify')}" method="post">
+                <h2><span>Silence rule${id and " #%s" % id}</span></h2>
+                <input py:if="id" type="hidden" id="idsilence" name="idsilence" class="input text" value="${id}"></input>
+                <div class="form_row">
+                    <label for="host">Host:</label>
+                    <input type="text" id="host" name="host" class="input text" value="${hostname}"></input>
+                </div>
+                <div class="form_row">
+                    <label for="service">Service:</label>
+                    <input type="text" id="service" name="service" class="input text" value="${servicename}"></input>
+                </div>
+                <!--!
+                <div class="calendar_field">
+                        <label for="start">Start</label>
+                        ${start_calendar()}
+                </div>
+                <div class="calendar_field">
+                        <label for="end">End</label>
+                        ${end_calendar()}
+                        <input type="button" id="duration_trigger" class="date_field_button" value="${l_('Choose a duration')}" />
+                </div>
+                -->
+                <div class="form_row" id="service_states">
+                    <label for="service_states">States:</label>
+                    <select name="service_states" multiple="multiple" class="input">
+                        <py:for each="s in ['WARNING', 'CRITICAL', 'UNKNOWN']">
+                            <py:choose>
+                                <option py:when="states and s in states" value="${s}" selected="selected">${s}</option>
+                                <option py:otherwise="" value="${s}">${s}</option>
+                            </py:choose>
+                        </py:for>
+                    </select>
+                </div>
+                <div class="form_row" id="host_states">
+                    <label for="host_states">States:</label>
+                    <input type="text" name="host_states" class="input text" value="DOWN" disabled="disabled"></input>
+                </div>
+                <input type="hidden" name="states" id="states" value=""></input>
+                <div class="form_row">
+                    <label for="comment">Comment:</label>
+                    <textarea id="comment" name="comment" class="input">${comment}</textarea>
+                </div>
+                <div class="form_row">
+                    <input type="submit" id="submit" value="${l_('Save')}" />
+                </div>
+            </form>
+    </div>
+
+</body>
+</html>
+

@@ -1,0 +1,281 @@
+/* ***************************** */
+/* Formulaire de mise en silence */
+/* ***************************** */
+
+#silence_form {
+    margin: 10px auto ;
+    width: 50%;
+}
+
+#silence_form h2 {
+    font-size: 16px;
+    float: left;
+    padding: 0;
+    margin: 0px 5px 15px -1px;
+    background: url('../images/loginheader-left.png') top left no-repeat;
+}
+
+#silence_form h2 span {
+    background: url('../images/loginheader-right.png') right top no-repeat;
+    height: 30px;
+    line-height: 30px;
+    display: block;
+    font-size: 100%;
+    font-weight: normal;
+    color: #FFF;
+    padding: 0 10px;
+}
+
+#silence_form .form_row {
+    clear: both;
+}
+
+#silence_form label {
+    float: left;
+    width: 100px;
+    margin: 0 5px;
+}
+
+#silence_form .input {
+    float: left;
+    margin: 0 0 5px 5px;
+    padding: 5px;
+    color: #fff;
+    background-color: #464646;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    border: 0;
+}
+
+#silence_form .input:disabled {
+    background-color: hsl(0, 0%, 40%);
+}
+
+#silence_form input.text {
+    width: 165px;
+    height: 21px;
+}
+
+#silence_form select {
+    width: 175px;
+    height: 60px;
+    overflow:hidden;
+}
+
+#silence_form textarea {
+    width: 300px;
+    height: 100px;
+}
+
+#silence_form input#submit {
+    margin: 0 5px;
+    padding: 5px;
+}
+
+
+/* *********************************** */
+/* Table des règles de mise en silence */
+/* *********************************** */
+
+#silence_rules {
+    width: 90%;
+    margin: 5px auto;
+}
+
+#silence_rules h2 {
+    font-size: 16px;
+    float: left;
+    padding: 0;
+    margin: 0px 5px 5px -1px;
+    background: url('../images/loginheader-left.png') top left no-repeat;
+}
+
+#silence_rules h2 span {
+    background: url('../images/loginheader-right.png') right top no-repeat;
+    height: 30px;
+    line-height: 30px;
+    display: block;
+    font-size: 100%;
+    font-weight: normal;
+    color: #FFF;
+    padding: 0 10px;
+}
+
+#silence_rules table {
+    clear: both;
+    margin: auto;
+    width: 100%;
+    text-align: center;
+}
+
+#silence_rules table thead tr {
+    background-color: #F0F0F0;
+}
+
+#silence_rules table th {
+    font-weight: bold;
+}
+
+#silence_rules table th,
+#silence_rules table tr {
+    height: 36px;
+}
+
+#silence_rules table th.asc,
+#silence_rules table th.desc {
+    background-color: #DEDEDE;
+}
+
+#silence_rules table th.states {
+    width: 130px;
+}
+
+#silence_rules table th.lastmodification {
+    width: 140px;
+}
+
+#silence_rules table tr:hover,
+#silence_rules table tr.even:hover,
+#silence_rules table tr.odd:hover {
+    background-color: #F8F1C4;
+}
+
+#silence_rules table tr.even {
+    background-color: #EDF3FE;
+}
+
+#silence_rules table tr.odd {
+    background-color: #FFFFFF;
+}
+
+#silence_rules table th,
+#silence_rules table td {
+    padding: 2px 10px;
+    text-align: left;
+}
+
+#silence_rules table th.actions,
+#silence_rules table td.actions {
+    width: 40px;
+}
+
+#silence_rules table td.actions img {
+    display: inline;
+}
+
+#silence_rules table a {
+    text-decoration: none;
+}
+
+#silence_rules table td a {
+    color: black;
+}
+
+.pre-table {
+    clear: both;
+}
+
+.button {
+    float: left;
+    margin: 5px 0;
+    text-align: right;
+    font-size: 0.95em;
+    padding: 5px 10px;
+    background-color: #F0F0F0;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+}
+
+.button a {
+    text-decoration: none;
+}
+
+.button img {
+    margin-right: 1px;
+    vertical-align: -4%;
+    text-decoration: none;
+}
+
+.pre-table .pagination {
+    margin-top: 10px;
+}
+
+.pagination {
+    float: right;
+    width: 60%;
+    margin: 5px auto;
+    text-align: right;
+    font-size: 0.95em;
+}
+
+.pagination .row_count {
+    margin-right: 10px;
+    font-style: italic;
+    color: #969696;
+}
+
+.prev_page,
+.pager_link,
+.pager_curpage,
+.next_page {
+    padding: 0px 4px;
+    text-decoration: none;
+    background-color: #F0F0F0;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+}
+
+.prev_page,
+.next_page {
+    letter-spacing: -4px;
+}
+
+.prev_page {
+    margin-right: 4px;
+    padding-left: 2px;
+    padding-right: 6px;
+}
+
+#footer {
+    clear: both;
+}
+
+
+/* *******************/
+/* Boîte de dialogue */
+/* *******************/
+
+.confirmation_dialog {
+    margin: 10px auto;
+    width: 300px;
+}
+
+.confirmation_dialog_question {
+    display: table;
+}
+
+.confirmation_dialog img {
+    float: left;
+}
+
+.confirmation_dialog p {
+    display: table-cell;
+    vertical-align: middle;
+    padding: 0 10px;
+}
+
+.confirmation_dialog_buttons {
+    clear: both;
+    margin: 10px 30px;
+}
+
+.confirmation_dialog_buttons input {
+    padding: 3px;
+    border-radius: 3px;
+    float: left;
+    margin: 10px auto;
+}
+
+.confirmation_dialog_buttons #cancellation_button {
+    float: right;
+}
