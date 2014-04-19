@@ -57,6 +57,17 @@
     </div>
     </py:with>
 
+    <py:with vars="lines = int(tg.session.get('items_per_page', tg.config['vigiboard_items_per_page']))">
+        Alerts per page
+        <select id="lines_per_page" class="header_select"
+            onchange="set_items_per_page($('lines_per_page').get('value'));">
+            <py:for each="possible_lines in sorted(set([10, 15, 25, 50, 100, lines]))" py:choose="int(lines == possible_lines)">
+            <option py:when="1" value="${possible_lines}" selected="selected">${possible_lines}</option>
+            <option py:otherwise="" value="${possible_lines}">${possible_lines}</option>
+            </py:for>
+        </select>
+    </py:with>
+
     <div class="header_item">
         Theme
         <select id="theme" class="header_select"

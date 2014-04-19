@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: vigilo-themes-default 2.0.0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2010-11-19 12:43+0100\n"
-"PO-Revision-Date: 2014-02-03 10:53+0100\n"
+"PO-Revision-Date: 2014-06-06 17:18+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: de_DE <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -156,7 +156,7 @@ msgstr "Vigilo Schnittstellen"
 #: src/vigilo/themes/templates/vigiadmin/index.html:23
 #: src/vigilo/themes/templates/vigiadmin/sidebars.html:9
 #: src/vigilo/themes/templates/vigiboard/master.html:21
-#: src/vigilo/themes/templates/vigiboard/toolbar.html:78
+#: src/vigilo/themes/templates/vigiboard/toolbar.html:89
 msgid "VigiBoard"
 msgstr "VigiBoard"
 
@@ -631,7 +631,6 @@ msgstr "Bearbeiten"
 
 #: src/vigilo/themes/templates/vigiboard/silence.html:71
 #, fuzzy
-#| msgid "delete"
 msgid "Delete"
 msgstr "löschen"
 
@@ -715,10 +714,15 @@ msgid "Refresh every %d seconds"
 msgstr "Alle %d Sekunden aktualisieren"
 
 #: src/vigilo/themes/templates/vigiboard/toolbar.html:60
+#, fuzzy
+msgid "Alerts per page"
+msgstr "Metro Seite"
+
+#: src/vigilo/themes/templates/vigiboard/toolbar.html:71
 msgid "Theme"
 msgstr "Design"
 
-#: src/vigilo/themes/templates/vigiboard/toolbar.html:74
+#: src/vigilo/themes/templates/vigiboard/toolbar.html:85
 msgid "You are in Search mode, click here to return to the initial mode."
 msgstr ""
 "Sie befinden sich im Suchmodus, hier klicken, um zum ursprünglichen Modus"
@@ -1098,7 +1102,4 @@ msgstr "Sind Sie sicher, dass diese Downtime gelöscht werden soll?"
 #, python-format
 msgid "Related to %(parent_obj)s"
 msgstr ""
-
-#~ msgid "edit"
-#~ msgstr "bearbeiten"
 
