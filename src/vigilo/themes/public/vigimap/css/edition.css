@@ -31,3 +31,11 @@ label.required {
     float: right;
 }
 
+.position {
+    color: red;
+    float: left;
+    position: absolute;
+    background-color: white;
+    z-index: 5;
+    padding: 2px;
+}
