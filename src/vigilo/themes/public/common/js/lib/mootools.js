@@ -759,6 +759,13 @@ provides: [String]
 ...
 */
 
+/*
+ François:  On détruit le prototype par défaut de "contains" pour que mootools
+            le redéfinisse avec la bonne signature/sémantique.
+            cf. http://stackoverflow.com/questions/14267457/firefox-18-breaks-mootools-1-2-5-selector-engine
+*/
+delete String.prototype.contains;
+
 String.implement({
 
     test: function(regex, params){
