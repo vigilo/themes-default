@@ -24,7 +24,7 @@
         <li py:if="not request.identity" class="loginlogout"><a href="${tg.url('/login')}">Login</a></li>
         <li py:if="request.identity" class="loginlogout"><a href="${tg.url('/logout_handler')}">Logout</a></li>
     </span>
-    <li id="userinfo" py:if="request.identity">Logged in as: <span>${request.identity['repoze.who.userid']}</span></li>
+    <li id="userinfo" py:if="request.identity">Logged in as: <span>${request.identity['user'].fullname} (${request.identity['repoze.who.userid']})</span></li>
   </ul>
   <div id="content">
     <py:with vars="flash=tg.flash_obj.render('flash', use_js=False)">
