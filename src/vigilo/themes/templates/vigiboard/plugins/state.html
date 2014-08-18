@@ -1,0 +1,29 @@
+<html xmlns:py="http://genshi.edgewall.org/"
+      xmlns:xi="http://www.w3.org/2001/XInclude"
+      py:strip="">
+
+<th id="plugin_${name}" class="plugin_${name}" py:def="state_header(name, instance, sort, order)">
+    <py:with vars="next_order=(sort != name) and 'asc' or {'asc': 'desc', 'desc': 'asc'}[order]">
+        <a id="sortLink" title="${{
+                'asc': l_('Sort by %s in ascending order'),
+                'desc': l_('Sort by %s in descending order'),
+            }[next_order] % l_('Last occurrence').lower()}"
+            href="${tg.url('/', params=fixed_search, sort=name, order=next_order, page=page.page)}">
+            State
+            <img src="${tg.url('/images/' + order + '.gif')}" py:if="sort == name"/>
+        </a>
+    </py:with>
+</th>
+
+<py:def function="state_data(name, instance, data, plugin_data)">
+    <td class="plugin_${name}">${data['state']}</td>
+</py:def>
+
+<py:def function="plugin_template(name, instance)">
+    <?python
+        plugin_header_functions[name] = state_header
+        plugin_data_functions[name] = state_data
+    ?>
+</py:def>
+
+</html>
