@@ -2,21 +2,21 @@
     xmlns:xi="http://www.w3.org/2001/XInclude">
     <p class="status status-${node['status'].lower()}">${node['message']}</p>
 
-    <h2 py:if="node['tags']">Tags</h2>
-    <ul class="tags" py:if="node['tags']">
+    <h2 class="tags" py:if="node['tags']">Tags</h2>
+    <ul class="section tags" py:if="node['tags']">
         <li py:for="tag in node['tags']">
             <img src="images/tags/${tag}.png" alt="${l_(tag)}" /> ${l_(tag)}<py:if test="node['tags'][tag]">: ${node['tags'][tag]}</py:if>
         </li>
     </ul>
 
-    <h2 py:if="links">Links</h2>
+    <h2 class="links" py:if="links">Links</h2>
     <ul class="section links" py:if="links">
         <li py:for="link in links">
             <a target="${link[2]}" href="${tg.url(link[1])}" > ${link[0]}</a>
         </li>
     </ul>
 
-    <h2 py:if="node['maps']">Submaps</h2>
+    <h2 class="submaps" py:if="node['maps']">Submaps</h2>
     <!--!
         On intègre le contenu générique (liste des sous-cartes)
         en supprimant le "div" qui englobe cette liste.
