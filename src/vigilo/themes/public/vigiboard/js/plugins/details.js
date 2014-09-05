@@ -11,7 +11,7 @@ window.addEvent("domready", function () {
     window.details_dialog = new Jx.Dialog({
         label: l_('Event details'),
         modal: false,
-        resize: false,
+        resize: true,
         move: true,
         content: 'DetailsDialog',
         onOpen: window.dlg_open_handler,
