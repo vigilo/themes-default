@@ -220,6 +220,7 @@ h1 a:hover {
     border: 1px solid black;
     background-color: white;
     margin: 2px auto;
+    white-space: nowrap;
 }
 
 
