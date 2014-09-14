@@ -7,7 +7,7 @@
         <a id="sortLink" title="${{
                 'asc': l_('Sort by %s in ascending order'),
                 'desc': l_('Sort by %s in descending order'),
-            }[next_order] % l_('Last occurrence').lower()}"
+            }[next_order] % l_('State').lower()}"
             href="${tg.url('/', params=fixed_search, sort=name, order=next_order, page=page.page)}">
             State
             <img src="${tg.url('/images/' + order + '.gif')}" py:if="sort == name"/>
