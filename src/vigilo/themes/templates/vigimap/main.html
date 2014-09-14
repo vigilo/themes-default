@@ -23,6 +23,7 @@
         "js/lib/babel.js" et "js/lib/babelThemes.js" doivent être chargés
         avant "i18n", qui doit être chargé avant nos scripts.
     -->
+    <script type="text/javascript" src="${tg.url('/js/lib/ScrollSpy.js')}"></script>
     <script type="text/javascript" src="${tg.url('/js/lib/babel.js')}"></script>
     <script type="text/javascript" src="${tg.url('/js/lib/babelThemes.js')}"></script>
     <script type="text/javascript" src="${tg.url('/i18n')}"></script>
@@ -31,6 +32,13 @@
         var can_edit = ${defined('can_edit') and can_edit or 0};
         var is_manager = ${defined('is_manager') and is_manager or 0};
         var show_maptree = ${int(asbool(tg.config.get('show_maptree', True)))};
+        var spy = new ScrollSpy({
+            mode: 'horizontal',
+            onTick: function (pos, inside, enters, leaves, e) {
+                $('header').setStyle('left', pos.x + 'px');
+                $('menu').setStyle('left', pos.x + 'px');
+            }
+        });
     </script>
 
     <script type="text/javascript" src="${tg.url('/js/main.js')}"></script>
