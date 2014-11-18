@@ -63,8 +63,7 @@ msgid ""
 "        system and network management."
 msgstr ""
 "Vigilo ist eine Open-Source Überwachungslösung für Großsysteme\n"
-"\"\n"
-"\"        System- und Netzwerk-Management."
+"        System- und Netzwerk-Management."
 
 #: src/vigilo/themes/templates/common/header.html:6
 #: src/vigilo/themes/templates/vigiadmin/index.html:13
