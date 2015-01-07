@@ -957,16 +957,23 @@ Hash.implement({
 	toQueryString: function(base){
 		var queryString = [];
 		Hash.each(this, function(value, key){
-			if (base) key = base + '[' + key + ']';
+			if (base) key = base + '_' + key;
 			var result;
 			switch ($type(value)){
 				case 'object': result = Hash.toQueryString(value, key); break;
 				case 'array':
-					var qs = {};
 					value.each(function(val, i){
-						qs[i] = val;
+						switch ($type(val)) {
+							case 'object':
+							case 'array':
+								queryString.push(Hash.toQueryString(val, key));
+								break;
+							default:
+								queryString.push(key + '=' + encodeURIComponent(val));
+								break;
+						}
 					});
-					result = Hash.toQueryString(qs, key);
+					value = undefined;
 				break;
 				default: result = key + '=' + encodeURIComponent(value);
 			}
