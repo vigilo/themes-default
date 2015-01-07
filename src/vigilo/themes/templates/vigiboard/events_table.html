@@ -36,7 +36,8 @@
 <body>
     <div style="display: none">
         <py:for each="(plugin_name, plugin_instance) in config['columns_plugins']">
-            <xi:include href="plugins/${plugin_name}.html" />
+            <xi:include href="plugins/${plugin_name}.html"><xi:fallback><xi:include
+                href="plugins/_default.html"/></xi:fallback></xi:include>
             ${plugin_template(plugin_name, plugin_instance)}
         </py:for>
     </div>

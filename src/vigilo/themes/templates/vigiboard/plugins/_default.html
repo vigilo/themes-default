@@ -1,0 +1,18 @@
+<html xmlns:py="http://genshi.edgewall.org/"
+      xmlns:xi="http://www.w3.org/2001/XInclude"
+      py:strip="">
+
+<py:def function="plugin_template(name, instance)">
+<!--!
+    On définit des fonctions vides en guise
+    de générateurs d'en-tête et de contenu,
+    ce qui évite des erreurs si un plugin
+    ne génère pas de contenu.
+-->
+<?python
+    plugin_header_functions[name] = lambda *args, **kwargs: ''
+    plugin_data_functions[name] = lambda *args, **kwargs: ''
+?>
+</py:def>
+
+</html>
