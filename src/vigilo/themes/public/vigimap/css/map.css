@@ -384,7 +384,7 @@ canvas {
     position: fixed;
     bottom: 0.5em;
     right: 0.5em;
-    width: 11em;
+    width: 12em;
     z-index: 99;
 }
 
@@ -423,16 +423,24 @@ canvas {
     font-size: 90%;
     padding: 0.2em 0;
 }
-#legend dl dt {
+
+#legend dl dt span {
     display: block;
     float: left;
-    width: 2em;
+    width: 1.5em;
     margin-right: 0.5em;
-    text-align: center;
+    height: 22px;
     clear: left;
 }
+
+#legend dl dt span + span {
+    height: auto;
+    text-align: center;
+    clear: none;
+    background-repeat: no-repeat;
+}
 #legend dl dd {
-    border: 1px solid transparent;
+    height: 24px;
 }
 
 #legend dl > dd > span {
