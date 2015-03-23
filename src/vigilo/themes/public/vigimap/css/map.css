@@ -286,6 +286,10 @@ h1 a:hover {
     padding: 0.3em 0;
 }
 
+#details .jxDialogContent ul li.dependency {
+    padding: 0.3em 0.5em;
+}
+
 #details h2 {
     text-align: center;
     border-top: 1px solid black;

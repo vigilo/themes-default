@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vigilo-themes-default 3.6.0\n"
 "Report-Msgid-Bugs-To: contact@projet-vigilo.org\n"
-"POT-Creation-Date: 2015-06-02 12:07+0200\n"
-"PO-Revision-Date: 2015-06-02 12:07+0200\n"
+"POT-Creation-Date: 2015-06-22 16:46+0200\n"
+"PO-Revision-Date: 2015-06-22 16:46+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: en <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -20,12 +20,12 @@ msgstr ""
 "Generated-By: Babel 0.9.4\n"
 
 #: src/vigilo/themes/public/common/js/grouptree.js:237
-#: src/vigilo/themes/public/common/js/menutree.js:154
-#: src/vigilo/themes/public/common/js/menutree.js:174
+#: src/vigilo/themes/public/common/js/menutree.js:172
+#: src/vigilo/themes/public/common/js/menutree.js:192
 msgid "Loading..."
 msgstr "Loading..."
 
-#: src/vigilo/themes/public/common/js/menutree.js:144
+#: src/vigilo/themes/public/common/js/menutree.js:162
 msgid "No items"
 msgstr "No items"
 
@@ -936,7 +936,7 @@ msgid "Critical"
 msgstr "Critical"
 
 #: src/vigilo/themes/templates/vigimap/legend.html:28
-#: src/vigilo/themes/templates/vigimap/node.html:12
+#: src/vigilo/themes/templates/vigimap/node.html:19
 msgid "Links"
 msgstr "Links"
 
@@ -1003,22 +1003,26 @@ msgstr "Administration"
 msgid "Tags"
 msgstr "Tags"
 
-#: src/vigilo/themes/templates/vigimap/node.html:19
+#: src/vigilo/themes/templates/vigimap/node.html:12
+msgid "Dependencies"
+msgstr "Dependencies"
+
+#: src/vigilo/themes/templates/vigimap/node.html:26
 #: src/vigilo/themes/templates/vigimap/simpleelement.html:3
 msgid "Submaps"
 msgstr "Submaps"
 
-#: src/vigilo/themes/templates/vigimap/node.html:29
+#: src/vigilo/themes/templates/vigimap/node.html:36
 #, python-format
 msgid "Service name: %(service)s on %(host)s (%(address)s)"
 msgstr "Service name: %(service)s on %(host)s (%(address)s)"
 
-#: src/vigilo/themes/templates/vigimap/node.html:37
+#: src/vigilo/themes/templates/vigimap/node.html:44
 #, python-format
 msgid "Service name: %(service)s"
 msgstr "Service name: %(service)s"
 
-#: src/vigilo/themes/templates/vigimap/node.html:43
+#: src/vigilo/themes/templates/vigimap/node.html:50
 #, python-format
 msgid "Appliance name: %(host)s (%(address)s)"
 msgstr "Appliance name: %(host)s (%(address)s)"

@@ -9,6 +9,13 @@
         </li>
     </ul>
 
+    <h2 class="dependencies" py:if="node['dependencies']">Dependencies</h2>
+    <ul class="section dependencies" py:if="node['dependencies']">
+        <li py:for="dependency in node['dependencies']" class="status status-${dependency['status'].lower()} dependency" title="${dependency['message']}">
+            ${dependency['item']}
+        </li>
+    </ul>
+
     <h2 class="links" py:if="links">Links</h2>
     <ul class="section links" py:if="links">
         <li py:for="link in links">
