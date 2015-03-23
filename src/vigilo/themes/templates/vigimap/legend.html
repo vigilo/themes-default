@@ -7,16 +7,16 @@
         -->
         <h3>${l_("Elements")} <span></span></h3>
         <dl>
-            <dt class="status-unknown">&#160;</dt>
+            <dt><span class="status-icon-unknown"></span><span class="status-unknown">&#160;</span></dt>
             <dd><span class="legend-unknown"></span>${l_("Unknown")}</dd>
 
-            <dt class="status-ok">&#160;</dt>
+            <dt><span class="status-icon-ok"></span><span class="status-ok">&#160;</span></dt>
             <dd><span class="legend-ok"></span>${l_("OK")}</dd>
 
-            <dt class="status-warning">&#160;</dt>
+            <dt><span class="status-icon-warning"></span><span class="status-warning">&#160;</span></dt>
             <dd><span class="legend-warning"></span>${l_("Warning")}</dd>
 
-            <dt class="status-critical">&#160;</dt>
+            <dt><span class="status-icon-critical"></span><span class="status-critical">&#160;</span></dt>
             <dd><span class="legend-critical"></span>${l_("Critical")}</dd>
         </dl>
     </div>
@@ -30,16 +30,16 @@
             <div py:for="i, link in enumerate(links)" py:strip="True">
                 <div py:choose="" py:strip="True">
                     <p py:when="i == 0" py:strip="True">
-                        <dt style="background-color: ${link.f}; border: 1px solid ${link.s}">&#160;</dt>
+                        <dt><span/><span style="background-color: ${link.f}; border: 1px solid ${link.s}">&#160;</span></dt>
                         <dd><span class="legend-count"></span>${link.t_min}</dd>
                     </p>
                     <p py:when="i == len(links) - 1" py:strip="True">
-                        <dt style="background-color: ${link.f}; border: 1px solid ${link.s}">&#160;</dt>
-                        <dd><span class="legend-count"></span>&#8805; ${link.t_min}</dd>
+                        <dt><span/><span style="background-color: ${link.f}; border: 1px solid ${link.s}">&#160;</span></dt>
+                        <dd><span class="legend-count"></span>&#8805; ${link.t_min}%</dd>
                     </p>
                     <p py:otherwise="" py:strip="True">
-                        <dt style="background-color: ${link.f}; border: 1px solid ${link.s}">&#160;</dt>
-                        <dd><span class="legend-count"></span>${link.t_min} &#8594; ${link.t_max}</dd>
+                        <dt><span/><span style="background-color: ${link.f}; border: 1px solid ${link.s}">&#160;</span></dt>
+                        <dd><span class="legend-count"></span>${link.t_min}% &#8594; ${link.t_max}%</dd>
                     </p>
                 </div>
             </div>
