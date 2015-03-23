@@ -91,45 +91,6 @@ h1 a:hover {
     display: block;
 }
 
-
-/* Menu de gauche */
-
-#leftmenu,
-#maplist {
-    position: absolute;
-    left: 0;
-    margin: 0;
-    border-right: 1px solid black;
-    border-bottom: 1px solid black;
-    padding: 10px 0.4em 0.4em 0.2em;
-    z-index: 1;
-    background-color: #f1f1f1;
-}
-
-
-/* Ajout Rodrigue NSIANGANI (Vigilo Team)
- * Date : Vendredi 13 mai 2011
- * Pour rendre les menus opaques
- */
-#leftmenu,
-#maplist {
-    opacity: 0.92; /* CSS standard : FireFox, Opera, Chrome and Safari */
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=92)"; /* IE 8 */
-    /* -ms-filter: "alpha(opacity=92)"; */
-    filter: alpha(opacity=92); /* IE < 8 */
-    -moz-opacity: 0.92; /* Old versions of mozilla browser */
-    -khtml-opacity: 0.92; /* Safari 1.x */
-}
-
-
-#leftmenu .mapgroup {
-    margin: 0px auto;
-    border: 1px solid #aaa;
-    background-color: #eee;
-    text-align: center;
-    cursor: pointer;
-}
-
 #mapitems {
     width: 70px;
     left: -100px;

@@ -7115,8 +7115,8 @@ Jx.Menu.SubMenu = new Class({
         
         this.open = true;
         this.contentContainer.setStyle('visibility','');
-        
         this.setActive(true);
+        this.fireEvent('show', this);
     },
     
     eventInMenu: function(e) {
