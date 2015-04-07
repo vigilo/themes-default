@@ -40,12 +40,12 @@ td.UP {
 }
 
 td.WARNING {
-    background-color: #FFFF00;
+    background-color: #FF0;
 }
 
 td.CRITICAL,
 td.DOWN {
-    background-color: #FF0000;
+    background-color: #F88;
 }
 
 td.WARNING_Ack {
