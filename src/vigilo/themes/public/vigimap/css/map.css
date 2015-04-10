@@ -518,7 +518,8 @@ input[type=submit] {
 /* Flash */
 
 #flash {
-	opacity: 0;
+    opacity: 0;
+    z-index: 100;
 }
 
 #flash, .notice {
