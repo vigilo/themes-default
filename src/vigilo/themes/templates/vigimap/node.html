@@ -22,18 +22,28 @@
         en supprimant le "div" qui englobe cette liste.
     -->
     <xi:include href="submaps.html"/>
-    <py:choose test="">
+
+    <p class="reference" py:choose="">
         <!--! Service de bas niveau. -->
         <py:when test="node['service'] and node['host']">
-            <p>${l_("Service name: %(service)s on %(host)s (%(address)s)") % {'service': node['service'], 'host': node['host' ], 'address': node['address']}}</p>
+            ${l_("Service name: %(service)s on %(host)s (%(address)s)") % {
+                'service': node['service'],
+                'host': node['host' ],
+                'address': node['address']
+            }}
         </py:when>
         <!--! Service de haut niveau. -->
         <py:when test="node['service']">
-            <p>${l_("Service name: %(service)s") % {'service': node['service']}}</p>
+            ${l_("Service name: %(service)s") % {
+                'service': node['service']
+            }}
         </py:when>
         <!--! Hôte -->
         <py:otherwise>
-            <p>${l_("Appliance name: %(host)s (%(address)s)") % {'host': node['host'], 'address': node['address']}}</p>
+            ${l_("Appliance name: %(host)s (%(address)s)") % {
+                'host': node['host'],
+                'address': node['address']
+            }}
         </py:otherwise>
-    </py:choose>
+    </p>
 </div>
