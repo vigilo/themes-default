@@ -15,18 +15,18 @@
 <head>
     <py:choose>
         <title py:when="hostname and servicename">
-            VigiBoard - ${l_('Masked events for a correlated event on host "%(hostname)s" and  service "%(servicename)s"') % {
+            ${"VigiBoard - "}${l_('Masked events for a correlated event on host "%(hostname)s" and  service "%(servicename)s"') % {
                 'hostname': hostname,
                 'servicename': servicename,
             }}
         </title>
         <title py:when="hostname">
-            VigiBoard - ${l_('Masked events for a correlated event on host "%(hostname)s"') % {
+            ${"VigiBoard - "}${l_('Masked events for a correlated event on host "%(hostname)s"') % {
                 'hostname': hostname,
             }}
         </title>
         <title py:otherwise="">
-            VigiBoard - ${l_('Masked events for a correlated event')}
+            ${"VigiBoard - "}${l_('Masked events for a correlated event')}
         </title>
     </py:choose>
 </head>

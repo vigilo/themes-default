@@ -5,7 +5,7 @@
       xmlns:xi="http://www.w3.org/2001/XInclude">
 <head>
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
-    <title>VigiGraph</title>
+    <title>${"VigiGraph"}</title>
     <link rel="search" type="application/opensearchdescription+xml"
         title="VigiGraph search" href="${tg.url('/rpc/getOpenSearch')}"/>
 </head>
@@ -13,7 +13,7 @@
 <body>
 <div>
     <ul class="graphslist">
-        <h1>VigiGraph</h1>
+        <h1>${"VigiGraph"}</h1>
         <li py:for="graph in graphslist">
             <h2>${l_('Graph "%(graph)s" for host "%(host)s"') % {
                 'graph': graph['graph'],

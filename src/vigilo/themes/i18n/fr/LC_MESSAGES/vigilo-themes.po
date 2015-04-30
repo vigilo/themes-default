@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: vigilo-themes-default 0.1\n"
 "Report-Msgid-Bugs-To: contact@projet-vigilo.org\n"
 "POT-Creation-Date: 2009-11-10 09:51+0100\n"
-"PO-Revision-Date: 2015-04-30 13:00+0200\n"
+"PO-Revision-Date: 2015-06-02 12:07+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: fr <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n > 1)\n"
@@ -157,44 +157,17 @@ msgstr "Annuler"
 msgid "Interfaces"
 msgstr "Interfaces"
 
-#: src/vigilo/themes/templates/vigiadmin/index.html:23
-#: src/vigilo/themes/templates/vigiadmin/sidebars.html:9
-#: src/vigilo/themes/templates/vigiboard/master.html:21
-#: src/vigilo/themes/templates/vigiboard/toolbar.html:87
-msgid "VigiBoard"
-msgstr "VigiBoard"
-
 #: src/vigilo/themes/templates/vigiadmin/index.html:24
 msgid "See the latest events impacting the network."
 msgstr "Voir les derniers événements impactant le réseau."
-
-#: src/vigilo/themes/templates/vigiadmin/index.html:29
-#: src/vigilo/themes/templates/vigimap/edition.html:8
-#: src/vigilo/themes/templates/vigimap/index.html:8
-#: src/vigilo/themes/templates/vigimap/main.html:97
-msgid "VigiMap"
-msgstr "VigiMap"
 
 #: src/vigilo/themes/templates/vigiadmin/index.html:30
 msgid "Watch over the state of your equipments from a map-oriented perspective."
 msgstr "Suivre l'état des équipements à l'aide de vues orientées cartographie."
 
-#: src/vigilo/themes/templates/vigiadmin/index.html:35
-#: src/vigilo/themes/templates/vigigraph/graphslist.html:8
-#: src/vigilo/themes/templates/vigigraph/graphslist.html:16
-#: src/vigilo/themes/templates/vigigraph/index.html:11
-#: src/vigilo/themes/templates/vigigraph/main.html:87
-#: src/vigilo/themes/templates/vigigraph/main_simplified.html:51
-msgid "VigiGraph"
-msgstr "VigiGraph"
-
 #: src/vigilo/themes/templates/vigiadmin/index.html:36
 msgid "Monitor network performance."
 msgstr "Surveiller les performances du réseau."
-
-#: src/vigilo/themes/templates/vigiadmin/index.html:41
-msgid "VigiReport"
-msgstr "VigiReport"
 
 #: src/vigilo/themes/templates/vigiadmin/index.html:42
 msgid "See long-term reports on the network, using different sets of metrics."
@@ -344,22 +317,6 @@ msgstr "Permissions sur les données"
 #: src/vigilo/themes/templates/vigiadmin/admin/layout.html:30
 msgid "Permissions on applications"
 msgstr "Permissions sur les applications"
-
-#: src/vigilo/themes/templates/vigiboard/atom.xml:6
-msgid "Vigilo"
-msgstr "Vigilo"
-
-#: src/vigilo/themes/templates/vigiboard/events_table.html:15
-#: src/vigilo/themes/templates/vigiboard/events_table.html:21
-#: src/vigilo/themes/templates/vigiboard/events_table.html:25
-#: src/vigilo/themes/templates/vigiboard/history_table.html:18
-#: src/vigilo/themes/templates/vigiboard/history_table.html:24
-#: src/vigilo/themes/templates/vigiboard/history_table.html:29
-#: src/vigilo/themes/templates/vigiboard/raw_events_table.html:17
-#: src/vigilo/themes/templates/vigiboard/raw_events_table.html:23
-#: src/vigilo/themes/templates/vigiboard/raw_events_table.html:28
-msgid "VigiBoard -"
-msgstr "VigiBoard -"
 
 #: src/vigilo/themes/templates/vigiboard/events_table.html:16
 #: src/vigilo/themes/templates/vigiboard/events_table.html:91
@@ -893,10 +850,6 @@ msgstr "Aucun événement sélectionné"
 msgid "Example"
 msgstr "Exemple"
 
-#: src/vigilo/themes/templates/vigiconf_web/master.html:21
-msgid "VigiConf"
-msgstr "VigiConf"
-
 #: src/vigilo/themes/templates/vigigraph/fullhostpage.html:11
 #: src/vigilo/themes/templates/vigigraph/fullhostpage.html:15
 #, python-format
@@ -923,6 +876,8 @@ msgid "Vigilo search engine"
 msgstr "Moteur de recherche Vigilo"
 
 #: src/vigilo/themes/templates/vigigraph/graphslist.html:9
+#: src/vigilo/themes/templates/vigigraph/main.html:16
+#: src/vigilo/themes/templates/vigigraph/main_simplified.html:13
 #: src/vigilo/themes/templates/vigigraph/searchhost.html:9
 #: src/vigilo/themes/templates/vigigraph/searchhost.html:13
 #: src/vigilo/themes/templates/vigigraph/searchhostform.html:8
@@ -939,11 +894,6 @@ msgstr "Graphe \"%(graph)s\" de l'hôte \"%(host)s\""
 #, python-format
 msgid "From %(start_date)s to %(end_date)s"
 msgstr "Du %(start_date)s au %(end_date)s"
-
-#: src/vigilo/themes/templates/vigigraph/main.html:16
-#: src/vigilo/themes/templates/vigigraph/main_simplified.html:13
-msgid "Vigigraph search"
-msgstr "Recherche VigiGraph"
 
 #: src/vigilo/themes/templates/vigigraph/main.html:66
 msgid "Print all"
@@ -1107,4 +1057,7 @@ msgstr "Etes-vous sûr de vouloir supprimer %(path)s ?"
 #, python-format
 msgid "Related to %(parent_obj)s"
 msgstr "Lié à %(parent_obj)s"
+
+#~ msgid "VigiConf"
+#~ msgstr "VigiConf"
 

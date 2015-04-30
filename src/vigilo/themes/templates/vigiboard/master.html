@@ -18,7 +18,7 @@
 <body py:match="body" py:attrs="select('@*')">
   ${header()}
   <ul id="mainmenu">
-    <li class="first"><a href="${tg.url('/')}" class="${('', 'active')[defined('page') and page==page=='index']}">VigiBoard</a></li>
+    <li class="first"><a href="${tg.url('/')}" class="${('', 'active')[defined('page') and page==page=='index']}">${"VigiBoard"}</a></li>
     <!--! On masque le bouton de login/logout si une authentification externe est utilisée. -->
     <span py:if="tg.auth_stack_enabled and not tg.request.environ['vigilo.external_auth']" py:strip="True">
         <li py:if="not request.identity" class="loginlogout"><a href="${tg.url('/login')}">Login</a></li>

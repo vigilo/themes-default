@@ -7,9 +7,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: vigilo-themes-default 3.5\n"
+"Project-Id-Version: vigilo-themes-default 3.6.0\n"
 "Report-Msgid-Bugs-To: contact@projet-vigilo.org\n"
-"POT-Creation-Date: 2015-04-30 13:00+0200\n"
+"POT-Creation-Date: 2015-06-02 12:07+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -154,43 +154,16 @@ msgstr ""
 msgid "Interfaces"
 msgstr ""
 
-#: src/vigilo/themes/templates/vigiadmin/index.html:23
-#: src/vigilo/themes/templates/vigiadmin/sidebars.html:9
-#: src/vigilo/themes/templates/vigiboard/master.html:21
-#: src/vigilo/themes/templates/vigiboard/toolbar.html:87
-msgid "VigiBoard"
-msgstr ""
-
 #: src/vigilo/themes/templates/vigiadmin/index.html:24
 msgid "See the latest events impacting the network."
-msgstr ""
-
-#: src/vigilo/themes/templates/vigiadmin/index.html:29
-#: src/vigilo/themes/templates/vigimap/edition.html:8
-#: src/vigilo/themes/templates/vigimap/index.html:8
-#: src/vigilo/themes/templates/vigimap/main.html:97
-msgid "VigiMap"
 msgstr ""
 
 #: src/vigilo/themes/templates/vigiadmin/index.html:30
 msgid "Watch over the state of your equipments from a map-oriented perspective."
 msgstr ""
 
-#: src/vigilo/themes/templates/vigiadmin/index.html:35
-#: src/vigilo/themes/templates/vigigraph/graphslist.html:8
-#: src/vigilo/themes/templates/vigigraph/graphslist.html:16
-#: src/vigilo/themes/templates/vigigraph/index.html:11
-#: src/vigilo/themes/templates/vigigraph/main.html:87
-#: src/vigilo/themes/templates/vigigraph/main_simplified.html:51
-msgid "VigiGraph"
-msgstr ""
-
 #: src/vigilo/themes/templates/vigiadmin/index.html:36
 msgid "Monitor network performance."
-msgstr ""
-
-#: src/vigilo/themes/templates/vigiadmin/index.html:41
-msgid "VigiReport"
 msgstr ""
 
 #: src/vigilo/themes/templates/vigiadmin/index.html:42
@@ -336,22 +309,6 @@ msgstr ""
 
 #: src/vigilo/themes/templates/vigiadmin/admin/layout.html:30
 msgid "Permissions on applications"
-msgstr ""
-
-#: src/vigilo/themes/templates/vigiboard/atom.xml:6
-msgid "Vigilo"
-msgstr ""
-
-#: src/vigilo/themes/templates/vigiboard/events_table.html:15
-#: src/vigilo/themes/templates/vigiboard/events_table.html:21
-#: src/vigilo/themes/templates/vigiboard/events_table.html:25
-#: src/vigilo/themes/templates/vigiboard/history_table.html:18
-#: src/vigilo/themes/templates/vigiboard/history_table.html:24
-#: src/vigilo/themes/templates/vigiboard/history_table.html:29
-#: src/vigilo/themes/templates/vigiboard/raw_events_table.html:17
-#: src/vigilo/themes/templates/vigiboard/raw_events_table.html:23
-#: src/vigilo/themes/templates/vigiboard/raw_events_table.html:28
-msgid "VigiBoard -"
 msgstr ""
 
 #: src/vigilo/themes/templates/vigiboard/events_table.html:16
@@ -880,10 +837,6 @@ msgstr ""
 msgid "Example"
 msgstr ""
 
-#: src/vigilo/themes/templates/vigiconf_web/master.html:21
-msgid "VigiConf"
-msgstr ""
-
 #: src/vigilo/themes/templates/vigigraph/fullhostpage.html:11
 #: src/vigilo/themes/templates/vigigraph/fullhostpage.html:15
 #, python-format
@@ -910,6 +863,8 @@ msgid "Vigilo search engine"
 msgstr ""
 
 #: src/vigilo/themes/templates/vigigraph/graphslist.html:9
+#: src/vigilo/themes/templates/vigigraph/main.html:16
+#: src/vigilo/themes/templates/vigigraph/main_simplified.html:13
 #: src/vigilo/themes/templates/vigigraph/searchhost.html:9
 #: src/vigilo/themes/templates/vigigraph/searchhost.html:13
 #: src/vigilo/themes/templates/vigigraph/searchhostform.html:8
@@ -925,11 +880,6 @@ msgstr ""
 #: src/vigilo/themes/templates/vigigraph/graphslist.html:23
 #, python-format
 msgid "From %(start_date)s to %(end_date)s"
-msgstr ""
-
-#: src/vigilo/themes/templates/vigigraph/main.html:16
-#: src/vigilo/themes/templates/vigigraph/main_simplified.html:13
-msgid "Vigigraph search"
 msgstr ""
 
 #: src/vigilo/themes/templates/vigigraph/main.html:66

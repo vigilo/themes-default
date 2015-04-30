@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: vigilo-themes-default 2.0.0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2010-11-19 12:43+0100\n"
-"PO-Revision-Date: 2015-04-30 13:00+0200\n"
+"PO-Revision-Date: 2015-06-02 12:07+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: de_DE <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -29,7 +29,7 @@ msgstr "wird geladen..."
 #: src/vigilo/themes/public/common/js/menutree.js:144
 #, fuzzy
 msgid "No items"
-msgstr "kein Bild"
+msgstr ""
 
 #: src/vigilo/themes/public/vigiboard/js/plugins/details.js:12
 #: src/vigilo/themes/templates/vigiboard/plugins/details.html:20
@@ -160,43 +160,16 @@ msgstr "Abbrechen"
 msgid "Interfaces"
 msgstr "Vigilo Schnittstellen"
 
-#: src/vigilo/themes/templates/vigiadmin/index.html:23
-#: src/vigilo/themes/templates/vigiadmin/sidebars.html:9
-#: src/vigilo/themes/templates/vigiboard/master.html:21
-#: src/vigilo/themes/templates/vigiboard/toolbar.html:87
-msgid "VigiBoard"
-msgstr "VigiBoard"
-
 #: src/vigilo/themes/templates/vigiadmin/index.html:24
 msgid "See the latest events impacting the network."
 msgstr ""
-
-#: src/vigilo/themes/templates/vigiadmin/index.html:29
-#: src/vigilo/themes/templates/vigimap/edition.html:8
-#: src/vigilo/themes/templates/vigimap/index.html:8
-#: src/vigilo/themes/templates/vigimap/main.html:97
-msgid "VigiMap"
-msgstr "VigiMap"
 
 #: src/vigilo/themes/templates/vigiadmin/index.html:30
 msgid "Watch over the state of your equipments from a map-oriented perspective."
 msgstr ""
 
-#: src/vigilo/themes/templates/vigiadmin/index.html:35
-#: src/vigilo/themes/templates/vigigraph/graphslist.html:8
-#: src/vigilo/themes/templates/vigigraph/graphslist.html:16
-#: src/vigilo/themes/templates/vigigraph/index.html:11
-#: src/vigilo/themes/templates/vigigraph/main.html:87
-#: src/vigilo/themes/templates/vigigraph/main_simplified.html:51
-msgid "VigiGraph"
-msgstr "VigiGraph"
-
 #: src/vigilo/themes/templates/vigiadmin/index.html:36
 msgid "Monitor network performance."
-msgstr ""
-
-#: src/vigilo/themes/templates/vigiadmin/index.html:41
-msgid "VigiReport"
 msgstr ""
 
 #: src/vigilo/themes/templates/vigiadmin/index.html:42
@@ -349,22 +322,6 @@ msgstr "Beaufsichtigungs-Suchfunktion"
 #, fuzzy
 msgid "Permissions on applications"
 msgstr "Beaufsichtigungs-Suchfunktion"
-
-#: src/vigilo/themes/templates/vigiboard/atom.xml:6
-msgid "Vigilo"
-msgstr ""
-
-#: src/vigilo/themes/templates/vigiboard/events_table.html:15
-#: src/vigilo/themes/templates/vigiboard/events_table.html:21
-#: src/vigilo/themes/templates/vigiboard/events_table.html:25
-#: src/vigilo/themes/templates/vigiboard/history_table.html:18
-#: src/vigilo/themes/templates/vigiboard/history_table.html:24
-#: src/vigilo/themes/templates/vigiboard/history_table.html:29
-#: src/vigilo/themes/templates/vigiboard/raw_events_table.html:17
-#: src/vigilo/themes/templates/vigiboard/raw_events_table.html:23
-#: src/vigilo/themes/templates/vigiboard/raw_events_table.html:28
-msgid "VigiBoard -"
-msgstr "VigiBoard -"
 
 #: src/vigilo/themes/templates/vigiboard/events_table.html:16
 #: src/vigilo/themes/templates/vigiboard/events_table.html:91
@@ -909,10 +866,6 @@ msgstr "Es wurden keine Ereignisse ausgewählt"
 msgid "Example"
 msgstr "Beispiel"
 
-#: src/vigilo/themes/templates/vigiconf_web/master.html:21
-msgid "VigiConf"
-msgstr ""
-
 #: src/vigilo/themes/templates/vigigraph/fullhostpage.html:11
 #: src/vigilo/themes/templates/vigigraph/fullhostpage.html:15
 #, python-format
@@ -939,6 +892,8 @@ msgid "Vigilo search engine"
 msgstr "Vigilo Suchmaschine"
 
 #: src/vigilo/themes/templates/vigigraph/graphslist.html:9
+#: src/vigilo/themes/templates/vigigraph/main.html:16
+#: src/vigilo/themes/templates/vigigraph/main_simplified.html:13
 #: src/vigilo/themes/templates/vigigraph/searchhost.html:9
 #: src/vigilo/themes/templates/vigigraph/searchhost.html:13
 #: src/vigilo/themes/templates/vigigraph/searchhostform.html:8
@@ -955,11 +910,6 @@ msgstr "Grafik \"%(graph)s\" für Host \"%(host)s\""
 #, python-format
 msgid "From %(start_date)s to %(end_date)s"
 msgstr "Von %(start_date)s bis %(end_date)s"
-
-#: src/vigilo/themes/templates/vigigraph/main.html:16
-#: src/vigilo/themes/templates/vigigraph/main_simplified.html:13
-msgid "Vigigraph search"
-msgstr "Vigigraph Suchfunktion"
 
 #: src/vigilo/themes/templates/vigigraph/main.html:66
 msgid "Print all"
@@ -1040,7 +990,6 @@ msgstr "Grafik '%(graph)s' auf '%(host)s'"
 
 #: src/vigilo/themes/templates/vigimap/main.html:80
 #: src/vigilo/themes/templates/vigimap/main.html:121
-#, fuzzy
 msgid "Search"
 msgstr "Vigilo Suchfunktion"
 
@@ -1123,4 +1072,7 @@ msgstr "Sind Sie sicher, dass diese Downtime gelöscht werden soll?"
 #, python-format
 msgid "Related to %(parent_obj)s"
 msgstr ""
+
+#~ msgid "VigiConf"
+#~ msgstr ""
 

@@ -20,25 +20,25 @@
     <ol id="interfaces">
       <li class="interface" py:if="tg.config.get('interfaces.vigiboard')">
         <h2><a target="${tg.config.get('links_target', '_self')}"
-            href="${tg.url(tg.config['interfaces.vigiboard'])}">VigiBoard</a></h2>
+            href="${tg.url(tg.config['interfaces.vigiboard'])}">${"VigiBoard"}</a></h2>
         <p>See the latest events impacting the network.</p>
       </li>
 
       <li class="interface" py:if="tg.config.get('interfaces.vigimap')">
         <h2><a target="${tg.config.get('links_target', '_self')}"
-            href="${tg.url(tg.config['interfaces.vigimap'])}">VigiMap</a></h2>
+            href="${tg.url(tg.config['interfaces.vigimap'])}">${"VigiMap"}</a></h2>
         <p>Watch over the state of your equipments from a map-oriented perspective.</p>
       </li>
 
       <li class="interface" py:if="tg.config.get('interfaces.vigigraph')">
         <h2><a target="${tg.config.get('links_target', '_self')}"
-            href="${tg.url(tg.config['interfaces.vigigraph'])}">VigiGraph</a></h2>
+            href="${tg.url(tg.config['interfaces.vigigraph'])}">${"VigiGraph"}</a></h2>
         <p>Monitor network performance.</p>
       </li>
 
       <li class="interface" py:if="tg.config.get('interfaces.vigireport')">
         <h2><a target="${tg.config.get('links_target', '_self')}"
-            href="${tg.url(tg.config['interfaces.vigireport'])}">VigiReport</a></h2>
+            href="${tg.url(tg.config['interfaces.vigireport'])}">${"VigiReport"}</a></h2>
         <p>See long-term reports on the network, using different sets of metrics.</p>
       </li>
     </ol>
