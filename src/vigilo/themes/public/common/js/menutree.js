@@ -21,7 +21,7 @@ var MenuTree = new Class({
         groupImage: "mapgroup.png",
         itemName: "map",
         itemImage: "map.png",
-        imgpath: "images",
+        imgpath: "images"
     },
 
     initialize: function(options) {
@@ -53,7 +53,8 @@ var MenuTree = new Class({
                     var parent = req.options.parent;
                     var menutree = this;
                     var continuation = parent.options.continuation;
-                    var node, node_pos;
+                    var node, node_pos, dims;
+                    var maxWidth = 250;
 
                     if (parent.options.loaded) {
                         return;
@@ -64,6 +65,8 @@ var MenuTree = new Class({
                         node = parent.items[0];
                     }
                     node_pos = parent.items.indexOf(node);
+
+                    parent.contentContainer.style.width = 'auto';
 
                     data[menutree.options.groupName + 's'].each(function (group) {
                         var item = new Jx.Menu.SubMenu({
@@ -89,6 +92,13 @@ var MenuTree = new Class({
                         this.items.splice(node_pos++, 0, item);
                         item.setOwner(this);
                         item.domObj.inject(node.domObj, 'before');
+
+                        // Si la largeur de la ligne dépasse la limite
+                        // d'affichage pré-définie, on affiche aussi
+                        // le nom complet au survol de la ligne.
+                        if (item.domObj.getMarginBoxSize().width > maxWidth) {
+                            item.setTooltip(group.name);
+                        }
                     }.bind(parent));
 
                     data[menutree.options.itemName + 's'].each(function (value) {
@@ -111,6 +121,11 @@ var MenuTree = new Class({
                         this.items.splice(node_pos++, 0, item);
                         item.setOwner(this);
                         item.domObj.inject(node.domObj, 'before');
+
+                        // Même logique que pour les groupes.
+                        if (item.domObj.getMarginBoxSize().width > maxWidth) {
+                            item.setTooltip(value.name);
+                        }
                     }.bind(parent));
 
                     node.setOwner(null);
@@ -122,7 +137,9 @@ var MenuTree = new Class({
                     }
 
                     // Redimensionnement de la zone ombrée.
-                    parent.contentContainer.setContentBoxSize(parent.subDomObj.getMarginBoxSize());
+                    dims = parent.contentContainer.getMarginBoxSize();
+                    dims.width = Math.min(dims.width, maxWidth);
+                    parent.contentContainer.setContentBoxSize(dims);
                     parent.options.loaded = true;
                 }.bind(this)
             })
@@ -136,7 +153,7 @@ var MenuTree = new Class({
         this.tree.subDomObj.empty();
         this.tree.options.loaded = false;
         // Recrée le premier élément "Chargement..."
-        this.tree.add(this._makeLoading())
+        this.tree.add(this._makeLoading());
     },
 
     _makeEmpty: function() {
