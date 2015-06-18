@@ -47,6 +47,7 @@ var MenuTree = new Class({
                 url: this.options.url,
                 noCache: true,
                 link: 'cancel',
+                async: false,
                 onSuccess: function(data) {
                     var i;
                     var req = this.tree.domObj.retrieve('request');
