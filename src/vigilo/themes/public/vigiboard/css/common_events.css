@@ -10,9 +10,9 @@
     text-decoration: none;
 }
 
-#home {
-    margin: 0.1em 0;
-    margin-right: 0.3em;
+#logo {
+    /*margin: 0 0.2em;*/
+    margin: 0.3em 0.2em;
     float: left;
 }
 
