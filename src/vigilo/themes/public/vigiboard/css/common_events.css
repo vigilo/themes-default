@@ -415,3 +415,18 @@ div.clearingdiv {
     padding-top: 1px;
     padding-left: 10px;
 }
+
+#loading {
+    padding: 10% 0px;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    display: none;
+}
+
+#loading img {
+    margin: auto;
+    background-color: white;
+    padding: 2px;
+    border: 1px solid gray;
+}

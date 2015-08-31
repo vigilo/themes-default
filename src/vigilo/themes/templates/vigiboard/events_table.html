@@ -42,7 +42,7 @@
         </py:for>
     </div>
 
-    <table class="vigitable" summary="Event table" py:with="columns_count = sum([p[1].get_generated_columns_count() for p in config['columns_plugins']])">
+    <table class="vigitable loadingLayer" summary="Event table" py:with="columns_count = sum([p[1].get_generated_columns_count() for p in config['columns_plugins']])">
         <thead>
             <tr>
                 <th colspan="${columns_count}">

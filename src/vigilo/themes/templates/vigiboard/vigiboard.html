@@ -70,6 +70,7 @@
 
     <script type="text/javascript" src="${tg.url('/js/grouptree.js')}"></script>
     <script type="text/javascript" src="${tg.url('/js/tree.js')}"></script>
+    <script type="text/javascript" src="${tg.url('/js/loader.js')}"></script>
 </head>
 </py:match>
 
@@ -99,6 +100,10 @@ ${toolbar()}
 </script>
 
 <div class="main_content" py:content="select('*|text()')"></div>
+
+<div id="loading">
+    <img alt="loading..." src="${tg.url('images/loading.gif')}" />
+</div>
 
 </body>
 </py:match>
