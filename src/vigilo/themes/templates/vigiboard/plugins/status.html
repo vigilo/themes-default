@@ -11,37 +11,16 @@
 
 <py:def function="status_header(name, instance)">
 <th class="plugin_${name}" title="Trouble Ticket">
-    <py:with vars="next_order=(sort != 'ticket') and 'asc' or {'asc': 'desc', 'desc': 'asc'}[order]">
-        <a id="sortLink" title="${{
-                'asc': l_('Sort by %s in ascending order'),
-                'desc': l_('Sort by %s in descending order'),
-            }[next_order] % l_('Trouble Ticket').lower()}"
-            href="${tg.url('/', params=fixed_search, sort='ticket', order=next_order, page=page.page)}">
-            [TT]
-            <img src="${tg.url('/images/' + order + '.gif')}" py:if="sort == 'ticket'"/>
-        </a>
-    </py:with>
+    ${generic_plugin_header(name, 'ticket', l_('[TT]'), l_('Trouble Ticket'))}
 </th>
-
-<th class="plugin_${name}" title="Acknowledgement status">
-    <py:with vars="next_order=(sort != 'ack') and 'asc' or {'asc': 'desc', 'desc': 'asc'}[order]">
-        <a id="sortLink" title="${{
-                'asc': l_('Sort by %s in ascending order'),
-                'desc': l_('Sort by %s in descending order'),
-            }[next_order] % l_('Acknowledgement status').lower()}"
-            href="${tg.url('/', params=fixed_search, sort='ack', order=next_order, page=page.page)}">
-            Status
-            <img src="${tg.url('/images/' + order + '.gif')}" py:if="sort == 'ack'"/>
-        </a>
-    </py:with>
+<th class="plugin_${name}" title="Acknowledgment status">
+    ${generic_plugin_header(name, 'ack', l_('Status'), l_('Acknowledgment status'))}
 </th>
-
 <th class="plugin_${name}">
     <a class="Edit_EventsLien" id="Edit_All" href="#">
         <img src="${tg.url('/images/icon_page_edit.png')}" alt="Edit selected" title="Edit all selected events"/>
     </a>
 </th>
-
 <th class="plugin_${name}">
     <input title="Select/Unselect all" id="vigiboard_checkall_checkbox" type="checkbox" onclick="vigiboard_checkall();" />
 </th>

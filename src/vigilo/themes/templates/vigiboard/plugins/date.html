@@ -3,6 +3,8 @@
       py:strip="">
 
 <th id="plugin_${name}" class="plugin_${name}" py:def="date_header(name, instance, sort, order)">
+    <!--! On ne peut pas utiliser generic_plugin_header() ici
+          car le formatage est un peu différent (2 lignes). -->
     <py:with vars="next_order=(sort != name) and 'asc' or {'asc': 'desc', 'desc': 'asc'}[order]">
         <a id="sortLink" title="${{
                 'asc': l_('Sort by %s in ascending order'),

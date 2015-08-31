@@ -3,16 +3,7 @@
       py:strip="">
 
 <th id="plugin_${name}" class="plugin_${name}" py:def="servicename_header(name, instance, sort, order)">
-    <py:with vars="next_order=(sort != name) and 'asc' or {'asc': 'desc', 'desc': 'asc'}[order]">
-        <a id="sortLink" title="${{
-                'asc': l_('Sort by %s in ascending order'),
-                'desc': l_('Sort by %s in descending order'),
-            }[next_order] % l_('Servicename').lower()}"
-            href="${tg.url('/', params=fixed_search, sort=name, order=next_order, page=page.page)}">
-            Servicename
-            <img src="${tg.url('/images/' + order + '.gif')}" py:if="sort == name"/>
-        </a>
-    </py:with>
+    ${generic_plugin_header(name, name, l_('Servicename'), l_('Servicename'))}
 </th>
 
 <td class="plugin_${name}" py:def="servicename_data(name, instance, data, plugin_data)">${data['servicename']}</td>
