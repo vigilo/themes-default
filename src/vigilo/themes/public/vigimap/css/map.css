@@ -262,6 +262,14 @@ h1 a:hover {
 
 /* Panneau de details */
 
+/* Target IE9,10,11 to solve a scrollbar size problem inside Dialog popup */
+@media screen and (min-width:0\0) {
+    .jxDialogContentContainer {
+        padding-right: 13px;
+        padding-bottom: 15px;
+    }
+}
+
 #details {
     font-size: 80%;
 }
