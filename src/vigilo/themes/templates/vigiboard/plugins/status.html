@@ -85,25 +85,7 @@
         }
     }
 
-    window.addEvent("domready", function () {
-        /// HACK: voir notes sur window.search_dialog dans vigiboard.html.
-        window.edit_dialog = new Jx.Dialog({
-            label: "${l_('Editing')}",
-            modal: false,
-            resize: false,
-            move: true,
-            content: 'edit_event_form',
-            onOpen: window.dlg_open_handler,
-            onClose: window.dlg_close_handler,
-            width: 400,
-            height: 180,
-            closed: true
-        });
-        window.edit_dialog.toggleCollapse();
-        window.edit_dialog.toggleCollapse();
-
-        window.edit_dialog.addEvent('close', remove_selection);
-
+    function register_edit_events() {
         // Ajoute les événements pour la sélection multiple.
         $$('Edit_All').addEvent('click', function () {
             var nb_events = $$$$('.Edit_EventsCheckBox').filter(
@@ -135,6 +117,26 @@
         $$$$('.Edit_EventsCheckBox').addEvent('click', function () {
             update_edit_dialog();
         });
+    }
+    document.addEvent('board-update', register_edit_events);
+
+    window.addEvent("domready", function () {
+        /// HACK: voir notes sur window.search_dialog dans vigiboard.html.
+        window.edit_dialog = new Jx.Dialog({
+            label: "${l_('Editing')}",
+            modal: false,
+            resize: false,
+            move: true,
+            content: 'edit_event_form',
+            onOpen: window.dlg_open_handler,
+            onClose: window.dlg_close_handler,
+            width: 400,
+            height: 180,
+            closed: true
+        });
+        window.edit_dialog.toggleCollapse();
+        window.edit_dialog.toggleCollapse();
+        window.edit_dialog.addEvent('close', remove_selection);
     }); // Fin domready.
 
     /* mode: 1 si multi-sélection, 0 sinon

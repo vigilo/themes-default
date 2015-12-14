@@ -2,38 +2,15 @@
 // License: GNU GPL v2 <http://www.gnu.org/licenses/gpl-2.0.html>
 
 window.details_dialog = null;
+var original_height = 190;
+if (plug_details_nb_links)
+    original_height = 220 + plug_details_nb_links * 14;
 
-window.addEvent("domready", function () {
-    var original_height = 190;
-    if (plug_details_nb_links)
-        original_height = 220 + plug_details_nb_links * 14;
+function remove_selection() {
+    $$('.selectedRow').removeClass('selectedRow');
+}
 
-    window.details_dialog = new Jx.Dialog({
-        label: l_('Event details'),
-        modal: false,
-        resize: true,
-        move: true,
-        content: 'DetailsDialog',
-        onOpen: window.dlg_open_handler,
-        onClose: window.dlg_close_handler,
-        width: 275,
-        // On essaye d'obtenir une hauteur correcte pour le dialogue,
-        // en fonction du nombre de liens externes configurés.
-        height: original_height,
-        closed: true,
-        horizontal: 'right left',
-        vertical: 'top top'
-    });
-    /// HACK: voir notes sur window.search_dialog dans vigiboard.html.
-    window.details_dialog.toggleCollapse();
-    window.details_dialog.toggleCollapse();
-
-    function remove_selection() {
-        $$('.selectedRow').removeClass('selectedRow');
-    }
-
-    window.details_dialog.addEvent('close', remove_selection);
-
+function register_details_events() {
     $$('.Details_Link').each(function (el) {
         el.addEvent('click', function (item) {
             remove_selection();
@@ -158,4 +135,29 @@ window.addEvent("domready", function () {
             req.post({plugin_name: plug_details_name, idcorrevent: idd});
         }.bind(this, el));
     }, window.details_dialog);
+}
+document.addEvent('board-update', register_details_events);
+
+window.addEvent("domready", function () {
+    window.details_dialog = new Jx.Dialog({
+        label: l_('Event details'),
+        modal: false,
+        resize: true,
+        move: true,
+        content: 'DetailsDialog',
+        onOpen: window.dlg_open_handler,
+        onClose: window.dlg_close_handler,
+        width: 275,
+        // On essaye d'obtenir une hauteur correcte pour le dialogue,
+        // en fonction du nombre de liens externes configurés.
+        height: original_height,
+        closed: true,
+        horizontal: 'right left',
+        vertical: 'top top'
+    });
+    /// HACK: voir notes sur window.search_dialog dans vigiboard.html.
+    window.details_dialog.toggleCollapse();
+    window.details_dialog.toggleCollapse();
+
+    window.details_dialog.addEvent('close', remove_selection);
 });
