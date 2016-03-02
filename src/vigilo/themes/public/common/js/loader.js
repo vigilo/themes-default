@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2009-2015 CS-SI
+ * Copyright (C) 2009-2016 CS-SI
  * Licence : GNU GPL v2 ou superieure
  *
  */
