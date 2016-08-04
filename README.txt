@@ -34,7 +34,6 @@ License
 -------
 Le thème Vigilo est sous licence `GPL v2`_.
 
-
 .. _documentation officielle: Vigilo_
 .. _Vigilo: http://www.projet-vigilo.org
 .. _GPL v2: http://www.gnu.org/licenses/gpl-2.0.html
