@@ -3,7 +3,7 @@
       py:strip="">
 
 <th id="plugin_${name}" class="plugin_${name}" py:def="output_header(name, instance, sort, order)">
-    ${generic_plugin_header(name, name, l_('Output'), l_('Output'))}
+    ${generic_plugin_header(name, name, _('Output'), _('Output'))}
 </th>
 
 <td class="plugin_${name}" py:def="output_data(name, instance, data, plugin_data)">${data['output']}</td>

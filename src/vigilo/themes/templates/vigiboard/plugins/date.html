@@ -7,10 +7,10 @@
           car le formatage est un peu différent (2 lignes). -->
     <py:with vars="next_order=(sort != name) and 'asc' or {'asc': 'desc', 'desc': 'asc'}[order]">
         <a id="sortLink" title="${{
-                'asc': l_('Sort by %s in ascending order'),
-                'desc': l_('Sort by %s in descending order'),
-            }[next_order] % l_('Last occurrence').lower()}"
-            href="${tg.url('/', params=fixed_search, sort=name, order=next_order, page=page.page)}">
+                'asc': _('Sort by %s in ascending order'),
+                'desc': _('Sort by %s in descending order'),
+            }[next_order] % _('Last occurrence').lower()}"
+            href="${tg.url('/', params=dict(fixed_search, sort=name, order=next_order, page=page.page))}">
             Last occurrence
             <img src="${tg.url('/images/' + order + '.gif')}" py:if="sort == name"/>
         </a>

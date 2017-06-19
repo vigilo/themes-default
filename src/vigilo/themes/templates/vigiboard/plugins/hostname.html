@@ -3,7 +3,7 @@
       py:strip="">
 
 <th id="plugin_${name}" class="plugin_${name}" py:def="hostname_header(name, instance, sort, order)">
-    ${generic_plugin_header(name, name, l_('Hostname'), l_('Hostname'))}
+    ${generic_plugin_header(name, name, _('Hostname'), _('Hostname'))}
 </th>
 
 <td class="plugin_${name}" py:def="hostname_data(name, instance, data, plugin_data)">${data['hostname']}</td>

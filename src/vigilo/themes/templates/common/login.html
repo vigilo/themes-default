@@ -8,7 +8,7 @@
 
 <head>
     <meta content="text/html; charset=UTF-8" http-equiv="content-type" py:replace="''"/>
-    <title>${tg.config.app_name + ' - ' + l_('Login Form')}</title>
+    <title>${tg.config.app_name + ' - ' + _('Login Form')}</title>
     <script type="text/javascript" src="${tg.url('/js/lib/mootools.js')}"></script>
     <script type="text/javascript" src="${tg.url('/js/lib/mootools-more.js')}"></script>
     <script type="text/javascript" src="${tg.url('/js/mootools-vigilo.js')}"></script>
@@ -17,11 +17,11 @@
 
 <body>
 <div id="loginform">
-<form action="${tg.url('/login_handler', came_from = came_from.encode('utf-8'), __logins = login_counter.encode('utf-8'))}" method="post" class="loginfields">
+<form action="${tg.url('/login_handler', dict(came_from=came_from.encode('utf-8'), __logins=login_counter.encode('utf-8')))}" method="post" class="loginfields">
     <h2><span>Login</span></h2>
     <label for="login">Username:</label><input type="text" id="login" name="login" class="text"></input><br/>
     <label for="password">Password:</label><input type="password" id="password" name="password" class="text"></input>
-    <input type="submit" id="submit" value="${l_('Login')}" />
+    <input type="submit" id="submit" value="${_('Login')}" />
 </form>
 </div>
 

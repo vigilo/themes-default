@@ -11,10 +11,10 @@
 
 <py:def function="status_header(name, instance)">
 <th class="plugin_${name}" title="Trouble Ticket">
-    ${generic_plugin_header(name, 'ticket', l_('[TT]'), l_('Trouble Ticket'))}
+    ${generic_plugin_header(name, 'ticket', _('[TT]'), _('Trouble Ticket'))}
 </th>
 <th class="plugin_${name}" title="Acknowledgment status">
-    ${generic_plugin_header(name, 'ack', l_('Status'), l_('Acknowledgment status'))}
+    ${generic_plugin_header(name, 'ack', _('Status'), _('Acknowledgment status'))}
 </th>
 <th class="plugin_${name}">
     <a class="Edit_EventsLien" id="Edit_All" href="#">
@@ -93,7 +93,7 @@
             ).length;
             if (!nb_events) {
                 window.edit_dialog.close();
-                return alert('${l_("No events have been selected")}');
+                return alert('${_("No events have been selected")}');
             }
             vigiboard_edit_eventdialog(1, null);
         }.bind(window.edit_dialog));
@@ -123,7 +123,7 @@
     window.addEvent("domready", function () {
         /// HACK: voir notes sur window.search_dialog dans vigiboard.html.
         window.edit_dialog = new Jx.Dialog({
-            label: "${l_('Editing')}",
+            label: "${_('Editing')}",
             modal: false,
             resize: false,
             move: true,

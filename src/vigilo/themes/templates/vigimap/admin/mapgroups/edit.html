@@ -15,7 +15,7 @@
     <div id="rum-content" py:with="form = get_view()">
       <h1 py:content="page_title" />
       <a href="${url_for(obj=parent_obj, _memory=False)}" py:if="parent_obj" class="rum-related-title"
-              py:content="l_('Related to %(parent_obj)s') % {'parent_obj':parent_obj}" />
+              py:content="_('Related to %(parent_obj)s') % {'parent_obj':parent_obj}" />
       ${form(item, action=url_for(obj=item, action='update', parent_obj=parent_obj), method='put', obj=item)}
       <div py:if="'context_links' in widgets"
              py:replace="widgets['context_links']()" />

@@ -25,16 +25,16 @@
 <body>
 	<div id="delete_downtime">
 		<form action="${tg.url('/downtime/commit_delete_downtime', {'id': id})}" method="post" class="loginfields">
-			<h2><span>${l_('Delete downtime')}</span></h2>
+			<h2><span>${_('Delete downtime')}</span></h2>
 			<div class="confirmation_message">
-			    ${l_('Are you sure you want to delete this downtime?')}
+			    ${_('Are you sure you want to delete this downtime?')}
 			</div>
 			<div class="confirmation_message">
-                ${l_('This action cannot be undone!')}
+                ${_('This action cannot be undone!')}
 			</div>
 			<div id="buttons">
-			    <input type="submit" id="delete" value="${l_('Delete!')}" />
-			    <a href="${tg.url('/downtime')}">${l_('Cancel')}</a>
+			    <input type="submit" id="delete" value="${_('Delete!')}" />
+			    <a href="${tg.url('/downtime')}">${_('Cancel')}</a>
             </div>
 		</form>
 	</div>

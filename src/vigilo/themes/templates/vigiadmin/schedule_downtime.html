@@ -8,31 +8,31 @@
 
 	<div id="schedule_downtime">
 		<form action="${tg.url('/downtime/schedule_downtime')}" method="post" class="loginfields">
-			<h2><span>${l_('Schedule downtime')}</span></h2>
+			<h2><span>${_('Schedule downtime')}</span></h2>
 
-			<label for="host">${l_('Host:')}</label>
+			<label for="host">${_('Host:')}</label>
 			<input type="text" id="host" name="host" class="text" value="${hostname}"></input>
 			<br/>
 
-			<label for="service">${l_('Service:')}</label>
+			<label for="service">${_('Service:')}</label>
 			<input type="text" id="service" name="service" class="text" value="${servicename}"></input>
 			<br/>
 
 			<div class="calendar_field">
-				<label for="start">${l_('Start:')}</label>
+				<label for="start">${_('Start:')}</label>
 				${start_calendar()}
 			</div>
 
 			<div class="calendar_field">
-				<label for="end">${l_('End:')}</label>
+				<label for="end">${_('End:')}</label>
 				${end_calendar()}
-				<input type="button" id="duration_trigger" class="date_field_button" value="${l_('Choose a duration')}" /> 
+				<input type="button" id="duration_trigger" class="date_field_button" value="${_('Choose a duration')}" />
 			</div>
 
-			<label for="comment">${l_('Comment:')}</label>
-			<textarea id="comment" name="comment" cols="20" rows="8">${l_('Maintenance.')}</textarea>
+			<label for="comment">${_('Comment:')}</label>
+			<textarea id="comment" name="comment" cols="20" rows="8">${_('Maintenance.')}</textarea>
 
-			<input type="submit" id="submit" value="${l_('Schedule!')}" />
+			<input type="submit" id="submit" value="${_('Schedule!')}" />
 		</form>
 	</div>
 
@@ -50,7 +50,7 @@
             <label for="duration_seconds">Seconds:</label>
             <input type="text" id="duration_seconds" class="text" value="" />
 
-            <input type="button" id="duration_submit" value="${l_('OK')}" />
+            <input type="button" id="duration_submit" value="${_('OK')}" />
         </form>
     </div>
 
@@ -68,7 +68,7 @@
             var btn = $('duration_trigger');
             btn.addEvent('click', function () {
                 var d = new Jx.Dialog({
-                    label: '${l_("Select duration")}',
+                    label: '${_("Select duration")}',
                     modal: false,
                     resize: false,
                     move: true,

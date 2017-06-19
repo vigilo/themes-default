@@ -5,7 +5,7 @@
     <h2 class="tags" py:if="node['tags']">Tags</h2>
     <ul class="section tags" py:if="node['tags']">
         <li py:for="tag in node['tags']">
-            <img src="images/tags/${tag}.png" alt="${l_(tag)}" /> ${l_(tag)}<py:if test="node['tags'][tag]">: ${node['tags'][tag]}</py:if>
+            <img src="images/tags/${tag}.png" alt="${_(tag)}" /> ${_(tag)}<py:if test="node['tags'][tag]">: ${node['tags'][tag]}</py:if>
         </li>
     </ul>
 
@@ -33,7 +33,7 @@
     <p class="reference" py:choose="">
         <!--! Service de bas niveau. -->
         <py:when test="node['service'] and node['host']">
-            ${l_("Service name: %(service)s on %(host)s (%(address)s)") % {
+            ${_("Service name: %(service)s on %(host)s (%(address)s)") % {
                 'service': node['service'],
                 'host': node['host' ],
                 'address': node['address']
@@ -41,13 +41,13 @@
         </py:when>
         <!--! Service de haut niveau. -->
         <py:when test="node['service']">
-            ${l_("Service name: %(service)s") % {
+            ${_("Service name: %(service)s") % {
                 'service': node['service']
             }}
         </py:when>
         <!--! Hôte -->
         <py:otherwise>
-            ${l_("Appliance name: %(host)s (%(address)s)") % {
+            ${_("Appliance name: %(host)s (%(address)s)") % {
                 'host': node['host'],
                 'address': node['address']
             }}

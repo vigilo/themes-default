@@ -16,18 +16,18 @@
 <head>
     <py:choose>
         <title py:when="hostname and servicename">
-            ${"VigiBoard - "}${l_('History for a raw event on host "%(hostname)s" and service "%(servicename)s"') % {
+            ${"VigiBoard - "}${_('History for a raw event on host "%(hostname)s" and service "%(servicename)s"') % {
                 'hostname': hostname,
                 'servicename': servicename,
             }}
         </title>
         <title py:when="hostname">
-            ${"VigiBoard - "}${l_('History for a raw event on host "%(hostname)s"') % {
+            ${"VigiBoard - "}${_('History for a raw event on host "%(hostname)s"') % {
                 'hostname': hostname,
             }}
         </title>
         <title py:otherwise="">
-            ${"VigiBoard - "}${l_('History for a raw event')}
+            ${"VigiBoard - "}${_('History for a raw event')}
         </title>
     </py:choose>
 </head>
@@ -59,18 +59,18 @@
 		          	<div class="table_title">
 		          	    <py:choose>
                             <span py:when="hostname and servicename">
-                                ${l_('History for a raw event on host "%(hostname)s" and service "%(servicename)s"') % {
+                                ${_('History for a raw event on host "%(hostname)s" and service "%(servicename)s"') % {
                                     'hostname': hostname,
                                     'servicename': servicename,
                                 }}
                             </span>
                             <span py:when="hostname">
-                                ${l_('History for a raw event on host "%(hostname)s"') % {
+                                ${_('History for a raw event on host "%(hostname)s"') % {
                                     'hostname': hostname,
                                 }}
                             </span>
                             <span py:otherwise="">
-                                ${l_('History for a raw event')}
+                                ${_('History for a raw event')}
                             </span>
                         </py:choose>
 				    </div>
@@ -110,7 +110,7 @@
 
                     <div class="${page.item_count and 'pagination' or 'line_pagination'}">
                         <span>
-                            ${l_('Showing rows %(id_first_row)d to %(id_last_row)d of %(total_rows)d') % {
+                            ${_('Showing rows %(id_first_row)d to %(id_last_row)d of %(total_rows)d') % {
                                 'id_first_row': page.first_item or 0,
                                 'id_last_row': page.last_item or 0,
                                 'total_rows': page.item_count,

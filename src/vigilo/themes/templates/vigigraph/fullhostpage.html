@@ -8,19 +8,19 @@
 <xi:include href="main_simplified.html" />
 
     <head>
-        <title>${l_('List of graphs for "%s"') % host}</title>
+        <title>${_('List of graphs for "%s"') % host}</title>
     </head>
 
     <body class='main'>
-        <h2>${l_('List of graphs for "%s"') % host}</h2>
+        <h2>${_('List of graphs for "%s"') % host}</h2>
         <p class="menu">
         [<a href="${tg.url('/nagios/%s/cgi-bin/status.cgi' %
                 urllib2.quote(host.encode('utf-8'), ''), {
-            'host_': host,
-        })}">${l_('Monitoring page for "%s"') % host}</a>]
+            'host': host,
+        })}">${_('Monitoring page for "%s"') % host}</a>]
         <py:for each="h in presets">
             [<a href="${tg.url('/rpc/fullHostPage', {
-                'host_': host,
+                'host': host,
                 'duration': h['duration'],
             })}">${h['caption']}</a>]
         </py:for>
@@ -42,7 +42,7 @@
             <py:for each="graph in sorted(graphs, key=lambda x: x.name.lower())"
                 py:with="prefix = len(tg.url('/'))+1; graph_url = tg.url('/', {
                     'g': tg.url('/', {
-                        'host_': host,
+                        'host': host,
                         'graph': graph.name,
                         'start': start,
                         'duration': duration,
@@ -51,12 +51,12 @@
                     })[prefix:]
                 })[prefix+2:]">
             <a href="${tg.url('/#graphs[0]=%s&amp;safety=1' % graph_url)}">
-            <img alt="${l_('Graph \'%(graph)s\' on \'%(host)s\'') % {
+            <img alt="${_('Graph \'%(graph)s\' on \'%(host)s\'') % {
                     'host': host,
                     'graph': graph.name,
                 }}" src="${tg.url('/vigirrd/%s/index' %
                     urllib2.quote(host.encode('utf-8'), ''), {
-                'host_': host,
+                'host': host,
                 'graphtemplate': graph.name,
                 'start': start,
                 'duration': duration,

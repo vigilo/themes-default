@@ -51,10 +51,10 @@
                         class="${(sort != k) and k or k + ', ' + order}">
                         <py:with vars="next_order = (sort != k) and 'asc' or {'asc': 'desc', 'desc': 'asc'}[order]">
                             <a id="sortLink" title="${{
-                                        'asc': l_('Sort by %s in ascending order'),
-                                        'desc': l_('Sort by %s in descending order'),
+                                        'asc': _('Sort by %s in ascending order'),
+                                        'desc': _('Sort by %s in descending order'),
                                     }[next_order] % unicode(v).lower()}"
-                                    href="${tg.url('/silence', sort=k, order=next_order, page=page.page)}">
+                                    href="${tg.url('/silence', dict(sort=k, order=next_order, page=page.page))}">
                                     ${v}
                                     <img src="${tg.url('/images/' + order + '.gif')}" py:if="sort == k"/>
                             </a>

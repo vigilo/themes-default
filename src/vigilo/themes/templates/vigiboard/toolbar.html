@@ -50,7 +50,7 @@
     <div class="header_item" py:if="refresh_delay">
         <input type="checkbox" id="refresh" onchange="set_refresh();" checked="checked" py:if="refresh_enabled" />
         <input type="checkbox" id="refresh" onchange="set_refresh();" py:if="not refresh_enabled" />
-        <label for="refresh">${l_('Refresh every %d seconds') % refresh_delay}</label>
+        <label for="refresh">${_('Refresh every %d seconds') % refresh_delay}</label>
     </div>
     </py:with>
 
@@ -80,11 +80,11 @@
 
     <div class="header_item" id="search_mode_tip">
         <span py:if="filter(None, search.values())">
-            <a href="${tg.url('/')}">${l_('You are in Search mode, click here to return to the initial mode.')}</a>
+            <a href="${tg.url('/')}">You are in Search mode, click here to return to the initial mode.</a>
         </span>
     </div>
 
-    <h1><a href="${tg.url('/')}">${"VigiBoard"}</a></h1>
+    <h1><a href="${tg.url('/')}">VigiBoard</a></h1>
 </div>
 
 <script type="text/javascript" src="${tg.url('/js/main.js')}"></script>

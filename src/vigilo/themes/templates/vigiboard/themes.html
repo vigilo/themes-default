@@ -27,9 +27,9 @@
 -->
 <?python
 themes = (
-    (l_('Classical'), 'classical', ('/css/classical.css', )),
-    (l_('Night'), 'night', ('/css/night.css', )),
-    (l_('Colorblind'), 'colorblind', ('/css/colorblind.css', )),
+    (_('Classical'), 'classical', ('/css/classical.css', )),
+    (_('Night'), 'night', ('/css/night.css', )),
+    (_('Colorblind'), 'colorblind', ('/css/colorblind.css', )),
 )
 session_theme = session.get('theme')
 active_theme = list(reversed([theme_data[1] for (theme_index, theme_data) in enumerate(themes) if theme_data[1] == session_theme or theme_index == 0]))[0]

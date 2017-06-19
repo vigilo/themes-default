@@ -1,14 +1,14 @@
 <div xmlns:py="http://genshi.edgewall.org/">
-    <p class="status status-${status.lower()}">${l_("Status: %(status)s") % {'status': status}}</p>
+    <p class="status status-${status.lower()}">${_("Status: %(status)s") % {'status': status}}</p>
 
     <py:choose test="">
         <py:when test="host is None">
-        <p><span class="label">${l_("Reference service:")}</span>
-        ${l_("%(service)s") % {'service': service}}</p>
+        <p><span class="label">${_("Reference service:")}</span>
+        ${_("%(service)s") % {'service': service}}</p>
         </py:when>
         <py:otherwise>
-        <p><span class="label">${l_("Reference service:")}</span>
-        ${l_("%(service)s on %(host)s") % {'service': service, 'host': host}}</p>
+        <p><span class="label">${_("Reference service:")}</span>
+        ${_("%(service)s on %(host)s") % {'service': service, 'host': host}}</p>
         </py:otherwise>
     </py:choose>
 
@@ -28,7 +28,7 @@
     -->
     <p py:if="graph" py:choose="" py:with="prefix = len(tg.url('/'))+1; graph_url = tg.url('/', {
                     'g': tg.url('/', {
-                        'host_': host,
+                        'host': host,
                         'graph': graph,
                         'top': 0,
                         'left': 0,
@@ -38,22 +38,24 @@
             tg.config['vigigraph'].rstrip('/') +
             '/#graphs[0]=%s&amp;safety=1' % graph_url)}">
             <img src="${tg.url('/vigirrd/%s/graph.png' % host,
-                host_=host,
+            dict(
+                host=host,
                 graphtemplate=graph,
                 start=int(time.time() - duration),
                 duration=duration,
                 details=0,
-            )}"
+            ))}"
             alt="${_('Graph for %(graph)s on %(host)s') %
                 {'graph': graph, 'host': host}}" />
         </a>
         <img py:otherwise="" src="${tg.url('/vigirrd/%s/graph.png' % host,
-            host_=host,
+        dict(
+            host=host,
             graphtemplate=graph,
             start=int(time.time() - duration),
             duration=duration,
             details=0,
-        )}"
+        ))}"
         alt="${_('Graph for %(graph)s on %(host)s') %
             {'graph': graph, 'host': host}}" />
     </p>

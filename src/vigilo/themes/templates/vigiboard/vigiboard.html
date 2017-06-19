@@ -10,10 +10,10 @@
 <py:def function="generic_plugin_header(name, idsort, column, label)">
 <py:with vars="next_order=(sort != idsort) and 'asc' or {'asc': 'desc', 'desc': 'asc'}[order]">
     <a id="sortLink" title="${{
-            'asc': l_('Sort by %s in ascending order'),
-            'desc': l_('Sort by %s in descending order'),
+            'asc': _('Sort by %s in ascending order'),
+            'desc': _('Sort by %s in descending order'),
         }[next_order] % label.lower()}"
-        href="${tg.url('/', params=fixed_search, sort=idsort, order=next_order, page=page.page)}">
+        href="${tg.url('/', params=dict(fixed_search, sort=idsort, order=next_order, page=page.page))}">
         ${column}
         <img src="${tg.url('/images/' + order + '.gif')}" py:if="sort == idsort"/>
     </a>
@@ -85,8 +85,8 @@ ${toolbar()}
     <div py:strip="True" py:if="flash" py:content="XML(flash)" />
 </py:with>
 
-<div style="display: none" py:with="copy = search.copy(); dummy = copy.update(host=copy.pop('host_', None))">
-    ${search_form(copy)}
+<div style="display: none">
+    ${search_form(search)}
 </div>
 
 <script type="text/javascript">

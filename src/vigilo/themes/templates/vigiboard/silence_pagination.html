@@ -5,26 +5,26 @@
             <py:if test="page.item_count > 0">
             <div class="pagination">
                 <span class="row_count">
-                    ${l_('Displaying %(first)s-%(last)s of %(total)s') % {
+                    ${_('Displaying %(first)s-%(last)s of %(total)s') % {
                             'first': page.first_item,
                             'last': page.last_item,
                             'total': page.item_count
                         }
                     }
                 </span>
-                <a py:if="page.previous_page not in (None, 1)" class="prev_page" href="${tg.url('/silence', sort=sort, order=order, page=1)}">
+                <a py:if="page.previous_page not in (None, 1)" class="prev_page" href="${tg.url('/silence', dict(sort=sort, order=order, page=1))}">
                     &lt;&lt;
                 </a>
-                <a py:if="page.previous_page != None" class="prev_page" href="${tg.url('/silence', sort=sort, order=order, page=page.previous_page)}">
+                <a py:if="page.previous_page != None" class="prev_page" href="${tg.url('/silence', dict(sort=sort, order=order, page=page.previous_page))}">
                     &lt;
                 </a>
                 <py:if test="page.last_page != 1">
                     ${page.pager(format='~2~', page_param='page', show_if_single_page=True, sort=sort, order=order)}
                 </py:if>
-                <a py:if="page.next_page != None" class="next_page" href="${tg.url('/silence', sort=sort, order=order, page=page.next_page)}">
+                <a py:if="page.next_page != None" class="next_page" href="${tg.url('/silence', dict(sort=sort, order=order, page=page.next_page))}">
                     &gt;
                 </a>
-                <a py:if="page.next_page not in (None, page.last_page)" class="next_page" href="${tg.url('/silence', sort=sort, order=order, page=page.last_page)}">
+                <a py:if="page.next_page not in (None, page.last_page)" class="next_page" href="${tg.url('/silence', dict(sort=sort, order=order, page=page.last_page))}">
                     &gt;&gt;
                 </a>
             </div>

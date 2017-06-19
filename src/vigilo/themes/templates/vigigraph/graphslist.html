@@ -15,22 +15,22 @@
     <ul class="graphslist">
         <h1>${"VigiGraph"}</h1>
         <li py:for="graph in graphslist">
-            <h2>${l_('Graph "%(graph)s" for host "%(host)s"') % {
+            <h2>${_('Graph "%(graph)s" for host "%(host)s"') % {
                 'graph': graph['graph'],
                 'host': graph['host'],
             }}</h2>
 
-            <p>${l_("From %(start_date)s to %(end_date)s") % {
+            <p>${_("From %(start_date)s to %(end_date)s") % {
                 'start_date': graph['start_date'],
                 'end_date': graph['end_date'],
             }}</p>
-            <img src="${tg.url('/vigirrd/%s/graph.png' % graph['host'],
-                host_=graph['host'],
+            <img src="${tg.url('/vigirrd/%s/graph.png' % graph['host'], dict(
+                host=graph['host'],
                 graphtemplate=graph['graph'],
                 start=graph['start'],
                 duration=graph['duration'],
                 nocache=graph['nocache'],
-            )}" border="0" alt="${''}"></img>
+            ))}" border="0" alt="${''}"></img>
         </li>
     </ul>
 </div>
