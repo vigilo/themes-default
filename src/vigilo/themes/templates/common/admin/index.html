@@ -1,0 +1,25 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:py="http://genshi.edgewall.org/"
+      xmlns:xi="http://www.w3.org/2001/XInclude">
+
+<xi:include href="../master.html" />
+<head>
+    <title>${tmpl_context.title}</title>
+</head>
+<body class="tundra">
+  <div id="crud_leftbar">
+        <ul id="menu_items" py:if="hasattr(tmpl_context, 'menu_items')">
+            <li py:for="lower, item in sorted(tmpl_context.menu_items.items())">
+                <a href="${tmpl_context.crud_helpers.make_link('/perms/' + lower)}">$item</a>
+            </li>
+       </ul>
+  </div>
+  <div id="crud_content">
+      <div class="crud_add">
+        <h2>Welcome to the administration page</h2>
+        Click a table name in the sidebar to view or modify its content.
+      </div>
+  </div>
+  <div style="clear:both;"/>
+</body>
+</html>
