@@ -36,7 +36,7 @@
                 })[prefix+2:]">
         <a py:when="tg.config.get('vigigraph')" target="_blank" href="${tg.url(
             tg.config['vigigraph'].rstrip('/') +
-            '/#graphs[0]=%s&amp;safety=1' % graph_url)}">
+            '/#graphs=%s&amp;safety=1' % graph_url)}">
             <img src="${tg.url('/vigirrd/%s/graph.png' % host,
                 host_=host,
                 graphtemplate=graph,
