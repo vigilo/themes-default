@@ -10,7 +10,7 @@
   <div id="crud_leftbar">
         <ul id="menu_items" py:if="hasattr(tmpl_context, 'menu_items')">
             <li py:for="lower, item in sorted(tmpl_context.menu_items.items())">
-                <a href="${tmpl_context.crud_helpers.make_link('/perms/' + lower)}">$item</a>
+                <a href="${tmpl_context.crud_helpers.make_link(tg.url('/perms/' + lower))}">$item</a>
             </li>
        </ul>
   </div>
