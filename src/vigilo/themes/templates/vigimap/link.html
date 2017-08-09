@@ -18,6 +18,9 @@
         automatiquement ce graphe dans VigiGraph.
         Pour cela, on crée d'abord l'URL normale avec tg.url(),
         puis on supprime le chemin d'accès jusqu'à la page.
+        On change au passage l'encodage des espaces ('+' -> '%20')
+        puisque les paramètres de graphe sont dans le fragment
+        et pas dans le chemin de l'URL.
         Ensuite, on fait de nouveau appel à tg.url() pour encoder
         correctement l'URL de nouveau (on ne peut pas utiliser
         urllib ici) et on supprime de nouveau le préfixe,
@@ -32,7 +35,7 @@
                         'graph': graph,
                         'top': 0,
                         'left': 0,
-                    })[prefix:]
+                    })[prefix:].replace('+', '%20')
                 })[prefix+2:]">
         <a py:when="tg.config.get('vigigraph')" target="_blank" href="${tg.url(
             tg.config['vigigraph'].rstrip('/') +
