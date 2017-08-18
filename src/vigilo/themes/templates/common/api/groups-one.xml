@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<group xmlns="http://projet-vigilo.org/ns/api"
+<group xmlns="http://vigilo-nms.com/ns/api"
        xmlns:py="http://genshi.edgewall.org/"
        xmlns:xi="http://www.w3.org/2001/XInclude"
        xmlns:atom="http://www.w3.org/2005/Atom"
