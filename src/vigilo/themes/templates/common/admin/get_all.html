@@ -3,7 +3,7 @@
       xmlns:xi="http://www.w3.org/2001/XInclude">
   <xi:include href="../master.html" />
 <head>
-    <title>${tmpl_context.title} - ${_("%s listing") % _(tmpl_context.model_label)}</title>
+    <title>${tmpl_context.title} - ${_("List of %s") % _(tmpl_context.model_label)}</title>
 </head>
 <body class="tundra">
     <div id="crud_leftbar">
@@ -14,7 +14,7 @@
         </ul>
     </div>
     <div id="crud_content">
-      <h1>${_("%s listing") % _(tmpl_context.model_label)}</h1>
+      <h1>${_("List of %s") % _(tmpl_context.model_label)}</h1>
       <div id="crud_btn_new">
         <a py:if="not tmpl_context.readonly" href='${tg.url("new", params=tmpl_context.kept_params)}' class="add_link">${_("New %s") % _(tmpl_context.model_label)}</a>
         <span py:if="value_list" py:content="tmpl_context.paginators.value_list.pager(link=mount_point+'/')"/>
