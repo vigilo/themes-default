@@ -91,7 +91,7 @@ var GroupTree = new Class({
                 // c'est une continuation, il faut placer les éléments au bon
                 // endroit (et pas à la fin)
                 continued = this.getContinued(subfolder, type);
-                offset = continued["index"] - 1;
+                offset = continued.index - 1;
             }
             if (typeof data[type+"s"] != "undefined") {
                 for (var j=0, child ; child = data[type+"s"][j] ; j++) {
@@ -106,7 +106,7 @@ var GroupTree = new Class({
             if (data.continued_type == type) {
                 // on a cliqué sur un lien de continuation, il faut le
                 // supprimer
-                subfolder.remove(continued["node"]);
+                subfolder.remove(continued.node);
             }
         }
 
@@ -159,10 +159,10 @@ var GroupTree = new Class({
                 // Type "group" par défaut.
                 var data = {parent_id: item.id};
                 if (this.options.groupsonly) {
-                    data["onlytype"] = "group";
+                    data.onlytype = "group";
                 }
                 else if (item.type == this.options.groupingItemName) {
-                    data["onlytype"] = this.options.groupingItemName;
+                    data.onlytype = this.options.groupingItemName;
                 }
 
                 $extend(data, this.options.requestOptions);

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vigilo-themes-default 4.1.0rc2\n"
 "Report-Msgid-Bugs-To: contact.vigilo@c-s.fr\n"
-"POT-Creation-Date: 2017-08-24 14:36+0200\n"
+"POT-Creation-Date: 2017-08-24 15:10+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -116,6 +116,16 @@ msgstr ""
 #: src/vigilo/themes/templates/common/admin/new.html:19
 #, python-format
 msgid "New %s"
+msgstr ""
+
+#: src/vigilo/themes/templates/common/admin/get_all.html:29
+msgid "equals / contains"
+msgstr ""
+
+#: src/vigilo/themes/templates/common/admin/get_all.html:30
+#: src/vigilo/themes/templates/vigimap/main.html:81
+#: src/vigilo/themes/templates/vigimap/main.html:122
+msgid "Search"
 msgstr ""
 
 #: src/vigilo/themes/templates/common/admin/index.html:19
@@ -941,11 +951,6 @@ msgstr ""
 #: src/vigilo/themes/templates/vigimap/link.html:54
 #, python-format
 msgid "Graph for %(graph)s on %(host)s"
-msgstr ""
-
-#: src/vigilo/themes/templates/vigimap/main.html:81
-#: src/vigilo/themes/templates/vigimap/main.html:122
-msgid "Search"
 msgstr ""
 
 #: src/vigilo/themes/templates/vigimap/main.html:81

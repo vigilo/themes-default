@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: vigilo-themes-default 2.0.0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2010-11-19 12:43+0100\n"
-"PO-Revision-Date: 2017-08-24 14:36+0200\n"
+"PO-Revision-Date: 2017-08-24 15:10+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: de_DE <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -122,6 +122,16 @@ msgstr ""
 #, python-format
 msgid "New %s"
 msgstr ""
+
+#: src/vigilo/themes/templates/common/admin/get_all.html:29
+msgid "equals / contains"
+msgstr ""
+
+#: src/vigilo/themes/templates/common/admin/get_all.html:30
+#: src/vigilo/themes/templates/vigimap/main.html:81
+#: src/vigilo/themes/templates/vigimap/main.html:122
+msgid "Search"
+msgstr "Vigilo Suchfunktion"
 
 #: src/vigilo/themes/templates/common/admin/index.html:19
 #: src/vigilo/themes/templates/vigimap/admin/home.html:14
@@ -971,11 +981,6 @@ msgid "Graph for %(graph)s on %(host)s"
 msgstr "Grafik '%(graph)s' auf '%(host)s'"
 
 #: src/vigilo/themes/templates/vigimap/main.html:81
-#: src/vigilo/themes/templates/vigimap/main.html:122
-msgid "Search"
-msgstr "Vigilo Suchfunktion"
-
-#: src/vigilo/themes/templates/vigimap/main.html:81
 msgid "Search for a specific host/graph"
 msgstr ""
 
@@ -1062,7 +1067,4 @@ msgstr "Sind Sie sicher, dass diese Downtime gelöscht werden soll?"
 #, python-format
 msgid "Related to %(parent_obj)s"
 msgstr ""
-
-#~ msgid "%s listing"
-#~ msgstr ""
 

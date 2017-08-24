@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: vigilo-themes-default 0.1\n"
 "Report-Msgid-Bugs-To: contact.vigilo@c-s.fr\n"
 "POT-Creation-Date: 2009-11-10 09:51+0100\n"
-"PO-Revision-Date: 2017-08-24 14:36+0200\n"
+"PO-Revision-Date: 2017-08-24 15:10+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: fr <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n > 1)\n"
@@ -120,6 +120,16 @@ msgstr "Liste des %s"
 #, python-format
 msgid "New %s"
 msgstr "Nouveau/nouvelle %s"
+
+#: src/vigilo/themes/templates/common/admin/get_all.html:29
+msgid "equals / contains"
+msgstr "égal à / contient"
+
+#: src/vigilo/themes/templates/common/admin/get_all.html:30
+#: src/vigilo/themes/templates/vigimap/main.html:81
+#: src/vigilo/themes/templates/vigimap/main.html:122
+msgid "Search"
+msgstr "Recherche"
 
 #: src/vigilo/themes/templates/common/admin/index.html:19
 #: src/vigilo/themes/templates/vigimap/admin/home.html:14
@@ -955,11 +965,6 @@ msgstr "%(service)s sur %(host)s"
 #, python-format
 msgid "Graph for %(graph)s on %(host)s"
 msgstr "Graphe \"%(graph)s\" sur l'hôte \"%(host)s\""
-
-#: src/vigilo/themes/templates/vigimap/main.html:81
-#: src/vigilo/themes/templates/vigimap/main.html:122
-msgid "Search"
-msgstr "Recherche"
 
 #: src/vigilo/themes/templates/vigimap/main.html:81
 msgid "Search for a specific host/graph"

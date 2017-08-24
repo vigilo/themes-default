@@ -12,8 +12,8 @@
 
 String.implement({
 	parseQueryString: function(decodeKeys, decodeValues){
-		if (decodeKeys == null) decodeKeys = true;
-		if (decodeValues == null) decodeValues = true;
+		if (decodeKeys === null) decodeKeys = true;
+		if (decodeValues === null) decodeValues = true;
 		var vars = this.split(/[&;]/), res = {};
 		if (vars.length) vars.each(function(val){
 			var index = val.indexOf('='),
@@ -59,7 +59,7 @@ Hash.implement({
 				break;
 				default: result = key + '=' + encodeURIComponent(value);
 			}
-			if (value != undefined) queryString.push(result);
+			if (value !== undefined) queryString.push(result);
 		});
 
 		return queryString.join('&');
