@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: vigilo-themes-default 0.1\n"
 "Report-Msgid-Bugs-To: contact.vigilo@c-s.fr\n"
 "POT-Creation-Date: 2009-11-10 09:51+0100\n"
-"PO-Revision-Date: 2017-08-24 15:10+0200\n"
+"PO-Revision-Date: 2017-08-24 17:42+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: fr <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n > 1)\n"
@@ -111,15 +111,15 @@ msgstr "Modifier %s"
 #: src/vigilo/themes/templates/common/admin/get_all.html:6
 #: src/vigilo/themes/templates/common/admin/get_all.html:17
 #, python-format
-msgid "List of %s"
-msgstr "Liste des %s"
+msgid "Listing objects of type \"%s\""
+msgstr "Liste des objets de type « %s »"
 
 #: src/vigilo/themes/templates/common/admin/get_all.html:19
 #: src/vigilo/themes/templates/common/admin/new.html:7
 #: src/vigilo/themes/templates/common/admin/new.html:19
 #, python-format
 msgid "New %s"
-msgstr "Nouveau/nouvelle %s"
+msgstr "Ajout d'un(e) %s"
 
 #: src/vigilo/themes/templates/common/admin/get_all.html:29
 msgid "equals / contains"
