@@ -401,12 +401,7 @@ div.clearingdiv {
     padding: 10px;
 }
 
-.plugin_details img {
-    width: 2em;
-    height: 2em;
-}
-
-.plugin_details img {
+td.plugin_details img {
     width: 1.5em;
     height: 1.5em;
 }
