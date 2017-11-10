@@ -24,13 +24,12 @@
         Jx.baseURL = '${tg.url("/js/lib")}';
         vigiboard_url = '${tg.url(tg.config.get("interfaces.vigiboard", "../vigiboard/"))}';
     </script>
-    <!--!
-        "js/lib/babel.js" et "js/lib/babelThemes.js" doivent être chargés
-        avant "i18n", qui doit être chargé avant nos scripts.
-    -->
     <script type="text/javascript" src="${tg.url('/js/lib/ScrollSpy.js')}"></script>
+    <!--!
+        "js/lib/babel.js" doit être chargé avant "i18n",
+        qui doit être chargé avant nos scripts.
+    -->
     <script type="text/javascript" src="${tg.url('/js/lib/babel.js')}"></script>
-    <script type="text/javascript" src="${tg.url('/js/lib/babelThemes.js')}"></script>
     <script type="text/javascript" src="${tg.url('/i18n')}"></script>
 
     <script type="text/javascript">

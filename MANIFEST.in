@@ -3,6 +3,7 @@ recursive-include src/vigilo/themes/public *
 recursive-include src/vigilo/themes/templates *
 include buildenv/Makefile.common
 include buildenv/buildout.*.cfg
+include buildenv/*.py
 include buildout.cfg
 include Makefile
 include COPYING.txt
@@ -12,4 +13,3 @@ graft pkg
 graft debian
 
 include jsl.cfg
-include babeljs.py

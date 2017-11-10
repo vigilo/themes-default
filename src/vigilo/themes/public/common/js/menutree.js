@@ -159,7 +159,7 @@ var MenuTree = new Class({
 
     _makeEmpty: function() {
         var empty = new Jx.Menu.Item({
-            label: l_('No items'),
+            label: _('No items'),
             continuation: null,
             enabled: false
         });
@@ -169,7 +169,7 @@ var MenuTree = new Class({
 
     _makeLoading: function() {
         var loading = new Jx.Menu.Item({
-            label: l_('Loading...'),
+            label: _('Loading...'),
             continuation: null,
             enabled: false
         });
@@ -189,7 +189,7 @@ var MenuTree = new Class({
         item.domObj.setStyle('font-style', 'italic');
 
         item.show = function () {
-            this.setLabel(l_('Loading...'));
+            this.setLabel(_('Loading...'));
             var req = tree.domObj.retrieve('request');
             req.options.parent = this;
             req.send({'data': this.options.continuation});

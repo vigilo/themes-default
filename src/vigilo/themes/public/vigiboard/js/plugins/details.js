@@ -94,7 +94,7 @@ function register_details_events() {
                         newItem = new Element('li', {
                             styles: {'font-weight': 'bold'}
                         });
-                        newItem.set('text', l_('More than {max} map(s) found...').substitute({'max': plug_details_max_maps}));
+                        newItem.set('text', _('More than {max} map(s) found...').substitute({'max': plug_details_max_maps}));
                         details_maps.adopt(newItem);
                         nbMaps++;
                     }
@@ -140,7 +140,7 @@ document.addEvent('board-update', register_details_events);
 
 window.addEvent("domready", function () {
     window.details_dialog = new Jx.Dialog({
-        label: l_('Event details'),
+        label: _('Event details'),
         modal: false,
         resize: true,
         move: true,
