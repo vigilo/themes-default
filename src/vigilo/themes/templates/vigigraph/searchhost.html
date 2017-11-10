@@ -13,8 +13,8 @@
         <h1>VigiGraph search</h1>
         <h2>Results:</h2>
         <table>
-            <tr py:for="host in hosts">
-                <td class="hostname">&#x2014; ${host}</td>
+            <tr py:for="(host, address) in hosts">
+                <td class="hostname">&#x2014; ${host} (${address})</td>
                 <td><a href="${tg.url('/nagios/%s/cgi-bin/status.cgi' %
                                 urllib2.quote(host.encode('utf-8'), ''), {
                         'host': host,

@@ -1,0 +1,18 @@
+<html xmlns:py="http://genshi.edgewall.org/"
+      xmlns:xi="http://www.w3.org/2001/XInclude"
+      py:strip="">
+
+<th id="plugin_${name}" class="plugin_${name}" py:def="address_header(name, instance, sort, order)">
+    ${generic_plugin_header(name, name, _('Address'), _('Address'))}
+</th>
+
+<td class="plugin_${name}" py:def="address_data(name, instance, data, plugin_data)">${data['address']}</td>
+
+<py:def function="plugin_template(name, instance)">
+    <?python
+        plugin_header_functions[name] = address_header
+        plugin_data_functions[name] = address_data
+    ?>
+</py:def>
+
+</html>
