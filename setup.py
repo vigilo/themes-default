@@ -75,7 +75,8 @@ setup(name='vigilo-themes-default',
         ],
     },
     entry_points={
-        'console_scripts': [
+        'vigilo.turbogears.i18n': [
+            'vigilo-themes = vigilo.themes.i18n:50',
         ],
     },
     package_dir={'': 'src'},
