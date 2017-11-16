@@ -70,8 +70,7 @@
         plugin_data_functions[name] = status_data
     ?>
 <!--! Le formulaire d'édition d'événements, généré par ToscaWidgets. -->
-    ${tmpl_context.edit_event_form(
-        dict(last_modification=tmpl_context.last_modification))}
+    ${tmpl_context.edit_event_form(value={'last_modification': tmpl_context.last_modification}).display()}
 
 <!--! Le code JavaScript qui va permettre de gérer l'édition d'événements. -->
 <script type="text/javascript">
@@ -132,7 +131,7 @@
             modal: false,
             resize: false,
             move: true,
-            content: 'edit_event_form',
+            content: 'edit_event_form:form',
             onOpen: window.dlg_open_handler,
             onClose: window.dlg_close_handler,
             width: 400,
@@ -160,7 +159,7 @@
         }
 
         // Génère la liste de toutes les références
-        // à des TT dans la sélection.
+        // à des événements dans la sélection.
         var refs = new Hash();
         for (var i = 0; i < ids.length; i++) {
             tt = $$('plugin_${name}_tt_'+ids[i]);
@@ -173,14 +172,15 @@
                 refs.include('', 0);
         }
 
-        // Si 1 seul TT référencé, on utilise la réf.
+        // Si 1 seul événement sélectionné, on récupère
+        // la référence de son ticket d'incident (TT).
         var ref = '';
         if (refs.getLength() == 1)
             ref = refs.getKeys()[0];
 
-        // S'il y a plus de 2 réfs de TT,
+        // S'il y a plus de 2 événements sélectionnés,
         // affichage d'un avertissement.
-        var warning = $$('edit_event_form_warning.container');
+        var warning = $$('edit_event_form:warning:container');
         if (ref == '' && ids.length > 1) {
             warning.show('block');
             try {
@@ -192,9 +192,9 @@
         }
         else warning.hide();
 
-        $$('edit_event_form_trouble_ticket').set('value', ref);
-        $$('edit_event_form_ack').set('selectedindex', 0);
-        $$('edit_event_form_id').set('value', ids.join(','));
+        $$('edit_event_form:trouble_ticket').set('value', ref);
+        $$('edit_event_form:ack').set('selectedindex', 0);
+        $$('edit_event_form:ids').set('value', ids.join(','));
         window.edit_dialog.open.bind(window.edit_dialog)();
     }
 

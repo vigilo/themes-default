@@ -89,7 +89,7 @@
     </div>
 
     <!--! Container utilisé par le formulaire de recherche. -->
-    ${search_form()}
+    ${search_form.display()}
 
     <py:with vars="flash=tg.flash_obj.render('flash', use_js=False)">
         <div py:strip="True" py:if="flash" py:content="XML(flash)" />

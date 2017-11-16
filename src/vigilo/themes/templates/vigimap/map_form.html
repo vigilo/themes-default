@@ -1,4 +1,4 @@
 <div xmlns:py="http://genshi.edgewall.org/">
-    ${map_form(kw, onsubmit=onsubmit, child_args=child_args)}
+    ${map_form(value=kw, onsubmit=onsubmit).display(readonly=generated)}
 </div>
 
