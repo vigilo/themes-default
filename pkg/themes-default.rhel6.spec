@@ -48,14 +48,8 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc COPYING.txt
 %{python_sitelib}/*
-%lang(C) %{python_sitelib}/vigilo/themes/i18n/*/LC_MESSAGES/*.mo
-%lang(C) %{python_sitelib}/vigilo/themes/i18n/*/LC_MESSAGES/*.js
 
 
 %changelog
-* Wed Nov 22 2017 Francois Poirotte <francois.poirotte@c-s.fr>
-- Rebuild for RHEL 7
-- Improve handling of i18n files
-
 * Mon Feb 08 2010 Aurelien Bompard <aurelien.bompard@c-s.fr>
 - initial package
