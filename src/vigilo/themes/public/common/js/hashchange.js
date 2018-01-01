@@ -1,4 +1,4 @@
-// Copyright (C) 2014-2016 CS-SI
+// Copyright (C) 2014-2018 CS-SI
 // License: GNU GPL v2 <http://www.gnu.org/licenses/gpl-2.0.html>
 
 /* Repris de https://mootools.lighthouseapp.com/projects/2706/tickets/778-add-hashchange-event */

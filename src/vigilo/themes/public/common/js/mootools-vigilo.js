@@ -1,3 +1,6 @@
+// Copyright (C) 2017-2018 CS-SI
+// License: GNU GPL v2 <http://www.gnu.org/licenses/gpl-2.0.html>
+
 /* Par défaut, mootools encore/décode les paramètres d'URL (query strings)
  * en utilisant les conventions de PHP (ie. "a[b]=42&b[]=23&b[]=69").
  * On patche les fonctions liées à ces opérations pour utiliser les conventions
