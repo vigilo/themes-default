@@ -25,7 +25,7 @@ Provides:   vigilo-themes = %{version}-%{release}
 
 %description
 @DESCRIPTION@
-This module is part of the Vigilo Project <http://vigilo-nms.com>
+This module is part of the Vigilo Project <https://www.vigilo-nms.com>
 
 %prep
 %setup -q
