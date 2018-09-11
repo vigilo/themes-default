@@ -41,7 +41,7 @@ tests_require = [
 ]
 
 setup(name='vigilo-themes-default',
-    version='5.0.0',
+    version='5.0.0rc1',
     author='Vigilo Team',
     author_email='contact.vigilo@c-s.fr',
     url='https://www.vigilo-nms.com/',
