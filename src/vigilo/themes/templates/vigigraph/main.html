@@ -49,25 +49,24 @@
         si vous changez l'en-tête.
     -->
     <div id="header">
-        <span id="home">
-            <a href="${tg.url(tg.config.get('home_link', '/'))}">
+        <span py:if="tg.config.get('home_link')" class="header_icon">
+            <a href="${tg.url(tg.config['home_link'])}">
                 <img alt="${''}" src="${tg.url('/images/home.png')}"/>
             </a>
         </span>
 
+        <span class="header_icon">
+            ${search_button()}
+        </span>
+
+        <div class="header_icon">
+            <a id="print" href="?">
+                <img src="${tg.url('/images/document-print.png')}"
+                  alt="Print all" title="Print all visible graphs" />
+            </a>
+        </div>
+
         <div class="header_icons">
-
-            <div class="header_icon">
-                ${search_button()}
-            </div>
-
-            <div class="header_icon">
-                <a id="print" href="?">
-                    <img src="${tg.url('/images/document-print.png')}"
-                        alt="Print all" title="Print all visible graphs" />
-                </a>
-            </div>
-
             <div class="header_icon">
                 <py:if test="tg.config.get('help_link')">
                     <a href="${tg.config['help_link']}">
@@ -83,8 +82,6 @@
                 </a>
             </div>
         </div>
-
-        <h1><a href="${tg.url('/')}">${"VigiGraph"}</a></h1>
     </div>
 
     <div id="content">

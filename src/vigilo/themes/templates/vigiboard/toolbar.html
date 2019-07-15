@@ -5,9 +5,15 @@
 
 <py:def function="toolbar">
 <div id="header">
-    <span id="home">
-        <a href="${tg.url(tg.config.get('home_link', '/'))}">
+    <span py:if="tg.config.get('home_link')" class="header_icon">
+        <a href="${tg.url(tg.config['home_link'])}">
             <img alt="${''}" src="${tg.url('/images/home.png')}"/>
+        </a>
+    </span>
+
+    <span class="header_icon">
+        <a id="SearchLien" href="javascript:window.search_dialog.open.bind(window.search_dialog)();">
+            <img src="${tg.url('/images/search.png')}" alt="Filter display" title="Filter display"/>
         </a>
     </span>
 
@@ -17,9 +23,6 @@
         </a>
         <a href="${tg.url('/silence/')}">
             <img src="${tg.url('/images/silence.png')}" alt="Silence rules" title="Silence rules" />
-        </a>
-        <a id="SearchLien" href="javascript:window.search_dialog.open.bind(window.search_dialog)();">
-            <img src="${tg.url('/images/search.png')}" alt="Filter display" title="Filter display"/>
         </a>
         <py:if test="tg.config.get('help_link')">
         <a href="${tg.config['help_link']}">

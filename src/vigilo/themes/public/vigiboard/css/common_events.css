@@ -10,7 +10,7 @@
     text-decoration: none;
 }
 
-#home {
+.header_icon {
     margin: 0.1em 0;
     margin-right: 0.3em;
     float: left;

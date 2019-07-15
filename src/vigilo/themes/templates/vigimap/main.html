@@ -68,19 +68,19 @@
 <body py:match="body" py:attrs="select('@*')">
 
     <div id="header">
-        <span id="home">
-            <a href="${tg.url(tg.config.get('home_link', '/'))}">
+        <span py:if="tg.config.get('home_link')" class="header_icon">
+            <a href="${tg.url(tg.config['home_link'])}">
                 <img alt="${''}" src="${tg.url('/images/home.png')}"/>
             </a>
         </span>
 
+        <span class="header_icon">
+            <a id="search" href="?">
+                <img src="${tg.url('/images/search.png')}" alt="Search" title="Search for a specific host/graph" />
+            </a>
+        </span>
+
         <div class="header_icons">
-            <div class="header_icon">
-                <a id="search" href="?">
-                    <img src="${tg.url('/images/search.png')}"
-                        alt="Search" title="Search for a specific host/graph" />
-                </a>
-            </div>
             <div py:if="tg.config.get('help_link')" class="header_icon">
                 <a href="${tg.config['help_link']}">
                     <img src="${tg.url('/images/help.png')}" alt="Help" title="Help"/>
@@ -94,7 +94,7 @@
             </div>
         </div>
 
-        <h1><a href="${tg.url('/')}">${"VigiMap"}<span id="maptitle"></span></a></h1>
+        <h1><a href="${tg.url('/')}" id="maptitle"></a></h1>
     </div>
 
     <div id="menu">
