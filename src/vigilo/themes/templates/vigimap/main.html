@@ -87,7 +87,7 @@
                 </a>
             </div>
             <!--! On masque le bouton de login/logout si une authentification externe est utilisée. -->
-            <div py:if="tg.auth_stack_enabled and not tg.request.environ['vigilo.external_auth']" class="header_icon">
+            <div py:if="tg.auth_stack_enabled and request.identity and not 'external' in request.identity.get('tokens', ())" class="header_icon">
                 <a href="${tg.url('/logout_handler')}">
                     <img src="${tg.url('/images/logout.png')}" alt="Log out" title="Log out"/>
                 </a>

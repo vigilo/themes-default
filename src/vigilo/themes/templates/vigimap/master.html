@@ -20,7 +20,7 @@
   <ul id="mainmenu">
     <li class="first"><a href="${tg.url('/')}" class="${('', 'active')[defined('page') and page==page=='index']}">Welcome</a></li>
     <!--! On masque le bouton de login/logout si une authentification externe est utilisée. -->
-    <span py:if="tg.auth_stack_enabled and not tg.request.environ['vigilo.external_auth']" py:strip="True">
+    <span py:if="tg.auth_stack_enabled and request.identity and not 'external' in request.identity.get('tokens', ())" py:strip="True">
         <li py:if="not request.identity" class="loginlogout"><a href="${tg.url('/login')}">Login</a></li>
         <li py:if="request.identity" class="loginlogout"><a href="${tg.url('/logout_handler')}">Logout</a></li>
         <li py:if="request.identity" id="admin" class="loginlogout"><a href="${tg.url('/admin/mapgroups')}">Administration</a></li>
