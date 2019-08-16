@@ -26,12 +26,8 @@
     <div id="header">
         <span py:if="tg.config.get('home_link')" class="header_icon">
             <a href="${tg.url(tg.config['home_link'])}">
-              <img alt="${''}" src="${tg.url('/images/home.png')}"/>
+                <img alt="${''}" src="${tg.url('/images/home.png')}"/>
             </a>
-        </span>
-
-        <span class="header_icon">
-            ${search_button()}
         </span>
 
         <span class="header_icon">
