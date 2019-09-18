@@ -29,8 +29,13 @@
 <py:def function="status_data(name, instance, data, plugin_data)">
     <?python from vigilo.models.tables import CorrEvent ?>
     <td class="plugin_${name}">
-    <a py:if="data['trouble_ticket_id']" id="plugin_${name}_tt_${data['id']}"
+    <!--! Si une référence de ticket a été définie, on l'affiche en tant que lien
+          ou de texte simple, selon si une URL a été définie pour les tickets ou non. -->
+    <py:choose py:if="data['trouble_ticket_id']" test="bool(data['trouble_ticket_link'])">
+      <a py:when="True" id="plugin_${name}_tt_${data['id']}"
         href="${data['trouble_ticket_link']}">[${data['trouble_ticket_id']}]</a>
+      <span py:when="False" id="plugin_${name}_tt_${data['id']}">[${data['trouble_ticket_id']}]</span>
+    </py:choose>
     </td>
 
     <td class="plugin_${name}" py:choose="">
