@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # vim: set fileencoding=utf-8 sw=4 ts=4 et :
-# Copyright (C) 2006-2020 CS-SI
+# Copyright (C) 2006-2020 CS GROUP – France
 # License: GNU GPL v2 <http://www.gnu.org/licenses/gpl-2.0.html>
 
 from platform import python_version_tuple
@@ -43,7 +43,7 @@ tests_require = [
 setup(name='vigilo-themes-default',
     version='5.2.0b1',
     author='Vigilo Team',
-    author_email='contact.vigilo@c-s.fr',
+    author_email='contact.vigilo@csgroup.eu',
     url='https://www.vigilo-nms.com/',
     license='http://www.gnu.org/licenses/gpl-2.0.html',
     description="Vigilo default theme",
