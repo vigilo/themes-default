@@ -1,4 +1,4 @@
-// Copyright (C) 2017-2020 CS GROUP – France
+// Copyright (C) 2017-2020 CS GROUP - France
 // License: GNU GPL v2 <http://www.gnu.org/licenses/gpl-2.0.html>
 
 /* Par défaut, mootools encore/décode les paramètres d'URL (query strings)
