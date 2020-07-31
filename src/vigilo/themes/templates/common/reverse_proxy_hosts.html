@@ -11,11 +11,18 @@
 </head>
 
 <body>
-  <p>Select the monitored device whose data should be displayed:</p>
-  <ul>
-    <li py:for="host in hosts" py:with="qhost = quote(host, '')">
-      <a href="${tg.url('./%s/%s' % (qhost, default_url.format(host=qhost)))}">${host}</a>
-    </li>
-  </ul>
+  <py:choose test="bool(hosts)">
+    <py:when test="False">
+      <p>No host available. You must add some hosts and deploy the configuration first.</p>
+    </py:when>
+    <py:otherwise>
+      <p>Select the monitored device whose data should be displayed:</p>
+      <ul>
+        <li py:for="host in hosts" py:with="qhost = quote(host, '')">
+          <a href="${tg.url('./%s/%s' % (qhost, default_url.format(host=qhost)))}">${host}</a>
+        </li>
+      </ul>
+    </py:otherwise>
+  </py:choose>
 </body>
 </html>
