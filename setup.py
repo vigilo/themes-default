@@ -4,12 +4,7 @@
 # License: GNU GPL v2 <http://www.gnu.org/licenses/gpl-2.0.html>
 
 from platform import python_version_tuple
-try:
-    from setuptools import setup, find_packages
-except ImportError:
-    from ez_setup import use_setuptools
-    use_setuptools()
-    from setuptools import setup, find_packages
+from setuptools import setup, find_packages
 
 cmdclass = {}
 try:
@@ -54,9 +49,8 @@ setup(name='vigilo-themes-default',
         'vigilo',
         'vigilo.themes',
     ],
-    packages=find_packages('src', exclude=['ez_setup', 'buildenv']),
+    packages=find_packages('src'),
     include_package_data = True,
-    test_suite='nose.collector',
     tests_require=tests_require,
     extras_require={
         'tests': tests_require,
@@ -79,6 +73,7 @@ setup(name='vigilo-themes-default',
             'vigilo-themes = vigilo.themes.i18n:50',
         ],
     },
+    test_suite='nose.collector',
     package_dir={'': 'src'},
     cmdclass=cmdclass,
 )

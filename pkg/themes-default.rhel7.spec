@@ -1,1 +1,0 @@
-themes-default.rhel6.spec
