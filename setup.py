@@ -3,16 +3,17 @@
 # Copyright (C) 2006-2020 CS GROUP - France
 # License: GNU GPL v2 <http://www.gnu.org/licenses/gpl-2.0.html>
 
-from platform import python_version_tuple
+import os
 from setuptools import setup, find_packages
+
+setup_requires = ['vigilo-common'] if not os.environ.get('CI') else []
 
 cmdclass = {}
 try:
-    from buildenv.babeljs import compile_catalog_plusjs
+    from vigilo.common.commands import compile_catalog_plusjs
+    cmdclass['compile_catalog'] = compile_catalog_plusjs
 except ImportError:
     pass
-else:
-    cmdclass['compile_catalog'] = compile_catalog_plusjs
 
 install_requires=[
     'setuptools',
@@ -24,10 +25,6 @@ install_requires=[
     # La dépendance est déjà tirée via "vigilo-models".
     'vigilo-common',
 ]
-
-if tuple(python_version_tuple()) < ('2', '6'):
-    # pour les traductions javascript
-    install_requires.append("simplejson")
 
 tests_require = [
     'coverage',
@@ -44,6 +41,7 @@ setup(name='vigilo-themes-default',
     description="Vigilo default theme",
     long_description="This component provides a default theme for Vigilo",
     zip_safe=False,
+    setup_requires=setup_requires,
     install_requires=install_requires,
     namespace_packages = [
         'vigilo',
@@ -76,4 +74,5 @@ setup(name='vigilo-themes-default',
     test_suite='nose.collector',
     package_dir={'': 'src'},
     cmdclass=cmdclass,
+    vigilo_build_vars={},
 )
