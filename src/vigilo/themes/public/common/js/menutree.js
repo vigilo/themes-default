@@ -1,6 +1,6 @@
 /*
  * VigiMap, composant de Vigilo.
- * Copyright (C) 2015-2020 CS GROUP - France
+ * Copyright (C) 2015-2021 CS GROUP - France
  * Licence : GNU GPL v2 ou superieure
  *
  */

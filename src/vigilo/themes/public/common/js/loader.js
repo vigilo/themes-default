@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2009-2020 CS GROUP - France
+ * Copyright (C) 2009-2021 CS GROUP - France
  * Licence : GNU GPL v2 ou superieure
  *
  */
