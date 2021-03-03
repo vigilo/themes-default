@@ -88,8 +88,8 @@
         <div py:replace="select('*|text()')"/>
     </div>
 
-    <!--! Container utilisé par le formulaire de recherche. -->
-    ${search_form.display()}
+    <!--! Insertion de la macro Genshi correspondant au formulaire de recherche. -->
+    ${search_form()}
 
     <py:with vars="flash=tg.flash_obj.render('flash', use_js=False)">
         <div py:strip="True" py:if="flash" py:content="XML(flash)" />
